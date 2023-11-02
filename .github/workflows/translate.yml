@@ -1,4 +1,4 @@
-name: update-page
+name: translate
 
 on:
   push:
