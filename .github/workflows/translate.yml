@@ -6,6 +6,9 @@ on:
       - 'translate-tool/**'
       - 'translation-data/**'
   workflow_dispatch:
+  repository_dispatch:
+    types:
+      - webhook-translate-action
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
