@@ -1,6 +1,8 @@
 # LuatOS document
 
-[![sphinx](https://github.com/openLuat/luatos-wiki/actions/workflows/sphinx.yml/badge.svg)](https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master)
+[![translate](https://github.com/openLuat/luatos-wiki-en/actions/workflows/translate.yml/badge.svg)](https://github.com/openLuat/luatos-wiki-en/actions/workflows/translate.yml)
+[![update-page](https://github.com/openLuat/luatos-wiki-en/actions/workflows/update-page.yml/badge.svg)](https://github.com/openLuat/luatos-wiki-en/actions/workflows/update-page.yml)
+[![pages-build-deployment](https://github.com/openLuat/luatos-wiki-en/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/openLuat/luatos-wiki-en/actions/workflows/pages/pages-build-deployment)
 
 All files in this repository are automatically translated from the [original documents](https://github.com/openLuat/luatos-wiki).
 
