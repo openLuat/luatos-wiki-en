@@ -1,0 +1,1824 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Adaptation status" href="supported.html" /><link rel="prev" title="timer" href="../boardGuide/common/timer.html" />
+
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+        <title>🍴 LuatOS-SOC Interface Documentation - LuatOS 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/run-code.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/magnific-popup.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #ffffff;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky">
+        <!-- 谷歌翻译 start -->
+        <div id="google_translate_element"></div>
+        <script>
+          function googleTranslateElementInit() {
+            if (navigator.language.indexOf("CN") < 0) {
+              new google.translate.TranslateElement({
+                pageLanguage: 'cn'
+              }, 'google_translate_element');
+              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
+            }
+          }
+          if (navigator.language.indexOf("CN") < 0) {
+            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          }
+        </script>
+        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../_static/logo-light.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">💁 LuatOS Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://wiki.luatos.com">🏠️ Home Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/emulator.html">🕹️ 在线体验LuatOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/supports.html">💬 Technical Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🌠 Quick to get started</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../luaGuide/index.html">🌙 Lua Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../luaGuide/introduction.html">Basic Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../luaGuide/luatask.html">LuaTask Framework</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chips/index.html">🧮 Chips and Development Boards</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chips/chips.html">📊 Chip comparison and selection table</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/air001/index.html">🛴 Air001</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air001/mcu.html">Air001 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air001/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air001/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air001/Air001-MDK.html">Air001 Keil MDK-based user manual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air001/Air001-Arduino.html">Air001 Arduino-based user manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air001.html">Air001_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/air101/index.html">🚗 Air101</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air101/mcu.html">Air101 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air101/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air101/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air101/Air101-Hard-design.html">Air101 Hardware Design Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air101/Air101.html">Air101 Getting Started Manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air101.html">Air101_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air101/power_dissipation.html">Air101 power consumption curve</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/air103/index.html">🚗 Air103</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air103/mcu.html">Air103 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air103/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air103/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air103/lcdseg.html">Function Description of Segment Screen/Segment Screen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air103/touchkey.html">Touch sensor/touch button</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air103.html">Air103_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air103/power_dissipation.html">Air103 power consumption curve</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/air105/index.html">🚗 Air105</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air105/mcu.html">Air105 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air105/board.html">Air105 Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air105/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air105.html">Air105_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air105/power_dissipation.html">Air105 power consumption curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air105/encrypt.html">Air105 Script Encryption</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/air601/index.html">📡 Air601</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air601/mcu.html">Air601</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air601/board.html">Air601-12F Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air601/hardware.html">Air601 Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air601/changelog.html">Firmware Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/air780e/index.html">📶 Air780E(EC618 Series General)</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air780e/mcu.html">Air780E Module (EC618 Series General)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air780e/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air780e/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air780e/multiownload.html">Description of mass production brush machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air780e/network.html">Network Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air780e/iomux.html">LuatOS IO multiplexing configuration under firmware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air780e/air780eg.html">Air780EG Additional instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air780e/air700e.html">Air700E Additional instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air780e/tts.html">TTS Description of the function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air780e/firmware.html">Firmware Description</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air780E.html">Air780E_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air780e/changelog.html">Ec618 Series Firmware Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/esp32c3/index.html">📡 ESP32-C3</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/esp32c3/board.html">ESP32C3-CORE Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/esp32c3/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/esp32c3.html">ESP32-C3_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/esp32c3/power_dissipation.html">ESP32C3 power consumption curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/esp32c3/change_flash.html">Replace flash tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/esp32s3/index.html">📡 ESP32-S3</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/esp32s3/board.html">ESP32S3-CORE Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/esp32s3/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/esp32s3.html">ESP32-S3_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/esp32s3/mifi.html">Portable wifi data collection</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/air32f103/index.html">🚲 Air32F103</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air32f103/mcu.html">AIR32F103 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air32f103/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air32f103/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air32f103/Air32f103.html">Air32F103 Manual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air32f103/switchFromSxx.html">Transplant from SXX32F103</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air32f103/enhancement.html">Enhanced function instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air32f103/daplink.html">DAPLink Manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air32F103.html">Air32F103_PCB</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/BluePill.html">BluePill_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/rp2040/index.html">📡 RP2040</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/rp2040.html">RP2040_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/swm181/index.html">🚲 SWM181CBT6</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/swm181/mcu.html">SWM181CBT6 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/swm181/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/swm181/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/swm181/swm181.html">SWM181 Manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/SWM181.html">SWM181_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/air302/index.html">📶 Air302</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air302/mcu.html">Air302 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air302/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air302/hardware.html">Hardware Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chips/air640w/index.html">📡 Air640w</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air640w/mcu.html">Air640w</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air640w/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chips/air640w/hardware.html">Hardware Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../chips/W806.html">🚗 W806</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chips/win32.html">🖥️ PC End version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chips/coremark/README.html">Performance testing (based on coremark)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chips/supported.html">Equipment Support/Supported Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chips/question.html">FAQ List</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://air724ug.cn">Air724UG</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://air820ug.cn">Air820UG</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../peripherals/index.html">🧷 Peripheral expansion data</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../peripherals/lcd_air10x/index.html">Air10x Series Screen Expansion Board</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/lcd_air10x/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/lcd_air10x/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../peripherals/eink_1.54/index.html">EINK1.54 Ink screen</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/eink_1.54/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/eink_1.54/software.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../peripherals/lcd_1in8_128x160/index.html">1.8 TFT LCD resolution 128x160</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/lcd_1in8_128x160/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/lcd_1in8_128x160/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../peripherals/lcd_2in4_320x240/index.html">2.4 Inch TFT_ LCD color screen resolution 240x320</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/lcd_2in4_320x240/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/lcd_2in4_320x240/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../peripherals/lcd_1in54_240x240/index.html">1.54 Inch TFT_ LCD resolution 240x240</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/lcd_1in54_240x240/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/lcd_1in54_240x240/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../peripherals/camera_gc032a/index.html">Air105 Supporting GC032A camera</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/camera_gc032a/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/camera_gc032a/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../peripherals/chip_gtfont/index.html">Qualcomm Font Chip</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/chip_gtfont/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../peripherals/chip_gtfont/demos.html">Use Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../boardGuide/index.html">📚 Development Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../boardGuide/roadmap.html">recommend learning line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boardGuide/vscode.html">Construction of development environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boardGuide/flash.html">Burn Tutorial</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boardGuide/common/index.html">API Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boardGuide/common/log.html">log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardGuide/common/sys.html">sys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardGuide/common/adc/index.html">adc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardGuide/common/crypto.html">CRYPTO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardGuide/common/fdb.html">fdb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardGuide/common/disp.html">DISP</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../boardGuide/common/i2c/index.html">i2c</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/i2c/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/i2c/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/i2c/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../boardGuide/common/spi/index.html">spi</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/spi/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/spi/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/spi/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../boardGuide/common/uart/index.html">uart</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/uart/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/uart/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/uart/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../boardGuide/common/lcd.html">LCD Drive screen</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../boardGuide/common/mcu/index.html">mcu</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/mcu/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/mcu/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/mcu/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../boardGuide/common/pm.html">PM</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../boardGuide/common/pwm/index.html">pwm</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/pwm/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/pwm/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/pwm/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../boardGuide/common/rtc.html">RTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardGuide/common/sfd.html">sfd</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../boardGuide/common/sfud/index.html">sfud</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/sfud/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/sfud/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../boardGuide/common/sfud/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../boardGuide/common/timer.html">timer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://gitee.com/openLuat/LuatOS/releases">Firmware Download</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">📖 Reference Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">🍴 LuatOS-SOC Interface Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="supported.html">Adaptation status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html">adc - Digital-to-analog conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html">audio - Multimedia-Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit64.html">bit64 - 32 Basic arithmetic and logical operations on 64-bit data on bit systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html">camera - Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codec.html">codec - Multimedia-Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coremark.html">coremark - Running points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html">crypto - Encryption and decryption and hash functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dac.html">dac - Digital-to-analog conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disp.html">disp - disp Library (Obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html">eink - ink screen operation library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errDump.html">errDump - Error reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastlz.html">fastlz - FastLZ Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fatfs.html">fatfs - read/write fatfs format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fdb.html">fdb - kv Database, power failure does not lose data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonts.html">fonts - Font Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fota.html">fota - Underlying Firmware Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fs.html">fs - Additional File System Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fskv.html">fskv - kv Database, power failure does not lose data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html">ftp - ftp Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmssl.html">gmssl - national secret algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html">gpio - GPIO Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gtfont.html">gtfont - Qualcomm Font Chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmeta.html">hmeta - Hardware metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http.html">http - http Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="httpsrv.html">httpsrv - http Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html">i2c - I2C Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2s.html">i2s - Digital Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iconv.html">iconv - iconv Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html">io - io action (extended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html">ioqueue - io Sequence operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotauth.html">iotauth - IoT Authentication library, used to generate parameters for various cloud platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ir.html">ir - infrared remote control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">json - json Generating and parsing libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keyboard.html">keyboard - Keyboard Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html">lcd - lcd Drive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcdseg.html">lcdseg - Segment lcd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libcoap.html">libcoap - coap Data processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html">libgnss - NMEA Data processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">log - Logstore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora.html">lora - lora Drive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora2.html">lora2 - lora2 Driver module (supports multi-hanging)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html">lvgl - LVGL Image Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="max30102.html">max30102 - Heart Rate Module(MAX30102)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html">mcu - encapsulation mcu some special operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="miniz.html">miniz - Easy zlib compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html">mlx90640 - infrared temperature measurement(MLX90640)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html">mobile - Cellular Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html">mqtt - mqtt Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html">nbiot - NB-IOT Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nes.html">nes - nes Simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html">nimble - Bluetooth BLE library (nimble version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html">os - os Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otp.html">otp - OTP Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pack.html">pack - Packing and unpacking format string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pin.html">pin - Pin Naming Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html">pm - Power Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protobuf.html">protobuf - ProtoBuffs Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pwm.html">pwm - PWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repl.html">repl - “Read-evaluate-output “loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsa.html">rsa - RSA encryption and decryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtc.html">rtc - Real Time Clock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html">rtos - RTOS underlying operation library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdio.html">sdio - sdio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html">sensor - Sensor Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfd.html">sfd - SPI FLASH Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfud.html">sfud - SPI FLASH sfud Software package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms.html">sms - SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html">socket - Network Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="softkeyboard.html">softkeyboard - software keyboard matrix (currently only supported by air105)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html">spi - spi Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statem.html">statem - SM State Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html">string - String Manipulation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html">sys - sys Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysplus.html">sysplus - sys A strong complement to the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timer.html">timer - Operating the bottom timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="touchkey.html">touchkey - Touch keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html">u8g2 - u8g2 graphics processing library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html">uart - serial port operation library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufont.html">ufont - Unified Font Library (under development)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html">usbapp - USB Functional operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w5500.html">w5500 - w5500 Ethernet driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wdt.html">wdt - watchdog Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket.html">websocket - websocket Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html">wlan - wifi Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ymodem.html">ymodem - ymodem Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html">zbuff - c Memory Data Manipulation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zlib.html">zlib - zlib Compression/Decompression (Obsolete)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sys_pub.html">📮 sys System Messages</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/lua53doc/index.html">🌕 Native API Manual</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="libs/index.html">🥢 Extended Library Interface Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="libs/ads1115.html">ads1115 - ads1115 analog-to-digital converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/adxl34x.html">adxl34x - adxl34x 3 Axis accelerometer currently supports adxl345 adxl346</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/aht10.html">aht10 - aht10 Temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/air153C_wtd.html">air153C_wtd - Add software watchdog function to prevent crashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/ak8963.html">ak8963 - ak8963 geomagnetic sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/am2320.html">am2320 - am2320 Temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/bh1750.html">bh1750 - bh1750 Digital light intensity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/bmx.html">bmx - bmx The air pressure sensor currently supports bmp180 bmp280 bme280 bme680 will automatically judge the device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/cht8305c.html">cht8305c - cht8305c Temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/ds3231.html">ds3231 - ds3231 Real Time Clock Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/ec11.html">ec11 - ec11 Rotary encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/gt911.html">gt911 - gt911 Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/httpdns.html">httpdns - Domain name resolution using Http</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/ina226.html">ina226 - ina226 Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/iotcloud.html">iotcloud - iotcloud Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud others will also support, useful issue will accelerate support  )</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/l3g4200d.html">l3g4200d - l3g4200d Three-Axis Digital Gyroscope Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lbsLoc.html">lbsLoc - lbsLoc Sending Base Station Location Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lbsLoc2.html">lbsLoc2 - base station positioning v2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/libfota.html">libfota - libfota fota Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/libnet.html">libnet - libnet synchronous blocking api based on the socket library, the socket library itself is asynchronous non-blocking api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lis2dh12.html">lis2dh12 - lis2dh12 Three-axis sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lm75.html">lm75 - lm75 Temperature Sensor Support lm75a lm75b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/mcp2515.html">mcp2515 - mcp2515 CAN Protocol Controller Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/mlx90614.html">mlx90614 - mlx90614 infrared temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/mpu6xxx.html">mpu6xxx - mpu6xxx Six-axis/nine-axis sensor support mpu6500,mpu6050,mpu9250,icm2068g,icm20608d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/necir.html">necir - necir NEC protocol infrared receiving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/netLed.html">netLed - netLed Network status indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/pcf8563t.html">pcf8563t - pcf8563t Clock Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/pcf8574.html">pcf8574 - pcf8574 IO Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/qmc5883l.html">qmc5883l - qmc5883l geomagnetic sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/rc522.html">rc522 - rc522 Non-contact read/write card driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/rtkv.html">rtkv - Remote KV Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/shift595.html">shift595 - shift595 74HC595 Chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/si24r1.html">si24r1 - si24r1 Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/spl06.html">spl06 - spl06_01 Air pressure sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/tcs3472.html">tcs3472 - tcs3472 Color Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/tm1637.html">tm1637 - tm1637 Digital tube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/tm1640.html">tm1640 - tm1640 Digital tube and LED driver chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/tm1650.html">tm1650 - tm1650 Digital tube and key scanning chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/tsl2561.html">tsl2561 - tsl2561 light intensity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/udpsrv.html">udpsrv - UDP Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/xmodem.html">xmodem - xmodem Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/ze08g_ch2o.html">ze08g_ch2o - ZE08G-CH2O electrochemical formaldehyde module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/zh07.html">zh07 - ZH07 Laser Dust Sensor</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🖥️ Kernel Development</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../develop/compile.html">👨‍💻 Compile source code</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../develop/compile/Cloud_compilation.html">☁️ Cloud Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/compile/Air780E.html">📶 Air780E Compilation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/compile/Air101.html">🚗 Air101 / Air103</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/compile/Air105.html">🚗 Air105</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/compile/ESP32C3.html">📡 ESP32 Series Compilation Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/compile/Win32.html">🖥️ Win32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/compile/Linux.html">🖥️ Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/compile/Air640w.html">📡 Air640w</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/compile/Air302.html">📶 Air302</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../develop/docs.html">📁 Development documentation</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../develop/docs_use.html">Development practice</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" role="switch" type="checkbox"/><label for="toctree-checkbox-36"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../develop/add_myapi_5min.html">Add Custom Functions (Rapid Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../develop/add_lua_module.html">Lua Library File Writing Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../develop/c_wait.html">C Interface implements Task waiting function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../develop/soc_download.html">Command Line Brush Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../develop/docs_design.html">Development Information</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" role="switch" type="checkbox"/><label for="toctree-checkbox-37"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../develop/filesystems.html">LuatOS-SoC The file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../develop/hex_string.html">Explain lua’s string and hex data (hexadecimal)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../develop/contribute/luadb.html">LuaDB File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../develop/contribute/soc_format.html">LuatOS-SoC Common Firmware Format soc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../develop/contribute/index.html">❤️ Contribution Code</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" role="switch" type="checkbox"/><label for="toctree-checkbox-38"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../develop/contribute/style.html">Coding Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/contribute/add_module.html">Add New Library</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../develop/contribute/dev_doc/index.html">Design Document</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" role="switch" type="checkbox"/><label for="toctree-checkbox-39"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../develop/contribute/dev_doc/core/index.html">Core Layer</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" role="switch" type="checkbox"/><label for="toctree-checkbox-40"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/core/luat_core.html">Luat Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/core/luat_debugger.html">Luat Debugger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/core/luat_fs.html">File System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/core/luat_memory.html">Memory Pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/core/luat_msgbus.html">Message Bus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/core/luat_platform.html">Luat Platform layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/core/luat_pm.html">Power and Low Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/core/luat_timer.html">Luat Timer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/core/luat_zbuff.html">C style buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/core/sys_wait_pub.html">C Interface implements Task waiting function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/core/luat_zstruct.html">C The Structure of Style</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../develop/contribute/dev_doc/peripherals/index.html">Peripherals API</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" role="switch" type="checkbox"/><label for="toctree-checkbox-41"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/peripherals/luat_gpio.html">GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/peripherals/luat_ir.html">IR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/peripherals/luat_spi.html">SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/peripherals/luat_usart.html">UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/contribute/dev_doc/peripherals/luat_wlan.html">WLAN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">💼 actual combat reference</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../appDevelopment/index.html">⌨️ Application Development</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" role="switch" type="checkbox"/><label for="toctree-checkbox-42"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../appDevelopment/peripheral/index.html">Peripherals</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" role="switch" type="checkbox"/><label for="toctree-checkbox-43"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appDevelopment/peripheral/ws2812/ws2812.html">LuatOS-Soc Driver WS2812 Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../appDevelopment/lvgl/index.html">lvgl</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" role="switch" type="checkbox"/><label for="toctree-checkbox-44"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html">LVGL for LuatOS Manual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#lvgl-foundation">LVGL Foundation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#lvgl-components">LVGL Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#lvgl-advanced">LVGL Advanced</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#id221">Precautions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../appDevelopment/video_play/index.html">Video playback</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appDevelopment/video_play/105/video_play.html"><strong>Air105 Video playback</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🗄️ Other information</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../iotpower/index.html">⏳ IoT Power Power consumption test artifact</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../iotpower/power/index.html">🔋 IoT Power - V1</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../iotpower/cc/index.html">⚡ IoT Power - CC</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" role="switch" type="checkbox"/><label for="toctree-checkbox-47"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../iotpower/cc/tech.html">Technical indicators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../iotpower/cc/parts.html">Connection and assembly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../iotpower/cc/usage.html">Operating Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../iotpower/cc/question.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../iotpower/devices.html">🔍 Version Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iotpower/pc.html">🖥 PC Client</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../archives.html">🗃️ Data Archiving</a><input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" role="switch" type="checkbox"/><label for="toctree-checkbox-48"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../luaGuide/luatFramework.html">Luat Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../luaGuide/luatFramework_exts.html">Luat framework (advanced-underlying mechanism)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../luaGuide/luaReference.html">Lua 5.3 Reference Manual</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="luatos-soc-interface-documentation">
+<h1>🍴 LuatOS-SOC Interface Documentation<a class="headerlink" href="#luatos-soc-interface-documentation" title="永久链接至标题">#</a></h1>
+<p>Click the list on the left to view each interface. To search, use F5 to search.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="supported.html">Adaptation status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adc.html">adc - Digital-to-analog conversion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="adc.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html#adc-open-id">adc.open(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html#adc-setrange-range">adc.setRange(range)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html#adc-read-id">adc.read(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html#adc-get-id">adc.get(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html#adc-close-id">adc.close(id)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">audio - Multimedia-Audio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-start-id-audio-format-num-channels-sample-rate-bits-per-sample-is-signed">audio.start(id, audio_format, num_channels, sample_rate, bits_per_sample, is_signed)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-write-id-data">audio.write(id, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-stop-id">audio.stop(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-pause-id-pause">audio.pause(id, pause)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-on-id-event-func">audio.on(id, event, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-play-id-path-errstop">audio.play(id, path, errStop)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-tts-id-data">audio.tts(id, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-playstop-id">audio.playStop(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-isend-id">audio.isEnd(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-geterror-id">audio.getError(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-config-id-papin-onlevel-dacdelay-padelay-dacpin-daclevel-dactimedelay">audio.config(id, paPin, onLevel, dacDelay, paDelay, dacPin, dacLevel, dacTimeDelay)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-vol-id-value">audio.vol(id, value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-setbus-id-bus-type">audio.setBus(id, bus_type)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#audio-debug-on-off">audio.debug(on_off)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bit64.html">bit64 - 32 Basic arithmetic and logical operations on 64-bit data on bit systems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bit64.html#bit64-to32-data64bit">bit64.to32(data64bit)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit64.html#bit64-to64-data32bit">bit64.to64(data32bit)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit64.html#bit64-show-a-type-flag">bit64.show(a,type,flag)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit64.html#bit64-plus-a-b-flag1-flag2">bit64.plus(a,b,flag1,flag2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit64.html#bit64-minus-a-b-flag1-flag2">bit64.minus(a,b,flag1,flag2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit64.html#bit64-multi-a-b-flag1-flag2">bit64.multi(a,b,flag1,flag2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit64.html#bit64-pide-a-b-flag1-flag2">bit64.pide(a,b,flag1,flag2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit64.html#bit64-shift-a-b-flag">bit64.shift(a,b,flag)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit64.html#bit64-strtoll-data-base">bit64.strtoll(data, base)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="camera.html">camera - Camera</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camera.html#camera-init-initreg">camera.init(InitReg)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html#camera-on-id-event-func">camera.on(id, event, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html#camera-start-id">camera.start(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html#camera-stop-id">camera.stop(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html#camera-close-id">camera.close(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html#camera-capture-id-save-path-quality">camera.capture(id, save_path, quality)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html#camera-video-id-w-h-out-path">camera.video(id, w, h, out_path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html#camera-startraw-id-w-h-buff">camera.startRaw(id, w, h, buff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html#camera-getraw-id">camera.getRaw(id)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="codec.html">codec - Multimedia-Codec</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="codec.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codec.html#codec-create-type-isdecoder">codec.create(type, isDecoder)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codec.html#codec-info-decoder-file-path">codec.info(decoder, file_path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codec.html#codec-data-decoder-out-buff">codec.data(decoder, out_buff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codec.html#codec-encode-coder-in-buffer-out-buffer-mode">codec.encode(coder, in_buffer, out_buffer, mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codec.html#codec-release-coder">codec.release(coder)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coremark.html">coremark - Running points</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="coremark.html#coremark-run">coremark.run()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="crypto.html">crypto - Encryption and decryption and hash functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-md5-str">crypto.md5(str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-hmac-md5-str-key">crypto.hmac_md5(str, key)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-sha1-str">crypto.sha1(str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-hmac-sha1-str-key">crypto.hmac_sha1(str, key)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-sha256-str">crypto.sha256(str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-hmac-sha256-str-key">crypto.hmac_sha256(str, key)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-sha512-str">crypto.sha512(str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-hmac-sha512-str-key">crypto.hmac_sha512(str, key)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-cipher-encrypt-type-padding-str-key-iv">crypto.cipher_encrypt(type, padding, str, key, iv)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-cipher-decrypt-type-padding-str-key-iv">crypto.cipher_decrypt(type, padding, str, key, iv)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-crc16-method-data-poly-initial-finally-inreversem-outreverse">crypto.crc16(method, data, poly, initial, finally, inReversem outReverse)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-crc16-modbus-data">crypto.crc16_modbus(data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-crc32-data">crypto.crc32(data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-crc8-data-poly-start-revert">crypto.crc8(data, poly, start, revert)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-crc7-data-poly-start">crypto.crc7(data, poly, start)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-trng-len">crypto.trng(len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-totp-secret-time">crypto.totp(secret,time)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-base64-encode-data">crypto.base64_encode(data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-base64-decode-data">crypto.base64_decode(data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-cipher-list">crypto.cipher_list()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-cipher-suites">crypto.cipher_suites()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-md-file-tp-path-hmac">crypto.md_file(tp, path, hmac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-md-tp-data-hmac">crypto.md(tp, data, hmac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-hash-init-tp">crypto.hash_init(tp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-hash-update-stream-data">crypto.hash_update(stream, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-hash-finish-stream">crypto.hash_finish(stream)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#crypto-checksum-data-mode">crypto.checksum(data, mode)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dac.html">dac - Digital-to-analog conversion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dac.html#dac-open-ch-freq-mode">dac.open(ch, freq, mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dac.html#dac-write-ch-data">dac.write(ch, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dac.html#dac-close-ch">dac.close(ch)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="disp.html">disp - disp Library (Obsolete)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="disp.html#disp-init-conf">disp.init(conf)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="eink.html">eink - ink screen operation library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-init-tp-args-spi-device">eink.init(tp, args,spi_device)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-setup-full-spiid-pin-busy-pin-reset-pin-dc-pin-cs">eink.setup(full, spiid, pin_busy, pin_reset, pin_dc, pin_cs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-sleep">eink.sleep()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-clear-color-force">eink.clear(color, force)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-setwin-width-height-rotate">eink.setWin(width, height, rotate)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-getwin">eink.getWin()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-setfont-font">eink.setFont(font)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-print-x-y-str-colored">eink.print(x, y, str, colored)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-show-x-y-noclear">eink.show(x, y, noClear)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-draw-buff-buff2-noclear">eink.draw(buff, buff2, noclear)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-line-x-y-x2-y2-colored">eink.line(x, y, x2, y2, colored)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-rect-x-y-x2-y2-colored-fill">eink.rect(x, y, x2, y2, colored, fill)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-circle-x-y-radius-colored-fill">eink.circle(x, y, radius, colored, fill)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-qrcode-x-y-str-size">eink.qrcode(x, y, str, size)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-bat-x-y-bat">eink.bat(x, y, bat)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-weather-icon-x-y-code">eink.weather_icon(x, y, code)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-model-m">eink.model(m)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-drawxbm-x-y-w-h-data">eink.drawXbm(x, y, w, h, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-setctx-index">eink.setCtx(index)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eink.html#eink-async-index">eink.async(index)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="errDump.html">errDump - Error reporting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="errDump.html#errdump-dump-zbuff-type-isdelete">errDump.dump(zbuff, type, isDelete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errDump.html#errdump-record-string">errDump.record(string)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errDump.html#errdump-config-enable-period-user-flag-custom-id">errDump.config(enable, period, user_flag, custom_id)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fastlz.html">fastlz - FastLZ Compression</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fastlz.html#fastlz-compress-data-level">fastlz.compress(data, level)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastlz.html#fastlz-uncompress-data-maxout">fastlz.uncompress(data, maxout)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fatfs.html">fatfs - read/write fatfs format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fatfs.html#fatfs-mount-mode-mount-point-spiid-or-spidevice-spi-cs-spi-speed-power-pin-power-on-delay-auto-format">fatfs.mount(mode,mount_point, spiid_or_spidevice, spi_cs, spi_speed, power_pin, power_on_delay, auto_format)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fatfs.html#fatfs-getfree-mount-point">fatfs.getfree(mount_point)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fatfs.html#fatfs-debug-value">fatfs.debug(value)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fdb.html">fdb - kv Database, power failure does not lose data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fdb.html#fdb-kvdb-init-name-partition">fdb.kvdb_init(name, partition)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fdb.html#fdb-kv-set-key-value">fdb.kv_set(key, value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fdb.html#fdb-kv-get-key-skey">fdb.kv_get(key, skey)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fdb.html#fdb-kv-del-key">fdb.kv_del(key)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fdb.html#fdb-kv-clr">fdb.kv_clr()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fdb.html#fdb-kv-iter">fdb.kv_iter()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fdb.html#fdb-kv-iter-iter">fdb.kv_iter(iter)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fdb.html#fdb-kv-stat">fdb.kv_stat()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fonts.html">fonts - Font Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fonts.html#fonts-list-tp">fonts.list(tp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonts.html#fonts-u8g2-get-name-tp">fonts.u8g2_get(name, tp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonts.html#fonts-u8g2-load-path-path">fonts.u8g2_load(path, path)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fota.html">fota - Underlying Firmware Upgrade</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fota.html#fota-init-storge-location-len-param1">fota.init(storge_location, len, param1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fota.html#fota-wait">fota.wait()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fota.html#fota-run-buff">fota.run(buff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fota.html#fota-file-path">fota.file(path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fota.html#fota-isdone">fota.isDone()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fota.html#fota-finish-is-ok">fota.finish(is_ok)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fs.html">fs - Additional File System Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fs.html#fs-fsstat-path">fs.fsstat(path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fs.html#fs-fsize-path">fs.fsize(path)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fskv.html">fskv - kv Database, power failure does not lose data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fskv.html#fskv-init">fskv.init()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fskv.html#fskv-set-key-value">fskv.set(key, value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fskv.html#fskv-sett-key-skey-value">fskv.sett(key, skey, value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fskv.html#fskv-get-key-skey">fskv.get(key, skey)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fskv.html#fskv-del-key">fskv.del(key)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fskv.html#fskv-clear">fskv.clear()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fskv.html#fskv-iter">fskv.iter()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fskv.html#fskv-next-iter">fskv.next(iter)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fskv.html#fskv-status">fskv.status()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ftp.html">ftp - ftp Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html#ftp-login-adapter-ip-addr-port-username-password">ftp.login(adapter,ip_addr,port,username,password)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html#ftp-command-cmd">ftp.command(cmd)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html#ftp-pull-local-name-remote-name">ftp.pull(local_name,remote_name)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html#ftp-push-local-name-remote-name">ftp.push(local_name,remote_name)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html#ftp-close">ftp.close()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gmssl.html">gmssl - national secret algorithm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gmssl.html#sm-sm2encrypt-pkx-pky-data-mode-mode2">sm.sm2encrypt(pkx,pky,data, mode, mode2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmssl.html#sm-sm2decrypt-private-data-mode-mode2">sm.sm2decrypt(private,data,mode,mode2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmssl.html#sm-sm3-data">sm.sm3(data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmssl.html#sm-sm3hmac-data-key">sm.sm3hmac(data, key)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmssl.html#gmssl-sm4encrypt-mode-padding-originstr-password">gmssl.sm4encrypt(mode,padding,originStr,password)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmssl.html#gmssl-sm4decrypt-mode-padding-encodestr-password">gmssl.sm4decrypt(mode,padding,encodeStr,password)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmssl.html#sm-sm2sign-private-data-id">sm.sm2sign(private,data,id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmssl.html#sm-sm2verify-pkx-pky-data-id-sig">sm.sm2verify(pkx, pky, data, id, sig)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gpio.html">gpio - GPIO Operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html#gpio-setup-pin-mode-pull-irq-alt">gpio.setup(pin, mode, pull, irq, alt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html#gpio-set-pin-value">gpio.set(pin, value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html#gpio-get-pin">gpio.get(pin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html#gpio-close-pin">gpio.close(pin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html#gpio-setdefaultpull-val">gpio.setDefaultPull(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html#gpio-toggle-pin">gpio.toggle(pin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html#gpio-pulse-pin-level-len-delay">gpio.pulse(pin,level,len,delay)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html#gpio-debounce-pin-ms-mode">gpio.debounce(pin, ms, mode)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gtfont.html">gtfont - Qualcomm Font Chip</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gtfont.html#gtfont-init-spi-device">gtfont.init(spi_device)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hmeta.html">hmeta - Hardware metadata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hmeta.html#hmeta-model">hmeta.model()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmeta.html#hmeta-hwver">hmeta.hwver()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http.html">http - http Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http.html#http-request-method-url-headers-body-opts-ca-file-client-ca-client-key-client-password">http.request(method,url,headers,body,opts,ca_file,client_ca, client_key, client_password)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="httpsrv.html">httpsrv - http Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="httpsrv.html#httpsrv-start-port-func">httpsrv.start(port, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="httpsrv.html#httpsrv-stop-port">httpsrv.stop(port)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="i2c.html">i2c - I2C Operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-exist-id">i2c.exist(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-setup-id-speed-slaveaddr">i2c.setup(id, speed, slaveAddr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-createsoft-scl-sda-delay">i2c.createSoft(scl,sda,delay)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-send-id-addr-data-stop">i2c.send(id, addr, data,stop)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-recv-id-addr-len">i2c.recv(id, addr, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-writereg-id-addr-reg-data-stop">i2c.writeReg(id, addr, reg, data,stop)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-readreg-id-addr-reg-len">i2c.readReg(id, addr, reg, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-close-id">i2c.close(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-readdht12-id">i2c.readDHT12(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-readsht30-id-addr">i2c.readSHT30(id,addr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-transfer-id-addr-txbuff-rxbuff-rxlen">i2c.transfer(id, addr, txBuff, rxBuff, rxLen)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-xfer-id-addr-txbuff-rxbuff-rxlen-transfer-done-topic-timeout">i2c.xfer(id, addr, txBuff, rxBuff, rxLen, transfer_done_topic, timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#i2c-scan-id">i2c.scan(id)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="i2s.html">i2s - Digital Audio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="i2s.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2s.html#i2s-setup-id-mode-sample-bitw-channel-format-mclk">i2s.setup(id, mode, sample, bitw, channel, format, mclk)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2s.html#i2s-send-id-data-len">i2s.send(id, data, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2s.html#i2s-recv-id-buffer-len">i2s.recv(id, buffer, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2s.html#i2s-close-id">i2s.close(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2s.html#i2s-on-id-func">i2s.on(id, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2s.html#i2s-txstat-id">i2s.txStat(id)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="iconv.html">iconv - iconv Operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="iconv.html#iconv-open-tocode-fromcode">iconv.open(tocode, fromcode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iconv.html#iconv-iconv-inbuf">iconv:iconv(inbuf)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iconv.html#id1">iconv.open(tocode, fromcode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iconv.html#cd-iconv-inbuf">cd:iconv(inbuf)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iconv.html#iconv-close-cd">iconv.close(cd)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">io - io action (extended)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-exists-path">io.exists(path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-filesize-path">io.fileSize(path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-readfile-path-mode-offset-len">io.readFile(path, mode, offset, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-writefile-path-data">io.writeFile(path, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-fill-buff-offset-len">io.fill(buff, offset, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-mkfs-path">io.mkfs(path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-mkdir-path">io.mkdir(path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-rmdir-path">io.rmdir(path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-lsdir-path-len-offset">io.lsdir(path, len, offset)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-lsmount">io.lsmount()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ioqueue.html">ioqueue - io Sequence operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-init-hwtimer-id-cmd-cnt-repeat-cnt">ioqueue.init(hwtimer_id,cmd_cnt,repeat_cnt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-setdelay-hwtimer-id-time-us-time-tick-continue">ioqueue.setdelay(hwtimer_id,time_us,time_tick,continue)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-delay-hwtimer-id">ioqueue.delay(hwtimer_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-setgpio-hwtimer-id-pin-is-input-pull-mode-init-level">ioqueue.setgpio(hwtimer_id,pin,is_input,pull_mode,init_level)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-input-hwtimer-id-pin">ioqueue.input(hwtimer_id,pin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-output-hwtimer-id-pin-level">ioqueue.output(hwtimer_id,pin,level)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-setcap-hwtimer-id-pin-pull-mode-irq-mode-max-tick">ioqueue.setcap(hwtimer_id,pin,pull_mode,irq_mode,max_tick)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-capture-hwtimer-id">ioqueue.capture(hwtimer_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-capend-hwtimer-id-pin">ioqueue.capend(hwtimer_id,pin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-get-hwtimer-id-input-buff-capture-buff">ioqueue.get(hwtimer_id, input_buff, capture_buff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-start-hwtimer-id">ioqueue.start(hwtimer_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-stop-hwtimer-id">ioqueue.stop(hwtimer_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-release-hwtimer-id">ioqueue.release(hwtimer_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-clear-hwtimer-id">ioqueue.clear(hwtimer_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-done-hwtimer-id">ioqueue.done(hwtimer_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ioqueue.html#ioqueue-exti-pin-pull-mode-irq-mode-onoff">ioqueue.exti(pin,pull_mode,irq_mode,onoff)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="iotauth.html">iotauth - IoT Authentication library, used to generate parameters for various cloud platforms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="iotauth.html#iotauth-aliyun-product-key-device-name-device-secret-method-cur-timestamp">iotauth.aliyun(product_key, device_name,device_secret,method,cur_timestamp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotauth.html#iotauth-onenet-produt-id-device-name-key-method-cur-timestamp-version">iotauth.onenet(produt_id, device_name,key,method,cur_timestamp,version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotauth.html#iotauth-iotda-device-id-device-secret-cur-timestamp">iotauth.iotda(device_id,device_secret,cur_timestamp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotauth.html#iotauth-qcloud-product-id-device-name-device-secret-method-cur-timestamp-sdk-appid">iotauth.qcloud(product_id, device_name,device_secret,method,cur_timestamp,sdk_appid)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotauth.html#iotauth-tuya-device-id-device-secret-cur-timestamp">iotauth.tuya(device_id,device_secret,cur_timestamp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotauth.html#iotauth-baidu-iot-core-id-device-key-device-secret-method-cur-timestamp">iotauth.baidu(iot_core_id, device_key,device_secret,method,cur_timestamp)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ir.html">ir - infrared remote control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ir.html#ir-sendnec-pin-addr-cmd-repeat-disablepwm">ir.sendNEC(pin, addr, cmd, repeat, disablePWM)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="json.html">json - json Generating and parsing libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="json.html#json-encode-obj-t">json.encode(obj,t)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html#json-decode-str">json.decode(str)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="keyboard.html">keyboard - Keyboard Matrix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="keyboard.html#keyboard-init-port-conf-map-debounce">keyboard.init(port, conf, map, debounce)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lcd.html">lcd - lcd Drive module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-init-tp-args">lcd.init(tp, args)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-close">lcd.close()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-on">lcd.on()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-off">lcd.off()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-sleep">lcd.sleep()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-wakeup">lcd.wakeup()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-invon">lcd.invon()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-invoff">lcd.invoff()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-cmd-cmd">lcd.cmd(cmd)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-data-data">lcd.data(data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-setcolor-back-fore">lcd.setColor(back,fore)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-draw-x1-y1-x2-y2-color">lcd.draw(x1, y1, x2, y2,color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-clear-color">lcd.clear(color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-fill-x1-y1-x2-y2-color">lcd.fill(x1, y1, x2, y2,color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-drawpoint-x0-y0-color">lcd.drawPoint(x0,y0,color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-drawline-x0-y0-x1-y1-color">lcd.drawLine(x0,y0,x1,y1,color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-drawrectangle-x0-y0-x1-y1-color">lcd.drawRectangle(x0,y0,x1,y1,color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-drawcircle-x0-y0-r-color">lcd.drawCircle(x0,y0,r,color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-drawqrcode-x-y-str-size">lcd.drawQrcode(x, y, str, size)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-setfont-font">lcd.setFont(font)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-drawstr-x-y-str-fg-color">lcd.drawStr(x,y,str,fg_color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-drawgtfontgb2312-str-size-x-y">lcd.drawGtfontGb2312(str,size,x,y)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-drawgtfontgb2312gray-str-size-gray-x-y">lcd.drawGtfontGb2312Gray(str,size,gray,x,y)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-drawgtfontutf8-str-size-x-y">lcd.drawGtfontUtf8(str,size,x,y)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-drawgtfontutf8gray-str-size-gray-x-y">lcd.drawGtfontUtf8Gray(str,size,gray,x,y)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-getsize">lcd.getSize()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-drawxbm-x-y-w-h-data">lcd.drawXbm(x, y, w, h, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-showimage-x-y-file">lcd.showImage(x, y, file)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-flush">lcd.flush()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-setupbuff-conf-onheap">lcd.setupBuff(conf, onheap)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-autoflush-enable">lcd.autoFlush(enable)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcd.html#lcd-rgb565-r-g-b-swap">lcd.rgb565(r, g, b, swap)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lcdseg.html">lcdseg - Segment lcd</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lcdseg.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcdseg.html#lcdseg-setup-bias-duty-vlcd-com-number-fresh-rate-com-mark-seg-mark">lcdseg.setup(bias, duty, vlcd, com_number, fresh_rate, com_mark, seg_mark)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcdseg.html#lcdseg-enable-en">lcdseg.enable(en)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcdseg.html#lcdseg-power-en">lcdseg.power(en)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lcdseg.html#lcdseg-seg-set-com-seg-en">lcdseg.seg_set(com, seg, en)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="libcoap.html">libcoap - coap Data processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="libcoap.html#libcoap-new-code-uri-headers-payload">libcoap.new(code, uri, headers, payload)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libcoap.html#libcoap-parse-str">libcoap.parse(str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libcoap.html#coapdata-msgid">coapdata:msgid()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libcoap.html#coapdata-token">coapdata:token()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libcoap.html#coapdata-rawdata">coapdata:rawdata()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libcoap.html#coapdata-code">coapdata:code()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libcoap.html#coapdata-hcode">coapdata:hcode()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libcoap.html#coapdata-type-t">coapdata:type(t)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libcoap.html#coapdata-data">coapdata:data()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="libgnss.html">libgnss - NMEA Data processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-parse-str">libgnss.parse(str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-isfix">libgnss.isFix()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-getintlocation">libgnss.getIntLocation()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-getrmc-data-mode">libgnss.getRmc(data_mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-getgsv">libgnss.getGsv()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-getgsa-data-mode">libgnss.getGsa(data_mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-getvtg-data-mode">libgnss.getVtg(data_mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-getzda">libgnss.getZda()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-debug-mode">libgnss.debug(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-getgga-data-mode">libgnss.getGga(data_mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-getgll-data-mode">libgnss.getGll(data_mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-clear">libgnss.clear()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-bind-id-next-id">libgnss.bind(id, next_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-locstr-mode">libgnss.locStr(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-rtcauto-enable">libgnss.rtcAuto(enable)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-on-tp-fn">libgnss.on(tp, fn)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libgnss.html#libgnss-gettxt">libgnss.getTxt()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="log.html">log - Logstore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="log.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html#log-setlevel-level">log.setLevel(level)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html#log-style-val">log.style(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html#log-getlevel">log.getLevel()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html#log-debug-tag-val-val2-val3">log.debug(tag, val, val2, val3, …)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html#log-info-tag-val-val2-val3">log.info(tag, val, val2, val3, …)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html#log-warn-tag-val-val2-val3">log.warn(tag, val, val2, val3, …)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html#log-error-tag-val-val2-val3">log.error(tag, val, val2, val3, …)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lora.html">lora - lora Drive module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lora.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora.html#lora-init-ic-loraconfig-spiconfig">lora.init(ic, loraconfig,spiconfig)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora.html#lora-set-channel-freq">lora.set_channel(freq)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora.html#lora-set-txconfig-ic-txconfig">lora.set_txconfig(ic, txconfig)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora.html#lora-set-rxconfig-ic-set-rxconfig">lora.set_rxconfig(ic, set_rxconfig)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora.html#lora-send-data">lora.send(data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora.html#lora-recv-timeout">lora.recv(timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora.html#lora-mode-mode">lora.mode(mode)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lora2.html">lora2 - lora2 Driver module (supports multi-hanging)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lora2.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora2.html#lora2-init-ic-loraconfig-spiconfig">lora2.init(ic, loraconfig,spiconfig)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora2.html#lora-device-set-channel-freq">lora_device:set_channel(freq)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora2.html#lora-device-set-txconfig-txconfig">lora_device:set_txconfig(txconfig)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora2.html#lora-device-set-rxconfig-set-rxconfig">lora_device:set_rxconfig(set_rxconfig)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora2.html#lora-device-send-data">lora_device:send(data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora2.html#lora-device-recv-timeout">lora_device:recv(timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora2.html#lora-device-mode-mode">lora_device:mode(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lora2.html#lora-device-on-cb">lora_device:on(cb)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lvgl.html">lvgl - LVGL Image Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-draw-mask-radius-param-t">lvgl.draw_mask_radius_param_t()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-draw-mask-radius-param-t-free-radius">lvgl.draw_mask_radius_param_t_free(radius)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-draw-mask-line-param-t">lvgl.draw_mask_line_param_t()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-draw-mask-line-param-t-free-line">lvgl.draw_mask_line_param_t_free(line)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-draw-mask-fade-param-t">lvgl.draw_mask_fade_param_t()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-draw-mask-fade-param-t-free-fade">lvgl.draw_mask_fade_param_t_free(fade)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-font-get-name">lvgl.font_get(name)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en">lvgl.font_load(path/spi_device,size,bpp,thickness,cache_size,sty_zh,sty_en)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-font-free-font">lvgl.font_free(font)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-obj-set-event-cb-obj-func">lvgl.obj_set_event_cb(obj, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-obj-set-signal-cb-obj-func">lvgl.obj_set_signal_cb(obj, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-set-exec-cb-anim-func">lvgl.anim_set_exec_cb(anim, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-set-ready-cb-anim-func">lvgl.anim_set_ready_cb(anim, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-path-set-cb-path-func">lvgl.anim_path_set_cb(path, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-event-send-obj-ent">lvgl.event_send(obj, ent)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-scr-act">lvgl.scr_act()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-layer-top">lvgl.layer_top()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-layer-sys">lvgl.layer_sys()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-scr-load-scr">lvgl.scr_load(scr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-scr-load-anim-scr">lvgl.scr_load_anim(scr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-theme-set-act-name">lvgl.theme_set_act(name)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-sleep-enable">lvgl.sleep(enable)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-init-w-h-lcd-buff-size-buff-mode">lvgl.init(w, h, lcd, buff_size, buff_mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-create">lvgl.anim_create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-free-anim">lvgl.anim_free(anim)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-path-t">lvgl.anim_path_t()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-path-t-free-anim-path-t">lvgl.anim_path_t_free(anim_path_t)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-set-path-str-anim-tp">lvgl.anim_set_path_str(anim, tp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-qrcode-create-parent-size-dark-color-light-color">lvgl.qrcode_create(parent, size, dark_color, light_color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-qrcode-update-qrcode-cnt">lvgl.qrcode_update(qrcode, cnt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-qrcode-delete-qrcode">lvgl.qrcode_delete(qrcode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-t">lvgl.style_t()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-create">lvgl.style_create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-list-create">lvgl.style_list_create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-list-t">lvgl.style_list_t()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-delete-style">lvgl.style_delete(style)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-list-delete-style">lvgl.style_list_delete(style)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-benchmark">lvgl.demo_benchmark()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-keypad-encoder">lvgl.demo_keypad_encoder()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-music">lvgl.demo_music()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-printer">lvgl.demo_printer()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-stress">lvgl.demo_stress()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-widgets">lvgl.demo_widgets()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-indev-drv-register-tp-dtp">lvgl.indev_drv_register(tp, dtp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-indev-point-emulator-update-x-y-state">lvgl.indev_point_emulator_update(x, y, state)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-indev-kb-update-key">lvgl.indev_kb_update(key)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-gif-create-parent-path">lvgl.gif_create(parent, path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-gif-restart-gif">lvgl.gif_restart(gif)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="max30102.html">max30102 - Heart Rate Module(MAX30102)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="max30102.html#max30102-init-i2c-id-int">max30102.init(i2c_id,int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="max30102.html#max30102-get">max30102.get()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="max30102.html#max30102-shutdown">max30102.shutdown()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mcu.html">mcu - encapsulation mcu some special operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-setclk-mhz">mcu.setClk(mhz)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-getclk">mcu.getClk()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-unique-id">mcu.unique_id()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-ticks">mcu.ticks()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-hz">mcu.hz()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-reg32-address-value-mask">mcu.reg32(address, value, mask)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-x32-value">mcu.x32(value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-tick64">mcu.tick64()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-dtick64-tick1-tick2-check-value">mcu.dtick64(tick1, tick2, check_value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-setxtal-source-main-source-32k-delay">mcu.setXTAL(source_main, source_32k, delay)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-hardfault-mode">mcu.hardfault(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-iomux-type-channel-value">mcu.iomux(type, channel, value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcu.html#mcu-altfun-type-sn-pad-index-alt-fun-is-input">mcu.altfun(type, sn, pad_index, alt_fun, is_input)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="miniz.html">miniz - Easy zlib compression</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="miniz.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="miniz.html#miniz-compress-data-flags">miniz.compress(data, flags)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="miniz.html#miniz-uncompress-data-flags">miniz.uncompress(data, flags)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mlx90640.html">mlx90640 - infrared temperature measurement(MLX90640)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html#mlx90640-init-i2c-id-refresh-rate-note-to-use-this-interface-after-2023-5-15-the-user-needs-to-initialize-the-i2c-interface-by-himself">mlx90640.init(i2c_id,refresh_rate) (Note: To use this interface after 2023.5.15, the user needs to initialize the i2c interface by himself.)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html#mlx90640-feed">mlx90640.feed()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html#mlx90640-raw-data">mlx90640.raw_data()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html#mlx90640-raw-point-index">mlx90640.raw_point(index)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html#mlx90640-ta-temp">mlx90640.ta_temp()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html#mlx90640-max-temp">mlx90640.max_temp()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html#mlx90640-min-temp">mlx90640.min_temp()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html#mlx90640-average-temp">mlx90640.average_temp()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html#mlx90640-get-vdd">mlx90640.get_vdd()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlx90640.html#mlx90640-draw2lcd-x-y-fold">mlx90640.draw2lcd(x, y, fold)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">mobile - Cellular Network</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-imei-index">mobile.imei(index)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-imsi-index">mobile.imsi(index)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-sn">mobile.sn()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-muid">mobile.muid()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-iccid-id">mobile.iccid(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-number-id">mobile.number(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-simid-id">mobile.simid(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-simpin-id-operation-pin1-pin2">mobile.simPin(id,operation,pin1,pin2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-rtime-time-auto-reset-stack">mobile.rtime(time, auto_reset_stack)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-setauto-check-sim-period-get-cell-period-search-cell-time-auto-reset-stack-network-check-period">mobile.setAuto(check_sim_period, get_cell_period, search_cell_time, auto_reset_stack, network_check_period)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-apn-index-cid-new-apn-name-user-name-password-ip-type-protocol">mobile.apn(index, cid, new_apn_name, user_name, password, ip_type, protocol)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-ipv6-onff">mobile.ipv6(onff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-csq">mobile.csq()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-rssi">mobile.rssi()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-rsrp">mobile.rsrp()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-rsrq">mobile.rsrq()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-snr">mobile.snr()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-eci">mobile.eci()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-tac">mobile.tac()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-enbid">mobile.enbid()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-flymode-index-enable">mobile.flymode(index, enable)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-status">mobile.status()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-getcellinfo">mobile.getCellInfo()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-reqcellinfo-timeout">mobile.reqCellInfo(timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-reset">mobile.reset()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-datatraffic-clearuplink-cleardownlink">mobile.dataTraffic(clearUplink, clearDownlink)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-config-item-value">mobile.config(item, value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-getband-band-is-default">mobile.getBand(band, is_default)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-setband-band-num">mobile.setBand(band, num)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-nstonoff-onoff-uart-id">mobile.nstOnOff(onoff, uart_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#mobile-nstinput-data">mobile.nstInput(data)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mqtt.html">mqtt - mqtt Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-subscribe-topic-qos">mqttc:subscribe(topic, qos)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-unsubscribe-topic">mqttc:unsubscribe(topic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-debug-onoff">mqttc:debug(onoff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqtt-create-adapter-host-port-ssl-isipv6">mqtt.create(adapter,host,port,ssl,isipv6)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-auth-client-id-username-password-cleansession">mqttc:auth(client_id,username,password,cleanSession)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-keepalive-time">mqttc:keepalive(time)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-on-cb">mqttc:on(cb)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-connect">mqttc:connect()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-disconnect">mqttc:disconnect()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-autoreconn-reconnect-reconnect-time">mqttc:autoreconn(reconnect, reconnect_time)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-publish-topic-data-qos-retain">mqttc:publish(topic, data, qos, retain)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-close">mqttc:close()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-ready">mqttc:ready()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-state">mqttc:state()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-will-topic-payload-qos-retain">mqttc:will(topic, payload, qos, retain)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nbiot.html">nbiot - NB-IOT Operation Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-isready">nbiot.isReady()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-imsi">nbiot.imsi()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-iccid">nbiot.iccid()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-imei-val">nbiot.imei(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-rssi">nbiot.rssi()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-apn">nbiot.apn()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-userapn-apn-auth-user-name-auth-password-pdn-type">nbiot.userApn(apn,Auth_User_Name,Auth_Password,PDN_TYPE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-tac">nbiot.tac()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-tautime">nbiot.tauTime()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-activetime">nbiot.activeTime()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-cellid">nbiot.cellID()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-snr">nbiot.snr()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-csq">nbiot.csq()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-celevel">nbiot.ceLevel()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-sn-val">nbiot.sn(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-updatecellinfo">nbiot.updateCellInfo()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-mcc">nbiot.mcc()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-mnc">nbiot.mnc()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-earfcn">nbiot.earfcn()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-phycellid">nbiot.phyCellId()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-rsrq">nbiot.rsrq()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-rsrp">nbiot.rsrp()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-powerlevel">nbiot.powerLevel()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getcellinfo">nbiot.getCellInfo()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setcfun-val">nbiot.setCFUN(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setbootcfun-val">nbiot.setBootCFUN(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getbootcfun-val">nbiot.getBootCFUN(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setpsm-psmmode-tautimes-activetimes">nbiot.setPSM(psmMode,tauTimeS,activeTimeS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setedrx-modeval-acttype-reqedrxvaluems">nbiot.setEDRX(modeVal,actType,reqEdrxValueMs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getpsm">nbiot.getPSM()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getedrx">nbiot.getEDRX()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-settz-tz-auto">nbiot.setTZ(tz, auto)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-gettz">nbiot.getTZ()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setbands-modes">nbiot.setBands(modes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getbands">nbiot.getBands()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setedrxptw-val">nbiot.setEDRXPtw(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getedrxptw">nbiot.getEDRXPtw()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-ticks">nbiot.ticks()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nes.html">nes - nes Simulator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nes.html#nes-init-file-path">nes.init(file_path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nes.html#nes-key-key-val">nes.key(key,val)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nimble.html">nimble - Bluetooth BLE library (nimble version)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-init-name">nimble.init(name)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-deinit">nimble.deinit()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-mode-tp">nimble.mode(tp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-connok">nimble.connok()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-send-msg-conn-handle-data">nimble.send_msg(conn, handle, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-setuuid-tp-addr">nimble.setUUID(tp, addr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-mac">nimble.mac()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-sendnotify-srv-uuid-chr-uuid-data">nimble.sendNotify(srv_uuid, chr_uuid, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-sendindicate-srv-uuid-chr-uuid-data">nimble.sendIndicate(srv_uuid, chr_uuid, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-advparams-conn-mode-disc-mode-itvl-min-itvl-max-channel-map-filter-policy-high-duty-cycle">nimble.advParams(conn_mode, disc_mode, itvl_min, itvl_max, channel_map, filter_policy, high_duty_cycle)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-setchr-index-uuid-flags">nimble.setChr(index, uuid, flags)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-config-id-value">nimble.config(id, value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-ibeacon-data-major-minor-measured-power">nimble.ibeacon(data, major, minor, measured_power)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-advdata-data-flags">nimble.advData(data, flags)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-scan-timeout">nimble.scan(timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-connect-mac">nimble.connect(mac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-disconnect">nimble.disconnect()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-discsvr">nimble.discSvr()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-listsvr">nimble.listSvr()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-discchr-svr-uuid">nimble.discChr(svr_uuid)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-listchr-svr-uuid">nimble.listChr(svr_uuid)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-discdsc-svr-uuid-chr-uuid">nimble.discDsc(svr_uuid, chr_uuid)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-writechr-svr-uuid-chr-uuid-data">nimble.writeChr(svr_uuid, chr_uuid, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-writechr-svr-uuid-chr-uuid">nimble.writeChr(svr_uuid, chr_uuid)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-subchr-svr-uuid-chr-uuid">nimble.subChr(svr_uuid, chr_uuid)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html#nimble-unsubchr-svr-uuid-chr-uuid">nimble.unsubChr(svr_uuid, chr_uuid)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="os.html">os - os Operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="os.html#os-remove-path">os.remove(path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html#os-rename-old-path-new-path">os.rename(old_path, new_path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html#os-clock">os.clock()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html#os-date-fmt-time">os.date(fmt, time)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html#os-time-mytime">os.time(mytime)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html#os-difftime-timea-timeb">os.difftime(timeA, timeB)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="otp.html">otp - OTP Operation Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="otp.html#otp-read-zone-offset-len">otp.read(zone, offset, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otp.html#otp-write-zone-data-offset">otp.write(zone, data, offset)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otp.html#otp-erase-zone">otp.erase(zone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otp.html#otp-lock-zone">otp.lock(zone)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pack.html">pack - Packing and unpacking format string</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pack.html#pack-unpack-string-format-init">pack.unpack( string, format, init)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pack.html#pack-pack-format-val1-val2-val3-valn">pack.pack( format, val1, val2, val3, valn )</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pin.html">pin - Pin Naming Map</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pin.html#pin-get-name">pin.get(name)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pm.html">pm - Power Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-request-mode">pm.request(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-dtimerstart-id-timeout">pm.dtimerStart(id, timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-dtimerstop-id">pm.dtimerStop(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-dtimercheck-id">pm.dtimerCheck(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#dtimerwkid">dtimerWkId()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-lastreson">pm.lastReson()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-force-mode">pm.force(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-check">pm.check()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-shutdown">pm.shutdown()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-reboot">pm.reboot()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-power-id-onoff">pm.power(id, onoff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-iovol-id-val">pm.ioVol(id, val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pm.html#pm-wakeuppin-pin-level">pm.wakeupPin(pin,level)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="protobuf.html">protobuf - ProtoBuffs Codec</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="protobuf.html#protobuf-load-pbdata">protobuf.load(pbdata)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protobuf.html#protobuf-clear">protobuf.clear()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protobuf.html#protobuf-encode-tpname-data">protobuf.encode(tpname, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protobuf.html#protobuf-decode-tpname-data">protobuf.decode(tpname, data)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pwm.html">pwm - PWM Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pwm.html#pwm-open-channel-period-pulse-pnum-precision">pwm.open(channel, period, pulse, pnum, precision)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pwm.html#pwm-close-channel">pwm.close(channel)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pwm.html#pwm-capture-channel">pwm.capture(channel)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repl.html">repl - “Read-evaluate-output “loop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repl.html#repl-enable-re">repl.enable(re)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repl.html#repl-push-data">repl.push(data)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rsa.html">rsa - RSA encryption and decryption</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rsa.html#rsa-encrypt-key-data">rsa.encrypt(key, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsa.html#rsa-decrypt-key-data-pwd">rsa.decrypt(key, data, pwd)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsa.html#rsa-verify-key-md-hash-sig">rsa.verify(key, md, hash, sig)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsa.html#rsa-sign-key-md-hash-pwd">rsa.sign(key, md, hash, pwd)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rtc.html">rtc - Real Time Clock</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rtc.html#rtc-set-tab">rtc.set(tab)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtc.html#rtc-get">rtc.get()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtc.html#rtc-timerstart-id-tab">rtc.timerStart(id, tab)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtc.html#rtc-timerstop-id">rtc.timerStop(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtc.html#rtc-setbaseyear-base-year">rtc.setBaseYear(Base_year)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtc.html#rtc-timezone-tz">rtc.timezone(tz)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rtos.html">rtos - RTOS underlying operation library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-receive-timeout">rtos.receive(timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-timer-start-id-timeout-repeat">rtos.timer_start(id,timeout,_repeat)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-timer-stop-id">rtos.timer_stop(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-reboot">rtos.reboot()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-builddate">rtos.buildDate()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-bsp">rtos.bsp()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-version">rtos.version()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-standy-timeout">rtos.standy(timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-meminfo-type">rtos.meminfo(type)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-firmware">rtos.firmware()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-setpaths-patha-pathb-pathc-pathd">rtos.setPaths(pathA, pathB, pathC, pathD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-nop">rtos.nop()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtos.html#rtos-autocollectmem-period-warning-level-force-level">rtos.autoCollectMem(period, warning_level, force_level)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sdio.html">sdio - sdio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sdio.html#sdio-init-id">sdio.init(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdio.html#sdio-sd-read-id-offset-len">sdio.sd_read(id, offset, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdio.html#sdio-sd-write-id-data-offset">sdio.sd_write(id, data, offset)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensor.html">sensor - Sensor Operation Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-ds18b20-pin">sensor.ds18b20(pin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-w1-reset-pin">sensor.w1_reset(pin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-w1-connect-pin">sensor.w1_connect(pin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-w1-write-pin-data1-data2">sensor.w1_write(pin, data1,data2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-w1-read-pin-len">sensor.w1_read(pin, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-hx711-pin-date-pin-clk">sensor.hx711(pin_date,pin_clk)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-ws2812b-pin-data-t0h-t0l-t1h-t1l">sensor.ws2812b(pin,data,T0H,T0L,T1H,T1L)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-ws2812b-pwm-pin-data">sensor.ws2812b_pwm(pin,data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-ws2812b-spi-pin-data">sensor.ws2812b_spi(pin,data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-dht1x-pin">sensor.dht1x(pin)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sfd.html">sfd - SPI FLASH Operation Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sfd.html#sfd-init-type-spi-id-spi-cs">sfd.init(type, spi_id, spi_cs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfd.html#sfd-status-drv">sfd.status(drv)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfd.html#sfd-read-drv-offset-len">sfd.read(drv, offset, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfd.html#sfd-write-drv-offset-data">sfd.write(drv, offset, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfd.html#sfd-erase-drv-offset">sfd.erase(drv, offset)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfd.html#sfd-id-drv">sfd.id(drv)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sfud.html">sfud - SPI FLASH sfud Software package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sfud.html#sfud-init-spi-id-spi-cs-spi-bandrate-sfud-init-spi-device">sfud.init(spi_id, spi_cs, spi_bandrate)/sfud.init(spi_device)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfud.html#sfud-getdevicenum">sfud.getDeviceNum()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfud.html#sfud-getdevice-index">sfud.getDevice(index)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfud.html#sfud-getdevicetable">sfud.getDeviceTable()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfud.html#sfud-chiperase-flash">sfud.chipErase(flash)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfud.html#sfud-erase-flash-add-size">sfud.erase(flash,add,size)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfud.html#sfud-read-flash-addr-size">sfud.read(flash, addr, size)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfud.html#sfud-write-flash-addr-data">sfud.write(flash, addr,data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfud.html#sfud-erasewrite-flash-addr-data">sfud.eraseWrite(flash, addr,data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfud.html#sfud-mount-flash-mount-point-offset-maxsize">sfud.mount(flash, mount_point, offset, maxsize)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sms.html">sms - SMS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sms.html#sms-send-phone-msg-auto-phone-fix">sms.send(phone, msg, auto_phone_fix)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms.html#sms-setnewsmscb-func">sms.setNewSmsCb(func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms.html#sms-autolong-mode">sms.autoLong(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms.html#sms-clearlong">sms.clearLong()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">socket - Network Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-sntp-sntp-server">socket.sntp(sntp_server)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-localip-adapter">socket.localIP(adapter)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-create-adapter-cb">socket.create(adapter, cb)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-debug-ctrl-onoff">socket.debug(ctrl, onoff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-config-ctrl-local-port-is-udp-is-tls-keep-idle-keep-interval-keep-cnt-server-cert-client-cert-client-key-client-password">socket.config(ctrl, local_port, is_udp, is_tls, keep_idle, keep_interval, keep_cnt, server_cert, client_cert, client_key, client_password)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-linkup-ctrl">socket.linkup(ctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-connect-ctrl-ip-remote-port-need-ipv6-dns">socket.connect(ctrl, ip, remote_port, need_ipv6_dns)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-discon-ctrl">socket.discon(ctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-close-ctrl">socket.close(ctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-tx-ctrl-data-ip-port-flag">socket.tx(ctrl, data, ip, port, flag)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-rx-ctrl-buff-flag">socket.rx(ctrl, buff, flag)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-wait-ctrl">socket.wait(ctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-listen-ctrl">socket.listen(ctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-accept-ctrl">socket.accept(ctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-release-ctrl">socket.release(ctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-setdns-adapter-index-dns-index-ip">socket.setDNS(adapter_index, dns_index, ip)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-ssllog-log-level">socket.sslLog(log_level)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-adapter-index">socket.adapter(index)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html#socket-remoteip-ctrl">socket.remoteIP(ctrl)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="softkeyboard.html">softkeyboard - software keyboard matrix (currently only supported by air105)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="softkeyboard.html#softkb-init-port-key-in-key-out">softkb.init(port, key_in, key_out)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="softkeyboard.html#softkb-deinit-port">softkb.deinit(port)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spi.html">spi - spi Operation Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-setup-id-cs-cpha-cpol-dataw-bandrate-bitdict-ms-mode">spi.setup(id, cs, CPHA, CPOL, dataw, bandrate, bitdict, ms, mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-createsoft-cs-mosi-miso-clk-cpha-cpol-dataw-bitdict-ms-mode">spi.createSoft(cs, mosi, miso, clk, CPHA, CPOL, dataw, bitdict, ms, mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-close-id">spi.close(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-transfer-id-send-data-len">spi.transfer(id, send_data[, len])</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-recv-id-size">spi.recv(id, size)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-send-id-data-len">spi.send(id, data[, len])</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-devicesetup-id-cs-cpha-cpol-dataw-bandrate-bitdict-ms-mode">spi.deviceSetup(id, cs, CPHA, CPOL, dataw, bandrate, bitdict, ms, mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-device-close">spi_device:close()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-device-transfer-send-data-len">spi_device:transfer(send_data[, len])</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-device-send-data-len">spi_device:send(data[, len])</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-device-recv-size">spi_device:recv(size)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#spi-xfer-id-txbuff-rxbuff-rx-len-transfer-done-topic">spi.xfer(id, txbuff, rxbuff, rx_len, transfer_done_topic)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statem.html">statem - SM State Machine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statem.html#statem-create-count-repeat">statem.create(count, repeat)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="string.html">string - String Manipulation Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-tohex-str-separator">string.toHex(str, separator)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-fromhex-hex">string.fromHex(hex)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-split-str-delimiter-keepemtry">string.split(str, delimiter, keepEmtry)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-tovalue-str">string.toValue(str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-urlencode-123-abc">string.urlEncode(“123 abc”)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-tobase64-str">string.toBase64(str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-frombase64-str">string.fromBase64(str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-tobase32-str">string.toBase32(str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-frombase32-str">string.fromBase32(str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-startswith-str-prefix">string.startsWith(str, prefix)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-endswith-str-suffix">string.endsWith(str, suffix)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html#string-trim-str-ltrim-rtrim">string.trim(str, ltrim, rtrim)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sys.html">sys - sys Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#sys-wait-timeout">sys.wait(timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#sys-waituntil-topic-timeout">sys.waitUntil(topic, timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#sys-taskinit-func-arg1-arg2-argn">sys.taskInit(func, arg1, arg2, argN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#sys-timerstart-func-timeout-arg1-arg2-argn">sys.timerStart(func, timeout, arg1, arg2, argN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#sys-timerloopstart-func-timeout-arg1-arg2-argn">sys.timerLoopStart(func, timeout, arg1, arg2, argN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#sys-timerstop-id">sys.timerStop(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#sys-publish-topic-arg1-agr2-argn">sys.publish(topic, arg1, agr2, argN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#sys-subscribe-topic-func">sys.subscribe(topic, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#sys-unsubscribe-topic-func">sys.unsubscribe(topic, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#sys-run">sys.run()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysplus.html">sysplus - sys A strong complement to the library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysplus.html#sysplus-waitmsg-taskname-target-timeout">sysplus.waitMsg(taskName, target, timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysplus.html#sysplus-sendmsg-taskname-target-arg2-arg3-arg4">sysplus.sendMsg(taskName, target, arg2, arg3, arg4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysplus.html#sysplus-taskinitex-fun-taskname-cbfun">sysplus.taskInitEx(fun, taskName, cbFun, …)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysplus.html#sysplus-taskdel-taskname">sysplus.taskDel(taskName)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysplus.html#sysplus-cleanmsg-taskname">sysplus.cleanMsg(taskName)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timer.html">timer - Operating the bottom timer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timer.html#timer-mdelay-timeout">timer.mdelay(timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timer.html#timer-udelay-timeout">timer.udelay(timeout)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="touchkey.html">touchkey - Touch keys</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="touchkey.html#touchkey-setup-id-scan-period-window-threshold">touchkey.setup(id, scan_period, window, threshold)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="touchkey.html#touchkey-close-id">touchkey.close(id)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="u8g2.html">u8g2 - u8g2 graphics processing library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-begin-conf">u8g2.begin(conf)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-close">u8g2.close()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-clearbuffer">u8g2.ClearBuffer()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-sendbuffer">u8g2.SendBuffer()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawutf8-str-x-y">u8g2.DrawUTF8(str, x, y)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawbuttonutf8-str-x-y-flags-w-h-v-str">u8g2.DrawButtonUTF8(str, x, y, flags, w, h, v, str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-setfontmode-mode">u8g2.SetFontMode(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-setfont-font">u8g2.SetFont(font)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-getdisplayheight">u8g2.GetDisplayHeight()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-getdisplaywidth">u8g2.GetDisplayWidth()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-setdrawcolor-c">u8g2.SetDrawColor(c)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawpixel-x-y">u8g2.DrawPixel(x,y)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawline-x0-y0-x1-y1">u8g2.DrawLine(x0,y0,x1,y1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawcircle-x0-y0-rad-opt">u8g2.DrawCircle(x0,y0,rad,opt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawdisc-x0-y0-rad-opt">u8g2.DrawDisc(x0,y0,rad,opt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawellipse-x0-y0-rx-ry-opt">u8g2.DrawEllipse(x0,y0,rx,ry,opt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawfilledellipse-x0-y0-rx-ry-opt">u8g2.DrawFilledEllipse(x0,y0,rx,ry,opt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawbox-x-y-w-h">u8g2.DrawBox(x,y,w,h)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawframe-x-y-w-h">u8g2.DrawFrame(x,y,w,h)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawrbox-x-y-w-h-r">u8g2.DrawRBox(x,y,w,h,r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawrframe-x-y-w-h-r">u8g2.DrawRFrame(x,y,w,h,r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawglyph-x-y-encoding">u8g2.DrawGlyph(x,y,encoding)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawtriangle-x0-y0-x1-y1-x2-y2">u8g2.DrawTriangle(x0,y0,x1,y1,x2,y2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-setbitmapmode-mode">u8g2.SetBitmapMode(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawxbm-x-y-w-h-data">u8g2.DrawXBM(x, y, w, h, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawdrcode-x-y-str-size">u8g2.DrawDrcode(x, y, str, size)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-setcontrast-contrast">u8g2.SetContrast(contrast)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawgtfontgb2312-str-size-x-y">u8g2.drawGtfontGb2312(str,size,x,y)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-drawgtfontutf8-str-size-x-y">u8g2.drawGtfontUtf8(str,size,x,y)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-copybuffer-buff">u8g2.CopyBuffer(buff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u8g2.html#u8g2-setpowersave-is-enable">u8g2.SetPowerSave(is_enable)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">uart - serial port operation library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-setup-id-baud-rate-data-bits-stop-bits-partiy-bit-order-buff-size-rs485-gpio-rs485-level-rs485-delay">uart.setup(id, baud_rate, data_bits, stop_bits, partiy, bit_order, buff_size, rs485_gpio, rs485_level, rs485_delay)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-write-id-data">uart.write(id, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-read-id-len">uart.read(id, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-close-id">uart.close(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-on-id-event-func">uart.on(id, event, func)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-wait485-id">uart.wait485(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-exist-id">uart.exist(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-rx-id-buff">uart.rx(id, buff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-rxsize-id">uart.rxSize(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-rxclear-id">uart.rxClear(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-tx-id-buff-start-len">uart.tx(id, buff, start, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-createsoft-tx-pin-tx-hwtimer-id-rx-pin-rx-hwtimer-id-adjust-period">uart.createSoft(tx_pin, tx_hwtimer_id, rx_pin, rx_hwtimer_id, adjust_period)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#uart-list-max">uart.list(max)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ufont.html">ufont - Unified Font Library (under development)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ufont.html#ufont-get-name">ufont.get(name)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufont.html#ufont-list">ufont.list()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usbapp.html">usbapp - USB Functional operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html#usbapp-set-id-id-vid-pid">usbapp.set_id(id, vid, pid)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html#usbapp-hid-mode-id-mode-buff-size">usbapp.hid_mode(id, mode, buff_size)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html#usbapp-start-id">usbapp.start(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html#usbapp-stop-id">usbapp.stop(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html#usbapp-vhid-upload-id-data">usbapp.vhid_upload(id, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html#usbapp-hid-tx-id-data-start-len">usbapp.hid_tx(id, data, start, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html#usbapp-hid-rx-id-buff">usbapp.hid_rx(id, buff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html#usbapp-vhid-cancel-upload-id">usbapp.vhid_cancel_upload(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html#usbapp-udisk-attach-sdhc-id">usbapp.udisk_attach_sdhc(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbapp.html#usbapp-udisk-detach-sdhc-id">usbapp.udisk_detach_sdhc(id)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="w5500.html">w5500 - w5500 Ethernet driver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="w5500.html#w5500-init-spiid-speed-cs-pin-irq-pin-rst-pin-link-pin">w5500.init(spiid, speed, cs_pin, irq_pin, rst_pin, link_pin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w5500.html#w5500-config-ip-submask-gateway-mac-rtr-rcr-speed">w5500.config(ip, submask, gateway, mac, RTR, RCR, speed)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w5500.html#w5500-bind-id">w5500.bind(id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w5500.html#w5500-getmac">w5500.getMac()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wdt.html">wdt - watchdog Operation Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wdt.html#wdt-init-timeout">wdt.init(timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wdt.html#wdt-settimeout-timeout">wdt.setTimeout(timeout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wdt.html#wdt-feed">wdt.feed()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wdt.html#wdt-close">wdt.close()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="websocket.html">websocket - websocket Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="websocket.html#wsc-debug-onoff">wsc:debug(onoff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket.html#websocket-create-adapter-url">websocket.create(adapter, url)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket.html#wsc-on-cb">wsc:on(cb)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket.html#wsc-connect">wsc:connect()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket.html#wsc-autoreconn-reconnect-reconnect-time">wsc:autoreconn(reconnect, reconnect_time)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket.html#wsc-send-data-fin-opt">wsc:send(data, fin, opt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket.html#wsc-close">wsc:close()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket.html#wsc-ready">wsc:ready()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket.html#wsc-headers-headers">wsc:headers(headers)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wlan.html">wlan - wifi Operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-init">wlan.init()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-setmode-mode">wlan.setMode(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-ready">wlan.ready()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-connect-ssid-password">wlan.connect(ssid, password)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-disconnect">wlan.disconnect()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-scan">wlan.scan()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-scanresult">wlan.scanResult()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-smartconfig-mode">wlan.smartconfig(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-getmac-tp-hexstr">wlan.getMac(tp, hexstr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-setmac-tp-mac">wlan.setMac(tp, mac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-getip">wlan.getIP()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-createap-ssid-passwd-gateway-netmask-channel">wlan.createAP(ssid, passwd, gateway, netmask, channel)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-stopap">wlan.stopAP()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-getinfo">wlan.getInfo()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-powersave-mode">wlan.powerSave(mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-hostname-new-name">wlan.hostname(new_name)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-staip-dhcp-enable-ip-netmask-gateway">wlan.staIp(dhcp_enable, ip, netmask, gateway)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ymodem.html">ymodem - ymodem Agreement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ymodem.html#ymodem-create-dir-path-file-path">ymodem.create(dir_path,file_path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ymodem.html#ymodem-receive-handler-data">ymodem.receive(handler, data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ymodem.html#ymodem-reset-handler">ymodem.reset(handler)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ymodem.html#ymodem-release-handler">ymodem.release(handler)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zbuff.html">zbuff - c Memory Data Manipulation Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#zbuff-create-length-data">zbuff.create(length,data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#zbuff-create-width-height-bit-data">zbuff.create({width,height,bit},data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-write-para">buff:write(para,…)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-read-length">buff:read(length)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-clear-num">buff:clear(num)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-seek-base-offset">buff:seek(base,offset)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-pack-format-val1-val2">buff:pack(format,val1, val2,…)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-unpack-format">buff:unpack(format)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-read-type">buff:read Type()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-write-type">buff:write Type()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-tostr-offset-length">buff:toStr(offset,length)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-len">buff:len()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-setframebuffer-width-height-bit-color">buff:setFrameBuffer(width,height,bit,color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-pixel-x-y-color">buff:pixel(x,y,color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-drawline-x1-y1-x2-y2-color">buff:drawLine(x1,y1,x2,y2,color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-drawrect-x1-y1-x2-y2-color-fill">buff:drawRect(x1,y1,x2,y2,color,fill)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-drawcircle-x-y-r-color-fill">buff:drawCircle(x,y,r,color,fill)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-n">buff[n]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-resize-n">buff:resize(n)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-copy-start-para">buff:copy(start, para,…)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-used">buff:used()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-del-offset-length">buff:del(offset,length)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-query-offset-length-isbigend-issigned-isfloat">buff:query(offset,length,isbigend,issigned,isfloat)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-set-start-num-len">buff:set(start, num, len)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zbuff.html#buff-isequal-start-buff2-start2-len">buff:isEqual(start, buff2, start2, len)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zlib.html">zlib - zlib Compression/Decompression (Obsolete)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zlib.html#zlib-c-input-file-output-file">zlib.c(input_file,output_file)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zlib.html#zlib-d-input-file-output-file">zlib.d(input_file,output_file)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="supported.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Adaptation status</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../boardGuide/common/timer.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">timer</div>
+                
+              </div>
+            </a>
+        </div>
+        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <div class="giscus"></div>
+        <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+            </div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div>
+
+<script>
+  window.chatbaseConfig = {
+    chatbotId: "kXE945ztlW6gUvKdR4qnn",
+  }
+</script><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/js/baidu.js"></script>
+    <script src="../_static/js/a.js"></script>
+    <script src="../_static/js/jquery.magnific-popup.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1045 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
+<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Add New Library" href="add_module.html" /><link rel="prev" title="❤️ Contribution Code" href="index.html" />
+
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+        <title>Coding Specification - LuatOS 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/run-code.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/magnific-popup.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #ffffff;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky">
+        <!-- 谷歌翻译 start -->
+        <div id="google_translate_element"></div>
+        <script>
+          function googleTranslateElementInit() {
+            if (navigator.language.indexOf("CN") < 0) {
+              new google.translate.TranslateElement({
+                pageLanguage: 'cn'
+              }, 'google_translate_element');
+              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
+            }
+          }
+          if (navigator.language.indexOf("CN") < 0) {
+            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          }
+        </script>
+        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../_static/logo-light.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">💁 LuatOS Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://wiki.luatos.com">🏠️ Home Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/emulator.html">🕹️ 在线体验LuatOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/supports.html">💬 Technical Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🌠 Quick to get started</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../luaGuide/index.html">🌙 Lua Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../luaGuide/introduction.html">Basic Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../luaGuide/luatask.html">LuaTask Framework</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chips/index.html">🧮 Chips and Development Boards</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chips/chips.html">📊 Chip comparison and selection table</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/air001/index.html">🛴 Air001</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air001/mcu.html">Air001 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air001/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air001/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air001/Air001-MDK.html">Air001 Keil MDK-based user manual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air001/Air001-Arduino.html">Air001 Arduino-based user manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air001.html">Air001_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/air101/index.html">🚗 Air101</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air101/mcu.html">Air101 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air101/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air101/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air101/Air101-Hard-design.html">Air101 Hardware Design Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air101/Air101.html">Air101 Getting Started Manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air101.html">Air101_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air101/power_dissipation.html">Air101 power consumption curve</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/air103/index.html">🚗 Air103</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air103/mcu.html">Air103 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air103/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air103/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air103/lcdseg.html">Function Description of Segment Screen/Segment Screen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air103/touchkey.html">Touch sensor/touch button</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air103.html">Air103_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air103/power_dissipation.html">Air103 power consumption curve</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/air105/index.html">🚗 Air105</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air105/mcu.html">Air105 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air105/board.html">Air105 Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air105/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air105.html">Air105_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air105/power_dissipation.html">Air105 power consumption curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air105/encrypt.html">Air105 Script Encryption</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/air601/index.html">📡 Air601</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air601/mcu.html">Air601</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air601/board.html">Air601-12F Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air601/hardware.html">Air601 Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air601/changelog.html">Firmware Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/air780e/index.html">📶 Air780E(EC618 Series General)</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air780e/mcu.html">Air780E Module (EC618 Series General)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air780e/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air780e/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air780e/multiownload.html">Description of mass production brush machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air780e/network.html">Network Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air780e/iomux.html">LuatOS IO multiplexing configuration under firmware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air780e/air780eg.html">Air780EG Additional instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air780e/air700e.html">Air700E Additional instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air780e/tts.html">TTS Description of the function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air780e/firmware.html">Firmware Description</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air780E.html">Air780E_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air780e/changelog.html">Ec618 Series Firmware Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/esp32c3/index.html">📡 ESP32-C3</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/esp32c3/board.html">ESP32C3-CORE Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/esp32c3/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/esp32c3.html">ESP32-C3_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/esp32c3/power_dissipation.html">ESP32C3 power consumption curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/esp32c3/change_flash.html">Replace flash tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/esp32s3/index.html">📡 ESP32-S3</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/esp32s3/board.html">ESP32S3-CORE Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/esp32s3/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/esp32s3.html">ESP32-S3_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/esp32s3/mifi.html">Portable wifi data collection</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/air32f103/index.html">🚲 Air32F103</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air32f103/mcu.html">AIR32F103 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air32f103/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air32f103/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air32f103/Air32f103.html">Air32F103 Manual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air32f103/switchFromSxx.html">Transplant from SXX32F103</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air32f103/enhancement.html">Enhanced function instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air32f103/daplink.html">DAPLink Manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air32F103.html">Air32F103_PCB</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/BluePill.html">BluePill_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/rp2040/index.html">📡 RP2040</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/rp2040.html">RP2040_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/swm181/index.html">🚲 SWM181CBT6</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/swm181/mcu.html">SWM181CBT6 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/swm181/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/swm181/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/swm181/swm181.html">SWM181 Manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/SWM181.html">SWM181_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/air302/index.html">📶 Air302</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air302/mcu.html">Air302 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air302/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air302/hardware.html">Hardware Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../chips/air640w/index.html">📡 Air640w</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air640w/mcu.html">Air640w</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air640w/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chips/air640w/hardware.html">Hardware Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../chips/W806.html">🚗 W806</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chips/win32.html">🖥️ PC End version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chips/coremark/README.html">Performance testing (based on coremark)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chips/supported.html">Equipment Support/Supported Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chips/question.html">FAQ List</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://air724ug.cn">Air724UG</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://air820ug.cn">Air820UG</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../peripherals/index.html">🧷 Peripheral expansion data</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../peripherals/lcd_air10x/index.html">Air10x Series Screen Expansion Board</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/lcd_air10x/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/lcd_air10x/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../peripherals/eink_1.54/index.html">EINK1.54 Ink screen</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/eink_1.54/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/eink_1.54/software.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../peripherals/lcd_1in8_128x160/index.html">1.8 TFT LCD resolution 128x160</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/lcd_1in8_128x160/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/lcd_1in8_128x160/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../peripherals/lcd_2in4_320x240/index.html">2.4 Inch TFT_ LCD color screen resolution 240x320</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/lcd_2in4_320x240/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/lcd_2in4_320x240/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../peripherals/lcd_1in54_240x240/index.html">1.54 Inch TFT_ LCD resolution 240x240</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/lcd_1in54_240x240/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/lcd_1in54_240x240/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../peripherals/camera_gc032a/index.html">Air105 Supporting GC032A camera</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/camera_gc032a/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/camera_gc032a/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../peripherals/chip_gtfont/index.html">Qualcomm Font Chip</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/chip_gtfont/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../peripherals/chip_gtfont/demos.html">Use Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../boardGuide/index.html">📚 Development Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../boardGuide/roadmap.html">recommend learning line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../boardGuide/vscode.html">Construction of development environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../boardGuide/flash.html">Burn Tutorial</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boardGuide/common/index.html">API Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boardGuide/common/log.html">log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boardGuide/common/sys.html">sys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boardGuide/common/adc/index.html">adc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boardGuide/common/crypto.html">CRYPTO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boardGuide/common/fdb.html">fdb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boardGuide/common/disp.html">DISP</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../boardGuide/common/i2c/index.html">i2c</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/i2c/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/i2c/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/i2c/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../boardGuide/common/spi/index.html">spi</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/spi/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/spi/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/spi/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../boardGuide/common/uart/index.html">uart</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/uart/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/uart/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/uart/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../boardGuide/common/lcd.html">LCD Drive screen</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../boardGuide/common/mcu/index.html">mcu</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/mcu/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/mcu/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/mcu/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../boardGuide/common/pm.html">PM</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../boardGuide/common/pwm/index.html">pwm</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/pwm/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/pwm/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/pwm/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../boardGuide/common/rtc.html">RTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boardGuide/common/sfd.html">sfd</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../boardGuide/common/sfud/index.html">sfud</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/sfud/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/sfud/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../boardGuide/common/sfud/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../boardGuide/common/timer.html">timer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://gitee.com/openLuat/LuatOS/releases">Firmware Download</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">📖 Reference Manual</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">🍴 LuatOS-SOC Interface Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/supported.html">Adaptation status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/adc.html">adc - Digital-to-analog conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/audio.html">audio - Multimedia-Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/bit64.html">bit64 - 32 Basic arithmetic and logical operations on 64-bit data on bit systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/camera.html">camera - Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/codec.html">codec - Multimedia-Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/coremark.html">coremark - Running points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/crypto.html">crypto - Encryption and decryption and hash functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/dac.html">dac - Digital-to-analog conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/disp.html">disp - disp Library (Obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/eink.html">eink - ink screen operation library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/errDump.html">errDump - Error reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/fastlz.html">fastlz - FastLZ Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/fatfs.html">fatfs - read/write fatfs format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/fdb.html">fdb - kv Database, power failure does not lose data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/fonts.html">fonts - Font Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/fota.html">fota - Underlying Firmware Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/fs.html">fs - Additional File System Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/fskv.html">fskv - kv Database, power failure does not lose data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/ftp.html">ftp - ftp Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/gmssl.html">gmssl - national secret algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/gpio.html">gpio - GPIO Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/gtfont.html">gtfont - Qualcomm Font Chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/hmeta.html">hmeta - Hardware metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/http.html">http - http Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/httpsrv.html">httpsrv - http Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/i2c.html">i2c - I2C Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/i2s.html">i2s - Digital Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/iconv.html">iconv - iconv Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/io.html">io - io action (extended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/ioqueue.html">ioqueue - io Sequence operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/iotauth.html">iotauth - IoT Authentication library, used to generate parameters for various cloud platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/ir.html">ir - infrared remote control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/json.html">json - json Generating and parsing libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/keyboard.html">keyboard - Keyboard Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/lcd.html">lcd - lcd Drive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/lcdseg.html">lcdseg - Segment lcd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libcoap.html">libcoap - coap Data processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libgnss.html">libgnss - NMEA Data processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/log.html">log - Logstore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/lora.html">lora - lora Drive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/lora2.html">lora2 - lora2 Driver module (supports multi-hanging)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/lvgl.html">lvgl - LVGL Image Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/max30102.html">max30102 - Heart Rate Module(MAX30102)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/mcu.html">mcu - encapsulation mcu some special operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/miniz.html">miniz - Easy zlib compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/mlx90640.html">mlx90640 - infrared temperature measurement(MLX90640)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/mobile.html">mobile - Cellular Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/mqtt.html">mqtt - mqtt Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/nbiot.html">nbiot - NB-IOT Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/nes.html">nes - nes Simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/nimble.html">nimble - Bluetooth BLE library (nimble version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/os.html">os - os Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/otp.html">otp - OTP Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/pack.html">pack - Packing and unpacking format string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/pin.html">pin - Pin Naming Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/pm.html">pm - Power Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/protobuf.html">protobuf - ProtoBuffs Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/pwm.html">pwm - PWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/repl.html">repl - “Read-evaluate-output “loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/rsa.html">rsa - RSA encryption and decryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/rtc.html">rtc - Real Time Clock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/rtos.html">rtos - RTOS underlying operation library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sdio.html">sdio - sdio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sensor.html">sensor - Sensor Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sfd.html">sfd - SPI FLASH Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sfud.html">sfud - SPI FLASH sfud Software package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sms.html">sms - SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/socket.html">socket - Network Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/softkeyboard.html">softkeyboard - software keyboard matrix (currently only supported by air105)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/spi.html">spi - spi Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/statem.html">statem - SM State Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/string.html">string - String Manipulation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sys.html">sys - sys Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sysplus.html">sysplus - sys A strong complement to the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/timer.html">timer - Operating the bottom timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/touchkey.html">touchkey - Touch keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/u8g2.html">u8g2 - u8g2 graphics processing library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/uart.html">uart - serial port operation library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/ufont.html">ufont - Unified Font Library (under development)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/usbapp.html">usbapp - USB Functional operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/w5500.html">w5500 - w5500 Ethernet driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/wdt.html">wdt - watchdog Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/websocket.html">websocket - websocket Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/wlan.html">wlan - wifi Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/ymodem.html">ymodem - ymodem Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/zbuff.html">zbuff - c Memory Data Manipulation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/zlib.html">zlib - zlib Compression/Decompression (Obsolete)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/sys_pub.html">📮 sys System Messages</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/lua53doc/index.html">🌕 Native API Manual</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/libs/index.html">🥢 Extended Library Interface Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/ads1115.html">ads1115 - ads1115 analog-to-digital converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/adxl34x.html">adxl34x - adxl34x 3 Axis accelerometer currently supports adxl345 adxl346</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/aht10.html">aht10 - aht10 Temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/air153C_wtd.html">air153C_wtd - Add software watchdog function to prevent crashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/ak8963.html">ak8963 - ak8963 geomagnetic sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/am2320.html">am2320 - am2320 Temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/bh1750.html">bh1750 - bh1750 Digital light intensity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/bmx.html">bmx - bmx The air pressure sensor currently supports bmp180 bmp280 bme280 bme680 will automatically judge the device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/cht8305c.html">cht8305c - cht8305c Temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/ds3231.html">ds3231 - ds3231 Real Time Clock Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/ec11.html">ec11 - ec11 Rotary encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/gt911.html">gt911 - gt911 Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/httpdns.html">httpdns - Domain name resolution using Http</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/ina226.html">ina226 - ina226 Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/iotcloud.html">iotcloud - iotcloud Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud others will also support, useful issue will accelerate support  )</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/l3g4200d.html">l3g4200d - l3g4200d Three-Axis Digital Gyroscope Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/lbsLoc.html">lbsLoc - lbsLoc Sending Base Station Location Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/lbsLoc2.html">lbsLoc2 - base station positioning v2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/libfota.html">libfota - libfota fota Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/libnet.html">libnet - libnet synchronous blocking api based on the socket library, the socket library itself is asynchronous non-blocking api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/lis2dh12.html">lis2dh12 - lis2dh12 Three-axis sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/lm75.html">lm75 - lm75 Temperature Sensor Support lm75a lm75b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/mcp2515.html">mcp2515 - mcp2515 CAN Protocol Controller Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/mlx90614.html">mlx90614 - mlx90614 infrared temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/mpu6xxx.html">mpu6xxx - mpu6xxx Six-axis/nine-axis sensor support mpu6500,mpu6050,mpu9250,icm2068g,icm20608d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/necir.html">necir - necir NEC protocol infrared receiving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/netLed.html">netLed - netLed Network status indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/pcf8563t.html">pcf8563t - pcf8563t Clock Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/pcf8574.html">pcf8574 - pcf8574 IO Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/qmc5883l.html">qmc5883l - qmc5883l geomagnetic sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/rc522.html">rc522 - rc522 Non-contact read/write card driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/rtkv.html">rtkv - Remote KV Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/shift595.html">shift595 - shift595 74HC595 Chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/si24r1.html">si24r1 - si24r1 Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/spl06.html">spl06 - spl06_01 Air pressure sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/tcs3472.html">tcs3472 - tcs3472 Color Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/tm1637.html">tm1637 - tm1637 Digital tube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/tm1640.html">tm1640 - tm1640 Digital tube and LED driver chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/tm1650.html">tm1650 - tm1650 Digital tube and key scanning chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/tsl2561.html">tsl2561 - tsl2561 light intensity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/udpsrv.html">udpsrv - UDP Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/xmodem.html">xmodem - xmodem Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/ze08g_ch2o.html">ze08g_ch2o - ZE08G-CH2O electrochemical formaldehyde module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/libs/zh07.html">zh07 - ZH07 Laser Dust Sensor</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🖥️ Kernel Development</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../compile.html">👨‍💻 Compile source code</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../compile/Cloud_compilation.html">☁️ Cloud Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile/Air780E.html">📶 Air780E Compilation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile/Air101.html">🚗 Air101 / Air103</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile/Air105.html">🚗 Air105</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile/ESP32C3.html">📡 ESP32 Series Compilation Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile/Win32.html">🖥️ Win32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile/Linux.html">🖥️ Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile/Air640w.html">📡 Air640w</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile/Air302.html">📶 Air302</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docs.html">📁 Development documentation</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../docs_use.html">Development practice</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" role="switch" type="checkbox"/><label for="toctree-checkbox-36"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../add_myapi_5min.html">Add Custom Functions (Rapid Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../add_lua_module.html">Lua Library File Writing Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c_wait.html">C Interface implements Task waiting function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../soc_download.html">Command Line Brush Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../docs_design.html">Development Information</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" role="switch" type="checkbox"/><label for="toctree-checkbox-37"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../filesystems.html">LuatOS-SoC The file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hex_string.html">Explain lua’s string and hex data (hexadecimal)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luadb.html">LuaDB File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soc_format.html">LuatOS-SoC Common Firmware Format soc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">❤️ Contribution Code</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" role="switch" type="checkbox"/><label for="toctree-checkbox-38"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Coding Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_module.html">Add New Library</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dev_doc/index.html">Design Document</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" role="switch" type="checkbox"/><label for="toctree-checkbox-39"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dev_doc/core/index.html">Core Layer</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" role="switch" type="checkbox"/><label for="toctree-checkbox-40"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/core/luat_core.html">Luat Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/core/luat_debugger.html">Luat Debugger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/core/luat_fs.html">File System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/core/luat_memory.html">Memory Pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/core/luat_msgbus.html">Message Bus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/core/luat_platform.html">Luat Platform layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/core/luat_pm.html">Power and Low Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/core/luat_timer.html">Luat Timer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/core/luat_zbuff.html">C style buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/core/sys_wait_pub.html">C Interface implements Task waiting function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/core/luat_zstruct.html">C The Structure of Style</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dev_doc/peripherals/index.html">Peripherals API</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" role="switch" type="checkbox"/><label for="toctree-checkbox-41"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/peripherals/luat_gpio.html">GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/peripherals/luat_ir.html">IR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/peripherals/luat_spi.html">SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/peripherals/luat_usart.html">UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_doc/peripherals/luat_wlan.html">WLAN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">💼 actual combat reference</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appDevelopment/index.html">⌨️ Application Development</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" role="switch" type="checkbox"/><label for="toctree-checkbox-42"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../appDevelopment/peripheral/index.html">Peripherals</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" role="switch" type="checkbox"/><label for="toctree-checkbox-43"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../appDevelopment/peripheral/ws2812/ws2812.html">LuatOS-Soc Driver WS2812 Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../appDevelopment/lvgl/index.html">lvgl</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" role="switch" type="checkbox"/><label for="toctree-checkbox-44"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html">LVGL for LuatOS Manual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#lvgl-foundation">LVGL Foundation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#lvgl-components">LVGL Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#lvgl-advanced">LVGL Advanced</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#id221">Precautions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../appDevelopment/video_play/index.html">Video playback</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../appDevelopment/video_play/105/video_play.html"><strong>Air105 Video playback</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🗄️ Other information</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../iotpower/index.html">⏳ IoT Power Power consumption test artifact</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../iotpower/power/index.html">🔋 IoT Power - V1</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../iotpower/cc/index.html">⚡ IoT Power - CC</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" role="switch" type="checkbox"/><label for="toctree-checkbox-47"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../iotpower/cc/tech.html">Technical indicators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../iotpower/cc/parts.html">Connection and assembly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../iotpower/cc/usage.html">Operating Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../iotpower/cc/question.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../iotpower/devices.html">🔍 Version Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../iotpower/pc.html">🖥 PC Client</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../archives.html">🗃️ Data Archiving</a><input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" role="switch" type="checkbox"/><label for="toctree-checkbox-48"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../luaGuide/luatFramework.html">Luat Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../luaGuide/luatFramework_exts.html">Luat framework (advanced-underlying mechanism)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../luaGuide/luaReference.html">Lua 5.3 Reference Manual</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="coding-specification">
+<h1>Coding Specification<a class="headerlink" href="#coding-specification" title="永久链接至标题">#</a></h1>
+<section id="c-api-specification">
+<h2>C API Specification<a class="headerlink" href="#c-api-specification" title="永久链接至标题">#</a></h2>
+<ul class="simple">
+<li><p>C API Start with <code class="docutils literal notranslate"><span class="pre">luat_</span></code>, followed by the module name, followed by the method name</p></li>
+<li><p>Use abstract type definitions, such as not using <code class="docutils literal notranslate"><span class="pre">int</span></code>, using<code class="docutils literal notranslate"><span class="pre">uint32_t</span></code></p></li>
+<li><p>Use underline naming</p></li>
+</ul>
+<p>Examples</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">LUA_API</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">luat_heap_alloc</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ud</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">osize</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nsize</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="lua-api-specification">
+<h2>Lua API Specification<a class="headerlink" href="#lua-api-specification" title="永久链接至标题">#</a></h2>
+<section id="naming-specification">
+<h3>Naming Specification<a class="headerlink" href="#naming-specification" title="永久链接至标题">#</a></h3>
+<ul class="simple">
+<li><p>Library name, all lowercase letters</p></li>
+<li><p>Constants within the library, all named in uppercase letters, separated by underscores</p></li>
+<li><p>The interface in the library is named by hump, the first letter is lowercase, and the writing method separated by underscores is prohibited.**</p>
+<ul>
+<li><p>Determine whether the symbol requires an interface, beginning with <code class="docutils literal notranslate"><span class="pre">is</span></code></p></li>
+<li><p>Open operations begin with <code class="docutils literal notranslate"><span class="pre">open</span></code></p></li>
+<li><p>Close operation begins with <code class="docutils literal notranslate"><span class="pre">close</span></code></p></li>
+<li><p>Initialization operation begins with <code class="docutils literal notranslate"><span class="pre">setup</span></code></p></li>
+<li><p>Change state operations begin with <code class="docutils literal notranslate"><span class="pre">set</span></code></p></li>
+<li><p>Get status operation starts with <code class="docutils literal notranslate"><span class="pre">get</span></code></p></li>
+<li><p>Send and receive interface</p>
+<ul>
+<li><p>When both <code class="docutils literal notranslate"><span class="pre">send</span></code>/<code class="docutils literal notranslate"><span class="pre">recv</span></code> and <code class="docutils literal notranslate"><span class="pre">read</span></code>/<code class="docutils literal notranslate"><span class="pre">write</span></code> exist</p>
+<ul>
+<li><p>Send <strong>raw data</strong> operation starts with <code class="docutils literal notranslate"><span class="pre">send</span></code></p></li>
+<li><p>The receive <strong>raw data</strong> operation starts with <code class="docutils literal notranslate"><span class="pre">recv</span></code></p></li>
+<li><p>Send information processed by **c code * * the operation starts with<code class="docutils literal notranslate"> <span class="pre">write</span></code> (e.g. write by register address i2c）</p></li>
+<li><p>Receive information processed by <strong>c code</strong> operation starts with <code class="docutils literal notranslate"><span class="pre">read</span></code></p></li>
+</ul>
+</li>
+<li><p>When only one of <code class="docutils literal notranslate"><span class="pre">send</span></code>/<code class="docutils literal notranslate"><span class="pre">recv</span></code> and <code class="docutils literal notranslate"><span class="pre">read</span></code>/<code class="docutils literal notranslate"><span class="pre">write</span></code> exists</p>
+<ul>
+<li><p>Write according to habit (for example, serial port uses <code class="docutils literal notranslate"><span class="pre">read</span></code>/<code class="docutils literal notranslate"><span class="pre">write</span></code>, while socket uses<code class="docutils literal notranslate"><span class="pre">send</span></code>/<code class="docutils literal notranslate"><span class="pre">recv</span></code>）</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Asynchronous interface (interface adapted by using <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">interface</span> <span class="pre">to</span> <span class="pre">implement</span> <span class="pre">Task</span> <span class="pre">waiting</span> <span class="pre">function</span></code>) starts with <code class="docutils literal notranslate"><span class="pre">task</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Examples</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">local</span><span class="w"> </span><span class="n">spiDevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spi</span><span class="p">.</span><span class="n">setupDevice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2000000</span><span class="p">,</span><span class="n">spi</span><span class="p">.</span><span class="n">MSB</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="n">i2c</span><span class="p">.</span><span class="n">isExist</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"></span>
+<span class="n">adc</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"></span>
+<span class="n">camera</span><span class="p">.</span><span class="n">setup</span><span class="p">(...)</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="interaction-specification">
+<h3>Interaction Specification<a class="headerlink" href="#interaction-specification" title="永久链接至标题">#</a></h3>
+<section id="interface-of-the-returned-result">
+<h4>Interface of the returned result<a class="headerlink" href="#interface-of-the-returned-result" title="永久链接至标题">#</a></h4>
+<ul class="simple">
+<li><p>Only interfaces that may return success or failure</p>
+<ul>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">true</span></code> to return, representing <strong>success</strong></p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">nil,"reason"</span> </code>to return, representing <strong>failure</strong></p></li>
+<li><p>**Avoid **using pure numbers to return as a result of success or failure</p></li>
+</ul>
+</li>
+<li><p>Interface that returns progress</p>
+<ul>
+<li><p>Returns the number of successful execution progress (such as the length of data sent successfully by the serial port and spi.）</p></li>
+</ul>
+</li>
+<li><p>Interface that returns specific data</p>
+<ul>
+<li><p>If the length is returned, use it without data.<code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p>If the return is<code class="docutils literal notranslate"> <span class="pre">string</span></code>, use the string with length 0 if there is no data`</p></li>
+<li><p>If you use <code class="docutils literal notranslate"><span class="pre">nil</span></code> to represent a reception failure, you need to bold the return value section in the interface document.**</p></li>
+</ul>
+</li>
+<li><p>Interfaces that need to wait a while to get results</p>
+<ul>
+<li><p>If non-blocking can be achieved</p>
+<ul>
+<li><p>You can use callbacks to report events to users.</p></li>
+<li><p>You can adapt<code class="docutils literal notranslate"> <span class="pre">C</span> <span class="pre">interface</span> <span class="pre">implements</span> <span class="pre">Task</span> <span class="pre">waiting</span> <span class="pre">function</span></code> to provide asynchronous interfaces that can be run in tasks (<a class="reference external" href="https://openluat.github.io/luatos-wiki-en/develop/c_wait.html">refer to this page for implementation</a>）</p></li>
+<li><p>**Try to avoid using the specific<code class="docutils literal notranslate"> <span class="pre">topic</span></code> to allow users to manually call<code class="docutils literal notranslate"> <span class="pre">sys.waitUntil</span></code> for adaptation</p></li>
+</ul>
+</li>
+<li><p>**Try to avoid **adding interfaces with longer blocking times</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="interfaces-that-require-incoming-gpio">
+<h4>Interfaces that require incoming GPIO<a class="headerlink" href="#interfaces-that-require-incoming-gpio" title="永久链接至标题">#</a></h4>
+<ul class="simple">
+<li><p>When the port number * * does not exist * *, use<code class="docutils literal notranslate"> <span class="pre">negative</span> <span class="pre">number</span></code> to represent, try to avoid using a specific positive number or 0 (some MCU exist GPIO_0）</p></li>
+<li><p>Others to be determined</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="git-submission-specification">
+<h2>Git Submission Specification<a class="headerlink" href="#git-submission-specification" title="永久链接至标题">#</a></h2>
+<ol class="arabic simple">
+<li><p>Master Branch master</p></li>
+<li><p>The development branch, which is opened by the developer. The name follows: issue_xxx, feature_xxx prefix</p></li>
+<li><p>at the time of submission commit</p></li>
+<li><p>Forced push using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-f</span></code> is strictly prohibited</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">add</span><span class="p">:</span>  <span class="n">xxxx</span>   <span class="n">adding</span> <span class="n">features</span><span class="p">,</span> <span class="n">features</span>
+<span class="n">update</span><span class="p">:</span> <span class="n">xxx</span>  <span class="n">Modify</span> <span class="n">functions</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">change</span> <span class="n">behavior</span>
+<span class="n">remove</span><span class="p">:</span> <span class="n">xxxx</span> <span class="n">delete</span> <span class="n">function</span><span class="p">,</span> <span class="n">feature</span>
+<span class="n">fix</span><span class="p">:</span>  <span class="n">xxxx</span>   <span class="n">Explicitly</span> <span class="n">fix</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">issue</span><span class="p">,</span> <span class="n">affixing</span> <span class="n">the</span><span class="c1"># issue full number</span>
+<span class="n">revert</span><span class="p">:</span> <span class="n">xxx</span>  <span class="n">Roll</span> <span class="n">back</span> <span class="n">an</span> <span class="n">operation</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Special skill: GitHub and Gitee will automatically recognize the beginning of the<code class="docutils literal notranslate"><span class="pre">#</span> </code>sign, followed by the syntax of the issue number (spaces are required before and after), which will be automatically associated with the specified issue. And if there are words such as<code class="docutils literal notranslate"> <span class="pre">close</span></code> and<code class="docutils literal notranslate"> <span class="pre">fix</span></code> in the commit content, the issue will be automatically closed. Such： close #12345</p>
+</div></blockquote>
+</section>
+<section id="lua-interface-annotation-specification">
+<h2>Lua Interface Annotation Specification<a class="headerlink" href="#lua-interface-annotation-specification" title="永久链接至标题">#</a></h2>
+<p>In order to automatically generate the interface document, the interface needs to be annotated strictly in the following format</p>
+<section id="interfaces-within-the-c-file">
+<h3>Interfaces within the C file<a class="headerlink" href="#interfaces-within-the-c-file" title="永久链接至标题">#</a></h3>
+<p>At the top of the file, the format is as follows (if there is no such beginning, the file will not be scanned）：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">@module  The name of the module, such：adc</span>
+<span class="cm">@summary Short description information of the module, such as: Digital-to-analog conversion</span>
+<span class="cm">@version Version number, optional</span>
+<span class="cm">@data    Date, optional</span>
+<span class="cm">@demo    Optional, the folder name in LuatOS/demo</span>
+<span class="cm">@video   Optional, the library's video tutorial URL</span>
+<span class="cm">@tag     Optional, the macro definition tags enabled by the library, such：LUAT_USE_ADC</span>
+<span class="cm">@usage</span>
+<span class="cm">--Simple use example of this library, optional</span>
+<span class="cm">--Can write multiple lines</span>
+<span class="cm">*/</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Functions that can be called in Lua, in the following format：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">The first line states the purpose of the function, such as opening the adc channel.</span>
+<span class="cm">@api module.function(The full function name used when the call is made.)</span>
+<span class="cm">@tag Optionally, if the interface only supports some chips, fill in the macro definition tag enabled by the library, such：LUAT_USE_ADC</span>
+<span class="cm">@string The first argument, @ followed by the argument type, and a space followed by the argument explanation. If there is a default value, it needs to be stated in full.</span>
+<span class="cm">@number Second parameter</span>
+<span class="cm">@table The third parameter</span>
+<span class="cm">...According to the actual, list all parameters</span>
+<span class="cm">@return The first value returned by the type must be filled in according to the format. If there is a default value, it needs to be fully stated.</span>
+<span class="cm">@return string The second value returned, of type string</span>
+<span class="cm">...According to the actual, all return values at the column.</span>
+<span class="cm">@usage</span>
+<span class="cm">--The example of use can be multi-line</span>
+<span class="cm">lcoal a,b,c = module.function("test",nil,{1,2,3})</span>
+<span class="cm">lcoal d,e,f = module.function("abc",nil,{1,2,3})</span>
+<span class="cm">*/</span><span class="w"></span>
+<span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">l_module_function</span><span class="p">(</span><span class="n">lua_State</span><span class="w"> </span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//a bunch of code</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Static constants, you can add comments in the following format near the constant：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//@const Constant name type explanation</span>
+<span class="cm">/*Such*/</span><span class="w"></span>
+<span class="c1">//@const NONE number No verification</span>
+
+<span class="cm">/*Just write the constant name</span>
+<span class="cm">  The library name is automatically generated in the document. Result of constant name */</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="interfaces-within-lua-files">
+<h3>Interfaces within Lua files<a class="headerlink" href="#interfaces-within-lua-files" title="永久链接至标题">#</a></h3>
+<p>At the top of the file, the format is basically the same as that of the C interface, except that there are more library examples. The format is as follows：</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="cm">--[[</span>
+<span class="cm">@module  The call name of the module</span>
+<span class="cm">@summary Short description information for the module</span>
+<span class="cm">@version Version number, optional</span>
+<span class="cm">@data    Date, optional</span>
+<span class="cm">@author  Author name, optional</span>
+<span class="cm">@demo    Optional, the name of the demo in the LuatOS/demo folder</span>
+<span class="cm">@video   Optional, the library's video tutorial URL</span>
+<span class="cm">@usage</span>
+<span class="cm">--Examples of use of this library</span>
+<span class="cm">--Can write multiple lines</span>
+<span class="cm">]]</span>
+</pre></div>
+</div>
+<p>callable function, basically the same as the c interface format, as follows：</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="cm">--[[</span>
+<span class="cm">The first line states the purpose of the function, such as opening the adc channel.</span>
+<span class="cm">@api module.function(The full function name used when the call is made.)</span>
+<span class="cm">@string The first argument, @ followed by the argument type, and a space followed by the argument explanation. If there is a default value, it needs to be stated in full.</span>
+<span class="cm">@number Second parameter</span>
+<span class="cm">@table The third parameter</span>
+<span class="cm">...According to the actual, list all parameters</span>
+<span class="cm">@return The first value returned by the type must be filled in according to the format. If there is a default value, it needs to be fully stated.</span>
+<span class="cm">@return string The second value returned, of type string</span>
+<span class="cm">...According to the actual, all return values at the column.</span>
+<span class="cm">@usage</span>
+<span class="cm">--The example of use can be multi-line</span>
+<span class="cm">--Barabala</span>
+<span class="cm">]]</span>
+</pre></div>
+</div>
+<p>Static constants, you can add comments in the following format near the constant：</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--//@const Constant name type explanation</span>
+<span class="c1">--Such</span>
+<span class="c1">--//@const NONE number No verification</span>
+
+<span class="c1">--Just write the constant name</span>
+<span class="c1">--The library name is automatically generated in the document. Result of constant name</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="sys-pub-published-topic-description-specification">
+<h2>sys_pub published topic description specification<a class="headerlink" href="#sys-pub-published-topic-description-specification" title="永久链接至标题">#</a></h2>
+<p>Near `lua_call or lua_pushstring, add relevant explanation to this message</p>
+<p>Note that the first line <code class="docutils literal notranslate"><span class="pre">/*</span></code> cannot be preceded by any indentation</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="w">        </span><span class="n">lua_getglobal</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="s">"sys_pub"</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/*</span>
+<span class="cm">@sys_pub wlan（the module to which the topic belongs）</span>
+<span class="cm">The first line states the purpose of the message, such as: WIFI scanning is over.</span>
+<span class="cm">WLAN_SCAN_DONE  （The full name of the topic.）</span>
+<span class="cm">@string The first data passed, @ followed by data type, space followed by data explanation, if not, don't write these lines</span>
+<span class="cm">@number Second data</span>
+<span class="cm">...According to the actual, list all the data passed</span>
+<span class="cm">@usage</span>
+<span class="cm">--The example of use can be multi-line</span>
+<span class="cm">sys.taskInit(function()</span>
+<span class="cm">    xxxxxxxxxx</span>
+<span class="cm">    xxxxxxx</span>
+<span class="cm">    sys.waitUntil("WLAN_SCAN_DONE")</span>
+<span class="cm">    xxxxxxxxxx</span>
+<span class="cm">end)</span>
+<span class="cm">*/</span><span class="w"></span>
+<span class="w">        </span><span class="n">lua_pushstring</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="s">"WLAN_SCAN_DONE"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">lua_call</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="add_module.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Add New Library</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">❤️ Contribution Code</div>
+                
+              </div>
+            </a>
+        </div>
+        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <div class="giscus"></div>
+        <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+            </div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Coding Specification</a><ul>
+<li><a class="reference internal" href="#c-api-specification">C API Specification</a></li>
+<li><a class="reference internal" href="#lua-api-specification">Lua API Specification</a><ul>
+<li><a class="reference internal" href="#naming-specification">Naming Specification</a></li>
+<li><a class="reference internal" href="#interaction-specification">Interaction Specification</a><ul>
+<li><a class="reference internal" href="#interface-of-the-returned-result">Interface of the returned result</a></li>
+<li><a class="reference internal" href="#interfaces-that-require-incoming-gpio">Interfaces that require incoming GPIO</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#git-submission-specification">Git Submission Specification</a></li>
+<li><a class="reference internal" href="#lua-interface-annotation-specification">Lua Interface Annotation Specification</a><ul>
+<li><a class="reference internal" href="#interfaces-within-the-c-file">Interfaces within the C file</a></li>
+<li><a class="reference internal" href="#interfaces-within-lua-files">Interfaces within Lua files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sys-pub-published-topic-description-specification">sys_pub published topic description specification</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div>
+
+<script>
+  window.chatbaseConfig = {
+    chatbotId: "kXE945ztlW6gUvKdR4qnn",
+  }
+</script><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/baidu.js"></script>
+    <script src="../../_static/js/a.js"></script>
+    <script src="../../_static/js/jquery.magnific-popup.min.js"></script>
+    </body>
+</html>

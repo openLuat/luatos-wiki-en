@@ -1,0 +1,1237 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
+<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="搜索" href="search.html" /><link rel="next" title="Luat Framework" href="luaGuide/luatFramework.html" /><link rel="prev" title="🖥 PC Client" href="iotpower/pc.html" />
+
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+        <title>🗃️ Data Archiving - LuatOS 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="_static/css/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/run-code.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/magnific-popup.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #ffffff;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">LuatOS  文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky">
+        <!-- 谷歌翻译 start -->
+        <div id="google_translate_element"></div>
+        <script>
+          function googleTranslateElementInit() {
+            if (navigator.language.indexOf("CN") < 0) {
+              new google.translate.TranslateElement({
+                pageLanguage: 'cn'
+              }, 'google_translate_element');
+              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
+            }
+          }
+          if (navigator.language.indexOf("CN") < 0) {
+            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          }
+        </script>
+        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logo.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo-light.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">💁 LuatOS Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://wiki.luatos.com">🏠️ Home Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/emulator.html">🕹️ 在线体验LuatOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/supports.html">💬 Technical Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🌠 Quick to get started</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="luaGuide/index.html">🌙 Lua Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/introduction.html">Basic Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luatask.html">LuaTask Framework</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chips/index.html">🧮 Chips and Development Boards</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chips/chips.html">📊 Chip comparison and selection table</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/air001/index.html">🛴 Air001</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/air001/mcu.html">Air001 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air001/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air001/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air001/Air001-MDK.html">Air001 Keil MDK-based user manual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air001/Air001-Arduino.html">Air001 Arduino-based user manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air001.html">Air001_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/air101/index.html">🚗 Air101</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/air101/mcu.html">Air101 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air101/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air101/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air101/Air101-Hard-design.html">Air101 Hardware Design Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air101/Air101.html">Air101 Getting Started Manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air101.html">Air101_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air101/power_dissipation.html">Air101 power consumption curve</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/air103/index.html">🚗 Air103</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/air103/mcu.html">Air103 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air103/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air103/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air103/lcdseg.html">Function Description of Segment Screen/Segment Screen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air103/touchkey.html">Touch sensor/touch button</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air103.html">Air103_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air103/power_dissipation.html">Air103 power consumption curve</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/air105/index.html">🚗 Air105</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/air105/mcu.html">Air105 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air105/board.html">Air105 Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air105/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air105.html">Air105_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air105/power_dissipation.html">Air105 power consumption curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air105/encrypt.html">Air105 Script Encryption</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/air601/index.html">📡 Air601</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/air601/mcu.html">Air601</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air601/board.html">Air601-12F Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air601/hardware.html">Air601 Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air601/changelog.html">Firmware Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/air780e/index.html">📶 Air780E(EC618 Series General)</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/air780e/mcu.html">Air780E Module (EC618 Series General)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air780e/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air780e/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air780e/multiownload.html">Description of mass production brush machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air780e/network.html">Network Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air780e/iomux.html">LuatOS IO multiplexing configuration under firmware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air780e/air780eg.html">Air780EG Additional instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air780e/air700e.html">Air700E Additional instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air780e/tts.html">TTS Description of the function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air780e/firmware.html">Firmware Description</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air780E.html">Air780E_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air780e/changelog.html">Ec618 Series Firmware Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/esp32c3/index.html">📡 ESP32-C3</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/esp32c3/board.html">ESP32C3-CORE Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/esp32c3/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/esp32c3.html">ESP32-C3_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/esp32c3/power_dissipation.html">ESP32C3 power consumption curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/esp32c3/change_flash.html">Replace flash tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/esp32s3/index.html">📡 ESP32-S3</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/esp32s3/board.html">ESP32S3-CORE Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/esp32s3/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/esp32s3.html">ESP32-S3_PCB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/esp32s3/mifi.html">Portable wifi data collection</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/air32f103/index.html">🚲 Air32F103</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/air32f103/mcu.html">AIR32F103 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air32f103/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air32f103/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air32f103/Air32f103.html">Air32F103 Manual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air32f103/switchFromSxx.html">Transplant from SXX32F103</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air32f103/enhancement.html">Enhanced function instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air32f103/daplink.html">DAPLink Manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/Air32F103.html">Air32F103_PCB</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/BluePill.html">BluePill_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/rp2040/index.html">📡 RP2040</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/rp2040.html">RP2040_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/swm181/index.html">🚲 SWM181CBT6</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/swm181/mcu.html">SWM181CBT6 Chip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/swm181/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/swm181/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/swm181/swm181.html">SWM181 Manual</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/bom/SWM181.html">SWM181_PCB</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/air302/index.html">📶 Air302</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/air302/mcu.html">Air302 Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air302/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air302/hardware.html">Hardware Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="chips/air640w/index.html">📡 Air640w</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="chips/air640w/mcu.html">Air640w</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air640w/board.html">Development Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chips/air640w/hardware.html">Hardware Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="chips/W806.html">🚗 W806</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips/win32.html">🖥️ PC End version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips/coremark/README.html">Performance testing (based on coremark)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips/supported.html">Equipment Support/Supported Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chips/question.html">FAQ List</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://air724ug.cn">Air724UG</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://air820ug.cn">Air820UG</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="peripherals/index.html">🧷 Peripheral expansion data</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="peripherals/lcd_air10x/index.html">Air10x Series Screen Expansion Board</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/lcd_air10x/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/lcd_air10x/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="peripherals/eink_1.54/index.html">EINK1.54 Ink screen</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/eink_1.54/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/eink_1.54/software.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="peripherals/lcd_1in8_128x160/index.html">1.8 TFT LCD resolution 128x160</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/lcd_1in8_128x160/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/lcd_1in8_128x160/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="peripherals/lcd_2in4_320x240/index.html">2.4 Inch TFT_ LCD color screen resolution 240x320</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/lcd_2in4_320x240/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/lcd_2in4_320x240/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="peripherals/lcd_1in54_240x240/index.html">1.54 Inch TFT_ LCD resolution 240x240</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/lcd_1in54_240x240/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/lcd_1in54_240x240/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="peripherals/camera_gc032a/index.html">Air105 Supporting GC032A camera</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/camera_gc032a/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/camera_gc032a/demos.html">Use Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="peripherals/chip_gtfont/index.html">Qualcomm Font Chip</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/chip_gtfont/hardware.html">Hardware Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="peripherals/chip_gtfont/demos.html">Use Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="boardGuide/index.html">📚 Development Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="boardGuide/roadmap.html">recommend learning line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boardGuide/vscode.html">Construction of development environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boardGuide/flash.html">Burn Tutorial</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="boardGuide/common/index.html">API Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="boardGuide/common/log.html">log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boardGuide/common/sys.html">sys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boardGuide/common/adc/index.html">adc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boardGuide/common/crypto.html">CRYPTO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boardGuide/common/fdb.html">fdb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boardGuide/common/disp.html">DISP</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="boardGuide/common/i2c/index.html">i2c</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/i2c/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/i2c/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/i2c/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="boardGuide/common/spi/index.html">spi</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/spi/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/spi/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/spi/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="boardGuide/common/uart/index.html">uart</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/uart/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/uart/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/uart/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="boardGuide/common/lcd.html">LCD Drive screen</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="boardGuide/common/mcu/index.html">mcu</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/mcu/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/mcu/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/mcu/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="boardGuide/common/pm.html">PM</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="boardGuide/common/pwm/index.html">pwm</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/pwm/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/pwm/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/pwm/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="boardGuide/common/rtc.html">RTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boardGuide/common/sfd.html">sfd</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="boardGuide/common/sfud/index.html">sfud</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/sfud/air101.html">air101</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/sfud/air103.html">air103</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boardGuide/common/sfud/air105.html">air105</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="boardGuide/common/timer.html">timer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://gitee.com/openLuat/LuatOS/releases">Firmware Download</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">📖 Reference Manual</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/index.html">🍴 LuatOS-SOC Interface Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/supported.html">Adaptation status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/adc.html">adc - Digital-to-analog conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/audio.html">audio - Multimedia-Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/bit64.html">bit64 - 32 Basic arithmetic and logical operations on 64-bit data on bit systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/camera.html">camera - Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/codec.html">codec - Multimedia-Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/coremark.html">coremark - Running points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/crypto.html">crypto - Encryption and decryption and hash functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/dac.html">dac - Digital-to-analog conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/disp.html">disp - disp Library (Obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/eink.html">eink - ink screen operation library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/errDump.html">errDump - Error reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/fastlz.html">fastlz - FastLZ Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/fatfs.html">fatfs - read/write fatfs format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/fdb.html">fdb - kv Database, power failure does not lose data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/fonts.html">fonts - Font Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/fota.html">fota - Underlying Firmware Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/fs.html">fs - Additional File System Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/fskv.html">fskv - kv Database, power failure does not lose data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/ftp.html">ftp - ftp Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/gmssl.html">gmssl - national secret algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/gpio.html">gpio - GPIO Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/gtfont.html">gtfont - Qualcomm Font Chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/hmeta.html">hmeta - Hardware metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/http.html">http - http Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/httpsrv.html">httpsrv - http Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/i2c.html">i2c - I2C Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/i2s.html">i2s - Digital Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/iconv.html">iconv - iconv Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/io.html">io - io action (extended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/ioqueue.html">ioqueue - io Sequence operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/iotauth.html">iotauth - IoT Authentication library, used to generate parameters for various cloud platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/ir.html">ir - infrared remote control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/json.html">json - json Generating and parsing libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/keyboard.html">keyboard - Keyboard Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/lcd.html">lcd - lcd Drive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/lcdseg.html">lcdseg - Segment lcd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libcoap.html">libcoap - coap Data processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libgnss.html">libgnss - NMEA Data processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/log.html">log - Logstore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/lora.html">lora - lora Drive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/lora2.html">lora2 - lora2 Driver module (supports multi-hanging)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/lvgl.html">lvgl - LVGL Image Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/max30102.html">max30102 - Heart Rate Module(MAX30102)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/mcu.html">mcu - encapsulation mcu some special operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/miniz.html">miniz - Easy zlib compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/mlx90640.html">mlx90640 - infrared temperature measurement(MLX90640)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/mobile.html">mobile - Cellular Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/mqtt.html">mqtt - mqtt Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/nbiot.html">nbiot - NB-IOT Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/nes.html">nes - nes Simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/nimble.html">nimble - Bluetooth BLE library (nimble version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/os.html">os - os Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/otp.html">otp - OTP Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/pack.html">pack - Packing and unpacking format string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/pin.html">pin - Pin Naming Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/pm.html">pm - Power Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/protobuf.html">protobuf - ProtoBuffs Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/pwm.html">pwm - PWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/repl.html">repl - “Read-evaluate-output “loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rsa.html">rsa - RSA encryption and decryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rtc.html">rtc - Real Time Clock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rtos.html">rtos - RTOS underlying operation library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/sdio.html">sdio - sdio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/sensor.html">sensor - Sensor Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/sfd.html">sfd - SPI FLASH Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/sfud.html">sfud - SPI FLASH sfud Software package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/sms.html">sms - SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/socket.html">socket - Network Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/softkeyboard.html">softkeyboard - software keyboard matrix (currently only supported by air105)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/spi.html">spi - spi Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/statem.html">statem - SM State Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/string.html">string - String Manipulation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/sys.html">sys - sys Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/sysplus.html">sysplus - sys A strong complement to the library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/timer.html">timer - Operating the bottom timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/touchkey.html">touchkey - Touch keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/u8g2.html">u8g2 - u8g2 graphics processing library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/uart.html">uart - serial port operation library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/ufont.html">ufont - Unified Font Library (under development)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/usbapp.html">usbapp - USB Functional operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/w5500.html">w5500 - w5500 Ethernet driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/wdt.html">wdt - watchdog Operation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/websocket.html">websocket - websocket Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/wlan.html">wlan - wifi Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/ymodem.html">ymodem - ymodem Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/zbuff.html">zbuff - c Memory Data Manipulation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/zlib.html">zlib - zlib Compression/Decompression (Obsolete)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/sys_pub.html">📮 sys System Messages</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/_static/lua53doc/index.html">🌕 Native API Manual</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/libs/index.html">🥢 Extended Library Interface Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/ads1115.html">ads1115 - ads1115 analog-to-digital converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/adxl34x.html">adxl34x - adxl34x 3 Axis accelerometer currently supports adxl345 adxl346</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/aht10.html">aht10 - aht10 Temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/air153C_wtd.html">air153C_wtd - Add software watchdog function to prevent crashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/ak8963.html">ak8963 - ak8963 geomagnetic sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/am2320.html">am2320 - am2320 Temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/bh1750.html">bh1750 - bh1750 Digital light intensity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/bmx.html">bmx - bmx The air pressure sensor currently supports bmp180 bmp280 bme280 bme680 will automatically judge the device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/cht8305c.html">cht8305c - cht8305c Temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/ds3231.html">ds3231 - ds3231 Real Time Clock Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/ec11.html">ec11 - ec11 Rotary encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/gt911.html">gt911 - gt911 Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/httpdns.html">httpdns - Domain name resolution using Http</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/ina226.html">ina226 - ina226 Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/iotcloud.html">iotcloud - iotcloud Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud others will also support, useful issue will accelerate support  )</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/l3g4200d.html">l3g4200d - l3g4200d Three-Axis Digital Gyroscope Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/lbsLoc.html">lbsLoc - lbsLoc Sending Base Station Location Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/lbsLoc2.html">lbsLoc2 - base station positioning v2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/libfota.html">libfota - libfota fota Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/libnet.html">libnet - libnet synchronous blocking api based on the socket library, the socket library itself is asynchronous non-blocking api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/lis2dh12.html">lis2dh12 - lis2dh12 Three-axis sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/lm75.html">lm75 - lm75 Temperature Sensor Support lm75a lm75b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/mcp2515.html">mcp2515 - mcp2515 CAN Protocol Controller Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/mlx90614.html">mlx90614 - mlx90614 infrared temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/mpu6xxx.html">mpu6xxx - mpu6xxx Six-axis/nine-axis sensor support mpu6500,mpu6050,mpu9250,icm2068g,icm20608d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/necir.html">necir - necir NEC protocol infrared receiving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/netLed.html">netLed - netLed Network status indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/pcf8563t.html">pcf8563t - pcf8563t Clock Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/pcf8574.html">pcf8574 - pcf8574 IO Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/qmc5883l.html">qmc5883l - qmc5883l geomagnetic sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/rc522.html">rc522 - rc522 Non-contact read/write card driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/rtkv.html">rtkv - Remote KV Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/shift595.html">shift595 - shift595 74HC595 Chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/si24r1.html">si24r1 - si24r1 Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/spl06.html">spl06 - spl06_01 Air pressure sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/tcs3472.html">tcs3472 - tcs3472 Color Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/tm1637.html">tm1637 - tm1637 Digital tube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/tm1640.html">tm1640 - tm1640 Digital tube and LED driver chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/tm1650.html">tm1650 - tm1650 Digital tube and key scanning chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/tsl2561.html">tsl2561 - tsl2561 light intensity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/udpsrv.html">udpsrv - UDP Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/xmodem.html">xmodem - xmodem Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/ze08g_ch2o.html">ze08g_ch2o - ZE08G-CH2O electrochemical formaldehyde module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/libs/zh07.html">zh07 - ZH07 Laser Dust Sensor</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🖥️ Kernel Development</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="develop/compile.html">👨‍💻 Compile source code</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="develop/compile/Cloud_compilation.html">☁️ Cloud Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/compile/Air780E.html">📶 Air780E Compilation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/compile/Air101.html">🚗 Air101 / Air103</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/compile/Air105.html">🚗 Air105</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/compile/ESP32C3.html">📡 ESP32 Series Compilation Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/compile/Win32.html">🖥️ Win32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/compile/Linux.html">🖥️ Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/compile/Air640w.html">📡 Air640w</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/compile/Air302.html">📶 Air302</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="develop/docs.html">📁 Development documentation</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="develop/docs_use.html">Development practice</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" role="switch" type="checkbox"/><label for="toctree-checkbox-36"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="develop/add_myapi_5min.html">Add Custom Functions (Rapid Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop/add_lua_module.html">Lua Library File Writing Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop/c_wait.html">C Interface implements Task waiting function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop/soc_download.html">Command Line Brush Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="develop/docs_design.html">Development Information</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" role="switch" type="checkbox"/><label for="toctree-checkbox-37"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="develop/filesystems.html">LuatOS-SoC The file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop/hex_string.html">Explain lua’s string and hex data (hexadecimal)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop/contribute/luadb.html">LuaDB File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop/contribute/soc_format.html">LuatOS-SoC Common Firmware Format soc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="develop/contribute/index.html">❤️ Contribution Code</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" role="switch" type="checkbox"/><label for="toctree-checkbox-38"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="develop/contribute/style.html">Coding Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/contribute/add_module.html">Add New Library</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="develop/contribute/dev_doc/index.html">Design Document</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" role="switch" type="checkbox"/><label for="toctree-checkbox-39"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="develop/contribute/dev_doc/core/index.html">Core Layer</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" role="switch" type="checkbox"/><label for="toctree-checkbox-40"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/core/luat_core.html">Luat Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/core/luat_debugger.html">Luat Debugger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/core/luat_fs.html">File System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/core/luat_memory.html">Memory Pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/core/luat_msgbus.html">Message Bus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/core/luat_platform.html">Luat Platform layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/core/luat_pm.html">Power and Low Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/core/luat_timer.html">Luat Timer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/core/luat_zbuff.html">C style buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/core/sys_wait_pub.html">C Interface implements Task waiting function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/core/luat_zstruct.html">C The Structure of Style</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="develop/contribute/dev_doc/peripherals/index.html">Peripherals API</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" role="switch" type="checkbox"/><label for="toctree-checkbox-41"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/peripherals/luat_gpio.html">GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/peripherals/luat_ir.html">IR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/peripherals/luat_spi.html">SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/peripherals/luat_usart.html">UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop/contribute/dev_doc/peripherals/luat_wlan.html">WLAN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">💼 actual combat reference</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appDevelopment/index.html">⌨️ Application Development</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" role="switch" type="checkbox"/><label for="toctree-checkbox-42"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="appDevelopment/peripheral/index.html">Peripherals</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" role="switch" type="checkbox"/><label for="toctree-checkbox-43"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="appDevelopment/peripheral/ws2812/ws2812.html">LuatOS-Soc Driver WS2812 Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="appDevelopment/lvgl/index.html">lvgl</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" role="switch" type="checkbox"/><label for="toctree-checkbox-44"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html">LVGL for LuatOS Manual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#lvgl-foundation">LVGL Foundation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#lvgl-components">LVGL Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#lvgl-advanced">LVGL Advanced</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appDevelopment/lvgl/LVGL_for_LuatOS/LVGL_for_LuatOS.html#id221">Precautions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="appDevelopment/video_play/index.html">Video playback</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="appDevelopment/video_play/105/video_play.html"><strong>Air105 Video playback</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🗄️ Other information</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="iotpower/index.html">⏳ IoT Power Power consumption test artifact</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="iotpower/power/index.html">🔋 IoT Power - V1</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="iotpower/cc/index.html">⚡ IoT Power - CC</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" role="switch" type="checkbox"/><label for="toctree-checkbox-47"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="iotpower/cc/tech.html">Technical indicators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iotpower/cc/parts.html">Connection and assembly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iotpower/cc/usage.html">Operating Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iotpower/cc/question.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="iotpower/devices.html">🔍 Version Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotpower/pc.html">🖥 PC Client</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">🗃️ Data Archiving</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" role="switch" type="checkbox"/><label for="toctree-checkbox-48"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luatFramework.html">Luat Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luatFramework_exts.html">Luat framework (advanced-underlying mechanism)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luaReference.html">Lua 5.3 Reference Manual</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="data-archiving">
+<h1>🗃️ Data Archiving<a class="headerlink" href="#data-archiving" title="永久链接至标题">#</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="luaGuide/luatFramework.html">Luat Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luatFramework.html#luatask">LuaTask</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luatFramework.html#function-run">Function Run</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luatFramework.html#direct-call">Direct call</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luatFramework.html#synergy">Synergy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luatFramework.html#timer">Timer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luatFramework.html#program-registration">Program Registration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="luaGuide/luatFramework_exts.html">Luat framework (advanced-underlying mechanism)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luatFramework_exts.html#get-to-the-point">get to the point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luatFramework_exts.html#operating-principle">Operating principle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="luaGuide/luaReference.html">Lua 5.3 Reference Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luaReference.html#introduction">1 – Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luaReference.html#basic-concepts">2 – Basic concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#value-and-type">2.1 – Value and Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#environment-and-global-environment">2.2 – Environment and Global Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#error-handling">2.3 – Error handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#meta-table-and-meta-method">2.4 – Meta Table and Meta Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#garbage-collection">2.5 – Garbage collection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#garbage-collection-meta-method">2.5.1 – garbage collection meta-method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#weak-table">2.5.2 – Weak table</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#synergy">2.6 – Synergy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luaReference.html#language-definition">3 – Language Definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#lexical-convention">3.1 – lexical convention</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#variable">3.2 – Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#statement">3.3 – Statement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#statement-block">3.3.1 – statement block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#code-block">3.3.2 – Code Block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#assignment">3.3.3 – Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#control-structure">3.3.4 – control structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#for-statement">3.3.5 – For Statement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#function-call-statement">3.3.6 – function call statement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#local-declaration">3.3.7 – Local declaration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#expression">3.4 – Expression</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#mathematical-operation-operator">3.4.1 – Mathematical Operation Operator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#bit-operator">3.4.2 – bit operator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#forced-conversion">3.4.3 – Forced Conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#comparison-operators">3.4.4 – Comparison Operators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#logical-operator">3.4.5 – logical operator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-concatenation">3.4.6 – String concatenation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#take-length-operator">3.4.7 – take length operator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#priority">3.4.8 – Priority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#table-construction">3.4.9 – Table Construction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#function-call">3.4.10 – function call</a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#function-definition">3.4.11 – Function Definition</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#visibility-rules">3.5 – Visibility Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luaReference.html#programming-interface">4 – Programming Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#stack">4.1 – Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#stack-size">4.2 – Stack Size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#valid-and-acceptable-indexes">4.3 – Valid and Acceptable Indexes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#c-closure">4.4 – C closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#registry">4.5 – Registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#c-error-handling-in">4.6 – C Error handling in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#c-give-up-processing-in">4.7 – C Give-up processing in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#functions-and-types">4.8 – Functions and Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-absindex"><code class="docutils literal notranslate"><span class="pre">lua_absindex</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-alloc"><code class="docutils literal notranslate"><span class="pre">lua_Alloc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-arith"><code class="docutils literal notranslate"><span class="pre">lua_arith</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-atpanic"><code class="docutils literal notranslate"><span class="pre">lua_atpanic</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-call"><code class="docutils literal notranslate"><span class="pre">lua_call</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-callk"><code class="docutils literal notranslate"><span class="pre">lua_callk</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-cfunction"><code class="docutils literal notranslate"><span class="pre">lua_CFunction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-checkstack"><code class="docutils literal notranslate"><span class="pre">lua_checkstack</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-close"><code class="docutils literal notranslate"><span class="pre">lua_close</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-compare"><code class="docutils literal notranslate"><span class="pre">lua_compare</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-concat"><code class="docutils literal notranslate"><span class="pre">lua_concat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-copy"><code class="docutils literal notranslate"><span class="pre">lua_copy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-createtable"><code class="docutils literal notranslate"><span class="pre">lua_createtable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-dump"><code class="docutils literal notranslate"><span class="pre">lua_dump</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-error"><code class="docutils literal notranslate"><span class="pre">lua_error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-gc"><code class="docutils literal notranslate"><span class="pre">lua_gc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-getallocf"><code class="docutils literal notranslate"><span class="pre">lua_getallocf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-getfield"><code class="docutils literal notranslate"><span class="pre">lua_getfield</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-getextraspace"><code class="docutils literal notranslate"><span class="pre">lua_getextraspace</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-getglobal"><code class="docutils literal notranslate"><span class="pre">lua_getglobal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-geti"><code class="docutils literal notranslate"><span class="pre">lua_geti</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-getmetatable"><code class="docutils literal notranslate"><span class="pre">lua_getmetatable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-gettable"><code class="docutils literal notranslate"><span class="pre">lua_gettable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-gettop"><code class="docutils literal notranslate"><span class="pre">lua_gettop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-getuservalue"><code class="docutils literal notranslate"><span class="pre">lua_getuservalue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-insert"><code class="docutils literal notranslate"><span class="pre">lua_insert</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-integer"><code class="docutils literal notranslate"><span class="pre">lua_Integer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-isboolean"><code class="docutils literal notranslate"><span class="pre">lua_isboolean</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-iscfunction"><code class="docutils literal notranslate"><span class="pre">lua_iscfunction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-isfunction"><code class="docutils literal notranslate"><span class="pre">lua_isfunction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-isinteger"><code class="docutils literal notranslate"><span class="pre">lua_isinteger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-islightuserdata"><code class="docutils literal notranslate"><span class="pre">lua_islightuserdata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-isnil"><code class="docutils literal notranslate"><span class="pre">lua_isnil</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-isnone"><code class="docutils literal notranslate"><span class="pre">lua_isnone</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-isnoneornil"><code class="docutils literal notranslate"><span class="pre">lua_isnoneornil</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-isnumber"><code class="docutils literal notranslate"><span class="pre">lua_isnumber</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-isstring"><code class="docutils literal notranslate"><span class="pre">lua_isstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-istable"><code class="docutils literal notranslate"><span class="pre">lua_istable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-isthread"><code class="docutils literal notranslate"><span class="pre">lua_isthread</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-isuserdata"><code class="docutils literal notranslate"><span class="pre">lua_isuserdata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-isyieldable"><code class="docutils literal notranslate"><span class="pre">lua_isyieldable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-kcontext"><code class="docutils literal notranslate"><span class="pre">lua_KContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-kfunction"><code class="docutils literal notranslate"><span class="pre">lua_KFunction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-len"><code class="docutils literal notranslate"><span class="pre">lua_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-load"><code class="docutils literal notranslate"><span class="pre">lua_load</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-newstate"><code class="docutils literal notranslate"><span class="pre">lua_newstate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-newtable"><code class="docutils literal notranslate"><span class="pre">lua_newtable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-newthread"><code class="docutils literal notranslate"><span class="pre">lua_newthread</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-newuserdata"><code class="docutils literal notranslate"><span class="pre">lua_newuserdata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-next"><code class="docutils literal notranslate"><span class="pre">lua_next</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-number"><code class="docutils literal notranslate"><span class="pre">lua_Number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-numbertointeger"><code class="docutils literal notranslate"><span class="pre">lua_numbertointeger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pcall"><code class="docutils literal notranslate"><span class="pre">lua_pcall</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pcallk"><code class="docutils literal notranslate"><span class="pre">lua_pcallk</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pop"><code class="docutils literal notranslate"><span class="pre">lua_pop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushboolean"><code class="docutils literal notranslate"><span class="pre">lua_pushboolean</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushcclosure"><code class="docutils literal notranslate"><span class="pre">lua_pushcclosure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushcfunction"><code class="docutils literal notranslate"><span class="pre">lua_pushcfunction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushfstring"><code class="docutils literal notranslate"><span class="pre">lua_pushfstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushglobaltable"><code class="docutils literal notranslate"><span class="pre">lua_pushglobaltable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushinteger"><code class="docutils literal notranslate"><span class="pre">lua_pushinteger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushlightuserdata"><code class="docutils literal notranslate"><span class="pre">lua_pushlightuserdata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushliteral"><code class="docutils literal notranslate"><span class="pre">lua_pushliteral</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushlstring"><code class="docutils literal notranslate"><span class="pre">lua_pushlstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushnil"><code class="docutils literal notranslate"><span class="pre">lua_pushnil</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushnumber"><code class="docutils literal notranslate"><span class="pre">lua_pushnumber</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushstring"><code class="docutils literal notranslate"><span class="pre">lua_pushstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushthread"><code class="docutils literal notranslate"><span class="pre">lua_pushthread</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushvalue"><code class="docutils literal notranslate"><span class="pre">lua_pushvalue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-pushvfstring"><code class="docutils literal notranslate"><span class="pre">lua_pushvfstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-rawequal"><code class="docutils literal notranslate"><span class="pre">lua_rawequal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-rawget"><code class="docutils literal notranslate"><span class="pre">lua_rawget</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-rawgeti"><code class="docutils literal notranslate"><span class="pre">lua_rawgeti</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-rawgetp"><code class="docutils literal notranslate"><span class="pre">lua_rawgetp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-rawlen"><code class="docutils literal notranslate"><span class="pre">lua_rawlen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-rawset"><code class="docutils literal notranslate"><span class="pre">lua_rawset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-rawseti"><code class="docutils literal notranslate"><span class="pre">lua_rawseti</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-rawsetp"><code class="docutils literal notranslate"><span class="pre">lua_rawsetp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-reader"><code class="docutils literal notranslate"><span class="pre">lua_Reader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-register"><code class="docutils literal notranslate"><span class="pre">lua_register</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-remove"><code class="docutils literal notranslate"><span class="pre">lua_remove</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-replace"><code class="docutils literal notranslate"><span class="pre">lua_replace</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-resume"><code class="docutils literal notranslate"><span class="pre">lua_resume</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-rotate"><code class="docutils literal notranslate"><span class="pre">lua_rotate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-setallocf"><code class="docutils literal notranslate"><span class="pre">lua_setallocf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-setfield"><code class="docutils literal notranslate"><span class="pre">lua_setfield</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-setglobal"><code class="docutils literal notranslate"><span class="pre">lua_setglobal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-seti"><code class="docutils literal notranslate"><span class="pre">lua_seti</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-setmetatable"><code class="docutils literal notranslate"><span class="pre">lua_setmetatable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-settable"><code class="docutils literal notranslate"><span class="pre">lua_settable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-settop"><code class="docutils literal notranslate"><span class="pre">lua_settop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-setuservalue"><code class="docutils literal notranslate"><span class="pre">lua_setuservalue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-state"><code class="docutils literal notranslate"><span class="pre">lua_State</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-status"><code class="docutils literal notranslate"><span class="pre">lua_status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-stringtonumber"><code class="docutils literal notranslate"><span class="pre">lua_stringtonumber</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-toboolean"><code class="docutils literal notranslate"><span class="pre">lua_toboolean</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-tocfunction"><code class="docutils literal notranslate"><span class="pre">lua_tocfunction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-tointeger"><code class="docutils literal notranslate"><span class="pre">lua_tointeger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-tointegerx"><code class="docutils literal notranslate"><span class="pre">lua_tointegerx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-tolstring"><code class="docutils literal notranslate"><span class="pre">lua_tolstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-tonumber"><code class="docutils literal notranslate"><span class="pre">lua_tonumber</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-tonumberx"><code class="docutils literal notranslate"><span class="pre">lua_tonumberx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-topointer"><code class="docutils literal notranslate"><span class="pre">lua_topointer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-tostring"><code class="docutils literal notranslate"><span class="pre">lua_tostring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-tothread"><code class="docutils literal notranslate"><span class="pre">lua_tothread</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-touserdata"><code class="docutils literal notranslate"><span class="pre">lua_touserdata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-type"><code class="docutils literal notranslate"><span class="pre">lua_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-typename"><code class="docutils literal notranslate"><span class="pre">lua_typename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-unsigned"><code class="docutils literal notranslate"><span class="pre">lua_Unsigned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-upvalueindex"><code class="docutils literal notranslate"><span class="pre">lua_upvalueindex</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-version"><code class="docutils literal notranslate"><span class="pre">lua_version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-writer"><code class="docutils literal notranslate"><span class="pre">lua_Writer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-xmove"><code class="docutils literal notranslate"><span class="pre">lua_xmove</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-yield"><code class="docutils literal notranslate"><span class="pre">lua_yield</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-yieldk"><code class="docutils literal notranslate"><span class="pre">lua_yieldk</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#debug-interface">4.9 – Debug Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-debug"><code class="docutils literal notranslate"><span class="pre">lua_Debug</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-gethook"><code class="docutils literal notranslate"><span class="pre">lua_gethook</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-gethookcount"><code class="docutils literal notranslate"><span class="pre">lua_gethookcount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-gethookmask"><code class="docutils literal notranslate"><span class="pre">lua_gethookmask</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-getinfo"><code class="docutils literal notranslate"><span class="pre">lua_getinfo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-getlocal"><code class="docutils literal notranslate"><span class="pre">lua_getlocal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-getstack"><code class="docutils literal notranslate"><span class="pre">lua_getstack</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-getupvalue"><code class="docutils literal notranslate"><span class="pre">lua_getupvalue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-hook"><code class="docutils literal notranslate"><span class="pre">lua_Hook</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-sethook"><code class="docutils literal notranslate"><span class="pre">lua_sethook</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-setlocal"><code class="docutils literal notranslate"><span class="pre">lua_setlocal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-setupvalue"><code class="docutils literal notranslate"><span class="pre">lua_setupvalue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-upvalueid"><code class="docutils literal notranslate"><span class="pre">lua_upvalueid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lua-upvaluejoin"><code class="docutils literal notranslate"><span class="pre">lua_upvaluejoin</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luaReference.html#auxiliary-library">5 – auxiliary library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#id1">5.1 – Functions and Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-addchar"><code class="docutils literal notranslate"><span class="pre">luaL_addchar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-addlstring"><code class="docutils literal notranslate"><span class="pre">luaL_addlstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-addsize"><code class="docutils literal notranslate"><span class="pre">luaL_addsize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-addstring"><code class="docutils literal notranslate"><span class="pre">luaL_addstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-addvalue"><code class="docutils literal notranslate"><span class="pre">luaL_addvalue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-argcheck"><code class="docutils literal notranslate"><span class="pre">luaL_argcheck</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-argerror"><code class="docutils literal notranslate"><span class="pre">luaL_argerror</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-buffer"><code class="docutils literal notranslate"><span class="pre">luaL_Buffer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-buffinit"><code class="docutils literal notranslate"><span class="pre">luaL_buffinit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-buffinitsize"><code class="docutils literal notranslate"><span class="pre">luaL_buffinitsize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-callmeta"><code class="docutils literal notranslate"><span class="pre">luaL_callmeta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-checkany"><code class="docutils literal notranslate"><span class="pre">luaL_checkany</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-checkinteger"><code class="docutils literal notranslate"><span class="pre">luaL_checkinteger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-checklstring"><code class="docutils literal notranslate"><span class="pre">luaL_checklstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-checknumber"><code class="docutils literal notranslate"><span class="pre">luaL_checknumber</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-checkoption"><code class="docutils literal notranslate"><span class="pre">luaL_checkoption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-checkstack"><code class="docutils literal notranslate"><span class="pre">luaL_checkstack</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-checkstring"><code class="docutils literal notranslate"><span class="pre">luaL_checkstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-checktype"><code class="docutils literal notranslate"><span class="pre">luaL_checktype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-checkudata"><code class="docutils literal notranslate"><span class="pre">luaL_checkudata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-checkversion"><code class="docutils literal notranslate"><span class="pre">luaL_checkversion</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-dofile"><code class="docutils literal notranslate"><span class="pre">luaL_dofile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-dostring"><code class="docutils literal notranslate"><span class="pre">luaL_dostring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-error"><code class="docutils literal notranslate"><span class="pre">luaL_error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-execresult"><code class="docutils literal notranslate"><span class="pre">luaL_execresult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-fileresult"><code class="docutils literal notranslate"><span class="pre">luaL_fileresult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-getmetafield"><code class="docutils literal notranslate"><span class="pre">luaL_getmetafield</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-getmetatable"><code class="docutils literal notranslate"><span class="pre">luaL_getmetatable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-getsubtable"><code class="docutils literal notranslate"><span class="pre">luaL_getsubtable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-gsub"><code class="docutils literal notranslate"><span class="pre">luaL_gsub</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-len"><code class="docutils literal notranslate"><span class="pre">luaL_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-loadbuffer"><code class="docutils literal notranslate"><span class="pre">luaL_loadbuffer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-loadbufferx"><code class="docutils literal notranslate"><span class="pre">luaL_loadbufferx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-loadfile"><code class="docutils literal notranslate"><span class="pre">luaL_loadfile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-loadfilex"><code class="docutils literal notranslate"><span class="pre">luaL_loadfilex</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-loadstring"><code class="docutils literal notranslate"><span class="pre">luaL_loadstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-newlib"><code class="docutils literal notranslate"><span class="pre">luaL_newlib</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-newlibtable"><code class="docutils literal notranslate"><span class="pre">luaL_newlibtable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-newmetatable"><code class="docutils literal notranslate"><span class="pre">luaL_newmetatable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-newstate"><code class="docutils literal notranslate"><span class="pre">luaL_newstate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-openlibs"><code class="docutils literal notranslate"><span class="pre">luaL_openlibs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-optinteger"><code class="docutils literal notranslate"><span class="pre">luaL_optinteger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-optlstring"><code class="docutils literal notranslate"><span class="pre">luaL_optlstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-optnumber"><code class="docutils literal notranslate"><span class="pre">luaL_optnumber</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-optstring"><code class="docutils literal notranslate"><span class="pre">luaL_optstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-prepbuffer"><code class="docutils literal notranslate"><span class="pre">luaL_prepbuffer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-prepbuffsize"><code class="docutils literal notranslate"><span class="pre">luaL_prepbuffsize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-pushresult"><code class="docutils literal notranslate"><span class="pre">luaL_pushresult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-pushresultsize"><code class="docutils literal notranslate"><span class="pre">luaL_pushresultsize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-ref"><code class="docutils literal notranslate"><span class="pre">luaL_ref</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-reg"><code class="docutils literal notranslate"><span class="pre">luaL_Reg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-requiref"><code class="docutils literal notranslate"><span class="pre">luaL_requiref</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-setfuncs"><code class="docutils literal notranslate"><span class="pre">luaL_setfuncs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-setmetatable"><code class="docutils literal notranslate"><span class="pre">luaL_setmetatable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-stream"><code class="docutils literal notranslate"><span class="pre">luaL_Stream</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-testudata"><code class="docutils literal notranslate"><span class="pre">luaL_testudata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-tolstring"><code class="docutils literal notranslate"><span class="pre">luaL_tolstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-traceback"><code class="docutils literal notranslate"><span class="pre">luaL_traceback</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-typename"><code class="docutils literal notranslate"><span class="pre">luaL_typename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-unref"><code class="docutils literal notranslate"><span class="pre">luaL_unref</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#lual-where"><code class="docutils literal notranslate"><span class="pre">luaL_where</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luaReference.html#standard-library">6 – Standard Library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#basic-function">6.1 – basic function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#assert-v-message"><code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">(v</span> <span class="pre">[,</span> <span class="pre">message])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#collectgarbage-opt-arg"><code class="docutils literal notranslate"><span class="pre">collectgarbage</span> <span class="pre">([opt</span> <span class="pre">[,</span> <span class="pre">arg]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#dofile-filename"><code class="docutils literal notranslate"><span class="pre">dofile</span> <span class="pre">([filename])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#error-message-level"><code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">(message</span> <span class="pre">[,</span> <span class="pre">level])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#g"><code class="docutils literal notranslate"><span class="pre">_G</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#getmetatable-object"><code class="docutils literal notranslate"><span class="pre">getmetatable</span> <span class="pre">(object)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#ipairs-t"><code class="docutils literal notranslate"><span class="pre">ipairs</span> <span class="pre">(t)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#load-chunk-chunkname-mode-env"><code class="docutils literal notranslate"><span class="pre">load</span> <span class="pre">(chunk</span> <span class="pre">[,</span> <span class="pre">chunkname</span> <span class="pre">[,</span> <span class="pre">mode</span> <span class="pre">[,</span> <span class="pre">env]]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#loadfile-filename-mode-env"><code class="docutils literal notranslate"><span class="pre">loadfile</span> <span class="pre">([filename</span> <span class="pre">[,</span> <span class="pre">mode</span> <span class="pre">[,</span> <span class="pre">env]]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#next-table-index"><code class="docutils literal notranslate"><span class="pre">next</span> <span class="pre">(table</span> <span class="pre">[,</span> <span class="pre">index])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#pairs-t"><code class="docutils literal notranslate"><span class="pre">pairs</span> <span class="pre">(t)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#pcall-f-arg1"><code class="docutils literal notranslate"><span class="pre">pcall</span> <span class="pre">(f</span> <span class="pre">[,</span> <span class="pre">arg1,</span> <span class="pre">···])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#print"><code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">(···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#rawequal-v1-v2"><code class="docutils literal notranslate"><span class="pre">rawequal</span> <span class="pre">(v1,</span> <span class="pre">v2)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#rawget-table-index"><code class="docutils literal notranslate"><span class="pre">rawget</span> <span class="pre">(table,</span> <span class="pre">index)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#rawlen-v"><code class="docutils literal notranslate"><span class="pre">rawlen</span> <span class="pre">(v)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#rawset-table-index-value"><code class="docutils literal notranslate"><span class="pre">rawset</span> <span class="pre">(table,</span> <span class="pre">index,</span> <span class="pre">value)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#select-index"><code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">(index,</span> <span class="pre">···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#setmetatable-table-metatable"><code class="docutils literal notranslate"><span class="pre">setmetatable</span> <span class="pre">(table,</span> <span class="pre">metatable)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#tonumber-e-base"><code class="docutils literal notranslate"><span class="pre">tonumber</span> <span class="pre">(e</span> <span class="pre">[,</span> <span class="pre">base])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#tostring-v"><code class="docutils literal notranslate"><span class="pre">tostring</span> <span class="pre">(v)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#type-v"><code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">(v)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#version"><code class="docutils literal notranslate"><span class="pre">_VERSION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#xpcall-f-msgh-arg1"><code class="docutils literal notranslate"><span class="pre">xpcall</span> <span class="pre">(f,</span> <span class="pre">msgh</span> <span class="pre">[,</span> <span class="pre">arg1,</span> <span class="pre">···])</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#synergy-management">6.2 – Synergy Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#coroutine-create-f"><code class="docutils literal notranslate"><span class="pre">coroutine.create</span> <span class="pre">(f)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#coroutine-isyieldable"><code class="docutils literal notranslate"><span class="pre">coroutine.isyieldable</span> <span class="pre">()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#coroutine-resume-co-val1"><code class="docutils literal notranslate"><span class="pre">coroutine.resume</span> <span class="pre">(co</span> <span class="pre">[,</span> <span class="pre">val1,</span> <span class="pre">···])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#coroutine-running"><code class="docutils literal notranslate"><span class="pre">coroutine.running</span> <span class="pre">()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#coroutine-status-co"><code class="docutils literal notranslate"><span class="pre">coroutine.status</span> <span class="pre">(co)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#coroutine-wrap-f"><code class="docutils literal notranslate"><span class="pre">coroutine.wrap</span> <span class="pre">(f)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#coroutine-yield"><code class="docutils literal notranslate"><span class="pre">coroutine.yield</span> <span class="pre">(···)</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#module">6.3 – Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#require-modname"><code class="docutils literal notranslate"><span class="pre">require</span> <span class="pre">(modname)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#package-config"><code class="docutils literal notranslate"><span class="pre">package.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#package-cpath"><code class="docutils literal notranslate"><span class="pre">package.cpath</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#package-loaded"><code class="docutils literal notranslate"><span class="pre">package.loaded</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#package-loadlib-libname-funcname"><code class="docutils literal notranslate"><span class="pre">package.loadlib</span> <span class="pre">(libname,</span> <span class="pre">funcname)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#package-path"><code class="docutils literal notranslate"><span class="pre">package.path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#package-preload"><code class="docutils literal notranslate"><span class="pre">package.preload</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#package-searchers"><code class="docutils literal notranslate"><span class="pre">package.searchers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#package-searchpath-name-path-sep-rep"><code class="docutils literal notranslate"><span class="pre">package.searchpath</span> <span class="pre">(name,</span> <span class="pre">path</span> <span class="pre">[,</span> <span class="pre">sep</span> <span class="pre">[,</span> <span class="pre">rep]])</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#string-processing">6.4 – String processing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-byte-s-i-j"><code class="docutils literal notranslate"><span class="pre">string.byte</span> <span class="pre">(s</span> <span class="pre">[,</span> <span class="pre">i</span> <span class="pre">[,</span> <span class="pre">j]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-char"><code class="docutils literal notranslate"><span class="pre">string.char</span> <span class="pre">(···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-dump-function-strip"><code class="docutils literal notranslate"><span class="pre">string.dump</span> <span class="pre">(function</span> <span class="pre">[,</span> <span class="pre">strip])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-find-s-pattern-init-plain"><code class="docutils literal notranslate"><span class="pre">string.find</span> <span class="pre">(s,</span> <span class="pre">pattern</span> <span class="pre">[,</span> <span class="pre">init</span> <span class="pre">[,</span> <span class="pre">plain]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-format-formatstring"><code class="docutils literal notranslate"><span class="pre">string.format</span> <span class="pre">(formatstring,</span> <span class="pre">···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-gmatch-s-pattern"><code class="docutils literal notranslate"><span class="pre">string.gmatch</span> <span class="pre">(s,</span> <span class="pre">pattern)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-gsub-s-pattern-repl-n"><code class="docutils literal notranslate"><span class="pre">string.gsub</span> <span class="pre">(s,</span> <span class="pre">pattern,</span> <span class="pre">repl</span> <span class="pre">[,</span> <span class="pre">n])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-len-s"><code class="docutils literal notranslate"><span class="pre">string.len</span> <span class="pre">(s)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-lower-s"><code class="docutils literal notranslate"><span class="pre">string.lower</span> <span class="pre">(s)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-match-s-pattern-init"><code class="docutils literal notranslate"><span class="pre">string.match</span> <span class="pre">(s,</span> <span class="pre">pattern</span> <span class="pre">[,</span> <span class="pre">init])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-pack-fmt-v1-v2"><code class="docutils literal notranslate"><span class="pre">string.pack</span> <span class="pre">(fmt,</span> <span class="pre">v1,</span> <span class="pre">v2,</span> <span class="pre">···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-packsize-fmt"><code class="docutils literal notranslate"><span class="pre">string.packsize</span> <span class="pre">(fmt)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-rep-s-n-sep"><code class="docutils literal notranslate"><span class="pre">string.rep</span> <span class="pre">(s,</span> <span class="pre">n</span> <span class="pre">[,</span> <span class="pre">sep])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-reverse-s"><code class="docutils literal notranslate"><span class="pre">string.reverse</span> <span class="pre">(s)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-sub-s-i-j"><code class="docutils literal notranslate"><span class="pre">string.sub</span> <span class="pre">(s,</span> <span class="pre">i</span> <span class="pre">[,</span> <span class="pre">j])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-unpack-fmt-s-pos"><code class="docutils literal notranslate"><span class="pre">string.unpack</span> <span class="pre">(fmt,</span> <span class="pre">s</span> <span class="pre">[,</span> <span class="pre">pos])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#string-upper-s"><code class="docutils literal notranslate"><span class="pre">string.upper</span> <span class="pre">(s)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#match-mode">6.4.1 – Match mode</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="luaGuide/luaReference.html#character-class">Character Class：</a></li>
+<li class="toctree-l5"><a class="reference internal" href="luaGuide/luaReference.html#mode-entry">Mode Entry：</a></li>
+<li class="toctree-l5"><a class="reference internal" href="luaGuide/luaReference.html#mode">Mode：</a></li>
+<li class="toctree-l5"><a class="reference internal" href="luaGuide/luaReference.html#capture">Capture：</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#format-string-used-for-packaging-and-unpacking">6.4.2 – Format string used for packaging and unpacking</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#utf-8-support">6.5 – UTF-8 Support</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#utf8-char"><code class="docutils literal notranslate"><span class="pre">utf8.char</span> <span class="pre">(···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#utf8-charpattern"><code class="docutils literal notranslate"><span class="pre">utf8.charpattern</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#utf8-codes-s"><code class="docutils literal notranslate"><span class="pre">utf8.codes</span> <span class="pre">(s)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#utf8-codepoint-s-i-j"><code class="docutils literal notranslate"><span class="pre">utf8.codepoint</span> <span class="pre">(s</span> <span class="pre">[,</span> <span class="pre">i</span> <span class="pre">[,</span> <span class="pre">j]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#utf8-len-s-i-j"><code class="docutils literal notranslate"><span class="pre">utf8.len</span> <span class="pre">(s</span> <span class="pre">[,</span> <span class="pre">i</span> <span class="pre">[,</span> <span class="pre">j]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#utf8-offset-s-n-i"><code class="docutils literal notranslate"><span class="pre">utf8.offset</span> <span class="pre">(s,</span> <span class="pre">n</span> <span class="pre">[,</span> <span class="pre">i])</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#table-processing">6.6 – Table Processing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#table-concat-list-sep-i-j"><code class="docutils literal notranslate"><span class="pre">table.concat</span> <span class="pre">(list</span> <span class="pre">[,</span> <span class="pre">sep</span> <span class="pre">[,</span> <span class="pre">i</span> <span class="pre">[,</span> <span class="pre">j]]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#table-insert-list-pos-value"><code class="docutils literal notranslate"><span class="pre">table.insert</span> <span class="pre">(list,</span> <span class="pre">[pos,]</span> <span class="pre">value)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#table-move-a1-f-e-t-a2"><code class="docutils literal notranslate"><span class="pre">table.move</span> <span class="pre">(a1,</span> <span class="pre">f,</span> <span class="pre">e,</span> <span class="pre">t</span> <span class="pre">[,a2])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#table-pack"><code class="docutils literal notranslate"><span class="pre">table.pack</span> <span class="pre">(···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#table-remove-list-pos"><code class="docutils literal notranslate"><span class="pre">table.remove</span> <span class="pre">(list</span> <span class="pre">[,</span> <span class="pre">pos])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#table-sort-list-comp"><code class="docutils literal notranslate"><span class="pre">table.sort</span> <span class="pre">(list</span> <span class="pre">[,</span> <span class="pre">comp])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#table-unpack-list-i-j"><code class="docutils literal notranslate"><span class="pre">table.unpack</span> <span class="pre">(list</span> <span class="pre">[,</span> <span class="pre">i</span> <span class="pre">[,</span> <span class="pre">j]])</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#mathematical-function">6.7 – mathematical function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-abs-x"><code class="docutils literal notranslate"><span class="pre">math.abs</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-acos-x"><code class="docutils literal notranslate"><span class="pre">math.acos</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-asin-x"><code class="docutils literal notranslate"><span class="pre">math.asin</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-atan-y-x"><code class="docutils literal notranslate"><span class="pre">math.atan</span> <span class="pre">(y</span> <span class="pre">[,</span> <span class="pre">x])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-ceil-x"><code class="docutils literal notranslate"><span class="pre">math.ceil</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-cos-x"><code class="docutils literal notranslate"><span class="pre">math.cos</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-deg-x"><code class="docutils literal notranslate"><span class="pre">math.deg</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-exp-x"><code class="docutils literal notranslate"><span class="pre">math.exp</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-floor-x"><code class="docutils literal notranslate"><span class="pre">math.floor</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-fmod-x-y"><code class="docutils literal notranslate"><span class="pre">math.fmod</span> <span class="pre">(x,</span> <span class="pre">y)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-huge"><code class="docutils literal notranslate"><span class="pre">math.huge</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-log-x-base"><code class="docutils literal notranslate"><span class="pre">math.log</span> <span class="pre">(x</span> <span class="pre">[,</span> <span class="pre">base])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-max-x"><code class="docutils literal notranslate"><span class="pre">math.max</span> <span class="pre">(x,</span> <span class="pre">···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-maxinteger"><code class="docutils literal notranslate"><span class="pre">math.maxinteger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-min-x"><code class="docutils literal notranslate"><span class="pre">math.min</span> <span class="pre">(x,</span> <span class="pre">···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-mininteger"><code class="docutils literal notranslate"><span class="pre">math.mininteger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-modf-x"><code class="docutils literal notranslate"><span class="pre">math.modf</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-pi"><code class="docutils literal notranslate"><span class="pre">math.pi</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-rad-x"><code class="docutils literal notranslate"><span class="pre">math.rad</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-random-m-n"><code class="docutils literal notranslate"><span class="pre">math.random</span> <span class="pre">([m</span> <span class="pre">[,</span> <span class="pre">n]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-randomseed-x"><code class="docutils literal notranslate"><span class="pre">math.randomseed</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-sin-x"><code class="docutils literal notranslate"><span class="pre">math.sin</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-sqrt-x"><code class="docutils literal notranslate"><span class="pre">math.sqrt</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-tan-x"><code class="docutils literal notranslate"><span class="pre">math.tan</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-tointeger-x"><code class="docutils literal notranslate"><span class="pre">math.tointeger</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-type-x"><code class="docutils literal notranslate"><span class="pre">math.type</span> <span class="pre">(x)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#math-ult-m-n"><code class="docutils literal notranslate"><span class="pre">math.ult</span> <span class="pre">(m,</span> <span class="pre">n)</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#input-and-output-library">6.8 – input and output library</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#io-close-file"><code class="docutils literal notranslate"><span class="pre">io.close</span> <span class="pre">([file])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#io-flush"><code class="docutils literal notranslate"><span class="pre">io.flush</span> <span class="pre">()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#io-input-file"><code class="docutils literal notranslate"><span class="pre">io.input</span> <span class="pre">([file])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#io-lines-filename"><code class="docutils literal notranslate"><span class="pre">io.lines</span> <span class="pre">([filename</span> <span class="pre">···])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#io-open-filename-mode"><code class="docutils literal notranslate"><span class="pre">io.open</span> <span class="pre">(filename</span> <span class="pre">[,</span> <span class="pre">mode])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#io-output-file"><code class="docutils literal notranslate"><span class="pre">io.output</span> <span class="pre">([file])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#io-popen-prog-mode"><code class="docutils literal notranslate"><span class="pre">io.popen</span> <span class="pre">(prog</span> <span class="pre">[,</span> <span class="pre">mode])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#io-read"><code class="docutils literal notranslate"><span class="pre">io.read</span> <span class="pre">(···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#io-tmpfile"><code class="docutils literal notranslate"><span class="pre">io.tmpfile</span> <span class="pre">()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#io-type-obj"><code class="docutils literal notranslate"><span class="pre">io.type</span> <span class="pre">(obj)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#io-write"><code class="docutils literal notranslate"><span class="pre">io.write</span> <span class="pre">(···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#file-close"><code class="docutils literal notranslate"><span class="pre">file:close</span> <span class="pre">()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#file-flush"><code class="docutils literal notranslate"><span class="pre">file:flush</span> <span class="pre">()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#file-lines"><code class="docutils literal notranslate"><span class="pre">file:lines</span> <span class="pre">(···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#file-read"><code class="docutils literal notranslate"><span class="pre">file:read</span> <span class="pre">(···)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#file-seek-whence-offset"><code class="docutils literal notranslate"><span class="pre">file:seek</span> <span class="pre">([whence</span> <span class="pre">[,</span> <span class="pre">offset]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#file-setvbuf-mode-size"><code class="docutils literal notranslate"><span class="pre">file:setvbuf</span> <span class="pre">(mode</span> <span class="pre">[,</span> <span class="pre">size])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#file-write"><code class="docutils literal notranslate"><span class="pre">file:write</span> <span class="pre">(···)</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#operating-system-library">6.9 – Operating System Library</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#os-clock"><code class="docutils literal notranslate"><span class="pre">os.clock</span> <span class="pre">()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#os-date-format-time"><code class="docutils literal notranslate"><span class="pre">os.date</span> <span class="pre">([format</span> <span class="pre">[,</span> <span class="pre">time]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#os-difftime-t2-t1"><code class="docutils literal notranslate"><span class="pre">os.difftime</span> <span class="pre">(t2,</span> <span class="pre">t1)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#os-execute-command"><code class="docutils literal notranslate"><span class="pre">os.execute</span> <span class="pre">([command])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#os-exit-code-close"><code class="docutils literal notranslate"><span class="pre">os.exit</span> <span class="pre">([code</span> <span class="pre">[,</span> <span class="pre">close]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#os-getenv-varname"><code class="docutils literal notranslate"><span class="pre">os.getenv</span> <span class="pre">(varname)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#os-remove-filename"><code class="docutils literal notranslate"><span class="pre">os.remove</span> <span class="pre">(filename)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#os-rename-oldname-newname"><code class="docutils literal notranslate"><span class="pre">os.rename</span> <span class="pre">(oldname,</span> <span class="pre">newname)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#os-setlocale-locale-category"><code class="docutils literal notranslate"><span class="pre">os.setlocale</span> <span class="pre">(locale</span> <span class="pre">[,</span> <span class="pre">category])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#os-time-table"><code class="docutils literal notranslate"><span class="pre">os.time</span> <span class="pre">([table])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#os-tmpname"><code class="docutils literal notranslate"><span class="pre">os.tmpname</span> <span class="pre">()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#debug-library">6.10 – Debug Library</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-debug"><code class="docutils literal notranslate"><span class="pre">debug.debug</span> <span class="pre">()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-gethook-thread"><code class="docutils literal notranslate"><span class="pre">debug.gethook</span> <span class="pre">([thread])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-getinfo-thread-f-what"><code class="docutils literal notranslate"><span class="pre">debug.getinfo</span> <span class="pre">([thread,]</span> <span class="pre">f</span> <span class="pre">[,</span> <span class="pre">what])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-getlocal-thread-f-local"><code class="docutils literal notranslate"><span class="pre">debug.getlocal</span> <span class="pre">([thread,]</span> <span class="pre">f,</span> <span class="pre">local)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-getmetatable-value"><code class="docutils literal notranslate"><span class="pre">debug.getmetatable</span> <span class="pre">(value)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-getregistry"><code class="docutils literal notranslate"><span class="pre">debug.getregistry</span> <span class="pre">()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-getupvalue-f-up"><code class="docutils literal notranslate"><span class="pre">debug.getupvalue</span> <span class="pre">(f,</span> <span class="pre">up)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-getuservalue-u"><code class="docutils literal notranslate"><span class="pre">debug.getuservalue</span> <span class="pre">(u)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-sethook-thread-hook-mask-count"><code class="docutils literal notranslate"><span class="pre">debug.sethook</span> <span class="pre">([thread,]</span> <span class="pre">hook,</span> <span class="pre">mask</span> <span class="pre">[,</span> <span class="pre">count])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-setlocal-thread-level-local-value"><code class="docutils literal notranslate"><span class="pre">debug.setlocal</span> <span class="pre">([thread,]</span> <span class="pre">level,</span> <span class="pre">local,</span> <span class="pre">value)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-setmetatable-value-table"><code class="docutils literal notranslate"><span class="pre">debug.setmetatable</span> <span class="pre">(value,</span> <span class="pre">table)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-setupvalue-f-up-value"><code class="docutils literal notranslate"><span class="pre">debug.setupvalue</span> <span class="pre">(f,</span> <span class="pre">up,</span> <span class="pre">value)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-setuservalue-udata-value"><code class="docutils literal notranslate"><span class="pre">debug.setuservalue</span> <span class="pre">(udata,</span> <span class="pre">value)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-traceback-thread-message-level"><code class="docutils literal notranslate"><span class="pre">debug.traceback</span> <span class="pre">([thread,]</span> <span class="pre">[message</span> <span class="pre">[,</span> <span class="pre">level]])</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-upvalueid-f-n"><code class="docutils literal notranslate"><span class="pre">debug.upvalueid</span> <span class="pre">(f,</span> <span class="pre">n)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="luaGuide/luaReference.html#debug-upvaluejoin-f1-n1-f2-n2"><code class="docutils literal notranslate"><span class="pre">debug.upvaluejoin</span> <span class="pre">(f1,</span> <span class="pre">n1,</span> <span class="pre">f2,</span> <span class="pre">n2)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luaReference.html#independent-edition-lua">7 – Independent Edition Lua</a></li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luaReference.html#incompatibility-with-previous-versions">8 – Incompatibility with previous versions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#change-of-language">8.1 – Change of language</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#changes-to-the-library">8.2 – Changes to the library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="luaGuide/luaReference.html#api-the-change">8.3 – API The change</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="luaGuide/luaReference.html#lua-the-full-syntax">9 – Lua The full syntax</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="luaGuide/luatFramework.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Luat Framework</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="iotpower/pc.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">🖥 PC Client</div>
+                
+              </div>
+            </a>
+        </div>
+        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <div class="giscus"></div>
+        <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+            </div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div>
+
+<script>
+  window.chatbaseConfig = {
+    chatbotId: "kXE945ztlW6gUvKdR4qnn",
+  }
+</script><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="_static/js/baidu.js"></script>
+    <script src="_static/js/a.js"></script>
+    <script src="_static/js/jquery.magnific-popup.min.js"></script>
+    </body>
+</html>
