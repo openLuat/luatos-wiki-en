@@ -1,70 +1,72 @@
-版LuatOS|可作为模拟器使用
-version of LuatOS | available as an emulator
-参考手册
-Reference Manual
-查看LuatOS现阶段所支持的芯片有哪些功能，选择适合自己的芯片。
-Look at the functions of the chips supported by LuatOS at this stage and choose the chip that suits you.
-尺寸小,仅
-Small size, only
-多,支持
-More, support.
-更多资料
-More information
-固件下载
-Firmware Download
-欢迎来到
-Welcome
-介绍
-Introduction
-开发板购买
-Development Board Purchase
-快速入门
-Quick Start
-快速上手
-Quick to get started
 了解更多
 Learn more
-模拟器
-Simulator
-模组
-Module
-目前已经适配的模组和芯片
-Modules and chips that have been adapted so far
+介绍
+Introduction
+使用Lua 5.3作为主要语言，针对资源较少的嵌入式环境进行了优化，极大提升了运行效率。
+Using Lua 5.3 as the main language, it is optimized for the embedded environment with less resources, which greatly improves the operation efficiency.
+其他资料
+Other information
 内存大,有摄像头,有
 Large memory, camera, camera
 内存需满足最低要求| 已并入rtt主线
 memory needs to meet minimum requirements | merged into rtt main line
 内核开发
 Kernel Development
-其他资料
-Other information
+原生API手册
+Native API Manual
+参考手册
+Reference Manual
+固件下载
+Firmware Download
+型号    |分类    |备注
+Model | Classification | Remarks
+多,支持
+More, support.
 实战参考
 actual combat reference
-使用Lua 5.3作为主要语言，针对资源较少的嵌入式环境进行了优化，极大提升了运行效率。
-Using Lua 5.3 as the main language, it is optimized for the embedded environment with less resources, which greatly improves the operation efficiency.
-是一款针对嵌入式的脚本运行框架，可以极大提升开发效率。
-It is a script running framework for embedded, which can greatly improve development efficiency.
+尺寸小,仅
+Small size, only
+开发板购买
+Development Board Purchase
+快速上手
+Quick to get started
+快速入门
+Quick Start
+我们正适配更多的单片机和无线芯片模组, 欢迎您的加入
+We are adapting more MCU and wireless chip modules, welcome you to join
 手册
 Manual
-首页
-Home Page
 提供了丰富的外设接口库，可以更便捷地实现创意，无需关心底层实现。
 Provides a wealth of peripheral interface library, can be more convenient to achieve creative, do not need to care about the underlying implementation.
 文档没解决，论坛发个帖
 The document was not resolved, the forum sent a post.
-我们正适配更多的单片机和无线芯片模组, 欢迎您的加入
-We are adapting more MCU and wireless chip modules, welcome you to join
-系列| (wifi/bt芯片）|ESP32C3/ESP32S3等
-Series | (wifi/bt chip) | ESP32C3/ESP32S3 etc
-芯片选型
-chip selection
-芯片资料
-Chip Data
 新手友好的入门教程，同时兼顾老手，文字与视频教程均可让您快速上手。
 Beginner-friendly tutorial, while taking into account the veteran, text and video tutorials can let you quickly get started.
-型号    |分类    |备注
-Model | Classification | Remarks
+是一款针对嵌入式的脚本运行框架，可以极大提升开发效率。
+It is a script running framework for embedded, which can greatly improve development efficiency.
+更多资料
+More information
+查看LuatOS现阶段所支持的芯片有哪些功能，选择适合自己的芯片。
+Look at the functions of the chips supported by LuatOS at this stage and choose the chip that suits you.
+模拟器
+Simulator
+模组
+Module
+欢迎来到
+Welcome
+版LuatOS|可作为模拟器使用
+version of LuatOS | available as an emulator
+目前已经适配的模组和芯片
+Modules and chips that have been adapted so far
 移动通信模块| 也支持
 Mobile communication module | Also supported
-原生API手册
-Native API Manual
+站视频教程
+Station video tutorial
+系列| (wifi/bt芯片）|ESP32C3/ESP32S3等
+Series | (wifi/bt chip) | ESP32C3/ESP32S3 etc
+芯片资料
+Chip Data
+芯片选型
+chip selection
+首页
+Home Page
