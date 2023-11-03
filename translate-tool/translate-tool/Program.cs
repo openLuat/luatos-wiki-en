@@ -11,9 +11,9 @@ namespace translate_tool
             var TransDataPath = args[2];
             Translator.AliyunSecretId = args[3];
             Translator.AliyuntSecretKey = args[4];
-            Console.WriteLine("Source: " + DocSource);
-            Console.WriteLine("DocPath: " + DocPath);
-            Console.WriteLine("Data: " + TransDataPath);
+            Console.WriteLine("Source: " + Path.GetFullPath(DocSource));
+            Console.WriteLine("DocPath: " + Path.GetFullPath(DocPath));
+            Console.WriteLine("Data: " + Path.GetFullPath(TransDataPath));
 
             //遍历DocSource下的所有文件夹，包括子文件夹
             var dirs = Directory.GetDirectories(DocSource, "*", SearchOption.AllDirectories);

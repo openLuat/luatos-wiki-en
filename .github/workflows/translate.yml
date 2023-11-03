@@ -22,9 +22,23 @@ jobs:
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-      - name: build
+      - name: environment prepare
         run: |
-          echo todo
+          curl -sSL https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh | bash /dev/stdin --channel STS
+      - name: clone wiki
+        run: |
+          cd ..
+          git clone https://github.com/openluat/luatos-wiki.git
+      - name: translate
+        env:
+          ALIYUN_SID: ${{ secrets.ALIYUN_SID }}
+          ALIYUN_SKEY: ${{ secrets.ALIYUN_SKEY }}
+        run: |
+          dotnet run --project .\translate-tool\translate-tool\ -- ..\luatos-wiki\ .\translated-docs\ .\translation-data\ $ALIYUN_SID $ALIYUN_SKEY
+      - name: commit changes
+        run: |
+          git add .
+          git commit -m "ci auto translate docs"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
