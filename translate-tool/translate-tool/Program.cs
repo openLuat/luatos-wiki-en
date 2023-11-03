@@ -67,16 +67,6 @@ namespace translate_tool
             }
 
             Console.WriteLine("done");
-            ////var testFile = @"D:\projects\git\luatos-wiki\archives.md";
-            //var testFile = @"D:\projects\git\luatos-wiki\luaGuide\luatask.md";
-            //var markdownText = File.ReadAllText(testFile);
-
-            //var result = Parse.TranslateMarkdown(markdownText, (s) =>
-            //{
-            //    return Translator.Translate(s, "D:\\projects\\git\\luatos-wiki-en\\translation-data\\test.txt");
-            //});
-            //Console.WriteLine(result);
-
         }
     }
 }

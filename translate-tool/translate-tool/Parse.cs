@@ -45,7 +45,7 @@ namespace translate_tool
             return sb.ToString();
         }
 
-        public static (string,string) Trim(string s)
+        public static (string,string,string) Trim(string s)
         {
             var prefix = new StringBuilder();
             //处理开头的emoji
@@ -56,6 +56,7 @@ namespace translate_tool
                 prefix.Append(s[0..index]);
                 s = s[index..];
             }
+
             //处理开头的非中文
             Match regexNonChineseMatch = Regex.Match(s, $"{Static.ChinesePattern}", RegexOptions.Compiled);
             if (regexNonChineseMatch.Success)
@@ -64,13 +65,25 @@ namespace translate_tool
                 prefix.Append(s[0..index]);
                 s = s[index..];
             }
-
-            //先把空格搞定
+            //把空格搞定
             var spaceN = CheckPrefix(s);
             prefix.Append(CreatePrefix(spaceN));
             s = s.Trim();
 
-            return (prefix.ToString(), s);
+            //处理结尾的非中文
+            var suffix = new StringBuilder();
+            regexNonChineseMatch = Regex.Match(s, $"[^{Static.ChinesePattern}]+$", RegexOptions.Compiled);
+            if (regexNonChineseMatch.Success)
+            {
+                var index = regexNonChineseMatch.Groups[0].Index;
+                if(s[index..] != "。")//句号就别匹配了
+                {
+                    suffix.Append(s[index..]);
+                    s = s[0..index];
+                }
+            }
+
+            return (prefix.ToString(), suffix.ToString(), s);
         }
 
         /// <summary>
@@ -87,6 +100,7 @@ namespace translate_tool
             List<int> waitTranslateLine = new();
             List<string> waitTranslate = new();
             List<string> waitPrefix = new();
+            List<string> waitSuffix = new();
             //遍历
             for (int i=0;i<lines.Length;i++)
             {
@@ -96,16 +110,17 @@ namespace translate_tool
                 if(ContainChinese(line))
                 {
                     waitTranslateLine.Add(i);
-                    var (prefix, trimed) = Trim(line);
+                    var (prefix, suffix, trimed) = Trim(line);
                     waitTranslate.Add(trimed);
                     waitPrefix.Add(prefix);
+                    waitSuffix.Add(suffix);
                 }
             }
             //翻译
             waitTranslate = translator(waitTranslate);
             //合并回去
             for(int i=0;i< waitTranslateLine.Count;i++)
-                lines[waitTranslateLine[i]] = waitPrefix[i] + waitTranslate[i];
+                lines[waitTranslateLine[i]] = $"{waitPrefix[i]} {waitTranslate[i]} {waitSuffix[i]}";
 
             return string.Join("\r\n",lines);
         }
