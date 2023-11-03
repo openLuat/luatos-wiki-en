@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="RestSharp" Version="110.2.0" />
+    <PackageReference Include="TencentCloudSDK.Tmt" Version="3.0.881" />
   </ItemGroup>
 
 </Project>

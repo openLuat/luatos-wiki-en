@@ -8,6 +8,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 using System.Text.Json;
+using TencentCloud.Common;
+using TencentCloud.Tmt.V20180321;
+using TencentCloud.Tmt.V20180321.Models;
 
 namespace translate_tool
 {
@@ -46,19 +49,67 @@ namespace translate_tool
 
         public static List<string> DeepL(IList<string> s)
         {
-            if(s.Count < 100)//字数没超，不特殊处理
+            var max = 100;
+            if (s.Count < max)//字数没超，不特殊处理
                 return deepL(s);
             //字数超了，分段分次请求处理
             List<string> r = new();
-            for (int i = 0; i < s.Count; i += 100)
-                r.AddRange(deepL(s.Skip(i).Take(100).ToList()));
+            for (int i = 0; i < s.Count; i += max)
+                r.AddRange(deepL(s.Skip(i).Take(max).ToList()));
             return r;
         }
 
-        public static string DeepL(string s)
+
+        public static string TencentSecretId = "";
+        public static string TencentSecretKey = "";
+
+        private static List<string> tencent(IList<string> s)
         {
-            return Translator.deepL(new string[] { s })[0];
+            Credential cred = new Credential
+            {
+                SecretId = TencentSecretId,
+                SecretKey = TencentSecretKey
+            };
+            // 实例化要请求产品的client对象,clientProfile是可选的
+            TmtClient client = new TmtClient(cred, "ap-shanghai");
+            // 实例化一个请求对象,每个接口都会对应一个request对象
+            TextTranslateBatchRequest req = new TextTranslateBatchRequest
+            {
+                SourceTextList = s.ToArray(),
+                Source = "zh",
+                Target = "en",
+                ProjectId = 0
+            };
+            // 返回的resp是一个TextTranslateResponse的实例，与请求对象对应
+            TextTranslateBatchResponse resp = client.TextTranslateBatchSync(req);
+            return resp.TargetTextList.ToList();
         }
+
+        /// <summary>
+        /// 每秒最大请求数量
+        /// </summary>
+        private static readonly double TencentReqLimit = 4;
+        private static readonly TimeSpan TencentMinReq = TimeSpan.FromSeconds(TencentReqLimit / 4.0);
+        private static DateTime TencentLastReq = DateTime.Now;
+        public static List<string> Tencent(IList<string> s)
+        {
+            //如果和上次请求的间隔时间太短，等一等再请求
+            var now = DateTime.Now;
+            var diff = now - TencentLastReq;
+            if (diff < TencentMinReq)
+                Thread.Sleep(TencentMinReq - diff);
+            TencentLastReq = now;
+            //最大请求字数
+            var max = 20;
+            if (s.Count < max)//字数没超，不特殊处理
+                return tencent(s);
+            //字数超了，分段分次请求处理
+            List<string> r = new();
+            for (int i = 0; i < s.Count; i += max)
+                r.AddRange(tencent(s.Skip(i).Take(max).ToList()));
+            return r;
+        }
+
 
         /// <summary>
         /// 加载已有的翻译数据
@@ -132,7 +183,7 @@ namespace translate_tool
             }
             //翻译一下
             if(toTranslate.Count > 0)
-                toTranslate = DeepL(toTranslate);
+                toTranslate = Tencent(toTranslate);
             //新翻译的数据
             Dictionary<string, string> newData = new();
             for(int i=0;i< toTranslate.Count;i++)
