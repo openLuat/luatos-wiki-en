@@ -48,7 +48,8 @@ namespace translate_tool
                     Path.GetExtension(file) == ".js")
                 {
                     var text = File.ReadAllText(file);
-                    text = text.Replace("https://wiki.luatos.com/", "https://openluat.github.io/luatos-wiki-en/");
+                    text = text.Replace("wiki.luatos.com", "openluat.github.io/luatos-wiki-en");
+                    text = text.Replace("https://github.com/openluat/luatos-wiki", "https://github.com/openluat/luatos-wiki-en");
                     //写入新文件
                     File.WriteAllText(newFile, text);
                 }
@@ -68,7 +69,7 @@ namespace translate_tool
                     translateFile = Path.ChangeExtension(translateFile, ".txt");
                     //翻译文件
                     var markdownText = File.ReadAllText(file);
-                    markdownText = markdownText.Replace("https://wiki.luatos.com/", "https://openluat.github.io/luatos-wiki-en/");
+                    markdownText = markdownText.Replace("wiki.luatos.com", "openluat.github.io/luatos-wiki-en");
                     var result = Parse.TranslateMarkdown(markdownText, (s) =>
                     {
                         return Translator.Translate(s, translateFile);
