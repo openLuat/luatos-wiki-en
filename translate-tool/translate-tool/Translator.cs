@@ -11,6 +11,7 @@ using System.Text.Json;
 using TencentCloud.Common;
 using TencentCloud.Tmt.V20180321;
 using TencentCloud.Tmt.V20180321.Models;
+using Tea;
 
 namespace translate_tool
 {
@@ -110,6 +111,64 @@ namespace translate_tool
             return r;
         }
 
+        public static string AliyunSecretId = "";
+        public static string AliyuntSecretKey = "";
+
+        private static List<string> aliyun(IList<string> s)
+        {
+            AlibabaCloud.OpenApiClient.Models.Config config = new AlibabaCloud.OpenApiClient.Models.Config
+            {
+                AccessKeyId = AliyunSecretId,
+                AccessKeySecret = AliyuntSecretKey,
+                // Endpoint 请参考 https://api.aliyun.com/product/alimt
+                Endpoint = "mt.aliyuncs.com",
+            };
+            var client = new AlibabaCloud.SDK.Alimt20181012.Client(config);
+            Dictionary<string, string> toTrans = new();
+            for (int i = 0; i < s.Count; i++)
+                toTrans.Add(i.ToString(), s[i]);
+            AlibabaCloud.SDK.Alimt20181012.Models.GetBatchTranslateRequest getBatchTranslateRequest = new AlibabaCloud.SDK.Alimt20181012.Models.GetBatchTranslateRequest
+            {
+                FormatType = "text",
+                TargetLanguage = "en",
+                SourceLanguage = "zh",
+                Scene = "general",
+                ApiType = "translate_ecommerce",
+                SourceText = JsonSerializer.Serialize(toTrans),
+            };
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            var res = client.GetBatchTranslateWithOptions(getBatchTranslateRequest, runtime);
+            foreach (var item in res.Body.TranslatedList)
+                toTrans[item["index"].ToString()!] = item["translated"].ToString()!;
+            List<string> r = new();
+            for(int i=0;i<s.Count;i++)
+                r.Add(toTrans[i.ToString()]!);
+            return r;
+        }
+        /// <summary>
+        /// 每秒最大请求数量
+        /// </summary>
+        private static readonly double AliyunReqLimit = 40;
+        private static readonly TimeSpan AliyunMinReq = TimeSpan.FromSeconds(AliyunReqLimit / 4.0);
+        private static DateTime AliyunLastReq = DateTime.Now;
+        public static List<string> Aliyun(IList<string> s)
+        {
+            //如果和上次请求的间隔时间太短，等一等再请求
+            var now = DateTime.Now;
+            var diff = now - AliyunLastReq;
+            if (diff < AliyunMinReq)
+                Thread.Sleep(AliyunMinReq - diff);
+            AliyunLastReq = now;
+            //最大请求字数
+            var max = 20;
+            if (s.Count < max)//字数没超，不特殊处理
+                return aliyun(s);
+            //字数超了，分段分次请求处理
+            List<string> r = new();
+            for (int i = 0; i < s.Count; i += max)
+                r.AddRange(aliyun(s.Skip(i).Take(max).ToList()));
+            return r;
+        }
 
         /// <summary>
         /// 加载已有的翻译数据
@@ -153,6 +212,13 @@ namespace translate_tool
         }
 
         /// <summary>
+        /// 现在用的翻译服务提供商是哪家
+        /// </summary>
+        /// <param name="s">字符串</param>
+        /// <returns>返回值</returns>
+        public static List<string> translate(IList<string> s) => Aliyun(s);
+
+        /// <summary>
         /// 获取翻译结果
         /// </summary>
         /// <param name="s">待翻译的数组列表</param>
@@ -183,7 +249,21 @@ namespace translate_tool
             }
             //翻译一下
             if(toTranslate.Count > 0)
-                toTranslate = Tencent(toTranslate);
+            {
+                //多试几次
+                for (int i = 0; i < 3; i++)
+                {
+                    try
+                    {
+                        toTranslate = translate(toTranslate);
+                        break;
+                    }
+                    catch
+                    {
+                        Thread.Sleep(1000);
+                    }
+                }
+            }
             //新翻译的数据
             Dictionary<string, string> newData = new();
             for(int i=0;i< toTranslate.Count;i++)

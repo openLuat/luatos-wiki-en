@@ -9,8 +9,8 @@ namespace translate_tool
             var DocSource = args[0];
             var DocPath = args[1];
             var TransDataPath = args[2];
-            Translator.TencentSecretId = args[3];
-            Translator.TencentSecretKey = args[4];
+            Translator.AliyunSecretId = args[3];
+            Translator.AliyuntSecretKey = args[4];
             Console.WriteLine("Source: " + DocSource);
             Console.WriteLine("DocPath: " + DocPath);
             Console.WriteLine("Data: " + TransDataPath);
@@ -42,14 +42,14 @@ namespace translate_tool
                 //判断拓展名是不是.md
                 if (Path.GetExtension(file) != ".md")
                 {
-                    Console.WriteLine($"copy [{count}/{files.Length}]");
+                    Console.WriteLine($"[{count}/{files.Length}] copy");
                     //原样复制到DocPath下
                     var newFile = file.Replace(DocSource, DocPath);
                     File.Copy(file, newFile, true);
                 }
                 else
                 {
-                    Console.WriteLine($"translate [{count}/{files.Length}]");
+                    Console.WriteLine($"[{count}/{files.Length}] translating...");
                     //目标路径
                     var newFile = file.Replace(DocSource, DocPath);
                     var translateFile = file.Replace(DocSource, TransDataPath);
