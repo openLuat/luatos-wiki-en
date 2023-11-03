@@ -34,7 +34,7 @@ jobs:
           ALIYUN_SID: ${{ secrets.ALIYUN_SID }}
           ALIYUN_SKEY: ${{ secrets.ALIYUN_SKEY }}
         run: |
-          dotnet run --project .\translate-tool\translate-tool\ -- ..\luatos-wiki\ .\translated-docs\ .\translation-data\ $ALIYUN_SID $ALIYUN_SKEY
+          dotnet run --project translate-tool/translate-tool/ -- ../luatos-wiki/ translated-docs/ translation-data/ $ALIYUN_SID $ALIYUN_SKEY
       - name: commit changes
         run: |
           git add .
