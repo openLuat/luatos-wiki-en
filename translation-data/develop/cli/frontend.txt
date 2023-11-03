@@ -1,0 +1,102 @@
+按提示创建项目,并刷机
+Create the project as prompted and brush the machine
+按需安装
+Install as required
+包管理
+Package Management
+本地无ath10, 开始下载
+No ath10 locally, start downloading
+必然存在未插入设备,未安装驱动的情况, 引导到页面
+There must be no device inserted, no driver installed, boot to the page
+查查当前安装了哪些
+Check what is currently installed
+尝试各种
+Try various
+尝试库函数
+Try a library function
+尝试demo后, 用户手头也许有一些外设, 有些库的是需要下载的
+After trying demo, users may have some peripherals on hand and some libraries need to be downloaded.
+场景 - 用户故事或使用假设
+Scenario-User Story or Use Assumption
+场景注释
+Scene Notes
+程序版本更新
+Program Version Update
+打包与量产
+Packaging and Mass Production
+点灯
+Lighting
+刚安装工具包, 直接敲入命令
+Just install the toolkit, type in the command directly
+更新
+Update
+检测
+Detection
+检测到串口
+Serial port detected
+检查脚本并合成刷机文件
+Check the script and synthesize the brush file.
+简易用法
+Simple Usage
+交互概念设计
+Interactive Conceptual Design
+均为命令,需要用户敲入
+Both are commands that require the user to type in.
+开始刷机
+Start brushing
+可用命令
+Available Commands
+例如
+For example
+命令输出或等待用户的额外输入
+command output or wait for additional user input
+模糊查询
+fuzzy query
+屏幕
+Screen
+前一场景的提示, 用户敲出创建项目的命令, 创建后提示进行刷机或模拟
+The prompt of the previous scene, the user knocks out the command to create the project, and prompts to brush or simulate the machine after creation.
+请回车以确认刷机
+Please enter to confirm the brush
+请接线
+Please wire
+请确保设备已经供电
+Please make sure the device is powered
+请输入设备类型
+Please enter the device type
+术语及定义
+Terms and Definitions
+刷机
+brush machine
+刷机成功, 请使用串口助手查看日志
+The machine is successfully swiped, please use the serial port assistant to view the log.
+刷机过程
+Brush process
+通常会无脑双击可执行程序, 考虑弹窗或弹出
+Usually, you will double-click the executable program without brain, and consider the pop-up window or pop-up.
+未检测到串口, 请检查供电并安装驱动
+Serial port not detected, please check power supply and install driver
+文档查询
+Document Query
+下载完成
+Download complete
+下载中
+Downloading
+项目初始化完成
+Project initialization complete
+项目初始化中
+Project initialization
+项目管理
+Project Management
+项目已经准备好, 可执行 luatos burn 刷机或 luatos mock 进行模拟运行
+The project is ready and can be run by luatos burn or luatos mock for simulation.
+新建一个Air101项目并刷机, 请依次敲入下列命令并按提示操作
+Create a new Air101 project and brush the machine, please type the following commands in turn and follow the prompts
+用户通过安装/复制等方式获取
+The user obtains it through installation/copy, etc.
+在测试闪灯之后, 客户最可能的想法是 换一个demo来测试
+After testing the flashing lights, the customer's most likely idea is to change to a demo to test.
+在cmd内无参数执行luatos的话, 输出帮助信息, 并在默认提示用户最可能的场景 - 建项目,刷机闪灯
+If luatos is executed without parameters in cmd, help information will be output and the user will be prompted by default for the most likely scenario-building a project and flashing lights.
+执行全自动的刷机流程, 并逐个过程进行提示
+Perform fully automatic brushing process and prompt one by one

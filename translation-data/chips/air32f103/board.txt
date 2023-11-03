@@ -1,0 +1,34 @@
+复位（daplink固件**对外控制
+Reset (daplink Firmware **External Control
+固件**对外控制
+Firmware **External Control
+接线图
+Wiring Diagram
+开发板
+Development Board
+开发板出厂默认为daplink固件（BluePill开发板默认无固件），固件支持**对外控制**调试下载功能，并且支持U盘模式烧录和虚拟串口
+The factory default of the development board is daplink firmware (BluePill the development board has no firmware by default). The firmware supports * * external control * * debugging and downloading function, and supports USB flash drive mode burning and virtual serial port
+开发板工程[传送门
+Development Board Engineering [portal
+开发板原理图
+Development Board Schematic
+连接**被调试设备的SWDCLK**，PB14连接**被调试设备的SWDIO**，PB0连接**被调试设备的复位
+Connect **SWDCLK of the debuggee**,PB14 Connect **SWDIO of the debuggee**,PB0 Connect **Reset of the debuggee
+其他支持CMSIS-DAP协议的软件
+Other software that supports CMSIS-DAP protocols
+使用说明
+Instructions for use
+推荐升级至新版[DAPLink V2固件](https://gitee.com/openLuat/luatos-soc-air32f103/tree/master/AIR_Jlink_Keil)，烧录速度可提升一倍（[查看升级方法
+recommend upgrade to the new version of [DAPLink V2 firmware](https://gitee.com/openLuat/luatos-soc-air32f103/tree/master/AIR_Jlink_Keil), the burning speed can be doubled ([check the upgrade method
+芯片数据手册[AIR32F103芯片数据手册1.0.0.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220605164850945_AIR32F103芯片数据手册
+Chip Data Sheet [AIR32F103 Chip Data Sheet 1.0.0.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220605164850945_AIR32F103芯片数据手册
+虚拟串口的
+virtual serial port
+引脚|功能
+Pin | Function
+引脚对应关系如下
+Pin correspondence is as follows
+整体连接图如下图所示
+The overall connection diagram is shown in the following figure
+中间绿色的灯指示与被连接设备的通信情况。插入电脑后会显示一个名为daplink的U盘，一个COM口，以及一个便携设备daplink。在keil或其他开发软件中选择调试器为CMSIS DAP即可。目前支持的开发环境如下
+The green light in the middle indicates communication with the connected device. Plug in the computer will display a U disk called daplink, a COM port, and a portable device daplink. Select the debugger as CMSIS DAP in keil or other development software. Currently supported development environments are as follows

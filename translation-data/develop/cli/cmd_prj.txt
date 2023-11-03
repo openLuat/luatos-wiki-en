@@ -1,0 +1,18 @@
+创建
+Create
+点灯模板
+Lighting Template
+模板
+Template
+其中 `air101` 是模板`air101-led`的简称
+where `air101` is the short name for the template `air101-led
+若用户没有输入模板名称,或者模板名称不存在, 提示可选的模板列表
+If the user does not enter a template name or the template name does not exist, a list of optional templates is prompted.
+同理, `air101` 可以换成
+Similarly, `air101` can be replaced
+完成, 可以刷机了
+Finish, can brush the machine
+项目初始化
+Project Initialization
+项目管理命令
+Project Management Commands

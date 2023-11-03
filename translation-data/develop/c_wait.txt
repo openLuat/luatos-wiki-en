@@ -1,0 +1,138 @@
+把生成的等待对象返回出去以供lua调用
+Return the generated wait object for lua to call
+把ctx也传递过去
+Pass the ctx too
+表示这个回调有0个返回值
+Indicates that this callback has 0 return values
+表示这个回调有2个返回值
+Indicates that this callback has 2 return values
+初始化调用wba_abc失败了");//可以多加几个返回值
+Initialization call wba_abc failed ");//can add several more return values
+代码
+Code
+代码 --> l_mylib_abc --> 返回cwait对象(table) --> lua代码调用.wait()进行异步等待
+code --> l_mylib_abc --> return cwait object (table) --> lua code calls. wait() to wait asynchronously
+等待回调函数
+Wait callback function
+等待获取结果的途中，我们希望其他任务也能继续运行，不阻塞住整个系统
+While waiting for the results to be obtained, we hope that other tasks will continue to run without blocking the entire system.
+第一个返回值
+First Return Value
+调用后的返回值的`cb`下标为一个回调器，传入`function`可实现异步回调功能。
+The `cb` subscript of the return value after the call is a callback, and the `function` is passed in to implement the asynchronous callback function.
+调用后的返回值的`wait`下标为一个闭包，可实现多任务内非阻塞的等待功能。
+The `wait` subscript of the return value after the call is a closure, which can realize the non-blocking waiting function in multitasking.
+调用接口，但是结果需要等一段时间才会返回
+Call the interface, but the result will take some time to return.
+定时器超时/中断/任务触发 --> 执行wbc_abc_cb --> 往msgbus发送消息
+Timer timeout/interrupt/task trigger --> execute wbc_abc_cb --> send message to msgbus
+发布等待结束的消息
+Publish Wait End Message
+放自定义的数据
+Put custom data
+该对象会在等待时即时返回给定的错误返回值，并且不会返回等待id，无需再发布消息
+The object will immediately return the given error return value while waiting, and will not return the wait id, without publishing the message.
+很多情况下，我们需要实现这样的功能
+In many cases, we need to implement such functions
+或者调用`luat_cbcwait`函数也可以（在函数内有lua栈时
+Or call the` luat_cbcwait `function can also be (when there is a lua stack in the function
+获取等待对象放到栈顶，并获取其
+Get the waiting object to the top of the stack and get its
+接口按命名规范，以`task`开头。
+Interfaces start with `task` according to the naming convention.
+接口实现Task等待功能
+Interface implements Task waiting function
+接口适配
+Interface Adaptation
+两个返回值，所以传入
+two return values, so
+启动task,配置定时器,配置中断,发消息等等
+Start task, configure timer, configure interrupt, send message, etc.
+然后,调用自定义函数
+Then, call the custom function
+任务内等待结果
+Waiting for results within task
+如果初始化失败
+If initialization fails
+如果函数有返回值
+If the function has a return value
+如果没有返回值
+If no return value
+如果只想返回一个失败结果（如初始化失败的情况），则可以直接返回一个只会返回错误结果的可等待对象
+If you only want to return a failed result (such as in the case of initialization failure), you can directly return a waitable object that will only return an error result.
+如果走到上面代码的失败处理部分，就会直接返回
+If you go to the failure handling part of the above code, you will return directly.
+什么回调函数配置的巴拉巴拉
+What callback function configuration barabala
+失败原因巴拉巴拉
+Cause of failure Barabala
+失败原因巴拉巴拉");//可以多加几个返回值
+Failure reason Balabala ");//can add several more return values
+使用订阅topic的方式，不好记，很麻烦且不优雅
+Using the way of subscribing to topic is not easy to remember, very troublesome and not elegant.
+首先, 准备好待处理的数据,放入上下文
+First, prepare the data to be processed and put it into context.
+数据传递的流程
+Process of data transfer
+数据已经使用完成了,释放
+The data has been used and released.
+提供给用户的调用方法，参考如下的演示代码（只是演示功能，实际目前还没这个接口
+The call method provided to the user, refer to the following demo code (just demo function, actually there is no such interface at present
+同时该函数会返回一个64位的id，用于之后发布等待结束的消息。
+At the same time, the function will return a 64-bit id, which is used to publish the message waiting for the end.
+完整示例代码
+Full sample code
+为了解决这个问题，可以对你的c接口实现`Task等待功能`，实现之后，即可在等待数据返回的途中，允许其他任务继续运行，不阻塞整个系统。
+In order to solve this problem, you can implement the` Task waiting function` on your C interface. After implementation, you can wait for the data to return, allowing other tasks to continue to run without blocking the entire system.
+先将需要返回的参数推入lua栈，然后调用`luat_cbcwait`函数，传入id即可
+First push the parameters to be returned into the lua stack, then call the "luat_cbcwait" function and pass in the id.
+新建可等待对象
+New Waitable Object
+需求
+Demand
+要是启动失败, 那就直接返回错误
+If the startup fails, an error is returned directly.
+用户使用
+User Use
+用于保存luat_pushcwait的返回值, 就cwait的唯一
+It is used to save the return value of the luat_pushcwait, which is unique to cwait.
+用于处理wbc_abc_cb发送的消息,完成cwait结果传输到lua层
+used to process the messages sent by the wbc_abc_cb and transfer the cwait results to the lua layer
+用于执行自定义逻辑后,往luatos的msgbus发消息,因为不能直接获取和调用
+It is used to send messages to msgbus of luatos after executing custom logic, because it cannot be directly obtained and called
+在c接口中，可以使用`luat_pushcwait`函数，获取一个可等待对象，并将其放置在栈顶，最后返回用户即可。
+In the c interface, you can use the luat_pushcwait function to obtain a waiting object, place it on the top of the stack, and finally return to the user.
+在wba_abc执行后, 需要返回数据的时候
+When data needs to be returned after wba_abc execution
+这个函数会在luatos的主线程里执行
+This function will be executed in the main thread of luatos
+这里返回0就可以了, 跟cwait没有关系
+It is OK to return 0 here, which has nothing to do with cwait.
+这里省略了, 请查阅
+omitted here, please refer
+这里用到3个函数
+Three functions are used here.
+这里只是演示用的结构体声明,按业务需要自行扩展就可以了
+This is just a structure statement for demonstration, which can be expanded according to business needs.
+这是演示的第二个返回值
+This is the second return value of the demo
+这是演示的返回值
+This is the return value of the demo
+正常情况的处理巴拉巴拉
+Handling of Normal Situation Balabala
+执行完成
+Execution complete
+只需调用`luat_cbcwait_noarg`函数，传入id即可
+Just call the luat_cbcwait_noarg function and pass in the id.
+只要知道发起等待时，获取的唯一id，即可在后面停止等待。
+As long as you know the unique id obtained when you initiate the wait, you can stop waiting later.
+主线程 --> 接收msgbus消息 --> 执行wbc_abc_handler --> lua代码的.wait()返回结果,继续往下执行
+The main thread-> receives msgbus message-> executes wbc_abc_handler-> lua code's. wait() returns the result and continues to execute
+注册成给lua调用的API, 例如
+API registered for lua calls, for example
+注册成mylib.abc的过程,普通的非cwait函数是完全一样的, 没有差别
+The process of registering as mylib.abc, ordinary non-cwait functions are exactly the same, there is no difference
+注意, 这里不要阻塞,不然就体现不出cwait的效果了, 可以用task或queue之类的对外传
+Note, don't block here, otherwise the effect of cwait will not be reflected, and you can use task or queue to pass it out.
+注意, 这里引用了
+Note that it is quoted here.

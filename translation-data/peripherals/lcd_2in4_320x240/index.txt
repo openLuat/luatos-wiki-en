@@ -1,0 +1,6 @@
+寸SPI串口模块TFT彩屏，16位彩色，分辨率：240*320，65K色，驱动
+Inch SPI serial port module TFT color screen, 16-bit color, resolution: 240*320,65K color, driver
+寸TFT_LCD彩屏 分辨率
+Inch TFT_ LCD color screen resolution
+购买链接
+Purchase Link

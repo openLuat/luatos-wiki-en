@@ -1,0 +1,146 @@
+编解码
+Codec
+操作
+Operation
+操作(扩展
+action (extended
+操作底层定时器
+Operating the bottom timer
+操作库
+Operation Library
+触摸按键
+Touch keys
+传感器操作库
+Sensor Operation Library
+串口操作库
+serial port operation library
+错误上报
+Error reporting
+打包和解包格式串
+Packing and unpacking format string
+底层操作库
+underlying operation library
+底层固件升级
+Underlying Firmware Upgrade
+电源管理
+Power Management
+读取-求值-输出" 循环
+Read-evaluate-output "loop
+读写fatfs格式
+read/write fatfs format
+短信
+SMS
+段式
+Segment
+多媒体-编解码
+Multimedia-Codec
+多媒体-音频
+Multimedia-Audio
+封装mcu一些特殊操作
+encapsulation mcu some special operations
+蜂窝网络
+Cellular Network
+服务端
+Server
+高通字库芯片
+Qualcomm Font Chip
+功能操作
+Functional operation
+管脚命名映射
+Pin Naming Map
+国密算法
+national secret algorithm
+红外测温
+infrared temperature measurement
+红外遥控
+infrared remote control
+加解密和hash函数
+Encryption and decryption and hash functions
+加密解密
+encryption and decryption
+简易zlib压缩
+Easy zlib compression
+鉴权库, 用于生成各种云平台的参数
+Authentication library, used to generate parameters for various cloud platforms
+键盘矩阵
+Keyboard Matrix
+客户端
+Client
+库
+Library
+库(已废弃
+Library (Obsolete
+库|简介
+Library | Introduction
+库的强力补充
+A strong complement to the library
+蓝牙BLE库(nimble版
+Bluetooth BLE library (nimble version
+模块
+Module
+模拟器
+Simulator
+墨水屏操作库
+ink screen operation library
+内存数据操作库
+Memory Data Manipulation Library
+跑分
+Running points
+驱动模块
+Drive module
+驱动模块(支持多挂
+Driver module (supports multi-hanging
+日志库
+Logstore
+软件包
+Software package
+软件键盘矩阵(当前仅air105支持
+software keyboard matrix (currently only supported by air105
+摄像头
+Camera
+生成和解析库
+Generating and parsing libraries
+实时时钟
+Real Time Clock
+适配状态
+Adaptation status
+数据处理
+Data processing
+数据库,掉电不丢数据
+Database, power failure does not lose data
+数模转换
+Digital-to-analog conversion
+数字音频
+Digital Audio
+统一字体库(开发中
+Unified Font Library (under development
+图像库
+Image Library
+图形处理库
+graphics processing library
+网络接口
+Network Interface
+位系统上对64位数据的基本算术运算和逻辑运算
+Basic arithmetic and logical operations on 64-bit data on bit systems
+文件系统额外操作
+Additional File System Operations
+协议
+Agreement
+心率模块
+Heart Rate Module
+序列操作
+Sequence operation
+压缩
+Compression
+压缩/解压缩(已废弃
+Compression/Decompression (Obsolete
+以太网驱动
+Ethernet driver
+硬件元数据
+Hardware metadata
+状态机
+State Machine
+字符串操作函数
+String Manipulation Functions
+字体库
+Font Library

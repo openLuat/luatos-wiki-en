@@ -1,0 +1,52 @@
+初始化内存
+Initialize memory
+定义内存池总大小
+Defines the total memory pool size
+额外提供一个用Lua虚拟机的alloc方法
+An additional alloc method using the Lua virtual machine is provided.
+核心机制
+core mechanism
+获取剩余内存
+Get Remaining Memory
+获取剩余内存数量
+Get the amount of remaining memory
+获取总内存数量
+Get Total Memory Amount
+基本信息
+Basic information
+内存池
+Memory Pool
+起草日期
+Date of drafting
+如果失败,返回
+If it fails, return
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+申请内存
+Request Memory
+申请内存并填充
+Apply for memory and populate it
+使用freertos的heap_4作为原型
+using freertos heap_4 as a prototype
+释放内存
+Release memory
+缩放内存块
+Scale Memory Blocks
+所需要的alloc方法
+Required alloc method
+提供API查询剩余内存
+Provide API to query remaining memory
+为什么需要内存池
+Why you need a memory pool
+相关知识点
+Relevant knowledge points
+虚拟机及相关全局变量应该使用该区域
+Virtual machines and related global variables should use this zone
+一段连续的区域分配给用户使用, 独立于系统的
+A continuous area is allocated to users, independent of the system's
+应该只涉及内存申请与释放,不做其他事情
+Should only involve memory application and release, do nothing else
+这个内存区间的大小介于
+The size of this memory interval is

@@ -1,0 +1,72 @@
+安装
+Installation
+安装完成后, 开始菜单会有idf5的快捷方式
+After the installation is completed, the start menu will have a shortcut to idf5
+本文档适合以下芯片
+This document is suitable for the following chips
+必须按以下目录结构进行摆放, 以 `D:\gitee` 为例
+It must be placed according to the following directory structure, taking `D:\gitee` as an example
+编译
+Compile
+编译前的最后准备
+Final preparation before compilation
+打开`D:\github\luaotos-soc-idf5\luatos\include\luat_conf_bsp.h`，按需注释或取消注释。注意，如果功能太大导致固件放不下，会编译失败。
+Open `D:\github\luaotos-soc-idf5\luatos\include\luat_conf_bsp.h `to comment or uncomment as needed. Note that if the function is too large and the firmware cannot be placed, the compilation will fail.
+当出现`Project build complete.`字样则表示编译成功, 会生成 `.soc` 后的文件, 使用LuaTools刷机即可
+When the words` Project build complete.`appears, it indicates that the compilation was successful and a file with`. soc` will be generated. use the LuaTools to swipe the machine.
+定制固件里的库
+Libraries in Custom Firmware
+都是固定目录名称, 都不可以改, 例如 `LuatOS-master` 就是错误的命名, 必须要改回
+They are all fixed directory names and cannot be changed. For example, "LuatOS-master" is a wrong name and must be changed back.
+访问地址
+Access Address
+获取方式: 推荐git, 注册后下载zip也可以
+How to get it: recommend git and download zip after registration.
+获取源码
+Get source code
+检查点, 路径正确的情况下, 以下文件路径必存在, 找不到就肯定是命名问题, 手动添加是徒劳的
+Checkpoint, if the path is correct, the following file path must exist. If it cannot be found, it must be a naming problem. It is futile to add it manually.
+建一个文件夹,用于存放编译所需要的全部文件
+Build a folder to store all the files needed for compilation.
+你`大概率不需要`这份文档，这是用于自行扩展固件的高级文档。
+You "probably don`t need" this document, which is an advanced document for self-expansion of firmware.
+其他版本自行解决idf安装问题, 需要idf5, 最新idf5!! 低版本编译不了
+Other versions solve idf installation problems by themselves, requiring idf5, the latest idf5!! The lower version cannot be compiled.
+其他目录
+Other catalogs
+起码2G的磁盘空间, 用于存放代码和中间文件
+At least 2G of disk space for code and intermediate files
+如果你是在找刷机/编译lua脚本之类的应用型文档，那么这份文档`不是你需要`查看的内容。
+If you are looking for application-oriented documents such as machine brushing/compiling lua scripts, then this document is` not what you need` to view.
+如果你只是想将已有的库添加到固件中，可以使用我们提供的[在线云编译](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html)生成自定义固件。
+If you just want to add your existing libraries to the firmware, you can use our [Online Cloud Compilation](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html) to generate custom firmware.
+如果你只是想将已有的库添加到固件中，可以使用我们提供的[在线云编译](https://wiki.luatos.com/develop/compile/Cloud_compilation.html)生成自定义固件。
+If you just want to add your existing libraries to the firmware, you can use our [Online Cloud Compilation](https://wiki.luatos.com/develop/compile/Cloud_compilation.html) to generate custom firmware.
+如果实在不方便把主库存放在 `D:\github\LuatOS`, 修改`luatos-soc-idf5\luatos\CMakeLists.txt`里面的`LUATOS_ROOT`值. 例如, 存放在 `E:/abc/LuatOS`, 则修改为
+If it is really inconvenient to put the main inventory in `D:\github\LuatOS`, modify the value of LUATOS_ROOT in luatos-soc-idf5\luatos\CMakeLists.txt. For example, stored in `E:/abc/LuatOS`, modify it
+使用本文档前,请确认以下信息
+Please confirm the following information before using this document
+使用开始菜单或快捷方式, 进入idf5的
+use the start menu or shortcut to enter the idf5
+视频教程链接: [B站每日喝粥
+Video tutorial link: [Station B drinks porridge every day
+所有步骤均使用 `CMD`, 非 `PowerShell`, 若不知道这些是什么, 请先百度学习一下
+All steps use `CMD`, not `PowerShell`. If you don`t know what these are, please learn from Baidu first.
+推荐使用  `D:\github` , 最低要求是 不能有空格,中文,特殊字符串, 且尽量短
+recommend use `D:\github`, the minimum requirement is no spaces, Chinese, special strings, and as short as possible
+为设置要编译的芯片 后面输入自己要编译的型号，不要无脑输入
+In order to set the chip to be compiled, enter the model you want to compile, and do not enter it without brains.
+我们提供的固件包就包含[编译好的固件
+The firmware package we provide contains [compiled firmware
+系列编译文档
+Series Compilation Document
+下载后双击启动, 按提示安装
+After downloading, double-click to start, follow the prompts to install
+下载idf5离线安装包
+download idf5 offline installation package
+源码要2份, [LuatOS主库](https://gitee.com/openLuat/LuatOS)及 [luatos-soc-idf5]((https://gitee.com/openLuat/luatos-soc-idf5) , 这是两个不同的仓库, 两个都需要
+Source code to 2 copies, [LuatOS main library](https://gitee.com/openLuat/LuatOS) and [luatos-soc-idf5]((https://gitee.com/openLuat/luatos-soc-idf5), which are two different warehouses, both need
+准备环境
+Prepare the environment
+准备项目
+Prepare the project

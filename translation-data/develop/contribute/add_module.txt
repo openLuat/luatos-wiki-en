@@ -1,0 +1,82 @@
+把返回值压入堆栈
+Push the return value onto the stack
+暴露给lua代码的api设计成怎样, 最好提供设想的代码
+How is the api exposed to lua code designed? It is best to provide the envisaged code.
+本章主要描述如何开发一个lua模块
+This chapter mainly describes how to develop a lua module
+必须提供头文件,供Lua API/其他C API调用
+A header file must be provided for Lua API/other C API calls
+标题
+Title
+不要直接调用freertos/rt-thread/私有库的函数, 特殊情况特殊分析
+Do not directly call freertos/rt-thread/private library functions, special case special analysis
+产出物
+Outputs
+抽象平台层, 封装一下
+Abstract platform layer, encapsulate it
+当前我们设计和实现, 一般是纯C的实现, 它类似这样
+At present, our design and implementation is generally a pure C implementation, which is similar to this.
+调用
+Call
+返回值的个数
+Number of return values
+分成几个必要的部分
+divided into several necessary parts
+基本信息
+Basic information
+可选
+Optional
+可以不提供头文件
+You may not provide a header file
+模块的开发
+Development of modules
+模块的设计文档
+Design documentation for the module
+模块的C API实现(平台抽象层
+C API implementation of the module (platform abstraction layer
+模块的Lua API实现
+Lua API implementation of the module
+模块开发的组成部分
+Components of Module Development
+配套工具/功能的开发
+Development of supporting tools/features
+平台相关的实现
+Platform-related implementations
+取参数
+Take parameters
+然后配套一个注册函数, 这个可以参考lua内置库, 例如
+Then it is accompanied by a registration function, which can refer to lua built-in library, for example
+设计边界有哪些 -- 做什么, 不做什么
+What are the design boundaries-what to do and what not to do
+设计的API应尽量屏蔽平台差异, 提供对外一致的观感
+The designed API should try to shield platform differences and provide a consistent external look and feel.
+设计与实现
+design and implementation
+使用luat_heap_mallac分配内存为主,注意防范内存泄漏
+Use luat_heap_mallac to allocate memory mainly, pay attention to prevent memory leaks.
+是暴露给用户lua代码调用的API, 负责读取用户参数, 校验参数, 整理返回值
+It is an API exposed to the user's lua code call, responsible for reading user parameters, verifying parameters, and sorting out return values.
+添加新库
+Add New Library
+通常分3种: 纯lua, 部分lua部分c, 纯
+Usually divided into 3 kinds: pure lua, part lua part c, pure
+通过不需要传递`Lua_State *L`, 而是传递一个参数列表或数据结构
+By not needing to pass `Lua_State * L`, but instead passing a parameter list or data structure
+为什么写这个功能 -- 实现什么功能
+Why write this function-what function to achieve
+文档的基本模板
+Basic template for document
+文档若干
+Several documents
+虚拟机的开发/优化
+Virtual Machine Development/Optimization
+要求
+Requirements
+一般情况下只能调用luat_xxx 开头及系统函数
+In general, only the beginning of the luat_xxx and system functions can be called
+一份
+a copy
+一份/多份
+One/many
+总的开发分成若干部分
+Total development is divided into several parts

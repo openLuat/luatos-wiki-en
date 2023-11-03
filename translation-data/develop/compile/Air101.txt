@@ -1,0 +1,68 @@
+比较方便的方法-xmake插件
+More convenient method-xmake plugin
+必须按以下目录结构进行摆放, 以 `D:\gitee` 为例
+It must be placed according to the following directory structure, taking `D:\gitee` as an example
+编译
+Compile
+编译时的报错解决
+Compile Error Resolution
+打开`app/port/luat_conf_bsp.h`，按需注释或取消注释。注意，如果固件放不下，会编译失败。
+Open `app/port/luat_conf_bsp.h `to comment or uncomment as needed. Note that if the firmware does not fit, the compilation will fail.
+打开`app/port/luat_conf_bsp.h`，将`#define AIR101`改为`#define AIR103`，保存
+Open `app/port/luat_conf_bsp.h `, change`#define AIR101` to `#define AIR103`, and save
+定制固件里的库
+Libraries in Custom Firmware
+否则会报
+Otherwise it will be reported
+检查点, 路径正确的情况下, 以下文件路径必存在, 找不到就肯定是命名问题, 手动添加是徒劳的
+Checkpoint, if the path is correct, the following file path must exist. If it cannot be found, it must be a naming problem. It is futile to add it manually.
+将LuatOS主仓库clone到适当位置,推荐用git, 如果下载zip一定一定要解压后改文件夹名称
+Clone the LuatOS main warehouse to the appropriate location, recommend use git, if you download zip, you must decompress and change the folder name.
+进入101仓库目录，执行`xmake` ,开始编译即可，生成的文件会在`build/out/`目录, 以`.soc为后缀
+Enter the 101 warehouse directory, executive` xmake`, and start compiling. The generated file will be in the` build/out/`directory with`.soc as the suffix
+空间不够, 表现如下
+Not enough space, performance is as follows
+平台用户
+Platform Users
+任何附加字符都不可用, 例如 `LuatOS-master` 就是错误的命名
+Any additional characters are not available, e.g. LuatOS-master is the wrong name
+如果不熟悉git, 强烈建立[入门](https://www.jianshu.com/p/db3396474b96)一下
+If you are not familiar with git, strongly establish [Getting Started](https://www.jianshu.com/p/db3396474b96)
+如果你是在找刷机/编译lua脚本之类的应用型文档，那么这份文档不是你需要查看的内容。
+If you are looking for application-oriented documents such as machine brushing/compiling lua scripts, then this document is not what you need to check.
+如果你只是想将已有的库添加到固件中，可以使用我们提供的[在线云编译](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html)生成自定义固件。
+If you just want to add your existing libraries to the firmware, you can use our [Online Cloud Compilation](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html) to generate custom firmware.
+如果你只是想将已有的库添加到固件中，可以使用我们提供的[在线云编译](https://wiki.luatos.com/develop/compile/Cloud_compilation.html)生成自定义固件。
+If you just want to add your existing libraries to the firmware, you can use our [Online Cloud Compilation](https://wiki.luatos.com/develop/compile/Cloud_compilation.html) to generate custom firmware.
+如果是
+If it is
+上述编译方式跑通了可以正常编译之后再看这里
+The above compilation method has run through and can be compiled normally before looking here.
+视频教程链接: [B站每日喝粥
+Video tutorial link: [Station B drinks porridge every day
+是按Air101的空间来配置的, 改成Air103之后肯定放不下, 需要注释掉一部分,例如把u8g2/lcd/lvgl注释掉
+It is configured according to the space of Air101. After changing to Air103, it will definitely not fit. You need to comment out some parts, such as u8g2/LCD/lvgl
+适配代码
+Adaptation code
+通常你不需要这份文档，这是用于自行扩展固件的高级文档。
+Usually you don't need this document, this is a high-level document for self-expanding firmware.
+我们提供的固件包就包含编译好的固件（soc后缀
+The firmware package we provide contains the compiled firmware (soc suffix
+再将Air101项目clone到与LuatOS主仓库的同级目录
+Then clone the Air101 project to the same directory as the LuatOS main repository.
+在vscode里安装xmake插件
+Install the xmake plugin in vscode
+中打开luatos-soc-air101直接点击下方build即可编译
+Open the luatos-soc-air101 in directly click build below to compile
+主库代码
+Main library code
+装好[7-zip](https://www.7-zip.org/)，建议保持默认文件夹
+Install [7-zip](https://www.7-zip.org/), it is recommended to keep the default folder
+装好[xmake](https://github.com/xmake-io/xmake/releases)，安装后重启电脑
+Install [xmake](https://github.com/xmake-io/xmake/releases) and restart the computer after installation
+装好7-zip与xmake！！！**，各个平台装法不一样（apt/yum/pacman），自己搜吧
+Install 7-zip with xmake!!! **, each platform has different loading methods (apt/yum/pacman), search for it yourself
+准备环境
+Prepare the environment
+准备项目
+Prepare the project

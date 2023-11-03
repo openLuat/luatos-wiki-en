@@ -1,0 +1,62 @@
+本系列文档适用于EC618系列模组, 包括但不限于
+This series of documents applies to EC618 series modules, including but not limited
+不支持 `电信`网络 的短信收发
+SMS sending and receiving of `telecom` network is not supported
+不支持 `wifi`通信, 仅支持特定场景下的
+`wifi` communication is not supported, only in specific scenarios
+不支持2G/3G/5G通信
+2G/3G/5G communication not supported
+不支持VoLTE, 不支持2G/3G的语音
+Does not support VoLTE, does not support 2G/3G voice
+的差异,请查阅文档 [Air780EG的额外说明
+of the differences, please refer to the documentation [Air780EG for additional instructions
+固件下载
+Firmware Download
+合宙通信推出的 LTE Cat.1 bis通信模块，采用移芯EC618平台，支持4G全网通, 包括的模组有
+LTE Cat launched by Zeo Communications. 1 bis communication module, using the core-shifting EC618 platform, supports 4G Netcom, including modules
+合宙EC618系列模组(典型为Air780E)是什么
+What is the EC618 series module (typically Air780E)
+基础外设
+Basic Peripherals
+兼容封装,不推荐二次开发
+Compatible package, does not recommend secondary development
+脚本空间: 默认128k,最高
+Script space: default 128k, highest
+开源仓库链接
+Open Source Warehouse Link
+开源仓库链接(主库
+open source repository link (main library
+可用Lua内存: 默认200k,最高
+Available Lua memory: default 200k, highest
+模组(EC618系列通用
+Module (EC618 Series General
+刷机烧录教程
+Brush machine burning tutorial
+网络功能
+Network function
+为它提供哪些功能
+What functions are provided for it
+显示
+Display
+相关资料链接
+Related Information Links
+小封装, TDD Only模块,仅中国移动卡
+Small Package, TDD Only Module, China Mobile Card Only
+语音播放
+Voice playback
+正式版可以在发行版页面下载, 整个系列的固件都是通用的
+The official version can be downloaded from the release page, and the firmware of the entire series is common.
+支持但不推荐使用
+Supported but not recommend use
+支持双卡单待, 仅支持4G网络, 不支持 2G/3G/5G, 也不支持Wifi通信
+Support dual card single standby, only support 4G network, do not support 2G/3G/5G, also do not support Wifi communication
+支持GNSS/GPS卫星定位
+Support GNSS/GPS satellite positioning
+支持I2S数字语音接口, 也支持软DAC音频输出
+Support I2S digital voice interface, also support soft DAC audio output
+支持USB 2.0, 仅CDC功能, 不支持HID和主机模式
+Support USB 2.0, only CDC function, does not support HID and host mode
+主要特点
+Main features
+注意, 鉴于芯片平台的限制,以下功能无法实现或具有局限性
+Note that due to the limitations of the chip platform, the following functions cannot be implemented or have limitations

@@ -1,0 +1,22 @@
+按你板子改成自己的引脚编号
+Press your board to change your pin number.
+本章将会向大家介绍LuatOS如何驱动屏幕，并在屏幕上显示内容。
+This chapter will show you how LuatOS drives the screen and displays content on the screen.
+简介
+Introduction
+接口文档可参考：[lcd库
+Interface documentation can be referred to: [LCD library
+开发板一块，SPI接口的LCD屏一个，我这里使用
+A development board, SPI interface LCD screen, I use here
+驱动屏幕
+Drive screen
+软件使用
+Software usage
+通常驱动屏幕是一件很复杂的事情，因为LCD屏幕有很多指令，显示数据还要制作字库。LuatOS将LCD进行了封装，内置了多种常用的屏幕驱动，不在列表的也可以通过Lua脚本配置指令进行驱动。
+Usually driving the screen is a very complicated thing, because the LCD screen has a lot of instructions, display data and make a font. LuatOS encapsulates the LCD and has a variety of commonly used screen drivers built in. If it is not in the list, it can also be driven by Lua script configuration instructions.
+修改demo中的lcd示例，将屏幕驱动改为st7735，各引脚配置成我们连接的，就可以在屏幕上看到我们绘制的点线
+Modify the LCD example in demo, change the screen driver to st7735. If each pin is configured as we are connected, we can see the dotted line we draw on the screen.
+硬件连接图
+Hardware connection diagram
+硬件准备
+Hardware preparation

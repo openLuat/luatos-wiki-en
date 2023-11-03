@@ -1,0 +1,58 @@
+播放视频
+Play video
+不使用默认CS脚
+Don't use default CS pins
+仓库
+Warehouse
+初始化
+Initialization
+初始化时使用较低的频率
+Use lower frequency when initializing
+串口
+Serial port
+将生成的mwsy.rgb放在sd卡中
+Place the generated mwsy.rgb in the sd card
+可以看到代码很简单，首先初始化lcd 之后初始化并挂载sd，然后就是读视频向lcd进行
+You can see that the code is very simple, first initialize LCD, then initialize and mount sd, and then read the video to LCD
+连接
+Connection
+命令输入 `.\ffmpeg -i mwsy.mp4 -r 20 -vf scale=160:128 -pix_fmt rgb565be -vcodec rawvideo mwsy.rgb` 即可将视频转为160x128分辨率的字节流文件
+Enter `.\ffmpeg-I mwsy.mp4 -r 20 -vf scale = 160:128 -pix_fmt rgb565be -vcodec rawvideo mwsy.rgb` to convert the video to a 160x 128 resolution byte stream file
+那么开始准备视频字节流数据吧，我们需要用到
+Then start preparing the video byte stream data, we need to use it.
+平台
+Platform
+前言
+Foreword
+若挂载失败,可以尝试打开调试信息,查找原因
+If the mount fails, you can try to open the debugging information to find the reason.
+视频播放
+Video playback
+视频文件制作
+Video file production
+视频效果展示
+Video effect display
+首先我们了解一下基础的ffmpeg参数
+First of all, let's take a look at the basic ffmpeg parameters.
+首先准备好一段要播放的视频，由于避免版权原因这里不放视频地址了，将之前的ffmpeg.exe也准备好
+First of all, prepare a video to be played. For copyright reasons, the video address is not placed here. Prepare the previous ffmpeg.exe as well.
+数据宽度
+Data Width
+我们在[这里](https://www.gyan.dev/ffmpeg/builds/)进行下载可以得到win版本的压缩包，解压即可获得其中的
+We can download [here](https://www.gyan.dev/ffmpeg/builds/) to get the win version of the compressed package, and decompress to get
+下面以windows平台为例
+Take the windows platform as an example.
+相关连接
+Related Connections
+效果展示
+effect display
+在进行之前先说一下原理，原理很简单，就是将TF卡中的视频字节流数据读出来在LCD上绘制
+Before proceeding, let's talk about the principle. The principle is very simple, that is, read out the video byte stream data in the TF card and draw it on the LCD.
+之后将我们开始编写代码
+Then we'll start writing code.
+之前在Air101上我们进行过[视频播放](https://doc.openluat.com/article/3535)并制作了demo：[video_play](https://gitee.com/openLuat/LuatOS/tree/master/demo/video_play)，今天我们使用Air105在进行一遍视频播放
+Before, we had [video playback](https://doc.openluat.com/article/3535) on Air101 and made demo:[video_play](https://gitee.com/openLuat/LuatOS/tree/master/demo/video_play). Today, we are using Air105 to play video again.
+直接终端输入 `sudo apt install ffmpeg` 即可
+Direct terminal input `sudo apt install ffmpeg` can be
+准备工作
+Preparations

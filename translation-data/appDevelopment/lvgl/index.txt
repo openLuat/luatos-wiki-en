@@ -1,0 +1,2 @@
+本文档将介绍LVGL for LuatOS-Soc的开发文档。
+This document describes the development documentation for the LVGL for LuatOS-Soc.

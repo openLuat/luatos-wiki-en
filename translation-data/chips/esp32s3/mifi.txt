@@ -1,0 +1,42 @@
+本文档是 `Air780E` + `ESP32S3` 做随身wifi的相关信息
+This document is` Air780E` `ESP32S3` to do portable wifi related information
+常见问题
+FAQ
+大概率是Air780E未联网或未插卡. 将Air780E开发板直插电脑, 看是否出现RNDIS网卡, 如果没有出现, 需要刷一下AT固件
+The high probability is that the Air780E is not connected to the Internet or the card is not plugged in. Plug the Air780E development board directly into the computer to see if the RNDIS network card appears. If not, you need to brush the AT firmware.
+待刷机完成后, ESP32S3开发板上有一个黄色的拨动开关, 撕掉保护膜, 拨动到USB一侧
+After the brushing machine is completed, there is a yellow toggle switch on the ESP32S3 development board, tear off the protective film, and toggle to the USB side
+固件的源码哪里找
+Where to find the source code of firmware
+固件及刷机步骤
+Firmware and Brush Steps
+固件下载
+Firmware Download
+管理界面账户密码是 `luatos`  `12345678` 或
+The management interface account password is `luatos` `12345678` or
+记得插卡, Air780E联网后对应的wifi网络才会激活,才能被搜到
+Remember to insert the card, the corresponding wifi network will be activated after the Air780E is connected to the Internet, and it can be searched.
+使用额外的杜邦线, 给Air780E或者ESP32S3的5V/GND进行供电
+Use additional Dupont cable to supply Air780E or ESP32S3 5V/GND
+刷的是ESP-Iot项目的固件, 非LuatOS固件, 如需二开开发, 是使用esp-idf使用C语言编程的
+Brush is the firmware of the ESP-Iot project, non-LuatOS firmware, if you need to open the development, is to use the esp-idf to use the C language programming
+刷机说明
+Brush machine instructions
+刷上述链接中的固件
+Brush the firmware in the above link
+搜不到,怎么办
+Can't find, how to do
+速度并不快, 可以说还比较慢, 作为wifi转4G平台有一定加载, 但单纯做手机热点就别考虑了
+The speed is not fast, it can be said that it is still relatively slow. As a wifi-to -4G platform, there is a certain load, but don't consider just being a hot spot for mobile phones.
+随身wifi的资料合集
+Portable wifi data collection
+需要按pwrkey键2秒, 才会开机. 可短接pwrkey按钮旁边的焊盘,实现上电开机
+You need to press the pwrkey key for 2 seconds to turn on the machine. You can short-circuit the pad next to the pwrkey button to turn on the machine.
+用Type-C对Type-C线, 将两块开发板连接起来
+Connect the two development boards with a Type-C-to-Type-C line.
+账户密码是 `luatos`  `12345678` 或
+The account password is `luatos` `12345678` or
+只需要AT固件, 出厂默认就是AT固件, 所以一般情况下不需要刷机
+Only AT firmware is required, and the factory default is AT firmware, so there is no need to brush the machine under normal circumstances.
+主要是搭配Air780E,实际可以使用EC618系列的其他模块, 例如Air700E,Air780EG等等
+Mainly with Air780E, you can actually use EC618 series of other modules, such as Air700E,Air780EG and so on

@@ -1,0 +1,124 @@
+把a文件放入lib目录, 假设名字叫
+Put the file into the lib directory, assuming the name is
+本文以air101/air103为例, 介绍如何自行添加函数,供lua代码调用
+This article takes air101/air103 as an example to introduce how to add functions for lua code to call.
+必须可以呀, 直接用现成的lib_xx.c拷贝改一改也是很快的方式
+It must be possible. It is also a quick way to change it directly with a ready-made copy of lib_xx.c.
+编译失败? 根据提示修正语法错误
+Compilation failed? Fix syntax errors according to prompts
+不, wendal只有18岁
+No, wendal is only 18
+不是必须的, 但推荐添加
+Not necessary, but recommend added
+打开
+Open
+打印true/false和一段话
+Print true/false and a paragraph
+导航到app/custom目录, 新建一个文件
+Navigate to the app/custom directory to create a new file
+的头文件, 位于LuatOS库的
+The header file for, located in the LuatOS library's
+对应lua调用的第二个参数,数值
+corresponding to the second parameter of lua call, the value
+对应lua调用的第一个参数
+corresponds to the first parameter of the lua call
+返回值的数量, 指的是从lua的堆栈中弹出多少个值作为返回值
+The number of return values, which refers to the number of values popped from lua's stack as return values.
+仿造已有的`luat_lib_xxx.c` 写一个库
+Imitate the existing `luat_lib_xxx.c `to write a library
+否则, 当前是"错误年龄了
+Otherwise, the current is the "wrong age".
+搞不定? 求帮助? 到QQ群求助或者gitee发帖
+Can't do it? Ask for help? To the QQ group for help or gitee post.
+函数声明在luat_base.h里
+Function declaration in luat_base.h
+函数原型
+function prototype
+函数原型只有一个参数, 对应的lua参数在lua的虚拟栈内
+The function prototype has only one parameter, and the corresponding lua parameter is in the virtual stack of lua.
+基础函数
+basic function
+内存分配函数
+memory allocation function
+能编译已有代码, 例如air101/air103, 如果还不能, 先看看[编译教程
+Can compile existing code, such as air101/air103. If not, first look at [Compile Tutorial
+你来填
+You fill in
+你是否有这样的困扰
+Do you have such trouble
+年龄正确
+age is correct
+启用自定义函数构造
+Enable custom function construction
+群
+Group
+日志函数,配套
+log function, supporting
+如果不使用custom_init, luat_base_xxx.c 也声明
+If you do not use custom_init, luat_base_xxx.c also declares
+少许vscode经验, 基础的C语言编程能力
+A little vscode experience, basic C language programming ability
+使用vscode, 打开air101/air103的源码目录
+Using vscode, open the source directory of air101/air103
+刷机,下脚本,看效果
+Brush machine, under the script, see the effect
+刷机后提示找不到`sayhi` -- 确保编译正确, 确保选择了正确的底层固件文件, 确保刷入了新的底层
+After brushing the machine, the prompt cannot find the` sayhi`-make sure the compilation is correct, make sure the correct underlying firmware file is selected, and make sure the new underlying layer is brushed in.
+顺便点个star, 谢谢
+By the way, order a star, thank you
+拓展1-- 函数比较多, 我想做成一个库可以吗
+Expansion 1-there are many functions, can I make a library
+拓展2 -- 添加静态库进行链接
+Expansion 2-Add static libraries for linking
+添加全局函数, 函数名就叫sayhi吧
+Add a global function, the function name is sayhi
+添加自定义函数(急速版
+Add Custom Functions (Rapid Edition
+贴入以下内容
+Paste the following
+往lua堆栈压入2个返回值
+Push 2 return values into lua stack
+我只想添加个函数, LuatOS的代码好多怎么搞
+I just want to add a function, LuatOS code a lot of what's wrong
+先给库起个酷炫的名字
+First, give the library a cool name.
+先压入堆栈
+Push stack first
+小于19的话, 就是"正确年龄
+If it's less than 19, it's "the right age."
+新建c文件,存放示例代码
+Create a new c file and store the sample code.
+修改`xmake.lua`, 寻找
+Modify `xmake.lua` to look
+需要一点点xmake知识了, 但搜索字符串添加也可以
+Need a little xmake knowledge, but the search string can also be added
+需要用的头文件,自行导入
+Need to use the header file, import it yourself
+压入
+Pressing in
+有个C实现的算法, 怎么搞到LuatOS里
+There is an algorithm implemented by C, how to get it into LuatOS
+愉快地编译
+happily compiled
+愉快地测试
+test happily
+预备知识
+preparatory knowledge
+预期效果
+Expected effect
+在 `custom_init` 里调用 `luaopen_xxx` 方法即可
+Call the luaopen_xxx method in the custom_init.
+在其之前或之后, 添加 ` ./lib/libcool.a ` , 注意前后空格
+Before or after it, add `./lib/libcool. a`, noting the space before and after
+在中间的位置, 添加以下宏定义
+In the middle, add the following macro definition
+暂不需要返回值
+No return value required
+这里是返回值的数量, 而非 0/1 等正确/错误返回码
+Here is the number of return values, not the correct/error return code such as 0/1
+执行xmake, 常规编译一下
+Execute xmake and compile it regular
+最初建议只写1个函数, 声明好`rotable_Reg`和`luaopen_xxx`方法
+At first, it was suggested to write only one function and declare the "rotable_Reg" and "luaopen_xxx" methods.
+最好懂一点git的基本操作
+It is better to understand the basic operation of git.

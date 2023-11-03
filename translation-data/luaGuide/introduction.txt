@@ -1,0 +1,1168 @@
+按照格式化参数`formatstring`，返回后面`...`内容的格式化版本。
+Follow the formatting parameter `formatstring` to return the formatted version of the content of the following.
+把 false 和 nil 看作是`false`，其他的都为true（包括0这个值，也是相当于
+False and nil are regarded as` false`, and the others are true (including the value of 0, which is also equivalent
+把结果打印出来，一行数据
+Print the results, a line of data
+把全局变量a更改了
+changed the global variable a
+把全局变量c更改了
+changed the global variable c
+把字符串s中，前3个c，替换为
+Replace the first 3 c's in the string s
+把字符串s中，前5个a，替换为
+Replace the first 5 a's in the string s
+把hello函数同时赋值给a变量
+Assign the hello function to the variable at the same time.
+保留4位小数
+Keep 4 decimal places
+本节我们来学习使用`算术运算符`，如下所示
+In this section we learn to use `arithmetic operators`, as follows
+本题理论上不用循环就能实现，但是为了练习一下技巧，请用for循环来实现
+In theory, this topic can be implemented without a loop, but in order to practice the technique, please use the for loop to implement it.
+比如
+Such
+比如我打印一个没有声明的值，便会输出
+For example, if I print a value without a declaration, it will output
+比如我们可以在`table`中放置`number`和`string`数据，类似下面的代码
+For example, we can put `number` and`string` data in `table`, similar to the following code
+比如我们有下面这个函数
+For example, we have the following function
+比如下面的变量`n`和`s`，如何拼接起来呢
+For example, the following variables `n` and `s`, how to join together
+比如下面的变量`s`，存储的内容是一个字符串，但是代表了一个数字，如何转成number再与n相加计算呢
+For example, the following variable `s`, the stored content is a string, but represents a number, how to convert it into number and add it to n
+比如下面的描述
+For example, the following description
+比如像下面这样，计算1-100相加途中，`小于100`的`最大的和
+For example, like the following, calculate the maximum sum of` less than 100 `on the way to the addition of 1-100
+编写格式化字符串的规则与标准 c 语言中 printf 函数的规则基本相同
+The rules for writing a formatted string are basically the same as the rules for the printf function in the standard c language
+变换前的值
+Value before transformation
+变量
+Variable
+变量`，可以看作是一个桶，在里面装你想要装的内容。这些内容可以是Lua包含的所有合法类型。
+Variable`, can be regarded as a bucket, in which you want to put the content. These can be all legal types that Lua contains.
+变量个数 < 值的个数：多余的值会被忽略
+Number of variables <number of values: Excess values are ignored
+变量个数 > 值的个数：按变量个数补足
+Number of variables> number of values: complement by number of variables
+变量无法被外部调用
+Variable cannot be called externally
+并打印出来
+and print it out
+并打印出字符串s的长度
+and print out the length of the string s
+并将结果打印出来
+and print out the results
+并且还知道了，`函数`是指可以实现某些功能的子程序，可以使用`函数名(参数)`来执行。
+It is also known that `function` refers to a subroutine that can implement certain functions and can be executed using the `function name (parameter).
+并使用print打印出来
+and print it out using print
+补充：在其他语言中（如C），0x00代表字符串结束，但是在lua中并不是这样。
+Added: In other languages (such as C),0x 00 represents the end of a string, but this is not the case in lua.
+补全代码
+completion code
+补全这个函数的代码，满足题目要求
+Complete the code of this function to meet the requirements of the topic
+不等于，检测两个值是否相等，相等返回 false，否则返回
+Not equal, check whether two values are equal, equal return false, otherwise return
+不管我写多少行
+No matter how many lines I write
+不满足条件1，但是满足条件
+Condition 1 is not met, but the condition is met
+不填默认是
+Do not fill in the default is
+布尔型（boolean）只有两个可选值：`true`（真） 和 `false`（假
+Boolean (boolean) has only two optional values: `true` (true) and `false` (false)
+布尔型和比较运算
+Boolean and comparison operations
+参考下面的代码
+Refer to the code below
+测试
+Test
+乘法
+Multiplication
+乘幂，计算次方
+power, calculate the power
+初识
+First understanding
+初识函数
+initial knowledge function
+除法
+division
+传入值为三边长度，多改几个测试下
+The incoming value is the length of three sides, change it to a few more tests.
+从`倒数第5个字符开始，到倒数第2个字符`的值
+The value from `starting from the fifth last character to the second last character`
+从`第1个字符开始，到倒数第3个字符`的值
+The value from the first character to the third character from the bottom.
+从`第4个字符开始，到最后`的值
+Values from `4th character to the last`
+从索引为2的位置开始匹配字符串
+Match string starting at index 2
+从索引为5的位置开始匹配字符串
+Match string starting at index 5
+打印
+Print
+打印出`n:`连上`n`值的字符串
+Prints the string of `n:`with the value `n`
+打印出结果
+Print out results
+打印出三个变量的值
+Print out the values of the three variables
+打印的结果
+Printed Results
+打印一行数据，数据内容为810个
+Print a row of data with 810 data contents
+大小写转换
+Case Conversion
+大于，如果左边的值大于右边的值，返回 true，否则返回
+Greater than, returns true if the value on the left is greater than the value on the right, otherwise
+大于等于，如果左边的值大于等于右边的值，返回 true，否则返回
+Greater than or equal to, returns true if the left value is greater than or equal to the right value, otherwise
+代码`注释`就是在代码里，不会运行的部分。`注释`完全不会被运行。
+Code "comments" are the parts of the code that will not run. `Annotation` will not be run at all.
+代码内容
+Code Content
+代码注释
+Code Comments
+待添加
+To be added
+单引号
+Single quotation mark
+单引号间的一串字符
+A string of characters between single quotation marks
+但是，这样会出现一个问题：如何同时显示单引号和双引号？这里就需要`转义字符`登场了。
+However, this will cause a problem: how to display single and double quotes at the same time? Here we need the` escape character.
+但是当我们代码量增加，很多时候大量新建全局变量会导致内存激增，我们需要一种可以临时使用、并且可以自动销毁释放内存资源的变量，要怎么解决呢
+However, when our code volume increases, a large number of new global variables will often lead to a surge in memory. We need a variable that can be used temporarily and can be automatically destroyed to release memory resources. How should we solve this problem?
+但是可以在文件内被调用
+but can be called within a file
+但是我们有时候会遇到一些特殊的问题，如：**如何输出单引号和双引号？如何输出回车换行
+But we sometimes encounter some special problems, such as: **How to output single quotation marks and double quotation marks? How to output carriage return and line feed
+但是一般来说，我们的需求远远不止这些，我们可能需要一个如下功能的函数
+But generally speaking, our needs are far more than these, we may need a function with the following functions
+当 j 缺省时，默认为 -1，也就是字符串 s 的最后位置。
+When j is defaulted, it defaults to -1, which is the last position of the string s.
+当第二种方式有歧义时，应该用第一种方式
+When the second way is ambiguous, the first way should be used.
+当调用了`require`接口后，Lua虚拟机会自动加载你调用的文件，`执行文件的内容`，然后`返回你文件里return的结果
+When the` require` interface is called, Lua virtual machine will automatically load the file you call, `execute the contents of the file`, and then` return the result of return in your file
+当然，1字节最大为0xff，即256，只能存下一部分符号，大部分的中文按某些编码，一个中文占用2或3个字节
+Of course, the maximum size of 1 byte is 0xff, that is, 256, and only some symbols can be saved. Most Chinese characters are coded according to certain codes, and one Chinese takes up 2 or 3 bytes.
+当然，你不能说你看不见的数据就不存在，他们都完好无损地在这个字符串中
+Of course, you can't say that the data you can't see does not exist, they are all intact in this string
+当索引 i 在字符串 s 的位置在索引 j 的后面时，将返回一个空字符串。
+When index I is at the position of string s after index j, an empty string is returned.
+当它大于等于0、小于5时，输出`太小
+When it is greater than or equal to 0 and less than 5, the output` is too small
+当它大于等于10时，输出`太大
+When it is greater than or equal to 10, the output` is too large
+当它大于等于5、小于10时，输出`适中
+When it is greater than or equal to 5 and less than 10, the output is moderate.
+当左右值的数量不一致时，Lua会进行下面的设定
+When the number of left and right values is inconsistent, Lua will perform the following settings
+到2位十六进制所代表的任意字符
+to any character represented by 2 hexadecimal
+到3位八进制数所代表的任意字符
+to any character represented by a 3-digit octal number.
+到第n天早上再想吃的时候，就只剩下一个桃子了。
+By the time I wanted to eat again on the morning of the n th day, there was only one peach left.
+的本质
+the essence
+的结果
+The result
+的类型
+The type
+的判断依据（自测题
+The basis of judgment (self-test questions
+的值
+The value
+的值为
+The value
+的字符串每字节可以存储任意的一字节数据。
+Each byte of the string can store an arbitrary byte of data.
+等价于
+equivalent
+等于，检测两个值是否相等，相等返回 true，否则返回
+Equal to, detects whether two values are equal, equality returns true, otherwise returns
+第2天早上又将剩下的桃子吃掉一半，还是觉得不过瘾，就又多吃了两个。
+The next morning, I ate half of the remaining peaches, but I still didn't feel satisfied, so I ate two more.
+第二个参数","第三个参数
+second parameter "," third parameter
+第三个参数`init`默认为`1`，表示从第几个字符开始匹配，当`init`为负数时，表示从`s`字符串的倒数第`-init`个字符处开始匹配。
+The third parameter `init` defaults to `1`, which indicates that the match starts from the first character. When `init` is a negative number, it indicates that the match starts from the last `-init` character of the `s` string.
+第三个元素应为
+The third element should be
+第四个参数`plain`默认为`false`，当其为`true`时，只会把`p`看成一个字符串对待。
+The fourth parameter `plain` defaults to `false`. When it is `true`, it will only treat `p` as a string.
+第四个参数为`true`时，便不会使用正则功能。
+When the fourth parameter is `true`, the regular function is not used.
+第一个 Lua 程序
+The first Lua program
+第一个元素应为
+The first element should be
+点我快速测试下面的代码
+Point me to quickly test the following code
+调用`funcList[1](a,b)`，返回a和b的乘积
+Call `funcList[1](a, B) `to return the product of a and B
+调用`funcList[2](a,b)`，返回a减b的差
+Call `funcList[2](a, B) `to return the difference between a and B.
+调用`funcList[3](a)`，返回a的相反数
+Call `funcList[3](a)`to return the inverse of a
+调用函数只需要按下面的格式即可
+The call function only needs to be in the following format
+迭代器
+Iterator
+都不会影响代码运行
+will not affect the code running
+都是正确写法
+It's all written correctly.
+对应着`0x30`、`1`对应着
+Corresponding to `0x30`, `1` corresponds
+对应着`0x41`、`B`对应着
+Corresponding to `0x41`, `B` corresponds
+对应着`0x61`、`b`对应着
+Corresponding to `0x61`, `B` corresponds
+多改几个数值自行测试
+Change a few more values to test yourself.
+多条件判断
+multi-condition judgment
+反斜杠字符
+backslash character
+返回
+Return
+返回：  table结果
+Return: table Results
+返回多个值（自测题
+Returns multiple values (self-test questions
+返回值有两个，第一个是被替换后的字符串，第二个是替换了多少次。
+There are two return values, the first is the replaced string and the second is how many times it has been replaced.
+返回字符 s[i]、s[i + 1]、s[i + 2]、······、s[j] 所对应的 ASCII 码。i 的默认值为 1，即第一个字节,j 的默认值为
+Returns the ASCII code for the characters s [I], s [I 1], s [I 2],..., s[j]. The default value of I is 1, the first byte, and the default value of j is
+返回字符串 `s` 中，从索引 `i` 到索引 `j` 之间的子字符串。
+Returns the substring from index `I` to index `j` in the string`s.
+返回字符串 s 的 n 次拷贝。
+Returns n copies of string s.
+返回true即表示变量`n`符合要求
+A return of true indicates that the variable `n` meets the requirements.
+分别存入字符串数据：`str`、`abc`、`233`，使输出打印正确
+Store string data respectively: `str`, `abc`, `233` to make the output print correctly
+分支判断
+branch judgment
+符号|含义
+symbol | meaning
+符合条件的代码
+Eligible Code
+负号，取负值
+Negative sign, take negative value
+赋值`是改变一个变量值的最基本的方法。
+Assignment` is the most basic way to change the value of a variable.
+赋值语句
+assignment statement
+各种接口
+Various interfaces
+给`n`的值加上
+Add the value of `n`
+更改第二个元素的值
+Change the value of the second element
+更改这个数多运行几次试试
+Try changing this number a few more times.
+函数
+Function
+函数`是指一段在一起的、可以做某一件事儿的程序，也叫做子程序。
+A function` refers to a program that can do something together, also called a subroutine.
+函数参数
+Function Parameters
+函数返回值
+function return value
+函数功能
+Function Function
+函数名(参数1,参数
+Function name (parameter 1, parameter
+函数名(参数1,参数2,参数
+Function name (parameter 1, parameter 2, parameter
+和  下标 = 值
+and subscript = value
+和]]--间的一串字符
+and]]-- a string of characters
+和]]间的一串字符
+a string of characters between and]]
+和`j`表示元素起始和结束的下标。
+and `j` represent the subscripts of the beginning and end of the element.
+和相反数
+and the opposite number
+和b的差
+and the difference of B
+和b的乘积
+Product of and B
+和hello变量指向同一个函数
+and hello variable pointing to the same function
+和pong相等吗
+Is it equal to pong?
+很多语言中都有数组这个概念，在Lua中，我们可以使用`table`（表）来实现这个功能
+Many languages have the concept of arrays. In Lua, we can use `table` (table) to implement this function.
+换行(LF),将当前位置移到下一行开头
+Line feed (LF) to move the current position to the beginning of the next line
+换行了
+Line break
+回车(CR),将当前位置移到本行开头
+Enter (CR) to move the current position to the beginning of the line
+会输出
+will output
+基础语法
+Basic Grammar
+几乎所有语言的第一行代码，都是输出`hello world`，本教程也不意外。
+The first line of code in almost all languages is the output `hello world`, and this tutorial is not surprising.
+计算机如何解析这些数据，我们不需要了解，当你知道了上面的知识后，你应该可以理解下面的描述
+How the computer parses these data, we don't need to understand, when you know the above knowledge, you should be able to understand the following description
+继续循环判断依据
+Judgment basis for continuing cycle
+加法
+Addition
+间隔符使用
+Spacer use
+减法
+subtraction
+检验大小（自测题
+Test size (self-test questions
+简单
+Simple
+将`@#$`变量里的值赋值给
+Assign the value in the `@#$` variable
+将第3个元素与第7个元素交换
+Exchange the 3rd element with the 7th element
+将第9个元素与第2个元素交换
+Swap the 9th element with the 2nd element
+将目标字符串`s`中所有的子串`p`替换成字符串
+Replace all substrings `p` in target string `s` with strings
+将元素是`string`或者`number`类型的`table`，每个元素连接起来变成字符串并返回。
+The elements are `table` of type `string` or `number`, and each element is concatenated into a string and returned.
+将t中的结果全部连起来
+Connect all the results in t.
+交换变量
+Swap Variables
+接收 0 个或更多的整数（整数范围：0~255），返回这些整数所对应的 ASCII 码字符组成的字符串。当参数为空时，默认是一个
+Receives 0 or more integers (integer range: 0 to 255) and returns a string of ASCII characters corresponding to these integers. When the parameter is empty, the default is a
+接收一个字符串 s，返回一个把所有大写字母变成小写字母的字符串。
+Receives a string s and returns a string that turns all uppercase letters into lowercase letters.
+接收一个字符串 s，返回一个把所有小写字母变成大写字母的字符串。
+Receives a string s and returns a string that turns all lowercase letters into uppercase letters.
+接收一个字符串，返回它的长度。
+Receives a string and returns its length.
+接下来，你需要了解，每一个符号都对应着一个数字，比如
+Next, you need to understand that each symbol corresponds to a number, such
+接下来几节会讲解string库的各种接口
+The next few sections will explain the various interfaces of the string library.
+接下来你需要完成下面的练习
+Next you need to complete the following exercises
+结果
+Results
+结果存放到这个变量
+The results are stored in this variable.
+结果应为
+The result should be
+举个例子，比如下面的函数，可以实现打印出两个传入值的和
+For example, the following function, for example, can print out the sum of two incoming values
+举个例子，比如有一个`数字
+For example, there is a number.
+可获得`number`类型数据
+Data of type `number` can be obtained
+可获得`string`类型数据
+`string` type data is available
+可获得number类型数据
+Number type data can be obtained
+可获得string类型数据
+String type data can be obtained
+可见，在使用`string`作为下标时，`table`的灵活性提升了一个数量级。
+It can be seen that when `string` is used as the index, the flexibility of `table` is improved by an order of magnitude.
+可能你会奇怪，第四个参数有什么存在的必要吗？p不是本来就应该是个字符串吗
+You may wonder, is there any need for the fourth parameter? Isn't p supposed to be a string?
+可选参数`n`，表示限制替换次数。
+Optional parameter `n`, which means to limit the number of replacements.
+可选参数`sep`，表示连接间隔符，默认为空。
+The optional parameter `sep`, which represents the connection spacer, is empty by default.
+可以对多个变量同时赋值，变量用`逗号`分开，`赋值`语句`右边的值`会依次赋给`左边的变量
+You can assign values to multiple variables at the same time. The variables are separated by `commas`. The value on the right side of the `assignment` statement will be assigned to the variable on the left side in turn.
+可以看见，当发现和大于100后，代码立即把`result`的值还原到了加上当前数字之前的状态，并且调用`break`语句，立即退出了本次循环
+As you can see, when the sum is found to be greater than 100, the code immediately restores the value of` result` to the state before adding the current number, and calls the` break` statement, which immediately exits the loop
+可以为负数，表示倒数第几个字符。
+Can be a negative number that represents the penultimate character.
+可以用下面两种方式访问
+It can be accessed in two ways.
+空
+Empty
+空的
+Empty
+空字符
+null character
+控制输出2位数字，并在前面补
+Control the output of 2 digits, and in front of the complement.
+库
+Library
+跨文件调用
+Cross-file call
+快速入门
+Quick Start
+了解
+Understanding
+类型变量
+Type variable
+类型表示没有任何有效值，只要是没有声明的值，它就是
+The type indicates that there is no valid value, as long as it is an undeclared value, it is.
+理解了上面的代码，我们来完成下面一个简单的任务吧
+After understanding the above code, let's complete the following simple task
+例如，如果我们想给str赋值一个单引号，一个双引号（'"），那么我们可以这样写
+For example, if we want to assign str a single quote and a double quote ('"), then we can write
+例如：我想要新建一个桶，名叫bucket，在里面放入233这个数字，就可以像下面一样
+For example, I want to create a new bucket named bucket and put the number 233 in it, which can be as follows
+例子
+Examples
+连接结果
+Connection Results
+两个awsl的位置分别是
+The positions of the two awsl are
+两种写法是等价关系
+The two ways of writing are equivalent relations.
+临时变量名`可以直接在代码区域使用（但不可更改），每次循环会自动加`步长值`，并且在到达`结束值`后停止循环
+The temporary variable name `can be used directly in the code area (but cannot be changed), each loop will automatically add the `step value`, and stop the loop after reaching the `end value`
+临时变量名=开始值,结束值,步长
+Temporary variable name = start value, end value, step size
+逻辑非操作符。与逻辑运算结果相反，如果条件为 true，逻辑非为
+Logical non-operator. Contrary to the result of a logical operation, if the condition is true, the logical non is
+逻辑或操作符。 若 A 为 true，则返回 A，否则返回
+Logical or operator. Returns A if A is true, otherwise
+逻辑与操作符。 若 A 为 false，则返回 A，否则返回
+Logical and operator. Returns A if A is false, otherwise
+逻辑运算
+logical operation
+逻辑运算符
+Logical operators
+逻辑运算符基于布尔型的值来进行计算，并给出结果，下表列出了 Lua 语言中的常用逻辑运算符
+Logical operators are calculated based on Boolean values and give results. The following table lists common logical operators in Lua language
+满足条件
+meet the condition
+面积area为
+area is
+那么，我们如何编写可以传入参数的函数呢？可以按下面的模板来写
+So, how do we write a function that can pass in parameters?
+那么，已知变量a，请打印出下面的结果
+Then, given the variable a, please print out the following result
+那么，已知变量a为最后一天的天数，请打印出第一天的桃子数。
+Then, given that the variable a is the number of days on the last day, please print out the number of peaches on the first day.
+那么代码就像如下这样
+Then the code is like the following
+那么问题来了，执行下面的代码，将会输出什么
+Then the question arises, what will be output by executing the following code
+内数据的和是
+The sum of the internal data is
+你的条件
+Your condition
+你可以参考下面的例子来深入理解
+You can refer to the following example to understand in depth
+你需要使用前面几章的知识，来完成下面的题目
+You need to use the knowledge of the previous chapters to complete the following topics
+你需要完成下面的任务
+You need to complete the following tasks
+你需要在这里进行交换变量的操作
+You need to swap variables here.
+你要在这里填东西
+You're going to fill in here
+排序
+Sort
+判断三角形合法性（自测题
+Judging the legality of triangles (self-test questions
+判断三角形合法性2（自测题
+Judging the legality of triangles 2 (self-test questions
+拼接
+Splicing
+凭空新建第六个元素并赋值
+Create a new sixth element out of thin air and assign a value
+其中，`步长`可以省略，默认为
+where `step` can be omitted and defaults
+前面条件全都不满足
+All previous conditions are not met
+前面我们学习了循环语句，我们需要完成下面的任务
+Earlier we learned the loop statement, we need to complete the following tasks
+前面我们学习了循环语句，有些时候循环运行到一半，我们不想再继续运行了，怎么办呢
+Earlier we learned the loop statement, sometimes the loop runs to half, we don't want to continue to run, how to do
+请把s中代表的数据，全部相加，并打印出来
+Please add up all the data represented in s and print it out.
+请补全代码
+Please complete the code
+请补全代码，输出num的值
+Please complete the code and output the value of num
+请打印出物体的密度
+Please print out the density of the object
+请打印出物体的密度（单位
+Please print out the density of the object (unit
+请根据t的值，打印出字符串内容（一行数据
+Please print out the string content (a line of data according to the value of t
+请计算从`min`与`max`之间，所有`3的倍数`的和
+Please calculate the sum of all `multiples of 3` between `min` and `max`
+请计算从`min`与`max`之间，所有7的倍数的和
+Please calculate the sum of all multiples of 7 between `min` and `max`
+请计算他们的算术和，赋值给新建的变量`result`，使下面代码输出正确结果
+Please calculate their arithmetic and assign to the new variable `result` so that the following code outputs the correct result.
+请计算这个长方形的周长和面积
+Please calculate the perimeter and area of this rectangle
+请将他们按顺序拼接起来，存入`all`，并使用print输出结果
+Please splice them in order, store `all`, and use print to output the result.
+请判断，使用这三根木棒，是否可以组成一个三角形（两短边之和大于第三边
+Please judge, using these three sticks, whether you can form a triangle (the sum of the two short sides is greater than the third side
+请求出小于变量max的13的倍数的最大值（max大于
+Request the maximum value that is less than a multiple of 13 of variable max (max is greater
+请使下面的调用可以正常打印出
+Please make the following call print out normally
+请完成下面的任务
+Please complete the following tasks
+请完善
+Please perfect
+请新建一个变量
+Please create a new variable
+请新建一个函数`rectangle`，并可以用如下形式调用
+Please create a new function `rectangle` and call it in the following form
+请新建一个函数triangle，并可以用如下形式调用（如果可以组成，就返回
+Please create a new function triangle and call it in the following form (if it can be composed, return
+请新建一个名为t的table，满足以下要求
+Create a new table named t that meets the following requirements
+请在此处补全代码
+Please complete the code here
+请在空白处补全代码
+Please complete the code in the blank
+请找出字符串s中，所有字符串awsl的位置
+Please find the position of all strings awsl in string s.
+求出`n`除以2的余数
+Find the remainder of `n` divided by 2
+取余，求出除法的余数
+Take the remainder and find the remainder of the division.
+去除t中的第一个元素
+Remove the first element in t
+全局变量与
+Global variables and
+然后将他们按顺序拼接起来，存入变量`result`，使输出结果正确
+Then splice them in order and store them in the variable `result` to make the output correct.
+然后这时，在t的第三个元素前，加上一个number变量，值为
+Then, in front of the third element of t, add a number variable with a value
+让我们试着输出某个变量吧！使用`print函数`，输出已知变量。 我们已知变量`num`为某个数字，试着输出它的值吧
+Let`s try to output a variable! Use the `print function` to output known variables. We know that the variable `num` is a number, try to output its value.
+让我们试着输出一些其他东西吧！使用多个print函数，输出自己想输出的数据。
+Let's try to output something else! Use multiple print functions to output the data you want to output.
+让我们试着自己新建几个变量吧
+Let's try to create a few variables ourselves.
+认识数组
+Understanding the array
+如：a为5时，输出
+For example, when a is 5, the output
+如果不可以，就打印
+If not, print it.
+如果不是，请将`n`的值改为原来的两倍
+If not, change the value of `n` to twice the original
+如果还是按上面几节的内容，我们只会输出这个值，并不能把这个值传递给其他的变量进行后续使用，如何解决这个需求呢
+If we still follow the contents of the above sections, we will only output this value and will not pass this value to other variables for subsequent use. How can we solve this requirement?
+如果可以组成，就打印出
+If it can be composed, print it out.
+如果你觉得有难度，请查看下面的提示
+If you find it difficult, please check the following tips
+如果上一章节有认真学习过了的话，这段话应该是很好理解的。实质上就是把计算机认识的一串数字，变成字符串变量，并且字符串内的数据就是要存的那串数据。
+If you have studied the previous chapter carefully, this passage should be well understood. In essence, it is to turn a string of numbers known by the computer into a string variable, and the data in the string is the string of data to be stored.
+如果是，请给`n`的值加上
+If yes, add the value of `n`
+如下面一样，使用`等号`对`左边`的`变量`进行赋值
+As below, use the `equal sign` to assign the `variable` on the `left`
+如字符串12awslawslaw，输出3和
+such as string 12awslawslaw, output 3 and
+删除速索引为1的元素
+Delete elements with speed index 1
+删除最后一个元素
+Delete last element
+删减
+Deletion
+上面的编码规则，我们称之为ascii码，具体想了解可以打开下面的网址查看
+The above coding rules, we call ascii code, specifically want to know can open the following URL to view
+上面的代码，就是当i≤100时，result不断地加i，并且i每次循环后增加
+The above code is that when i≤ 100, result continuously adds I, and I increases after each loop.
+上面的代码，就是当num≤100时，result不断地加num，并且num每次循环后自己加
+The above code is that when num ≤ 100, result continuously adds num, and num adds itself after each cycle.
+上面的代码中，`n`就是一个局部变量，它只在`这个funcion`中有效，并且函数运行完后会自动回收这部分的内存。
+In the above code, `n` is a local variable, which is only valid in `this functionon`, and this part of memory will be automatically reclaimed after the function runs.
+上面和下面的代码等价
+The code above and below are equivalent
+上面例子为当a为11的情况
+The above example is the case when a is 11
+上面例子为当a为5的情况
+The above example is the case when a is 5
+上面一节学习了布尔类型，那么这个需要用到哪里呢？我们需要用它来进行某些判断。
+The above section learned about Boolean types, so where does this need to be used? We need to use it to make some judgments.
+上面一节学习了简单的if语句写法，这一节我们来学习多条件分支语句
+The above section learned how to write a simple if statement. In this section, we will learn a multi-conditional branch statement.
+上面一节学习了如何将number转成string，这一节我们来学习如何将string转成
+The above section learned how to convert number to string. In this section, we will learn how to convert string to string.
+上面一节学习了如何拼接字符串，这个方法固然很好用，但是有时候我们会遇到一个需求，那就是把`number`类型的变量和`string`类型的变量拼接起来，组成一个新的
+The above section learned how to splice strings. This method is certainly very useful, but sometimes we will encounter a requirement, that is, to splice the` number` type variable and` string` type variable to form a new one.
+上一部分，我们知道了，在`Lua`中，可以使用`print`函数来打印你想要得到的结果。
+In the last part, we learned that in `Lua`, you can use the `print` function to print the result you want.
+上一节里，我们将`table`来表示`数组`，实际上，`table`中可以包括`任意类型的数据
+In the previous section, we will `table` to signify `array`, in fact, `table` can include `any type of data.
+上一节中，新建的数字变量，我们称之为`number`类型的变量。
+In the previous section, we created a new numeric variable, which we call a `number` type variable.
+甚至你可以跳过某些下标
+You can even skip certain subscripts
+甚至你可以像下面这样
+You can even look like the following
+生成从1-max的
+Generate from 1-max
+十进制数31转换成不同进制
+Decimal number 31 is converted to different decimal.
+实际人能看到的（不可见字符用�代替
+What can be seen by actual people (invisible characters are replaced
+实际上，在Lua中，所有的全局变量全部被存放在了一个大`table`中，这个`table`名为
+In fact, in Lua, all global variables are stored in a large `table`, which is called
+实际上，Lua中，下标可以直接在声明时进行指定，像下面这样
+In fact, in Lua, subscripts can be specified directly at the time of declaration, like the following
+实际上，lua中的匹配默认意义是正则匹配，同时，这里的正则与其它语言也有些许不同。
+In fact, the default meaning of matching in lua is regular matching, and the regular here is slightly different from other languages.
+使函数在table里
+Make the function in table
+使用["下标"] = 值
+Use ["subscript"] = value
+使用`tonumber(value)`函数即可实现这一操作
+This can be done using the `tolumber (value)`function
+使用`tostring(value)`函数即可实现这一操作
+This can be done using the `tostring(value)`function
+使用双括号时，甚至能包含换行数据
+When using double parentheses, you can even include newline data.
+使用print打印结果，结果一行一个
+Use print to print the results, one for each line.
+示例代码
+Sample code
+视频教程
+Video Tutorial
+是一种轻量小巧的脚本语言，它用标准C语言编写并以源代码形式开放。这意味着什么呢？这意味着Lua虚拟机可以**很方便的嵌入别的程序里**，从而为应用程序提供灵活的扩展和定制功能。而整个Lua虚拟机编译后仅仅一百余K，经过适当的裁剪还能做到更小，十分适合嵌入式的开发。
+It is a lightweight and compact scripting language, which is written in standard C language and is open in source code form. This means that the Lua virtual machine can be easily embedded in other programs, providing flexible extension and customization capabilities for applications. However, the entire Lua virtual machine is only over 100 K after compilation, which can be smaller after proper tailoring, which is very suitable for embedded development.
+适中
+Moderate
+手动返回一个table，包含了上面的函数
+Manually returns a table containing the above function
+输出
+Output
+输出 新的值
+Output new value
+输出（不可见字符用�代替
+Output (invisible characters are replaced
+输出（十进制数据
+Output (decimal data
+输出变量
+output variable
+输出结果
+Output Results
+输出数据
+Output data
+输出所有字符串
+Output all strings
+输出应为
+The output should be
+输出nil，因为b是local变量
+Output nil because B is a local variable
+输入值：table的最大值
+Input value: maximum value of table
+数组，使用一个变量名，存储一系列的值
+Array, using a variable name, to store a series of values
+双引号
+Double quotes
+双引号间的一串字符
+A string of characters between double quotes
+算数运算符
+arithmetic operator
+所以，我们来执行下面的代码，打印出`hello world`吧
+So, let`s execute the following code and print` hello world`
+所以我们需要将一些代码放到不同文件中，通过文件来区分这些代码的功能。
+So we need to put some code into different files and distinguish the functions of these codes through files.
+所以执行结果和hello()相同
+So the execution result is the same as hello()
+它实现了一个简单的功能，就是输出
+It implements a simple function, which is to output
+它由常规文本和指示组成，这些指示控制了每个参数应放到格式化结果的什么位置，及如何放入它们。
+It consists of regular text and instructions that control where and how each parameter should be placed in the formatted result.
+太大
+Too big
+太小
+Too small
+特别提示：这个函数的目标字符串s，也是支持正则的
+Special note: the target string s of this function also supports regular
+提供两个数
+Provide two numbers
+提示：新建一个变量来存放临时的值
+Tip: Create a new variable to hold the temporary value
+题目：如果已知number变量`n`，那么如果需要判断n是否符合下面的条件
+Topic: If the number variable` n` is known, then if it is necessary to judge whether n meets the following conditions
+条件
+Condition
+条件判断
+condition judgment
+同理，输出双引号时，声明字符串用单引号括起来，像下面这样
+Similarly, when outputting double quotes, the declaration string is enclosed in single quotes, like the following
+同时，和输入值可以有多个一样，返回值也可以有多个
+At the same time, just as there can be multiple input values, there can also be multiple return values.
+同时，每个文件最多只会被`require`一次，如果有多个`require`，只有第一次会执行
+At the same time, each file will only be `require` once at most, if there are multiple `require`, only the first time will be executed.
+同时，在目前脚本引擎中，Lua的运行速度占有绝对优势。这些都决定了Lua是作为嵌入式脚本的最佳选择。
+At the same time, in the current script engine, Lua's running speed has an absolute advantage. These all determine that Lua is the best choice for embedded scripts.
+同时，在Lua中，函数也是一种变量类型，也就是说，`hello`实际上也是一个变量，里面存储的是一个函数，我们可以用下面的代码来理解
+At the same time, in Lua, a function is also a variable type, that is to say, `hello` is actually a variable, which stores a function, we can use the following code to understand
+同时，lua的字符串中可以保存任何数值，即使是0x00这种不代表任何含义的数，也可以保存
+At the same time, lua's string can save any value, even 0x 00, which does not represent any meaning, can also be saved.
+同时也可以使用简便语法
+You can also use a simple syntax
+同时在上一节，我们学会了新建变量和设置变量的值。
+Also in the previous section, we learned to create new variables and set their values.
+同样的，我们也可以使用冒号来简化语法，像下面这样
+Similarly, we can also use colons to simplify the syntax, like the following
+为大于0的整数，且需要输出a行数据，按图示规律输出
+is an integer greater than 0, and a row of data needs to be output, which is output according to the rule shown in the figure.
+为大于0的整数，且需要输出a行数据，第一行为一个*，后面每行多一个
+is an integer greater than 0, and a row of data needs to be output, with one * for the first row and one more for each subsequent row.
+为大于0的整数，且需要输出a行数据，数据从1开始，每行与上一行的差为
+is an integer greater than 0, and a row of data needs to be output. the data starts from 1, and the difference between each row and the previous row is
+为何要使用函数？因为很多事情都是重复性操作，我们使用函数，可以快速完成这些操作
+Why use functions? Because many things are repetitive operations, we use functions to quickly complete these operations.
+为了更好地理解这段话，我们可以看下面两个文件，其中run.lua是被运行的那个入口文件
+To better understand this passage, we can look at the following two files, where run.lua is the entry file that is run.
+位运算
+bit operation
+文件内部可以调用变量
+Variables can be called inside the file
+文件在被require的时候，会被执行
+When the file is require, it will be executed.
+文字版教程
+Text version tutorial
+我被注释掉了，所以不会运行
+I was commented out, so it won't run.
+我们可以使用`local`标志来新建临时变量，使用`local`创建一个局部变量，与全局变量不同，局部变量只在被声明的那个代码块内有效。
+We can use the `local` flag to create a new temporary variable, and use `local` to create a local variable. Unlike global variables, local variables are only valid within the code block being declared.
+我们可以使用函数的返回值来实现这个需求，结合上面的需求，我们可以用下面的代码实现
+We can use the return value of the function to achieve this requirement, combined with the above requirements, we can use the following code to achieve
+我们可以通过以下实例来更加透彻的理解关系运算符的应用
+We can use the following examples to better understand the application of relational operators
+我们可以通过以下实例来更加透彻的理解逻辑运算符的应用
+We can use the following examples to better understand the application of logical operators
+我们可以通过以下实例来理解算术运算符的应用
+We can understand the application of arithmetic operators through the following examples
+我们可以用`--`开头，来写一段`单行注释
+We can start with `--` and write a one-line comment.
+我们可以用`变量名`+`中括号`，中括号里加上`下标`，来访问或更改这个`元素`，如下面的例子
+We can access or change this `element` with `subscription` in the brackets, as in the following example
+我们可以用下面的例子来示范
+We can use the following example to demonstrate
+我们可以在一个循环体中使用`break`，来立即结束本次循环，继续运行下面的代码
+We can use `break` in a loop body to immediately end the loop and continue to run the following code
+我们可以直接将`number`类型的变量`n`转换成`string`类型的值，这样就可以拼接了
+We can directly convert the variable `n` of type `number` to a value of type `string`, so that we can concatenate
+我们可以直接将`string`类型的变量`s`转换成`number`类型的值，这样就可以计算了
+We can directly convert the variable `s` of type `string` to a value of type `number`, so that we can calculate
+我们可以直接使用`元素`的`下标`，来访问、或者对该`元素`进行赋值操作。
+We can directly use the `subscript` of the `element` to access or assign values to the `element.
+我们甚至能在里面放`function`变量
+We can even put `function` variables in it.
+我们使用`..`来表示字符串拼接符号，如下面的示例代码
+We use `..` to represent the string concatenation symbol, as in the following example code
+我们首先来学习`for`这个循环语法，整体的格式如下
+First of all, let`s learn the loop syntax of` for`. The overall format is as follows
+我们首先来学习`while`这个循环语法，整体的格式如下
+Let`s first learn the loop syntax of` while`. The overall format is as follows
+我们新建一个文件叫`tools.lua`，把这个函数放进去，现在，整个文件如下面这样
+Let`s create a new file called` tools.lua` and put this function in it. Now, the whole file is as follows
+我们需要完成下面的任务
+We need to complete the following tasks
+我们已经知道了，在Lua中，可以使用print函数来打印你想要得到的结果。
+We already know that in Lua, you can use the print function to print the result you want.
+我们应该尽可能的使用局部变量，以方便lua虚拟机自动回收内存空间，同时减少资源占用提高运行速度。
+We should use local variables as much as possible to facilitate the automatic reclaiming of memory space by the lua virtual machine, while reducing resource consumption and improving the running speed.
+我们在前面了解到，Lua 把 `false` 和 `nil` 看作是`false`，其他的都为`true`（包括`0`这个值，也是相当于
+As we learned earlier, Lua regards `false` and` nil` as` false`, and the rest is` true` (including the value of` 0 `, which is also equivalent
+我们在这里直接使用了死循环（因为`while`的继续运行判断依据始终为`true`），整体逻辑也和之前for的代码一致，当发现和大于100后，代码立即把`result`的值还原到了加上当前数字之前的状态，并且调用`break`语句，立即退出了本次循环
+We directly used the dead loop here (because` while` is always judged on the basis of` true`), and the overall logic is consistent with the previous for code. when the sum is found to be greater than 100, the code immediately restores the value of` result` to the state before adding the current number, and calls the` break` statement to exit the loop immediately.
+我们整理一下，实际上if语句就是如下结构
+Let's sort it out. In fact, the if statement is structured as follows
+我们知道，`print`函数可以打印一行完整的输出
+We know that the `print` function can print a complete line of output
+我是多行注释
+I am a multi-line comment
+下标
+Subscript
+下标进阶
+Subscript Advanced
+下标为`1@1`的元素，值为
+Element with subscript `1 @ 1 `, value is
+下标为`1`的元素，值为
+Element with subscript `1`, value is
+下标为`13`的元素，值为
+The element with subscript `13` has a value
+下标为`666`的元素，值为
+The element with subscript `666` has a value
+下标为`apple`的元素，值为
+The element with the subscript `apple` has a value
+下标为`banana`的元素，值为
+The element with the subscript `banana` has a value
+下标为1@1的元素
+Element with subscript 1 @ 1
+下标为13的元素
+Element with subscript 13
+下标为1的元素
+Element with subscript 1
+下标为666的元素
+Element with subscript 666
+下标为apple的元素
+Elements with subscript apple
+下标为banana的元素
+Element with subscript banana
+下面打印出密度
+Print out the density below
+下面的代码，将会打印什么
+The following code will print what
+下面的例子可以展示这种设定
+The following example shows this setting.
+下面返回密度值
+The following returns the density value
+下面举一个例子，我们计算从1加到100的结果
+Here is an example where we calculate the result of adding from 1 to 100
+下面你需要
+Below you need
+下面你需要思考一个问题：一串字符串数据如下，它的实际内容是什么（指人能看见的字符串内容，如
+Next you need to think about a question: a string of string data is as follows, what is its actual content (refers to the string content that people can see, such
+下面你需要完成
+Below you need to complete
+下面你需要做一件简单的事情
+Here's a simple thing you need to do
+下面你要完成这个任务
+Next you will complete this task
+下面请阅读以下代码，思考一下，正确的输出结果是什么
+Please read the following code below and think about what the correct output is.
+下面是例子
+Below is an example
+下面是你需要完成的事
+Here's what you need to do.
+下面是注释的例子
+Below is an example of a comment
+下面问题来了，请设计一个函数`p`，可以按下面的调用方式来打印出物体的密度
+The following problem comes, please design a function` p`, which can print out the density of the object according to the following call method
+下面问题来了，请设计一个函数`p`，可以按下面的调用方式来返回出物体的密度，返回值为`number`类型
+Here comes the following problem. Please design a function` p`, which can return the density of the object according to the following call method. The return value is` number` type
+下面问题来了，运行以下代码，将会输出什么结果
+Here comes the following question. What result will be output by running the following code
+下面问题来了，运行以下代码，将会输出什么结果？请自行思考
+Here comes the question. What will be the output of running the following code? Please think for yourself.
+下面我们举一个最简单的函数例子，这个函数没有传入参数、没有返回值
+Let's take an example of the simplest function, which has no incoming parameters and no return value.
+下面需要你来完成一个简单的任务
+The following needs you to complete a simple task
+现在，你明白为什么说`万物基于table`了吧
+Now, you see why it`s said, "Everything is based on a table."
+现在，我们封装的这个函数就能在其他文件里被调用了，具体代码如下
+Now, the function we encapsulated can be called in other files. The specific code is as follows
+现在你需要完成一项任务
+Now you need to complete a task
+相当于新建全局变量
+Equivalent to creating a new global variable
+详解string库
+Explain the string library in detail.
+小测试
+Small test
+小测验
+Quiz
+小提示：在某些情况下，Lua会自动将number类型转换成string类型
+Tip: In some cases, Lua will automatically convert the number type to the string type
+小于
+Less
+小于，如果左边的值大于右边的值，返回 false，否则返回
+Less than, returns false if the value on the left is greater than the value on the right, otherwise
+小于等于， 如果左边的值小于等于右边的值，返回 true，否则返回
+Less than or equal to, returns true if the left value is less than or equal to the right value, otherwise
+新的值
+New value
+新建`table`变量
+New `table` variable
+新建变量
+New Variable
+新建变量day，并将变量的值设置为
+Create a new variable day and set the value of the variable
+新建变量month，并将变量的值设置为
+Create a new variable month and set the value of the variable
+新建变量year，并将变量的值设置为
+Create a new variable year and set the value of the variable
+新建三个变量
+Create three new variables
+新建三个变量，并赋值
+Create three new variables and assign values
+新建一个`table`，名为`funcList`，并实现以下功能
+Create a new `table` named `funcList` and implement the following functions
+新建一个变量`str`，给str赋值为
+Create a new variable `str` and assign str a value
+新建一个变量`t`，并按下面的格式声明
+Create a new variable `t` and declare it in the following format
+新建一个变量s，使数据内容为810个
+Create a new variable s so that the data content is 810
+新建一个函数变量`biu`，使其执行后会打印`biubiubiu`这个字符串
+Create a new function variable `biu` to print the string `biubiu` after execution.
+新建一个函数变量`pong`，使其与`biu`指向的函数相同
+Create a new function variable `pong` so that it is the same as the function pointed to by `biu`
+新建一个table，名为cards，存入1-10十个数字
+Create a new table, called cards, and store 1-10 numbers.
+需要用print输出要求的结果
+You need to use print to output the required results.
+学完入门教程后，可以继续学习[进阶教程
+After learning the introductory tutorial, you can continue to learn [advanced tutorial
+循环
+Cycle
+循环测试题1（自测题
+Cycle test question 1 (self-test question
+循环测试题2（自测题
+Cycle test question 2 (self-test question
+循环测试题3（自测题
+Cycle test question 3 (self-test question
+循环测试题4（自测题
+Cycle test question 4 (self-test question
+循环的代码
+Loop code
+循环在某些程度上，和while循环很相似，但是for循环可以更加简洁地表达中间累积的量
+Loops are similar to while loops to some extent, but for loops can express the amount of intermediate accumulation more concisely.
+要做的事
+Things to do
+也可以用`--[[`开头，`]]`结尾，写一段多行注释。
+You can also start with `--[[`, `]]` and end with a multi-line comment.
+也可以这样
+Can also be so
+也许我们可以用下面的方式简单规避，输出单引号时，声明字符串用双引号括起来，像下面这样
+Perhaps we can simply circumvent it in the following way, when outputting single quotes, the declaration string is enclosed in double quotes, like the following
+一个长方体的长宽高分别为a、b、c（单位米
+The length, width and height of a cuboid are A, B and C respectively (in meters
+一个指示由字符`%`加上一个字母组成，这些字母指定了如何格式化参数，例如`d`用于十进制数、`x`用于十六进制数、`o`用于八进制数、`f`用于浮点数、`s`用于字符串等。
+An indication consists of the character `%` plus a letter that specifies how to format parameters, such as `d` for decimal numbers, `x` for hexadecimal numbers, `o` for octal numbers, `f` for floating point numbers, `s` for strings, and so on.
+已知，一个长方体的长宽高分别为a、b、c（单位米），且这个物体重量为m（单位克
+It is known that the length, width and height of a cuboid are A, B and C (in meters) respectively, and the weight of this object is M (in grams
+已知2个number类型的变量，分别代表一个长方体的长和宽
+Two variables of type number are known, representing the length and width of a cuboid respectively.
+已知变量`n`，请判断`n`是否为奇数
+Known variable `n`, please judge whether `n` is odd
+已知变量`n`，请判断`n`是否为奇数，如果是，请给`n`的值加上
+Known variable `n`, please judge whether `n` is odd, if so, please add `n` to the value of `n`
+已知两个number类型的变量`min`和
+Two variables of type number `min` and
+已知三个变量
+Three known variables
+已知三个字符串变量
+Three string variables are known
+已知三个字符串变量`s1`、`s2`、`s3`，其内容均为纯数字
+Three string variables `s1`, `s2`, `s3` are known, and their contents are pure numbers
+已知三个number类型的变量，分别代表三根木棒的长度
+Three variables of type number are known, representing the lengths of three sticks respectively.
+已知三个number类型的变量a、b、c，分别代表三根木棒的长度
+It is known that three variables of type number A, B and C represent the lengths of three sticks respectively.
+已知下面的代码，并且已知`a`和`b`的值，请在交换他们的值，使打印输出
+Knowing the following code, and knowing the values of `a` and `B`, please exchange their values to make the printout.
+已知一个变量`n`，为`number`类型整数
+A variable `n` is known as an integer of type `number`
+已知一个变量`s`，打印出全是大写字母的s字符串
+Given a variable `s`, print out the S string with all uppercase letters.
+已知一个字符串的每个字符在数组t中按顺序排列
+It is known that each character of a string is arranged in order in the array t
+已知一个number变量
+A number variable is known
+已知有一个全局变量，名为
+It is known that there is a global variable named
+已知字符串
+Known String
+已知字符串变量`s`，请分别打印出（每种一行
+Known string variable`s`, please print out separately (one line for each
+已知字符串变量s，请分别打印出（每种一行
+Known string variable s, please print out separately (one line for each
+已知字符串s，里面有很多相同的字符串
+known string s, with many identical strings inside
+已知table变量
+Known table variables
+以 `\` 开头的都是转义字符，下面时常用的转义字符格式
+All the characters beginning with `\` are escape characters, which are commonly used in the following escape character format
+以便一会儿返回使用的
+In order to return to use for a while
+以后每天早上都吃了前一天剩下的一半加天数个（例如，第5天吃了前一天剩下的一半加5个
+After that, I ate the remaining half of the previous day plus the number of days every morning (for example, I ate the remaining half of the previous day plus 5 on the 5th day
+以上就是table最简单的一个例子了，就是当作数组来用（注意，一般语言中的数组基本都为不可变长度，这里的table为可变长度
+The above is the simplest example of table, which is to be used as an array (note that arrays in general languages are basically of immutable length, and table here is of variable length
+以下四行判断代码，正确的是
+The following four lines of judgment code, correct is
+因为不存在，打印
+Because it does not exist, print
+因为函数只是个变量，你甚至在一开始可以这样声明`hello`函数
+Because a function is just a variable, you can even declare a `hello` function like this at the beginning.
+引用tools.lua文件，并加载
+Reference the tools.lua file and load
+由于篇幅有限，本节和下面的几节涉及匹配内容时，均不会考虑正则的使用方法，Lua正则教程将会在最后几节单独详细地列出来。
+Due to space constraints, this section and the following sections will not consider the use of regular expressions when it comes to matching content, and the Lua regular tutorial will be listed in detail separately in the last few sections.
+有一串lua字符串中的数据为
+There is a string of lua strings in which the data is
+有一只猴子，第一天摘了若干个桃子 ，当即吃了一半，但还觉得不过瘾 ，就又多吃了一个。
+There was a monkey who picked several peaches on the first day and ate half of them immediately, but he still felt that it was not enough, so he ate another one.
+语言中字符串可以使用以下三种方式来表示
+Strings in the language can be represented in the following three ways
+元表
+Meta Table
+运算符是一个特殊的符号，用于告诉解释器执行特定的数学或逻辑运算。
+An operator is a special symbol that tells the interpreter to perform a particular mathematical or logical operation.
+杂项接口
+Miscellaneous Interface
+在（数组型）表 table 的 pos 索引位置插入 value，其它元素向后移动到空的地方。pos 的默认值是表的长度加一，即默认是插在表的最后。
+Insert value into the pos index position of the (array) table, and move other elements backward to empty places. The default value of pos is the length of the table plus one, that is, the default is inserted at the end of the table.
+在`Lua`中，打印结果只需要使用`print`这个`函数`即可。同时，如果需要使用`函数`，只需要在函数名后加上双括号，同时传入你想传入的值即可。
+In `Lua`, you only need to use the `print` function to print the result. At the same time, if you need to use `function`, just add double parentheses after the function name and pass in the value you want to pass in.
+在`while`中，我们也可以使用
+In `while`, we can also use
+在编写代码时，随着逻辑逐渐复杂，我们的代码量也会变大。虽然有`函数`可以把一部分代码逻辑封装起来，但是所有代码都放到一个文件里，显然也不是个好办法。
+When writing code, as the logic becomes more complex, our code volume will become larger. Although there are `functions` to encapsulate part of the code logic, it is obviously not a good idea to put all the code in one file.
+在表 table 中删除索引为 pos（pos 只能是 number 型）的元素，并返回这个被删除的元素，它后面所有元素的索引值都会减一。pos 的默认值是表的长度，即默认是删除表的最后一个元素。
+Delete the element with index pos(pos can only be number type) in the table table, and return the deleted element, and the index value of all elements after it will be reduced by one. The default value of pos is the length of the table, that is, the default is to delete the last element of the table.
+在表的最后插入
+Insert at the end of the table
+在表索引为1处插入
+Insert at table index 1
+在大多数编程语言中，我们使用0x开头来表示这个数字是16进制的。
+In most programming languages, we start with 0x to indicate that the number is hexadecimal.
+在代码块附近加上快速测试代码链接
+Add quick test code link near code block
+在第二节中，`print`出的数据就是一个字符串。
+In the second section, the data from `print` is a string.
+在计算机中，每一个符号都对应着一个数字，但是在讲解这个知识之前，我们了解一下补充知识
+In computers, each symbol corresponds to a number, but before explaining this knowledge, let's learn about supplementary knowledge.
+在判断后的值
+Value after judgment
+在判断前的值
+Value before judgment
+在前几章的使用中，我们知道函数是可以传入参数的，如
+In the use of the previous chapters, we know that functions can pass in parameters, such
+在前两节，我们的`table`都只是一些简单的List（列表），每个元素的`下标`都是自动从1排列的
+In the first two sections, our `table` is just some simple List (list), and the `subscription` of each element is automatically arranged from 1
+在前面的代码中，我们实现了一个函数，输入变量`a`、`b`，函数会自动输出两个数值的和。
+In the previous code, we implemented a function that inputs variables `a` and `B`, and the function automatically outputs the sum of the two values.
+在前面的内容中，我们已经接触过了函数的调用，这个函数就是前面用到了很多次的
+In the previous content, we have already touched the call of the function, which is used many times before.
+在前面我们知道了，在`table`中，可以直接用`table名[下标]`或`table名.string下标`来访问元素
+As we learned earlier, in the` table`, elements can be accessed directly with` table name [subscript] `or` table name. string subscription`
+在上面的`table`变量`t`中，第一个元素的下标是`1`，第二个是`2`，以此类推。
+In the `table` variable `t` above, the subscript of the first element is `1`, the second is `2`, and so on.
+在上一节，我们学习了如何自定义下标，其实在Lua中，下标也可以是字符串，如下面的例子
+In the previous section, we learned how to customize subscripts, but in Lua, subscripts can also be strings, as in the following example
+在上一节中，我们学习了如何声明字符串。
+In the previous section, we learned how to declare strings.
+在声明后赋予元素值也是可以的
+It is also possible to give element values after declaration
+在实际功能实现中，经常会遇到需要循环运行的代码，比如从1到100填充table数据，我们可以直接用循环语句来实现
+In the actual function implementation, we often encounter code that needs to be run in a loop, such as filling table data from 1 to 100. We can directly use loop statements to implement
+在我们编写代码之前，需要做一下准备，就是：**确保你输入标点符号时，用的不是中文输入法
+Before we write the code, we need to make some preparations, that is: * * make sure you are not using Chinese input method when entering punctuation marks
+在Lua中，可以使用`if`语句来进行判断，如下面所举例的代码，可以判断`n是否为小于10的数
+In Lua, you can use the` if` statement to judge, such as the code shown below, you can judge whether the` n is a number less than 10
+在Lua中，可以使用`if`语句来进行判断，同时可以使用`else`语句，表示多个分支判断
+In Lua, you can use the` if` statement to judge, and you can use the` else` statement to judge multiple branches.
+在Lua中，table是一个一系列元素的集合，使用大括号进行表示，其中的元素之间以逗号分隔，类似下面的代码
+In Lua, table is a collection of a series of elements, represented by curly brackets, separated by commas, similar to the following code
+增加第11个变量，值为
+Add an 11th variable with a value
+长宽高
+length, width and height
+这部分是为了在查看代码时，可以更好地立即现有代码含义用的。
+This is partly for better immediate meaning of existing code when viewing it.
+这部分需要你自己完成一个任务
+This part requires you to complete a task on your own.
+这段代码会运行
+This code will run
+这段代码其实等价于
+This code is actually equivalent
+这个函数功能刚好和前面的string.char相反，是提取字符串中实际的数值。
+This function function is just the opposite of the previous string.char, which is to extract the actual value in the string.
+这个函数会在字符串`s`中，寻找匹配`p`字符串的数据。如果成功找到，那么会返回`p`字符串在`s`字符串中出现的开始位置和结束位置；如果没找到，那么就返回
+This function looks for data in the string `s` that matches the string `p. If it is successfully found, it will return the start and end positions of the string `p` in the string `s`; If it is not found, it will return
+这个函数名为`hello`，我们可以按下面的方法进行调用（执行
+This function is called `hello`, and we can call it as follows (execute
+这个结果应为
+This result should be
+这个数可能是任意数字
+This number can be any number.
+这个数字是几都有可能
+This number is a few possible
+这个物体重量为m（单位克
+The weight of this object is m (in grams
+这里传入的参数，等价于在函数内部新建了一个`local`的变量，修改这些数据不会影响外部的数据（除了后面还没有讲到的`table`等类型
+The parameters passed in here are equivalent to creating a new `local` variable inside the function. Modifying these data will not affect the external data (except for the `table` and other types that have not been mentioned later
+这里的`return`表示返回一个值，`并且立刻结束这个函数的运行
+The `return` here means to return a value, `and end the function immediately.
+这里需要你思考一下，运行以下代码，将会输出什么结果
+Here you need to think about what will be output by running the following code.
+这里all的值就是3了
+Here the value of all is 3
+这里result的值就是
+The value of result here is
+这些`table`访问每个元素的方式仍然是直接用下标，并且也能用下标来进行修改
+The way these `table` accesses each element is still directly with subscripts and can also be modified with subscripts.
+这行代码会输出
+This line of code will output
+这一节我们来讲解字符串的本质
+In this section we explain the nature of strings
+真正的字符串内容
+Real string content
+正则
+regular
+正则匹配相关内容等待更新
+Regular matching related content waiting for update
+之前我们创建的变量，都是全局变量，这种变量在代码运行周期从头到尾，都不会被销毁，而且随处都可调用。
+The variables we created before are global variables, which are not destroyed from beginning to end in the code run cycle and can be called anywhere.
+执行的代码
+Code executed
+执行函数，输入两个值，获取这两个值的和
+Execute the function, enter two values, get the sum of the two values
+值得注意的是，我们可以使用冒号来简化语法，像下面这样
+It is worth noting that we can use colons to simplify the syntax, like the following
+值为
+Value is
+只会匹配到第一个
+will only match up to the first
+指明第四个参数
+Indicates the fourth parameter
+中断循环
+Interrupt Loop
+中也有许多的`关系运算符`，用于比较大小或比较是否相等，符号及其含义如下表
+There are also many `relational operators` for comparing sizes or whether comparisons are equal. The symbols and their meanings are as follows
+重量
+Weight
+周长len为
+The perimeter len is
+注：密度计算公式 密度 = 质量 / 体积
+Note: density calculation formula density = mass/volume
+注：这个字符串存储的不一定是可见的字符
+Note: This string stores characters that are not necessarily visible.
+注意：`else`和`elseif`都是可选的，可有可无，但是`end`不能省略
+Note: `else` and `elseif` are optional, optional, but `end` cannot be omitted
+转
+Turn
+转义字符
+escape character
+转义字符|含义
+escape character | meaning
+转义字符用于表示不能直接显示的字符，比如后退键、回车键、等。
+Escape characters are used to represent characters that cannot be displayed directly, such as the back key, the enter key, etc.
+字符串
+String
+字符串"apple"实际上的内容就是下面的一串数字
+The string "apple" is actually the following string of numbers
+字符串`，是用来存储一串字符的，`但是它的本质就是一串数字`。如何用一串数字来代表一串字符呢
+String `, is used to store a string of characters,` but its essence is a string of numeres `. How to use a string of numbers to represent a string of characters
+字符串`（即`string`），就是一串文本数据，可以存储你要的文本。
+String `(I. e. `string`) is a string of text data that can store the text you want.
+字符串和字符串可以相加吗？可以！我们可以用拼接符号来将两个独立的字符串拼起来。
+Can strings and strings be added? Yes! We can use the splice symbol to put together two independent strings.
+最后一行
+Last line
+作为下标时，也可以动态赋值
+As a substandard, you can also assign values dynamically.
+做题区域
+Problem-making area

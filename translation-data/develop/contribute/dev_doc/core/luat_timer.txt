@@ -1,0 +1,60 @@
+备用
+Spare
+常量
+Constant
+超时时长, 数值, 1-0xFFFFFFFF, 单位毫秒, 大于0才有意义
+Timeout duration, value, 1-0xFFFFFFFF, unit: milliseconds, meaningful if greater than 0
+单次定时的需要, 例如10分钟后执行温度测量
+The need for single timing, for example, to perform temperature measurement after 10 minutes
+的需要, 通过定时器机制实现lua的延时执行
+The delay execution of lua is realized through the timer mechanism.
+底层支持循环定时
+The underlying support loop timing
+定时器
+Timer
+定时器超时后, 生产消息并发送到 `消息总线` , 由`rtos.receive`进行消费
+After the timer expires, the message is produced and sent to the `message bus` for consumption by `rtos.receive`
+额外重复次数, 数值, 1-0xFFFFFFFF, 单位毫秒,默认
+Extra number of repetitions, value, 1-0xFFFFFFFF, unit milliseconds, default
+关闭定时器(含删除
+Turn off timer (including delete
+核心机制
+core mechanism
+基本信息
+Basic information
+基于rtos的timer API进行设计
+design based on rtos timer api
+接口
+Interface
+平台层
+Platform layer
+启动成功
+Startup success
+启动定时器
+Start Timer
+启动失败, 可能id已满或timeout值错误
+Start failed, id may be full or timeout value is wrong
+起草日期
+Date of drafting
+软件定时器
+Software Timer
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+时钟id, 数值, 0-0xFF, 取决于
+clock id, numeric value, 0-0xFF, depends on
+数据结构
+data structure
+为什么需要定时器
+Why do you need a timer?
+相关知识点
+Relevant knowledge points
+消息总线
+Message Bus
+循环定时的需要, 每5分钟联网一次,发送心跳
+Cycle timing needs, network once every 5 minutes, send heartbeat
+硬件定时器
+Hardware Timer
+只要传入数值型的id, timer_stop总会成功
+As long as a numeric id is passed in, the timer_stop will always succeed.

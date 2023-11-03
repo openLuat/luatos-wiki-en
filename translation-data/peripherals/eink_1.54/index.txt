@@ -1,0 +1,6 @@
+购买链接: 因为过于火爆缺货了，请关注`合宙LuatOS`公众号在第一时间抢购
+Purchase link: because it is too hot and out of stock, please pay attention to` he Zhou LuatOS` public number to snap up in the first place.
+墨水屏
+Ink screen
+墨水屏，接口兼容LuatOS全系列开发板，与普通LCD屏接口顺序兼容，板载升压电路，仅需正常3.3v供电即可驱动。
+Ink screen, interface compatible with LuatOS full series development board, compatible with ordinary LCD screen interface sequence, onboard boost circuit, only normal 3.3v power supply can be driven.

@@ -1,0 +1,34 @@
+安全支持
+Security Support
+波特率最高可达
+Up to baud rate
+采用合宙Air601芯片平台，支持Wi-Fi 802.11b/g/n协议，支持BLE 4.2协议
+USES the joint Air601 chip platform, support Wi-Fi 802.11b/g/n protocol, support BLE 4.2 protocol
+集成32位riscv处理器，最高主频240MHz，内置1MB flash和288K SRAM（LuaOS可用
+Integrated 32-bit riscv processor, maximum frequency 240MHz, built-in 1MB flash and 288K SRAM(LuaOS available
+兼容业内主流12F封装(SMD-22)，板载PCB天线，极致成本，满足小型化低成本需求
+Compatible with the industry mainstream 12F package (SMD-22), onboard PCB antenna, extreme cost, to meet the needs of miniaturization and low cost
+开发可使用多路软件I2C，支持任意引脚
+Development can use multi-channel software I2C, support any pin
+模组
+Module
+是合宙通信推出的 Wi-Fi - BLE二合一通信模块
+It is a Wi-Fi-BLE two-in-one communication module launched by Zeus Communications.
+位采样，最高1K采样率
+Bit sampling, up to 1K sampling rate
+芯片
+Chip
+拥有丰富的外设接口
+Has a wealth of peripheral interface
+支持 Station 、Station + SoftAP 、SoftAP 模式
+Support Station, Station SoftAP, SoftAP mode
+支持20/40MHz带宽，最高支持150Mbps速率
+Support 20/40MHz bandwidth, up to 150Mbps rate
+支持低功耗休眠，休眠电流小于
+Support low power sleep, sleep current is less
+支持AT指令开发，指令集兼容，可无缝替换。
+Support AT instruction development, instruction set compatible, seamless replacement.
+支持fota空中升级
+Support fota air upgrade
+支持TLS加密通信，硬件加密模块加速，支持多路TLS连接
+Support TLS encryption communication, hardware encryption module acceleration, support multiple TLS connection

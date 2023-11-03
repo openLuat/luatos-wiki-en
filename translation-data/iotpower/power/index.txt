@@ -1,0 +1,158 @@
+拨码滚动不流畅或按下后无法弹起
+Dial does not scroll smoothly or does not pop up when pressed
+采样速率，USB高速数据传输
+Sampling rate, USB high-speed data transfer
+拆除pcb底板，**注意不要损坏拨轮
+Remove the pcb base plate, **be careful not to damage the dial wheel
+拆机时注意
+Pay attention when disassembling the machine
+常见故障维修
+Common fault maintenance
+常见问题
+FAQ
+打开或关闭电源输出 | 打开充电输出模式 |  按住上电切换语言
+Turn on or off the power output | Turn on the charging output mode | Press and hold power to switch the language
+当左上角显示**待机**时，表示未输出；短按④可切换到**正常**模式，表示正在输出；再短按④可回到**待机**模式。在**待机**模式时，长按④可开启充电输出模式。
+When **standby** is displayed in the upper left corner, it means that it is not output. Short press ④ to switch to **normal** mode, indicating that it is outputting. Short press ④ again to return to **standby** mode. In **standby** mode, long press ④ to turn on the charging output mode.
+档位切换速度：自动档位切换速度
+Gear switching speed: automatic gear switching speed
+的输出最高电压和电流，受限于USB输入端的电压和电流，如果输入端电压和电流小于5.5V/2A，输出最高电压和电流时会跌落（请勿向USB口提供超出5.8V的高电压
+The output maximum voltage and current of is limited by the voltage and current of the USB input terminal. If the input terminal voltage and current are less than 5.5V/2A, the output maximum voltage and current will drop (do not provide high voltage exceeding 5.8V to the USB port
+电流测量精度：200μA档位时分辨率0.5μA，2mA档位时分辨率1μA(下表
+Current measurement accuracy: resolution of 0.5 μA in 200μA gear and 1 μA in 2mA gear (table below
+电流量程 |    范围    | 分辨率 | 标称精度 | 实际精度 |   类型
+Current Range | Range | Resolution | Nominal Accuracy | Actual Accuracy | Type
+电流设定
+Current setting
+电压回读
+Voltage Readback
+电压设定
+Voltage setting
+电压输出始终为
+The voltage output is always
+电源输出负极
+Power Output Negative
+电源输出正极
+Power output positive
+调零
+Zeroing
+短按下③多次，让光标停留在**电量**或**功率**位置，滚动③更改模式
+Short press ③ several times, let the cursor stay at **power** or **power** position, scroll ③ change mode
+短按下③多次，让光标停留在**设定电流**位置，长按③可切换**mA**与**A**单位，使用①、②移动光标至需要修改的位置，滚动③调节数值
+Short press ③ several times to keep the cursor at the position of **set current**, long press ③ to switch **mA** and **A** units, use ① and ② to move the cursor to the position to be modified, and scroll ③ to adjust the value
+短按下③多次，让光标停留在**设定电压**位置，使用①、②移动光标至需要修改的位置，滚动③调节数值。电压在没有负载时因为回路不闭合所以显示是不准的，请连接负载使用，未连接负载时显示的值是不可靠的。
+Short press ③ several times to keep the cursor at the **set voltage** position, use ① and ② to move the cursor to the position to be modified, and scroll ③ to adjust the value. When there is no load, the display is not allowed because the circuit is not closed. Please connect the load for use. The value displayed when the load is not connected is unreliable.
+风险提示：部分品牌快充充电头（如华为、小米等私有协议快充头）可能会误识别快充协议，导致向设备提供超过5.8V的高电压导致瞬间烧毁设备。建议尽量不要使用快充充电头
+Risk Warning: Some brands of fast charging heads (such as Huawei, Xiaomi and other private protocol fast charging heads) may misrecognize the fast charging protocol, resulting in providing high voltage exceeding 5.8V to the device, resulting in instantaneous burning of the device. It is recommended not to use fast charging head as much as possible.
+负载从大电流切换到uA电流时，输出电压升高
+When the load switches from high current to uA current, the output voltage increases
+概述
+Overview
+更改电压
+Change voltage
+更改最大电流
+Change the maximum current
+固件升级
+Firmware Upgrade
+顾名思义，恒压就是稳压输出（禁止短路），恒流是稳流输出（开路无效）。本电源为了方便恒压模式和恒流模式是自动竞争机制。接近预设恒流值的时候竞争，达到预设恒流值时恒流，其他时间恒压输出。通常恒压输出的时候，为了防止负载短路发生意外，会预设恒流值，建议是正常负载峰值电流的2倍。
+As the name implies, constant voltage is a regulated output (short circuit is prohibited), and constant current is a regulated output (open circuit is invalid). This power supply in order to facilitate constant voltage mode and constant current mode is automatic competition mechanism. Close to the preset constant current value when the competition, to reach the preset constant current value constant current, other time constant voltage output. Usually constant voltage output, in order to prevent the load short circuit accident, will preset constant current value, recommended is 2 times the normal load peak current.
+光标右移      |   手动切换档位
+Move the cursor to the right | Switch gears manually
+光标左移      |    清除底电流
+Cursor Move Left | Clear Bottom Current
+黑屏无输出有烧焦气味
+Black screen, no output, burning smell
+恒压模式下电流值比实测值偏小
+The current value in constant voltage mode is smaller than the measured value.
+技术特性
+Technical characteristics
+技术指标
+Technical indicators
+将背板三四个螺丝稍微松动一些即可解决。
+Three or four screws on the back plate can be slightly loosened.
+接语音功放芯片等，声音会打嗝
+If you connect the voice amplifier chip, the sound will burp.
+警告：输出端短路、输入端或输出端浪涌，将可能损坏设备。请勿进行短路与其他风险操作
+Warning: A short circuit at the output, a surge at the input or output, may damage the equipment. Do not short-circuit and other risky operations
+静态输出是高阻抗，不会主动对负载端的电量进行泄放，这有助于提高测量的精度。正常连接任意耗电器件后即可降至目标电压（用手摸摸也会降
+The static output is high impedance and does not actively discharge the power at the load end, which helps improve the accuracy of the measurement. After connecting any power consuming device normally, it can drop to the target voltage (it will also drop when touched by hand.
+开启或关闭输出
+Turn the output on or off
+可配合PC客户端查看与分析电流波形，也可使用命令行版本在任意设备(win/linux/mac)上抓取串口数据（如树莓派），使用pc客户端导入查看
+Can cooperate with PC client to view and analyze current waveform, can also use command line version to capture serial port data (such as strawberry pie) on any device (win/linux/mac), use pc client to import and view
+类型   | 范围 | 分辨率 | 标称精度 | 实际精度
+Type | Range | Resolution | Nominal Accuracy | Actual Accuracy
+没有电压输出
+No voltage output
+前往淘宝购买
+Go to Taobao to buy
+切换电量与功率显示
+Switching between electric quantity and power display
+切换调节位置    |     切换A/mA     | 调整数值或切换模式
+Switch adjustment position | switch A/mA | adjust value or switch mode
+请检查预设值的恒流值是否偏小，当预设恒流值接近当前电流值的时候，恒流和恒压模式处于竞争状态导致实际测量电流值偏小。
+Please check whether the constant current value of the preset value is small. When the preset constant current value is close to the current value, the constant current mode and the constant voltage mode are in a competitive state, resulting in the actual measured current value being small.
+请先拆下四个螺丝
+Please remove the four screws first
+设备结构
+Equipment structure
+设备图
+Equipment diagram
+设定5V输出，实际输出不稳定，电流也不稳定
+Set 5V output, the actual output is unstable, and the current is also unstable
+什么是恒压模式（最大电压）和恒流模式（最大电流
+What is constant voltage mode (maximum voltage) and constant current mode (maximum current
+使用0.4% 精度基准芯片，0.1%精度精密电阻，12位ADC设计，标称精度1%，典型精度
+Uses 0.4% accuracy reference chip, 0.1% accuracy precision resistor, 12-bit ADC design, 1% nominal accuracy, typical accuracy
+使用说明
+Instructions for use
+是一款功能齐全，稳定可靠的小型手持式功率计。它可以通过USB C供电，输出电压与最大电流均可自由调节，独立输出最高达5V2A，是广大用户随身携带的理想测试工具。
+Is a fully functional, stable and reliable small hand-held power meter. It can be powered by USB C, the output voltage and maximum current can be adjusted freely, and the independent output is up to 5V2A. It is an ideal test tool for users to carry with them.
+手动档位
+Manual gear
+手动切换档位（2.0.8固件以后
+Manual gear switching (after 2.0.8 firmware
+受限于体积，IOT Power在输入输出压差大、同时电流大时，发热量较大，所以建议勿长时间超过1.2A电流使用
+Limited by volume, IOT Power generates a large calorific value when the input and output pressure difference is large and the current is large at the same time, so it is recommended not to use it for a long time exceeding 1.2A current.
+特别提醒：每台机器都有各自的校准参数，请勿擦除，否则后果自负
+Special reminder: each machine has its own calibration parameters, please do not erase, otherwise the consequences will be at your own risk.
+通常该现象发生在设备被usb供电端大电流烧毁后，比如连接了快充充电头，充电头错误输出了快充电压，导致供电高于设备的5.8V耐压。该情况较难修理，有可能烧毁CP2102、DCDC调压与LDO部分，建议不要对修复抱有太大希望，换个新的吧反正也不贵。
+Usually this phenomenon occurs after the device is burned by a large current at the usb power supply end. For example, a fast charging head is connected, and the charging head mistakenly outputs a fast charging voltage, resulting in a power supply higher than the 5.8V withstand voltage of the device. This situation is difficult to repair. It may burn CP2102, DCDC voltage regulation and LDO parts. It is suggested not to have too much hope for repair. It is not expensive to replace it with a new one anyway.
+通常该现象发生在设备输出端被反向大电流烧毁后，比如外接了高于5v电压的电池等设备。可以手动尝试更换运放（sop封装的那个），型号为
+Usually this phenomenon occurs after the output of the device is burned by a reverse large current, such as an external device such as a battery with a voltage higher than 5v. You can manually try to replace the op amp (the one in sop package), the model is
+通常该现象发生在设备输出端短路后，可以拆机更换Q2处的MOS管，可在立创购买替换器件：[立创商城
+Usually this phenomenon occurs after the output terminal of the equipment is short-circuited, the MOS tube at Q2 can be disassembled and replaced, and the replacement device can be purchased at Lichuang: [Lichuang Mall
+未连接耗电设备时，设备显示的当前电压比设定的电压要高
+When no consumer is connected, the current voltage displayed by the device is higher than the set voltage
+我们提供输出端转usb母座转接板工程，可以进群查看群共享
+We provide the project of transferring the output terminal to usb base adapter board, which can be viewed and shared by the group.
+我想外接USB输出，有方案吗
+I want to connect USB output. Is there a plan?
+小心拆掉背板（有导热胶与pcb相连
+Carefully remove the back plate (with thermal adhesive connected to the pcb
+序号     |        短按        |       长按       |        滚动
+Serial Number | Short Press | Long Press | Scroll
+因为USB是5V输出，大部分电脑或适配器输出是5V ±5% 的电压，输入5V是无法恒压5V输出的。解决办法是：用带线损补偿的5V适配器，或将输出电压调低到4.8V即可。
+Because USB is 5V output, most computers or adapters output 5V 5% voltage, input 5V is not constant voltage 5V output. The solution is to use a 5V adapter with line loss compensation or reduce the output voltage to 4.8V.
+在保证外部没有连接任何设备的前提下，短按④切换到**正常**模式，打开输出；再长按①设置当前底电流，即可调零
+On the premise of ensuring that no external equipment is connected, short press ④ to switch to * * normal * * mode and turn on the output; Long press ① to set the current bottom current, and then zero
+在客户端内点击升级即可；如需强制升级，可以前往设置选项卡强制升级
+Click Upgrade in the client. If you need to force upgrade, you can go to the Settings tab to force upgrade.
+长按②手动切换档位。x200uA，x2mA，x200mA，x2A 四档循环切换。关闭电源返回自动切换档位模式
+Long press ② to switch the gear manually. x200uA,x2mA,x200mA,x2A four gear cycle switching. Turn off the power and return to the automatic gear switching mode.
+这个与前一个问题类似，语音是正弦波，峰值电流是平均电流的4倍以上，所以预设恒流值建议取4倍以上。
+This is similar to the previous question. The voice is a sine wave, and the peak current is more than 4 times the average current, so the preset constant current value is recommended to be more than 4 times.
+正常现象，真实电路有寄生电感，电流突变会在寄生电感上产生感应电压叠加到输出。为了能精确测量μA电流，iotpower并没有像普通稳压电源使用功率电阻和大电容做假负载，故表现出电路的真实情况。IotPower 静态输出是高阻抗，不会主动对负载端休眠或者关机后的电量进行泄放，可以更真实的模拟电池供电环境。
+Normal phenomenon, the real circuit has parasitic inductance, the current mutation will produce induced voltage superimposed on the parasitic inductance to the output. In order to accurately measure the μA current, the iotpower does not use power resistors and large capacitors as false loads like ordinary regulated power supplies, so it shows the real situation of the circuit. IotPower the static output is high impedance, it will not actively discharge the power after the load terminal is dormant or shut down, which can simulate the battery power supply environment more realistically.
+主要用来给电池设备供电的场合测量使用，输出端请勿连接大于4.2V电池电压以上的供电设备，以免造成不必要的损失。
+It is mainly used to measure the occasion of power supply for battery equipment. Do not connect the output terminal to power supply equipment above 4.2V battery voltage to avoid unnecessary losses.
+注意事项
+Precautions
+自动测量范围：电流回显档位分别为200μA、2mA、200mA、2A四个档位，根据当前输出电流自动切换（除200μA档需手动进入），12位
+Automatic measurement range: current echo gears are 200 μA, 2mA, 200mA and 2A respectively, and are automatically switched according to the current output current (except 200μA gear needs to be entered manually), with 12 positions
+自动档位
+Automatic gear
+最大输出范围：电压最大5V，电流最大2A（需要供电满足要求
+Maximum output range: maximum voltage 5V, maximum current 2A (power supply required to meet requirements
+最后拆下屏幕（若无必要可以不拆屏
+Finally, remove the screen (if not necessary, do not remove the screen.

@@ -1,0 +1,40 @@
+版本号   len固定为2, 值为
+The version number len is fixed to 2 and the value is
+并非数据库, 而是一种广泛用于LuatOS固件的文件打包格式
+Not a database, but a file packaging format widely used for LuatOS firmware
+的取值及含义
+Value and meaning
+格式的固定限制
+Fixed Limits for Formatting
+魔数,        len 固定为4, 值为
+Magic number, len is fixed to 4, value is
+其作用相当于一个只读文件系统
+It acts as a read-only file system.
+虽然从定义上非0x01/0xFE的位置可以随意, 但实际实现通常都是按以上列出的顺序给出
+Although positions other than 0x01/0xFE by definition can be arbitrary, the actual implementation is usually given in the order listed above.
+特殊约定
+Special agreement
+头部长度 len固定为4, headers的总长
+The head length len is fixed to the total length of headers
+文件格式
+File Format
+文件格式定义
+File Format Definition
+文件名       len不固定, 值为文件名数据
+The file name len is not fixed, the value is the file name data
+文件区的末尾, 会是一个名为 ".airm2m_all_crc#.bin", 内容是当前文件数据之前的所有数据的md5的hex值
+At the end of the file area is a file named ".airm2m_all_crc#.bin", and the content is the hex value of md5 of all data before the current file data.
+文件数据长度 len的数据长度为4, 这点与其他不同. 内容是文件数据的长度, uint32_t, 然后是文件数据
+The file data length len is 4, which is different from others. The content is the length of the file data, uint32_t, and then the file data.
+文件数量 len固定为2, 文件区的数据数量
+The number of files len is fixed to 2, and the number of data in the file area
+文件数量限制在1024个文件
+The number of files is limited to 1024 files
+文件头   len固定为4, 值为 0xA5 0x5A 0xA5 0x5A, 固定为头部区的第一个
+The file header len is fixed to 4, the value is 0xA5 0x5A 0xA5 0x5A, and it is fixed to the first one in the header area
+校验值       len固定为
+The check value len is fixed
+校验值   len固定为2, CRC16. 这是头部区的最后一个
+The check value len is fixed to 2, CRC16. This is the last one in the header area.
+长度取决于前一个len值
+length depends on previous len value

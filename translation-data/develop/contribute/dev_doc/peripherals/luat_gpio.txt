@@ -1,0 +1,54 @@
+常量
+Constant
+低电平
+Low level
+读取外部输入的电平信号
+Read the level signal of the external input
+高电平
+High Level
+关闭引脚, 事实上是输入高阻态
+off pin, which is in fact the input high impedance state
+管理并抽象GPIO的C API, 提供一套Lua API供用户代码调用
+Manage and abstract the C API of GPIO, and provide a set of Lua API for user code to call
+核心机制
+core mechanism
+获取输入电平或当前的输出电平
+Get the input level or the current output level
+基本信息
+Basic information
+简单输出
+Simple output
+简单输入
+Simple input
+进入指定的功耗级别
+Enter the specified power level
+平台层
+Platform layer
+起草日期
+Date of drafting
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+设置输出为高电平
+Set the output to high
+输出模式,开漏
+Output mode, open drain
+输出模式,推挽
+Output mode, push-pull
+输出指定电平
+Output specified level
+输入模式,缺省
+input mode, default
+输入模式,上拉
+Input mode, pull-up
+输入模式,下拉
+Input mode, pull-down
+为什么需要
+Why need
+相关知识点
+Relevant knowledge points
+中断,回调函数的t的值为 GPIO_RISING 或
+interrupt, the value of t of the callback function is GPIO_RISING or
+最后一个参数为中断模式, GPIO_RISING_FALLING就是默认值, 双边触发
+The last parameter is interrupt mode, GPIO_RISING_FALLING is the default value, bilateral trigger

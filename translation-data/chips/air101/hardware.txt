@@ -1,0 +1,26 @@
+编号 | 命名 | 默认功能及扩展功能
+Numbering | Naming | Default Features and Extended Features
+编号（LuatOS） | 功能
+Number (LuatOS) | Features
+管脚映射表
+Pin Mapping Table
+寄存器手册(不推荐): [寄存器手册与W800通用
+Register manual (not recommended): [Register manual is common to W800
+开发板
+Development Board
+开发板晶振
+Development Board Crystal Oscillator
+开机时仅配置了`BOOT`和`UART0_TX/RX`，其他数字脚均为GPIO脚，状态为输入高阻
+Only `BOOT` and` UART0_TX/RX` are configured when starting up, other digital pins are GPIO pins, and the status is input high resistance
+模块
+Module
+内部电压
+Internal voltage
+温度
+Temperature
+硬件设计手册: [Air101_MCU设计手册
+Hardware Design Manual: [Air101_MCU Design Manual
+硬件资料
+Hardware Data
+资料文件
+INFORMATION DOCUMENTS

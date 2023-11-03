@@ -1,0 +1,66 @@
+本章介绍LuatOS的i2c库使用方式
+This chapter describes how to use the i2c library for LuatOS
+初始化
+Initialization
+初始化硬件
+Initialize hardware
+代码如下
+The code is as follows
+当前湿度
+Current humidity
+当前温度
+Current Temperature
+等待测量完成
+Wait for the measurement to complete
+读出的数据需要通过如下公式进行转换
+The read data needs to be converted by the following formula
+读取温湿度数据
+Read temperature and humidity data
+发送测量命令
+Send measurement command
+发送指令给AHT10触发测量并读数
+Send command to AHT10 to trigger measurement and reading
+分离湿度数据
+Separate humidity data
+分离湿度数据 包含读取数据中的第2位，第3位以及第4位的高四位
+The separated humidity data contains the second bit, the third bit and the high four bits of the fourth bit in the read data.
+分离温度数据
+Separation temperature data
+分离温度数据 包含读取数据中的第6位，第5位以及第4位的低四位
+The separation temperature data includes the 6th bit, the 5th bit and the lower four bits of the 4th bit in the read data.
+根据AHT10数据手册中5.3节可知，AHT10的触发测量命令为`0xac`，读取温湿度数据时从机共返回6个字节，第一个字节为从机状态，后5个字节为温湿度信息，主机和从机的数据传输图如下
+According to section 5.3 in the AHT10 data manual, the trigger measurement command of AHT10 is` 0xac`. when reading temperature and humidity data, the slave machine returns a total of 6 bytes, the first byte is the slave machine status, and the last 5 bytes are temperature and humidity information. the data transmission diagram of the master machine and the slave machine is as follows
+函数返回值与初始化时的i2c速度一致代表初始化成功
+The return value of the function is consistent with the i2c speed at the time of initialization, which means the initialization is successful.
+简介
+Introduction
+接口文档可参考：[i2c库
+Interface documentation can be referred to:[i2c library
+接线示意
+Wiring Schematic
+开发板
+Development Board
+库提供LuatOS与使用i2c协议外设的通讯
+Library provides communication between LuatOS and peripherals using the i2c protocol
+日志如下
+The log is as follows
+软件部分
+Software part
+是一款温湿度传感器，使用I2C通信协议，7位i2c设备地址为
+Is a temperature and humidity sensor, using I2C communication protocol, 7 i2c device address is
+完整代码如下
+The complete code is as follows
+位地址
+bit address
+硬件
+Hardware
+硬件准备
+Hardware preparation
+有1路i2c控制器
+There is 1 channel i2c controller
+注意AHT10在采集时需要时间,主机发出测量指令`0xAC`后，延时75毫秒以上再读取转换后的数据
+Note that AHT10 needs time during acquisition. After the host sends out the measurement instruction `0xAC`, the converted data will be read with a delay of more than 75 milliseconds.
+转换温湿度结果
+Converting Temperature and Humidity Results
+总线是由Philips公司开发的一种简单、双向二线制同步串行总线。它只需要两根线即可在连接于总线上的器件之间传送信息。
+The bus is a simple, bidirectional two-wire synchronous serial bus developed by Philips. It requires only two wires to transfer information between devices connected to the bus.

@@ -1,0 +1,64 @@
+操作说明
+Operating Instructions
+单STM8主控        |     Air32+STM8双核
+Single STM8 Master | Air32 STM8 Dual Core
+电流**多通道同步采样**，无换挡延迟，最高分辨率
+Current **Multi-channel synchronous sampling**, no shift delay, highest resolution
+电压最大5V，电流最大2A（需要供电满足要求
+The maximum voltage is 5V and the maximum current is 2A (the power supply needs to meet the requirements
+短路保护，短路自动限制电流至1.5A以下
+Short circuit protection, short circuit automatically limit the current to 1.5A or less
+高达**10KHz采样速率**，满足蜂窝模组、蓝牙、WIFI等的功耗测试需求
+Up to **10KHz sampling rate** to meet the power consumption test requirements of cellular modules, Bluetooth, WIFI, etc.
+关闭输出后没有泄放    | 关闭输出后自动泄放能量
+No discharge after closing the output | automatic discharge of energy after closing the output
+滚轮不灵敏        |   滚轮跟手，十分舒适
+The roller is not sensitive | The roller follows the hand and is very comfortable.
+技术指标
+Technical indicators
+精度高，误差小，详情可查阅[技术指标](https://openluat.github.io/luatos-wiki-en/iotpower/pro/tech.html)，欢迎验证
+High precision, small error, details can be found in [technical indicators](https://openluat.github.io/luatos-wiki-en/iotpower/pro/tech.html), welcome to verify
+精度高，误差小，详情可查阅[技术指标](https://wiki.luatos.com/iotpower/pro/tech.html)，欢迎验证
+High precision, small error, details can be found in [technical indicators](https://wiki.luatos.com/iotpower/pro/tech.html), welcome to verify
+可**连接PC客户端**查看与分析电流波形，也可使用命令行版本在任意设备(win/linux/mac)上抓取串口数据（如树莓派），使用pc客户端导入查看
+You can * * connect a PC client * * to view and analyze the current waveform, or use the command line version to capture serial port data (such as strawberry pie) on any device (win/linux/mac) and use the pc client to import and view
+了解更多
+Learn more
+连接与外观
+Connection and Appearance
+列举设备的各项参数与性能指标
+List the parameters and performance indicators of the equipment
+屏      |     280*240 IPS屏
+Screen | 280*240 IPS Screen
+屏幕亮度固定       |       可以调亮度
+Screen brightness fixed | can adjust the brightness
+朴素          |       UI花里胡哨
+Simple | UI fancy
+前往淘宝购买
+Go to Taobao to buy
+软件换挡，换挡时间≥40us |  硬件换挡，无换挡延迟
+Software shift, shift time ≥ 40us | hardware shift, no shift delay
+是广大用户随身携带的理想测试工具。
+Is the majority of users carry the ideal test tool.
+是一款功能齐全，稳定可靠的小型手持式功率计。它可以
+Is a fully functional, stable and reliable small hand-held power meter. It can
+输出端短路会烧毁     |   输出端短路自动保护
+Output short circuit will burn | output short circuit automatic protection
+通过USB C供电，测量低功耗设备的电压与电流
+Measure voltage and current of low-power devices via USB C power supply
+相较于 IoT Power V1 的升级
+Upgrade compared to IoT Power V1
+详细描述设备各个功能的用法
+Describe the usage of each function of the device in detail
+要连电脑模拟电池     |  设备自带模拟电池曲线
+To connect the computer to simulate the battery | the device comes with a simulated battery curve
+要用电脑看波形      |     设备也能看波形
+To use a computer to see the waveform | equipment can also see the waveform
+展示Pro与被测试设备的连接方式，各个部分的用处
+Show how Pro connects to the device under test and how each part is useful.
+支持限流输出，可设置任意限流值
+Support current limit output, can set any current limit value
+转串口通信      |   纯USB通信，占用低
+Serial communication | pure USB communication, low occupancy
+作为电源使用，支持输出指定电压
+Used as a power supply, supporting output specified voltage

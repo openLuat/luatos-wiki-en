@@ -1,0 +1,24 @@
+本文档用于量产时批量下载LuatOS固件及脚本到目标模块, 适用于EC618全系模块, 包括但不限于
+This document is used to download LuatOS firmware and scripts to target modules in batch production. It is applicable to all EC618 modules, including but not limited
+打开 LuaTools, 在项目管理界面, 添加固件和脚本后, 点击 "生成量产文件", 合成后得到 binpkg 后缀的文件
+Open the LuaTools, add firmware and scripts in the project management interface, click "generate mass production file", and obtain the file with binpkg suffix after synthesis.
+该binpkg不可用于差分包的生成
+This binpkg cannot be used to generate differential packets.
+固件版本 V1103 及以上, 配合
+Firmware version V1103 and above,
+或以上版本
+or above version
+量产刷机的说明
+Description of mass production brush machine
+内填写版本号要符合 `x.y.z` 形式, 其中 `x`/`y`/`z` 均为数值, 不限于个位数
+The version number filled in must conform to the form of `x.y.z`, where `x`/`y`/`z` are numeric values, not limited to single digits.
+若fota使用合宙iot平台, 版本号中的 `y` 会被忽略, 推荐写0, 务必留意
+if fota uses the iot platform, the "y" in the version number will be ignored. recommend, write 0. be sure to pay attention to it.
+生成量产文件
+Generate Production File
+注意, 该binpkg可使用Luatools/FlashTool/MulDownloader直接刷机, 但只推荐在`量产`时使用binpkg刷机
+Note that this binpkg can be directly brushed with Luatools/FlashTool/MulDownloader, but it is only recommend to use binpkg brushed in `mass production`
+准备工作
+Preparations
+准备量产文件
+Preparing Production Documents

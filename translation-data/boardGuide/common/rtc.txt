@@ -1,0 +1,28 @@
+本章将会向大家介绍LuatOS的RTC功能。将会实现使用Air101开发板读取RTC的值并在日志中打印。
+This chapter will introduce you to the RTC features of LuatOS. The value of RTC will be read and printed in the log using the Air101 development board.
+打印时间
+Print Time
+打印RTC时间
+Print RTC Time
+代码展示
+Code display
+获取RTC时间
+Get RTC Time
+简介
+Introduction
+接口文档可参考：[rtc库
+Interface documentation can be referred to:[rtc library
+开发板一块
+A development board
+软件使用
+Software usage
+上述代码打印日志
+The above code prints the log
+时间设置
+Time Settings
+实时时钟可以提供精确的实时时间，它可以用于产生年、月、日、时、分、秒等信息。目前实时时钟芯片大多采用精度较高的晶体振荡器作为时钟源。有些时钟芯片为了在主电源掉电时还可以工作，会外加电池供电，使时间信息一直保持有效
+Real-time clock can provide accurate real-time time, it can be used to produce years, months, days, hours, minutes, seconds and other information. At present, most real-time clock chips use a crystal oscillator with high precision as the clock source. Some clock chips will add battery power to keep the time information valid in order to work when the main power supply is down.
+延迟
+Delay
+硬件准备
+Hardware preparation

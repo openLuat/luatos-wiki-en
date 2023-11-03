@@ -1,0 +1,52 @@
+本身并不依赖具体的rtos, 所以文件系统也有自己的一套API, 称为
+It does not rely on specific rtos, so the file system also has its own set of API, called
+部分模块支持, 可读写, 占用sys内存, 不消耗flash写入寿命, 但需要注意删除文件
+Some modules support, can read and write, occupy sys memory, do not consume flash write life, but need to pay attention to delete files
+常见的文件系统布局
+Common file system layouts
+打开并准备写入一个文件, 且截断为0字节
+Open and prepare to write a file with 0 bytes truncated
+的文件系统
+The file system
+的VFS支持任何第三方文件系统, 无论是只读还是可读写, 实现相关操作函数即可对接
+The VFS supports any third-party file system, whether read-only or read-write, and can be docked by implementing relevant operation functions.
+读取刷机时选择的资源文件
+The resource file selected when reading the machine.
+更多示例, 参考
+For more examples, refer
+挂载sd卡后会出现的路径, 某些平台上有固定的sd卡/tf卡路径
+The path that will appear after the sd card is mounted. There are fixed sd card/tf card paths on some platforms.
+可读写
+Can read and write
+可读写, 存放于内存中
+Can read and write, stored in memory
+可读写, 读写SD卡/TF卡的开源Fat32文件系统
+Read and write, read and write SD card/TF card open source Fat32 file system
+可读写, 全称
+Read and write, full name
+可读写, Linux的posix标准接口, LuatOS-SoC对其有封装
+Can read and write, Linux posix standard interface, LuatOS-SoC have encapsulation for it
+可读写的简单描述
+A simple description of read-write
+内存文件系统,可读写. 2023-01-12之后的固件支持
+Memory file system, can read and write. firmware support after 2023-01-12
+内置多种文件系统格式
+Built-in multiple file system formats
+片上可读(也许可写)的一段flash, 也可能是虚拟文件系统
+A readable (perhaps writable) piece of flash on the chip, or a virtual file system.
+通常是挂载spi flash的路径, 通常可以自定义
+usually the path to mount the spi flash. you can customize
+通过luatools/luatide刷机时,所有文件都会放到这个目录下, 包括脚本和资源文件
+When you swipe through luatools/luatide, all files are placed in this directory, including scripts and resource files.
+文件系统类型
+File System Type
+与市面上众多的虚拟文件系统API类似, VFS提供一套读写文件的抽象API, 隔离与实际硬件环境的差异
+Similar to many virtual file system APIs on the market, VFS provides a set of abstract APIs for reading and writing files to isolate differences from the actual hardware environment.
+在大部分平台上, 刷机进设备的脚本和资源文件, 都在 `/luadb` 目录下, 以单一文件夹存在
+On most platforms, scripts and resource files that are flushed into the device are in the `/luadb` directory and exist in a single folder.
+只读
+Read Only
+只读, 标准romfs格式
+Read-only, standard romfs format
+只读, 基于 TLD(Tag-Len-Data) 格式组织的文件系统,文件名最长21字节
+Read-only, file system organized based on the TLD(Tag-Len-Data) format with up to 21 bytes of file name

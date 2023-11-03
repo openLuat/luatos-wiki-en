@@ -1,0 +1,56 @@
+编码开始的位置
+Where coding starts
+测
+Measurement
+测试
+Test
+的接口
+interface
+返回的指针直接指向rom区域，不用
+The returned pointer points directly to the rom area
+基本信息
+Basic information
+接口
+Interface
+解决方案
+Solution
+可通过c接口获取指定字体的某个字的点阵信息
+The dot matrix information of a word in the specified font can be obtained through the C interface
+目前已有的字库字体大小不统一、刷新较慢，且自定义字体困难。需要一个通用的点阵字体库
+At present, the font size of the existing font is not uniform, refresh is slow, and it is difficult to customize the font. Need a universal dot matrix font library
+配套上位机，可方便地生成字体代码进行添加。尽量做成网页版
+Supporting the host computer, can easily generate font code to add. Try to make a web version
+起草日期
+Date of drafting
+设计人员
+Designer
+矢量字体，待定，没想到实现方法
+Vector font, to be determined, did not expect the implementation method
+使用UTF16编码（定长
+Use UTF16 encoding (fixed-length
+数据存储的地址
+Address of data storage
+思源黑体
+Siyuan Blackbody
+提供Lua接口，可从Lua层获取某个字体的点阵信息
+Provides Lua interface to obtain dot matrix information of a font from Lua layer
+无
+None
+相关知识点
+Relevant knowledge points
+需要实现的目标
+Goals to be achieved
+一共多少个字
+How many words altogether
+已知问题
+Known issues
+支持从文件系统加载字体的方式，上位机也要支持生成此类在字体文件
+Support the way to load fonts from the file system, and the host computer should also support the generation of such font files.
+支持灰度，待定，没想到实现方法
+Support gray scale, to be determined, did not expect the implementation method
+字库模块
+Font module
+字体高度
+Font Height
+字体宽度
+Font Width

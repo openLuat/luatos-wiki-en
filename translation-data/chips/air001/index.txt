@@ -1,0 +1,2 @@
+合宙Air001是一款TSSOP20封装的MCU，无需外部晶振即可运行，价格实惠
+He Zhou Air001 is a TSSOP20 package MCU, without external crystal can run, affordable

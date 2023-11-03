@@ -1,0 +1,26 @@
+串口烧录教程
+Serial Burn Tutorial
+个LED分别为
+LEDs are respectively
+固件下载
+Firmware Download
+管脚之间的距离
+Distance between pins
+开发板
+Development Board
+开发板排针尺寸
+Development board pin size
+开发板使用说明
+Development board instructions
+开发板使用说明文档
+Development board instructions document
+开发板原理图
+Development Board Schematic
+两排管脚之间的距离
+Distance between two rows of pins
+刷机烧录教程
+Brush machine burning tutorial
+注意：烧录前请设置波特率为1500000** , 并勾选 "通用串口打印" , 否则刷机后日志会乱码
+Note: Please set the baud rate to 1500000 * * before burning, and check "Universal Serial Port Printing", otherwise the log will be garbled after flashing.
+注意：HSPI编程时为SPI5，ADC部分，LuatOS中未使能内部分压，通道1~6采集电压范围
+Note: SPI5 for HSPI programming, ADC part, LuatOS does not enable internal voltage division, channel 1~6 acquisition voltage range

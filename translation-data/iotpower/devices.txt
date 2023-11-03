@@ -1,0 +1,38 @@
+版本对比
+Version Comparison
+不支持
+Not supported
+纯功耗测试设备，支持PD快充诱骗。
+Pure power consumption test equipment, support PD fast charge decoy.
+的升级版，双主控芯片，全新UI，更多功能。
+The upgraded version, dual master chip, new UI, more functions.
+电源+功耗测试，支持更高电压与更快的采样率，支持PD快充诱骗。
+Power consumption test, support higher voltage and faster sampling rate, support PD fast charge decoy.
+可以变相支持
+Can be disguised to support
+快买
+buy it quickly
+生产阶段，即将发布
+Production phase, upcoming release
+图示 |        含义
+Illustration | Meaning
+未确定，可能会更改
+Not determined, may change
+系列有多款产品，可以满足各种测试需求
+Series has a variety of products, can meet a variety of testing needs
+详细对比
+Detailed comparison
+性价比极高的电源+功耗测试一体设备。
+Cost-effective power consumption test integrated equipment.
+需要借助PPS充电头实现该功能
+PPS charging head is required to achieve this function
+研发中
+In R & D
+也可从充电头USB输入口取电
+Can also take power from the USB input port of the charging head
+支持
+Support
+状态** |    **设备型号**    | **电源** | **串联** | **电压** | **电流** | **限流** | **限压** | **PC端** | **屏幕** | **自身供电** | **诱骗
+Status **|** Device Model **|** Power Supply **|** Series **|** Voltage **|** Current **|** Current Limit **|** Voltage Limit **|** PC **|** Screen **|** Self-powered **|** Deception
+总览
+Overview

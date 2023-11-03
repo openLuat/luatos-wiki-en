@@ -1,0 +1,16 @@
+初始化
+Initialization
+检查语法
+Check Syntax
+开始下载
+Start Download
+普通烧录
+Ordinary Burn
+烧录
+Burn
+烧录命令
+Burn command
+探测端口
+Probe Port
+下载完成
+Download complete

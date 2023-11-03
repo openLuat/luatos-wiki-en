@@ -1,0 +1,40 @@
+编译环境msys, 工具
+compile environment msys, tools
+编译完成后, 会在build目录生成
+After the compilation is completed, it will be generated in the build directory.
+到Cmake官网下载独立的cmake最新版
+Download the latest version of independent cmake from the official website of cmake
+端版本
+End version
+简单用法
+Simple Usage
+交互模式
+Interaction mode
+进入命令行, cd到luatos.exe所在目录, 执行
+Enter the command line, cd to the directory where luatos.exe is located, and execute
+进入msys环境, cd到本bsp目录,执行
+Enter the msys environment, cd to the bsp directory, and execute
+默认luavm和rtos内存分配均为
+The default luavm and rtos memory allocations are
+如果还是没有看懂，可以参考CI自动编译流程进行操作
+If you still don't understand it, you can refer to the CI automatic compilation process for operation.
+提示: 使用`mingw32.exe`/`mingw64.exe`启动编译环境, 可以编译出不依赖`msys-2.0.dll`的exe文件
+Tip: Use `mingw32.exe `/`mingw64.exe` to start the compilation environment, and you can compile exe files that do not rely on` msys-2.0.dll
+文件系统,win32原生文件系统,以工作目录为基点
+file system, win32 native file system, based on the working directory
+下载[预编译好的
+Download [Precompiled
+下载msys环境, 并安装好gcc和
+Download the msys environment and install gcc and
+新建一个目录, 将 `luatos.exe` 拷贝进去(可选,执行时使用全路径也可以
+Create a new directory and copy the` luatos.exe `into it (optional, you can use the full path when executing
+在目录内新建main.lua, 写入以下内容
+Create a new main.lua in the directory and write the following content
+支持大部分工具库, 外设库支持模拟
+Support most of the tool library, peripheral library support simulation
+执行模式
+Execution Mode
+直接双击 luatos.exe 启动即可, 与原生lua.exe一致
+Directly double-click luatos.exe to start, consistent with the native lua.exe
+自行编译说明
+Self-Compilation Instructions

@@ -1,0 +1,52 @@
+按一下RST按键
+Press the RST button
+成多路USART、IIC、SPI等通讯外设，5个16bit定时器以及1路12bit ADC和2路比较器。详细信息见数据手册，[AIR001芯片数据手册.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230721175506039_AIR001芯片数据手册1.0.4.pdf)和寄存器手册[Air001寄存器手册](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230721175429182_AIR001用户手册
+Multi-channel USART, IIC, SPI and other communication peripherals, 5 16bit timers, 1 12bit ADC and 2 comparators. For details, see the data sheet,[AIR001 chip data book.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230721175506039_AIR001芯片数据手册1.0.4.pdf) and the register manual [Air001 register manual](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230721175429182_AIR001用户手册
+串口下载的接线为串口模块的`RX`接Air001的`TXD`（`PA2`），串口模块的`TX`接Air001的`RXD`（`PA3`），如果您希望能够自动下载的话，应当把`DTR`和`RTS`连接到串口模块上的对应引脚，芯片或者开发板的`GND`与串口模块的`GND`相连。
+The connection of serial port download is` RX` of serial port module to `TXD`(` PA2`) of Air001, and` TX` of serial port module to `RXD`(` PA3`) of Air001. If you want to be able to download automatically, you should connect `DTR` and` RTS` to the corresponding pins on the serial port module, and connect` GND` of chip or development board to `GND` GND` of serial port module.
+大QQ群
+Large QQ group
+工具也可单独使用，使用文档：[AirISP工具文档
+The tool can also be used alone, using the documentation:[AirISP Tool Documentation
+合宙商城
+Hizhou Mall
+环境搭建教程
+Environment Construction Tutorial
+基于Arduino的用户手册
+Arduino-based user manual
+基于Keil MDK的用户手册
+Keil MDK-based user manual
+内核，内置32Kbytes的Flash和4Kbytes的RAM。芯片集
+Kernel, built-in 32Kbytes of Flash and 4Kbytes of RAM. Chip Set
+如果您没有自动下载，那么在每次下载前需要手动进入
+If you do not download automatically, you need to manually enter before each download.
+如果您使用Arduino出现无法自动下载的情况（目前多见于AMD处理器的电脑）。您可以手动进入bootloader以进行下载。
+If you use the Arduino can not be automatically downloaded (currently more common in AMD processor computers). You can manually enter the bootloader to download.
+烧录时的Max Clock需要手动到100KHz或更低，否则无法识别芯片。
+Max Clock needs to be manually 100KHz or lower when burning, otherwise the chip cannot be identified.
+使用 SWD 调试/下载
+Debug using SWD/Download
+使用 SWD 调试/下载的接线为调试器的`SWDIO`接Air001的`SWDIO`（`PA13`），调试器的`SWCLK`接Air001的`SWCLK`（`PA14`），芯片或者开发板的`GND`与调试器的`GND`相连。
+The wiring for debugging/downloading using SWD is the debugger` SWDIO` of the debugger` SWDIO`(`PA13`) of Air001, the debugger` SWCLK` of the debugger` SWCLK`(`PA14`) of Air001, and the `GND` of the chip or development board is connected to the `GND` of the debugger.
+使用串口下载
+Use serial port to download
+是什么
+What is it?
+刷机烧录教程
+Brush machine burning tutorial
+松开 BOOT 按键
+Release the BOOT button
+淘宝店
+Taobao shop
+图片
+Picture
+下载完成后，可能需要手动按一下 RST 按键以复位正常运行
+After the download is complete, you may need to manually press the RST button to reset normal operation
+先按下 BOOT 按键不放（即拉高 `BOOT0` 引脚
+Press the BOOT button first (I. e. pull up the `BOOT0` pin
+芯片
+Chip
+芯片购买
+Chip Purchase
+在Arduino中，我们推荐使用AirISP通过串口进行下载
+In Arduino, we recommend use AirISP to download via serial port

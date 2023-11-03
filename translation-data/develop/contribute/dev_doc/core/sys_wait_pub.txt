@@ -1,0 +1,62 @@
+把生成的元表返回出去以供lua调用
+Return the generated meta table for lua to call
+不能重复，每次调用都要生成新的
+Cannot be repeated, each call must generate a new
+不同的请求回调都是ESPHTTP_EVT，不太合理
+Different request callbacks are ESPHTTP_EVT, which is not reasonable.
+的topic前缀尽量统一，具体待讨论
+the topic prefixes of
+调用方式
+Call Method
+调用后应尽快返回结果，不能阻塞
+The result should be returned as soon as possible after the call and cannot be blocked.
+对应的c函数需要实现的功能
+Functions to be implemented by the corresponding c function
+回调需要对对应的topic进行publish操作，并附带结果
+the callback needs to publish the corresponding topic and attach the result.
+基本信息
+Basic information
+接口实现Task等待功能
+Interface implements Task waiting function
+解决方案
+Solution
+目前的问题
+The current problem
+内部自带sys.waitUntil，实现多任务等待功能
+Built-in sys.waitUntil, to achieve multi-task waiting function
+起草日期
+Date of drafting
+如下面这样的代码，全部需要用户手动处理
+For example, the following code requires the user to handle it manually.
+设计人员
+Designer
+什么回调函数配置的巴拉巴拉
+What callback function configuration barabala
+使用c接口可以方便地进行对接
+The use of c interface can be easily docked
+添加以下功能的函数（构想
+function to add the following functions (conception
+相关知识点
+Relevant knowledge points
+消息总线
+Message Bus
+需要对此类接口的命名进行规范，如以`async`开头
+The naming of such interfaces needs to be standardized, such as starting with `async`
+需要实现的目标
+Goals to be achieved
+需要手写发起请求和sys.waitUntil，很麻烦
+It is very troublesome to start the request and sys.waitUntil by hand.
+一个例子，没有实际功能
+An example with no actual function
+一会儿需要回调的
+Need a callback for a while
+一行代码直接调用
+A line of code calls directly
+以esphttp为例子
+Take esphttp as an example
+用户不用管流程，也不用管内部的topic是什么，直接调用并等待结果即可
+The user does not need to worry about the process or the internal topic, but can directly call and wait for the result.
+这个topic要手写，不好记
+This topic needs to be written by hand, which is not easy to remember.
+中需要添加的功能
+Features to be added in

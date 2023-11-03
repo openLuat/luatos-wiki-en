@@ -1,0 +1,68 @@
+暴露到外部的方法
+Exposure to external methods
+不定参数
+indeterminate parameter
+程序注册
+Program Registration
+当函数完成一个操作后，可以发布一个消息，其他函数可以订阅该消息并做对应的操作。举个例子，当socket发送完数据后发布“SEND_FINISH”。这时开发者想socket发布完成后通过串口发送数据或者改变某个IO口的状态。就可以订阅该消息subscribe("SEND_FINISH",callback)。callback为接收到SEND_FINISH消息后需要做的事。
+When a function completes an operation, it can publish a message, and other functions can subscribe to the message and perform the corresponding operation. For example, when the socket sends data after the release of "SEND_FINISH". At this time, the developer wants to send data through the serial port or change the state of an IO port after the socket release is completed. You can subscribe to the message subscribe("SEND_FINISH",callback). callback what needs to be done after receiving the SEND_FINISH message.
+调用sys.waitUntil()函数即可。
+Call the sys.waitUntil() function.
+定时器
+Timer
+挂起1000ms，同理为每隔1000ms运行一次
+Suspend 1000ms, similarly, run every 1000ms
+函数运行
+Function Run
+回调函数的实现
+implementation of callback function
+接下来分析实现的源码
+Next analysis of the implementation of the source code
+可以发布多个变量
+Multiple variables can be published
+库是Luat的核心支撑库, 基本上是必备的
+The library is Luat's core support library and is basically a must-have.
+框架
+Framework
+类型，可以随便定义，只要不使用,就行
+Type, can be defined casually, as long as not used, on the line
+类型，如果使用Luat物联云平台固件升级的功能，必须按照"X.X.X"定义，X表示1位数字；否则可随便定义
+Type, if you use the firmware upgrade function of Luat IoT platform, you must define it according to "X.X.X", where X represents 1 digit; Otherwise, you can define it casually.
+秒运行一次
+Run once per second
+内部方法, 外部无法调用
+Internal method, external cannot be called
+启动内部event loop, 仅允许在main.lua的末尾使用
+Start the internal event loop, only allowed at the end of main.lua
+如果要在任务函数中订阅消息并做相应的处理，怎么办
+What if you want to subscribe to the message in the task function and do the corresponding processing
+输出
+Output
+通过订阅发布来实现消息机制。
+The message mechanism is implemented by subscribing to publications.
+同上
+Ibid.
+为不定参数的个数
+is the number of indefinite arguments
+为了更好的理解源码，需要以下的预备知识
+In order to better understand the source code, the following preliminary knowledge is required
+先来看一个程序
+Let's look at a program first.
+项目中处理lib文件夹还有
+The lib folder is handled in the project and.
+协程
+Synergy
+需要使用`require`引用编写的脚本，这儿为
+A script that needs to be written using the `require` reference, here is
+循环定时器，每隔5秒运行一次
+Cycle timer, running every 5 seconds
+引入
+Introduction
+由于没有main函数，一些习惯常规单片机开发者一时不知怎么运行程序。程序运行有多种方法
+Since there is no main function, some developers who are accustomed to regular single-chip microcomputer do not know how to run the program for a while. There are many ways to run a program
+直接调用
+Direct call
+直接调用，在main.lua文件中require"test"的时候则会调用该函数
+Directly called, this function will be called when "test" is require in the main.lua file.
+重要提醒：必须在这个位置定义PROJECT和VERSION变量
+Important: PROJECT and VERSION variables must be defined at this location

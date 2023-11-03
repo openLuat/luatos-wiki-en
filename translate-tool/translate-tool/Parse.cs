@@ -37,6 +37,23 @@ namespace translate_tool
             }
             return prefixCount;
         }
+        /// <summary>
+        /// 统计结尾的空格数量
+        /// </summary>
+        /// <param name="s">一行的字</param>
+        /// <returns>空格数量</returns>
+        private static int CheckSuffix(string s)
+        {
+            int suffixCount = 0;
+            for (int i = s.Length-1; i >= 0; i--)
+            {
+                if (s[i] == ' ')
+                    suffixCount++;
+                else
+                    break;
+            }
+            return suffixCount;
+        }
         private static string CreatePrefix(int number, string prefix = " ")
         {
             StringBuilder sb = new();
@@ -48,6 +65,7 @@ namespace translate_tool
         public static (string,string,string) Trim(string s)
         {
             var prefix = new StringBuilder();
+            var suffix = new StringBuilder();
             //处理开头的emoji
             Match regexMatch = Regex.Match(s, $"{Static.EmojiPattern}+",RegexOptions.Compiled);
             if (regexMatch.Success)
@@ -68,10 +86,11 @@ namespace translate_tool
             //把空格搞定
             var spaceN = CheckPrefix(s);
             prefix.Append(CreatePrefix(spaceN));
+            var spaceS = CheckSuffix(s);
+            suffix.Append(CreatePrefix(spaceS));
             s = s.Trim();
 
             //处理结尾的非中文
-            var suffix = new StringBuilder();
             regexNonChineseMatch = Regex.Match(s, $"[^{Static.ChinesePattern}]+$", RegexOptions.Compiled);
             if (regexNonChineseMatch.Success)
             {
@@ -120,7 +139,17 @@ namespace translate_tool
             waitTranslate = translator(waitTranslate);
             //合并回去
             for(int i=0;i< waitTranslateLine.Count;i++)
-                lines[waitTranslateLine[i]] = $"{waitPrefix[i]} {waitTranslate[i]} {waitSuffix[i]}";
+            {
+                var space1 = (
+                        Regex.IsMatch(waitPrefix[i], @"\w$") &&
+                        Regex.IsMatch(waitTranslate[i], @"^\w")
+                    ) ? " " : "";
+                var space2 = (
+                        Regex.IsMatch(waitTranslate[i], @"\w$") &&
+                        Regex.IsMatch(waitSuffix[i], @"^\w")
+                    ) ? " " : "";
+                lines[waitTranslateLine[i]] = $"{waitPrefix[i]}{space1}{waitTranslate[i]}{space2}{waitSuffix[i]}";
+            }
 
             return string.Join("\r\n",lines);
         }

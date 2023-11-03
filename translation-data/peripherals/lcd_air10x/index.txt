@@ -1,0 +1,6 @@
+购买链接
+Purchase Link
+系列屏幕扩展板
+Series Screen Expansion Board
+系列屏幕扩展板, 对应Core系列Air核心板, 实现Pin2Pin对接, 含一个0.96寸屏幕和5向按键
+Series screen expansion board, corresponding to Core series Air core board, to achieve Pin2Pin docking, including a 0.96-inch screen and 5-way keys

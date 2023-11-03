@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>LuatOS 在线模拟 - PWM控制转速</title>
+  <meta name="description" content="在线模拟LuatOS">
+  <meta name="author" content="chenxuuu">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/clipboard.js"></script>
+  <script src="js/fengari-web.js"></script>
+  <script src="../js/baidu.js"></script>
+</head>
+<body>
+  <div class="box">
+    <div class="content">
+      <div class="operation">
+        <button id="svg-big" title="运行" ></button>
+        <button id="svg-small" title="停止"></button>
+      </div>
+      <div class="left show-things-div" onwheel="onSvgDivWheel()">
+        <span class="page-title">
+          <h1>实验项目：PWM控制转速</h1>
+          <p>鼠标放空白处，用滚轮缩放图片</p>
+        </span>
+        <div class="main-svg-div">
+          <div id="svg-div">
+            <img id="pwm-fan-svg" src="image/pwm_fan.svg" class="item-float rotate" style="top: 55px;left:10px;">
+            <img src="image/pwm.svg">
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="operation">
+          <button id="code-run" title="运行" ></button>
+          <button id="code-stop" title="停止" disabled="disabled"></button>
+          <button id="code-reset" title="重新运行"></button>
+          <button id="code-share" title="分享代码" data-clipboard-text=""></button>
+        </div>
+        <div id="container"></div>
+      </div>
+      <div class="log">
+        <textarea readonly="true" id="output"></textarea>
+      </div>
+    </div>
+  </div>
+  <span class="luatos-url">
+    <a href="https://wiki.luatos.com" target="_blank">LuatOS 文档</a>
+  </span>
+  <script src="vs/loader.js"></script>
+  <script>
+    var defaultCode =
+`--加载sys库
+sys = require("sys")
+
+-- 打开PWM0, 频率1kHz, 占空比1%
+pwm.open(0, 1000, 1)
+
+--开个任务，让pwm转速慢慢增大后，循环
+sys.taskInit(function()
+    local speed = 0
+    while true do
+        speed = speed + 10
+        if speed > 100 then speed = 0 end
+        log.info("pwm","speed now",speed,"%")
+        pwm.open(0, 1000, speed)
+        sys.wait(5000)
+    end
+end)
+
+--不用的时候应该关掉
+--pwm.close(0)
+
+-- 用户代码已结束---------------------------------------------
+-- 运行lua task，只能调用一次，而且必须写在末尾
+-- 结尾总是这一句
+sys.run()
+-- sys.run()之后后面不要加任何语句!!!!!
+`;
+  </script>
+  <script src="js/luaTask.js"></script>
+  <script src="js/editor.js"></script>
+  <script>
+var adc_sum = 0;
+function adcAdd(n)
+{
+  var temp = adc_sum+n;
+  if(temp < 0)
+    temp = 0;
+  if(temp > 300)
+    temp = 300;
+  adc_sum = temp;
+  $("#adc-button-svg").css("transform","rotate("+adc_sum+"deg)");
+}
+
+function newLuaState() {
+    luaTask_clean();
+    luaTask_create();
+    luaTask_doString(`
+js = require "js"
+--重写print函数
+function print(...)
+    local out = {}
+    for i=1,select('#', ...) do
+        table.insert(out,tostring(select(i, ...)))
+    end
+    js.global:luaPrint(table.concat(out,"\t"))
+end
+package.path = "./lua/?.lua"
+require("head")`);
+    luaTask_bindFn(function (L) {
+        var speed = fengari.lua.lua_tointeger(L,1);
+        if(speed == 0){
+          $("#pwm-fan-svg").css("animation-duration","0s");
+          return 0;
+        }
+        var real_time = 1/(0.1*speed);
+        $("#pwm-fan-svg").css("animation-duration",real_time+"s");
+        return 0;
+    },"set_pwm_speed");
+    $("#output").text("");
+    luaPrint("虚拟机初始化完毕");
+}
+
+$("#code-stop").prop("disabled", true);
+
+
+function keyDown(key) {
+    console.log("key",key,"down");
+    $("#svg_key"+key).css("background-image","url(image/key_down.svg)");
+    luaTask_trigger("gpio_trigger_cb",key);
+}
+
+function keyUp(key) {
+    console.log("key",key,"up");
+    $("#svg_key"+key).css("background-image","");
+    luaTask_trigger("gpio_trigger_cb",0x100+key);
+}
+  </script>
+
+</body>
+
+</html>

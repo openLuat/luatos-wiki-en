@@ -167,6 +167,11 @@ namespace translate_tool
             List<string> r = new();
             for (int i = 0; i < s.Count; i += max)
                 r.AddRange(aliyun(s.Skip(i).Take(max).ToList()));
+            for(int i=0;i<r.Count;i++)//处理一些阿里云经常错的词
+            {
+                if(s.IndexOf("`") >= 0)
+                    r[i] = r[i].Replace("'", "`");
+            }
             return r;
         }
 
@@ -238,7 +243,11 @@ namespace translate_tool
             for(int i=0;i<s.Count ; i++)
             {
                 //已有翻译
-                if (existData.ContainsKey(r[i]))
+                if(string.IsNullOrEmpty(r[i]))
+                {
+                    //空的就空着吧
+                }
+                else if (existData.ContainsKey(r[i]))
                     r[i] = existData[r[i]];
                 else
                 {

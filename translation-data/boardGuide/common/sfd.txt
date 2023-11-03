@@ -1,0 +1,16 @@
+本章将会向大家介绍LuatOS的sfd功能。将会实现使用Air101开发板连接外置spi flash并通过sfd挂载直接读写。
+This chapter will introduce you to the sfd features of LuatOS. It will be possible to connect an external spi flash using the Air101 development board and directly read and write through sfd mounting.
+代码展示
+Code display
+简介
+Introduction
+接口文档可参考：[sfd库
+Interface documentation can be found in:[sfd library
+开发板一块，一个外挂的
+A development board, a plug-in
+软件使用
+Software usage
+通常外挂的spi flash的读写指令都是兼容的，我们在日常使用的过程中如果直接使用spi通过指令对flash进行读写会很麻烦，于是乎LuatOS就设计了一套接口，将外置的spi flash通过这套接口实现抽象读写，并对接Lua的io实现简单读写。
+Generally, the read and write instructions of the external spi flash are compatible. In the process of daily use, it will be very troublesome if we directly use spi to read and write flash through instructions. As a result, LuatOS has designed a set of interfaces to realize abstract read and write of the external spi flash through this set of interfaces, and to realize simple read and write of Lua's io.
+硬件准备
+Hardware preparation

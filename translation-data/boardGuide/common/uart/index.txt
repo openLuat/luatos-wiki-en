@@ -1,0 +1,2 @@
+本章介绍LuatOS的uart功能，可选择对应芯片查看教程
+This chapter introduces the uart function of LuatOS. You can select the corresponding chip to view the tutorial.

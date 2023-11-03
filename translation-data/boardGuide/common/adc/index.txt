@@ -1,0 +1,46 @@
+本章介绍LuatOS的adc功能，实现使用开发板读取外部电压并在日志中打印
+This chapter introduces the adc function of LuatOS, which enables reading external voltages using the development board and printing them in the log.
+参考[Air105芯片数据手册_1.1.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220114193313925_Air105%E8%8A%AF%E7%89%87%E6%95%B0%E6%8D%AE%E6%89%8B%E5%86%8C_1.1.pdf)可知，ADC 的参考电压为 1.8V，ADC 通道 1~通道 6 采集电压范围可配，使能内部分压时采集电压范围 0~3.6V，不使能内部分压时采集电压范围 0~1.8V，在LuatOS中未使能内部分压，所以我们直接使用只能采集0~1.8V的电压，`外接输入一定不要超过1.8V，否则会烧毁芯片
+Referring to [Air105 chip data sheet_1.1.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220114193313925_Air105芯片数据手册_1.1.pdf), it can be seen that the reference voltage of ADC is 1.8V, and the acquisition voltage range of ADC channels 1 to 6 can be matched. when the internal partial voltage is enabled, the acquisition voltage range is 0 to 3.6V, when the internal partial voltage is not enabled, the acquisition voltage range is 0 to 1.8V, and the internal partial voltage is not enabled in LuatOS, so we can directly use only the acquisition voltage of 0 to 1.8V, the external input must not exceed 1.8V, otherwise the chip will be burned.
+成功下载后，观察日志输出如下，根据`adc.read`返回的第二个值可知测量电压为1712mV左右
+After successful download, observe the log output as follows. According to the second value returned by `adc.read`, the measured voltage is about 1712mV
+创建一个携程循环执行test函数
+Create a Ctrip loop to execute the test function
+打开ADC通道
+Open ADC Channel
+代码如下
+The code is as follows
+读取ADC通道1的值
+Read the value of ADC channel 1
+共有2路ADC，开发板引出了2路，通道分别为0，1，输入电压范围 0~2.4V（参考[air101_芯片规格书
+There are 2 ADC channels, the development board leads out 2 channels, the channels are 0,1 respectively, and the input voltage range is 0~2.4V (refer to [air101_chip specification
+共有4路ADC，开发板引出了4路，通道分别为0，1，2，3，输入电压范围 0~2.4V（参考[Air103_MCU设计手册
+There are 4 ADC channels, the development board leads out 4 channels, the channels are 0,1,2 and 3 respectively, and the input voltage range is 0~2.4V (refer to [Air103_MCU Design Manual
+共有7路ADC，开发板引出了4路，通道分别为1，2，5，6（参考[Air105 核心板使用手册
+There are 7 ADC channels in total, and the development board leads out 4 channels with 1,2,5 and 6 channels respectively (refer to [Air105 core board user manual
+关闭ADC通道
+Turn off the ADC channel
+缓慢下调可调电源的电压值，观察日志输出的电压值对应可调电源的电压值
+Slowly reduce the voltage value of the adjustable power supply, and observe that the voltage value of the log output corresponds to the voltage value of the adjustable power supply
+简介
+Introduction
+接口文档可参考：[ADC库
+Interface documentation can be found at:[ADC Library
+开发板一块，可调电源一台，接线示意如下
+One development board and one adjustable power supply. The wiring diagram is as follows
+可调电源
+adjustable power supply
+没有使用分压电路的情况下，我们直接使用只能采集0~2.4V的电压，`外接输入一定不要超过2.4V，否则会烧毁芯片
+Without the use of voltage divider circuit, we can only collect 0~2.4V voltage directly, `external input must not exceed 2.4V, otherwise it will burn the chip.
+模拟数字转换器即A/D转换器，或简称ADC，通常是指一个将模拟信号转变为数字信号的电子元件。
+An analog-to-digital converter, or ADC for short, usually refers to an electronic component that converts an analog signal into a digital signal.
+软件部分
+Software part
+硬件准备
+Hardware preparation
+注意：`adc.read`有两个返回值，第一个值为原始值，第二个值为转换值，单位为
+Note: `adc.read` has two return values, the first value is the original value, the second value is the conversion value, the unit is
+注意：先打开可调电源，调到1.8V以下，再连接电源与开发板，防止直接连接开机电压过高烧毁芯片
+Note: Turn on the adjustable power supply first, adjust it to below 1.8V, and then connect the power supply to the development board to prevent the chip from being burned if the power-on voltage is too high.
+注意：先打开可调电源，调到2.4V以下，再连接电源与开发板，防止直接连接开机电压过高烧毁芯片
+Note: Turn on the adjustable power supply first, adjust it to below 2.4V, and then connect the power supply to the development board to prevent the chip from being burned if the power-on voltage is too high.

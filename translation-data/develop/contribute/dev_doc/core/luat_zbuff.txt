@@ -1,0 +1,78 @@
+按数据类型读写
+Read and write by data type
+把刚才那3个字节读出来,内容是字符串,指针也往后移动了
+Read out the three bytes just now, the content is a string, and the pointer has moved back.
+把指针设置到指定位置
+Set the pointer to the specified position
+操作
+Operation
+创建
+Create
+创建,并填充一个已有字符串的内容
+Create and populate the contents of an existing string.
+风格的缓冲区
+style buffer
+核心机制
+core mechanism
+画矩形
+Draw Rectangle
+画线操作
+Line drawing operation
+基本信息
+Basic information
+空白的
+Blank
+宽,高,色深
+Wide, High, Deep
+类数组操作
+class array operation
+类file的读写操作
+Read and write operations of class file
+默认是0 ~ limit/len 从头到limit值或者到尾部
+The default is 0 ~ limit/len from head to limit value or to tail
+拼接待发送的数据, 部分替代pack库
+The data sent by the package is partially replaced by the pack library.
+起草日期
+Date of drafting
+清空,全部填
+Empty, fill all
+取出缓冲区的内容, 返回值是
+fetches the contents of the buffer and the return value is
+取出特定偏移量和长度
+Take out a specific offset and length
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+设置具体像素值
+Set specific pixel values
+使用示例
+Use Example
+同时也支持写入上述整型/浮点数
+Also supports writing the above integer/floating point numbers
+相关知识点
+Relevant knowledge points
+写入数据, 指针相应地往后移动
+Write data, pointer moves backward accordingly
+也支持pack打包
+Pack packaging is also supported
+有什么用途
+What's the use
+又回到开头
+Back to the beginning
+支持
+Support
+支持pack/unpack操作
+Support for pack/unpack operations
+支持unpack解码
+Support unpack decoding
+直接按数组来读取, 得到ASCII码, 0x32, 注意,这里按C的标准来
+Read directly by array to get ASCII code, 0x 32. Note that here, according to C standard
+直接赋值可还行
+Direct assignment is OK
+直接指向一块内存区域,提供一系列API操作这块内存
+Directly points to a memory area and provides a series of API operations on this memory.
+中文也ok") -- 写字
+Chinese is OK ") -writing
+作为FrameBuffer,在显示框架中充当显示缓冲区
+As a FrameBuffer, acts as a display buffer in the display frame

@@ -1,0 +1,18 @@
+规格书      | [Air601-12F_模块产品规格书_V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230726105503590_Air601-12F_模块产品规格书
+Specification | [Air601-12F_Module Product Specification_V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230726105503590_Air601-12F_模块产品规格书
+开发板相关资料  | [开发板EVB_Air601-12F使用说明V1.0.0.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230626161923628_开发板EVB_Air601-12F使用说明
+Information on Development Board | [Instructions for Use of Development Board EVB_Air601-12F V1.0.0.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230626161923628_开发板EVB_Air601-12F使用说明
+模块外形
+Module profile
+模块硬件资料
+Module Hardware Data
+硬件设计手册   | [Air601-12F_WIFI模块硬件设计手册_V1.0.1.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230619165631229_Air601-12F_WIFI模块硬件设计手册
+Hardware Design Manual | [Air601-12F_WIFI Module Hardware Design Manual_V1.0.1.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230619165631229_Air601-12F_WIFI模块硬件设计手册
+硬件资料
+Hardware Data
+原理图及PCB封装
+Schematic and PCB Package
+正面                  |                  反面
+positive | negative
+资料简介     |                           相关链接
+Profile | Related Links

@@ -1,0 +1,152 @@
+安装支持包
+Install Support Package
+安装MDK5，具体方法请百度，安装后需要激活才能编译大文件
+Install MDK5, the specific method please Baidu, after installation need to activate to compile large files
+背景：本文档主要解决Air001芯片的Keil MDK集成开发环境搭建相关问题，通过新建一个点亮LED的工程来演示。
+Background: This document mainly solves the problems related to the construction of Keil MDK integrated development environment for Air001 chip, and demonstrates by creating a new project to light up LED.
+本示例工程的开源链接为
+The open source link for this sample project is
+编译出现形如`Error: L6985E: Unable to automatically place AT section system_air001xx.o(.ARM.__at_0x20000000) with required base address 0x20000000. Please manually place in the scatter file using the --no_autoat option. `的错误
+An error such as `Error: L6985E: Unable to automatically place AT section system_air001xx.o(.ARM._at_0x20000000) with required base address 0x20000000. Please manually place in the scatter file using the -- no_autoat option.`
+常见问题
+FAQ
+创建文件夹和工程名，路径根据自己实际选
+Create a folder and project name, and select the path according to your actual choice.
+打开AHB时钟
+Turn on the AHB clock
+点击`Download`按钮，即可看见自动下载编译好的代码并运行
+Click the` Download` button to see the compiled code downloaded automatically and run it.
+点击编译按钮测试是否能编译成功。
+Click the Compile button to test whether the compilation is successful.
+点击菜单栏的
+Click on the menu bar
+点击工具栏的魔术棒按钮打开 Options for Target窗口
+Click the magic wand button in the toolbar to open the Options for Target window
+二、HAL库环境搭建（和后面的LL库环境搭建任选一个即可
+2. the HAL library environment to build (and the following LL library environment to build either
+二、LL库环境搭建（和前面的HAL库环境搭建任选一个即可
+2. LL library environment construction (choose one from the previous HAL library environment construction
+勾选CMSIS下的CORE和Device下的Startup，即可自动配置启动文件
+Check the CORE under CMSIS and the Startup under Device to automatically configure the startup file.
+基于Keil MDK的用户手册
+Keil MDK-based user manual
+技术定位：初级/中级/高级
+Technical positioning: junior/intermediate/advanced
+将PB0引脚配置为输出
+Configure the PB0 pin as an output
+进入 Debug页面，仿真器选择
+Enter the Debug page and select the emulator.
+进入`Flash Download`页面，根据目标芯片的型号选择对应的算法，并勾上`Reset and Run`的勾
+Enter the` Flash Download` page, select the corresponding algorithm according to the model of the target chip, and tick the` Reset and Run`
+进入设置界面，Port设置为SW，Max Clock默认10MHz大概率用不了，需要手动适当降低速率到100KHz或者更低
+Enter the setting interface, Port is set to SW,Max Clock defaults to 10MHz with high probability, and the rate needs to be manually reduced to 100KHz or lower.
+进入C/C++页面， 添加`AIR001_DEV`宏 ,如下图所示
+Enter the C/C page and add the AIR001_DEV macro, as shown in the following figure
+进入C/C++页面，点击`Include path`后面的三个点
+Enter the C/C page and click the three dots after `Include path`
+开SYSCFG和PWR时钟
+ON SYSCFG AND PWR CLOCKS
+可以[在此处获取《HAL_LL函数库说明手册》](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230721175456214_HAL_LL函数库说明手册
+You can [get the HAL_LL Library Instruction Manual here](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230721175456214_HAL_LL函数库说明手册
+库依赖一些中断函数，我们需要重写。
+The library relies on some interrupt functions that we need to rewrite.
+目标群体：使用Keil MDK进行开发的用户
+Target group: Users developing with Keil MDK
+配置时钟
+Configure Clock
+全部添加完成后类似这样
+This is similar after all additions are completed.
+如果是购买的小白板和合宙的DAPLink调试器，可以直接通过排针排母相连，方向如图所示
+If it is a purchased whiteboard and a DAPLink debugger, it can be directly connected to the mother through the pin row, and the direction is shown in the figure.
+三、下载烧录
+3. Download Burn
+烧录时的Max Clock需要手动到100KHz或更低。
+Max Clock needs to be manually set to 100KHz or lower when burning.
+设置系统时钟
+Set the system clock
+设置APB1时钟
+Set the APB1 clock
+使能
+enable
+使能GPIOB时钟
+enable GPIOB clock
+使用支持SWD的调试器分别连接Air001芯片的SWCLK(PA14)和SWDIO(PA13)，建议使用合宙的DAP-Link调试器连接。
+Use a debugger that supports SWD to connect SWCLK(PA14) and SWDIO(PA13) of Air001 chip respectively. It is recommended to use a combined DAP-Link debugger connection.
+使用HAL库需要自己定义一个`air001xx_hal_conf.h`文件进行配置，这里我们创建一个
+To use the HAL library, you need to define a` air001xx_hal_conf.h `file for configuration. Here we create one
+使用HSI作为系统时钟
+Use the HSI as the system clock
+添加`air001_assert.h`和`air001xx_it.h`以及`main.h`文件，每个文件的内容大概如下
+Add `air001_assert.h `and `air001xx_it.h` and `main.h` files, each with roughly the following contents
+添加`air001xx_it.c`文件
+Add `air001xx_it.c `file
+添加`main.c`文件
+Add `main.c` file
+添加必要中断文件
+Add necessary break file
+添加对头文件的引用
+Add a reference to the header file
+添加宏定义
+Add Macro Definition
+添加头文件引用
+Add a header file reference
+添加芯片宏定义
+Add chip macro definition
+添加中断函数相关文件
+Add Interrupt Function Related Files
+添加CMSIS CORE和启动文件
+Adding CMSIS CORE and Startup Files
+添加hal conf头文件
+Add the hal conf header file
+添加HAL库
+Add HAL Library
+添加HAL库外设源文件
+Adding HAL Library Peripheral Source Files
+添加LL库
+Add LL Library
+添加LL库外设源文件
+Add LL library peripheral source files
+完全添加后如图所示
+After completely added as shown in the figure
+下载安装Air001芯片的
+Download and install the Air001 chip
+新建`air001xx_it.c`源文件，一个典型的例子如下
+Create a new `air001xx_it.c `source file, a typical example is as follows
+新建`air001xx_it.h`头文件，一个典型的例子如下
+Create a new `air001xx_it.h `header file, a typical example is as follows
+新建工程
+New construction
+修改`main.c`文件
+Modifying the `main.c` File
+需要注意的是，LL库是`Header-Only`的，这也就意味着如果我们需要引入一个新的外设，只需要在`main.h`中添加相应的头文件，而不需要像是HAL库一样手动添加外设源文件
+It should be noted that LL library is` Header-Only`, which means that if we need to introduce a new peripheral, we only need to add the corresponding header file in` main.h` instead of manually adding peripheral source files like HAL library
+选择设备
+Select device
+选择设备列表中的AirM2M下的AIR001 Series中的AIR001中的
+Select AIR001 in the AIR001 Series under AirM2M in the device list
+一、背景
+1. background
+一个典型的例子如下
+A typical example is as follows
+一个典型的例子是
+A typical example is
+一个最小工程至少需要一些中断函数，我们需要手动添加
+A minimum project requires at least some interrupt functions, we need to manually add
+在这里我们使用HAL库来作为例子，需要将SDK文件夹中的Libraries目录下的AIR001xx_HAL_Driver文件夹复制在工程目录下，添加完成后的工程目录大概是这样的
+Here, we use the HAL library as an example. We need to copy the AIR001xx_HAL_Driver folder under the Libraries directory in the SDK folder to the project directory. The added project directory is like this
+在这里我们使用LL库来作为例子，需要将SDK文件夹中的Libraries目录下的AIR001xx_HAL_Driver文件夹复制在工程目录下，添加完成后的工程目录大概是这样的
+Here we use LL library as an example, we need to copy the AIR001xx_HAL_Driver folder under the Libraries directory in the SDK folder to the project directory, and the added project directory is probably like this
+在Keil中添加用到的外设的源文件，一个最小的基于HAL库的工程至少需要添加
+Add the source files of the peripherals used in Keil. A minimum project based on HAL library needs to add at least
+在Keil中添加用到的外设的源文件，一个最小的基于LL库的工程至少需要添加
+Add the source files of the peripherals used in Keil. A minimum LL library-based project needs to add at least
+找到PACK文件夹中最新版本的pack文件，双击安装即可，安装后可在keil设备列表的Generic下看到Air001设备。
+Find the latest version of the pack file in the PACK folder and double-click to install it. After installation, you can see the Air001 device under the Generic of keil device list.
+这里我们添加两个目录，一个是`air001xx_hal_conf.h`文件目录，另一个是HAL库所需的头文件目录，如下图
+Here we add two directories, one is the `air001xx_hal_conf.h `file directory, and the other is the header file directory required by the HAL library, as shown in the following figure
+这里我们添加两个目录，一个是`main.c`下的目录，另一个是LL库所需的头文件目录，如下图
+Here we add two directories, one is the directory under `main.c` and the other is the header file directory required by LL library, as shown in the following figure
+这种情况一般来说都是没有添加相应的中断函数/没有添加HAL所需的宏，可以手动检查一下是否有哪些地方出现了错误。
+In this case, generally speaking, there is no corresponding interrupt function/no macro required for HAL. You can manually check whether there are any errors.
+准备工作
+Preparations

@@ -1,0 +1,6 @@
+寸TFT LCD 分辨率
+TFT LCD resolution
+分辨率128*160, 16位彩色，分辨率：128*160，65K色，驱动
+Resolution 128*160, 16-bit color, resolution: 128*160,65K color, drive
+购买链接
+Purchase Link

@@ -1,0 +1,96 @@
+白片 - 出厂芯片默认没有刷任何程序,俗称白片, 上电后会以`115200 8N1` 持续输出CCC, 维持在刷机模式. 这时候无需复位就能刷机
+White chip-the factory chip does not brush any program by default, commonly known as white chip. after power-on, it will continuously output CCC with` 115200 8N1` and remain in brush mode. at this time, the machine can be brushed without resetting.
+并且为了防止ESD导致芯片损坏，在模块的总电源入口处需增加 TVS 管，提高防静电能力。芯片电源输入脚应放置相应滤波电容改善产品性能，外部对整个芯片供电建议选用 LDO，且总电流建议 500mA 及以上。总电源走线线宽要求不低于 30mil。可以参考Air101开发板的电源进行设计。
+In order to prevent ESD from causing damage to the chip, a TVS tube needs to be added at the entrance of the total power supply of the module to improve the anti-static ability. The chip power input pin should be placed with the corresponding filter capacitor to improve product performance. LDO is recommended for external power supply to the entire chip, and the total current is recommended to be 500mA and above. The line width of the total power supply shall not be less than 30mil. You can refer to the power supply of the Air101 development board for design.
+不同管脚放置电容见下述要求
+See the following requirements for different pin placement capacitors
+电源
+Power
+调试
+Debugging
+复位
+Reset
+复位电路建议设计为 RC 电路，上电自动复位，Air101低电平复位。如果使用外部控制 RESET 管脚，当电平值低于 2.0v 时，芯片处于复位状态。复位时低电平需持续 100us 以上。
+The reset circuit is recommended to be designed as an RC circuit, power-on automatic reset, and Air101 low-level reset. If the external control RESET pin is used, the chip is in the reset state when the level value is lower than 2.0v. The low level needs to last more than 100us when resetting.
+关于刷机
+About Brush Machine
+脚为外部唤醒脚，当芯片进入睡眠状态后，Wakeup 脚给高电平时，芯片唤醒。正常工作状 态，该端口为低电平。
+The foot is an external wake-up foot. When the chip enters a sleep state, the Wakeup foot gives a high level, and the chip wakes up. Normal working state, the port is low.
+晶体摆放尽量靠近芯片，走线尽量短远离干扰源，时钟周围多地孔隔离。时钟下面各层禁止其它走线穿过，防止干扰时钟源。晶振频率为40M。客户根据实际产品需求选用不同温度等级、稳定度、负载电容值的晶体。晶体两端所接负载电容根据不同厂家晶体及频偏情况需要调整。
+The crystal is placed as close to the chip as possible, the trace is as short as possible away from the interference source, and the clock is isolated by many holes. The layers below the clock prohibit other traces from passing through to prevent interference with the clock source. The crystal frequency is 40M. Customers choose crystals with different temperature levels, stability and load capacitance values according to actual product requirements. The load capacitance connected to both ends of the crystal needs to be adjusted according to the crystal of different manufacturers and the frequency offset.
+晶振
+crystal oscillator
+可参考Air101的原理图设计自动下载电路，配合luatools可实现自动下载。量产时可留出RX0，TX0和Reaet引脚的测试点，使用夹具进行自动下载。
+The automatic download circuit can be designed with reference to the schematic diagram of Air101, and the automatic download can be realized with the luatools. During mass production, test points for RX0,TX0 and Reaet pins can be set aside for automatic download using fixtures.
+强调一句: air101/air103的芯片上的刷机程序有2份,但总能用复位+boot按键的组合刷机, 不存在`刷死`的情况, 除非硬件损坏
+One thing to emphasize: there are 2 brush programs on the chip of air101/air103, but the combination of reset boot button can always be used to brush the machine. there is no "brush death" unless the hardware is damaged.
+然后使用示波器测量电源电压是否符合要求，纹波是否过大，电压是否会有明显跌落，一定要用示波器看，万用表是平均值无法观察电压突变。
+Then use an oscilloscope to measure whether the power supply voltage meets the requirements, whether the ripple is too large, and whether the voltage will drop significantly. You must use an oscilloscope to see it. The multimeter is an average value and cannot observe the voltage mutation.
+烧录教程链接[烧录教程 - LuatOS 文档
+Burning Tutorial Link [Burning Tutorial-LuatOS Documentation
+首先检查硬件是否有虚焊等问题，确保接触良好，并测量是否有短路现象。
+First check whether the hardware has problems such as virtual welding, ensure good contact, and measure whether there is a short circuit.
+首先你需要掌握至少一种EDA工具，例如AD，PADS，KICAD等。推荐使用KICAD，开源免费，合宙MCU系列产品的硬件设计均使用
+First you need to master at least one EDA tool, such as AD,PADS,KICAD, etc. recommend use KICAD, open source and free, and the hardware design of the MCU series products is used.
+刷过但不完整 - 这种情况很少,仅刷机中断会出现, 上电后会以`115200 8N1` 先输出M/L/P之类的字符, 然后持续输出CCC. 这时候无需复位就能刷机
+Brushed but incomplete-this is rare, only brush interruption will occur, after power-on, characters such as M/L/P will be output with` 115200 8N1`, and then CCC will be continuously output. at this time, the machine can be brushed without resetting.
+刷过但lua程序运行出错 - 也算开发期的常态, 芯片会在15秒内重启, 重启期间遇到刷机同步信号的话, 也会进入刷机模式.但通常复位刷机最快解决问题
+Brushed but lua program runs incorrectly-it is also the normal state during the development period. the chip will restart within 15 seconds. if it encounters a brush synchronization signal during the restart, it will also enter the brush mode. But usually reset brush machine is the fastest to solve the problem
+刷过且程序正常运行 - 这是开发期的常态, 需要复位刷机
+Brushed and the program is running normally-this is the norm during the development period and needs to be reset.
+刷机分几种情况
+Brush machine is divided into several situations
+刷机日志均在uart0, 以下描述均指
+all the logs are in uart0, and the following descriptions refer
+所有 GPIO 如果配置上拉电阻，典型上拉电阻值为 40K，如果 配置为下拉，典型下拉电阻值为
+If a pull-up resistor is configured for all GPIOs, the typical pull-up resistance value is 40K. If a pull-down resistor is configured for all GPIOs, the typical pull-down resistance value is 40K.
+通常情况下按参考电路进行设计最小系统，芯片就能正常工作了。可是自己设计的却不行，这时候该如何排查问题呢
+Under normal circumstances, the minimum system is designed according to the reference circuit, and the chip can work normally. However, I can't design it myself. How can I check the problem at this time?
+推荐客户在模块电源入口处放置 330uf 电解电容。
+The customer is recommend to place a 330uf electrolytic capacitor at the power entrance of the module.
+问题排查
+Troubleshooting
+下载电路
+Download Circuit
+下载与调试
+Download and Debug
+相关的硬件资料，可以在wiki下载[Air101硬件资料
+Relevant hardware data can be downloaded from wiki [Air101 hardware data
+芯片 10 脚附近放置 47uf 滤波电容。
+A 47uf filter capacitor is placed near the 10 feet of the chip.
+芯片 11 脚附近放置 47uf 滤波电容。
+A 47uf filter capacitor is placed near the 11 feet of the chip.
+芯片 14 脚（PA1）及 15 脚（PA4）脚可以作为普通 ADC 使用，输入电压范围 0~2.4V。当高于 2.4V 时外部需做分压处理后才可进入 ADC 接口。使用分压电路时请务必选用高精度电阻，根据分压制选用合适阻值。分压电路参考如下。
+The 14-pin (PA1) and 15-pin (PA4) pins of the chip can be used as ordinary ADC, and the input voltage range is 0~2.4V. When it is higher than 2.4V, the ADC interface can only be entered after external voltage division processing. When using the voltage divider circuit, be sure to use high-precision resistors, and select the appropriate resistance value according to the voltage divider. The voltage dividing circuit is referred to as follows.
+芯片 17,24,31 脚附近放置 1uf 滤波电容。
+1uf filter capacitor is placed near the pins of chips 17,24 and 31.
+芯片 7 脚需放置 1uf 滤波器电容。
+Chip 7 pin to place 1uf filter capacitor.
+芯片 9 脚需放置 1nf 滤波器电容。
+Chip 9 pin to place 1nf filter capacitor.
+芯片** **25** **脚** **CAP** **必须外接** **4.7uf** **滤波电容
+Chip **** 25 **** Foot **** CAP **** Must be externally connected **** 4.7uf **** Filter Capacitor
+芯片的供电范围 **3.0V-3.6V**。请勿超过该范围。**超过 3.6V可能会对芯片造成永久性损坏**。低于 3.0V 可能整体性能会下降。
+The power supply range of the chip is **3.0V-3.6V * *. Do not exceed this range. **More than 3.6V may cause permanent damage to the chip * *. Below 3.0V may degrade overall performance.
+芯片默认 UART0 为下载口，芯片无固件初始下载时，直接连接 UART0 接口，通过相关下载软件即可实现固件下载。当芯片内有固件，再次进入下载模式，可以通过拉低 PA0，然后上电进入下载模式。下载完成后去掉 PA0 拉低的操作，需要重启，固件才能运行。
+The chip defaults to UART0 as the download port. When the chip has no initial firmware download, it is directly connected to the UART0 interface, and firmware download can be realized through related download software. When there is firmware in the chip, the download mode is entered again, and the download mode can be entered by pulling down PA0 and then powering on. After the download is completed, remove the PA0 pull-down operation and need to restart before the firmware can run.
+芯片上电后 1，2 脚默认为 UART0 端口，该端口提供下载及指令端口以及 log 输出端口。客户使用 时候注意不要随意使用该端口作为 GPIO 使用，防止被占用无法下载及调试。在系统起来后，该端口可以复 用为其它端口使用。确需复用的一定呀留好boot引脚，保证可以进行固件烧录。
+After the chip is powered on, pins 1 and 2 default to UART0 port, which provides download and instruction ports and log output ports. Customers should be careful not to use this port as GPIO at will to prevent it from being occupied and unable to download and debug. After the system is up, the port can be reused for other ports. If it is really necessary to reuse, keep the boot pin to ensure firmware burning.
+芯片上电瞬间会有较大电流，因此一定要选择动态响应速度高的电源芯片，或者增大电源入口的电容保证不会电压跌落。
+There will be a large current when the chip is powered on, so it is necessary to choose a power chip with high dynamic response speed, or increase the capacitance of the power inlet to ensure no voltage drop.
+以上都不存在问题则最小系统肯定可以正常工作。
+If there is no problem with the above, the minimum system can definitely work normally.
+硬件设计教程
+Hardware Design Tutorial
+硬件最小系统包含芯片工作的最小电路，对于Air101来说，最小系统仅需电源和晶振即可。
+The hardware minimum system contains the minimum circuit for the chip to work. For Air101, the minimum system only needs power supply and crystal oscillator.
+与唤醒
+And wake up.
+再使用示波器测量晶振是否起振，正常情况下应为40MHz的正弦波。
+Then use the oscilloscope to measure whether the crystal oscillator starts to vibrate. Under normal circumstances, it should be a 40MHz sine wave.
+在上电前把PA0拉低则芯片会进入下载模式，UART0_TX 会一直以115200波特率发送ccccc等待下载指令。芯片出厂未烧录程序时会一直处于下载模式，并以115200波特率一直发送ccccc，可用于判断芯片是否能够工作。
+Pull PA0 low before power-on, the chip will enter download mode, and the UART0_TX will always send ccccc at 115200 baud rate waiting for download instructions. When the chip leaves the factory without burning the program, it will always be in download mode and send ccccc at 115200 baud rate, which can be used to judge whether the chip can work.
+资源准备
+Resource preparation
+最小系统
+Minimum system

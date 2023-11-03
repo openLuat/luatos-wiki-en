@@ -1,0 +1,92 @@
+北斗星历的有效时间是 `1小时
+The effective time of the Big Dipper ephemeris is `1 hour
+不要接外部输入
+Do not connect external input
+不再有GPIO10/11的复用
+No more multiplexing of GPIO10/11
+部分
+Part
+参考坐标, 三种方式, 基站定位库`lbsLoc`, 上次定位成功的坐标存文件系统, 使用中国国家地理中心坐标
+Reference coordinates, three methods, base station positioning base` lbsLoc`, the last successful positioning coordinates storage file system, using the coordinates of China`s National Geographic Center
+的额外说明
+Additional instructions
+的GPS的供电是 `GPIO13/PAD12`, 注意是 `PAD12/padaddr 12`, 非
+The GPS power supply is` GPIO13/PAD12`, note is` PAD12/padaddr 12 `, not
+的GPS芯片接在  `UART2/AUX_UART`, 所以这个端口是被占用的
+The GPS chip is connected to` UART2/AUX_UART `, so this port is occupied
+定位模式只有一种, 持续定位, 定位成功前后的功耗变化不大,不过稳定定位一段时间后,会降低一些功耗
+There is only one positioning mode, continuous positioning, the power consumption before and after successful positioning does not change much, but after a period of stable positioning, some power consumption will be reduced
+定位特性
+Positioning characteristics
+飞行模式是射频相关的控制,不影响GPIO供电,所以不影响GPS供电
+Flight mode is RF-related control and does not affect GPIO power supply, so it does not affect GPS power supply
+辅助定位相关
+Auxiliary Positioning Correlation
+供电部分
+Power supply part
+固件要V1112或以上, LuatOS固件要V1103或以上,才有Air780EG的完整支持,通刷
+Firmware to V1112 or above, LuatOS firmware to V1103 or above, to have Air780EG full support, brush
+关于封装和软件
+About Packaging and Software
+关于功耗
+About Power Consumption
+关于星历
+About Ephemeris
+管脚之间的距离
+Distance between pins
+合宙提供的星历是GPS+北斗的, 两个星座都有,大小5kb左右, 大概一小时更新一次
+The ephemeris provided by the Zhou is GPS Beidou, both constellations have, about 5kb in size, updated about once an hour.
+开发板
+Development Board
+开发板排针尺寸
+Development board pin size
+开发板上的按键分别是 BOOT(GPIO0), RESET(复位), PWR(开机键) LED灯
+The keys on the development board are BOOT(GPIO0), RESET (reset), PWR (power-on button) LED lights
+两排管脚之间的距离
+Distance between two rows of pins
+没有备份供电,没有RTC保持, 只有 `上电/掉电` 两种状态,没有低功耗跟踪模式
+No backup power supply, no RTC hold, only `power on/power` two states, no low power tracking mode
+没有低功耗指令,没有低功耗模式
+No low-power commands, no low-power modes
+默认波特率是
+The default baud rate is
+内部接线
+Internal wiring
+内置的GPS芯片是掉电后数据全丢,所以辅助定位均依赖Air780EG中Cat.1芯片的能力
+The built-in GPS chip loses all data after power failure, so auxiliary positioning depends on Cat in the Air780EG. 1 Capability of the chip
+请注意与Air780E开发板的差异点
+Please note the difference with the Air780E development board
+如需详细的描述,请查阅Air780EG的硬件设计手册, 这里挑重点, 也补充了一些细节
+For a detailed description, please refer to the Air780EG hardware design manual, here to pick the focus, but also add some details
+三要素齐备(`星历`/`参考坐标`/`UTC时间`)的情况下, 若信号良好,可做到首次定位成功小于2秒
+When the three elements are complete (`ephemeral`/`reference coordinate `/`UTC time`), if the signal is good, the first positioning success can be less than 2 seconds.
+时间, 中国移动/中国电信,联网后基站会下发时间(系统事件`NTP_UPDATE`), 中国联通, 走NTP. 例如lua里的API是
+Time, China Mobile/China Telecom, the base station will issue the time (system event` NTP_UPDATE `) after networking, China Unicom, NTP. For example, the API in lua is
+实测标明, 北斗星历有帮助, 但主力还是GPS星历
+Measurements indicate that the Big Dipper ephemeris is helpful, but the main force is GPS ephemeris.
+使用的指令与Air510U是一样的, [Air510U资料网站
+The instructions used are the same as the Air510U, [Air510U Materials Website
+是 Air780E + GNSS芯片6228, 所以95%的特性跟Air780E是一样的,这里挑不同的地方说
+It is Air780E + GNSS chip 6228, so 95% of the characteristics are the same as Air780E. Here are different places to say
+是`只读版本`的GPS芯片, 意思是所有配置项都不能保存,星历/时间/参考坐标均不能保存
+It is a "read-only version" of GPS chip, which means that all configuration items cannot be saved, and ephemeris/time/reference coordinates cannot be saved.
+属于一堆事物的称呼, 下文如无特别说明,都是指"卫星定位系统
+Belonging to a bunch of things, the following, unless otherwise specified, refers to "satellite positioning system."
+外部封装, Air780E和Air780EG是一样的, 区别在于UART2不能接其他设备
+External package, Air780E and Air780EG are the same, the difference is that UART2 cannot connect other equipment
+芯片供电和有源天线的供电,是一起控制的, 只用了一个GPIO,一个API控制
+The power supply of the chip and the power supply of the active antenna are controlled together, using only one GPIO and one API control.
+星历, 通过http从合宙服务器下载
+ephemeris, download from a co-server via http
+星历的有效时间是 `4小时
+The valid time of the ephemeris is `4 hours
+因为使用的是普通GPIO,`SLEEP1/LIGHT/SLEEP2/DEEP/HIB模式下会掉电`的
+Because normal GPIO is used, `SLEEP1/LIGHT/SLEEP2/DEEP/HIB mode` will power down
+因为UART的特性, 虽然引出了UART2_RX, 但不可以外接数据线直接给GPS芯片发指令,需要走代码从780e内部发
+Because of the characteristics of UART, although it leads to UART2_RX, it is not possible to directly send instructions to GPS chip by external data line, and it is necessary to send the code from inside 780e.
+再次强调, GPS芯片本身不能保存星历,即便长期运行后自身生成星历,`掉电一样会丢
+Again, the GPS chip itself cannot save the ephemeris, even if it generates its own ephemeris after long-term operation, it will be lost even if it loses power.
+在GPS信号良好的室外,有源天线的加持下, 无AGPS的首次定位时间小于
+With the blessing of the active antenna, the first positioning time without AGPS is less
+在lua代码中, 控制供电API是 `pm.power(pm.GPS, true)`, 虽然有pm.GPS_ANT,但对Air780EG无效
+In lua code, the control power supply API is` pm.power(pm.GPS, true)`. although there is pm.GPS_ANT, it is invalid for Air780EG

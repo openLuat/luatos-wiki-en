@@ -1,0 +1,124 @@
+按住BOOT键(外侧的一个), 然后按PWR(外侧另外一个)2秒, 松开BOOT键
+Press and hold the BOOT button (the outer one), then press PWR (the outer one) for 2 seconds, and release the BOOT button
+查看日志
+View Log
+出现3个新的COM口，工具会自动打开端口, 证明当前是`AT固件
+Three new COM ports appear, and the tool will automatically open the ports to prove that the current `AT firmware
+出现3个新的COM口，工具会自动打开端口, 证明当前是`CSDK或者LuatOS固件
+Three new COM ports appear, and the tool will automatically open the port to prove that it is current` CSDK or LuatOS firmware
+串口烧录
+Serial Burn
+点击`项目管理测试`按钮，点击左下角的`创建项目`新建一个新项目
+Click the `Project Management Test` button and click `Create Project` in the bottom left corner to create a new project
+工具配置
+Tool Configuration
+工具也自动下载了正式版本的一些实例脚本可以在`resource\某种型号\某个版本\demo`文件夹看到，可以直接选择脚本进行烧录测试
+The tool also automatically downloaded some example scripts of the official version, which can be seen in the` resource \certain model \certain version \demo` folder, and can be directly selected for burning test
+工具自动下载的固件
+The tool automatically downloads the firmware
+固件是拓展名为`soc`的文件，这里用Air101的固件进行举例，长这样
+Firmware is a file called "soc`. Here, Air101 firmware is used as an example. It looks like this
+固件下载后解压，可以得到相应的固件
+After downloading the firmware, decompress it to obtain the corresponding firmware.
+即可进入BOOT模式等待烧录, 大概30~45秒自动会退出BOOT模式
+You can enter the BOOT mode and wait for burning, and it will automatically exit the BOOT mode in about 30~45 seconds.
+简约版
+Simplified version
+建议新建一个Luatools文件夹，将exe文件放入其中后，再打开exe文件
+It is recommended to create a new Luatools folder, put the exe file into it, and then open the exe file.
+将设备通过usb线连接到电脑，可以看到出现一个新的COM口，在工具中选中这个COM口并打开
+Connect the device to the computer through the usb cable, you can see a new COM port, select this COM port in the tool and open it
+将设备通过usb线连接到电脑，这里会有几种情况
+Connect the device to the computer via a usb cable, there are several situations
+接着返回Luatools，点击`下载固件`按钮，选中刚刚下载的soc文件，直接下载即可
+Then return to the Luatools, click the` Download Firmware` button, select the soc file just downloaded, and download it directly
+进入BOOT模式后, 大概30~45秒会退出BOOT模式
+After entering BOOT mode, about 30~45 seconds will exit BOOT mode
+经典版
+Classic Edition
+开机防抖功能"开启状态的流程, 这通常是AT固件运行过的结果
+The process of starting the anti-shake function "on state, which is usually the result of AT firmware running.
+类的脚本，可以前往[LuatOS官方仓库](https://gitee.com/openLuat/LuatOS)，在`demo`文件夹可以找到
+Class script, can go to [LuatOS official repository](https://gitee.com/openLuat/LuatOS), can be found in the` demo` folder
+没有一点反应, 按住板子的PWR键2秒以上, 板子开机. 开发板上有3个按钮, 若没有标识,外侧2个都试一试
+There is no response. Press and hold the PWR key of the board for more than 2 seconds, and the board will be turned on. There are 3 buttons on the development board. If there is no logo, try both on the outside.
+普通刷机流程(开机防抖关闭的状态
+Common brushing process (startup anti-shake off state
+前往官方仓库下载固件
+Go to the official warehouse to download the firmware
+请勾选`4G模块USB打印`, 本系列兼容Air780E/Air780EG/Air600E/Air700E等EC618方案
+Please check` 4G module USB print`, this series is compatible with EC618 schemes such as Air780E/Air780EG/Air600E/Air700E
+请勾选`通用串口打印
+Please check `Universal Serial Print
+如果还没反应，检查通用串口打印是否勾选， 重新选择串口打开，或者试试点击`重启串口
+If there is no response, check whether universal serial port printing is checked, reselect serial port to open, or try clicking` restart serial port
+如果没有打开串口，点击`打开串口`即可查看日志
+If the serial port is not opened, click "Open Serial Port" to view the log
+如果芯片当前已经烧录的固件版本，和这里选择的固件相同，那么可以点击`下载脚本`只下载脚本；反之，建议点击`下载底层和脚本`，进行全刷
+If the firmware version currently burned by the chip is the same as the firmware selected here, you can click "Download Script" to download only the script. On the contrary, it is recommended to click "Download Bottom Layer and Script" to perform full brushing.
+如何关闭"开机防抖功能"呢? 任选一种
+How to turn off the "boot anti-shake function"? Choose one
+烧录固件
+Burn Firmware
+烧录脚本
+Burn Script
+烧录教程
+Burn Tutorial
+烧录前需要获取固件
+Need to get firmware before burning
+烧录时的操作：先按住BOOT键，再按一下复位键，最后再松开BOOT键
+Operation during burning: first press and hold the BOOT key, then press the reset key, and finally release the BOOT key
+使用云编译
+Use cloud compilation
+视频教程参见此处：[【LuatOS】①烧录教程
+See here for video tutorials: [[LuatOS] ① Burning Tutorial
+首先下载最新版本的Luatools：[点我下载
+First download the latest version of the Luatools:[click me to download
+刷机完成后, 如果没有自动开机, 还需要手动开机
+After the machine is brushed, if it is not turned on automatically, it needs to be turned on manually.
+刷脚本 `Luatools/resource/618_lua_lod/版本号
+Brush script` Luatools/resource/618_lua_lod/version number
+提醒: 不支持Win7刷机
+Reminder: does not support Win7 brush machine
+无需修改串口波特率，保持当前值即可
+No need to modify the serial port baud rate, keep the current value can be
+先插拔USB, 这样设备就是关机状态
+Plug and unplug USB first, so that the device is turned off
+修改通用串口波特率，设置波特率为1500000, 这是日志波特率. 刷机波特率是工具自动设置的
+Modify the universal serial port baud rate and set the baud rate to 1500000, which is the log baud rate. The baud rate is automatically set by the tool.
+修改通用串口波特率，设置波特率为921600, 这是日志波特率. 刷机波特率是工具自动设置的
+Modify the universal serial port baud rate and set the baud rate to 921600, which is the log baud rate. The baud rate is automatically set by the tool.
+选好芯片使用的固件，选好脚本即可下载
+Select the firmware used by the chip and select the script to download it.
+也可以前往LuatOS官方仓库下载最新固件
+You can also go to the official LuatOS warehouse to download the latest firmware.
+也可以使用官方的**云编译**功能，自定义固件中包含的模块
+You can also use the official **cloud compilation** function to customize the modules included in the firmware.
+一定要安装CH343的驱动才能正常下载固件，默认的CDC驱动打印日志没问题，但是速率太慢会导致下载失败。[驱动传送门
+The driver of CH343 must be installed to download the firmware normally. The default CDC driver prints the log without any problem, but the download fails if the speed is too slow. [Drive portal
+一根typec口的USB连接线
+A USB cable for a typec port
+一台window系统的电脑（推荐win10以上
+A window system computer (recommend win10 or above
+云编译教程点我查看
+Cloud Compilation Tutorial Point I View
+在你自己的main.lua 开头的地方,加一句
+At the beginning of your own main.lua, add
+在主界面, 点固件下载, 刷闪灯固件 `Luatools/resource/618_lua_lod/版本号/功能测试固件/闪灯测试
+In the main interface, click Firmware Download and brush the flashing light` Luatools/resource/618_lua_lod/Version Number/Functional Test Firmware/Flash Test
+找到Luatools所在的文件夹，文件夹的`Luatools/resource/101_lua_lod`或`Luatools/resource/103_lua_lod`中的就是自动下载的正式版本固件
+Find the folder where the Luatools is located. The official firmware downloaded automatically in the folder`s `Luatools/resource/101_lua_lod` or` Luatools/resource/103_lua_lod`
+找到Luatools所在的文件夹，文件夹的`Luatools/resource/105_lua_lod`中的就是自动下载的正式版本固件
+Find the folder where the Luatools is located, and the official firmware downloaded automatically is in the folder`s `Luatools/resource/105_lua_lod`
+找到Luatools所在的文件夹，文件夹的`Luatools/resource/618_lua_lod/版本号`中就是自动下载的正式版本固件
+Find the folder where the Luatools is located, and the official version firmware downloaded automatically is in the` Luatools/resource/618_lua_lod/version number` of the folder
+找到Luatools所在的文件夹，文件夹的`Luatools/resource/esp32c3_lua_lod/版本号`中**不带有**`USB`字样的，就是自动下载的正式版本固件
+Find the folder where the Luatools is located. The folder`s `Luatools/resource/esp32c3_lua_lod/Version Number` * * without the words **`USB` is the official version firmware downloaded automatically.
+找到Luatools所在的文件夹，文件夹的`Luatools/resource/esp32c3_lua_lod/版本号`中带有`USB`字样的，就是自动下载的正式版本固件
+Find the folder where the Luatools is located. The "Luatools/resource/esp32c3_lua_lod/Version Number" in the folder is the official version firmware downloaded automatically.
+找到Luatools所在的文件夹，文件夹的`Luatools/resource/esp32s3_lua_lod/版本号`中的，就是自动下载的正式版本固件
+Find the folder where the Luatools is located. The "Luatools/resource/esp32s3_lua_lod/Version Number" in the folder is the official version firmware downloaded automatically.
+正式版可以在发行版页面下载
+The official version can be downloaded from the release page.
+准备工作
+Preparations

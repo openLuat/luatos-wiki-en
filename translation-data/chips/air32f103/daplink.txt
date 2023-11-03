@@ -1,0 +1,194 @@
+按下图设置
+Set as shown below
+把MCU的复位线接上
+connect the reset line of MCU
+把SWD和SCK的杜邦线线掰开分散(一根一根的散开)，**或者SWD VCC SCK GND 或VCC SWD GND SCK 这种方式并排连接，数据线尽可能短。
+The DuPont wires of SWD and SCK are separated and scattered (one by one),* * or SWD VCC SCK GND or VCC SWD GND SCK are connected side by side in this way, and the data lines are as short as possible.
+版本问题
+Version issues
+被调试板子关闭了SWD功能
+SWD function is turned off on the board being debugged
+被调试的芯片无法支持较高频率，可以调低频率后再使用
+The chip being debugged cannot support higher frequencies and can be used after lowering the frequency.
+插电脑上没有驱动
+There is no driver on the plug-in computer
+插入USB，电脑上会出现一个名为 `MAINTENANCE`的USB存储器
+Plug in the USB, a USB memory called `MAINTENANCE` will appear on the computer
+查看设备是否连接正常，连接正常可以在SW Device列表里看到设备，可以调整时钟速度提高效率
+Check whether the device is connected normally. If the connection is normal, you can see the device in the SW Device list, and you can adjust the clock speed to improve efficiency.
+常见问题
+FAQ
+尺寸仅有2.5*1.3cm大小，比USBA口都要小
+The size is only 2.5*1.3cm, which is smaller than USBA mouth.
+串口CDC指示，串口有数据时闪烁
+Serial port CDC indication, flashing when serial port has data
+此批次烧录器的使用解决方案如下
+The solution for using this batch of burners is as follows
+从[Air32的SDK仓库](https://gitee.com/openLuat/luatos-soc-air32f103/tree/master/AIR_Jlink_Keil)获取你需要的固件，请选择 `iap.hex`结尾的固件
+Get the firmware you need from [Air32 SDK Warehouse](https://gitee.com/openLuat/luatos-soc-air32f103/tree/master/AIR_Jlink_Keil), please select the firmware at the end of` iap.hex`
+打开`设备管理器
+Open `Device Manager`
+打开keil中的pack installer； 选择对应的设备，把pack 包括cmsis等更新到最新。
+Open the pack installer in keil; Select the corresponding device and update the pack, including cmsis, to the latest.
+大电流LDO**在稳定为air32供电的同时还能为外界设备提供电源
+High-current LDO **can provide power supply for external equipment while stably supplying power to air32
+带**U盘拖拽烧录**功能，可以直接将hex或者bin文件拖拽到U盘实现烧录（仅支持烧录
+With * * U disk drag and drop burn * * function, you can directly drag hex or binfile to U disk to burn (only support burn
+点击工程配置魔术棒，找到Debug选项卡，在下拉列表中选择CMSIS-DAP Debugger，点击
+Click the project configuration magic wand, find the Debug tab, select the CMSIS-DAP Debugger in the drop-down list, and click
+点击设备管理器上方的 `扫描检测硬件改动`按钮
+Click the `Scan for Hardware Changes` button above Device Manager
+点击设备管理器上方的 `扫描检测硬件改动`按钮，重新识别后即可在KEIL中识别到
+Click the` Scan for Hardware Changes` button at the top of the device manager, and you can identify it in KEIL after re-identification.
+调节Max Clock的速度，有些MCU 只支持
+Adjust the speed of Max Clock, some MCUs only support
+调试线的问题
+Debug Line Problem
+短接DAPLink板子的 `RST`与
+Short DAPLink board `RST`
+断开 `RST`与 `GND`之间的短接连线
+Disconnect the short connection between `RST` and `GND`
+对该设备-`右击`-`卸载设备`，点击确定
+On the device-`Right-click`-`Uninstall device`, click OK
+复制完几秒钟后，DAPLink会进行升级，几秒钟后会自动重连，升级完成
+After copying for a few seconds, the DAPLink will be upgraded, and after a few seconds, it will automatically reconnect and the upgrade will be completed.
+改低速度使用，速度需要尽量低
+Change the low speed to use, the speed needs to be as low as possible
+概述
+Overview
+更新固件
+Update Firmware
+更新MDK 到5.36或以后的版本
+Update MDK to 5.36 or later version
+勾选`删除此设备的驱动程序软件`，点击确定即可卸载
+Check "Delete the driver software of this device" and click OK to uninstall it.
+合宙基于ARM官方代码移植到了Air32F103CBT6，并适配了**216M主频**和**96K大RAM**的资源，支持更快的的下载速度（[固件开源](https://gitee.com/openLuat/daplink)），并设计了一个超小体积的DAPLink硬件
+Based on ARM's official code, Zeus was transplanted to Air32F103CBT6 and adapted the resources of * * 216M dominant frequency * * and * * 96K large RAM * *, supporting faster download speed ([firmware open source](https://gitee.com/openLuat/daplink)), and designed an ultra-small DAPLink hardware
+和MDK之间的常见问题，解决办法可以尝试以下方法
+and MDK, the solution can try the following methods
+很多人会说我用别的DAPLINK没问题,那是因为DAPLINK V1版本速度很慢，对线没要求。
+Many people will say that I have no problem with other DAPLINK, because DAPLINK V1 version is very slow and has no requirements for lines.
+后续如果修复BUG，DAPLink固件会有更新，这时候我们就需要进行下面的操作
+If the BUG is fixed later, the DAPLink firmware will be updated. At this time, we need to perform the following operations.
+或与上个问题里一样，用的是假的驱动
+Or just like in the previous question, using a fake driver
+计划会以免单优惠券形式发放，统一短信通知各位，如有疑问请前往购买的平台咨询客服
+The plan will avoid issuing single coupons and notify you by unified text message. If you have any questions, please go to the purchasing platform to consult customer service.
+将 `iap.hex`结尾的固件文件复制进这个USB存储器
+Copy the firmware file at the end of `iap.hex` into this USB memory
+教程地址： [合集·KiCad7.0教程-制作
+Tutorial Address: [Collection KiCad7.0 Tutorial-Production
+开源教程
+Open Source Tutorial
+可能你会看见一个或多个
+You may see one or more.
+可能是windows驱动识别问题，可以按如下步骤操作
+It may be a windows driver identification problem, which can be operated as follows
+口使用**TI的ESD芯片**保护
+The port uses **TI's ESD chip** protection
+连接DAPLink到电脑，打开设备管理器，找到如下设备，`右击`--`卸载设备
+Connect the DAPLink to the computer, open the device manager, find the following device, `right-click`-`uninstall the device
+盘烧录功能指示，有数据时闪烁
+The disk burning function indicator flashes when there is data.
+配置
+Configuration
+前往淘宝购买
+Go to Taobao to buy
+请参考此处卸载相关驱动
+Please refer here to uninstall the relevant driver
+请升级至2021年后版本的
+Please upgrade to the version after 2021
+请升级至最2023年后的新版本的
+Please upgrade to the latest version after 2023
+请勿再次安装该驱动，以免设备无法使用
+Do not install the driver again to prevent the device from being unusable
+全系列**Arm-cortex内核芯片的调试和烧录，ARM官方维护，后续新内核依然会支持
+The whole series of **Arm-cortex core chip debugging and burning, ARM official maintenance, follow-up new kernel will still support
+扔了，用补发的新的
+Throw it away. Use a new replacement
+如果是WIN7设备，推荐按上面的教程刷成v1固件，或者自行研究如何安装驱动。
+If it is a WIN7 device, you recommend brush it into v1 firmware according to the above tutorial, or study how to install the driver yourself.
+如果显示内容包含了`USB\VID_0D28&PlD_0204\`内容，则该设备为DAPLINK设备
+If the display contains `USB\VID_0D28 & PlD_0204\`content, the device is DAPLINK
+如若符合`2023年6月17日前发货`的情况，官方会免费补发修正后的DAPLink（已收到货的板子无需退回
+If it meets the requirement of` delivery before June 17, 2023 `, the government will reissue the revised DAPLink free of charge (the received boards do not need to be returned
+软件开源
+software open source
+软件配置问题
+Software Configuration Issues
+若连上之后，串口设备名称为 `mdeb Serial Port`，并且无法自动识别WINUSB驱动。则为驱动被污染，解决方法如下
+If connected, the serial device name is `mdeb Serial Port`, and the WINUSB driver cannot be automatically recognized. If the drive is contaminated, the solution is as follows
+烧录器连上了，但是KEIL设备列表里不显示被调试的板子
+The burner is connected, but the debugged board is not displayed in the KEIL device list.
+设备管理器-`串口(COM和LPT)`-`mdeb Serial Port(COMxx)`-`右击`-`卸载设备`，勾选 `删除此设备的驱动程序软件`，点击确定
+Device Manager-`Serial Ports (COM and LPT)`-`mdeb Serial Port(COMxx)`-`Right-click`-`Uninstall device`, check` Delete driver software for this device`, and click OK
+设备管理器-`通用串行总线控制器`-`mdeb`开头的一个设备-`右击`-`卸载设备`，勾选 `删除此设备的驱动程序软件`，点击确定
+Device Manager-`Universal Serial Bus Controller`-a device at the beginning of `mdeb`-`Right-click`-`Uninstall device`, check`Delete the driver software for this device`, click OK
+设备管理器有设备，但是KEIL不认
+Device Manager has a device, but KEIL does not recognize it
+设备管理器有设备，但是openocd不认
+Device Manager has a device, but the openocd does not recognize it
+设备管理器有设备，KEIL也是最新版本，但还是不认
+The device manager has devices, and KEIL is the latest version, but it still doesn't recognize it.
+使用**4层沉金**PCB设计
+Use **4-layer gold** PCB design
+使用教程
+Using the Tutorial
+使用手册
+Manual
+是ARM官方开源的一个调试器方案，官方地址为[ARMmbed/DAPLink (github.com)](https://github.com/ARMmbed/DAPLink)，可以用来调试arm cortex内核的几乎所有单片机，最新出的M33，M85内核也支持调试。
+It is an official open source debugger scheme of ARM, with the official address of [ARMmbed/DAPLink (github.com)](https://github.com/ARMmbed/DAPLink). It can be used to debug almost all single chip computers of arm cortex kernel. The latest M33 and M85 kernels also support debugging.
+适配**DAPLink V2** WINUSB版本，速度对比HID版本提升3到10倍，极大节约了下载时间
+Adapt to **DAPLink V2** WINUSB version, the speed is 3 to 10 times higher than HID version, greatly saving download time
+四颗LED功能分别为
+Four LED functions are
+特别警告：安装`创新工坊`(PWLINK)的驱动后，会导致所有基于ARM官方DAPLINK固件的设备功能异常，包括但不限于：虚拟U盘消失、无法烧录。
+Special Warning: After installing the driver of "Innovation Workshop" (PWLINK), it will cause all devices based on ARM`s official DAPLINK firmware to function abnormally, including but not limited to: the virtual U disk disappears and cannot be burned.
+特殊说明：2023年6月17日前发货的用户请注意
+Special instructions: please pay attention to users who deliver goods before June 17, 2023
+为了让小白也能学习，稀饭大神还贴心的为大家录制了PCB设计的完整教程，使用全开源的KICAD设计软件，从画符号、画原理图、画PCB、走线、生产文件制作，到如何下单打样进行全流程教学，跟着教程走，轻松学会4层板的设计
+In order to enable Xiao Bai to learn, the great god of porridge also kindly recorded a complete tutorial on PCB design for everyone. using the all-open source KICAD design software, from drawing symbols, drawing schematic diagrams, drawing PCB, routing, making production documents, to how to place an order for proofing for the whole process teaching, follow the tutorial and easily learn the design of 4-layer boards.
+我们正在与该厂家取得联系，以免影响其它家的DAPLink设备
+We are getting in touch with the manufacturer, so as not to affect other home DAPLink equipment
+无法识别虚拟U盘
+Virtual USB flash drive not recognized
+下载时报RDDI-DAP Error的解决办法
+Download Times RDDI-DAP Error Solution
+选用**沉板TYPEC口**更加结实稳定
+Selection of * * sink TYPEC mouth * * more solid and stable
+一个**全功能USB转串口**（CDC），带硬件DTR和RTS，可以实现自动下载功能
+A **full-featured USB to serial port**(CDC) with hardware DTR and RTS for automatic download
+一个个双击打开他们，切到`详细信息`选项卡，将`属性`改为`设备实例路径
+Double-click one by one to open them, cut to the "Details" tab, and change the "Properties" to the "Device Instance Path"
+引脚功能分配如下
+The pin functions are assigned as follows
+硬件
+Hardware
+硬件开源
+Hardware open source
+由于第一批板子贴错电阻，会导致无法使用高速下载
+Due to the wrong resistance attached to the first batch of boards, high-speed download cannot be used.
+由于该DAPLink使用的是实际设置速度，所以如果设备列表是空的，可能是因为被调试的芯片无法支持较高频率，可以调低频率后再使用
+Since this DAPLink uses the actual setting speed, if the device list is empty, it may be because the debugged chip cannot support higher frequencies, and can be used after lowering the frequency.
+由于设计仅适配3.3V电平，若连接5V设备调试，须自行承担烧毁风险
+Since the design is only suitable for 3.3V level, if 5V equipment is connected for debugging, the risk of burning shall be borne by oneself.
+有些电脑系统仍在使用Win7，无法使用DAPLink V2版本固件，这时候就需要降级到V1固件
+Some computer systems are still using Win7 and cannot use DAPLink V2 version firmware. At this time, it is necessary to downgrade to V1 firmware.
+运行指示灯，常亮
+Running indicator light, always on
+展开`通用串行总线控制器
+Expand `Universal Serial Bus Controllers
+展开查看
+Expand View
+这么好用想学学自己做一个，当然可以。合宙开源这个DAPLink的全部资料，软件硬件全部统统开源
+It's so easy to use. I want to learn to make one myself, of course. All the information of the DAPLink of open source, all the software and hardware are open source.
+支持**WEBUSB**功能，可以网页烧录固件，支持插入弹窗，无需担心不会用
+Support **WEBUSB** function, can burn firmware on web pages, support insertion of pop-up windows, no need to worry about not using it
+支持Keil，IAR，PyOCD等多种调试环境
+Support Keil,IAR,PyOCD and other debugging environment
+指示，烧录或调试时亮
+Illuminates when indicating, burning or debugging
+主要功能
+Main functions
+自行更换电阻为100Ω，相当于白嫖个调试器，如下图
+Self-replacement resistance is 100 Ω, which is equivalent to Bai Piao's debugger, as shown in the following figure

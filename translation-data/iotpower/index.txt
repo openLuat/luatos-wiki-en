@@ -1,0 +1,24 @@
+版本
+Version
+产品反馈群
+Product Feedback Group
+纯测量设备，支持PD输入诱骗，适配更高电压与更大电流
+Pure measurement equipment, support PD input decoy, adapt to higher voltage and larger current
+更多资料
+More information
+功耗测试神器
+Power consumption test artifact
+供电，作为电源使用，输出最大5V/2A，采样率
+Power supply, used as a power supply, maximum output 5V/2A, sampling rate
+客户端
+Client
+了解更多
+Learn more
+配套的PC客户端软件，可方便地查看、分析、共享功耗数据
+PC client software for easy viewing, analysis and sharing of power consumption data
+请选择左侧的具体页面查看。
+Please select the specific page on the left to view.
+上报BUG与需求：[击此处新建
+Report bugs and requirements: [Click here to create new
+系列产品是功能齐全，稳定可靠的小型手持式功耗测试神器。它可以通过USB C供电，通过屏幕显示数据，并配套功能强大的客户端软件，是广大用户随身携带的理想测试工具。
+Series products are fully functional, stable and reliable small hand-held power consumption test artifact. It can be powered by USB C, display data on the screen, and is equipped with powerful client software. It is an ideal test tool for users to carry with them.

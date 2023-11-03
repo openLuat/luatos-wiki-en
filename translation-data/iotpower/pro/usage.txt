@@ -1,0 +1,116 @@
+按下**翻页键**，可向前后页面翻页
+Press the **page key** to turn pages forward and backward
+按下**输出按钮**即可开启或关闭电源输出
+Press the **output button** to turn the power output on or off
+部分控件按下后会进入该控件，此时**滚轮**键可更改该控件的值，再次按下后退出修改
+Some controls will enter the control after being pressed. At this time, the * * wheel * * key can change the value of the control, and exit the modification after being pressed again.
+部分品牌快充充电头（如华为、小米等私有协议快充头）可能会误识别快充协议，导致向设备提供超过5.8V的高电压导致瞬间烧毁设备。
+Some brands of fast charging heads (such as Huawei, Xiaomi and other private protocol fast charging heads) may misrecognize the fast charging protocol, resulting in providing high voltage exceeding 5.8V to the device, resulting in instantaneous burning of the device.
+操作说明
+Operating Instructions
+查看波形
+View Waveform
+查看秒平均数据
+Viewing Average Data in Seconds
+查看详细数据
+View detailed data
+电量/功率值下方的进度条，表示当前耗电量占设置模拟电池电量的占比
+The progress bar below the power/power value indicates the current power consumption as a percentage of the set simulated battery power.
+电流值下方的进度条，表示当前电流值占设置电流值的占比
+The progress bar below the current value indicates the ratio of the current current value to the set current value.
+电压值下方的进度条，表示当前电压值占设置电压值的占比
+The progress bar below the voltage value indicates the ratio of the current voltage value to the set voltage value.
+电源输出接口，严禁反接其他电源/电池，或连接5V以上电压的其他电源/电池，以免烧毁设备。
+Power output interface, it is strictly prohibited to reverse other power supply/battery, or connect other power supply/battery with voltage above 5V, so as not to burn the equipment.
+翻页
+Page turning
+翻页键**可更改选中的数字，**滚轮**键可更改这一位数字的值
+The page key **can change the selected number, and the** scroll wheel **key can change the value of this number
+风险提示
+Risk Alert
+该部分内容将讲解设备各部分功能的具体含义与按键操作方式
+This part of the content will explain the specific meaning of each part of the function of the equipment and the key operation mode
+该页面可进行各项设置，可以按需修改
+This page can be set, can be modified as needed
+滚动**滚轮**键可切换选中的控件，按下可操作选中的控件
+Scroll **wheel** key to switch the selected control, press to operate the selected control
+基本操作
+Basic operation
+建议尽量不要使用此类充电头连接设备的PC通讯电源接口
+It is recommended not to use this type of charging head to connect the PC communication power interface of the device.
+将设备通过USB连接至PC，打开IoT Power客户端，连接设备，切换至`设置页面`，修改模拟电池相应的参数并更新到设备中
+Connect the device to the PC via USB, open the IoT Power client, connect the device, switch to the` Settings Page`, modify the corresponding parameters of the simulated battery and update it to the device
+警告
+Warning
+开启该功能后，首屏的电压设置功能将被禁用，电压设置位置将显示为
+After this function is turned on, the voltage setting function of the first screen will be disabled, and the voltage setting position will be displayed
+开启和关闭输出
+Turn the output on and off
+开启模拟电池功能
+Turn on the analog battery function
+可多次按下**滚轮**来切换不同的固定坐标，切换数次后可恢复自动坐标范围功能。
+You can press the **wheel** several times to switch between different fixed coordinates, and the automatic coordinate range function can be restored after switching several times.
+可在设置页面查看当前的电池设置信息
+You can view the current battery settings on the settings page
+模拟电池
+Analog Battery
+切换
+Switch
+切换到设置页面--其他设置(Others)，修改语言
+Switch to Settings page-Other settings, change language
+切换电流坐标范围
+Switching current coordinate range
+切换下方数据的
+Switch the data below
+切换语言
+Switch language
+设备可模拟电池，可模拟电压下降波形与容量，输出时将根据耗电量自动更改输出电压，并在电量耗尽时关闭输出。
+The device can simulate the battery, can simulate the voltage drop waveform and capacity, the output will automatically change the output voltage according to the power consumption, and shut down the output when the power is exhausted.
+设备默认中文，可更改语言
+Device default Chinese, can change the language
+设备支持中英文双语切换，可参考下方的设置项更改语言。
+The device supports bilingual switching between Chinese and English. You can change the language by referring to the settings below.
+设置
+Setup
+使用**滚轮**，选中`启用模拟电池`，按下**滚轮**即可切换模拟电池功能的开启与关闭
+Use the **scroll wheel**, select `Enable analog battery`, and press the **scroll wheel** to switch the analog battery function on and off.
+使用**滚轮**，选中第三行黄色数据后的单位，按下**滚轮**即可切换W、Wh、Ah显示
+Use the **scroll wheel** to select the unit after the yellow data in the third row, and press the **scroll wheel** to switch the display of W, Wh, and Ah.
+使用**滚轮**，选中下方的`Auto`，按下**滚轮**即可切换电流坐标范围，此时文字变为
+Use **scroll wheel**, select `Auto` below, and press **scroll wheel** to switch the current coordinate range. At this time, the text changes
+使用**滚轮**，选中下方的`Run`，按下**滚轮**即可暂停波形打印，此时文字变为
+Use * * scroll wheel * *, select `Run` below, press * * scroll wheel * * to pause waveform printing, at this time the text becomes
+使用**滚轮**，选中下方中间黄色数据后的单位，按下**滚轮**即可切换W、Wh、Ah显示
+Use the **scroll wheel** to select the unit after the yellow data in the middle below, and press the **scroll wheel** to switch the display of W, Wh, and Ah.
+使用**滚轮**，选中最上方的`实时数据`，按下**滚轮**即可切换至秒平均显示
+Use the **scroll wheel**, select the `real-time data` at the top, and press the **scroll wheel** to switch to the second average display.
+输出供电
+Output power supply
+通讯接口，严禁正负反接或电压大于6V，反接或大于6V必烧
+Communication interface, it is strictly prohibited to connect positive and negative or voltage greater than 6V, reverse connection or greater than 6V will burn
+修改电池电压曲线与电量
+Modify battery voltage curve and charge
+修改电流
+Modify Current
+修改电压
+Modify voltage
+修改后切换页面即可立即生效
+Switch pages after modification to take effect immediately
+选择控件与操作
+Select controls and actions
+选中电流值边上的`A`或`mA`，按下**滚轮**可切换`A`或`mA`的单位
+Select `A` or `mA` on the side of the current value, and press * * roller * * to switch the unit of `A` or `mA`
+再次按下**滚轮**键即可退出更改
+Press the **wheel** button again to exit the change
+再次按下**滚轮**可重新开启波形刷新
+Press the **scroll wheel** again to turn waveform refresh on again
+在该页面，使用**滚轮**，选中下方的电流值`2.000A`，按下**滚轮**即可进入编辑模式
+On this page, use the **scroll wheel**, select the current value `2.000A` below, and press the **scroll wheel** to enter the editing mode.
+在该页面，使用**滚轮**，选中下方的电压值`4.100v`，按下**滚轮**即可进入编辑模式
+On this page, use **scroll wheel**, select the voltage value `4.100 v` below, and press **scroll wheel** to enter editing mode
+在该页面可查看电压电流波形
+Voltage and current waveforms can be viewed on this page
+在该页面可查看详细数据
+Detailed data can be viewed on this page
+暂停波形刷新
+Pause Waveform Refresh

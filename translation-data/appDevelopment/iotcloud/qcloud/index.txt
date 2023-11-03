@@ -1,0 +1,4 @@
+本文档将介绍连接到腾讯云物联网平台
+This document describes how to connect to Tencent Cloud IoT Platform
+腾讯云应用开发
+Tencent Cloud Application Development

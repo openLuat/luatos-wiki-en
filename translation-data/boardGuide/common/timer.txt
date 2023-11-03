@@ -1,0 +1,36 @@
+本章介绍LuatOS的timer库使用方式
+This chapter describes how to use the timer library of LuatOS
+本demo只是为了演示API方法的可用性
+This demo is just to demonstrate the availability of API methods
+初始化看门狗，超时时长为
+Initialize the watchdog with a timeout
+打印阻塞结束后的
+Print after blocking ends
+打印阻塞开始前的
+print before blocking starts
+代码如下
+The code is as follows
+会阻塞整个lua vm的运行, 在阻塞的时长内,任何中断都不会响应,包括
+will block the operation of the entire lua vm, and will not respond to any interrupts during the blocking period, including
+简介
+Introduction
+接口文档可参考：[timer库
+Interface documentation can be referred to:[timer library
+库使用的是mcu的硬件定时器，通过timer库可以创建硬件定时器
+The library uses mcu's hardware timer, which can be created through the timer library.
+任意LuatOS-SOC开发板一块
+Any LuatOS-SOC development board
+日志如下
+The log is as follows
+软件部分
+Software part
+循环喂狗
+Cycle feeding the dog
+硬件准备
+Hardware preparation
+硬阻塞
+hard blocking
+硬阻塞指定时长,阻塞期间没有任何luat代码会执行,包括底层消息处理机制
+The duration of hard blocking is specified. During the blocking period, no luat code is executed, including the underlying message processing mechanism.
+阻塞延迟5000ms, 绝大部分项目不会也不应该使用该方法
+The blocking delay is 5000ms, and most projects will not and should not use this method.

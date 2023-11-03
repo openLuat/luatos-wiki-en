@@ -1,0 +1,16 @@
+测试版本
+Test version
+测试场景\主频
+Test Scenario \Main Frequency
+测试脚本及测试数据文件
+Test scripts and test data files
+功耗测试脚本及测试数据文件.7z](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220302193246944_Air105功耗测试脚本及测试数据文件
+Power consumption test scripts and test data files.7z](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220302193246944_Air105功耗测试脚本及测试数据文件
+功耗曲线
+power consumption curve
+空载
+No-load
+循环加法
+cyclic addition
+主频
+main frequency

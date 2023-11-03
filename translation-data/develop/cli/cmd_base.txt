@@ -1,0 +1,22 @@
+版本信息
+Version Information
+帮助信息
+Help information
+包管理
+Package Management
+本文档描述一些简单且基础的命令
+This document describes some simple and basic commands
+更新版本
+Update Version
+更新程序
+Update Program
+更新自身
+Update itself
+基本命令
+Basic Commands
+无命令时也打印help内容
+Print help content when there is no command
+显示版本号
+Display version number
+项目管理
+Project Management

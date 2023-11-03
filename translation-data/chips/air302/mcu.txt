@@ -1,0 +1,32 @@
+备用链接
+Alternate Link
+大QQ群
+Large QQ group
+的系统内存，可用内存约
+of system memory, available memory approx.
+的Lua专属内存，可用内存约
+Lua exclusive memory, available memory of about
+该方案已发布最终版本,不再更新
+The program has released the final version and is no longer updated
+固件下载
+Firmware Download
+合宙Air302，是基于移芯EC616的NB-IOT模块，封装尺寸兼容合宙Air202，功能管脚基本上一一对应
+The full Air302 is a NB-IOT module based on the core shifting EC616. The package size is compatible with the full Air202, and the functional pins are basically in one-to-one correspondence.
+模组
+Module
+其他资料
+Other information
+是什么
+What is it?
+刷机烧录教程
+Brush machine burning tutorial
+为它提供哪些功能
+What functions are provided for it
+文件系统大小332kb，格式littlefs 2.1，可用空间约
+The file system size is 332kb, the format littlefs is 2.1, and the available space is about
+已知限制
+Known limitations
+硬件资源说明
+Hardware Resource Description
+正式版可以在发行版页面下载
+The official version can be downloaded from the release page.

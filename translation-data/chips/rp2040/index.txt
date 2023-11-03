@@ -1,0 +1,10 @@
+开发板开源工程[链接
+Development board open source project [link
+开发板是合宙推出的一款基于RP2040设计的开发板，封装兼容树莓派
+The development board is a development board based on RP2040 design, which is compatible with strawberry pie.
+开发资料与例程，请参考[Arduino资料网站
+For development materials and routines, please refer to the [Arduino Materials website
+目前可使用树莓派官方的CSDK开发，或者使用arduino进行开发
+At present, it can be developed by using the official CSDK of Raspberry Pi, or by using arduino.
+原理图
+Schematic diagram

@@ -1,0 +1,36 @@
+测试版本
+Test version
+测试场景\主频
+Test Scenario \Main Frequency
+测试脚本及测试数据文件
+Test scripts and test data files
+丢弃    |  N       | N        |  正常跑
+Discard | N | N | Normal Run
+复位 | 丢弃     | N       | N         | 归零
+reset | discard | N | N | zero
+功耗测试脚本及测试数据文件.7z](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220302193239733_Air101功耗测试脚本及测试数据文件
+Power consumption test scripts and test data files.7z](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220302193239733_Air101功耗测试脚本及测试数据文件
+功耗曲线
+power consumption curve
+空载
+No-load
+模式 | Lua代码 | RAM保持 | GPIO 保持 | RTC时钟 | 唤醒方式
+Mode | Lua Code | RAM Hold | GPIO Hold | RTC Clock | Wake Mode
+模式自动唤醒后, Lua代码会从头运行,已有变量数据全丢
+After the mode is automatically awakened, the Lua code will run from the beginning and all existing variable data will be lost.
+模式自动唤醒后, Lua代码会继续运行
+After the mode automatically wakes up, the Lua code continues to run
+若一直拉低wakeup脚, 芯片将不会进入休眠状态
+If the wakeup pin is pulled down all the time, the chip will not go to sleep.
+通过 `pm.request` 可进入 LIGHT 和 DEEP, 进入之前可设置rtc闹钟或dtimer定时器
+LIGHT and DEEP can be entered through `pm.request`, and rtc alarm clock or dtimer can be set before entering
+循环加法
+cyclic addition
+有多种运行模式
+There are multiple modes of operation
+运行   |  Y      | Y        | 正常跑  | 无休眠
+Run | Y | Y | Normal Run | No Sleep
+暂停   |  Y      | Y         | 正常跑
+Pause | Y | Y | Normal Run
+主频
+main frequency

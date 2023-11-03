@@ -1,0 +1,136 @@
+版, 在数传版上添加TTS支持, 但TTS资源需要外置在额外的
+version, adding TTS support to the digital distribution version, but TTS resources need to be external to the additional
+版, 在数传版上添加TTS支持, 且TTS资源内置, 但脚本空间小
+Version, add TTS support to the digital version, and TTS resources are built-in, but the script space is small.
+版,需要外接
+Version, need external
+版本开始, EC618系列的云编译支持根据发行版本的源码进行定制,已上线
+The EC618 series of cloud compilation supports customization according to the source code of the release version, which is already online.
+包含各种功能的示例
+Contains examples of various features
+变更历史
+Change History
+不保证   - 不做保证
+No guarantee-no guarantee
+差分包超过480k的解决办法-多次差分升级
+Solution for differential packets exceeding 480k-multiple differential upgrades
+差分链
+differential chain
+的底层升级是基于差分算法的,且AP+CP部分的差分包不能超过
+The underlying upgrade of is based on the differential algorithm, and the differential package of the AP CP part cannot exceed
+定位测试固件
+Positioning Test Firmware
+附仅fota的差分脚本
+with fota-only differential script
+功能测试固件
+Functional Test Firmware
+功能测试固件` 包含可直接刷机测试的固件, 已带脚本
+Functional Test Firmware `contains firmware that can be directly brushed for testing, with scripts
+固件的版本
+Version of the firmware
+固件发行包的是`zip`格式的压缩包, 请解压后使用
+The firmware release package is a compressed package in `zip` format, please decompress it and use it.
+固件分类的解释
+Explanation of firmware classification
+固件说明
+Firmware Description
+固件文件均以`.soc`为后缀
+Firmware files are suffixed with `.soc`
+固件下载及变更历史
+Firmware download and change history
+固件压缩包的内容
+Contents of the firmware package
+固件压缩包下载: https://gitee.com/openLuat/LuatOS/releases , LuaTools也会自动下载最新的版本,可在resource目录找到
+Firmware compression package download: https://gitee.com/openLuat/LuatOS/releases, the LuaTools will automatically download the latest version, which can be found in the resource directory.
+技术细节提醒: 一定要跑通整个差分链,才进行批量升级
+Technical Details Reminder: Be sure to run through the entire differential chain before upgrading in batches.
+脚本区大小, 含脚本和资源文件的总大小
+The size of the script area, including the total size of the script and resource files.
+结尾总是这一句
+It always ends with this sentence.
+尽量支持 - 若不能支持, 会给出过渡版本或相关解决方案
+Support as much as possible-if not, a transitional version or related solution will be given.
+跨版本底层差分,指非相邻版本之间的FOTA, 例如 V1103底层差分升级到V1105底层
+Cross-version bottom differential, which refers to the FOTA between non-adjacent versions, for example, V1103 bottom differential is upgraded to V1105 bottom differential
+扩展功能,主要是外设驱动库,支持各种各样的传感器和扩展元器件
+Expansion function, mainly peripheral driver library, supports a variety of sensors and expansion components
+联网测试固件
+Networking Test Firmware
+临近版本底层差分,指相邻版本之间的FOTA, 例如 V1103底层差分升级到V1105底层
+The bottom differential of adjacent versions refers to the FOTA between adjacent versions, for example, the bottom differential of V1103 is upgraded to the bottom differential of V1105
+名称                        |分类    |脚本区大小
+Name | Category | Script Area Size
+目录解释
+Directory Explanation
+内置资源
+Built-in resources
+全功能版
+Full-featured version
+全功能版, 会开启大部分库, 但需要特别指出的是,不包含TTS库的内置TTS资源模式
+The full-featured version will open most libraries, but it should be noted that the built-in TTS resource mode of the TTS library is not included.
+若前3款不能满足需求,请使用[云编译](../../develop/compile/Cloud_compilation.md)功能定制你需要的固件
+If the first three models cannot meet the requirements, please use the [cloud compilation](../../develop/compile/Cloud_compilation.md) function to customize the firmware you need.
+闪灯测试固件
+Flash Test Firmware
+设备上的版本假设为1.0.0, 目标版本是
+The version on the device is assumed to be 1.0.0, and the target version is
+使用合宙iot平台进行升级
+upgrade using the co-zhou iot platform
+使用自建服务器进行升级
+Upgrade with a self-built server
+数传版
+data transmission edition
+数传版, 不含UI类(U8G2/LCD/EINK/DISP/LVGL)/TTS,仅包含少量外设驱动库
+The data transmission version does not contain UI class (U8G2/LCD/EINK/DISP/LVGL)/TTS, and only contains a small number of peripheral driver libraries.
+思路如下
+The idea is as follows
+所有版本均支持`脚本OTA`, 该功能是默认开启的
+All versions support `Script OTA`, which is enabled by default
+完成, 重启
+Done, restart
+相关的解释
+Related explanations
+压缩包根目录
+compressed package root directory
+一个或多个仅包含FOTA脚本的差分包
+One or more differential packages containing only FOTA scripts
+以下参数一定要设置好
+The following parameters must be set
+以V1105版本为例, 整体布局如下
+Take the V1105 version as an example, the overall layout is as follows
+以V1108版本为例
+Take the V1108 version as an example
+用户代码已结束
+User code ended
+由于差分机制的限制, 差分包的AP+CP差分不能超过480k, 但依然可以通过多次差分的方式进行底层升级
+Due to the limitation of the differential mechanism, the AP CP differential of the differential package cannot exceed 480k, but it can still be upgraded at the bottom layer through multiple differentials.
+越靠后的中间版本, 应逐渐增加库
+The later the intermediate version, you should gradually increase the library.
+越靠前的中间版本, 先考虑减法, 确保将差分包降到480k内, 脚本只写FOTA代码
+The earlier the intermediate version, consider subtraction first to ensure that the differential package is reduced to 480k, and the script only writes FOTA code.
+云编译的固件,在配置相同的情况, 临近版本的底层差分通常是可行的
+Cloud-compiled firmware, in the case of the same configuration, the underlying difference of the adjacent version is usually feasible.
+云构建版, 通过[云编译](../../develop/compile/Cloud_compilation.md)功能定制的固件
+Cloud build version, firmware customized by [cloud compilation](../../develop/compile/Cloud_compilation.md)
+云构建版|自定义
+Cloud Build | Custom
+在LuaTools主界面的菜单生成的差分升级包,会显示差分包的细节
+The differential upgrade package generated in the menu of the LuaTools main interface will display the details of the differential package.
+这里写10分钟是为了更快OTA到下一个版本, 请按实际情况判断
+Write here for 10 minutes to OTA to the next version faster, please judge according to the actual situation.
+之后后面不要加任何语句
+Don't add any statements after that.
+支持     - 确保支持, 最坏的情况是多次差分完成升级
+Support-Ensure support, worst case scenario is multiple differential complete upgrades
+支持级别
+Level of support
+中间版本的要求
+Requirements for intermediate versions
+中间版本只带FOTA升级版本,目的都是为了升级到下一个版本
+The intermediate version only takes FOTA upgrade version, which is designed to upgrade to the next version.
+注意: **脚本区大小不同**的底层, 不能进行底层差分升级
+Note: **Script area size is different** in the bottom layer, the bottom layer differential upgrade cannot be performed.
+准商用级别的解决方案,包含完整业务逻辑实现作为参考项目代码
+Quasi-commercial grade solution with full business logic implementation as reference project code
+最后一个差分版本, 加入完整的业务脚本, 最终差分到
+The last differential version, adding the full business script, finally differentiating

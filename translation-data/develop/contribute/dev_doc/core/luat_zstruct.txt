@@ -1,0 +1,60 @@
+层处理table数据相当麻烦, 很多配置信息又需要table来传
+Layer processing table data is quite troublesome, and a lot of configuration information needs table to be transmitted.
+处理结构化数据, 使用pack库不够直观, zbuff适合逐字节出来
+Processing structured data, using the pack library is not intuitive enough, zbuff is suitable for byte-by-byte
+从机回复
+Reply from machine
+等价于
+equivalent
+动机
+Motivation
+风格的结构体
+The Structure of Style
+合成与解析
+synthesis and analysis
+基本信息
+Basic information
+结构体声明如下
+The structure is declared as follows
+扩展支持
+Extended Support
+拟支持的数据类型
+Data types to be supported
+起草日期
+Date of drafting
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+设想代码C, 这个是方便C层的实现, 用户层依然为
+Imagine code C, which is convenient for the implementation of the C layer, and the user layer is still
+设想的lua代码, 用法
+envisaged lua code, usage
+使用场景
+Use Scenario
+是第一个参数, 然后所传Define为modbus_t的文本形式
+is the first parameter, and then the passed Define is the modbus_t text form.
+输出JSON格式,方便查看
+Output JSON format for easy viewing
+数组, 固定长度, 可以是非指针类的基础类型
+Array, fixed length, can be the underlying type of a non-pointer class
+无符号类
+Unsigned Class
+有符号类
+Symbolic Class
+支持定长数据, 仅支持一级指针
+Support fixed-length data, only supports first-level pointers
+支持基础类型, 不支持嵌套类型, 不支持
+Supports basic types, does not support nested types, does not support
+支持默认值
+Support for default values
+支持位域
+Support Bit Field
+只需要{ } 之间的数据, 其他部分可以省略
+Only the data between {} is needed, other parts can be omitted
+指针类
+Pointer Class
+主机发送
+Host Send
+注: `_t` 后缀可选
+Note: `_t` suffix optional

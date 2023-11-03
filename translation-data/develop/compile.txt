@@ -1,0 +1,10 @@
+编译源码
+Compile source code
+可以自行编译和修改，请按具体平台，参考左侧的编译方法。
+You can compile and modify by yourself. Please refer to the compilation method on the left for the specific platform.
+如未列出编译方法，则说明该平台的编译无需配置环境，可直接使用一键脚本或IDE进行编译。
+If the compilation method is not listed, it means that the compilation of the platform does not need to configure the environment, and can be directly compiled by using a one-click script or IDE.
+视频教程：[【LuatOS】全系列固件编译教程【持续更新
+Video Tutorial: [[LuatOS] Full Series Firmware Compilation Tutorial [Continuous Update
+源码仓库
+Source code repository

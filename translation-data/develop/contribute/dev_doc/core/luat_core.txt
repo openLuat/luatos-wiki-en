@@ -1,0 +1,60 @@
+从消息队列接收信息, 无限等待
+Receive information from message queue, wait indefinitely
+定时器
+Timer
+定时器    -- 脚本内的延时机制
+Timer-delay mechanism within the script
+关于
+About
+核心
+Core
+核心流程(C层面
+Core processes (C-level
+核心流程(Lua表达
+core processes (Lua expresses
+核心是怎么个存在
+What is the core of existence?
+基本信息
+Basic information
+基于消息总线的响应式处理
+Responsive Processing Based on Message Bus
+起草日期
+Date of drafting
+如果存在对应msgtype的处理器,则执行之
+If there is a processor for the corresponding msgtype, it is executed.
+设计人员
+Designer
+是消息处理器的
+is the message processor's
+是消息的类型,总是一个数值
+is the type of message, always a numeric value
+是消息的内容,不一定存在
+is the content of the message and does not necessarily exist
+是msg.handler所需要的数据,通过luat_msgbus_data隐式传递
+The data required by msg.handler is implicitly passed through the luat_msgbus_data.
+为了隔离具体处理逻辑, msg包含msg.ptr和msg.handler两部分
+In order to isolate the specific processing logic, msg contains msg.ptr and msg.handler
+喂狗
+Feed the dog
+文件系统
+File System
+文件系统  -- 读写文件,对核心来说,是读取lua脚本
+File system-read and write files, for the core, read lua scripts
+相关知识点
+Relevant knowledge points
+消息总线
+Message Bus
+消息总线  -- 与宿主rtos系统进行单向信息传递
+message bus-one-way information transfer with host rtos system
+虚拟机 -- 负责解析和执行脚本
+Virtual Machine-responsible for parsing and executing scripts
+逐行描述
+Line-by-line description
+注意, 没有msg.id, 这部分数据由msg.handler回调函数自行设置到lua栈
+Note that there is no msg.id, this part of data is set to lua stack by msg.handler callback function
+总得来说, Luat核心就是运行luat脚本的最基本设施及核心流程
+In general, the core of Luat is the most basic facility and core process for running luat scripts.
+最基本的设施包含
+The most basic facilities include
+最外层,是一个无穷循环, 除非出错,否则永不退出
+The outermost layer is an infinite loop that never exits unless something goes wrong.

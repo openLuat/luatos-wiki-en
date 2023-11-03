@@ -1,0 +1,28 @@
+补充说明
+Supplementary Notes
+不支持
+Not supported
+搭配W5500才有联网功能
+W5500 with networking function
+功能库支持
+Library support
+基础外设支持
+Basic Peripheral Support
+仅支持wifi scan ,无 wifi 联网功能
+Only supports wifi scan, no wifi networking function
+进行中/部分支持
+In progress/partial support
+联网/射频支持
+Networking/RF support
+设备支持情况
+Equipment Support
+图示 | 含义
+Illustration | Meaning
+图示含义
+Meaning of Illustration
+已支持
+Supported
+与air103固件的区别在于flash大小, 兼容xt804内核的芯片, 例如联盛德的
+The difference with air103 firmware is flash size, compatible with xt804 core chips, such as Lianshengde's
+支持与否,与封装有关, qfn56封装的xt804支持, qfn32的不支持
+Support or not, related to the package, qfn56 package xt804 support, qfn32 does not support

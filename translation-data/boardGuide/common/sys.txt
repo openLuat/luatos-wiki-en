@@ -1,0 +1,50 @@
+本章介绍LuatOS的sys系统调度
+This chapter describes sys system scheduling for LuatOS
+初始化一个LuatOS任务并启动
+Initialize a LuatOS task and start it
+创建任务test并执行
+Create a task test and execute it
+创建一个单次定时器
+Create a one-shot timer
+创建一个循环定时器
+Create a loop timer
+代码如下
+The code is as follows
+点我快速测试下面的代码
+Point me to quickly test the following code
+发送和订阅用户消息
+Sending and subscribing to user messages
+后循环定时器将停止运行
+The post cycle timer will stop running
+简介
+Introduction
+接口文档可参考：[SYS库
+Interface documentation can be found in:[SYS Library
+库是LuatOS进行系统调度的内置库，通过sys库可以创建LuatOS任务，新建定时器，在系统内发送和订阅消息
+The library is a built-in library for system scheduling in LuatOS. Through the sys library, you can create LuatOS tasks, create new timers, and send and subscribe to messages in the system.
+启动系统调度
+Start system scheduling
+启动一个单次定时器或循环定时器
+Start a single timer or cycle timer
+任意LuatOS-SOC开发板一块
+Any LuatOS-SOC development board
+日志如下
+The log is as follows
+软件部分
+Software part
+停止循环定时器
+Stop Cycle Timer
+停止一个定时器
+Stop a timer
+引入sys库
+Introducing the sys library
+硬件准备
+Hardware preparation
+在代码块附近加上快速测试代码链接
+Add quick test code link near code block
+在任务函数中使用wait进行1S延时
+Use wait for 1S delay in task function
+在任务中创建循环并使用延时函数
+Create a loop in a task and use a delay function
+在任务中等待一个消息
+Wait for a message in a task

@@ -1,0 +1,10 @@
+的
+of
+使用示例
+Use Example
+完整使用例子](https://gitee.com/openLuat/LuatOS/tree/master/script/turnkey/lcd-0.96-lvgl)，兼容Air101/Air103/Air105/ESP32C3 core板，使用lvgl显示
+Complete use example](https://gitee.com/openLuat/LuatOS/tree/master/script/turnkey/lcd-0.96-lvgl), compatible with Air101/Air103/Air105/ESP32C3 core board, using lvgl display
+语言
+Language
+注意按注释更改驱动型号
+Note: Change the drive model according to the note

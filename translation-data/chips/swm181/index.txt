@@ -1,0 +1,2 @@
+芯片为华芯微特出品，采用M0内核，最高主频48M，内置16位ADC和段码屏控制器。
+The chip is produced by China Core Microchip, using M0 core, with a maximum dominant frequency of 48M, built-in 16-bit ADC and segment screen controller.

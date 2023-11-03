@@ -1,0 +1,8 @@
+对于编程小白来说，它适合作为你的编程入门语言，因为语法简单。对于会c语言的老手来说，它与c可以完美契合，再加上LuatOS本身就是开源，你可以轻松地使用c为其添加一套c库接口，享受它的高效。
+For programming white, it is suitable as your programming language, because the syntax is simple. For veterans who know the C language, it fits perfectly with C, and LuatOS itself is open source. You can easily use C to add a set of C library interfaces to it and enjoy its efficiency.
+教程
+Tutorial
+可以说是目前嵌入式方案中，资源占用 **最小** 、运行效率 **最高** 、语法 **最简洁** 的一门脚本语言。
+It can be said to be a scripting language with the smallest resource footprint, the highest operating efficiency, and the most concise syntax in the current embedded solution.
+现在，可以点击下一页，按顺序学习Lua这门语言。只要半天你就可以成为Lua高手。
+Now, you can click on the next page to learn Lua in order. In half a day you can become a Lua master.

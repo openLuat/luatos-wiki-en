@@ -1,0 +1,48 @@
+本章介绍LuatOS的pwm库使用方式
+This chapter describes how to use the pwm library for LuatOS
+查阅[Air103_MCU设计手册V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193606476_Air103_MCU%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8CV1.2.pdf)可知Air103共有20路PWM通道
+According to [Air103_MCU Design Manual V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193606476_Air103_MCU设计手册V1.2.pdf), Air103 has a total of 20 PWM channels.
+打开PWM00通道的pwm输出，设置不同的占空比，小灯会有不同的亮度
+Turn on the pwm output of the PWM00 channel, set different duty cycles, the small lights will have different brightness
+打开pwm输出
+Turn on pwm output
+代码如下
+The code is as follows
+呼吸灯效果
+Breathing light effect
+呼吸灯效果就是小灯从不亮的状态一点点亮起，再一点点熄灭的效果，我们可以通过不断调高占空比让小灯一点点亮起，再不断调低占空比让小灯一点点熄灭
+The effect of breathing light is the effect that the small lamp is lit up little by little and extinguished little by little when it is never lit. We can continuously increase the duty cycle to make the small lamp light up little by little and then continuously decrease the duty cycle to make the small lamp extinguish little by little.
+简介
+Introduction
+接口文档可参考：[pwm库
+Interface documentation can be referred to:[pwm library
+接线示意
+Wiring Schematic
+开发板
+Development Board
+开启pwm通道00，设置脉冲频率为1kHz，分频精度为100，占空比为10/100=10% 持续输出
+Turn on pwm channel 00, set pulse frequency to 1kHz, frequency division accuracy to 100, duty cycle to 100 = 10% continuous output
+开启pwm通道00，设置脉冲频率为1kHz，分频精度为100，占空比为100/100=100% 持续输出
+Turn on pwm channel 00, set pulse frequency to 1kHz, frequency division accuracy to 100, duty cycle to 100/100=100 continuous output
+开启pwm通道00，设置脉冲频率为1kHz，分频精度为100，占空比为50/100=50% 持续输出
+Turn on pwm channel 00, set pulse frequency to 1kHz, frequency division accuracy to 100, duty cycle to 100 = 50% continuous output
+脉冲宽度调制(PWM)，是英文“Pulse Width Modulation”的缩写，简称脉宽调制，是利用微处理器的数字输出来对模拟电路进行控制的一种非常有效的技术。简单一点，就是对脉冲宽度的控制
+Pulse width modulation (PWM), is the English "Pulse Width Modulation" abbreviation, referred to as pulse width modulation, is the use of microprocessor digital output to control the analog circuit of a very effective technology. Simply, it is the control of pulse width.
+软件部分
+Software part
+我们可以通过pwm不同的占空比输出来调节LED小灯的亮度
+We can adjust the brightness of the LED small light by pwm different duty cycle output
+小灯
+small lamp
+小灯很高亮度
+Small lamp with high brightness
+小灯微微发光
+The small lamp glows slightly
+小灯中等亮度
+Small light medium brightness
+硬件准备
+Hardware preparation
+占空比从0%到50%不断提升小灯亮度
+The duty cycle continuously improves the brightness of small lamps from 0% to 50%
+占空比从50%到0%不断降低小灯亮度
+Duty cycle continuously reduces the brightness of small lamps from 50% to 0%

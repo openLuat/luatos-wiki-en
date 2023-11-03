@@ -1,0 +1,50 @@
+保存数据
+Save Data
+本章介绍LuatOS的fdb库使用方式
+This chapter describes how to use the fdb library for LuatOS.
+查询还存在的数据
+Query data that still exists
+查询数据
+Query data
+代码如下
+The code is as follows
+根据上一步设置的key读取对应的数据
+Read the corresponding data according to the key set in the previous step.
+获取之前储存在data1中的数据
+Get data previously stored in data1.
+简介
+Introduction
+接口文档可参考：[fdb库
+Interface documentation can be found at:[fdb library
+库基于FlashDB，提供在flash上保存数据的能力，数据储存方式类似于redis的
+The library is based on FlashDB and provides the ability to save data on flash. The data storage method is similar to redis's
+例如
+For example
+清空整个fdb数据库
+Empty the entire fdb database
+任意LuatOS-SOC开发板一块
+Any LuatOS-SOC development board
+日志如下
+The log is as follows
+软件部分
+Software part
+删除某个
+Delete a
+删除data1储存的数据
+delete data stored in data1
+使用fdb库前先要初始化fdb数据库
+Initialize the fdb database before using the fdb library
+是数据的索引
+is the index of the data
+数据保存格式为
+The data saving format is
+为实际存储的数据，类型可以是
+For the actual stored data, the type can be.
+硬件准备
+Hardware preparation
+再次查询储存在data1中的数据为
+Query the data stored in data1 again
+再次查询刚才查询的数据
+Query the data just queried again
+中储存的是一个
+is stored in a

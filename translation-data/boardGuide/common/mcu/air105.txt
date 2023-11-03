@@ -1,0 +1,50 @@
+本章介绍LuatOS的mcu库使用方式
+This chapter describes how to use the mcu library of LuatOS
+不支持设置主频，只支持查询主频
+Setting the main frequency is not supported, only querying the main frequency is supported.
+查询主频
+Query main frequency
+打印每1us的tick数
+Print the number of ticks per 1us
+代码如下
+The code is as follows
+等待
+Wait
+第二次获取
+Second acquisition
+第一次获取
+First acquisition
+个
+One
+个tick的时长为
+The duration of a tick is
+获取启动后的高精度tick,并计算两个tick的差值
+Obtain the high-precision tick after startup and calculate the difference between the two ticks.
+获取启动后的tick数和每秒的tick数量
+Get the number of ticks after startup and the number of ticks per second
+获取设备唯一
+Get Device Unique
+简介
+Introduction
+接口文档可参考：[mcu库
+Interface documentation can be referred to:[mcu library
+开发板
+Development Board
+库封装了一些对应mcu的特殊操作
+library encapsulates some special operations corresponding to mcu
+两次获取的tick相差" .. dtick64Data / 48 / 1000000 .. "秒
+The difference between the two obtained ticks is ".. dtick64Data / 48 / 1000000 .." seconds
+两次获取的tick相差5.000287秒
+The difference between the two obtained ticks is 5.000287 seconds.
+日志如下
+The log is as follows
+软件部分
+Software part
+延时5S后再查询tick比第一次查询多了5000个
+There are 5000 more tick queries after 5S delay than the first query.
+硬件准备
+Hardware preparation
+转换10进制数为16进制字符串输出
+Convert decimal number to hexadecimal string output
+最大转换4个字节的数字
+Maximum conversion of 4 bytes of numbers

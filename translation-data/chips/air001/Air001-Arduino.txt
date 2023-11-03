@@ -1,0 +1,52 @@
+安装[Arduino IDE](https://www.arduino.cc/en/software)，建议安装
+Install [Arduino IDE](https://www.arduino.cc/en/software), it is recommended to install
+安装过程需要安装多个工具链，可能会稍慢，请耐心等待
+The installation process requires the installation of multiple tool chains, which may be slightly slower, please wait patiently
+安装开发板
+Installing the Development Board
+安装最新版即可
+Just install the latest version
+编译下载
+Compile Download
+并可观察到LED以1秒的间隔闪烁
+It can be observed that the LED flashes at an interval of 1 second.
+查看串口输出
+View Serial Port Output
+的Arduino资料站](https://arduino.luatos.com/)已开放！将更新完整的上手教程与各种示例，欢迎收藏。
+The Arduino information station](https://arduino.luatos.com/) is open! Will update the full hands-on tutorial with various examples, welcome favorites.
+点击上传按钮，等待编译并上传测试代码
+Click the Upload button and wait for the test code to be compiled and uploaded
+点击Arduino IDE左上角的文件-首选项
+Click Arduino File-Preferences in the top left corner of the IDE
+海外用户使用
+Use by overseas users
+基于Arduino的用户手册
+Arduino-based user manual
+开发板选择AirMCU-Air001 Board，端口选择连接的串口
+The development board selects the AirMCU-Air001 Board, and the port selects the connected serial port.
+请参考<https://openluat.github.io/luatos-wiki-en/chips/air001/mcu.html#id4>的教程进行接线。
+Refer to <https://openluat.github.io/luatos-wiki-en/chips/air001/mcu.html#id4>'s tutorial for wiring.
+请参考<https://wiki.luatos.com/chips/air001/mcu.html#id4>的教程进行接线。
+Refer to <https://wiki.luatos.com/chips/air001/mcu.html#id4>'s tutorial for wiring.
+如果代码编译上传正常，那么打开串口监视器，即可看到输出的相关日志
+If the code compilation and upload are normal, then open the serial port monitor and you can see the output related logs.
+如果是购买的小白板和合宙的DAPLink调试器，可以直接通过排针排母相连，方向如图所示
+If it is a purchased whiteboard and a DAPLink debugger, it can be directly connected to the mother through the pin row, and the direction is shown in the figure.
+使用Arduino IDE开发
+Developing with the Arduino IDE
+添加代码
+Add code
+添加开发板地址
+Add Development Board Address
+选择开发板
+Choose a development board
+在`开发板管理器`中搜索
+Search in `Development Board Manager`
+在`其它开发板管理器地址`中输入AirMCU的地址
+Enter the address of your AirMCU in `Other Board Manager Address`
+在主函数中添加一些测试代码
+Add some test code in the main function
+准备工作
+Preparations
+资料请前往专用站点，是否跳转
+Please go to the dedicated site for information, whether to jump

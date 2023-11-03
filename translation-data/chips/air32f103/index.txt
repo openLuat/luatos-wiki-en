@@ -1,0 +1,2 @@
+为系列芯片，首发型号为Air32F103CBT6，其外设和硬件设计兼容市场上一些主流F103型号，主频最高可达256M，96K RAM+128K Flash，每个IO都可设置独立的内部上下拉电阻。
+It is a series of chips. The first model is Air32F103CBT6. Its peripheral and hardware design is compatible with some mainstream F103 models in the market. The main frequency can reach 256M,96K RAM 128K Flash. Each IO can be set with independent internal pull-up resistors.

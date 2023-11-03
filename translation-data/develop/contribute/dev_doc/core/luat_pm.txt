@@ -1,0 +1,36 @@
+常量
+Constant
+电源及低功耗管理
+Power and Low Power Management
+管理并抽象电源的C API, 提供一套Lua API供用户代码调用
+A C API that manages and abstracts power, providing a set of Lua APIs for user code to call
+核心机制
+core mechanism
+基本信息
+Basic information
+进入指定的功耗级别
+Enter the specified power level
+空闲模式,功耗高
+Idle mode, high power consumption
+平台层
+Platform layer
+起草日期
+Date of drafting
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+停止模式, 仅timer或gpio可以唤醒
+stop mode, only timer or gpio can wake up
+通常提供多个低功耗级别,部分级别可以继续运行lua, 部分只能跑
+usually provides multiple low power consumption levels, some levels can continue to run lua, some can only run
+为什么需要电源及低功耗管理
+Why you need power and low power management
+相关知识点
+Relevant knowledge points
+休眠模式1, 主内存不掉电,低功耗内存(lpmem)掉电
+Sleep mode 1, main memory does not power down, low power memory (lpmem) power down
+休眠模式2, 主内存掉电,低功耗内存(lpmem)不掉电
+Sleep mode 2, main memory power down, low power memory (lpmem) does not power down
+用户可申请直接进入指定的低功耗级别
+User can request direct access to the specified low power level

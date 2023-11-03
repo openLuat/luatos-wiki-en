@@ -1,0 +1,22 @@
+打开我们的程序下载界面，也就是Luatools-项目管理测试
+Open our program download interface, that is, Luatools-project management test
+当然可以，下面我们来演示一下使用Luatools进行脚本加密
+Of course, let's demonstrate script encryption using Luatools.
+勾选加密脚本并输入密码
+Check the encryption script and enter the password
+脚本加密
+Script Encryption
+可以看到程序正常运行，此时我们的脚本就是加密过的了
+We can see that the program is running normally, and our script is encrypted at this time.
+可以看到脚本无法运行了，脚本加密生效
+You can see that the script cannot run, and the script encryption takes effect.
+如何验证呢？我们去掉脚本加密的勾选，再下载一次脚本
+How to verify it? Let's remove the check for script encryption and download the script again.
+随后点击下载底层和脚本，等待下载成功
+Then click to download the bottom layer and script and wait for the download to succeed.
+我们的程序可不可以加密呢
+Can our program be encrypted?
+预览此篇之前请确保会使用Luatools进行刷机，如不会请参考[烧录教程
+Before previewing this article, please make sure that you will use Luatools to brush the machine. If not, please refer to [Burning Tutorial
+注意：要是用2.1.53以及之后的Luatools和20220511之后的Air105固件
+Note: If you use Air105 firmware after 2.1.53 and Luatools and 20220511

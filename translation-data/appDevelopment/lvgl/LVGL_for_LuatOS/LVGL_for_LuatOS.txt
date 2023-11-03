@@ -1,0 +1,2080 @@
+按键
+Key
+按键处理
+Key handling
+按钮
+Button
+按钮被点击
+Button is clicked
+按钮部分与 [按钮矩阵(lvgl.imgbtn)](http://lvgl.100ask.net/7.11/documentation/04_widgets/05_btnmatrix.html) 的情况相同
+The button part is the same as the case of [Button Matrix (lvgl.imgbtn)](http://lvgl.100ask.net/7.11/documentation/04_widgets/05_btnmatrix.html)
+按钮的背景
+Background of the button
+按钮的宽度根据对象的宽度设置为最大。按钮的高度会根据内容自动调整。 （内容高度
+The width of the button is set to the maximum based on the width of the object. The height of the button automatically adjusts according to the content. (content height
+按钮的位置
+Position of the button
+按钮的文字
+Text of the button
+按钮功能
+Button function
+按钮矩阵
+Button Matrix
+按钮矩阵的主要部分称为`lvgl.BTNMATRIX_PART_BG`。它使用典型的背景样式属性绘制背景。
+The main part of the button matrix is called `lvgl. BTNMATRIX_PART_BG `. It draws the background using typical background style properties.
+按钮矩阵对象可以在行和列中显示**多个按钮
+Button matrix object can display **multiple buttons in rows and columns
+按钮矩阵更易于用于基于网格的按钮布局。
+The button matrix is easier to use for grid-based button layouts.
+按钮矩阵每个按钮消耗的内存要少得多。
+The button matrix consumes much less memory per button.
+按钮是简单的矩形对象。它们源自容器，因此也可以提供布局和配合。此外，可以启用它以在单击时自动进入检查状态。
+Buttons are simple rectangular objects. They are derived from the container, so they can also provide layout and fit. In addition, it can be enabled to automatically enter the inspection state when clicked.
+按日期范围：以 `lvgl.STATE_PRESSED` 样式绘制
+By date range: `lvgl. STATE_PRESSED `Style Draw
+按下/释放按钮时发送，或长按后重复发送。事件数据设置为按下/释放按钮的
+Send when the button is pressed/released, or repeat after long press. The event data is set to the button press/release
+按下/释放所选按钮
+Press/Release the selected button
+按下/释放所选按钮。
+Press/release the selected button.
+版本的LVGL接口
+Version of the LVGL interface
+版本的lvgl已经做了大部分接口，并会不断地完善后续接口，总体来说，只要将原接口开头的lv_替换成lvgl.即可，但也有特例，比如不支持init方式创建组件，使用create来创建，还有字体设置以及lvgl符号等也有一些区别
+The version of lvgl has already made most of the interfaces and will continuously improve the subsequent interfaces. Generally speaking, as long as the lv_at the beginning of the original interface is replaced with lvgl. That is, but there are also special cases, such as not supporting init to create components, using create to create, and font settings and lvgl symbols also have some differences.
+半径：数据点的半径
+radius: radius of the data point
+半径**将像素仅保留在可以具有半径的矩形内（也可以用于圆形）。可以反转以将像素保持在矩形之外。
+Radius **keeps pixels only inside a rectangle that can have a radius (can also be used for circles). It can be reversed to keep the pixels outside the rectangle.
+包含内容的平铺视图
+Tile view with content
+保持大小并裁剪文本
+Keep size and crop text
+保持大小并来回滚动标签
+Keep size and scroll labels back and forth
+保持大小并循环滚动标签
+Keep size and cycle through labels
+保持对象大小，打断文本并在最后一行写点（使用 `lvgl.label_set_static_text` 时不支持
+Keep the object size, break the text and write the dot on the last line (not supported when using `lvgl.label_set_static_text`
+保持对象宽度，断开（换行）过长的线条并扩大对象高度
+Maintain object width, break (wrap) overly long lines, and expand object height
+背景
+Background
+背景对象可以像页面本身一样被引用。例如设置页面的宽度
+Background objects can be referenced just like the page itself. For example to set the width of the page
+被点击
+be clicked
+本文使用的字体是OPPO的[OPPO Sans](https://www.coloros.com/index/newsDetail?id=72)字体，（含中文及西文，6 款字重）允许个人或企业免费使用，含商业用途，版权归 OPPO 广东移动通信有限公司所有。
+The font used in this article is OPPO's [OPPO Sans](https://www.coloros.com/index/newsDetail?id=72) font, (including Chinese and Western languages, with 6 characters in weight) which allows individuals or enterprises to use it free of charge, including commercial purposes, and the copyright belongs to OPPO Guangdong Mobile Communications Co., Ltd.
+边界
+Boundary
+边框
+Border
+边缘闪光
+Edge Flash
+边缘闪烁
+Edge flicker
+编译器: | C99 或更新
+Compiler: | C99 or newer
+变更状态
+Change Status
+标签
+Label
+标签本身不支持垂直对齐；应该将标签放在更大的容器中，然后将整个标签对象对齐。
+The label itself does not support vertical alignment; you should place the label in a larger container and then align the entire label object.
+标签可以在字母旁边显示符号（或单独显示）。阅读 [字体(font)](http://lvgl.100ask.net/7.11/documentation/03_overview/07_font.html#id1) 部分以了解有关符号的更多信息。
+Labels can display symbols next to letters (or separately). Read the [font](http://lvgl.100ask.net/7.11/documentation/03_overview/07_font.html#id1) section to learn more about symbols.
+标签没有专用部分。因为文本样式属性始终是继承的，所以可以在背景样式中设置其样式。
+The label has no dedicated part. Because the text style property is always inherited, you can set its style in the background style.
+标签能够显示来自0终止的静态字符缓冲区的文本。为此，请使用 `lvgl.label_set_static_text(label, "Text")` 。在这种情况下，文本不会存储在动态内存中，而是直接使用给定的缓冲区。这意味着数组不能是在函数退出时超出范围的局部变量。 常数字符串可以安全地与 `lvgl.label_set_static_text` 一起使用（除非与 `lvgl.LABEL_LONG_DOT` 一起使用，因为它可以就地修改缓冲区），因为它们存储在ROM存储器中，该存储器始终可以访问。
+The label is able to display text from a 0 terminated static character buffer. To do this, use `lvgl.label_set_static_text(label, "Text")`. In this case, the text is not stored in dynamic memory, but directly uses the given buffer. This means that the array cannot be a local variable that goes out of scope when the function exits. The constant string can be safely used with `lvgl.label_set_static_text (unless with `lvgl. LABEL_LONG_DOT are used together because it can modify the buffer in place), because they are stored in ROM memory, which is always accessible.
+标签视图
+Label View
+标签是用于显示文本的基本对象类型。
+Labels are the basic object type used to display text.
+标签以 `lvgl.LABEL_LONG_SROLL_CIRC` 长模式创建，以自动循环滚动长标签。
+Tagged with `lvgl. LABEL_LONG_SROLL_CIRC `long mode creation to automatically cycle through long labels.
+标签只有一个主要部分，称为 `lvgl.LABEL_PART_MAIN` 。它使用所有典型的背景属性和文本属性。填充值可用于使文本的区域在相关方向上变小。
+The label has only one main part, called `lvgl. LABEL_PART_MAIN `. It uses all the typical background properties and text properties. The padding value can be used to make the area of the text smaller in the relevant direction.
+标签作为图片
+Label as picture
+表格
+Table
+表格的主要部分称为 `lvgl.TABLE_PART_BG` 。它是一个类似于背景的矩形，并使用所有典型的背景样式属性。
+The main part of the form is called `lvgl. TABLE_PART_BG `. It is a rectangle that resembles a background and uses all the typical background style properties.
+表格对象的权重非常轻，因为仅存储了文本。没有为单元创建任何实际对象，但它们是动态绘制的。
+Table objects are very light weighted because only text is stored. No actual objects are created for the cells, but they are drawn dynamically.
+表头
+Header
+不对外售卖字体
+Don't sell fonts
+不对字体进行改编或二次开发
+No font adaptation or secondary development
+不仅可以结束，还可以设置条的起始值，从而改变指示器的起始位置。
+Not only the end, but also the starting value of the bar can be set, thereby changing the starting position of the indicator.
+不显示任何数据。它可以用来隐藏系列。
+No data is displayed. It can be used to hide the series.
+不想自己做？好的，我已经做好一些放在LuatOS\docs\markdown\exts\lvgl\fonts目录下了呦
+Don't want to do it yourself? Okay, I 've already made some and put them in the LuatOS\docs\markdown\exts\lvgl\fonts directory
+不向他方提供其他下载渠道
+No other download channels available to others
+不要对齐子代。
+Do not align children.
+不要强制自动提示（默认情况下“灯”是打开的
+Do not force automatic prompts (the "light" is on by default
+不要缩短“font_info.json”（包括像素数据
+Do not shorten "font_info.json" (including pixel data
+不要自动更改大小。
+Do not change the size automatically.
+不用于违法用途。
+Not for illegal use.
+布局
+Layout
+布局和适配
+Layout and Fit
+布局要有图层概念，这就引入了父对象子对象以及前后台概念
+The layout should have the concept of layer, which introduces the concept of parent object, child object and front and back stage.
+裁剪文字
+Crop Text
+尝试使用字体中的字形颜色信息来创建灰度图标。由于灰色色调是通过透明度模拟的，因此仅在对比背景上效果会很好
+Try using the glyph color information in the font to create a grayscale icon. Since the gray tone is simulated by transparency, it will work well only on a contrasting background
+常用概念
+Common Concepts
+常用命令
+Common Commands
+程序员学习语言的第一堂课就是HelloWorld，这里也使用显示HelloWorld的示例程序来让您直观的感受到它的方便
+The first lesson for programmers to learn the language is HelloWorld. Here, the sample program showing the HelloWorld is also used to make you feel its convenience intuitively.
+尺寸
+Dimensions
+初始化
+Initialization
+除 [通用事件]() 外，弧还发送以下特殊事件
+In addition to [common events](), the arc also sends the following special events
+除此之外， `lvgl.WIN_PART_CONTENT_SCRL` 还有一个滚动条，称为 `lvgl.WIN_PART_CONTENT_SCRL` 。阅读 [页面(lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) 的文档以获取有关滚动条的更多详细信息。
+Besides, `lvgl. WIN_PART_CONTENT_SCRL `also has a scroll bar called `lvgl. WIN_PART_CONTENT_SCRL `. Read the documentation for [Page (lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) for more details about the scroll bars.
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) ，复选框还支持以下 [特殊事件
+In addition to [Common Events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the checkbox supports the following [Special Events
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) ，滚筒还支持以下 [特殊事件
+In addition to [common events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the drum also supports the following [special events
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) ，滑杆还支持以下 [特殊事件
+In addition to [common events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the slider also supports the following [special events
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) ，键盘还支持以下 [特殊事件
+In addition to [Common Events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the keyboard supports the following [Special Events
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) ，开关还支持以下 [特殊事件
+In addition to [common events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the switch also supports the following [special events
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) ，平铺视图还支持以下 [特殊事件
+In addition to [Common Events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the tile view supports the following [Special Events
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) ，数字调整框还支持以下 [特殊事件
+In addition to [common events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the digital adjustment box also supports the following [special events
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) ，文本框还支持以下 [特殊事件
+In addition to [common events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the text box also supports the following [special events
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) ，页签还支持以下 [特殊事件
+In addition to [Common Events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the tab also supports the following [Special Events
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) ，以下 [特殊事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id7) 也通过按钮发送
+In addition to [General Event](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the following [Special Event](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id7) is also sent via the button
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) 外，按钮还发送以下特殊事件
+In addition to [Common Events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the button also sends the following special events
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) 外，日历还会发送以下特殊事件：当当前月份更改时，还会发送
+In addition to [General Events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the calendar will also send the following special events: When the current month changes, it will also send
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) 外，下拉列表还发送以下 [特殊事件
+In addition to [Common Events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the drop-down list also sends the following [Special Events
+除了 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) 之外，按钮矩阵还发送以下特殊事件
+In addition to [Common Events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2), the button matrix also sends the following special events
+除了本色（RGB）颜色格式外，还支持以下格式
+In addition to the natural (RGB) color format, the following formats are supported
+除了宽度，每个按钮都可以使用以下参数进行自定义
+In addition to the width, each button can be customized with the following parameters
+除了手动设置角度外，弧还可以具有范围和值。要设置范围，请使用 `lvgl.arc_set_range(arc, min, max)` ，并设置一个值，请使用 `lvgl.arc_set_value(arc, value)` 。使用范围和值，指示器的角度将在背景角度之间映射。
+In addition to manually setting the angle, the arc can also have a range and a value. To set the range, use `lvgl.arc_set_range(arc, min, max)`, and to set a value, use `lvgl.arc_set_value(arc, value)`. Using the range and value, the angle of the indicator will be mapped between the background angles.
+除了Page部分之外，还存在虚拟 ``lvgl.TEXTAREA_PART_CURSOR` 部分来绘制光标。光标的区域始终是当前字符的边界框。可以通过在 `lvgl.TEXTAREA_PART_CURSOR` 的样式中添加背景色和背景色来创建块光标。创建行光标使光标透明并设置border_side属性。
+In addition to the Page part, there is also a virtual ``lvgl. TEXTAREA_PART_CURSOR the `section to draw the cursor. The area of the cursor is always the bounding box of the current character. Can be passed in `lvgl. Add the background color and background color to the TEXTAREA_PART_CURSOR style to create a block cursor. Create a row cursor to make the cursor transparent and set border_side properties.
+除普通类型外，滑块还可以配置为两种其他类型
+In addition to the normal type, the slider can also be configured as two other types
+除以下虚拟部分外
+In addition to the following virtual sections
+窗口
+Window
+窗口标题
+Window Title
+窗口可处理以下按键
+window can handle the following keys
+窗口上有一个标题，可以通过以下方式修改
+There is a title on the window, which can be modified
+窗口是类似 [容器(lvgl.cont)](http://lvgl.100ask.net/7.11/documentation/04_widgets/10_cont.html) 的对象，由带有标题和按钮的标题以及内容区域构建而成。
+A window is an object like a [container (lvgl.cont)](http://lvgl.100ask.net/7.11/documentation/04_widgets/10_cont.html), built from a title with a title and buttons, and a content area.
+创建标签
+Create Label
+创建两个简单的按钮
+Create two simple buttons
+垂直**淡入**淡出（根据它们的 y 位置更改像素不透明度
+Vertical **fade in** fade out (change pixel opacity based on their y position
+垂直范围
+Vertical range
+磁贴不必在每个元素都存在的地方形成完整的网格。网格中可以有孔，但必须是连续的，即不能有空的行或列。
+The tiles do not have to form a complete grid where every element is present. There can be holes in the grid, but they must be continuous, that is, there can be no empty rows or columns.
+此设置的缺点是，将各个按钮的样式设置为与其他按钮不同的功能受到限制（除了切换功能之外）。如果您需要该功能，则使用单个按钮很有可能是一种更好的方法。
+The disadvantage of this setting is that the function of setting the style of each button to be different from other buttons is limited (except for the switching function). If you need this feature, using a single button is likely to be a better way.
+从不显示滚动条
+Never show scroll bars
+从中间点绘制到当前值的指示弧。
+The indicator arc drawn from the middle point to the current value.
+从左侧删除。
+Delete from the left.
+存在以下数据显示类型
+The following data display types exist
+打开滑块
+Open Slider
+打开cmd运行
+Open cmd to run
+带滚动条的页面
+Page with Scroll Bar
+带文字区域的键盘
+Keyboard with text area
+带映射的范围
+Range with Mapping
+带有映射的单个字形
+Single glyph with mapping
+单个字形或范围 + 可选映射，属于先前声明的`--font`. 可以多次使用。例子
+A single glyph or range optional mapping, belonging to a previously declared `-- font`. Can be used multiple times. Examples
+单击按钮进入下一个/上一个月
+Click the button to go to the next/previous month
+单击按钮时发送。事件数据设置为单击按钮的
+Sent when the button is clicked. The event data is set to the button clicked
+单击启用
+Click Enable
+单击选定的按钮
+Click the selected button
+单击主对象时创建的列表是Page。它的背景部分可以被引用， `lvgl.DROPDOWN_PART_LIST` 并为矩形本身使用所有典型的背景属性，并为选项使用文本属性。要调整选项之间的间距，请使用text_line_space样式属性。填充值可用于在边缘上留出一些空间。
+The list created when you click the main object is Page. Its background part can be quoted, `lvgl. DROPDOWN_PART_LIST `and use all the typical background properties for the rectangle itself, and text properties for the options. To adjust the spacing between options, use the text_line_space style attribute. The padding value can be used to leave some space on the edge.
+单行模式
+Single-line mode
+单元格还使用所有典型的背景样式属性。如果单元格内容中有换行符( `\n` )，则在换行符后将使用线条样式属性绘制水平分隔线。
+The cell also uses all the typical background style properties. If there is a line break (`\n`) in the cell content, a horizontal separator is drawn after the line break using the line style attribute.
+单元格可以与 `lvgl.table_set_cell_merge_right(table, col, row, true)` 水平合并。要合并更多相邻的单元格，请对每个单元格应用此功能。
+Cells can be merged horizontally with `lvgl. set_cell_merge_right_table (table, col, row, true). To merge more adjacent cells, please apply this function to each cell.
+单元格类型
+Cell Type
+单元格类型可用于添加不同的样式，例如
+The cell type can be used to add different styles, such
+单元格只能存储文本，因此在将数字显示在表格中之前，需要将数字转换为文本。
+Cells can only store text, so numbers need to be converted to text before they can be displayed in a table.
+单元格中的文本样式是从单元格部分或背景部分继承的。
+The text style in a cell is inherited from the cell section or the background section.
+单值、十进制或十六进制格式
+Single value, decimal, or hexadecimal format
+当“文本”区域滚动到边缘时，如果通过 `lvgl.ta_set_edge_flash(ta, true)` 启用，则可以显示类似Flash动画的圆圈
+When the "text" area is scrolled to the edge, if enabled by `lvgl.ta_set_edge_flash(ta, true)`, a circle similar to Flash animation can be displayed
+当“文本”区域在另一个可滚动对象（如“页面”）上滚动并且滚动已到达“文本”区域的边缘时，滚动可以传播到父对象。也就是说，当“文本”区域可以进一步滚动时，父级将被滚动。
+When the Text area is scrolled over another scrollable object (such as a Page) and the scrolling has reached the edge of the Text area, the scrolling can propagate to the parent object. That is, when the Text area can be scrolled further, the parent will be scrolled.
+当滚动到达的图块视图击中无效位置或图块视图的末尾时，可以添加 “边缘闪光” 效果。
+An "edge flash" effect can be added when the scroll reached tile view hits an invalid position or the end of the tile view.
+当滚轴滚动且未完全停在某个选项上时，它将自动滚动到最近的有效选项。可以通过 `lvgl.roller_set_anim_time(roller, anim_time)` 更改此滚动动画的时间。动画时间为零表示没有动画。
+When the roller scrolls and does not stop completely on an option, it will automatically scroll to the nearest valid option. The timing of this scroll animation can be changed via `lvgl.roller_ set_anim_time(roller, anim_time). An animation time of zero indicates no animation.
+当加载了带有滚动或 `lvgl.tileview_set_act` 的新图块时发送。将事件数据设置为 `valid_pos_array` 中新图块的索引（其类型为
+Sent when a new tile with a scroll or `lvgl.tileview_ set_act is loaded. Set the event data to the index of the new tile in valid_pos_array (its type is
+当可滚动容器足够大可以滚动时显示滚动条
+Show scrollbars when scrollable container is large enough to scroll
+当列表到达最高或最低位置时，可以显示类似圆圈的效果。 `lvgl.list_set_edge_flash(list, true)` 启用此功能。
+When the list reaches the highest or lowest position, a circle-like effect can be displayed. `lvgl.list_set_edge_flash(list, true)`enables this feature.
+当你要使用一些好看的字体，或者中文等LVGL没有集成的字体怎么办呢？当然可以自己制作字库，首先介绍的是使用LvglFontTool制作内部字体，打开
+What should you do when you want to use some nice fonts, or Chinese fonts that are not integrated with LVGL? Of course, you can make your own font. The first thing to introduce is to use LvglFontTool to make internal fonts. Open
+当前磁贴滚动超过一半大小，然后释放（移至下一个磁贴
+The current tile scrolls more than half the size, then releases (moves to the next tile
+当前磁贴稍微滚动然后释放（还原原始标题
+The current tile scrolls slightly and then releases (restores the original title
+当前日期
+Current Date
+当文本区域的内容已更改时。
+When the content of the text area has changed.
+当lvgl.KEY_ENTER发送到处于单行模式的文本区域时。
+When lvgl.KEY_ENTER is sent to a text area in single-line mode.
+倒
+Inverted
+的％bg_opa在顶部以创建一个alpha褪色（0：在顶部透明，255：bg_opa在顶部
+% bg_opa at the top to create an alpha fade (0: transparent at the top, 255:bg_opa at the top
+的刻度可以有偏移。可以用 调整
+The scale of can have an offset. Can be adjusted
+的内部就已经支持多种字体大小，可通过 *LV_FONT_...* 定义在 `lv_conf.h` 中启用即可
+The internal of the already supports a variety of font sizes, which can be enabled in `lv_conf.h` through * LV_FONT_...* definition
+的内部字体分为 LVGL自带字体和自己制作的自定义内部字体。
+The internal fonts are divided into LVGL own fonts and self-made custom internal fonts.
+等等
+Wait.
+底部bg_opa的百分比以创建alpha渐变（0：底部透明，255：bg_opa顶部
+The percentage of the bottom bg_opa to create an alpha gradient (0: transparent bottom, 255:bg_opa top
+第一栏
+First column
+点的大小半径
+Size radius of point
+点击后松开
+Click and release
+调色板和Alpha指数
+Palette and Alpha Index
+调用 `lvgl.img_set_auto_size(image, true)` 函数，将设置图像对象的大小自动设置为图像源的宽度和高度。 如果启用了自动调整大小，则在设置新文件时，对象大小将自动更改。以后，可以手动修改大小。如果图像不是屏幕，默认情况下将启用自动调整大小。
+Call the `lvgl.img_set_auto_size(image, true)`function to automatically set the size of the image object to the width and height of the image source. If automatic resizing is enabled, the object size will change automatically when you set up a new file. Later, you can manually modify the size. If the image is not a screen, auto-resize is enabled by default.
+调用 `lvgl.imgbtn_set_src(imgbtn, lvgl.BTN_STATE_..., &img_src)` 将图像设置为一种状态。除了“图像”按钮不支持“符号”之外，图像源的工作原理与 [图像对象](http://lvgl.100ask.net/7.11/documentation/04_widgets/14_img.html) 中所述的相同。
+Call the `lvgl.imgbtn_ set_src(imgbtn, lvgl.BTN_STATE_..., & img_src) to set the image to a state. The working principle of the image source is the same as described in [Image Object](http://lvgl.100ask.net/7.11/documentation/04_widgets/14_img.html), except that the "Image" button does not support "Symbol.
+调用下拉列表的主要部分， `lvgl.DROPDOWN_PART_MAIN` 它是一个简单的 [lvgl.obj](http://lvgl.100ask.net/7.11/documentation/04_widgets/01_obj.html) 对象。它使用所有典型的背景属性。按下，聚焦，编辑等阶梯也照常应用。
+Call the main part of the drop-down list, `lvgl. DROPDOWN_PART_MAIN `is a simple [lvgl.obj](http://lvgl.100ask.net/7.11/documentation/04_widgets/01_obj.html) object. It uses all the typical background properties. The press, focus, edit and other ladders also apply as usual.
+顶部的标题容器，带有标题和控制按钮
+Title container at the top with title and control buttons
+动画
+Animation
+动画时间
+Animation time
+动画时间由 `lvgl.tabview_set_anim_time(tabview, anim_time_ms)` 调整。加载新选项卡时使用。
+The animation time is adjusted by `lvgl.tabview_ set_anim_time(tabview, anim_time_ms). Used when loading a new tab.
+对称范围
+Symmetry range
+对齐
+Align
+对齐按钮的文字
+Align the text of the button
+对象类型不处理任何*按键信息
+Object type does not handle any * key information
+对象类型不处理任何按钮。
+The object type does not handle any buttons.
+对象类型不处理任何键。
+The object type does not handle any keys.
+对象类型不处理任何输入按键。
+The object type does not handle any input keystrokes.
+对象类型仅发送[通用事件
+Object type sends only [common events
+对象能够在一组点之间绘制直线。
+An object can draw a line between a set of points.
+对象是经典的日历，可以
+object is a classic calendar that can
+对象是特殊的 [按钮矩阵(lvgl.imgbtn)](http://lvgl.100ask.net/7.11/documentation/04_widgets/05_btnmatrix.html) ，具有预定义的按键映射和其他功能，以实现虚拟键盘来编写文本。
+The object is a special [button matrix (lvgl.imgbtn)](http://lvgl.100ask.net/7.11/documentation/04_widgets/05_btnmatrix.html) with predefined key mapping and other functions to implement a virtual keyboard to write text.
+对象遮罩
+Object Mask
+对象遮罩能够向绘图对象添加一些遮罩。
+Object Mask You can add some masks to drawing objects.
+对象遮罩只有一个主要部分`lvgl.OBJMASK_PART_BG`，它使用典型的背景样式属性。
+The object mask has only one main part `lvgl. OBJMASK_PART_BG `, which uses typical background style properties.
+对于单元，有4个虚拟部分。每个单元格都有类型(1, 2, … 16)，该类型指示要在其上应用哪个部分的样式。单元格部分可以由 `lvgl.TABLE_PART_CELL1 + x` 引用，其中 `x` 在 `0..15` 之间。
+For the cell, there are 4 dummy parts. Each cell has a type (1, 2,... 16), which indicates which part of the style is applied to it. The cell part can be composed of `lvgl. TABLE_PART_CELL1 x` reference, where `x` is between `0 .. 15.
+对于第二个主磁贴： `{0,0}，{1,0}，{1,1}` 以禁用 `{0,1}` 选项磁贴
+For the second primary tile: `{0,0},{1,0},{1,1}` to disable the `{0,1}` option tile
+对于第一个主磁贴： `{0,0}，{0,1}，{1,0}` 以禁用 `{1,1}` 选项磁贴
+For the first primary tile: `{0,0},{0,1},{1,0}` to disable the `{1,1}` option tile
+返回:端角
+Return: End Angle
+返回：弧的值
+Returns: value of arc
+返回：弧的最大值
+Return: Maximum value of arc
+返回:弧形类型
+Return: Arc type
+返回:起始角度
+Return: Starting Angle
+返回：圆弧的最小值
+Returns: minimum value of arc
+返回:圆弧是否具有可以拖动的旋钮
+Returns whether the arc has a knob that can be dragged
+返回：指向创建的弧的指针
+Returns: a pointer to the arc created
+返回:true：拖动进行中,false：未拖动
+Returns: true: drag in progress, false: not dragged
+返回当前图表点数。
+Returns the current chart points.
+返回当前图表类型。
+Returns the current chart type.
+返回指定系列的当前绘图索引。
+Returns the current drawing index for the specified series.
+返回指定系列的特定索引处的数据值。
+Returns the data value at a specific index of the specified series.
+范例
+Example
+范围
+Scope
+范围和角度
+Range and Angle
+范围和值
+Range and Value
+方向
+Direction
+分割线
+Split line
+分配的文本区域的光标可以通过键盘进行管理：分配了键盘后，上一个文本区域的光标将被隐藏，并且将显示新的文本区域。当通过“确定”或“关闭”按钮关闭键盘时，光标也将被隐藏。游标管理器功能由 `` lvgl.keyboard_set_cursor_manage(kb, true)`` 启用。默认为不管理。
+The cursor of the assigned text area can be managed by the keyboard: after the keyboard is assigned, the cursor of the previous text area will be hidden and the new text area will be displayed. When the keyboard is closed via the OK or Close button, the cursor will also be hidden. The cursor manager functionality is enabled by ``lvgl. keyboard_ set_cursor_manage(kb, true). The default is Do Not Manage.
+分配文本区域
+Assign Text Area
+浮标个数
+Number of buoys
+符号
+Symbol
+符号](http://lvgl.100ask.net/7.11/documentation/03_overview/07_font.html) 文字。
+symbol](http://lvgl.100ask.net/7.11/documentation/03_overview/07_font.html) text.
+父母
+Parents
+复选框
+Check Box
+复选框(Checkbox)对象是从 Button 背景构建的，[Button](http://lvgl.100ask.net/7.11/documentation/04_widgets/04_btn.html) 背景还包含Button项目符号和 [Label](http://lvgl.100ask.net/7.11/documentation/04_widgets/17_label.html) ，以实现经典的复选框。
+The checkbox (Checkbox) object is built from a Button background, and the [Button](http://lvgl.100ask.net/7.11/documentation/04_widgets/04_btn.html) background also contains Button bullets and [Label](http://lvgl.100ask.net/7.11/documentation/04_widgets/17_label.html) to implement the classic checkbox.
+复选框可处理以下按键
+check box to handle the following keys
+覆盖系列的默认起点
+Override the default starting point for the series
+该对象具有称为的虚拟部分 `lvgl.CPICKER_PART_KNOB` ，它是在当前值上绘制的矩形（或圆形）。它使用所有矩形（如样式属性和填充）使其大于圆形或矩形背景的宽度。
+The object has a virtual part called `lvgl. CPICKER_PART_KNOB `, which is a rectangle (or circle) drawn on the current value. It uses all rectangles (such as style attributes and padding) to make it larger than the width of a circular or rectangular background.
+该复选框的主要部分称为 `lvgl.CHECKBOX_PART_BG` 。它是“项目符号”及其旁边的文本的容器。背景使用所有典型的背景样式属性。
+The main part of the checkbox is called `lvgl. CHECKBOX_PART_BG `. It is a container for the bullet and the text next to it. The background uses all the typical background style properties.
+该列表可以在任何一侧创建。默认值 `lvgl.DROPDOWN_DOWN` 可以通过功能进行修改
+The list can be created on either side. Default value `lvgl. DROPDOWN_DOWN `can be modified by function
+该系列的背景称为 `lvgl.CHART_PART_SERIES_BG` ，它位于主要背景上。在此部分上绘制了分隔线和系列数据。除典型的背景样式属性外，分割线还使用线型属性。填充值指示此零件与轴文本之间的间隔。
+The background of the series is called `lvgl. CHART_PART_SERIES_BG `, which sits on the main background. Divider lines and series data are drawn on this section. In addition to the typical background style attributes, split lines use linetype attributes. The fill value indicates the spacing between this part and the axis text.
+该页面由两个相互连接的[容器](https://docs.lvgl.io/latest/en/html/widgets/cont.html)组成
+The page consists of two interconnected [containers](https://docs.lvgl.io/latest/en/html/widgets/cont.html)
+概述
+Overview
+高度是根据单元格样式（字体，填充等）和行数自动计算的。
+The height is automatically calculated based on the cell style (font, padding, etc.) and the number of rows.
+高级图形引擎：动画、抗锯齿、不透明、平滑滚动、混合模式等
+Advanced graphics engines: animation, anti-aliasing, opacity, smooth scrolling, blend modes, and more
+高亮日期
+Highlight Date
+高亮显示的日期：以 `lvgl.STATE_CHECKED` 样式绘制
+Highlighted date: `lvgl. STATE_CHECKED `Style Draw
+高亮显示的日期列表应存储在由 `lvgl.calendar_set_highlighted_dates(calendar, highlighted_dates)` 加载的 `lvgl.calendar_date_t` 数组中。
+The highlighted date list should be stored in the `lvgl.calendar_ date_t `array loaded by the `lvgl.calendar_ set_highlighted_dates(calendar, highlighted_dates).
+告诉哪个点索引最接近X坐标（相对于序列区域）。例如，当单击图表时，它可用于将光标捕捉到一个点。
+Tells which point index is closest to the X coordinate (relative to the sequence area). For example, it can be used to snap the cursor to a point when you click on a chart.
+个范围
+Range
+给标签重新着色和滚动
+Recolor and scroll labels
+根据像素的亮度，可以在运行时将图像重新着色为任何颜色。在不存储同一图像的更多版本的情况下，显示图像的不同状态（选中，未激活，按下等）非常有用。 可以通过在 `lvgl.OPA_TRANSP` （不重新着色，值：0）和 `lvgl.OPA_COVER` （完全重新着色，值：255）之间设置 `img.intense` 来启用该样式。默认值为 `lvgl.OPA_TRANSP` ，因此此功能被禁用。
+Depending on the brightness of the pixel, the image can be recolored to any color at runtime. It is very useful to display different states of the image (selected, inactive, pressed, etc.) without storing more versions of the same image. Can be passed in `lvgl. OPA_TRANSP `(no recoloring, value: 0) and `lvgl. Set `img.intense` between OPA_COVER `(full recoloring, value: 255) to enable the style. The default value is `lvgl. OPA_TRANSP `, so this feature is disabled.
+更改标签的名称
+Change the name of a label
+更改为所选标签
+Change to Selected Label
+更改整个文本。
+Change the entire text.
+更新模式
+Update mode
+更新遮罩
+Update Mask
+功能：创建弧对象
+function: creating arc objects
+功能：给出弧线是否被拖动
+Function: Gives whether the arc is dragged
+功能：获得圆弧的最小值
+Function: Get the minimum value of the arc
+功能：获取弧形背景的起始角度。
+Function: Get the starting angle of the arc background.
+功能：获取弧形背景的终止角度。
+Function: Get the ending angle of the arc background.
+功能：获取圆弧的末端角度。
+Function: Get the end angle of the arc.
+功能：获取圆弧的起始角度。
+Function: Get the starting angle of the arc.
+功能：获取圆弧的值
+Function: Get value of arc
+功能：获取圆弧的最大值
+Function: Get the maximum value of the arc
+功能：获取圆弧是否可调。
+Function: Obtain whether the arc is adjustable.
+功能：获取圆弧是否为类型。
+Function: Gets whether the arc is of type.
+功能：设置弧形背景的开始和结束角度
+Function: Set start and end angle of arc background
+功能：设置弧形背景的起始角度。0度：右，90底等。
+Function: Set the starting angle of the arc background. 0 degrees: right, 90 bottom, etc.
+功能：设置开始和结束角度
+Function: Set start and end angle
+功能：设置圆弧的类型。
+Function: Set the type of arc.
+功能：设置圆弧的起始角度。0度：右，90底等。
+Function: Set the starting angle of the arc. 0 degrees: right, 90 bottom, etc.
+功能：设置圆弧的最小值和最大值
+Function: Set the minimum and maximum values of the arc
+功能：设置圆弧是否可调。
+Function: Set whether the arc is adjustable.
+功能：设置圆弧旋钮增量位置的阈值。
+Function: Set the threshold of the incremental position of the arc knob.
+功能：设置整个圆弧的旋转
+Function: Set the rotation of the entire arc
+功能：在圆弧上设置一个新值
+Function: Set a new value on the arc
+顾名思义，拾色器允许选择颜色。可以依次选择颜色的色相，饱和度和值。
+As the name suggests, the color picker allows for the selection of colors. The hue, saturation, and value of the color can be selected in turn.
+关
+Off
+关闭
+Close
+关闭按钮被点击
+Close button is clicked
+关闭动画的持续时间可以通过 `lvgl.mbox_set_anim_time(mbox, anim_time)` 设置。
+The duration of the closing animation can be set via `lvgl.mbox_set_anim_time(mbox, anim_time).
+关闭滑块
+Close Slider
+官方支持C语言和MicroPython两种语言开发，LuatOS-Soc使用7.11版本的LVGL源码为基础制作了lua版本的LVGL，使您在使用LuatOS-Soc为您带来快速开发体验的同事，也能快速，高效的开发出漂亮的图形界面。
+Official support for C language and MicroPython language development, LuatOS-Soc use the 7.11 version of the LVGL source code based on the production of the lua version of LVGL, so that you use the LuatOS-Soc to bring you a rapid development experience of colleagues, but also quickly and efficiently develop a beautiful graphical interface.
+光标
+Cursor
+光标的闪烁时间可以通过 `lvgl.textarea_set_cursor_blink_time(textarea, time_ms)` 进行调整。
+The blinking time of the cursor can be adjusted by `lvgl.textarea_ set_cursor_blink_time(textarea, time_ms).
+光标闪烁时间
+Cursor blink time
+光盘颜色选择器
+Disc color selector
+规模
+Scale
+滚动
+Scroll
+滚动传播
+Rolling Propagation
+滚动和焦点动画的时间可以使用 `lvgl.win_set_anim_time(win, anim_time_ms)` 进行调整
+The time of scrolling and focus animation can be adjusted using `lvgl.win_set_anim_time(win, anim_time_ms)`
+滚动条
+Scroll bar
+滚动条可以被引用 `lvgl.DROPDOWN_PART_SCRLBAR` 并使用所有典型的背景属性。
+Scroll bars can be referenced `lvgl. DROPDOWN_PART_SCRLBAR `and use all the typical background properties.
+滚动条可以根据四种策略显示
+Scroll bars can be displayed according to four strategies
+滚动条显示策略可以通过以下方式更改：。默认值为
+The scroll bar display policy can be changed in the following ways:. The default value is
+滚动页面
+Scroll Page
+滚轮
+Roller
+滚筒的主要部件称为 `lvgl.ROLLER_PART_BG` 。它是一个矩形，并使用所有典型的背景属性。 Roller标签的样式继承自背景的文本样式属性。 要调整选项之间的间距，请使用text_line_space样式属性。填充样式属性设置了侧面的空间。
+The main part of the drum is called `lvgl. ROLLER_PART_BG `. It is a rectangle and uses all the typical background properties. The style of the Roller tag is inherited from the text style property of the background. To adjust the spacing between options, use the text_line_space style attribute. The fill style property sets the space on the side.
+滚筒允许通过滚动简单地从多个选项中选择一个选项。
+The roller allows one option to be selected from a plurality of options simply by scrolling.
+过渡
+Transition
+还有一个实际部分，即一个指标，称为 `lvgl.TABVIEW_PART_INDIC` 。它是当前选定选项卡下的一个类似矩形的细对象。当选项卡视图是动画到其它选项卡中的指示器也将被动画。它可以是使用典型背景样式属性的样式。 size样式属性将设置其厚度。
+There is also an actual part, an indicator, called `lvgl. TABVIEW_PART_INDIC `. It is a thin rectangle-like object under the currently selected tab. When a tab view is animated to other tabs the indicator will also be animated. It can be a style that uses typical background style properties. The size style property sets its thickness.
+函数
+Function
+函数设置线表的范围。
+The function sets the range of the line table.
+函数向 `pos` 索引插入一个新选项。
+The function inserts a new option into the `pos` index.
+合并单元格
+Merge Cells
+和 `lvgl.chart_get_y_from_index(chart, series, id)` 告诉给定点的X和Y坐标。将光标放置到给定点很有用。
+and `lvgl.chart_get_y_from_index(chart, series, id)`tell the X and Y coordinates of a given point. It is useful to place the cursor at a given point.
+和 `lvgl.list_get_btn_img(list_btn)` 可用于获取标签和列表按钮的图像。可以直接使用 `lvgl.list_get_btn_text(list_btn)` 来输入文本。
+and `lvgl.list_get_btn_img(list_btn)`can be used to get images of labels and list buttons. You can directly use `lvgl.list_get_btn_text(list_btn)`to enter text.
+和 `lvgl.spinbox_decrement(spinbox)` 递增/递减Spinbox的值。
+and `lvgl.spinbox_decrement(spinbox)`increment/decrement the value of the Spinbox.
+很长的文字
+a very long text
+弧的主要部分称为 `lvgl.ARC_PART_MAIN` 。它使用典型的背景样式属性绘制背景，并使用线型属性绘制圆弧。圆弧的大小和位置将遵守填充样式的属性。
+The main part of the arc is called `lvgl. ARC_PART_MAIN `. It draws the background using the typical background style attributes and draws the arc using the linetype attributes. The size and position of the arc will respect the properties of the fill pattern.
+弧可以具有不同的“类型”。它们用 `lvgl.arc_set_type` 设置。存在以下类型
+Arcs can have different "types". They are set with `lvgl.arc_set_type. The following types exist
+弧由背景弧和前景弧组成。两者都可以具有起始角度和终止角度以及厚度。
+The arc consists of a background arc and a foreground arc. Both can have a starting and ending angle and a thickness.
+弧长
+arc length
+滑动
+Slide
+滑杆对象看起来像是带有旋钮的 `进度条(lvgl.bar)` 。可以拖动该旋钮以设置一个值。滑块也可以是垂直或水平的。
+The slider object looks like a `progress bar (lvgl.bar)`with a knob`. You can drag the knob to set a value. The sliders can also be vertical or horizontal.
+滑杆可处理以下按键
+The slider can handle the following keys
+滑块
+Slider
+滑块的主要部分称为 `lvgl.SLIDER_PART_BG` ，它使用典型的背景样式属性。
+The main part of the slider is called `lvgl. SLIDER_PART_BG `, which uses typical background style properties.
+画布
+Canvas
+换句话说， `valid_pos_array` 告诉磁贴在哪里。可以即时更改它以禁用特定图块上的某些位置。 例如，可能存在一个2x2网格，其中添加了所有图块，但第一行（y = 0）作为“主行”，第二行（y = 1）包含其上方图块的选项。 假设水平滚动只能在主行中进行，而在第二行中的选项之间则不可能进行。在这种情况下， `valid_pos_array` 需要改变时，选择一个新的主瓦
+In other words, the valid_pos_array tells where the tile is. It can be changed on the fly to disable certain locations on specific tiles. For example, there may be a 2x 2 grid where all tiles are added, but the first row (y = 0) serves as the "main row" and the second row (y = 1) contains options for the tiles above it. Suppose that horizontal scrolling can only be done in the main line, but not between options in the second line. In this case, the `valid_pos_array needs to be changed when selecting a new main tile
+换行
+Line feed
+换行符由标签对象自动处理。可以使用 `\n` 换行。例如
+Line breaks are handled automatically by the label object. You can use `\n` to wrap the line. For example
+回转
+Swing
+绘制列。
+Draw the column.
+获取/设置复选框状态
+Get/Set Checkbox State
+获取当前图表信息
+Get the current chart information
+获取内置字体
+Get Built-in Font
+获取选择的选项
+Get Selected Options
+基本上，大部分控制器（需要能够驱动显示屏）都适合运行 LVGL。最低要求是
+Basically, most controllers (which need to be able to drive the display) are suitable for running LVGL. The minimum requirement is
+基础
+Foundation
+基础对象
+Base Object
+基础对象(obj) 圆弧(arc) 进度条(bar) 按钮(btn) 按钮矩阵(btnmatrix) 日历(calendar) 画布(canvas) 复选框(cb) 图表(chart) 容器(cont) 颜色选择器(cpicker) 下拉列表(dropdown) 仪表(gauge) 图片(img) 图片按钮(imgbtn) 键盘(keyboard) 标签(label) LED(led) 线(line) 列表(list) 仪表(lmeter) 消息框(msdbox) 对象蒙版(objmask) 页面(page) 滚筒(roller) 滑杆(slider) 数字调整框(spinbox) 旋转器(spinner) 开关(switch) 表格(table) 页签(tabview) 文本框(textarea) 平铺视图(tileview) 窗口
+base object (obj) arc (arc) progress bar (bar) button (btn) button matrix (btnmatrix) calendar (calendar) canvas (canvas) check box (cb) chart (chart) container (cont) color selector (cpicker) drop-down list (dropdown) gauge (gauge) picture (img) picture button (imgbtn) keyboard (keyboard) label (label) LED(led) line (line)) list (list) meter (lmeter) message box (msdbox) object mask (objmask) page (page) roller (slider) number adjustment box (spinbox) spinner (spinner) switch (switch) table (table) tab (tabview) text box (textarea) tile view (tileview) window
+即可安装好
+can be installed
+即使单[帧缓冲区](https://docs.lvgl.io/master/porting/display.html)也具有平滑渲染
+Smooth rendering even with single [framebuffer](https://docs.lvgl.io/master/porting/display.html)
+几个对象遮罩
+several object masks
+加载标签
+Load Label
+加载大写地图。
+Load capital map.
+加载小写地图。
+Load a lowercase map.
+架构: | 16、32或64位微控制器或处理器
+Architecture: | 16, 32, or 64-bit microcontroller or processor
+剪辑**线条**顶部/底部左侧/右侧的像素。可以从两个点或一个点和一个角度初始化
+Clip **Lines** Top/Bottom Left/Right Pixels. can be initialized from two points or a point and an angle
+简单[示例
+Simple [Example
+简单按钮矩阵
+Simple Button Matrix
+简单的按钮
+Simple button
+简单的表格
+Simple form
+简单的窗口
+Simple window
+简单的进度条
+Simple progress bar
+简单的列表
+Simple List
+简单的数字调整框
+Simple digital adjustment box
+简单的图像按钮
+Simple image button
+简单的文本框
+Simple Text Box
+简单的下拉列表
+Simple drop-down list
+简单的旋转效果
+Simple Rotation Effect
+简单的页签
+Simple Tab
+简单的仪表
+Simple meter
+简单复选框
+Simple check box
+简单弧
+simple arc
+简单开关
+Simple switch
+简单日历示例
+Simple Calendar Example
+简单线
+Simple Line
+简单消息框
+Simple Message Box
+简介
+Introduction
+简易滚筒
+Simple roller
+键盘
+Keyboard
+键盘具有一个默认的事件处理程序回调，称为lvgl.keyboard_def_event_cb。它处理按钮按下，地图更改，分配的文本区域等。可以将其完全替换为自定义事件处理程序，但是，可以在事件处理程序的开头调用lvgl.keyboard_def_event_cb来处理与以前相同的操作。
+The keyboard has a default event handler callback called the lvgl.keyboard_ def_event_cb. It handles button presses, map changes, assigned text areas, etc. It can be completely replaced with a custom event handler, but the lvgl.keyboard_ def_event_cb can be called at the beginning of the event handler to handle the same operations as before.
+键盘具有以下模式
+The keyboard has the following modes
+键盘可处理一下以下按键
+The keyboard can handle the following keys
+将按钮设为隐藏（隐藏的按钮仍会占用布局中的空间，它们只是不可见或不可单击
+Make buttons hidden (hidden buttons still take up space in the layout, they're just not visible or clickable
+将大小设置为父项的大小减去 `pad_top/bottom/left/right` （来自父项的样式）空间。
+Set the size to the size of the parent minus the `pad_top/bottom/left/right` (style from parent) space.
+将当前参数的值增加
+Increases the value of the current parameter
+将当前参数减
+Subtract the current parameter
+将对象大小扩展为文本大小（默认
+Expands object size to text size (default
+将滑块的值减
+Subtract the value of the slider
+将滑块的值增加
+Increase the value of the slider
+将旧数据向左移动，然后向右添加新数据。
+Move the old data to the left and add the new data to the right.
+将容器收缩包装在其所有子容器周围，同时 `pad_top/bottom/left/right` 在边缘保留空间。
+The container is shrink-wrapped around all of its child containers while `pad_top/bottom/left/right` leaves space at the edges.
+将所选选项的名称复制到
+Copy the name of the selected option
+将隐藏选项卡。
+Tabs will be hidden.
+将指标对称地绘制为零（从零开始，从左到右
+Plot the indicator symmetrically to zero (from zero, from left to right
+将字符添加到当前光标位置
+Adds a character to the current cursor position
+将子项与列中的中心对齐，并 `padd_inner` 在它们之间保持间距。
+Align the children with the center in the column and `padd_inner to maintain spacing between them.
+将作为连续多的对象可能（至少 `pad_inner` 空间和 `pad_left/right` 空间两侧）。在孩子之间的每一行中平均分配空间。如果这是连续不同身高的孩子，请对齐其上边缘。
+There will be as many consecutive objects as possible (at least `pad_inner space and `pad_left/right` space on both sides). Distribute the space equally in each row between the children. If this is a child of different heights in a row, align its upper edge.
+胶水对象
+Glue Object
+焦点对象
+Focus Object
+角度
+Angle
+角度**仅在给定的开始和结束角度之间保持像素
+Angle **only keeps pixels between the given start and end angles
+角度偏移
+Angle Offset
+结束角度
+End Angle
+今天：以 `lvgl.STATE_FOCUSED` 样式绘制
+Today: With `lvgl. STATE_FOCUSED `Style Draw
+仅 [通用事件]() 是按对象类型发送的。
+Only Common Events () are sent by object type.
+仅 [通用事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) 是按对象类型发送的。
+Only Common Events (http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html#id2) are sent by object type.
+仅当首次调用 `lvgl.msgbox_add_btns()` 时，才会创建 [按钮矩阵
+The [button matrix is created only when the `lvgl.msgbox_ add_btns()`is called for the first time
+仅将保存数组指针，因此数组应为静态或全局变量。
+Only array pointers will be saved, so arrays should be static or global variables.
+仅通用事件是按对象类型发送的。
+Only generic events are sent per object type.
+仅旋钮模式
+Knob only mode
+仅与`--format lvgl`，为 设置备用路径
+Only with `-- format lvgl`, set alternate path
+仅支持 [通用事件
+Only [common events are supported
+进度条
+Progress bar
+进度条的主要部分称为 `lvgl.BAR_PART_BG` ，它使用典型的背景样式属性。
+The main part of the progress bar is called `lvgl. BAR_PART_BG `, which uses typical background style properties.
+进度条简单演示
+Simple progress bar demo
+进阶
+Advanced
+进一步了解 [按键
+Learn more about [Keys
+禁用
+Disable
+禁用按钮
+Disable button
+禁用复选框
+Disable check box
+禁用内置 RLE 压缩
+Disable built-in RLE compression
+禁用位图线过滤器（XOR），用于提高压缩率
+Disable Bitmap Line Filter (XOR) for improved compression
+镜像
+Mirror
+矩阵对象的权重非常轻，因为按钮不是在虚拟飞行中绘制的。这样，一个按钮仅使用8个额外的字节，而不是普通 [Button对象](http://lvgl.100ask.net/7.11/documentation/04_widgets/04_btn.html) 的〜100-150字节大小（加上其容器的大小和每个按钮的标签
+The weight of the matrix object is very light, because the button is not drawn in the virtual flight. This way, a button only uses 8 extra bytes, instead of the ~ 100-150 byte size of the ordinary [Button object](http://lvgl.100ask.net/7.11/documentation/04_widgets/04_btn.html) (plus the size of its container and the label of each button
+具有 `lvgl.COLOR_TRANSP` (lvgl.conf.h) 颜色的像素将是透明的。
+with `lvgl. Pixels COLOR_TRANSP `(lvgl.conf.h) color will be transparent.
+具有 UTF-8 处理、CJK、双向和阿拉伯语脚本支持的多语言支持
+Multi-language support with UTF-8 processing, CJK, bidirectional and Arabic script support
+开
+On
+开关
+Switch
+开关可处理以下按键
+The switch can handle the following keys
+开关可用于打开/关闭某物。它看起来像一个小滑块。
+A switch can be used to turn something on/off. It looks like a small slider.
+开关使用以下部分
+switch using the following sections
+抗锯齿选择默认，我们的lvgl是7.11版本，所以此处版本选择用于6.0版本以上，英文和数字根据自己需要勾选，类型选择内部字体，剩下都勾选上即可，字体名自己设置，包含里加上lvgl.h头文件，之后我们点击选择字体
+Anti-aliasing is selected by default. Our lvgl is the 7.11 version, so the version here is selected for 6.0 version or above. English and numbers are checked according to their own needs. The type is selected as internal fonts. The rest is checked. The font name is set by itself. The lvgl.h header file is included. Then we click to select fonts.
+可滚动
+Scrollable
+可滚动**的顶部。
+Scrollable **at the top.
+可滚动对象有一个默认事件回调，它将以下事件传播到背景对象
+Scrollable objects have a default event callback that propagates the following events to the background object
+可检查
+Can be checked
+可见时间可以使用lvgl.textarea_set_pwd_show_time（textarea，time_ms）进行调整。
+The visibility time can be adjusted using the lvgl.textarea_ set_pwd_show_time(textarea,time_ms).
+可见行
+Visible Rows
+可见行数可以通过 `lvgl.roller_set_visible_row_count(roller, num)` 进行调整
+The number of visible rows can be adjusted by `lvgl.roller_ set_visible_row_count(roller, num)`
+可扩展，可在小内存下操作（64 kB 闪存
+Scalable to operate with small memory (64 kB flash
+可以 `lvgl.DROPDOWN_PART_SELECTED` 使用所有典型的背景属性引用并使用所选的选项。它将以其默认状态在所选选项上绘制一个矩形，并在按下状态下在被按下的选项上绘制一个矩形。
+Can `lvgl. DROPDOWN_PART_SELECTED `uses all typical background attribute references and uses the selected options. It will draw a rectangle on the selected option in its default state, and draw a rectangle on the pressed option in the pressed state.
+可以对标签上的文本重新着色，类似于Label对象的重新着色功能。要启用它，请使用 `lvgl.btnmatrix_set_recolor(btnm, true)` 。之后，带有 `＃FF0000` 红色＃文本的按钮将变为红色。
+You can recolor the text on a label, similar to the recoloring of Label objects. To enable it, use `lvgl.btnmatrix_ set_recolor(btnm, true)`. After that, the button with `#FF0000` red# text will turn red.
+可以根据 `lvgl.textarea_set_scrollbar_mode(textarea, lvgl.SCRLBAR_MODE_...)` 设置的不同策略显示滚动条。在Page对象中了解更多信息。
+Scroll bars can be displayed according to different policies set by the `lvgl.textarea_ set_scrollbar_mode(textarea, lvgl.SCRLBAR_MODE_...). Learn more in the Page object.
+可以根据其点自动设置线对象的大小。可以使用 `lvgl.line_set_auto_size(line, true)` 函数启用它。如果启用，则在设置点后，将根据点之间的最大x和y坐标更改对象的宽度和高度。默认情况下，自动尺寸已启用。
+You can automatically set the size of a line object based on its points. It can be enabled using the `lvgl.line_set_auto_size(line, true)`function. If on, after setting points, changes the width and height of the object based on the maximum x and y coordinates between the points. By default, automatic sizing is enabled.
+可以将“文本”区域配置为以 `lvgl.textarea_set_one_line(ta, true)` 为一行。在此模式下，高度自动设置为仅显示一行，忽略换行符，并且禁用自动换行。
+The Text area can be configured with `lvgl.textarea_ set_one_line(ta, true)`on one line. In this mode, the height is automatically set to display only one line, line breaks are ignored, and automatic line breaks are disabled.
+可以类似于 [`标签`_](http://lvgl.100ask.net/7.11/documentation/04_widgets/14_img.html#id27) 设置符号。在这种情况下，图像将根据样式中指定的字体呈现为文本。它可以使用轻量级的单色“字母”代替实际图像。可以设置符号，例如
+Symbols can be set similar to [`tag`_](http://lvgl.100ask.net/7.11/documentation/04_widgets/14_img.html#id27). In this case, the image is rendered as text according to the font specified in the style. It can use lightweight monochrome "letters" instead of actual images. Symbols can be set, such
+可以使用
+can be used
+可以使用 `lvgl.arc_set_rotation(arc, deg)` 添加到0度位置的偏移量。
+You can use `lvgl.arc_set_rotation(arc, deg)`to add an offset to the 0 degree position.
+可以使用 `lvgl.btn_set_checkable(btn, true)` 将按钮配置为切换按钮。在这种情况下，单击时，按钮将自动进入 `lvgl.STATE_CHECKED` 状态，或再次单击时返回到lvgl.STATE_CHECKED状态。
+The button can be configured as a toggle button using `lvgl.btn_set_checkable(btn, true). In this case, when clicked, the button will automatically go to `lvgl. STATE_CHECKED the `state, or return to the lvgl.STATE_CHECKED state when clicked again.
+可以使用 `lvgl.btnmatrix_set_btn_width(btnm, btn_id, width)` 相对于同一行中的另一个按钮设置按钮宽度。例如。在带有两个按钮的行中：btnA，width = 1和btnB，width = 2，btnA将具有33％的宽度，btnB将具有66％的宽度。这类似于 `flex-grow` 属性在CSS中的工作方式。
+You can use the `lvgl.btnmatrix_ set_btn_width(btnm, btn_id, width)`to set the button width relative to another button in the same row. For example. In a row with two buttons: btnA,width = 1 and btnB,width = 2,btnA will have a width of 33% and btnB will have a width of 66%. This is similar to how the `flex-grow` property works in CSS.
+可以使用 `lvgl.calendar_set_day_names(calendar, day_names)` 来调整日期的名称，其中 `day_names` 类似于
+You can use `lvgl.calendar_ set_day_names(calendar, day_names)`to adjust the name of the date, where `day_names is similar
+可以使用 `lvgl.chart_cursor_t * c1 = lvgl.chart_add_cursor(chart, color, dir);` 添加光标。 `dir` `lvgl.CHART_CURSOR_NONE/RIGHT/UP/LEFT/DOWN` 的可能值或它们的OR-ed值，用于指示应在哪个方向上绘制光标。
+You can use `lvgl.chart_cursor_t * c1 = lvgl.chart_add_cursor(chart, color, dir);`to add the cursor. `dir` `lvgl. The possible values of CHART_CURSOR_NONE/RIGHT/UP/LEFT/DOWN` or their OR-ed values are used to indicate in which direction the cursor should be drawn.
+可以使用 `lvgl.chart_get_series_area(chart, &area)` 检索当前系列区域，其中 `area` 是指向 `lvgl.area_t` 变量的指针，用于存储结果。该区域具有绝对坐标。
+You can use `lvgl.chart_get_series_area(chart, & area)`to retrieve the current series area, where `area` is a pointer to the `lvgl.area_t` variable to store the result. The area has absolute coordinates.
+可以使用 `lvgl.chart_set_range(chart, y_min, y_max)` 在y方向上指定最小值和最大值。点的值将按比例缩放。默认范围是
+The minimum and maximum values may be specified in the y-direction using `lvgl.chart_set_range(chart, y_min, y_max). The value of the point is scaled proportionally. The default scope is
+可以使用 `lvgl.chart_set_type(chart, lvgl.CHART_TYPE_...)` 指定显示类型。可以对类型进行“或”运算（例如
+You can specify the display type using the `lvgl.chart_set_type(chart, lvgl.CHART_TYPE_...). You can OR types (e. g.
+可以使用 `lvgl.chart_set_update_mode(chart, lvgl.CHART_UPDATE_MODE_...)` 更改更新模式。
+You can use `lvgl.chart_set_update_mode(chart, lvgl.CHART_UPDATE_MODE_...)`to change the update mode.
+可以使用 `lvgl.checkbox_get_state(cb)` 函数获取Checkbox的当前状态，该函数返回当前状态。可以使用 `lvgl.checkbox_set_state(cb, state)` 设置复选框的当前状态。枚举 `lvgl.btn_state_t` 定义的可用状态为
+You can use the `lvgl.checkbox_ get_state(cb)`function to get the current state of the Checkbox, which returns the current state. You can use the `lvgl.checkbox_ set_state(cb, state)`to set the current state of the checkbox. The available states defined by the enumeration `lvgl.btn_state_t are
+可以使用 `lvgl.cpicker_set_color_mode(cpicker, lvgl.CPICKER_COLOR_MODE_HUE/SATURATION/VALUE)` 手动选择当前颜色。
+The current color can be manually selected using the `lvgl.cpicker_ set_color_mode(cpicker, lvgl.CPICKER_ COLOR_MODE_HUE/SATURATION/VALUE).
+可以使用 `lvgl.cpicker_set_hue/saturation/value(cpicker, x)` 手动设置colro，或者使用 `lvgl.cpicker_set_hsv(cpicker, hsv)` 或 `lvgl.cpicker_set_color(cpicker, rgb)` 一次全部设置
+Colro can be set manually using `lvgl.cpicker_ set_hue/saturation/value(cpicker, x)`or all at once using `lvgl.cpicker_ set_hsv(cpicker, hsv)` or `lvgl.cpicker_ set_color(cpicker, rgb)`
+可以使用 `lvgl.cpicker_set_type(cpicker, lvgl.CPICKER_TYPE_RECT/DISC)` 更改颜色选择器的类型
+The type of color picker can be changed using the `lvgl.cpicker_ set_type(cpicker, lvgl.CPICKER_ TYPE_RECT/DISC)`
+可以使用 `lvgl.dropdown_set_selected(dropdown, id)` 手动选择一个选项，其中id是选项的索引。
+You can use the `lvgl.dropdown_ set_selected(dropdown, id)`to manually select an option, where id is the index of the option.
+可以使用 `lvgl.dropdown_set_symbol(dropdown, lvgl.SYMBOL_...)` 将符号（通常是箭头）添加到下拉列表中
+Symbols (usually arrows) can be added to the drop-down list using the `lvgl.dropdown_ set_symbol(dropdown, lvgl.SYMBOL_...)`
+可以使用 `lvgl.dropdown_set_text(dropdown, "Text")` 设置静态文本。仅保存文本指针。
+Static text can be set using the `lvgl.dropdown_ set_text(dropdown, "Text"). Only text pointers are saved.
+可以使用 `lvgl.img_set_antialias(img, true/false)` 调整转换的质量。启用抗锯齿功能后，转换的质量更高，但速度较慢。
+You can use `lvgl.img_set_antialias(img, true/false)`to adjust the quality of the conversion. When anti-aliasing is enabled, the quality of the conversion is higher, but the speed is slower.
+可以使用 `lvgl.keyboard_set_map(kb, map)` 和 `lvgl.keyboard_set_ctrl_map(kb, ctrl_map)` 为键盘指定新的地图（布局）。了解有关 [按钮矩阵(lvgl.imgbtn)](http://lvgl.100ask.net/7.11/documentation/04_widgets/05_btnmatrix.html) 的更多信息。记住，使用以下关键字将具有与原始地图相同的效果
+You can use `lvgl.keyboard_ set_map(kb, map)`and `lvgl.keyboard_ set_ctrl_map(kb, ctrl_map)` to specify a new map (layout) for the keyboard. Learn more about Button Matrix (lvgl.imgbtn) (http://lvgl.100ask.net/7.11/documentation/04_widgets/05_btnmatrix.html). Remember, using the following keywords will have the same effect as the original map
+可以使用 `lvgl.label_set_long_mode(label, lvgl.LABEL_LONG_...)` 指定长模式
+Long mode can be specified using `lvgl.label_set_long_mode(label, lvgl.LABEL_LONG_...)`
+可以使用 `lvgl.led_set_bright(led, bright)` 设置它们的亮度。亮度应介于0（最暗）和255（最亮）之间。
+You can use `lvgl.led_set_bright(led, bright)`to set their brightness. The brightness should be between 0 (darkest) and 255 (brightest).
+可以使用 `lvgl.list_add_btn(list, &icon_img, "Text")` 或符号 `lvgl.list_add_btn(list, SYMBOL_EDIT, "Edit text")` 添加新的列表元素（按钮）。如果不想添加图像，请使用 `NULL` 作为图像源。该函数返回指向创建的按钮的指针，以允许进行进一步的配置。
+You can add new list elements (buttons) using the `lvgl.list_add_btn(list, & icon_img, "Text")`or the symbol `lvgl.list_add_btn(list, SYMBOL_EDIT, "Edit text"). If you do not want to add an image, use `NULL` as the image source. The function returns a pointer to the created button to allow further configuration.
+可以使用 `lvgl.list_focus(btn, lvgl.ANIM_ON/OFF)` 直接关注按钮。
+You can use `lvgl.list_focus(btn, lvgl.ANIM_ON/OFF)`to focus directly on the button.
+可以使用 `lvgl.list_up(list)` 和 `lvgl.list_down(list)` 在列表中手动导航。
+You can use `lvgl.list_up(list)`and `lvgl.list_down(list)` to manually navigate through the list.
+可以使用 `lvgl.page_set_scroll_propagation(tab_page, false)` 禁用手动滑动。
+Manual sliding can be disabled using `lvgl.page_set_scroll_propagation(tab_page, false).
+可以使用 `lvgl.roller_set_selected(roller, id, lvgl.ANIM_ON/OFF)` 手动选择选项，其中id是选项的索引。
+Options can be selected manually using the `lvgl.roller_ set_selected(roller, id, lvgl.ANIM_ON/OFF)`, where id is the index of the option.
+可以使用 `lvgl.slider_set_type(slider, lvgl.SLIDER_TYPE_...)` 更改类型
+Type can be changed using `lvgl.slider_ set_type(slider, lvgl.SLIDER_TYPE_...)`
+可以使用 `lvgl.ta_set_scroll_propagation(ta, true)` 启用它。
+It can be enabled using `lvgl.ta_set_scroll_propagation(ta, true).
+可以使用 `lvgl.table_set_cell_align(table, row, col, lvgl.LABEL_ALIGN_LEFT/CENTER/RIGHT)` 调整单元格中的文本对齐方式。
+You can use `lvgl.table_set_cell_align(table, row, col, lvgl.LABEL_ALIGN_LEFT/CENTER/RIGHT)`to adjust the alignment of text in cells.
+可以使用 `lvgl.table_set_cell_type(table, row, col, type)` 选择类型， `类型(type)` 可以为1、2、3或4，对应上面的四种类型。
+`lvgl. table_type (table, row, col, set_cell_type) `can be used to select the type, and the `type (type)` can be 1, 2, 3 or 4, corresponding to the above four types.
+可以使用 `lvgl.tabview_add_tab(tabview, "Tab name")` 添加新标签。它将返回指向可以创建选项卡内容的 [页面(lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) 对象的指针。
+New tags can be added using the `lvgl.tabview_ add_tab(tabview, "Tab name"). It returns a pointer to a Page (lvgl.page) (http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) object where the contents of the tab can be created.
+可以使用 `lvgl.textarae_set_accepted_chars(ta, "0123456789.+-")` 设置可接受字符的列表。其他字符将被忽略。
+The list of acceptable characters can be set using the `lvgl.textarae_ set_accepted_chars(ta, "0123456789. -"). Other characters are ignored.
+可以使用 `lvgl.textarea_set_cursor_hidden(textarea, true)` 隐藏光标。
+You can use `lvgl.textarea_ set_cursor_hidden(textarea, true)`to hide the cursor.
+可以使用 `lvgl.textarea_set_cursor_pos(textarea, 10)` 直接修改光标位置。 `0` 位置表示“在第一个字符之前”， `lvgl.TA_CURSOR_LAST` 表示“在最后一个字符之后
+You can use the `lvgl.textarea_ set_cursor_pos(textarea, 10)`to modify the cursor position directly. The `0` position means "before the first character", `lvgl. TA_CURSOR_LAST `means "after the last character
+可以使用 `lvgl.textarea_set_placeholder_text(ta, "Placeholder text")` 指定一个占位符文本-当“文本”区域为空时显示。
+You can use the `lvgl.textarea_ set_placeholder_text(ta, "Placeholder text")`to specify a placeholder text-to display when the Text area is empty.
+可以使用 `lvgl.textarea_set_text_align(textarea, lvgl.LABEL_ALIGN_LET/CENTER/RIGHT)` 将文本左，中或右对齐。
+You can use the `lvgl.textarea_ set_text_align(textarea, lvgl.LABEL_ALIGN_LET/CENTER/RIGHT)`to align text to the left, center, or right.
+可以使用 `lvgl.win_add_btn_left(win, lvgl.SYMBOL_CLOSE)` 设置按钮的宽度。如果 `w == 0` ，则按钮将为正方形。
+You can use `lvgl.win_add_btn_left(win, lvgl.SYMBOL_CLOSE)`to set the width of the button. If `w = = 0 `, the button will be square.
+可以使用 更新现有掩码，其中是 的返回值
+You can use to update the existing mask, where the return value is
+可以使用4种不同的单元格类型。每个都有自己的风格。
+You can use 4 different cell types. Each has its own style.
+可以使用以下函数从外部数据源更新图表系列： `lvgl.chart_set_ext_array(chart, ser, array, point_cnt )` ，其中array是lvgl.coord_t与point_cnt元素的外部数组。注意：更新外部数据源后，应调用 `lvgl.chart_refresh(chart)` 来更新图表。
+You can use the following function to update a chart series from an external data source: `lvgl.chart_set_ext_array(chart, ser, array, point_cnt )`, where array is an external array of lvgl.coord_t and point_cnt elements. Note: After updating the external data source, you should call `lvgl.chart_refresh(chart)`to update the chart.
+可以使用以下命令将控制按钮添加到窗口标题的右侧： `lvgl.win_add_btn_right(win, lvgl.SYMBOL_CLOSE)` ，要在窗口标题的左侧添加按钮，请使用lvgl.win_add_btn_left（win，lvgl.SYMBOL_CLOSE）。第二个参数是图像源，因此它可以是符号，指向lvgl.img_dsc_t变量的指针或文件的路径。
+You can add a control button to the right of the window title with the following command: `lvgl.win_add_btn_right(win, lvgl.SYMBOL_CLOSE)`To add a button to the left of the window title, use lvgl.win_add_btn_left(win, lvgl.SYMBOL_CLOSE). The second parameter is the image source, so it can be a symbol, a pointer to the lvgl.img_dsc_t variable, or the path to the file.
+可以使用以下命令将文本或字符插入当前光标的位置
+You can use the following commands to insert text or characters at the current cursor position
+可以通过 `lvgl.bar_set_value(bar, new_value, lvgl.ANIM_ON/OFF)` 设置新值。该值以一个范围（最小值和最大值）解释，可以使用 `lvgl.bar_set_range(bar, min, max)` 进行修改。默认范围是
+The new value can be set via `lvgl.bar_set_value(bar, new_value, lvgl.ANIM_ON/OFF). The value is interpreted in a range (minimum and maximum), which can be modified using `lvgl.bar_set_range(bar, min, max). The default scope is
+可以通过 `lvgl.btnmatrix_set_one_check(btnm, true)` 启用 “一次检查” 功能，以仅一次检查（切换）一个按钮。
+The "check once" function can be enabled through the`lvgl. btnmatrix_ set_one_check(btnm, true)`to check (switch) one button only at a time.
+可以通过 `lvgl.chart_set_point_count(chart, point_num)` 修改系列中的点数。默认值为10。注意：当将外部缓冲区分配给序列时，这也会影响处理的点数。
+The number of points in the series can be modified by `lvgl.chart_set_point_count(chart, point_num). The default value is 10. Note: When an external buffer is allocated to the sequence, this also affects the number of points processed.
+可以通过 `lvgl.checkbox_set_checked(cb, true/false)` 手动选中/取消选中复选框。设置为 `true` 将选中该复选框，而设置为 `false` 将取消选中该复选框。
+Checkboxes can be manually checked/unchecked via `lvgl.checkbox_ set_checked(cb, true/false). Set to `true` to select the check box, and set to `false` to deselect the check box.
+可以通过 `lvgl.checkbox_set_text(cb, "New text")` 函数修改文本。它将动态分配文本。
+The text can be modified by the `lvgl.checkbox_ set_text(cb, "New text")`function. It will dynamically assign text.
+可以通过 `lvgl.dropdown_set_max_height(dropdown, height)` 设置下拉列表的最大高度。默认情况下，它设置为3/4垂直分辨率。
+You can set the maximum height of the drop-down list through the `lvgl.dropdown_ set_max_height(dropdown, height). By default, it is set to 3/4 vertical resolution.
+可以通过 `lvgl.linemeter_set_scale(linemeter, angle, line_num)` 设置比例尺的角度和行数。默认角度为240，默认行号为
+The angle and number of lines of the scale can be set through the `lvgl.linemeter_ set_scale(linemeter, angle, line_num). The default angle is 240 and the default line number is
+可以通过 `lvgl.win_set_scrlbar_mode(win, lvgl.SCRLBAR_MODE_...)` 设置滚动条行为。有关详细信息，请参见 [页面
+Scroll bar behavior can be set via `lvgl.win_set_scrlbar_mode(win, lvgl.SCRLBAR_MODE_...). For more information, see the [page
+可以通过`lvgl.PAGE_PART_SCRL`部件引用可滚动对象。它还使用所有典型的背景样式属性和填充来增加两侧的空间。
+You can pass `lvgl. PAGE_PART_SCRL `part references a scrollable object. It also uses all the typical background style attributes and padding to increase the space on both sides.
+可以通过单击或通过下面的函数更改开关的状态
+You can change the state of the switch by clicking or by the following function
+可以为键盘分配一个 [文本区域(Text area)](http://lvgl.100ask.net/7.11/documentation/04_widgets/documentation/04_widgets/32_textarea.html) ，以将单击的字符自动放在此处。要分配文本区域，请使用
+The keyboard can be assigned a Text area (http://lvgl.100ask.net/7.11/documentation/04_widgets/documentation/04_widgets/32_textarea.html) to automatically place the clicked character there. To assign a text area, use
+可以以两种方式运行，具体取决于更新模式
+Can be run in two ways, depending on the update mode
+可以引用该系列的样式。对于列类型，使用以下属性
+You can reference the styles of the series. For column types, use the following properties
+可以用以下方法取下口罩
+The mask can be removed using the following methods
+可以用作关闭窗口的事件回调。
+Can be used as an event callback to close a window.
+可以在 `"Value\n60.3"` 之类的文本中使用换行符。
+You can use line breaks in text such as `"Value\n60.3.
+可以在容器上应用布局以自动订购其子代。布局间距来自样式的 `填充(pad)` 属性。可能的布局选项
+You can apply a layout on a container to order its children automatically. The layout spacing comes from the `pad` property of the style. Possible layout options
+可以在运行时使用 `lvgl.label_set_text(label, "New text")` 在标签上设置文本。它将动态分配一个缓冲区，并将提供的字符串复制到该缓冲区中。因此，在该函数返回后，无需将传递给 `lvgl.label_set_text` 的文本保留在范围内。
+You can use `lvgl.label_set_text(label, "New text")`to set the text on the label at run time. It will dynamically allocate a buffer and copy the supplied string into that buffer. Therefore, there is no need to keep the text passed to `lvgl.label_set_text in the scope after the function returns.
+可以在字体转换器中选择这些选项。要了解有关颜色格式的更多信息，请阅读 `图像(images)` 部分。
+You can select these options in the font changer. To learn more about color formats, read the `images` section.
+可以在lvgl.conf.h中通过 `lvgl.TABLE_CELL_STYLE_CNT` 调整单元格类型的数量。默认情况下为4。默认的4种单元格类型部分也使用专用名称进行引用
+You can pass `lvgl. conf.h in lvgl.conf.h. TABLE_CELL_STYLE_CNT `Adjust the number of cell types. 4 by default. The default 4 cell types section is also referenced with private names
+刻度和标签可以添加到轴上。
+Scales and labels can be added to the axis.
+刻度线和标签
+Ticks and Labels
+控制按钮
+Control button
+控制按钮的高度为：标头高度-标头padding_top-标头
+The height of the control button is: Header height-Header padding_top-Header
+宽度(width)和高度
+Width and Height
+来自背景的顶部/底部/左侧/右侧填充值用于在两侧保留一些空间。内部填充应用于按钮之间。
+The top/bottom/left/right fill values from the background are used to reserve some space on both sides. Inner padding is applied between the buttons.
+了解有关 [按键](http://lvgl.100ask.net/7.11/documentation/03_overview/05_indev.html) 的更多内容。
+Learn more about Key (http://lvgl.100ask.net/7.11/documentation/03_overview/05_indev.html).
+了解有关 [事件]() 的更多信息。
+Learn more about Events ().
+了解有关 [事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html) 的更多内容。
+Learn more about [events](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html).
+了解有关 [事件](http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html) 的更多信息。
+Learn more about Events (http://lvgl.100ask.net/7.11/documentation/03_overview/03_events.html).
+了解有关[按键](https://docs.lvgl.io/latest/en/html/overview/indev.html)更多信息。
+Learn more about Key (https://docs.lvgl.io/latest/en/html/overview/indev.html).
+了解有关[活动的](https://docs.lvgl.io/latest/en/html/overview/event.html)更多信息。
+Learn more about [event's](https://docs.lvgl.io/latest/en/html/overview/event.html).
+了解有关[密钥的](https://docs.lvgl.io/latest/en/html/overview/indev.html)更多信息。
+Learn more about [Key's](https://docs.lvgl.io/latest/en/html/overview/indev.html).
+了解有关`事件`_ 的更多信息。
+Learn more about the Event.
+类似于 `lvgl.LAYOUT_PRETTY` 但不能平均划分水平空间，只是让它们之间的 `pad_left/right` 边缘和 `pad_inner` 空间分开。
+Similar to `lvgl. LAYOUT_PRETTY `but can`t divide the horizontal space equally, just let the `pad_left/right` edge and the `pad_inner space separate between them.
+类似于按钮matices，键盘包括2部分
+Similar to Button matices, the keyboard consists of 2 parts
+类似于普通按钮 `lvgl.imgbtn_set_checkable(imgbtn, true/false)` ，`lvgl.imgbtn_toggle(imgbtn)` 和 `lvgl.imgbtn_set_state(imgbtn, lvgl.BTN_STATE_...)` 也可以使用。
+Similar to the normal buttons `lvgl.imgbtn_ set_checkable(imgbtn, true/false)` ,`lvgl.imgbtn_toggle(imgbtn)` and `lvgl.imgbtn_ set_state(imgbtn, lvgl.BTN_STATE_...)`can also be used.
+类型
+Type
+亮度
+Brightness
+列表
+List
+列表处理以下按键
+List handles the following keys
+列表上的按钮被视为普通按钮，它们只有一个主要部分，称为
+Buttons on the list are treated as normal buttons, they have only one main part, called
+列表是从背景 [页面(Page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) 和其上的 [按钮(Buttons)](http://lvgl.100ask.net/7.11/documentation/04_widgets/04_btn.html) 构建的。按钮包含可选的类似图标的 [`图像(Image)`_](http://lvgl.100ask.net/7.11/documentation/04_widgets/20_list.html#id24) （也可以是符号）和 [`](http://lvgl.100ask.net/7.11/documentation/04_widgets/20_list.html#id2)标签(Label) [`](http://lvgl.100ask.net/7.11/documentation/04_widgets/20_list.html#id4)_。当列表足够长时，可以滚动它。
+The list is constructed from the background [Page](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) and the [Buttons](http://lvgl.100ask.net/7.11/documentation/04_widgets/04_btn.html) on it. The button contains an optional icon-like [`Image`](http://lvgl.100ask.net/7.11/documentation/04_widgets/20_list.html#id24) (can also be a symbol) and [`](http://lvgl.100ask.net/7.11/documentation/04_widgets/20_list.html#id2) Label [`](http://lvgl.100ask.net/7.11/documentation/04_widgets/20_list.html#id4)_. When the list is long enough, you can scroll it.
+列表与 [页面(Page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) 具有相同的部分
+List has the same section as [Page](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html)
+列出的所有部分均支持典型的背景样式属性和填充。
+All of the sections listed support typical background style properties and fills.
+列的宽度可以使用 `lvgl.table_set_col_width(table, col_id, width)` 设置。 Table对象的总宽度将设置为列宽的总和。
+The width of the column can be set using `lvgl.table_set_col_width(table, col_id, width). The total width of the Table object is set to the sum of the column widths.
+临界值
+Critical Value
+零件和样式
+Parts and Styles
+零件和样式的作用与 [弧(lvgl.arc)](http://lvgl.100ask.net/7.11/documentation/04_widgets/02_arc.html) 情况相同。
+Parts and styles act the same as in the [Arc (lvgl.arc)](http://lvgl.100ask.net/7.11/documentation/04_widgets/02_arc.html) case.
+零件和样式与 [滑杆(lvgl.slider)](http://lvgl.100ask.net/7.11/documentation/04_widgets/26_slider.html) 情况相同。阅读其文档以获取详细说明。
+The parts and styles are the same as in the case of [http://lvgl.100ask.net/7.11/documentation/04_widgets/26_slider.html (lvgl.slider)]. Read its documentation for detailed instructions.
+另一个重要的注意事项是 `lvgl.LABEL_LONG_DOT` 在原地操纵文本缓冲区，以便添加/删除点。当使用 `lvgl.label_set_text` 或`` lvgl.label_set_array_text`` 时，将分配一个单独的缓冲区，并且该实现细节不会被注意。 `lvgl.label_set_static_text` 并非如此！如果打算使用 `lvgl.LABEL_LONG_DOT` ，则传递给 `lvgl.label_set_static_text` 的缓冲区必须可写。
+Another important note is `lvgl. LABEL_LONG_DOT `manipulate the text buffer in place to add/remove points. When using `lvgl.label_set_text or `lvgl.label_set_array_text `, a separate buffer will be allocated, and the implementation details will not be noticed. `lvgl.label_set_static_text `Not so! If you plan to use `lvgl. LABEL_LONG_DOT `, the buffer passed to `lvgl.label_set_static_text` must be writable.
+每个按钮上都有一个文字。要指定它们，需要使用称为*map*的描述符字符串数组。可以使用`lvgl.btnmatrix_set_map(btnm, my_map)`设置地图。地图的声明应如下`local map = {"btn1", "btn2", "btn3", ""}`。请注意，**最后一个元素必须是空字符串
+There is a text on each button. To specify them, you need to use an array of descriptor strings called * map. You can set the map using the `lvgl.btnmatrix_ set_map(btnm, my_map). The declaration of the map should be as follows `local map = {"btn1", "btn2", "btn3", ""}`. Note that the **last element must be an empty string
+每像素位数（抗锯齿
+bits per pixel (anti-aliasing
+密码模式
+Password mode
+模式
+Mode
+默认情况下，标签对象的宽度会自动扩展为文本大小。否则，可以根据几种长模式策略来操纵文本
+By default, the width of the label object automatically expands to the text size. Otherwise, the text can be manipulated according to several long pattern strategies
+默认情况下，禁用图像对象的单击，仅发送与非输入设备相关的常规事件。如果要捕获图像对象的所有一般事件，则应使用以下命令启用其单击
+By default, clicks on image objects are disabled and only regular events related to non-input devices are sent. If you want to capture all the general events of an image object, you should use the following command to enable its click
+默认情况下，可滚动的`lvgl.FIT_MAX`适合所有方向。这意味着当孩子们在背景中时，可滚动的大小将与背景的大小（减去填充）相同。但是当一个对象位于背景之外时，可滚动大小将增加以涉及它。
+By default, scrollable `lvgl. FIT_MAX `fits in all directions. This means that when the children are in the background, the scrollable size will be the same as the size of the background (minus padding). But when an object is outside the background, the scrollable size will increase to relate to it.
+默认情况下，刻度角相对于y轴对称地解释。这导致“站立”线表。使用 `lvgl.linemeter_set_angle_offset` 可以添加缩放角度的偏移量。它可以用于例如将四分之一线表放到角落或将半线表放到右侧或左侧。
+By default, the scale angle is interpreted symmetrically with respect to the y-axis. This results in a "standing" line table. Use the `lvgl.linemeter_ set_angle_offset to add an offset to the zoom angle. It can be used, for example, to put a 1/4 line table to the corner or a half line table to the right or left.
+默认情况下，列表是垂直的。要获取水平列表，请使用
+By default, the list is vertical. To get a list of levels, use
+默认情况下，文字会自动换行以适合单元格的宽度，并且单元格的高度会自动设置。要禁用此功能并保持文本原样，请启用
+By default, text will wrap to fit the width of the cell, and the height of the cell will be set automatically. To disable this feature and keep the text as it is, enable
+默认情况下，线表的线路是顺时针激活的。可以使用 `lvgl.linemeter_set_mirror(linemeter, true/false)` 进行更改。
+By default, the lines of the line table are activated clockwise. This can be changed using the `lvgl.linemeter_ set_mirror(linemeter, true/false).
+默认情况下，旋转的枢轴点是图像的中心。可以使用 `lvgl.img_set_pivot(img, pivot_x, pivot_y)` 进行更改。 0;0是左上角。
+By default, the pivot point of the rotation is the center of the image. Changes can be made using `lvgl.img_set_pivot(img, pivot_x, pivot_y). 0;0 is the upper left corner.
+默认情况下，选项卡的内容页面已启用滚动传播，因此，当它们水平滚动时，滚动内容将传播到 `lvgl.TABVIEW_PART_BG_SCRL` ，这样页面将被滚动。
+By default, the tab`s content page has scroll propagation enabled, so when they scroll horizontally, the scrolling content will propagate to `lvgl. TABVIEW_PART_BG_SCRL `so that the page will be scrolled.
+默认情况下，选项卡选择器按钮位于“选项卡”视图的顶部。可以使用 `lvgl.tabview_set_btns_pos(tabview, lvgl.TABVIEW_TAB_POS_TOP/BOTTOM/LEFT/RIGHT/NONE)` 进行更改
+By default, the tab selector button is located at the top of the Tab view. Changes can be made using the `lvgl.tabview_ set_btns_pos(tabview, lvgl.TABVIEW_ TAB_POS_TOP/BOTTOM/LEFT/RIGHT/NONE)`
+内部（可变）和外部图像支持2种透明度处理方法
+Internal (variable) and external images support 2 transparency processing methods
+内部字体
+Internal Font
+内部自定义字体
+Internal Custom Font
+内部自支持字体
+Internal self-supporting fonts
+您可以使用该功能调整刻度角度以及刻度线和标签的数量。默认设置为 220 度、6 个比例标签和 21 条线
+You can use this function to adjust the scale angle and the number of tick marks and labels. Default settings are 220 degrees, 6 scale labels, and 21 lines
+您可以使用和手动移动可滚动对象
+You can manually move scrollable objects using and
+您可以使用来设置针的值
+You can use to set the value of the needle
+您可以通过 `lvgl.chart_add_series(chart, color)` 向图表添加任意数量的系列。它为包含所选颜色的 `lvgl.chart_u series_t` 结构分配数据，如果不使用外部数组，如果分配了外部数组，则与该系列关联的任何内部点都将被释放，而序列指向外部数组。
+You can add any number of series to the chart via `lvgl.chart_add_series(chart, color). It allocates data to the `lvgl.chart_u series_t structure containing the selected color. If an external array is not used, if an external array is allocated, any internal points associated with the series will be released, and the sequence points to the external array.
+您应遵守以下条款，违者必究
+You should abide by the following terms and conditions, and offenders will be prosecuted.
+平铺视图
+Tile View
+平铺视图(Tileview)是一个容器对象，其中的元素（称为图块）可以以网格形式排列。通过滑动，用户可以在图块之间导航。
+A tile view (Tileview) is a container object whose elements, called tiles, can be arranged in a grid. By swiping, the user can navigate between the tiles.
+平铺视图的动画时间可以使用 `lvgl.tileview_set_anim_time(tileview, anim_time)` 进行调整。
+The animation time of the tiled view can be adjusted using the `lvgl.tileview_ set_anim_time(tileview, anim_time).
+平铺视图可处理以下按键
+Tile view can handle the following keys
+普通型
+Ordinary type
+其他调试选项
+Other debugging options
+启用按钮切换
+Enable button toggle
+启用布局或适合时，它还将使用padding属性。
+It will also use the padding property when layout or fit is enabled.
+起始角度
+Starting angle
+强大的[构建基块](https://docs.lvgl.io/master/widgets/index.html)：按钮、图表、列表、滑块、图像等
+Powerful [building blocks](https://docs.lvgl.io/master/widgets/index.html): buttons, charts, lists, sliders, images, etc.
+切换
+Switch
+切换按钮时发送。
+Sent when the button is toggled.
+切换复选框时发送。
+Sent when the check box is toggled.
+切换开关的位置
+Position of toggle switch
+切换开关状态时的动画时间可以使用 `lvgl.switch_set_anim_time(switch, anim_time)` 进行调整。
+The animation time when switching the switch state can be adjusted using the `lvgl.switch_ set_anim_time(switch, anim_time).
+清理页面
+Clean up the page
+请注意， `lvgl.KEY_ENTER` 的状态已转换为 `lvgl.EVENT_PRESSED/PRESSING/RELEASED` 等。
+Attention, `lvgl. The state of KEY_ENTER `has transitioned to `lvgl. EVENT_PRESSED/PRESSING/RELEASED` etc.
+请注意，添加标签后，您无法将标签的位置从顶部或底部更改为左侧或右侧。
+Please note that after adding a label, you cannot change the position of the label from the top or bottom to the left or right.
+请注意，与通用输入设备相关的事件（如lvgl.EVENT_PRESSED）也以非活动状态发送。您需要使用lvgl.btn_get_state（btn）检查状态，以忽略非活动按钮中的事件。
+Note that events related to generic input devices, such as lvgl.EVENT_PRESSED, are also sent in an inactive state. You need to check the status with lvgl.btn_get_state(btn) to ignore events in inactive buttons.
+请注意，与通用输入设备相关的事件（如lvgl.EVENT_PRESSED）也以非活动状态发送。需要使用lvgl.cb_is_inactive（cb）检查状态，以忽略非活动复选框中的事件。
+Note that events related to generic input devices, such as lvgl.EVENT_PRESSED, are also sent in an inactive state. The status needs to be checked using lvgl.cb_is_inactive(cb) to ignore events in inactive checkboxes.
+请注意，与往常一样， `lvgl.KEY_ENTER` 的状态会转换为 `lvgl.EVENT_PRESSED/PRESSING/RELEASED` 等。
+Please note that, as always, `lvgl. The state of KEY_ENTER `will change to `lvgl. EVENT_PRESSED/PRESSING/RELEASED` etc.
+请注意，与往常一样，lvgl.KEY_ENTER的状态会转换为lvgl.EVENT_PRESSED / PRESSING / RELEASED等。
+Note that, as always, the lvgl.KEY_ENTER state transitions to lvgl.EVENT_PRESSED / PRESSING/RELEASED, etc.
+请注意，重新着色只能在一行中进行。因此， `\n` 不应在重新着色的文本中使用，或者用 `lvgl.LABEL_LONG_BREAK` 换行，否则，新行中的文本将不会重新着色。
+Note that recoloring can only be done on one line. Therefore, `\n` should not be used in recolored text, or with `lvgl. LABEL_LONG_BREAK `newline, otherwise, the text in the new line will not be recolored.
+取下遮罩
+Removing the mask
+取消隐藏以前隐藏的滚动条。也恢复原来的模式
+Unhides previously hidden scroll bars. also restore the original model
+日历
+Calendar
+日历的主要部分称为 `lvgl.CALENDAR_PART_BG` 。它使用典型的背景样式属性绘制背景。
+The main part of the calendar is called `lvgl. CALENDAR_PART_BG `. It draws the background using typical background style properties.
+日期名称
+Date Name
+容器
+Container
+容器本质上是具有布局和自动调整大小功能的 **基本对象
+Containers are essentially basic objects with layout and auto-sizing capabilities.
+容器具有自动适应功能，可以根据其子代和/或父代自动更改容器的大小。存在以下选项
+The container has an automatic fit function, which can automatically change the size of the container according to its children and/or parents. The following options exist
+容器示例
+Container Example
+容器只有一个主要样式称为 `lvgl.CONT_PART_MAIN` ，它可以使用所有通常的bacground属性和填充来自动调整布局大小。
+The container has only one major style called `lvgl. CONT_PART_MAIN `, it can use all the usual bacground properties and fills to automatically resize the layout.
+如果“文本”区域中的文本很长（例如> 20k个字符），则其滚动和绘制速度可能会很慢。但是，通过在 lvgl.conf.h 中启用 `lvgl.LABEL_LONG_TXT_HINT 1` 可以极大地改善它。 它将保存一些有关标签的信息，以加快其绘制速度。使用 `lvgl.LABEL_LONG_TXT_HINT` ，滚动和绘图将与使用“普通”短文本一样快。
+If the text in the Text area is long (for example,> 20k characters), it may be slow to scroll and draw. However, by enabling `lvgl. conf.h. LABEL_LONG_TXT_HINT 1 `can greatly improve it. It will save some information about the label to speed up its drawing. Use `lvgl. LABEL_LONG_TXT_HINT `, scrolling and drawing will be as fast as using "normal" short text.
+如果调用 `lvgl.textarea_set_cursor_click_pos(textarea, true)` ，则光标将跳至单击“文本”区域的位置。
+If you call the `lvgl.textarea_ set_cursor_click_pos(textarea, true)`, the cursor jumps to where you clicked the Text area.
+如果对象的宽度小于其高度，则可以创建垂直条。
+If the width of the object is less than its height, you can create a vertical bar.
+如果列表垂直于屏幕之外，它将与边缘对齐。
+If the list is perpendicular to the outside of the screen, it will be aligned to the edge.
+如果列表到达最顶部/底部/左侧/右侧位置，则可以显示类似圆形的效果。启用此功能
+If the list reaches the most top/bottom/left/right position, a circular-like effect can be displayed. Enable this feature
+如果列表是在其他可滚动元素（例如 [页面(Page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) ）上创建的，并且列表无法进一步滚动，则滚动可以传播到父级。这样，滚动将在父级上继续。可以通过lvgl.list_set_scroll_propagation（list，true）启用它
+If the list is created on another scrollable element, such as a [Page](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html), and the list cannot be scrolled further, scrolling can be propagated to the parent. This way, scrolling will continue on the parent. It can be enabled via lvgl.list_set_scroll_propagation(list,true)
+如果列表是在其他可滚动元素（如其他页面）上创建的，并且页面无法进一步滚动，则滚动可以传播到父级以继续在父级上滚动。它可以启用
+If the list is created on other scrollable elements (such as other pages), and the page cannot be scrolled further, scrolling can be propagated to the parent to continue scrolling on the parent. It can enable
+如果启用了切换，则进入非切换状态
+If switching is enabled, enter non-switching state
+如果启用了切换，则进入非切换状态。
+If switching is enabled, the non-switching state is entered.
+如果启用了切换，则进入切换状态
+Enter the toggle state if toggle is enabled
+如果启用了切换，则进入切换状态。
+If switching is enabled, the switching state is entered.
+如果是线型图，则使用以下属性
+If it is a linetype graph, use the following properties
+如果通过 `lvgl.textarea_set_text_sel(textarea, true)` 启用，则可以选择一部分文本。就像用鼠标在PC上选择文本时一样。
+If enabled by the `lvgl.textarea_ set_text_sel(textarea, true)`, you can select a portion of the text. Just like when selecting text on a PC with the mouse.
+如果为0，则按钮将在按下时作出反应；如果为1，则将在释放时作出反应
+If it is 0, the button will react when pressed; if it is 1, it will react when released
+如果希望绘图从默认点（序列的点[0]）之外的其他点开始，则可以使用 `lvgl.chart_set_x_start_point(chart, ser, id)` 函数设置替代索引，其中id是要开始的新索引位置从。
+If you want the plot to start at a point other than the default point (point [0] of the sequence), you can use the `lvgl.chart_set_x_start_point(chart, ser, id)`function to set the alternate index, where id is the new index position to start from.
+如果下拉列表的方向为 `lvgl.DROPDOWN_DIR_LEFT` ，则该符号将显示在左侧，否则显示在右侧。
+If the direction of the drop-down list is `lvgl. DROPDOWN_DIR_LEFT `, the symbol will be displayed on the left, otherwise it will be displayed on the right.
+如果需要状态的更精确描述（例如，重点突出），则可以使用常规
+If you need a more precise description of the state (for example, focused), you can use the regular
+如果也不想突出显示所选选项，则可以将自定义透明样式用于
+If you also don't want to highlight the selected option, you can use a custom transparency style
+如果已通过 `lvgl.bar_set_type(bar, lvgl.BAR_TYPE_SYMMETRICAL)` 启用，则条形可以对称地绘制为零（从零开始，从左至右绘制
+If it has been enabled by`lvgl. bar_set_type(bar, lvgl.BAR_TYPE_SYMMETRICAL)`, the bar can be drawn symmetrically to zero (starting from zero, drawing from left to right
+如果在 lvgl.conf.h 中启用了 `lvgl.IMGBTN_TILED` ，则 `lvgl.imgbtn_set_src_tiled(imgbtn, lvgl.BTN_STATE_..., &img_src_left, &img_src_mid, &img_src_right)` 可用。使用平铺功能，将重复中间图像以填充对象的宽度。因此，对于 `lvgl.IMGBTN_TILED` ，可以使用 `lvgl.obj_set_width()` 设置图像按钮的宽度。但是，如果没有此选项，则宽度将始终与图像源的宽度相同。
+If `lvgl. IMGBTN_TILED `, then `lvgl.imgbtn_ set_src_tiled(imgbtn, lvgl.BTN_STATE_..., & img_src_left, & img_src_mid, & img_src_right)` is available. Using the tiling function, the intermediate image is repeated to fill the width of the object. Thus, for `lvgl. IMGBTN_TILED `, you can use `lvgl.obj_set_width()` to set the width of the image button. However, without this option, the width will always be the same as the width of the image source.
+如果在页面上创建了子项，它将自动移动到可滚动容器。如果可滚动容器变大，则可以通过拖动来滚动背景（如智能手机上的列表
+If a child is created on the page, it is automatically moved to the scrollable container. If the scrollable container becomes larger, you can scroll the background by dragging (such as the list on a smartphone
+如果字体中存在 `•` ( [Bullet,U+2022](http://www.fileformat.info/info/unicode/char/2022/index.htm) ) 字符，则一段时间后或输入新字符后，输入的字符将转换为该字符。如果 `•` 不存在，将使用
+If there is a `•` ( [Bullet,U 2022](http://www.fileformat.info/info/unicode/char/2022/index.htm)) character in the font, the entered character will be converted to that character after a period of time or after entering a new character. If `•` does not exist, will use
+如果Tileview是屏幕尺寸的，它将提供可能已经在智能手表上看到的用户界面。
+If the Tileview is screen-sized, it will provide the user interface you might already see on a smartwatch.
+色彩模式
+Color mode
+删除“向上”列表
+Delete the Up list
+删除按钮
+Delete Button
+删除字符
+Delete Characters
+删除字距调整信息以减小大小（不推荐
+Remove kerning information to reduce size (not recommend
+上/下/焦点移动的动画时间可以通过以下命令设置： `lvgl.list_set_anim_time(list, anim_time)` 。动画时间为零表示不是动画。
+The animation time of up/down/focus movement can be set by the following command: `lvgl.list_set_anim_time(list, anim_time)`. An animation time of zero indicates that it is not an animation.
+上述效果的示例代码
+Sample code for the above effect
+稍作等待
+Wait a little.
+设备要求
+Equipment Requirements
+设定单元格数值类型
+Set cell value type
+设定格式
+Set Format
+设定数值
+Set Value
+设定文字
+Set Text
+设定选项
+Set Options
+设定颜色
+Set Color
+设定值和针
+Set value and pin
+设置按钮矩阵的控制映射（类似于文本映射），请使用 `lvgl.btnmatrix_set_ctrl_map(btnm, ctrl_map)` 。 `ctrl_map` 的元素应类似于 `ctrl_map[0] = width | lvgl.BTNM_CTRL_NO_REPEAT | lvgl.BTNM_CTRL_TGL_ENABLE` 。元素的数量应等于按钮的数量（不包括换行符
+To set the control mapping of the button matrix (similar to text mapping), use `lvgl.btnmatrix_ set_ctrl_map(btnm, ctrl_map)`. The elements of the ctrl_map should be similar to ctrl_map[0] = width | lvgl.BTNM_CTRL_NO_REPEAT | lvgl.BTNM_CTRL_TGL_ENABLE `. The number of elements should be equal to the number of buttons (excluding line breaks.
+设置标签内容
+Set label content
+设置布局。默认值为 `lvgl.LAYOUT_CENTER` 。因此，如果添加标签，则标签将自动与中间对齐，并且无法通过 `lvgl.obj_set_pos()` 移动。您可以使用 `lvgl.btn_set_layout(btn, lvgl.LAYOUT_OFF)` 禁用布局。
+Set the layout. The default value is `lvgl. LAYOUT_CENTER `. Therefore, if you add a label, the label will be automatically aligned with the middle and cannot be moved by`lvgl. obj_set_pos(). You can disable the layout using the `lvgl.btn_set_layout(btn, lvgl.LAYOUT_OFF).
+设置瓷砖
+Set Tiles
+设置当前可见的图块使用
+Sets the currently visible block to use
+设置点
+Set Point
+设置光标的位置。 `point` 是指向 `lvgl.poin_t` 变量的指针。例如。`lvgl.point_t point = {10, 20};` 。该点相对于图表的序列区域。
+Sets the position of the cursor. `point` is a pointer to the `lvgl. point_t` variable. For example. `lvgl.point_t point = {10,20};`. The point is relative to the series area of the chart.
+设置或清除按钮的控件属性，分别使用 `lvgl.btnmatrix_set_btn_ctrl(btnm, btn_id, lvgl.BTNM_CTRL_...)` 和 `lvgl.btnmatrix_clear_btn_ctrl(btnm, btn_id, lvgl.BTNM_CTRL_...)` 。可以对更多 `lvgl.BTNM_CTRL _...` 值进行排序
+Set or clear the control properties of the button, using `lvgl.btnmatrix_ set_btn_ctrl(btnm, btn_id, lvgl.BTNM_CTRL_...)`and `lvgl.btnmatrix_ clear_btn_ctrl(btnm, btn_id, lvgl.BTNM_CTRL_...)`, respectively `. Can be more `lvgl. Sort BTNM_CTRL _...`values
+设置切换状态
+Set toggle status
+设置数字的格式。 `digit_count` 设置位数。前导零被添加以填充左侧的空间。 `spacer_position` 设置小数点前的位数。 0表示没有小数点。
+Sets the format of the number. digit_count sets the number of bits. Leading zeros are added to fill the space on the left. spacer_position sets the number of digits before the decimal point. 0 means no decimal point.
+设置外部数据源
+Set up an external data source
+设置文本
+Set Text
+设置增量减量。
+Set the increment decrement.
+设置Spinbox的范围。
+Sets the scope of the Spinbox.
+设置x轴上的刻度和文本。 `list_of_values` 是一个字符串，带有 `'\n'` 终止文本（期望最后一个），其中包含用于刻度的文本。 `list_of_values` 是一个字符串，带有 `'\n'` 终止文本（期望最后一个），其中包含用于刻度的文本。例如。 `const char * list_of_values = "first\nsec\nthird"` 。 `list_of_values` 可以为 `NULL` 。 如果设置了 `list_of_values` ，则 `num_tick_marks` 告诉两个标签之间的刻度数。如果 `list_of_values` 为 `NULL` ，则它指定滴答声的总数。
+Set the scale and text on the x-axis. `list_of_values` is a string with ``\n`` terminating text (expect the last one), which contains the text used for the scale. `list_of_values` is a string with ``\n`` terminating text (expect the last one), which contains the text used for the scale. For example. `const char * list_of_values = "first\nsec\nthird" `. The `list_of_values can be `NULL `. If list_of_values is set, num_tick_marks tells the number of ticks between the two labels. If `list_of_values is `NULL`, it specifies the total number of ticks.
+生产线只有一个主要部分，称为 `lvgl.LABEL_PART_MAIN` 。它使用所有线型属性。
+The line has only one main section, called `lvgl. LABEL_PART_MAIN `. It uses all linetype attributes.
+生成具有 3 倍垂直分辨率的位图，用于子像素平滑
+Generate bitmaps with 3x vertical resolution for sub-pixel smoothing
+生成具有 3 倍水平分辨率的位图，用于子像素平滑
+Generate bitmaps with 3x horizontal resolution for sub-pixel smoothing
+时钟频率
+Clock Frequency
+拾色器的主要部分称为 `lvgl.CPICKER_PART_BG` 。以圆形形式，它使用scale_width设置圆的宽度，并使用pad_inner在圆和内部预览圆之间填充。在矩形模式下，半径可以用于在矩形上应用半径。
+The main part of the color picker is called `lvgl. CPICKER_PART_BG `. In the form of a circle, it uses scale_width to set the width of the circle, and uses pad_inner to fill between the circle and the inner preview circle. In Rectangle mode, the radius can be used to apply a radius on a rectangle.
+使表格可滚动放置在 [页面(lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) 上
+Make table scrollable on [page (lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html)
+使滚子呈圆形。
+Make the roller round.
+使旋钮自动将所选颜色显示为背景色。
+Makes the knob automatically display the selected color as the background color.
+使用
+Use
+使用 [图像解码器](http://lvgl.100ask.net/7.11/documentation/03_overview/08_image.html#id9) 接口，也可以支持自定义图像格式。
+Custom image formats can also be supported using the [Image Decoder](http://lvgl.100ask.net/7.11/documentation/03_overview/08_image.html#id9) interface.
+使用 `lvgl.btn_set_state(btn, lvgl.BTN_STATE_...)` 可以手动更改按钮状态。
+Use the `lvgl.btn_set_state(btn, lvgl.BTN_STATE_...)`to change the button state manually.
+使用 `lvgl.chart_init_points(chart, ser, value)` 将所有点初始化为给定值。
+Use `lvgl.chart_init_points(chart, ser, value)`to initialize all points to a given value.
+使用 `lvgl.CHART_POINT_DEF` 作为值可使库跳过该点，列或线段的绘制。
+Use `lvgl. CHART_POINT_DEF `as a value causes the library to skip drawing the point, column, or line segment.
+使用 `lvgl.chart_set_point_id(chart, ser, value, id)` ，其中id是您要更新的点的索引。
+Use `lvgl.chart_set_point_id(chart, ser, value, id)`, where id is the index of the point you want to update.
+使用 `lvgl.chart_set_points(chart, ser, value_array)` 设置数组中的所有点。
+Use `lvgl.chart_set_points(chart, ser, value_array)`to set all points in the array.
+使用 `lvgl.cpicker_set_color_mode_fixed(cpicker, true)` 固定颜色（不要长按更改
+Use `lvgl.cpicker_ set_color_mode_fixed(cpicker, true)`to fix color (don`t long press to change
+使用 `lvgl.FIT_PARENT` 而不是父小， `lvgl.FIT_TIGHT` 时大。它将确保该容器至少是其父容器的大小。
+Use `lvgl. FIT_PARENT `instead of parent` small, `lvgl. FIT_TIGHT `when big. It will ensure that the container is at least the size of its parent container.
+使用 `lvgl.img_set_offset_x(img, x_ofs) `` 和 ``lvgl.img_set_offset_y(img, y_ofs)` ，可以向显示的图像添加一些偏移。如果对象尺寸小于图像源尺寸，则很有用。使用offset参数，可以通过对x或y偏移量进行 [动画](http://lvgl.100ask.net/7.11/documentation/03_overview/10_animation.html) 处理来创建 [纹理图集](https://en.wikipedia.org/wiki/Texture_atlas) 或“运行中的图像”效果。
+Using `lvgl.img_set_offset_x(img, x_ofs) `and `lvgl.img_set_offset_y(img, y_ofs)`, you can add some offset to the displayed image. This is useful if the object size is smaller than the image source size. With the offset parameter, you can create a Texture Atlas (https://en.wikipedia.org/wiki/Texture_atlas) or Image on the Run effect by animating (http://lvgl.100ask.net/7.11/documentation/03_overview/10_animation.html) the x or y offset.
+使用 `lvgl.img_set_zoom(img, factor)` 图像将被缩放。将 `factor` 设置为 `256` 或 `lvgl.IMG_ZOOM_NONE` 以禁用缩放。较大的值将放大图像（例如512倍），较小的值将缩小图像（例如 `128` 倍）。分数刻度也适用。例如： `281` 为10％放大。
+Using `lvgl.img_set_zoom(img, factor)`the image will be scaled. Set `factor` to `256` or `lvgl. IMG_ZOOM_NONE `to disable scaling. A larger value will enlarge the image (e. g., 512 times), and a smaller value will reduce the image (e. g., `128` times). Fractional scales also apply. For example: `281` is 10% amplification.
+使用 `lvgl.label_set_text_fmt(label, "Value: %d", 15)` ，可以使用printf格式设置文本。
+Use `lvgl.label_set_text_fmt(label, "Value: %d", 15)`to format the text with printf.
+使用 `lvgl.led_on(led)` 和 `lvgl.led_off(led)` 将亮度设置为预定义的ON或OFF值。 `lvgl.led_toggle(led)` 在ON和OFF状态之间切换。
+Use `lvgl.led_on(led)`and `lvgl.led_off(led)` to set the brightness to a predefined ON or OFF value. `lvgl.led_toggle(led)`toggles between ON and OFF states.
+使用 `lvgl.msgbox_start_auto_close(mbox, delay)` 可以在动画 `延迟(delay)` 了几毫秒后自动关闭消息框。 `lvgl.mbox_stop_auto_close(mbox)` 函数停止启动的自动关闭。
+Use the `lvgl.msgbox_ start_auto_close(mbox, delay)`to automatically close the message box after the animation `delay` for a few milliseconds. The `lvgl.mbox_stop_auto_close(mbox)`function stops the automatic shutdown of the start.
+使用 `lvgl.roller_get_selected(roller)` 获取当前选定的选项，它将返回选定选项的索引。
+Use `lvgl.roller_ get_selected(roller)`to get the currently selected option, which will return the index of the selected option.
+使用 `lvgl.spinner_set_type(preload, lvgl.SPINNER_TYPE_...)` 进行设置
+Set with `lvgl.spinner_ set_type(preload, lvgl.SPINNER_TYPE_...)`
+使用 `lvgl.tabview_set_tab_act(tabview, id, lvgl.ANIM_ON/OFF)` 函数
+Using the `lvgl.tabview_ set_tab_act(tabview, id, lvgl.ANIM_ON/OFF)`function
+使用 `lvgl.tileview_set_edge_flash(tileview, true)` 启用此功能。
+Use the `lvgl.tileview_ set_edge_flash(tileview, true)`to enable this feature.
+使用 `lvgl.tileview_set_tile_act` 选择一个新图块
+Select a new tile with `lvgl.tileview_ set_tile_act
+使用 `lvgl.tileview_set_valid_positions(tileview, valid_pos_array, array_len)` 可以设置有效位置。仅可以滚动到该位置。 `0,0` 索引表示左上方的图块。 例如。 `lvgl.point_t valid_pos_array[] = {{0,0}, {0,1}, {1,1}, {{lvgl.COORD_MIN, lvgl.COORD_MIN}}` 给出了 “L” 形的图块视图。它指示 `{1,1}` 中没有图块，因此用户无法在此处滚动。
+Valid locations can be set using the `lvgl.tileview_ set_valid_positions(tileview, valid_pos_array, array_len). You can only scroll to this position. The `0,0 `index represents the upper left tile. For example. The `lvgl.point_t valid_pos_array[] = {{0,0}, {0,1}, {1,1}, {{lvgl.COORD_MIN, lvgl.COORD_MIN}}`gives an "L"-shaped view of the tile. It indicates that there are no tiles in `{1,1}`, so users cannot scroll here.
+使用更强大的自动提示（会破坏字距调整
+Use a more powerful automatic prompt (will destroy the kerning.
+使用获取当前选择的选项 `lvgl.dropdown_get_selected(dropdown)` 。它将返回所选选项的索引。 `lvgl.dropdown_get_selected_str(dropdown, buf, buf_size)` 将所选选项的名称复制到
+Get the currently selected option using `lvgl.dropdown_ get_selected(dropdown)`. It will return the index of the selected option. `lvgl.dropdown_ get_selected_str(dropdown, buf, buf_size)`copies the name of the selected option
+使用键盘向左/向右移动光标。使用编码器递减/递增所选数字。
+Use the keyboard to move the cursor left/right. Use the encoder to decrement/increment the selected number.
+使用一个 alpha 掩码（一个字节数组）来描述像素的不透明度。
+Use an alpha mask (an array of bytes) to describe the opacity of a pixel.
+始终使用更快速的 kering 存储格式，但要付出一定的代价。如果出现尺寸差异，则会显示出来
+Always use the faster kering storage format, but at a cost. If there is a size difference, it will be displayed
+始终显示滚动条
+Always show scroll bar
+示例代码
+Sample code
+事件
+Event
+事件模型
+Event Model
+视图对象包含几个部分。主要是 `lvgl.TABVIEW_PART_BG` 。它是一个矩形容器，用于容纳Tab视图的其他部分。
+The view object contains several parts. Mostly `lvgl. TABVIEW_PART_BG `. It is a rectangular container that holds the rest of the tab view.
+是背景的虚拟部分，用于绘制滚动条。使用所有典型的背景样式属性，*size*来设置滚动条的宽度，以及*pad_right*和*pad_bottom*来设置间距。
+is the virtual part of the background that is used to draw the scroll bar. Use all the typical background style properties, * size * to set the width of the scroll bar, and * pad_right * and * pad_bottom * to set the spacing.
+是不是很简单？并且和c很像对吧？下面我们就说一下LuatOS版本的LVGL接口与C版本的区别
+Isn't it simple? And it's very similar to c, right? Let's talk about the difference between the LuatOS version of the LVGL interface and the C version.
+是矩形（或圆形）对象。它的亮度可以调节。亮度降低时，LED的颜色会变暗。
+is a rectangular (or circular) object. Its brightness can be adjusted. When the brightness decreases, the color of the LED becomes darker.
+是描述光标的虚拟部分。阅读文本区域文档以获取详细说明。
+is the virtual part that describes the cursor. Read the text area document for detailed instructions.
+是使用*线*和*比例*样式属性描述主要比例线（添加标签的位置）的虚拟零件。
+It is a virtual part that uses the * line * and * scale * style attributes to describe the main scale line (where the label is added).
+是虚拟部分，指的是按键矩阵上的按键。它还使用所有典型的背景属性。
+is the virtual part, which refers to the keys on the key matrix. It also uses all the typical background properties.
+是虚拟零件，它绘制在弧形指示器的末端。它使用所有背景属性和填充值。使用零填充时，旋钮的大小与指示器的宽度相同。较大的填充使其较大，较小的填充使其较小。
+is a virtual part, which is drawn at the end of the arc indicator. It uses all background properties and fill values. When using zero padding, the size of the knob is the same as the width of the indicator. A larger fill makes it larger, and a smaller fill makes it smaller.
+是虚拟零件，它使用线型属性绘制另一个弧。它的填充值是相对于背景弧线解释的。指示器圆弧的半径将根据最大填充值进行修改。
+is a virtual part that draws another arc using the linetype attributes. Its fill value is interpreted relative to the background arc. The radius of the indicator arc is modified according to the maximum fill value.
+是一个开源的图形库，它提供了创建嵌入式GUI所需的一切，具有易于使用的图形元素、漂亮的视觉效果和低内存占用。
+is an open source graphics library that provides everything you need to create an embedded GUI with easy-to-use graphical elements, beautiful visuals and a low memory footprint.
+是一个虚拟部件，还使用了所有典型的背景属性。默认情况下，指示器的最大尺寸与背景的尺寸相同，但是在其中设置正的填充值 `lvgl.BAR_PART_BG` 将使指示器变小。（负值会使它变大）如果在指标上使用了值样式属性，则将根据指标的当前大小来计算对齐方式。例如，中心对齐的值始终显示在指示器的中间，而不管其当前大小如何。
+is a dummy widget and also uses all the typical background properties. By default, the maximum size of the indicator is the same as the size of the background, but a positive fill value is set in `lvgl. BAR_PART_BG `will make the indicator smaller. (A negative value will make it larger) If the value style attribute is used on the indicator, the alignment will be calculated based on the current size of the indicator. For example, a center-aligned value is always displayed in the middle of the indicator, regardless of its current size.
+是一个虚拟部件，使用所有典型的背景属性来描述旋钮。与指示器类似，值文本也与旋钮的当前位置和大小对齐。默认情况下，旋钮是正方形（具有半径），其边长等于滑块的较小边。 可以使用填充值使旋钮变大。填充值也可以是不对称的。
+is a virtual widget that uses all the typical background properties to describe the knob. Similar to the indicator, the value text is aligned with the current position and size of the knob. By default, the knob is square (with a radius) with sides equal to the smaller side of the slider. You can use the fill value to make the knob larger. The padding values can also be asymmetric.
+是一个虚拟部件，它也使用所有典型的背景属性。默认情况下，指标的最大大小与背景的大小相同，但在 `lvgl.SLIDER_PART_BG` 中设置正填充值将使指标变小。 （负值会使它变大） 如果在指示器上使用了值样式属性，则将根据指示器的当前大小来计算对齐方式。例如，中心对齐值始终显示在指示器的中间，无论其当前大小如何。
+is a dummy widget that also uses all the typical background properties. By default, the maximum size of the indicator is the same as the size of the background, but in `lvgl. Setting a positive fill value in the SLIDER_PART_BG `will make the indicator smaller. (A negative value will make it larger) If the value style attribute is used on the indicator, the alignment will be calculated based on the current size of the indicator. For example, the center alignment value is always displayed in the middle of the indicator, regardless of its current size.
+手册
+Manual
+手动打开/关闭
+Manual opening/closing
+手动导航
+Manual Navigation
+手动滚动和聚焦
+Manual scrolling and focusing
+手动设置Spinbox的值。
+Set the value of the Spinbox manually.
+首先安装[nodejs](https://nodejs.org/en/download/)这里不做介绍，下载安装即可
+First install [nodejs](https://nodejs.org/en/download/) here do not introduce, download and install
+首先要有对象(obj)的概念，也叫组件(WIDGETS)，即按钮，标签，图像，列表，图表或文本区域等等，他们有统一的基本属性
+First of all, there must be the concept of object (obj), also called component (WIDGETS), that is, button, label, image, list, chart or text area, etc. They have unified basic properties
+输出格式
+Output Format
+输出路径（文件或目录，取决于格式
+Output path (file or directory, depending on the format
+输出字体大小（像素
+Output font size (pixels
+输入设备
+Input Devices
+数据系列
+Data Series
+数值
+Numerical
+数字调整框包含一个数字文本，可通过按键或API函数增加或减少数字。 数字调整框的下面是修改后的 [文本框
+The numeric adjustment box contains a numeric text that can be increased or decreased by keystrokes or API functions. Below the number adjustment box is the modified [text box
+数字调整框的主要部分称为 `lvgl.SPINBOX_PART_BG` ，它是使用所有典型背景样式属性的矩形背景。它还使用其文本样式属性描述标签的样式。
+The main part of the digital adjustment box is called `lvgl. SPINBOX_PART_BG `, which is a rectangular background using all typical background style properties. It also uses its text style attribute to describe the style of the label.
+数字调整框支持一下按键
+Digital adjustment box supports one button
+水平和垂直分隔线的数量可以通过 `lvgl.chart_set_div_line_count(chart, hdiv_num, vdiv_` 进行修改。默认设置为3条水平分割线和5条垂直分割线。
+The number of horizontal and vertical dividing lines can be modified by `lvgl.chart_set_div_line_count(chart, hdiv_num, vdiv. The default setting is 3 horizontal split lines and 5 vertical split lines.
+松开
+Loosen
+速览
+Quick View
+随着编码器得到的净数字。跳到最后一个之后的第一个。
+With the encoder get the net number. Jump to the first one after the last one.
+所选按钮处于 `lvgl.BTN_STATE_PR/TG_PR` 状态。
+The selected button is in `lvgl. BTN_STATE_PR/TG_PR `status.
+所有部分均支持典型的背景属性。标题使用标题部分的Text属性。
+All sections support typical background properties. The title uses the Text property of the title section.
+索引，仅存储Alpha值。
+index, which stores only alpha values.
+索引，图像具有调色板。
+index, the image has a palette.
+特点
+Features
+提取字符以显示数字
+Extract characters to display numbers
+添加按钮
+Add button
+添加标签
+Add Tags
+添加文字
+Add Text
+添加新选项卡后，将在 `lvgl.TABVIEW_PART_BG_SCRL` 上为其创建一个页面，并将新按钮添加到 `lvgl.TABVIEW_PART_TAB_BG` 按钮矩阵。创建的页面可以用作普通页面，它们具有通常的页面部分。
+After the new tab is added, the `lvgl. TABVIEW_PART_BG_SCRL `to create a page for it and add the new button to `lvgl. TABVIEW_PART_TAB_BG `button matrix. The created pages can be used as normal pages, they have the usual page parts.
+添加元素
+Add Element
+添加遮罩
+Add Mask
+条对象上有一个背景和一个指示器。指示器的宽度根据条的当前值进行设置。
+The bar object has a background and an indicator on it. The width of the indicator is set according to the current value of the bar.
+通常，可以通过拖动旋钮或单击滑块来调整滑块。在后一种情况下，旋钮移动到所单击的点，并且滑块值相应地变化。在某些情况下，希望将滑块设置为仅在拖动旋钮时做出反应。
+Usually, you can adjust the slider by dragging the knob or clicking the slider. In the latter case, the knob moves to the point you clicked, and the slider value changes accordingly. In some cases, you want to set the slider to react only when you drag the knob.
+通过保存一些额外的数据（~12个字节）来加快绘图速度，可以有效地处理很长的字符（> 40k 个字符）。要启用此功能，请在lvgl.conf.h中设置
+Very long characters (> 40k characters) can be handled efficiently by saving some extra data (~ 12 bytes) to speed up the drawing. To enable this feature, set
+通过调用 `lvgl.obj_set_adv_hittest(slider, true);` 启用此功能。
+Enable this feature by calling `lvgl.obj_set_adv_hittest(slider, true).
+通过滑动或单击选项卡按钮选择新选项卡时发送
+Sent when a new tab is selected by sliding or clicking the tab button
+通过类似[CSS样式的](https://docs.lvgl.io/master/overview/style.html)完全可自定义的图形元素
+Fully customizable graphic elements via [CSS-styled](https://docs.lvgl.io/master/overview/style.html)
+通过默认，y == 0点位于对象的顶部。在某些情况下可能是直觉的，因此可以使用 `lvgl.line_set_y_invert(line, true)` 反转y坐标。在这种情况下，y == 0将是对象的底部。默认情况下，禁用y反转。
+By default, the y = = 0 point is at the top of the object. In some cases it may be intuitive, so you can use `lvgl.line_set_y_invert(line, true)`to reverse the y coordinate. In this case, y = = 0 will be the bottom of the object. By default, y inversion is disabled.
+通过下面的方法选中一标签
+Select a tag by the following method
+同上，但定义为
+Ibid., but defined
+同时支持多国语言：希伯来语、阿拉伯语、波斯语字母及其所有形式，并且支持中文，但是实际上中文的支持是使用1000多个最常见的部首组成的，实际测试会发现很多汉字都没有
+At the same time, it supports multiple languages: Hebrew, Arabic, Persian letters and all their forms, and supports Chinese, but in fact, the support for Chinese is composed of more than 1000 most common radicals. The actual test will find that many Chinese characters are not
+同时支持外部字体，你可以将.bin格式字体放在flash中或sd中，在程序运行中加载字体，这种方式无需修改固件
+At the same time, it supports external fonts. You can put. bin format fonts in flash or sd and load fonts during program operation. This method does not need to modify firmware.
+同样， `lvgl.arc_set_angles(arc, start_angle, end_angle)` 函数或 `lvgl.arc_set_start/end_angle(arc, start_angle)` 函数设置指示器弧的角度。
+Similarly, the `lvgl.arc_set_angles(arc, start_angle, end_angle)`function or the `lvgl.arc_set_start/end_angle(arc, start_angle)` function sets the angle of the indicator arc.
+透明度
+Transparency
+突出显示当天
+Highlight the day
+突出显示点击的日子
+Highlight days clicked
+突出显示任何用户定义的日期
+Highlight any user-defined date
+突出显示一个单元格
+Highlight a cell
+图表
+Chart
+图表的主要部分称为 `lvgl.CHART_PART_BG` ，它使用所有典型的背景属性。文本样式属性确定轴文本的样式，而线属性确定刻度线的样式。填充值在侧面增加了一些空间，因此使序列区域更小。填充也可用于为轴文本和刻度线留出空间。
+The main part of the chart is called `lvgl. CHART_PART_BG `, which uses all the typical background properties. The text style property determines the style of the axis text, and the line property determines the style of the tick marks. The padding value adds some space on the side, thus making the sequence area smaller. Fill can also be used to make room for axis text and tick marks.
+图表还支持分隔线，2 y轴，刻度线和刻度线文本。
+The chart also supports dividers, 2 y-axis, tick marks and tick text.
+图表是可视化数据点的基本对象。它们支持折线图（将点与线连接和/或在其上绘制点）和柱形图。
+Charts are the basic objects for visualizing data points. They support line charts (connecting points with lines and/or drawing points on them) and column charts.
+图片
+Picture
+图片按钮
+Picture button
+图片来源
+Image source
+图片来自于数组
+Image from array
+图像按钮对象只有一个主要部分，称为 `lvgl.IMG_BTN_PART_MAIN` ，在其中使用了所有图像样式属性。可以使用image_recolor和image_recolor_opa属性在每种状态下为图像重新着色。例如，如果按下该按钮可使图像变暗。
+The image button object has only one main part, called `lvgl. IMG_BTN_PART_MAIN `, where all image style properties are used. You can use the image_recolor and image_recolor_opa attributes to recolor the image in each state. For example, if the button is pressed, the image may be dimmed.
+图像按钮与简单的“按钮”对象非常相似。唯一的区别是，它在每种状态下显示用户定义的图像，而不是绘制矩形。在阅读本节之前，请先阅读 [按钮](http://lvgl.100ask.net/7.11/documentation/04_widgets/04_btn.html) 一节以更好地理解本节内容。
+Image buttons are very similar to simple "button" objects. The only difference is that it displays a user-defined image in each state instead of drawing a rectangle. Before reading this section, read the [Buttons](http://lvgl.100ask.net/7.11/documentation/04_widgets/04_btn.html) section to better understand this section.
+图像和标签有时用于传达相同的内容。例如，描述按钮的作用。因此，图像和标签可以互换。为了处理这些图像，甚至可以使用 `lvgl.SYMBOL_DUMMY` 作为文本的前缀来显示文本。例如
+Images and labels are sometimes used to convey the same content. For example, describe the function of a button. Thus, the image and the label may be interchanged. To process these images, you can even use `lvgl. SYMBOL_DUMMY `as a prefix to the text to display the text. For example
+图像可以旋转
+Image can be rotated
+图像是从外部作为文件显示的基本对象。图像也可以显示符号
+An image is a basic object that is displayed as a file from the outside. Images can also display symbols
+图像也可以用作针。图像应指向右侧（如`==>`）。要设置图像，请使用. 和从左上角的旋转中心偏移。图像将重新着色为针的颜色，强度来自 中的样式
+The image can also be used as a needle. The image should point to the right (e. g. `==>`). To set the image, use. and offset from the rotation center of the upper left corner. The image will be recolored to the color of the needle, and the intensity comes from the style in
+图像只有一个称为 `lvgl.IMG_PART_MAIN` 的主要部分，该部分使用典型的背景样式属性绘制背景矩形和图像属性。填充值用于使背景实际变大。 （它不会更改图像的实际大小，但仅在绘图期间应用大小修改
+There is only one image called `lvgl. The main part of IMG_PART_MAIN `, which draws the background rectangle and image properties using the typical background style properties. The fill value is used to make the background actually larger. (It does not change the actual size of the image, but only applies the size modification during drawing
+拖动启用
+Drag Enable
+拖动页面时显示滚动条
+Show scroll bars when dragging a page
+外部存储的文件（例如SD卡上的文件
+Files stored externally (e. g. files on SD card
+外部字体
+External Font
+微调器
+Trimmer
+为按钮矩阵的所有按钮设置/清除相同的控件属性，使用 `lvgl.btnmatrix_set_btn_ctrl_all(btnm, btn_id, lvgl.BTNM_CTRL_...)` 和
+Set/clear the same control properties for all buttons of the button matrix, using the `lvgl.btnmatrix_ set_btn_ctrl_all(btnm, btn_id, lvgl.BTNM_CTRL_...)`and
+为何是
+Why is it
+为了简化按钮的使用，可以使用 `lvgl.btn_get_state(btn)` 来获取按钮的状态。它返回以下值之一
+To simplify the use of the button, the state of the button can be obtained using `lvgl.btn_get_state(btn). It returns one of the following values
+为了节省内存，还可以使用 `lvgl.dropdown_set_static_options(dropdown, options)` 从静态（常量）字符串设置选项。在这种情况下，当存在下拉列表且不能使用 `lvgl.dropdown_add_option` 时，options字符串应处于活动状态
+To save memory, you can also use `lvgl.dropdown_ set_static_options(dropdown, options)`to set options from static (constant) strings. In this case, when there is a drop-down list and the`lvgl. dropdown_ add_option cannot be used, the options string should be active
+为了提供最大的灵活性，图像的来源可以是
+To provide maximum flexibility, the source of the image can be
+位置
+Location
+文本
+Text
+文本的行可以使用 `lvgl.label_set_align(label, lvgl.LABEL_ALIGN_LEFT/RIGHT/CENTER)` 左右对齐。请注意，它将仅对齐线，而不对齐标签对象本身。
+Lines of text can be aligned left and right using `lvgl.label_set_align(label, lvgl.LABEL_ALIGN_LEFT/RIGHT/CENTER). Note that it will align only the lines, not the label object itself.
+文本将自动分成多行（具有 `lvgl.LABEL_LONG_MODE_BREAK` ），高度将自动设置为包含文本和按钮（ `lvgl.FIT_TIGHT` 垂直放置
+The text will be automatically divided into multiple lines (with `lvgl. LABEL_LONG_MODE_BREAK `), the height will be automatically set to contain text and buttons (`lvgl. FIT_TIGHT `Place vertically
+文本框
+Text Box
+文本框可处理以下按键
+The text box can handle the following keys
+文本框是一个带有标签和光标的 [页面(lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) 。可以在其中添加文本或字符。长行被换行，并且当文本变得足够长时，可以滚动文本区域。
+The text box is a [page (lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) with a label and cursor. You can add text or characters to it. Long lines are line-wrapping, and when the text becomes long enough, the text area can be scrolled.
+文本框与 [页面(lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) 具有相同的部分。期望 `lvgl.PAGE_PART_SCRL` ，因为它不能被引用并且始终是透明的。请参阅该页面的详细文档。
+The text box has the same portion as the [page (lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html). Expect `lvgl. PAGE_PART_SCRL `because it cannot be quoted and is always transparent. Please refer to the detailed documentation on that page.
+文本模式( `TEXT` )的布局包含更改模式的按钮。
+The layout of the text mode (`TEXT`) contains buttons to change the mode.
+文本区域支持可以通过 `lvgl.textarea_set_pwd_mode(textarea, true)` 启用的密码模式。
+The text area supports password modes that can be enabled with the `lvgl.textarea_ set_pwd_mode(textarea, true).
+文本由表保存，因此它甚至可以是局部变量。
+The text is held by the table, so it can even be a local variable.
+文件系统
+File System
+文字对齐
+Text Alignment
+文字重新着色
+Text Recolor
+我们可以通过`lvgl.obj_set_xxx`设置对象的xxx属性，通过`lvgl.obj_get_xxx`来获取xxx属性
+We can set the set_xxx attribute of the object through `lvgl.obj_xxx `and obtain the get_xxx attribute through `lvgl.obj_xxx`
+我们输入以下命令即可生成我们想要的.bin外部字库了
+We can generate the. bin external font library we want by entering the following command
+我们cmd运行`lv_font_conv`测试
+We cmd run the lv_font_conv test
+无需嵌入式硬件即可在 PC 上开发[模拟器
+Development on PC without embedded hardware [simulator
+系列类型
+Series Type
+下拉列表
+Drop-down list
+下拉列表的打开/关闭动画时间由 `lvgl.dropdown_set_anim_time(ddlist, anim_time)` 调整。动画时间为零表示没有动画。
+The opening/closing animation time of the drop-down list is adjusted by `lvgl.dropdown_ set_anim_time(ddlist, anim_time). An animation time of zero indicates no animation.
+下拉列表默认情况下处于关闭状态，并显示单个值或预定义的文本。激活后（通过单击下拉列表），将创建一个列表，用户可以从中选择一个选项。当用户选择新值时，该列表将被删除。
+The drop-down list is turned off by default and displays a single value or predefined text. When activated (by clicking the drop-down list), a list is created from which the user can select an option. When the user selects a new value, the list is deleted.
+下拉列表允许用户从列表中选择一个值。
+The drop-down list allows the user to select a value from the list.
+下面我们了解一下lv_font_conv命令
+Let's take a look at the lv_font_conv command.
+下面我们通过代码直观的理解,以刚才的HelloWorld为例，我们在上面添加`lvgl.obj_set_pos`来设置位置，`lvgl.obj_set_size`来设置大小，`lvgl.obj_set_size`来设置大小，`lvgl.obj_set_click`来设置是否可以点击
+Let`s understand the code intuitively. Taking the HelloWorld just now as an example, we add `lvgl.obj_set_pos` to set the position, `lvgl.obj_set_size` to set the size, `lvgl.obj_set_size` to set the size, `lvgl.obj_set_click` to set whether it can be clicked
+显示从1..28 / 29/30/31开始的日期数字（取决于当月）。根据本部分中定义的状态来绘制状态的不同“状态
+Display date numbers starting from 1 .. 28 / 29/30/31 (depending on the current month). draw different "states of a state according to the states defined in this section
+显示大写字母
+Show uppercase letters
+显示当前年和月名称的上部区域。它还具有用于移动下一个/上个月的按钮。它使用典型的背景属性以及填充来调整其大小和边距，以设置距日历顶部的距离和日历下方的日期。
+The upper region that displays the current year and month names. It also has buttons for moving next/last month. It uses typical background properties and padding to adjust its size and margins to set the distance from the top of the calendar and the date below the calendar.
+显示缓冲区: | \> 1 ×水平分辨率像素 | \> 1/10屏幕辨率像素
+Display buffer: | \> 1 x horizontal resolution pixel | \> 1/10 screen resolution pixel
+显示日期
+Show date
+显示日期名称
+Show Date Name
+显示设备
+Display device
+显示数字，+ /-号和小数点。
+Displays numbers, /-signs and decimal points.
+显示所选
+Show Selected
+显示特殊字符
+Show Special Characters
+显示小写字母
+Show lowercase letters
+线
+Line
+线表对象由一些绘制比例的径向线组成。设置线表的值将按比例更改刻度线的颜色。
+A line table object consists of radial lines drawn to scale. Setting the value of the line table changes the color of the tick marks proportionally.
+线表只有一个主要部分，称为 `lvgl.LINEMETER_PART_MAIN` 。它使用所有典型的背景属性绘制矩形或圆形背景，并使用line和scale属性绘制比例线。活动行（与较小的值相关，即当前值）的颜色从line_color到scale_grad_color。最后（当前值之后）的行设置为
+The line table has only one main part, called `lvgl. LINEMETER_PART_MAIN `. It draws a rectangular or circular background using all the typical background properties, and draws proportional lines using the line and scale properties. The color of the active row (associated with the smaller value, the current value) ranges from line_color to scale_grad_color. The last (after the current value) row is set
+线属性来描述线
+Line attributes to describe a line
+线条下方区域的整体不透明度
+Overall opacity of the area below the line
+相关
+Related
+相同x坐标的列之间的间隔
+Spacing between columns of the same x coordinate
+镶嵌
+Inlay
+想要使用按钮矩阵而不是容器和单个按钮对象的主要原因是
+The main reason for wanting to use a button matrix instead of a container and a single button object is
+向右移动光标。
+Move the cursor to the right.
+向左移动光标。
+Move the cursor to the left.
+项目符号是真正的 [基础对象(lvgl.obj)](http://lvgl.100ask.net/7.11/documentation/04_widgets/01_obj.html) ，可以用 `lvgl.CHECKBOX_PART_BULLET` 引用。项目符号会自动继承背景状态。因此，背景被按下时，项目符号也会进入按下状态。项目符号还使用所有典型的背景样式属性。
+Bullets are real [base object (lvgl.obj)](http://lvgl.100ask.net/7.11/documentation/04_widgets/01_obj.html) and can be used as `lvgl. CHECKBOX_PART_BULLET `quote. Bullets automatically inherit the background state. Therefore, when the background is pressed, the bullet will also enter the pressed state. Bullets also use all the typical background style properties.
+像往常一样，表格是从包含文本的行，列和单元格构建的。
+As usual, tables are built from rows, columns, and cells that contain text.
+消息框
+Message Box
+消息框充当弹出窗口。它们由背景容器，标签和按钮的 [按钮矩阵(lvgl.imgbtn)](http://lvgl.100ask.net/7.11/documentation/04_widgets/05_btnmatrix.html) 构建而成。
+The message box acts as a pop-up window. They are built from background containers, labels, and [button matrix (lvgl.imgbtn)](http://lvgl.100ask.net/7.11/documentation/04_widgets/05_btnmatrix.html) of buttons.
+消息框的主要部分称为 `lvgl.MSGBOX_PART_MAIN` ，它使用所有典型的背景样式属性。使用填充会增加侧面的空间。pad_inner将在文本和按钮之间添加空格。标签样式属性会影响文本样式。
+The main part of the message box is called `lvgl. MSGBOX_PART_MAIN `, which uses all the typical background style properties. Using a fill increases the space on the side. pad_inner will add a space between the text and the button. Label style properties affect the text style.
+消息框具有一个默认的事件回调，当单击按钮时，该事件回调将自行关闭。
+The message box has a default event callback that closes itself when the button is clicked.
+消息框可处理以下按键
+The message box can handle the following keys
+小部件和样式
+Widgets and Styles
+小部件有两种形式：圆形（圆盘）和矩形。
+Widgets are available in two forms: circular (disc) and rectangular.
+效果
+Effect
+写个
+Write a
+新的键盘布局
+New Keyboard Layout
+新价值
+New Value
+行(row)和列
+Rows and Columns
+形参
+formal parameter
+修改数据
+Modify data
+旋钮（虚拟部分
+Knob (virtual part
+旋钮颜色
+Knob color
+旋转
+Rotate
+旋转方向
+Rotation direction
+旋转方向可以通过 `lvgl.spinner_set_dir(preload, lvgl.SPINNER_DIR_FORWARD/BACKWARD)` 进行更改。
+The direction of rotation can be changed via the `lvgl.spinner_ set_dir(preload, lvgl.SPINNER_ DIR_FORWARD/BACKWARD).
+旋转弧（虚拟部分
+Rotating Arc (Dummy Section
+旋转弧线，在顶部放慢速度，但也伸展弧线
+Rotate the arc, slowing down at the top, but also stretching the arc
+旋转弧线，在顶部减速
+Rotate the arc, slow down at the top
+旋转角度
+Rotation angle
+旋转类型
+Rotation type
+旋转器
+Rotator
+旋转器包括一下部分
+The spinner includes the following part
+旋转器对象是边界上的旋转弧，实现旋转加载效果。
+The rotator object is a rotating arc on the boundary, which implements the rotating loading effect.
+旋转速度
+Rotation speed
+旋转速度可以通过 `lvgl.spinner_set_spin_time(preload, time_ms)` 进行调整。
+The rotation speed can be adjusted by the `lvgl.spinner_ set_spin_time(preload, time_ms).
+选定新选项时发送
+Sent when a new option is selected
+选项对齐
+Option Alignment
+选项卡按钮是一个 [按钮矩阵(lvgl.btnmatrix)](http://lvgl.100ask.net/7.11/documentation/04_widgets/05_btnmatrix.html) 。单击按钮将 `lvgl.TABVIEW_PART_BG_SCRL` 滚动到相关选项卡的内容。可以通过 `lvgl.TABVIEW_PART_TAB_BTN` 访问选项卡按钮。选择选项卡时，按钮处于选中状态，可以使用 `lvgl.STATE_CHECKED` 设置样式。选项卡的按钮矩阵的高度是根据字体高度加上背景和按钮样式的填充来计算的。
+The tab button is a [Button Matrix (lvgl.btnmatrix)](http://lvgl.100ask.net/7.11/documentation/04_widgets/05_btnmatrix.html). Click the button to `lvgl. TABVIEW_PART_BG_SCRL `Scroll to the contents of the relevant tab. You can pass `lvgl. TABVIEW_PART_TAB_BTN the `Access Tabs` button. When you select a tab, the button is selected and you can use `lvgl. STATE_CHECKED `sets the style. The height of the tab`s button matrix is calculated from the font height plus the background and button-style padding.
+选项作为带有 `lvgl.dropdown_set_options(dropdown, options)` 的字符串传递到下拉列表。选项应用 `\n` 分隔。例如： `"First\nSecond\nThird"` 。该字符串将保存在下拉列表中，因此也可以保存在本地变量中。
+Options are passed to the drop-down list as a string with `lvgl.dropdown_ set_options(dropdown, options). Option applies `\n` separation. For example: `"First\nSecond\nThird"`. The string will be saved in the drop-down list, so it can also be saved in a local variable.
+选择上一个按钮
+Select previous button
+选择上一个选项
+Select previous option
+选择上一个选项。
+Select the previous option.
+选择文字
+Select Text
+选择下一个按钮
+Select Next Button
+选择下一个选项
+Select Next Option
+选择下一个选项。
+Select the next option.
+选择新选项时发送。
+Sent when a new option is selected.
+选择一个标签
+Select a tag
+选中/取消选中
+Check/Uncheck
+选中标签
+Select Label
+寻求帮助
+Ask for help
+循环添加新数据（如ECG图
+Cycle to add new data (such as ECG chart
+颜色选择器
+Color Chooser
+样式
+Style
+样式*用于设置对象的外观。
+Styles * are used to set the appearance of an object.
+要从当前光标位置的左侧删除字符，请使用
+To remove a character from the left of the current cursor position, use
+要从右边删除，请使用
+To delete from the right, use
+要对齐按钮上的文本，请使用 `lvgl.btnmatrix_set_align(roller, lvgl.LABEL_ALIGN_LEFT/CENTER/RIGHT)` 。按钮矩阵中的所有文本项都将符合设置后的对齐属性。
+To align text on a button, use `lvgl.btnmatrix_ set_align(roller, lvgl.LABEL_ALIGN_LEFT/CENTER/RIGHT)`. All text items in the button matrix will conform to the set alignment property.
+要复制的字符列表（而不是 中的数字格式
+The list of characters to copy (not the number format in
+要禁用复选框，调用
+To disable the check box, call
+要清除列表（删除所有按钮），请使用
+To clear the list (delete all buttons), use
+要删除列表元素，请使用 `lvgl.list_remove(list, btn_index)` 。可以通过 `lvgl.list_get_btn_index(list, btn)` 获得btn_index，其中btn是 `lvgl.list_add_btn()` 的返回值。
+To remove a list element, use `lvgl.list_remove(list, btn_index)`. The btn_index can be obtained by `lvgl.list_get_btn_index(list, btn)`, where btn is the return value of `lvgl.list_add_btn().
+要设置背景角度，请使用 `lvgl.arc_set_bg_angles(arc, start_angle, end_angle)` 函数或 `lvgl.arc_set_bg_start/end_angle(arc, start_angle)` 。零度位于对象的右中间(3点钟)，并且度沿顺时针方向增加。角度应在[0; 360]范围内。
+To set the background angle, use the `lvgl.arc_set_bg_angles(arc, start_angle, end_angle)`function or `lvgl.arc_set_bg_start/end_angle(arc, start_angle)`. Zero degrees is located in the right middle of the object (3 o`clock), and the degrees increase in a clockwise direction. The angle shall be within [0; 360].
+要设置初始值，请使用 `lvgl.slider_set_value(slider, new_value, lvgl.ANIM_ON/OFF)` 。 `lvgl.slider_set_anim_time(slider, anim_time)` 设置动画时间（以毫秒为单位
+To set the initial value, use the `lvgl.slider_ set_value(slider, new_value, lvgl.ANIM_ON/OFF)`. `lvgl.slider_ set_anim_time(slider, anim_time)`Set the animation time (in milliseconds
+要设置当前日期（今天），请使用 `lvgl.calendar_set_today_date(calendar, today_date)` 函数。
+To set the current date (today), use the `lvgl.calendar_ set_today_date(calendar, today_date)`function.
+要设置静态文本，请使用 `lvgl.checkbox_set_static_text(cb, txt)` 。这样，将仅存储 `txt` 指针，并且在存在复选框时不应释放该指针。
+To set static text, use `lvgl.checkbox_ set_static_text(cb, txt)`. In this way, only the `txt` pointer will be stored, and the pointer should not be released when the check box is present.
+要设置临界值，请使用。在此值之后，比例颜色将更改为*scale_end_color*。默认临界值为
+To set the threshold, use. After this value, the scale color changes to * scale_end_color *. The default threshold is
+要设置内容的布局，请使用 `lvgl.win_set_layout(win, lvgl.LAYOUT_...)` 。有关详细信息，请参见 [容器
+To set the layout of the content, use `lvgl.win_set_layout(win, lvgl.LAYOUT_...)`. For more information, see the [container
+要设置文本，请使用 `lvgl.msgbox_set_text(msgbox, "My text")` 函数。不仅将保存文本指针，而且文本也可以位于局部变量中。
+To set the text, use the `lvgl.msgbox_ set_text(msgbox, "My text")`function. Not only will the text pointer be saved, but the text can also be in a local variable.
+要设置显示日期，请使用
+To set the display date, use
+要设置行数和列数，请使用 `lvgl.table_set_row_cnt(table, row_cnt)` 和
+To set the number of rows and columns, use `lvgl.table_set_row_cnt(table, row_cnt)`and
+要使窗口在其上显示对象，请使用
+To have a window display an object on it, use
+要使用 **外部文件** ，还需要使用在线转换器工具转换图像文件，但是现在应该选择二进制输出格式。还需要使用LVGL的文件系统模块，并为基本文件操作注册具有某些功能的驱动程序。进入文件系统以了解更多信息。要设置来自文件的图像，请使用
+To use **external files**, you also need to use the online converter tool to convert the image files, but now you should choose the binary output format. You also need to use the file system module of LVGL, and register drivers with certain functions for basic file operations. Go to the file system to learn more. To set an image from a file, use
+要手动打开或关闭下拉列表，可以使用 `lvgl.dropdown_open/close(dropdown, lvgl.ANIM_ON/OFF)` 功能。
+To manually open or close the drop-down list, you can use the `lvgl.dropdown_open/close(dropdown, lvgl.ANIM_ON/OFF)`function.
+要手动设置模式，请使用 `lvgl.keyboard_set_mode(kb, mode)` 。默认更多是
+To set the mode manually, use `lvgl.keyboard_ set_mode(kb, mode)`. The default is more
+要手动选择按钮，请使用 `lvgl.list_set_btn_selected(list, btn)` 。当列表散焦并再次聚焦时，它将恢复最后选择的按钮。
+To manually select a button, use `lvgl.list_set_btn_selected(list, btn)`. When the list is defocused and focused again, it will restore the last selected button.
+要水平对齐标签，请使用 `lvgl.roller_set_align(roller, lvgl.LABEL_ALIGN_LEFT/CENTER/RIGHT)` 水平对齐标签。
+To align labels horizontally, use `lvgl.roller_ set_align(roller, lvgl.LABEL_ALIGN_LEFT/CENTER/RIGHT)`to align labels horizontally.
+要添加按钮，请使用 `lvgl.msgbox_add_btns(msgbox, btn_str)` 函数。需要指定按钮的文本，例如 `const char * btn_str[] = {"Apply", "Close", ""}` 。有关更多信息，请访问Button矩阵文档。
+To add a button, use the `lvgl.msgbox_ add_btns(msgbox, btn_str)`function. The text of the button needs to be specified, for example `const char * btn_str[] = {"Apply", "Close", ""}`. For more information, visit the Button Matrix documentation.
+要添加宽字符，例如 `'á'` , `'ß'` 或 CJK 字符(中日韩统一表意文字)，请使用
+To add wide characters, such as ''á '', ''ß'', or CJK characters (Chinese-Japanese-Korean unified ideograph), use
+要添加宽字符，例如 ``á`` , ``ß`` 或 CJK 字符(中日韩统一表意文字)，请使用
+To add wide characters, such as ``á ``, ``ß``, or CJK characters (Chinese-Japanese-Korean unified ideograph), use
+要添加元素，只需在Tileview上创建一个对象并将其手动定位到所需位置即可。
+To add an element, simply create an object on the Tileview and manually position it to the desired location.
+要为所有方向设置自动适合模式，请使用。要在水平和垂直方向上使用不同的自动拟合，请使用。要在所有四个方向上使用不同的自动拟合，请使用
+To set the auto-fit mode for all directions, use. To use different autofits in the horizontal and vertical directions, use. To use different autofits in all four directions, use
+要旋转图像，请使用 `lvgl.img_set_angle(img, angle)` 。角度精度为0.1度，因此对于45.8°设置
+To rotate the image, use `lvgl.img_set_angle(img, angle)`. The angular accuracy is 0.1 degrees, so for the 45.8 ° setting
+要在按钮之间导航并选择一个。
+To navigate between the buttons and select one.
+要在日历中设置和获取日期，使用 `lvgl.calendar_date_t` 类型，该类型是具有 `年` ， `月` 和 `日` 字段的结构。
+To set and get dates in the calendar, use the `lvgl.calendar_ date_t `type, which is a structure with `YE`, `Month` and `Day` fields.
+要在运行时更改选项卡ID的名称（底层按钮矩阵的显示文本），可以使用函数
+To change the name of the tab ID (the display text of the underlying button matrix) at runtime, you can use the function
+要直接滚动窗口，可以使用 `lvgl.win_scroll_hor(win, dist_px)` 或
+To scroll the window directly, you can use `lvgl.win_scroll_hor(win, dist_px)`or
+要指定范围（最小，最大值），可以使用
+To specify a range (minimum, maximum), you can use
+也可以使用 `lvgl.bar_set_start_value(bar, new_value, lvgl.ANIM_ON/OFF)` 设置进度条的起始值
+You can also use `lvgl.bar_set_start_value(bar, new_value, lvgl.ANIM_ON/OFF)`to set the starting value of the progress bar
+也可以使用原始数组作为标签文本。数组不必以 `\0` 终止。在这种情况下，文本将与 `lvgl.label_set_text` 一样保存到动态存储器中。要设置原始字符数组，请使用 `lvgl.label_set_array_text(label, char_array, size)` 函数。
+You can also use the original array as the label text. Arrays do not have to be terminated with `\0. In this case, the text will be saved to dynamic memory like `lvgl. set_text_label. To set the original character array, use the `lvgl.label_set_array_text(label, char_array, size)`function.
+也是背景的虚拟部分，当列表无法在那个方向进一步滚动时，在侧面绘制一个半圆。使用所有典型的背景属性。
+Also the virtual part of the background, when the list cannot be scrolled further in that direction, draw a semicircle on the side. Use all the typical background properties.
+也是虚拟零件，它通过*线型*属性描述针。的*大小*和典型的背景属性用于描述在所述针（多个）的枢转点的矩形（或圆形）。 *pad_inner*用于使针小于刻度线的外半径。
+It is also a virtual part, which describes the needle through the * line type * attribute. The * size * and typical background attributes are used to describe the rectangle (or circle) at the pivot point of the needle (s). * pad_inner * Used to make the needle smaller than the outer radius of the scale line.
+页眉下方内容的页面可滚动部分。
+The scrollable portion of the page for content below the header.
+页面
+Page
+页面的可滚动部分被隐藏，其样式始终为空（透明，无填充
+The scrollable part of the page is hidden, and its style is always empty (transparent, no padding
+页面的主要部分被称为页面的`lvgl.PAGE_PART_BG`背景。它使用所有典型的背景样式属性。使用填充会在两侧增加空间。
+The main part of the page is called the `lvgl of the page. PAGE_PART_BG `background. It uses all the typical background style attributes. Using a fill increases the space on both sides.
+页面上创建的所有对象都可以使用`lvgl.page_clean(page)`. 请注意，`lvgl.obj_clean(page)`这在这里不起作用，因为它也会删除可滚动对象。
+All objects created on the page can use `lvgl.page_clean(page)`. Please note that `lvgl.obj_clean(page)` does not work here because it will also delete scrollable objects.
+页面上的对象可以用 聚焦。它将移动可滚动容器以显示子项。动画的时间可以以毫秒为单位设置。 不必是页面的直接子级。如果可滚动对象也是该对象的祖父对象，则此方法有效
+Objects on the page can be focused. It moves the scrollable container to display the children. The time of the animation can be set in milliseconds. It does not have to be a direct child of the page. This method is valid if the scrollable object is also the grandparent of that object
+页面状对象（如 `列表(lvgl.list)` ）的滚动传播功能在这里可以很好地使用。例如，可以有一个完整的 `列表(lvgl.list)` ，当列表到达最顶部或最底部时，用户将改为滚动图块视图。
+The scroll propagation function of page-like objects such as `lvgl. list` can be used well here. For example, you can have a complete `list (lvgl.list)`, and when the list reaches the top or bottom, the user will scroll the tile view instead.
+页签对象可用于组织选项卡中的内容。
+Tab objects can be used to organize the content in tabs.
+一次检查
+One check
+一个**背景
+A **background
+一个孩子可以“粘”到页面上。在这种情况下，如果可以通过拖动该对象来滚动页面。它可以通过
+A child can be "glued" to the page. In this case, if you can scroll the page by dragging the object. It can pass
+一个alpha字节被添加到每个像素。
+An alpha byte is added to each pixel.
+仪表
+Instrument
+仪表(弧形刻度
+Gauge (arc scale
+仪表的范围可以由 指定。默认范围是
+The range of the gauge can be specified. The default scope is
+仪表的主要部分称为`lvgl.GAUGE_PART_MAIN`。它使用典型的背景样式属性绘制背景，并使用*线条*和*比例*样式属性绘制“小”比例线。它还使用*文本*属性来设置比例标签的样式。*pad_inner*用于设置刻度线和刻度标签之间的空间。
+The main part of the meter is called `lvgl. GAUGE_PART_MAIN `. It draws the background using the typical background style attributes and draws "small" scale lines using the * Line * and * Scale * style attributes. It also uses the * text * attribute to style the scale label. * pad_inner * Used to set the space between the tick mark and the tick label.
+仪表可以显示不止一根针。使用该函数设置针数和每个针的颜色数组。数组必须是静态或全局变量，因为只存储其指针
+The meter can display more than one needle. Use this function to set the number of needles and an array of colors for each needle. Arrays must be static or global variables because only their pointers are stored
+仪表是带有刻度标签和一个或多个指针的仪表。
+A gauge is a gauge with a scale label and one or more pointers.
+移动光标
+Move cursor
+以[LittlevGL](https://github.com/lvgl/lvgl)格式转储字体
+Dump fonts in [LittlevGL](https://github.com/lvgl/lvgl) format
+以二进制形式转储字体（如[规范中所述
+Dump fonts in binary form (as described in [specification
+以恒定速度旋转
+Rotate at a constant speed
+以下*Keys*由 Page 处理
+The following * Keys * are handled by Page
+以下按键类型由按钮处理
+The following key types are handled by the button
+以下按键由按钮处理
+The following keys are handled by the button
+因此，需要更改长模式，首先设置新的长模式，然后使用 `lvgl.obj_set_width/height/size()` 设置大小。
+Therefore, you need to change the long mode, first set the new long mode, and then use `lvgl. obj_l/height/size()`to set_width the size.
+阴影
+Shadow
+引用游标。可以添加任意数量的光标，并且可以通过与行相关的样式属性来设置其外观。创建游标时设置游标的颜色，并用该值覆盖 `line_color` 样式。
+Reference cursors. You can add any number of cursors, and you can set its appearance through the style properties associated with the row. Sets the color of the cursor when it is created and overrides the line_color style with that value.
+隐藏光标
+Hide Cursor
+应该 `lvgl.GRAD_DIR_VER` 允许通过bg_main_stop和bg_grad_stop进行Alpha淡入
+Should `lvgl. GRAD_DIR_VER `Allows Alpha Fade Through bg_main_stop and bg_grad_stop
+应该用来使Tileview滚动（拖动）其元素一个。例如，如果图块上有一个按钮，则需要将该按钮显式添加到Tileview中，以使用户也可以使用该按钮滚动
+should be used to make the Tileview scroll (drag) one of its elements. For example, if there is a button on the tile, you need to explicitly add the button to the Tileview so that the user can also use the button to scroll
+应用
+Application
+应用选定的选项（发送lvgl.EVENT_VALUE_CHANGED事件
+Apply selected option (send lvgl.EVENT_VALUE_CHANGED event
+应用选定的选项（发送lvgl.EVENT_VALUE_CHANGED事件并关闭下拉列表
+Apply the selected option (send lvgl.EVENT_VALUE_CHANGED event and close the drop-down list
+硬件独立，可与任何微控制器和显示器一起使用
+Hardware independent, can be used with any microcontroller and display
+用 `lvgl.linemeter_set_value(linemeter, new_value)` 设置新值时，比例的比例部分将重新着色。
+When you set a new value with `lvgl.linemeter_ set_value(linemeter, new_value)`, the scale part of the scale will be recolored.
+用 C 书写，与C++兼容
+Written in C, compatible with C
+用法
+Usage
+由父“文本”区域发送，但不应使用。
+Sent by the parent Text area, but should not be used.
+由于选项卡的内容对象是一个Page，因此它可以从其他类似Page的对象接收滚动传播。 例如，如果在选项卡的内容上创建了一个文本区域，并且滚动了该文本区域，但到达末尾，则滚动可以传播到内容页面。可以使用 [``](http://lvgl.100ask.net/7.11/documentation/04_widgets/31_tabview.html#id10)lvgl.page/textarea_set_scroll_propagation(obj, true)``启用它。
+Because the content object of a tab is a Page, it can receive scroll propagation from other Page-like objects. For example, if a text area is created on the content of a tab, and the text area is scrolled, but the end is reached, the scroll can propagate to the content page. It can be enabled using [``](http://lvgl.100ask.net/7.11/documentation/04_widgets/31_tabview.html#id10)lvgl.page/textarea_set_scroll_propagation(obj, true).
+有关详细信息，请参见 [页面(Page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) 部分。
+See the [Page](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) section for more information.
+有关掩码*init*函数的详细信息，请参阅下面的[API](https://docs.lvgl.io/latest/en/html/widgets/objmask.html#api)文档。
+For more information about the mask * init * function, see the [API](https://docs.lvgl.io/latest/en/html/widgets/objmask.html#api) documentation below.
+有几个选项可以设置系列数据
+There are several options to set the series data
+有四个功能可获取有关图表的信息
+There are four functions to get information about the chart
+有效区域
+effective area
+有直接设置/获取可滚动属性的函数
+There are functions that directly set/get scrollable properties
+与 ··lvgl.LAYOUT_PRETTY_BOTTOM·· 相同， ··但是如果这是连续高度不同的子项，请对齐其底线。
+with · · lvgl. The LAYOUT_PRETTY_BOTTOM is the same, but if this is a series of children with different heights, please align its bottom line.
+与 [页面(lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) 具有相同的部分。期望 `lvgl.PAGE_PART_SCRL` ，因为它不能被引用并且始终是透明的。请参阅该页面的详细文档。
+has the same portion as [page (lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html). Expect `lvgl. PAGE_PART_SCRL `because it cannot be quoted and is always transparent. Please refer to the detailed documentation on that page.
+与 `day_names` 相似，可以使用 `lvgl.calendar_set_month_names(calendar, month_names_array)` 设置月份名称。
+Similar to `day_names, `you can use `lvgl.calendar_ set_month_names(calendar, month_names_array)` to set the month name.
+与 `lvgl.LAYOUT_PRETTY_MID` 相同，但是如果此处的孩子连续排成不同的高度，则对齐他们的中线。
+with `lvgl. The LAYOUT_PRETTY_MID is the same, but if the children here are lined up at different heights in a row, align their midline.
+与容器类似，按钮也具有布局和适合属性。
+Like containers, buttons have layout and fit properties.
+圆弧
+Arc
+圆弧的长度可以通过 `lvgl.spinner_set_arc_length(spinner, deg)` 进行调整。
+The length of the arc can be adjusted by `lvgl.spinner_ set_arc_length(spinner, deg).
+圆弧是否具有可以拖动的旋钮
+Whether the arc has a knob that can be dragged
+圆弧型
+arc type
+月份名称
+Month Name
+越线
+Cross the line
+允许根据子代，父代和适合类型自动设置按钮的宽度和/或高度。
+Allows to automatically set the width and/or height of the button according to the child, parent and suitable type.
+允许为左（起始）值使用附加旋钮。 （可与 `lvgl.slider_set/get_left_value()` 一起使用
+Allows additional knobs for left (start) values. (Can be used with `lvgl.slider_set/get_left_value()`
+运行效果
+Operation effect
+在 [页面(lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) 对象中了解更多信息。
+Learn more in the [Page (lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) object.
+在按钮矩阵部分上单击它
+Click it on the button matrix section
+在按钮之间导航以选择一个
+Navigate between buttons to select a
+在按下/释放按钮时或在长按之后重复时发送。事件数据设置为按下/释放按钮的
+Sent when the button is pressed/released or repeated after a long press. The event data is set to the button press/release
+在按下/拖动弧以设置新值时发送。
+Sent when an arc is pressed/dragged to set a new value.
+在背景上创建了2个重要的实际部分
+2 important practical parts created on the background
+在标题下方显示日期名称。它使用文本样式属性填充来与背景（左，右），标题（上）和日期（下）保持一定距离。
+Displays the date name below the title. It uses text style attribute padding to keep a certain distance from the background (left and right), title (top) and date (bottom).
+在插入字符或文本之前发送。事件数据是计划插入的文本。lvgl.ta_set_insert_replace（ta，“新文本”）替换要插入的文本。新文本不能位于局部变量中，该局部变量会在事件回调存在时被销毁。 “”表示请勿插入任何内容。
+Send before inserting characters or text. The event data is the text that is scheduled to be inserted. lvgl.ta_set_insert_replace(ta, "new text") replaces the text to be inserted. The new text cannot be in a local variable, which is destroyed when the event callback exists. "" means do not insert anything.
+在单行模式下，仅当文本保持对齐时才能水平滚动文本。
+In single-line mode, text can be scrolled horizontally only when the text remains aligned.
+在地图中使用以**换行**。例如。每行按钮的宽度都会自动计算。例如:`{"btn1", "btn2", "\n", "btn3", ""}`，每行按钮的宽度自动计算。
+Use to wrap lines in the map * *. For example. The width of each row of buttons is calculated automatically. For example: `{"btn1", "btn2", "\n", "btn3", ""}`, the width of each row of buttons is automatically calculated.
+在底部对齐的行中对齐子级。请 `pad_left` 在左边，空间 `pad_bottom` 空间的底部和 `pad_inner` 孩子之间的空间。
+Aligns children in bottom-aligned rows. Please `pad_left` on the left, space `pad_bottom` space at the bottom and `pad_inner` space between children.
+在顶部对齐的行中对齐子级。请pad_left在左边，空间pad_top空间的顶部和pad_inner`` 孩子之间的空间。
+Aligns children in top-aligned rows. Please pad_left the space on the left, the space pad_top the top of the space and the pad_inner between the children.
+在符号之间最左边的数字之间添加 `cnt` “空格”字符。
+Add the `cnt` "space" character between the leftmost digits between the symbols.
+在居中的行中对齐子级。 `pad_left` 在左边和 `pad_inner` 孩子之间保持空间。
+Aligns the children in the centered row. The pad_left keeps space between the child on the left and the child on the pad_inner.
+在开关更改状态时发送。
+Sent when the switch changes state.
+在两点之间画线。
+Draw a line between two points.
+在密码模式下 `lvgl.textarea_get_text(textarea)` 给出真实文本，而不是项目符号字符。
+In password mode `lvgl.textarea_ get_text(textarea)`gives real text, not bullet characters.
+在面向对象的思想中，可以做到继承，这样可以减少代码重复。
+In object-oriented thinking, inheritance can be done, which can reduce code duplication.
+在使用键拖动或更改滑块时发送。拖动滑块时（仅当释放时）连续发送事件。使用lvgl.slider_is_dragged确定滑块是被拖动还是刚刚释放。
+Sent when the slider is dragged or changed using the key. The event is sent continuously when the slider is dragged (only when released). Use the lvgl.slider_ is_dragged to determine if the slider is being dragged or just released.
+在使用LVGL中如遇到问题可在[Issues](https://gitee.com/openLuat/LuatOS/issues)，[合宙社区](https://doc.openluat.com/home)以及[LVGL官方论坛](https://forum.lvgl.io/)上进行提问，也可进行bug反馈或向我们提建议，我们会及时做出回复。
+If you encounter problems in using LVGL, you can ask questions on [Issues](https://gitee.com/openLuat/LuatOS/issues),[Community](https://doc.openluat.com/home) and [LVGL Official Forum](https://forum.lvgl.io/). You can also give bug feedback or make suggestions to us, and we will reply in time.
+在数组中手动设置值，例如 `ser1->points[3] = 7` ，然后使用 `lvgl.chart_refresh(chart)` 刷新图表。
+Manually set the value in the array, for example `ser1->points[3] = 7 `, and then use `lvgl.chart_refresh(chart)` to refresh the chart.
+在文本中，可以使用命令来重新着色部分文本。例如： `"Write a #ff0000 red# word"` 。可以通过 `lvgl.label_set_recolor()` 函数分别为每个标签启用此功能。
+In text, you can use the command to recolor portions of text. For example: `"Write a #ff0000 red# word"`. This feature can be enabled separately for each set_recolor via the `lvgl.label_label ()`function.
+在线和 PDF 中[的文件](http://docs.lvgl.io/)和 API 参考
+Online and PDF [of the file](http://docs.lvgl.io/) and API reference
+在向*对象遮罩*添加遮罩之前，应初始化遮罩
+The mask should be initialized before adding a mask to the * object mask *
+在以下情况下应用动画
+Apply animation when
+在右对齐的列中对齐子代。保持 `padd_right` 右边的 `pad_top` 空间，顶部的 [``](http://lvgl.100ask.net/7.11/documentation/04_widgets/10_cont.html#id5)pad_inner空间和孩子之间的空间。
+Aligns children in right-aligned columns. Keep the pad_top space on the right of the padd_right, and the space between the pad_inner space and the child at the top [``](http://lvgl.100ask.net/7.11/documentation/04_widgets/10_cont.html#id5).
+在与输入设备相关的事件中， `lvgl.calendar_get_pressed_date(calendar)` 指示当前正在按下的日期，如果没有按下任何日期，则返回
+In the event related to the input device, `lvgl.calendar_ get_pressed_date(calendar)`indicates the date currently being pressed, if no date is pressed, it returns
+在这两种形式中，长按对象，颜色选择器将更改为颜色的下一个参数（色相，饱和度或值）。此外，双击将重置当前参数。
+In both forms, long press on the object and the color picker will change to the next parameter of the color (hue, saturation or value). In addition, double-clicking will reset the current parameters.
+在中心列中对齐子代。 `padd_top` 在顶部和 `pad_inner` 孩子之间保持空间。
+Align the children in the center column. The padd_top keeps space between the top and the pad_inner children.
+在左对齐的列中对齐子级。请 `padd_left` 在左边，空间 `pad_top` 空间的顶部和 `pad_inner` 孩子之间的空间。
+Aligns children in left-aligned columns. Please padd_left the space on the left, space between the top of the pad_top space and the child of the pad_inner.
+暂时隐藏滚动条
+Temporarily hide scroll bars
+增量阈值
+Delta Threshold
+占位符
+Placeholder
+长按按钮时禁用重复
+Disable repeat when button is long pressed
+长按将显示下一个模式。通过双击将重置当前参数。
+Long press will display the next mode. Double-clicking will reset the current parameters.
+长模式
+Long mode
+长文本
+Long text
+遮罩中的坐标是相对于对象的。也就是说，如果对象移动，蒙版也随之移动。
+The coordinates in the mask are relative to the object. That is, if the object moves, the mask moves with it.
+折线图
+Line Chart
+这里我们用[离线版LVGL官方工具](https://github.com/lvgl/lv_font_conv)生成外部字体
+Here we use [offline LVGL official tool](https://github.com/lvgl/lv_font_conv) to generate external fonts
+这是 [页面(lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html) 的可滚动部分。它使选项卡的内容彼此相邻。页面的背景始终是透明的，不能从外部访问。
+This is the scrollable portion of the [page (lvgl.page)](http://lvgl.100ask.net/7.11/documentation/04_widgets/24_page.html). It makes the contents of the tabs adjacent to each other. The background of the page is always transparent and not accessible from the outside.
+这是按钮的虚拟部分。它还使用所有典型的背景属性和文本属性。
+This is the virtual part of the button. It also uses all the typical background properties and text properties.
+这是一个中文字体测试程序
+This is a Chinese font test program
+这是主要部分，并使用了所有典型的背景属性
+This is the main part and uses all the typical background properties
+这些按钮仅具有一种主要样式，称为 `lvgl.BTN_PART_MAIN` ，并且可以使用以下组中的所有属性
+These buttons have only one major style, called `lvgl. BTN_PART_MAIN `, and all properties in the following groups can be used
+这些点必须存储在 `lvgl.point_t` 数组中，并通过 `lvgl.line_set_points(lines, point_array, point_cnt)` 函数传递给对象。
+These points must be stored in the `lvgl.point_t` array and passed to the object through the `lvgl.line_set_points(lines, point_array, point_cnt)`function.
+这些选项作为带有 `lvgl.roller_set_options(roller, options, lvgl.ROLLER_MODE_NORMAL/INFINITE)` 的字符串传递给Roller。选项应用 `\n` 分隔。例如
+These options are passed to Roller as a string with the `lvgl.roller_ set_options(roller, options, lvgl.ROLLER_ MODE_NORMAL/INFINITE). Option applies `\n` separation. For example
+针图像
+needle image
+正常日期：以 `lvgl.STATE_DEFAULT` 样式绘制
+Normal date: in `lvgl. STATE_DEFAULT `Style Draw
+证明lv_font_conv 已正常运行
+Prove that the lv_font_conv is functioning properly
+之后点击保存，开始转换
+After that click save to start the conversion
+之后将生成的.c文件放在LuatOS\components\lvgl\font目录下，在luat_lvgl_fonts.h中声明你的字库
+Then place the generated. c file in the LuatOS\components\lvgl\font directory and declare your font in luat_lvgl_fonts.h
+之后写入需要的汉字或者根据自己需要点击加入常用汉字、全部汉字、图标
+After that, write the required Chinese characters or click to add common Chinese characters, all Chinese characters and icons according to your needs.
+之后在luat_lib_lvgl_font.c中对lua暴露你的字库就可以了
+After that, you can expose your font library to lua in the following way.
+支持[多个显示器
+Support [multiple displays
+支持[各种输入设备](https://docs.lvgl.io/master/overview/indev.html)：触摸屏、鼠标、键盘、编码器、按钮等
+Support [various input devices](https://docs.lvgl.io/master/overview/indev.html): touch screen, mouse, keyboard, encoder, button, etc.
+支持操作系统、外部内存和 GPU，但不是必需的
+Operating system, external memory, and GPU supported, but not required
+支持以下旋转类型
+The following rotation types are supported
+支持以下掩码类型
+The following mask types are supported
+值更改时发送。 （将该值设置为int32_t作为事件数据
+Sent when the value changes. (Set the value to int32_t as event data
+值和范围
+Value and Range
+只有一个主要部分，称为 `lvgl.LED_PART_MAIN` ，它使用所有典型的背景样式属性。
+There is only one main part, called `lvgl. LED_PART_MAIN `, which uses all the typical background style properties.
+指标（虚拟部分
+indicators (dummy part
+指示器弧顺时针绘制（最小电流
+Indicator arc drawn clockwise (minimum current
+指示器弧沿逆时针方向绘制（最大电流
+The indicator arc is drawn in a counterclockwise direction (maximum current
+指向对象的指针，它将是新弧的父对象
+A pointer to an object that will be the parent of the new arc
+指向弧对象的指针
+pointer to arc object
+指向弧对象的指针，如果不为NULL，则将从其复制新对象
+Pointer to arc object from which new object will be copied if not NULL
+中的新值可以根据最后一个参数 `(lvgl.ANIM_ON/OFF)` 设置是否带有动画。动画的时间可以通过 `lvgl.bar_set_anim_time(bar, 100)` 进行调整。时间以毫秒为单位。
+The new value in can be set with or without animation according to the last parameter `(lvgl.ANIM_ON/OFF). The animation time can be adjusted by `lvgl.bar_set_anim_time(bar, 100). The time is in milliseconds.
+中间的选定选项可以用 `lvgl.ROLLER_PART_SELECTED` 虚拟零件引用。除了典型的背景属性外，它还使用文本属性来更改所选区域中文本的外观。
+The selected option in the middle can be used `lvgl. ROLLER_PART_SELECTED `virtual part reference. In addition to the typical background properties, it also uses the text properties to change the appearance of the text in the selected area.
+中可使用事件来进行进行交互。
+can use events to interact.
+中文测试
+Chinese test
+重复点击
+Repeat Click
+重新着色
+Recolor
+重要的是要注意，当创建标签并设置其文本时，标签的大小已扩展为文本大小。除了默认的 `lvgl.LABEL_LONG_EXPAND` ，长模式 `lvgl.obj_set_width/height/size()` 无效。
+It is important to note that when you create a label and set its text, the size of the label is expanded to the text size. In addition to the default `lvgl. LABEL_LONG_EXPAND `, the long pattern `lvgl.obj_set_width/height/size()` is invalid.
+轴也存在相同的功能： `lvgl.chart_set_y_tick_text` 和
+The same function exists for the axis: `lvgl.chart_set_y_tick_text `and
+主刻度线绘制在放置文本的位置，次刻度线绘制在其他位置。 [``](http://lvgl.100ask.net/7.11/documentation/04_widgets/09_chart.html#id15)lvgl.chart_set_x_tick_length(chart, major_tick_len, minor_tick_len) `` 设置x轴上刻度线的长度。
+The primary tick marks are drawn where the text is placed, and the secondary tick marks are drawn elsewhere. [``](http://lvgl.100ask.net/7.11/documentation/04_widgets/09_chart.html#id15)lvgl.chart_set_x_tick_length(chart, major_tick_len, minor_tick_len) ``sets the length of the tick mark on the x-axis.
+主题
+Theme
+主要部分
+Main part
+主要部分可以显示所选选项或静态文本。可以使用 `lvgl.dropdown_set_show_selected(dropdown, true/false)` 进行控制。
+The main section can display selected options or static text. This can be controlled using the `lvgl.dropdown_ set_show_selected(dropdown, true/false).
+主要部分是 `lvgl.WIN_PART_BG` ，它包含另外两个实际部分
+The main part is `lvgl. WIN_PART_BG `, which contains two other actual parts
+注意，图像对象的真实坐标在变换期间不会改变。即 `lvgl.obj_get_width/height/x/y()` 将返回原始的非缩放坐标。
+Note that the real coordinates of the image object do not change during the transformation. That is, `lvgl.obj_get_width/height/x/y()`will return the original non-scaled coordinates.
+注意：编译时别忘了在luat_conf_bsp.h中启用lvgl和字库呦
+Note: Don't forget to enable lvgl and word library in luat_conf_bsp.h when compiling
+注意：内存使用情况可能会因架构、编译器和构建选项有所差异
+Note: Memory usage may vary by architecture, compiler, and build options
+注意：使用后记得释放字体
+Note: Remember to release the font after use
+注意**，设置角度和值是独立的。应该使用值和角度设置。两者混合可能会导致意外的效果。
+Note **, setting angle and value are independent. Value and angle settings should be used. Mixing the two can lead to unexpected effects.
+注意事项
+Precautions
+转储字形图像和字体信息，用于调试
+Dump glyph images and font information for debugging
+转换
+Conversion
+转换需要整个图像可用。因此，可以转换索引图像（ `lvgl.IMG_CF_INDEXED_...` ），仅alpha图像（ `lvgl.IMG_CF_ALPHA_...` ）或文件中的图像。换句话说，转换仅适用于存储为C数组的真彩色图像，或者自定义 [图像解码器](http://lvgl.100ask.net/7.11/documentation/03_overview/08_image.html#id9) 返回整个图像。
+Conversion requires the entire image to be available. Therefore, you can convert an index image (`lvgl.IMG_CF_INDEXED_...` ), an alpha-only image (`lvgl.IMG_CF_ALPHA_...` ), or an image in a file. In other words, the conversion only applies to true color images stored as C arrays, or the custom [Image Decoder](http://lvgl.100ask.net/7.11/documentation/03_overview/08_image.html#id9) returns the entire image.
+字符过滤
+Character filtering
+字体
+Font
+字体名称+字号, 例如
+Font name font size, for example
+字体命令
+Font command
+字体使用
+Font Usage
+字体使用非常简单，使用lvgl.obj_set_style_local_text_font设置字体即可，外部字体文件需要使用lvgl.font_load函数加载，下面看一下范例
+Font use is very simple, use lvgl.obj_set_style_local_text_font to set the font, external font files need to be loaded using lvgl.font_load function, let's take a look at the example below.
+字体说明
+Font Description
+字体文件的路径（ttf/woff/woff2/otf）。可多次用于合并
+The path to the font file (ttf/woff/woff2/otf). Can be used multiple times for consolidation
+字体我们选择我们的ttf字体，选择字体大小，点击确定
+Font We select our ttf font, select the font size, click OK
+字体支持很全，支持 **UTF-8** 编码的 Unicode 字符，分内部字体和外部字体，字体制作工具也很多：[LVGL官方的字体制作工具](https://lvgl.io/tools/fontconverter)，第三方的[LvglFontTool](http://www.lfly.xyz/forum.php?mod=viewthread&tid=24&extra=page%3D1)和[MCU_Font](https://gitee.com/WuBinCPP/MCU_Font_Release)等。本文会介绍不同字体制作方法时分别使用不同工具使大家对其都有了解。
+Font support is very complete, support * * UTF-8 * * encoded Unicode characters, divided into internal fonts and external fonts, font production tools are also many:[LVGL official font production tools](https://lvgl.io/tools/fontconverter), third-party [LvglFontTool](http://www.lfly.xyz/forum.php?mod=viewthread&tid=24&extra=page=1) and [MCU_Font](https://gitee.com/WuBinCPP/MCU_Font_Release), etc. This article will introduce different font production methods using different tools to make everyone understand it.
+字体指针
+Font Pointer
+自定义风格的
+Custom style
+自定义样式的滑块
+Slider for custom styles
+自动大小
+Auto Size
+自动调整
+Automatic adjustment
+自动调整尺寸
+Automatically resize
+自动关闭
+Auto Close
+组件
+Components
+最大高度
+Maximum height
+最大文字长度
+Maximum Text Length
+最大值
+Maximum
+最大字符数可以通过 `lvgl.textarea_set_max_length(textarea, max_char_num)` 进行限制
+The maximum number of characters can be limited by `lvgl.textarea_ set_max_length(textarea, max_char_num)`
+最小                         | 推荐
+Minimum | recommend
+最小值
+Minimum

@@ -1,0 +1,30 @@
+档位切换速度：Pro采用多通道同步采样，无换挡延迟。
+Gear switching speed: Pro adopts multi-channel synchronous sampling, no shift delay.
+电流测量精度：200μA档位时分辨率?μA，20mA档位时分辨率?μA(下表
+Current measurement accuracy: resolution in 200μA gear? μA, resolution in 20mA gear? μA (the following table
+电流量程 |    范围     | 分辨率 | 标称精度 | 实际精度 |   类型
+Current Range | Range | Resolution | Nominal Accuracy | Actual Accuracy | Type
+电流设定
+Current setting
+电压回读
+Voltage Readback
+电压设定
+Voltage setting
+固定多通道 10KHz采样速率，USB数据传输
+Fixed multi-channel 10KHz sampling rate, USB data transfer
+技术指标
+Technical indicators
+可配合PC客户端查看与分析电流波形，也可使用命令行版本在任意设备(win/linux/mac)上抓取串口数据（如树莓派），使用pc客户端导入查看
+Can cooperate with PC client to view and analyze current waveform, can also use command line version to capture serial port data (such as strawberry pie) on any device (win/linux/mac), use pc client to import and view
+类型   | 范围  | 分辨率 | 标称精度 | 实际精度
+Type | Range | Resolution | Nominal Accuracy | Actual Accuracy
+使用0.4% ±20ppm 精度基准芯片，预留0.1% 基准位置，0.1%精度精密电阻，12位ADC设计。标称精度1%（典型值0.5%），用户进一步校准精度可以达到
+Use 0.4% ± 20ppm precision reference chip, reserve 0.1% reference position, 0.1% precision resistor, 12 bit ADC design. The nominal accuracy is 1% (typical value is 0.5), and the user can further calibrate the accuracy to reach
+压降切换速度：Pro表采用2/3通道采样电阻，采样电阻被短路的最大延时是
+Voltage drop switching speed: Pro meter uses 2/3 channel sampling resistor, and the maximum delay when the sampling resistor is short-circuited is
+自动测量范围：电流回显档位分别为200μA、20mA、2A三个档位，根据当前输出电流自动切换。
+Automatic measurement range: the current echo gears are 200 μA, 20mA and 2A respectively, which are automatically switched according to the current output current.
+自动档位
+Automatic gear
+最大测量范围：电压最大5V，电流最大
+Maximum measuring range: maximum voltage 5V, maximum current

@@ -1,0 +1,66 @@
+本章介绍LuatOS的uart库使用方式
+This chapter describes how to use the uart library for LuatOS
+查阅[Air103_MCU设计手册V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193606476_Air103_MCU%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8CV1.2.pdf)可知Air103共有6路UART，UART0固定为下载和日志口
+Looking up [Air103_MCU Design Manual V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193606476_Air103_MCU设计手册V1.2.pdf), we can see that Air103 has 6 UART channels, and UART0 is fixed as download and log port.
+初始化
+Initialization
+初始化UART1，波特率为921600，8位数据位，1位停止位，无校验
+Initialize UART1, baud rate is 921600,8 data bits, 1 stop bit, no check
+串口的特点是将数据一位一位地顺序传送，只要 2 根传输线就可以实现双向通信，一根线发送数据的同时用另一根线接收数据。UART 串口通信有几个重要的参数，分别是波特率、起始位、数据位、停止位和奇偶检验位，对于两个使用 UART 串口通信的端口，这些参数必须匹配，否则通信将无法正常完成。
+The characteristic of the serial port is to transmit data bit by bit in sequence. Two-way communication can be realized as long as two transmission lines. One line sends data while receiving data with another line. There are several important parameters for UART serial communication, namely baud rate, start bit, data bit, stop bit and parity bit. For two ports using UART serial communication, these parameters must match, otherwise the communication will not be completed normally.
+创建1KB的发送缓冲区
+Create a 1KB send buffer
+创建1KB的接收缓冲区
+Create a 1KB receive buffer
+创建两个zbuff数组
+Create two zbuff arrays
+从接收缓冲区中读取数据
+Read data from the receive buffer
+代码如下
+The code is as follows
+发送与接收数据时可以直接传递string类型数据，也可以传递zbuff对象，下面会分别演示两种方式
+When sending and receiving data, you can directly pass string type data, or you can pass zbuff objects, the following will demonstrate the two methods respectively.
+发送string类型的数据
+Send string data
+给UART1注册一个接收事件回调，在Air103 UART1接收到数据的时候进行读取和打印
+Register a receive event callback for UART1 to read and print when Air103 UART1 receives data
+简介
+Introduction
+将发送缓冲区的指针重新移到开头
+Move the pointer to the beginning of the send buffer again
+将接收缓冲区的指针重新移到开头
+Move the receive buffer pointer back to the beginning
+将数据读取到接收缓冲区
+Read data to receive buffer
+接口文档可参考：[uart库
+Interface documentation can be found in:[uart library
+接收string类型的数据
+Receive data of type string
+接线示意
+Wiring Schematic
+开发板
+Development Board
+如果不使用zbuff处理数据的话就跳过这一步
+Skip this step if you don't use zbuff to process the data
+软件部分
+Software part
+使用zbuff发送数据
+Send data using zbuff
+使用zbuff接收数据
+Receiving data using zbuff
+通用异步收发传输器，UART 作为异步串口通信协议的一种，工作原理是将传输数据的每个字符一位接一位地传输。是在应用程序开发过程中使用频率最高的数据总线。
+Universal asynchronous transceiver, UART as a kind of asynchronous serial communication protocol, the working principle is to transmit each character of the data one by one. Is the most frequently used data bus in the application development process.
+完整代码
+Full Code
+我们使用UART1通过TTL转USB模块与PC连接，实现PC和Air103传递数据
+We use UART1 to connect with PC through TTL to USB module to realize data transfer between PC and Air103
+向发送缓冲区写入数据
+Write data to send buffer
+新建一个循环定时器向UART1发送数据
+Create a new cycle timer to send data to UART1
+硬件准备
+Hardware preparation
+注册串口事件回调
+Register Serial Port Event Callback
+转TTL模块
+TTL Module

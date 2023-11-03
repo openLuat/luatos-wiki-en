@@ -1,0 +1,72 @@
+把0x3132写入uart, socket/spi都是同理
+Write 0x 3132 to uart, socket/spi is the same
+背景
+Background
+不是数组不是table,不能直接下标读取
+Not an array is not a table and cannot be read directly by subscript.
+打印其hex字符串形式
+Print its hex string form
+的
+of
+等待1秒
+Wait 1 second
+返回值"3132",2,后面的2是长度
+Return value "3132",2, followed by 2 is the length
+方法1, 使用string.char, 逐个字节描述
+Method 1, byte-by-byte description using string.char
+方法2, 使用 string.fromHex, 传入2的倍数长度的hex字符串
+Method 2, using string.fromHex, passing in a hex string of multiple length of 2
+方法3, 使用pack库, H代表2字节符号数, I代表4字节无符号数, wiki可查
+Method 3, using the pack library, H represents the number of 2 bytes of symbols, I represents the number of 4 bytes of unsigned, wiki can be checked
+方法汇总
+Summary of methods
+方式1,使用
+Method 1, use
+方式2,使用
+Method 2, use
+分解为2个数, b是无符号单字节数,2代表数量
+Decompose into 2 numbers, B is the number of unsigned bytes, and 2 represents the number
+将输出
+will be output
+将socket读取的数据转换为数值, uart/spi均同理
+Convert the data read by the socket to a numerical value, and the same applies to uart/spi.
+库, 类C数组操作
+library, class C array operations
+什么是
+What is
+数据打包
+Data Packaging
+数据解包
+Data unpacking
+数据转换
+Data Conversion
+数值标识
+Value Identification
+数字
+Numbers
+数组
+Array
+先看hex的表现形式
+Let's look at the form of hex first.
+相当于
+Equivalent
+详解lua的string与hex数据(十六进制
+Explain lua's string and hex data (hexadecimal
+与0x3132等价一个
+Equivalent to 0x 3132
+在处理通信的时候,总会涉及到数据处理,例如
+When dealing with communications, data processing is always involved, such
+在lua中处理 string 与 hex(十六进制数) 的思维转换
+Thinking Conversion of String and hex (Hexadecimal Number) in Lua
+这些方法要么发送的string,要么返回string, 而不是使用其他编程语言的byte[]/char[], 因为lua没有byte和
+These methods either send string or return string instead of using byte[]/char[] of other programming languages, because lua does not have byte and
+直接取第二个数, 位置写
+Take the second number directly and write the position
+注意, data是lua string, 内容是 "12", 对应hex值
+Note that data is lua string, content is "12", corresponding to hex value
+字符串,这个给人看的HEX字符串
+String, this HEX string for people to see
+字符串"1" 的 ASCII码是
+The ASCII code for the string "1" is
+字符串"2" 的 ASCII码是
+The ASCII code for the string "2" is

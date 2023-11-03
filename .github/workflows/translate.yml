@@ -39,6 +39,9 @@ jobs:
           dotnet run --project translate-tool/translate-tool/ -- ../luatos-wiki/ translated-docs/ translation-data/ $ALIYUN_SID $ALIYUN_SKEY
       - name: commit changes
         run: |
+          git config --global credential.helper store
+          git config --global user.email "bot@luatos.com"
+          git config --global user.name "luatos_bot"
           git add .
           git commit -m "ci auto translate docs"
       - name: Push changes

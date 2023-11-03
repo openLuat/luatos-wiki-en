@@ -1,0 +1,14 @@
+固件下载
+Firmware Download
+管脚之间的距离
+Distance between pins
+开发板
+Development Board
+开发板排针尺寸
+Development board pin size
+两排管脚之间的距离
+Distance between two rows of pins
+请注意, 这是**Air103**的资料页, 不是**Air32F103**, 这是两款完全不同的芯片
+Please note that this is the information page of **Air103**, not **Air32F103**, these are two completely different chips
+如需查找**Air32F103**系列芯片的资料, 请在左侧菜单栏选择
+For information about **Air32F103** series chips, please select

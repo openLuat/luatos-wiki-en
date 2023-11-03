@@ -1,0 +1,10 @@
+调用演示
+Call Demo
+段码屏/段式屏的功能说明
+Function Description of Segment Screen/Segment Screen
+段码屏/段式屏引脚| GPIO编号
+Segment screen/segment screen pin | GPIO number
+管脚映射
+Pin Mapping
+介绍见[lcdseg - 段式
+For an introduction, see [lcdseg-Segment

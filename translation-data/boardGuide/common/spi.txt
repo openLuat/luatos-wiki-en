@@ -1,0 +1,18 @@
+本章将会向大家介绍LuatOS的SPI功能。将会实现使用Air101开发板读取SPI的ID的值并在日志中打印。
+This chapter will introduce you to the SPI features of LuatOS. The value of the ID of the SPI will be read and printed in the log using the Air101 development board.
+代码展示
+Code display
+简介
+Introduction
+将flash按照SPI线序连接到开发板
+Connect flash to the development board in SPI line sequence
+接口文档可参考：[spi库
+Interface documentation can be found at:[spi library
+开发板一块，SPI的flash一个
+A development board, SPI flash a
+软件使用
+Software usage
+是串行外设接口（Serial Peripheral Interface）的缩写，是一种高速的，全双工，同步的通信总线，设备分为主机和从机，目前Air101的SPI仅能作为主机使用
+It is an abbreviation of Serial Peripheral Interface (Serial Peripheral Interface). It is a high-speed, full-duplex, synchronous communication bus. The equipment is divided into master and slave. At present, SPI of Air101 can only be used as host.
+硬件准备
+Hardware preparation

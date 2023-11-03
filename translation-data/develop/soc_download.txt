@@ -1,0 +1,108 @@
+尝试通过RTS复位芯片，及同步芯片串口
+Try to reset the chip through RTS and synchronize the serial port of the chip.
+串口号 例如
+Serial port numbers such
+串口号，10进制
+Serial port number, base 10
+当前下载的进度
+Progress of the current download
+的
+of
+等待验证固件信息
+Wait to verify firmware information
+二、命令行刷机参数介绍
+Introduction to 2. Command Line Brush Parameters
+发送bin数据
+Send bin data
+发送bin信息
+Send bin information
+分区表的文件名称，带引号的字符串
+File name of the partition table, quoted string
+分区表写入地址，16进制，不带
+Partition table write address, hexadecimal,
+复位的电平，10进制，0或者
+Reset level, base 10, 0 or
+复位动作，设置设备复位方法，默认为手动控制 可选
+Reset action, set the device reset method, the default is manual control optional
+各参数可在info.json中查看
+Each parameter can be viewed in info.json
+更多参数使用运行 `air101_flash.exe -h` 查看
+View more parameters using run` air101_flash.exe -h`
+工作串口速度，默认值为115200  可使用
+Working serial port speed, the default value is 115200 can be used
+脚本写入地址，16进制，不带
+Script write address, hexadecimal,
+介绍之前我们先来了解一下soc文件构成
+Before the introduction, let's take a look at the SOC file composition.
+举个例子
+Take an example
+开始擦除相关
+Start Erase Related
+开始同步
+Start Synchronization
+开始写入bl数据
+start writing bl data
+可使用命令行进行刷机，如不使用luatools刷机也可自己使用命令行或单独封装刷机软件。air101/air103使用air101_flash.exe，air105/esp32-c3使用soc_download.exe来进行刷机。
+You can use the command line to brush the machine. If you do not use the luatools brush, you can also use the command line or package the brush software separately. Air101/air103 uses air101_flash.exe, and air105/esp32-c3 uses soc_download.exe to refresh the machine.
+类型，字符串，air105须填写
+Type, string, air105 must be filled in
+类型，字符串，esp32-c3须填写
+Type, string, esp32-c3 must be filled in.
+连接串口成功，发送bootloader信息
+Connect serial port successfully, send bootloader information
+命令行刷机
+command line brush
+命令行刷机指南
+Command Line Brush Guide
+全部下载完成后提示
+Prompt when all downloads are complete
+如果3个bin合并成1个bin，可以如下
+If 3 bins are combined into 1 bin, it can be as follows
+三、控制台中打印的信息需要关注以下字段
+The information printed in the 3. console requires attention to the following fields
+刷机参数信息
+Brush machine parameter information
+通用bl下载时的波特率，10进制
+Baud rate for general bl download, base 10
+通用bl下载协议
+generic bl download protocol
+同步串口成功，开始连接串口
+Synchronize serial port successfully, start connecting serial port
+完成
+Complete
+文件(固件二进制文件
+files (firmware binaries
+文件(刷机程序,air101/air103为air101_flash.exe,air105/esp32-c3为
+File (flash program, air101/air103 is air101_flash.exe,air105/esp32-c3 is
+文件为合宙luatos-soc系统使用的固件格式，我们可以用7z等解压缩软件对其进行解压，可发现固件构成如下
+The file is the firmware format used by the luatos-soc system. We can decompress it with 7z and other decompression software. We can find that the firmware composition is as follows
+文件系统地址
+File system address
+文件系统需要擦除的长度，如果不擦，写
+The length of the file system to be erased, if not erased, write
+下载出错及原因
+Download error and reason
+下载固件文件，默认下载压缩映像
+Download firmware file, download compressed image by default
+下载脚本的文件名称，带引号的字符串
+File name of the download script, quoted string
+下载时设置串口速度，默认值为115200  可使用
+Set the serial port speed when downloading, the default value is 115200.
+下载APP的文件名称，带引号的字符串
+Download APP file name, quoted string
+下载bin文件路径，带引号的字符串
+Download binfile path, quoted string
+下载bootloader的文件名称，带引号的字符串
+Download bootloader file name, quoted string
+下载XXX（bl，app.bin, script.bin）的 yyy阶段，注意yyy是数字，bl阶段根据不同芯片有不同的解释，app.bin和script.bin有通用的解释，如下
+Download the yyy phase of XXX(bl,app.bin, script.bin). note that yyy is a number. bl phase has different interpretations according to different chips. app.bin and script.bin have common interpretations, as follows
+写入地址，16进制，不带
+Write address, hexadecimal,
+芯片下载参数，目前是0x00ff0200，byte3是芯片类型，目前只有0，byte2是spi flash info（写0xff就是大小从ID中获取），byte1 是spi mode（写0xff就是不修改固件，目前是0x02），byte0没用是
+The chip download parameter is currently 0 x00ff0200,byte3 is the chip type, currently only 0,byte2 is spi flash info (writing 0xff means the size is obtained from ID),byte1 is spi mode (writing 0xff means not modifying the firmware, currently 0x 02),byte0 is useless
+需要目前一共需要输入14个参数
+At present, a total of 14 parameters need to be entered.
+一、刷机介绍
+1. brush machine introduction
+只下载脚本的标志，10进制，0或者1，1表示只下载脚本
+Script-only download flag, base 10, 0 or 1,1 means only download scripts

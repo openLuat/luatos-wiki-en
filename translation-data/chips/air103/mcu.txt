@@ -1,0 +1,30 @@
+串口烧录教程
+Serial Burn Tutorial
+大QQ群
+Large QQ group
+合宙商城
+Hizhou Mall
+合宙Air103是一款QFN56 封装，6mm x 6mm 大小的mcu. 本芯片与联盛德w806可互换
+Heshuo Air103 is a QFN56 package, 6mm x 6mm mcu. This chip is interchangeable with Lianshengde w806.
+技术支持
+Technical Support
+模块购买
+Module Purchase
+请注意, 这是**Air103**的资料页, 不是**Air32F103**, 这是两款完全不同的芯片
+Please note that this is the information page of **Air103**, not **Air32F103**, these are two completely different chips
+如需查找**Air32F103**系列芯片的资料, 请在左侧菜单栏选择
+For information about **Air32F103** series chips, please select
+刷机烧录教程
+Brush machine burning tutorial
+淘宝店
+Taobao shop
+芯片
+Chip
+与air101使用同一份源码
+Use the same source code as air101
+源码
+source code
+注意：烧录前请设置波特率为
+Note: Please set the baud rate
+最新固件下载
+Latest Firmware Download

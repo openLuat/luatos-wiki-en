@@ -1,0 +1,30 @@
+档位切换速度：CC表采用多通道同步采样，无换挡延迟。
+Gear switching speed: CC table adopts multi-channel synchronous sampling, no shift delay.
+电流测量精度：500μA档位时分辨率0.15μA，50mA档位时分辨率100μA(下表
+Current measurement accuracy: resolution 0.15 μA in 500μA gear and 100 μA in 50mA gear (table below
+电流量程 |    范围     | 分辨率 | 标称精度 | 实际精度 |   类型
+Current Range | Range | Resolution | Nominal Accuracy | Actual Accuracy | Type
+电流设定 |  0-3A  |  50mA  |    2%    | PD诱骗PPS决定
+Current Setting | 0-3A | 50mA | 2% | PD Tricking PPS Decision
+电压回读
+Voltage Readback
+电压设定 | 0V-21V |  20mV  |    2%    | PD诱骗PPS决定
+Voltage Setting | 0V-21V | 20mV | 2% | PD Tricking PPS Decision
+固定多通道 10KHz采样速率，USB高速数据传输
+Fixed multi-channel 10KHz sampling rate, USB high-speed data transfer
+技术指标
+Technical indicators
+可配合PC客户端查看与分析电流波形，也可使用命令行版本在任意设备(win/linux/mac)上抓取串口数据（如树莓派），使用pc客户端导入查看
+Can cooperate with PC client to view and analyze current waveform, can also use command line version to capture serial port data (such as strawberry pie) on any device (win/linux/mac), use pc client to import and view
+类型   |  范围  | 分辨率 | 标称精度 |   实际精度
+Type | Range | Resolution | Nominal Accuracy | Actual Accuracy
+使用0.4% ±20ppm 精度基准芯片，预留0.1% 基准位置，0.1%精度精密电阻，12位ADC设计。标称精度1%（典型值0.5%），用户进一步校准精度可以达到
+Use 0.4% ± 20ppm precision reference chip, reserve 0.1% reference position, 0.1% precision resistor, 12 bit ADC design. The nominal accuracy is 1% (typical value is 0.5), and the user can further calibrate the accuracy to reach
+压降切换速度：CC表采用2/3通道采样电阻，采样电阻被短路的最大延时是
+Voltage drop switching speed: CC meter uses 2/3 channel sampling resistor, and the maximum delay when the sampling resistor is short-circuited is
+自动测量范围：电流回显档位分别为500μA、50mA、5A三个档位，根据当前输出电流自动切换。
+Automatic measurement range: the current echo gears are 500 μA, 50mA and 5A respectively, which are automatically switched according to the current output current.
+自动档位
+Automatic gear
+最大测量范围：电压最大24V，电流最大
+Maximum measuring range: voltage maximum 24V, current maximum

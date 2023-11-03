@@ -1,0 +1,26 @@
+本章将会向大家介绍LuatOS的PM功能。将会实现使用Air101开发板展示并在日志中打印效果。
+This chapter will introduce you to the PM features of LuatOS. Will achieve the use of Air101 development board display and print in the log effect.
+代码展示
+Code display
+分钟后唤醒
+Wake up after minutes
+关闭底层定时器
+Turn off the underlying timer
+关闭id=0的底层定时器
+Turn off the underlying timer with id = 0
+简介
+Introduction
+接口文档可参考：[pm库
+Interface documentation can be referred to:[pm library
+开发板一块
+A development board
+模块封装mcu一些特殊操作
+module package mcu some special operations
+请求进入休眠模式
+Request to enter sleep mode
+软件使用
+Software usage
+添加底层定时器
+Add an underlying timer
+硬件准备
+Hardware preparation

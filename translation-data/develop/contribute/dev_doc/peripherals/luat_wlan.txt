@@ -1,0 +1,176 @@
+安全模式
+Security mode
+常量
+Constant
+创建加密的热点
+Create an encrypted hotspot
+创建开放的热点
+Create an open hotspot
+创建热点
+Create Hotspot
+创建指定安全级别，指定信道，是否广播ssid的加密热点
+Create an encrypted hotspot with the specified security level, the specified channel, and whether to broadcast the ssid
+创建指定安全级别加密的热点
+Create a hotspot encrypted with a specified security level
+创建指定信道，加密的热点
+Create a specified channel, encrypted hotspot
+创建指定信道，开发的热点
+Create designated channels, develop hot spots
+创建指定信道，指定安全级别加密的热点
+Create an encrypted hotspot with a specified channel and a specified security level
+地址
+Address
+的 ip 地址
+the ip address
+的 mac 地址
+The MAC address.
+断开的 Station 信息
+Disconnected Station information
+断开连接的 Station 信息
+Disconnect Station information
+断开热点
+Disconnect the hot spot
+功耗管理
+Power Management
+关闭热点
+Close Hotspot
+管理并抽象Wlan的C API, 提供一套Lua API供用户代码调用
+Manage and abstract Wlan's C API, providing a set of Lua API for user code to call
+获取 wifi AP 模式下的网络信息
+obtain network information in wifi AP mode
+获取 wifi Station 模式下的网络信息
+obtain network information in wifi Station mode
+获取创建热点的信息
+Get information about creating a hotspot
+获取功耗等级
+Get Power Level
+获取加入热点的STA信息
+Obtain information about a STA that joins a hotspot.
+获取就绪标志
+Get Ready Flag
+获取连接热点的信息
+Get information about a connection hotspot
+获取连接热点的Station信息
+Get Station information about connected hotspots
+获取连接信息
+Get connection information
+获取启动标志
+Get Startup Flag
+获取热点信息
+Obtain hotspot information.
+获取信号强度
+Get signal strength
+获取AP的网络信息
+Obtaining Network Information of an AP
+获取STA的网络信息
+Obtain the network information of a STA.
+基本信息
+Basic information
+解除注册
+Unregister
+静态设置ip地址，ip：xxx.xxx.xxx.xxx，子网掩码：255.255.255.0,  网关
+Set ip address statically, ip:xxx.xxx.xxx.xxx, subnet mask: 255.255.255.0, gateway
+静态设置ip地址，ip：xxx.xxx.xxx.xxx，子网掩码：xxx.xxx.xxx.xxx,网关
+Set ip address statically, ip:xxx.xxx.xxx.xxx, subnet mask: xxx.xxx.xxx.xxx, gateway
+连接
+Connection
+连接成功的 Station 信息
+Station information of successful connection
+连接加密的热点
+Hotspot for connection encryption
+连接开放的热点
+Connect open hotspots
+连接热点
+Connection hotspot
+连接热点的安全模式
+Safe mode for connecting to hotspots
+连接热点的信道
+Channel to connect to the hotspot
+连接热点的信号强度
+Signal strength of the connection hotspot
+连接热点的信息
+Connection Hotspot Information
+连接热点的MAC地址
+MAC address of the connection hotspot
+连接失败的 Station 信息
+Station information of connection failure
+连接指定MAC地址的加密的热点
+Connect to an encrypted hotspot with a specified MAC address
+连接指定MAC地址的开放热点
+Connect to an open hotspot with a specified MAC address
+连接状态
+Connection status
+连入的 Station 信息
+Connected Station information
+平台层
+Platform layer
+启动成功的 AP 信息
+AP information on successful startup
+启动热点
+Start Hotspot
+启动失败的 AP 信息
+Information about the AP that failed to start
+启动DHCP，自动获取ip地址，子网掩码，网关等信息
+Start DHCP, automatically obtain ip address, subnet mask, gateway and other information
+起草日期
+Date of drafting
+热点
+Hot spot
+热点的状态
+Status of the hotspot
+扫描
+Scan
+扫描到的热点信息
+Scanned hotspot information
+扫描的结果
+Results of the scan
+扫描热点
+Scan for hot spots
+扫描指定的ssid热点
+Scan specified ssid hotspots
+设备管理
+Equipment Management
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+设置功耗等级，用于 station 模式。
+Sets the power consumption level for station mode.
+设置功耗等级，用于station模式。
+Sets the power consumption level for station mode.
+设置AP的网络信息
+Set the network information of the AP
+设置STA的网络信息
+Set the network information of the STA
+设置wifi AP 模式下的网络信息
+Set network information in wifi AP mode
+设置wifi Station 模式下的网络信息
+set the network information in wifi Station mode
+事件回调
+Event Callback
+事件注册
+Event Registration
+是否广播
+Whether to broadcast
+随着物联网快速发展，越来越多的嵌入式设备上搭载了 WIFI 无线网络设备。为了能够管理 WIFI 网络设备，RT-Thread 引入了 WLAN 设备管理框架。这套框架具备控制和管理 WIFI 的众多功能，为开发者使用 WIFI 设备提供许多便利。
+With the rapid development of the Internet of Things, more and more embedded devices are equipped with WIFI wireless network devices. In order to manage WIFI network devices, RT-Thread introduces a WLAN device management framework. This framework has many functions to control and manage WIFI, and provides many conveniences for developers to use WIFI devices.
+停止热点
+Stop Hotspot
+网络
+Network
+为什么需要WLAN中间件管理
+Why you need WLAN middleware management
+相关知识点
+Relevant knowledge points
+已经连接的 station 数目
+Number of station already connected
+用例
+Use cases
+指定信道，是否广播ssid的加密热点
+Specifies the channel, whether to broadcast ssid encryption hotspots
+指定信道，是否广播ssid的开发热点
+Specifies the channel, whether to broadcast ssid development hotspots
+注册串口事件的处理函数事件
+Register handler events for serial port events
+注册中断函数
+Register interrupt function

@@ -1,0 +1,32 @@
+遍历文件夹
+Iterate through folders
+额外提供获取文件系统信息的api, 包括C和
+provides additional apis for obtaining file system information, including C and
+核心机制
+core mechanism
+基本信息
+Basic information
+基础API, 与原生io模块相同
+basic API, same as native io module
+将来可能还需要使用fatfs挂载sd卡
+In the future, you may need to use fatfs to mount the sd card.
+内置一片flash区域或外部
+Built-in flash area or external
+起草日期
+Date of drafting
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+使用该区域存放lua脚本及其他文件
+Use this area to store lua scripts and other files
+提供文件操作的lua api(增删改查), 用法与lua原生的io模块相同
+The lua api that provides file operations (add, delete, modify and check) is used in the same way as lua's native io module.
+提供lua虚拟机读取lua脚本的
+Provide lua virtual machine to read lua scripts
+为什么需要文件系统
+Why do you need a file system?
+文件系统
+File System
+相关知识点
+Relevant knowledge points

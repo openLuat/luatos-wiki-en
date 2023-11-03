@@ -1,0 +1,4 @@
+本文档将介绍LuatOS-Soc的一些外设应用开发例程。
+This document describes some of the LuatOS-Soc peripheral application development routines.
+外设
+Peripherals

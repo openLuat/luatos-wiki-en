@@ -1,0 +1,78 @@
+安装 xmake , 可从xmake官网下载, 可以从[本链接直接下载
+Install xmake, which can be downloaded from xmake's official website, and can be downloaded directly from [this link
+安装时默认会**选上PATH**, 如果没有就勾上
+During installation, PATH **will be selected by default, and if not, it will be checked.
+本文档适合基于同一芯片方案的合宙模块
+This document is suitable for combined modules based on the same chip scheme.
+编译指南
+Compilation Guide
+常见编译问题
+Common Compilation Issues
+代码更新频繁, 推荐使用`git`进行clone下载, 不建议zip下载
+The code is updated frequently. It is recommended to use `git` for clone download. Zip download is not recommended.
+额外提示, soc文件是压缩包,不代表固件的实际大小
+As an additional note, the soc file is a compressed package and does not represent the actual size of the firmware.
+工具链下载
+Tool chain download
+或者git/http连接失败的提示. 故这里提供离线gcc工具链下载和编译的方法
+Or the prompt of git/http connection failure. Therefore, the offline gcc tool chain download and compilation method is provided here.
+即代表编译成功, 输出的`soc` 文件可在 `out\luatos` 目录下找到, 使用LuaTools刷机即可
+That is to say, the compilation was successful. The output` soc` file can be found in the` out\luatos` directory. You can use the LuaTools to brush the machine.
+假设解压后的路径是 `D:\gcc-arm-none-eabi-10.3-2021.10`, 检查 `D:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe` 是否存在, 如果不存在, 那肯定是多一层目录
+Assuming that the decompressed path is` D:\gcc-arm-none-eabi-10.3-2021.10 `, check whether `D:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g .exe` exists. if it does not exist, it must be an additional directory.
+假设在
+assuming that in
+解压, 不要选太深的目录, 不要包含中文字符和特殊符号, 建议解压到`D盘根目录`, 压缩包内自带一层目录
+Decompress, do not select too deep a directory, do not contain Chinese characters and special symbols, it is recommended to decompress to the `D disk root directory`, the compression package comes with a layer of directory
+具体操作方法
+Specific operation method
+开始编译
+Start Compiling
+库 `https://gitee.com/openLuat/luatos-soc-2022` linux编译会有更多说明,请查阅
+Library `https://gitee.com/openLuat/luatos-soc-2022` linux compilation will have more instructions, please refer
+理论上win7也可以,但不推荐),  linux(仅ubuntu验证过
+In theory win7 can also be used, but not recommend), linux (only ubuntu verified
+起码5G以上的剩余空间, 会有大量的临时文件
+At least more than 5G of the remaining space, there will be a large number of temporary files
+如果无法联网, 或者网络受限的情况, 通常会有这种提示
+If you cannot connect to the Internet, or if the network is limited, you will usually have this prompt.
+若能联网最好, 不能也有解决方法,会补充说明
+If it is best to connect to the Internet, there is no solution, and it will be explained.
+若使用zip下载, **务必修正目录名称,以符合上述结构
+If using zip download, **be sure to correct the directory name to match the above structure
+双击`luatos-soc-2022` 下的 `cmd.lnk` . **不要使用
+Double-click `cmd.lnk` under `luatos-soc-2022. `. **Do not use
+提示`refer to xxx` 等ld链接错误, 请更新代码, 两个代码库都需要更新. 若依然报错,请报
+Prompt `refer to xxx` and other ld link errors, please update the code, both code bases need to be updated. If the error is still reported, please report
+提示缺`luat_msgbus.h`之类的文件, 请查阅`下载源码`,检查目录结构, 并确保没有路径中不含特殊字符
+Prompt missing `luat_msgbus.h `files, please consult the `download source`, check the directory structure, and ensure that no path does not contain special characters
+提示网络失败, git错误, 请查阅`工具链下载(离线环境)`小节
+Prompt network failure, git error, please refer to` tool chain download (offline environment) `section
+下载[gcc for arm工具链
+Download [gcc for arm toolchain
+下载的目录**必须**符合下列的结构, 目录名称必须是`LuatOS`和
+The downloaded directory **must** conform to the following structure, and the directory name must be `LuatOS` and
+下载源码
+Download source code
+修改成set开头的语句,注意是去掉rem并修改值
+Modify the statement at the beginning of set. Note that rem is removed and the value is modified.
+用文本编辑器(例如vscode)打开 `luatos-soc-2022` 的 `build.bat`, 修改内容如下
+Use a text editor (such as vscode) to open the `build.bat` of the luatos-soc-2022, and modify the content as follows
+原本的内容
+The original content
+在弹出的cmd命令行下, 输入指令
+In the popup cmd command line, enter the command
+在有网的环境下, xmake会自行下载gcc工具链。如果您拥有正常的互联网连接，请跳过这一步
+In a networked environment, xmake will download the gcc toolchain itself. If you have a normal internet connection, skip this step
+主库
+Master Library
+注意, 需要两个库
+Note that two libraries are required
+注意：环境变量需重启电脑生效
+Note: Environment variables need to restart the computer to take effect
+准备工具
+Prepare the tool
+准备工作
+Preparations
+最后会输出如下内容(大概
+The final output is as follows (roughly

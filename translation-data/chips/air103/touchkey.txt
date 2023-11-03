@@ -1,0 +1,14 @@
+本文档对应 `touchkey` 库, 仅air101/air103支持本功能
+This document corresponds to the `touchkey` library. Only air101/air103 support this function.
+触摸传感器/触摸按键
+Touch sensor/touch button
+传感器id|  对应的
+sensor id | corresponding
+设计要求
+Design Requirements
+设计指南
+Design Guide
+硬件对应表
+Hardware correspondence table
+由于touch传感器的特性, 需要特定的PCB设计, 请查阅手册
+Due to the characteristics of the touch sensor, a specific PCB design is required, please refer to the manual

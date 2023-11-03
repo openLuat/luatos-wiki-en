@@ -1,0 +1,60 @@
+半双工/全双工
+Half Duplex/Full Duplex
+常量
+Constant
+成功返回
+Successful return
+初始化配置SPI各项参数，并打开
+Initialize the configuration SPI parameters and open
+串口
+Serial port
+发数据
+Send data
+发SPI数据，返回发送字节数
+Send SPI data, return the number of bytes sent
+返回值为0，表示打开成功
+The return value is 0, indicating successful opening
+高低位顺序
+High and low bit sequence
+高低位顺序    可选，默认高位在前
+The order of high and low bits is optional, and the default high bit is in the front
+关闭SPI，成功返回
+Close SPI, return successfully
+管理并抽象SPI的C API, 提供一套Lua API供用户代码调用
+Manage and abstract the C API of SPI, and provide a set of Lua API for user code to call
+基本信息
+Basic information
+平台层
+Platform layer
+起草日期
+Date of drafting
+全双工       可选，默认全双工
+Full Duplex Optional, Default Full Duplex
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+收发数据
+Sending and Receiving Data
+收发SPI数据，返回接收字节数
+Send and receive SPI data, return the number of bytes received
+收数据
+Received data
+收SPI数据，返回接收字节数
+Receive SPI data, return the number of bytes received
+数据宽度
+Data Width
+为什么需要
+Why need
+一般用这个
+generally use this
+用例
+Use cases
+与外部设备收发数据进行通信
+Receive and receive data to communicate with external devices
+主从
+Master-slave
+主模式     可选，默认主
+Main mode optional, default main
+最大频率
+Maximum frequency

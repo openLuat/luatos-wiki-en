@@ -1,0 +1,60 @@
+必]脚本文件
+Required] Script File
+必]项目跟目录
+Required] Items and Catalogues
+必]用户目录
+Required] User Directory
+必]主配置文件
+Required] Master Configuration File
+必]主lua入口文件
+Required] main lua entry file
+必]LuatOS项目配置目录
+Required] LuatOS project configuration directory
+具体的固件文件
+Specific Firmware Files
+可] 点灯的
+Can] light up
+可] 为支持快速演示demo的实例
+Can] support quick demo examples
+可]测试目录
+Can] test directory
+可]存放规则 命名空间/包名
+Can] store rule namespace/package name
+可]单元测试脚本
+Can] unit test scripts
+可]非脚本的资源文件
+Can be] non-scripted resource files
+可]固件目录
+Can] Firmware Directory
+可]库函数,这部分有cli与用户共同管理
+Can] library functions, this part is jointly managed by cli and users
+可]库函数列表,避免每次都扫描
+Can] library function list to avoid scanning every time
+可]库文件示例
+Examples of available] library files
+可]临时目录
+Can] temporary directory
+可]设备类型
+Can] Device Type
+可]提供默认的git忽略文件, 忽略临时文件
+Can] provide default git ignore files and ignore temporary files
+可]图片示例
+Can] Picture Example
+可]用户自定义函数
+Can] user-defined functions
+可]字体示例
+Can] font example
+可]git目录, 主动引导用户使用git管理代码
+Can] git directory, actively guide users to use git management code
+所关联的文件
+Associated Files
+相关的文件
+Related Documents
+项目结构概述
+Overview of project structure
+项目所需要的内容, 按要求存放
+Contents required by the project shall be stored as required.
+用户项目
+User Project
+用户自己的文件
+User's own files

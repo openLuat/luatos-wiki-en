@@ -1,0 +1,8 @@
+参考尺寸
+Reference Dimensions
+开发板[原理图新版（无串口芯片版本
+Development Board [Schematic New Edition (No Serial Chip Version
+开发板原理图
+Development Board Schematic
+硬件资料
+Hardware Data

@@ -1,0 +1,110 @@
+按键 需要配合init的map进行解析
+Keys need to be parsed in conjunction with init's map.
+按键状态 1 为按下, 0 为 释放
+Key state 1 is pressed, 0 is released
+触摸按键消息
+Touch key messages
+传感器
+Sensor
+此处列举了LuatOS框架中自带的系统消息列表
+Here is a list of system messages that come with the LuatOS framework
+此为系统内部使用的消息，请勿在外部使用
+This is a message for internal use of the system, do not use it externally
+当前固定为0, 可以无视
+Currently fixed to 0, can be ignored
+的取值有
+The value of is
+订阅式, 模块本身会周期性查询基站信息,但通常不包含临近小区
+Subscribed, the module itself periodically queries base station information, but usually does not contain neighboring cells.
+订阅系统消息
+Subscribe to system messages
+定位成功
+Positioning success
+定位丢失
+LOST POSITIONING
+短信内容，UTF8编码
+SMS content, UTF8 encoding
+断网后会发一次这个消息
+This message will be sent once after the network is cut off.
+对于电信/移动的卡, 联网后,基站会下发时间,但联通卡不会,务必留意
+For telecom/mobile cards, the base station will issue the time after networking, but the Unicom card will not, so be sure to pay attention to it.
+额外返回参数
+Additional return parameters
+发送超时
+Send Timeout
+发送完成
+Send Complete
+返回参数类型|解释
+return parameter type | explanation
+返回的数据
+Data returned
+和  snr 于 2023-09-06 新增
+and snr were added on September 06, 2023
+获取到电话号码(不一定有值), value为
+Get the phone number (not necessarily a value), value is
+基站数据已更新
+Base station data updated
+计数器,触摸次数统计
+Counter, touch count
+键盘矩阵消息
+Keyboard Matrix Messages
+接口文档页
+Interface Documentation Page
+接收超时
+Receive Timeout
+接收错误
+Receive Error
+接收短信, 支持多种方式, 选一种就可以了
+Receive SMS, support a variety of ways, just choose one
+接收完成
+Receive Completed
+卡的写入次数统计,掉电归0, value为统计值
+The number of times the card is written, power failure returns to 0, and value is the statistical value.
+卡就绪, value为
+Card is ready, value is
+卡状态变化
+Card status change
+例子
+Examples
+联网后会发一次这个消息
+This message will be sent once after networking.
+取值有
+Values are
+软件键盘矩阵消息
+Software Keyboard Matrix Messages
+设置回调函数
+Set callback function
+时间同步失败
+Time synchronization failed
+时间已经同步
+Time has been synchronized
+使用的例子，可多行
+The example of use can be multi-line
+是事件发生的时间,一般可以忽略
+is the time of the event and can generally be ignored
+收到短信
+SMS received
+手机号
+Mobile phone number
+为按下, 0 为 释放
+is pressed, 0 is released
+无
+None
+无SIM卡, value为
+No SIM card, value is
+系统消息
+System Messages
+需要配合init的map进行解析
+Need to cooperate with init map for parsing
+需要输入PIN, value为
+PIN required, value is
+已断网
+The network has been broken
+已联网
+Networked
+以0x01为第一个字节开头
+Starts with 0x 01 as the first byte
+用于luatos内部的系统消息传递
+for system messaging inside luatos
+状态变化
+State change

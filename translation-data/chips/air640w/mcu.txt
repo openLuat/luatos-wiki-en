@@ -1,0 +1,26 @@
+的系统内存，可用内存约
+of system memory, available memory approx.
+的Lua专属内存，可用内存约
+Lua exclusive memory, available memory of about
+飞思创
+Feichuang
+该方案已发布最终版本,不再更新
+The program has released the final version and is no longer updated
+固件包内有刷机工具
+There is a brush tool in the firmware package
+固件包与刷机烧录工具
+Firmware package and brush burning tool
+固件下载: [下载
+Firmware Download: [Download
+模块购买
+Module Purchase
+是基于联盛德W600的一款Wifi模块
+It is a Wifi module based on Liansheng De W600
+是什么
+What is it?
+为它提供哪些功能
+What functions are provided for it
+文件系统大小256kb，可用
+File system size 256kb, available
+芯片信息
+Chip Information

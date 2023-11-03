@@ -1,0 +1,72 @@
+版本
+Version
+必选]包含的文件
+Required] Included Files
+必选]原始固件,以不同SoC芯片为准
+Required] Original firmware, based on different SoC chips
+大小
+Size
+地址
+Address
+的内容
+The content
+分区表地址
+Partition Table Address
+分区表文件
+partition table file
+分区表信息
+Partition Table Information
+固件, 在原始固件的基础上,添加info.json, script.bin 等LuatOS-SoC特有的文件,并做成压缩包, 使用LuaTools/LuatIDE刷机
+Firmware, on the basis of the original firmware, add info.json, script.bin and other LuatOS-SoC-specific files, and make a compressed package, use LuaTools/LuatIDE to brush the machine
+固件地址
+Firmware Address
+固件的内容
+Contents of the firmware
+固件格式版本号
+Firmware format version number
+关于固件的定义
+About the definition of firmware
+将来会适配非常多的SoC/MCU芯片, 而各种设备的刷机格式各不相同,有必要定义一个统一的对外格式
+In the future, a lot of SoC/MCU chips will be adapted, and the brush formats of various devices are different, so it is necessary to define a unified external format.
+脚本文件
+Script file
+脚本信息
+Script Information
+可选]脚本数据存储文件 script.bin, 使用LuaDB v2格式存储
+Optional] script data storage file script.bin, stored in LuaDB v2 format
+默认打印波特率
+Default Print Baud Rate
+默认下载波特率
+Default download baud rate
+内存信息
+Memory Information
+偏移
+Offset
+通用固件格式
+Common Firmware Format
+文件
+File
+文件系统地址
+File system address
+文件系统格式
+File System Format
+文件系统信息
+File system information
+系统内存大小
+System Memory Size
+下载固件
+Download Firmware
+芯片本身的特性
+Characteristics of the chip itself
+信息
+Information
+虚拟机可用内存
+Virtual machine available memory
+原始固件, 厂商提供的固件格式, 以fls/pac/img等命名, 使用厂商提供的工具进行刷机
+Original firmware, the firmware format provided by the manufacturer, named after fls/pac/img, etc. Use the tools provided by the manufacturer to brush the machine.
+这里称之为 soc 格式, 后缀选定为 soc, 实际内容为info.json及多个固件文件的压缩包,zip或7z均可
+This is called soc format, the suffix is selected as soc, and the actual content is info.json and a compressed package of multiple firmware files, either zip or 7z
+主库代码版本
+Master library code version
+总内存信息
+Total Memory Information

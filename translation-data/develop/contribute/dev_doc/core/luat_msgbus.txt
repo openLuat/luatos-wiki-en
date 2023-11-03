@@ -1,0 +1,86 @@
+把数据也传过去
+Pass the data too.
+层, 被rtt/freertos/厂商rtos所调用的中断函数
+layer, the interrupt function called by rtt/freertos/vendor rtos
+的数据会被复制到msgbu,所以直接传指针就行
+The data of will be copied to msgbu, so just pass the pointer directly.
+等待新msg的到来, 然后执行
+wait for the arrival of the new msg, then execute
+底层是rtos, lua虚拟机运行在一个thread中
+The bottom layer is rtos, and the lua virtual machine runs in a thread.
+调试
+Debugging
+定时器/GPIO中断/UART数据进入/网络数据进入,都属于`中断
+Timer/GPIO interrupt/UART data entry/network data entry, all belong to` interrupt
+发送消息
+Send Message
+返回
+Return
+返回数值
+Returns a numeric value
+放入一个消息
+Put in a message
+核心机制
+core mechanism
+获取队列里面的全部消息,有可能为空队列
+Get all messages in the queue, which may be empty.
+获取剩余当前队列的长度
+Gets the length of the remaining current queue
+基本信息
+Basic information
+举个栗子
+Take a chestnut
+其中
+Among them
+起草日期
+Date of drafting
+清空队列
+Empty Queue
+如何使用
+How to use
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+使用固定大小的消息体,节省内存资源
+Use a fixed-size message body to save memory resources
+数据结构
+data structure
+它的作用, 就是接收中断, 打包为rtos_msg对象,提交到msgbus队列里面
+Its function is to receive interrupts, package them as rtos_msg objects and submit them to msgbus queue.
+通过消息总线的方式,让`中断`信息以生产者的方式存在, 由`rtos.receive`作为消费者
+Through the way of message bus, let the `interrupt` information exist in the way of producer, with `rtos.receive` as the consumer.
+为什么需要消息总线
+Why you need a message bus
+无返回
+No Return
+下列API用于debug, 不一定实现, 本模块暂不提供用户
+The following API is used for debug and may not be implemented. This module does not provide users for the time being.
+相关知识点
+Relevant knowledge points
+消息负载,有具体消息类型决定
+Message payload, determined by specific message type
+消息回调函数
+Message callback function
+消息体以4字节对齐的方式存在
+The message body exists in 4-byte alignment.
+消息总线
+Message Bus
+要求一个线程必须在空闲时让出cpu资源,不能以死循环方式实现`延时
+It is required that a thread must give up cpu resources when it is idle, and cannot implement `delay in an endless loop.
+以单线程执行,对`中断`运行并不友好
+Single-threaded execution, not friendly to `interrupt` operation
+在 rtos.recv 内部是这样
+This is the case inside rtos.recv
+这个函数位于 luat_gpio_rtt.c , 属于平台特定的实现
+This function is located in luat_gpio_rtt.c and belongs to the platform-specific implementation
+这个函数位于 luat_lib_gpio.c ,属于通用实现
+This function is located in luat_lib_gpio.c and is a generic implementation
+这里才填入msgid, 而不是有rtos.recv里面写逻辑判断
+Only msgid is filled in here, instead of logical judgment written in rtos.recv
+这里的handler, 就是下面提到的l_gpio_handler方法
+The handler here is the l_gpio_handler method mentioned below.
+只涉及消息的收取和支出
+Involving only the collection and disbursement of messages
+注册回调函数时,通常能传递一个自定义的参数
+When registering a callback function, you can usually pass a custom parameter.

@@ -1,0 +1,2 @@
+功耗曲线
+power consumption curve

@@ -1,0 +1,142 @@
+部分参数支持不同的位置多次使用, 例如 `[参数1]待播放[参数2]123文本
+Some parameters support multiple use of different positions, such as `[parameter 1] to be played [parameter 2]123 text
+参数
+Parameters
+参数： * – 静音的时间长度，单位：毫秒
+Parameter: *-duration of mute, unit: millisecond
+参数： * – 音量值对应到参数设置的值为 6553*（值-5），即 0 对应到-32765，5 对应到 0，10 对应到
+Parameters: *-the volume value corresponds to the parameter setting value of 6553 * (value -5), I .e. 0 corresponds to -32765,5 corresponds to 0, and 10 corresponds
+参数： * – 语调值对应到参数设置的值为 6553*（值-5），即 0 对应到-32765，5 对应到 0，10 对应到
+Parameter: *-The intonation value corresponds to the parameter setting value of 6553 * (value -5), that is, 0 corresponds to -32765,5 corresponds to 0, and 10 corresponds
+参数： 0 – 合成号码时“1”读成
+Parameter: 0-Synthesize number when "1" is read
+参数： 0 – 一字一顿
+Parameters: 0-word meal
+参数： 0 – 英文数字 0 读做
+Parameters: 0-English number 0 read to do
+参数： 0 – 自动判断
+Parameter: 0-automatic judgment
+从LuatOS统一发布中心获取
+Obtain from the LuatOS Unified Release Center
+大家好
+Hello everyone
+大家好,我是小宙
+Hello everyone, I am Xiao Zhou
+大家好，我是小宙
+Hello everyone, I am Xiao Zhou
+调用
+Call
+格式
+Format
+格式： [p*] (*=无符号整数
+Format: [p *] (* = unsigned integer
+功能代码, 必须编译进固件才能使用TTS功能
+Function code, which must be compiled into firmware to use TTS functions
+功能的说明
+Description of the function
+功能介绍
+Function introduction
+固件, 必须是LSAT固件才支持TTS, 即低速+TTS固件,同时TTS资源数据也放在固件内
+The firmware must be LSAT firmware to support TTS, that is, low-speed TTS firmware, and TTS resource data is also stored in the firmware.
+固件, 在V1104之前仅支持放SPI Flash, V1104开始支持放在固件内,有条件支持
+Firmware, only SPI Flash is supported before V1104, V1104 starts to support firmware, conditional support
+固件,标准布局就能放下,一般把TTS资源数据放固件内
+Firmware, standard layout can be put down, generally put TTS resource data in firmware
+汉语普通话
+Mandarin Chinese
+合成号码时“1”读成
+When synthesizing numbers, "1" is read
+获取LuatOS支持TTS的固件
+Obtain TTS-enabled firmware for LuatOS
+基本格式是 `[参数XXX]待播放的文本
+The basic format is `[parameter XXX] Text to be played
+即文本转语音, 特指离线TTS. 对应在线调用云服务器API生成mp3的, 不在讨论范围内
+That is, text-to-speech, especially offline TTS. It is not within the scope of discussion to call the cloud server API to generate mp3.
+脚本区会缩减到64k, 且不太可能支持底层升级,但支持脚本升级
+The script area will be reduced to 64k and is unlikely to support low-level upgrades, but script upgrades are supported
+静音一段时间
+Mute for a while
+默认不支持UI库,因为放不下, 不过依然可以自行编译固件,尝试极限操作
+The UI library is not supported by default because it cannot be put down, but the firmware can still be compiled by itself and extreme operation can be tried.
+内嵌TTS资源的固件, 使用audio固件, 也是参考
+The firmware with embedded TTS resources, using audio firmware, is also a reference.
+内嵌TTS资源数据的LuatOS固件的注意事项
+Considerations for LuatOS Firmware with Embedded TTS Resource Data
+平铺直叙
+Plain and straightforward
+设置代码参考，发音人同时只能设置一个
+Set code reference, the speaker can only set one at the same time.
+设置发音风格
+Set pronunciation style
+设置发音人
+Set Pronunciation
+设置汉语号码中“1”的读法
+Set the pronunciation of "1" in Chinese numbers
+设置数字处理策略
+Set Digital Processing Policy
+设置音量
+Set Volume
+设置语调
+set intonation
+设置语速
+Set SPEED
+数字作号码处理
+Number processing
+数字作数值处理
+Digital for numerical processing
+说明： 默认合成号码时“1”读成
+Description: The default synthesis number "1" is read
+说明： 默认为平铺直叙风格。
+Description: The default is flat and straightforward style.
+说明： 默认为英文数字 0 读做
+(The default is the English number 0 read to do)
+说明： 默认为自动判断。
+Description: automatic judgment is set by default.
+说明： 默认语调值为 5，语调的调节范围为默认语调基频下 64Hz 到上
+Note: The default intonation value is 5, and the adjustment range of intonation is 64Hz to the top of the default intonation fundamental frequency.
+说明： 默认语速值为 5，语速的调节范围为默认语速的一半到两倍，即 0 的值比默认语速慢一半，10 的值比默认语速快一倍。
+Note: The default speech speed value is 5, and the adjustment range of speech speed is half to twice the default speech speed, that is, the value of 0 is half slower than the default speech speed, and the value of 10 is twice as fast as the default speech speed.
+说明： 音量的调节范围为静音到音频设备支持的最大值，默认值 5 为中间音量。
+Note: The volume adjustment range is mute to the maximum value supported by the audio device, and the default value is 5 for the middle volume.
+说明：默认语种为自动判断。
+Note: The default language is automatic judgment.
+唐老鸭
+Donald Duck
+通过外置SPI Flash支持TTS的固件, 搭配sfud和audio库, 参考
+Firmware that supports TTS through external SPI Flash, with sfud and audio libraries, refer
+晓萍
+Xiao Ping
+许宝宝
+Xu Baobao
+许多
+Many
+许久
+for a long time
+选择语种
+Select language
+因为TTS资源数据有750k字节,所以在不同类型的固件会差异
+Because TTS resource data has 750k bytes, there will be differences in different types of firmware.
+英文数字 0 的朗读设置
+English Number 0 Reading Settings
+英文数字 0 读做
+English Number 0 Read
+英语语种
+English Language
+有声有色
+Colorful
+语音参数规则
+Speech Parameter Rules
+语音的参数调整,是播放的字符串的特殊格式来设置的
+The parameter adjustment of the voice is set by the special format of the played string.
+原始格式（选择默认参数
+Original format (select default parameters
+云编译](../../develop/compile/Cloud_compilation.md)获取
+Cloud Compilation](../../develop/compile/Cloud_compilation.md)
+在固件中分2部分
+2 parts in firmware
+在LuaTools的resource/ec618_lua_lod目录下, 发布V1104之后会有
+In the LuaTools resource/ec618_lua_lod directory, there will be
+注意：0 只有作为号码朗读时，标记才会生效，0 处理为数值时，一律读作
+Note: The mark will only take effect when 0 is read aloud as a number. When 0 is processed as a numerical value, it will always be read
+资源数据, 可编译进固件, 也可以外置到
+Resource data, which can be compiled into firmware or external

@@ -1,0 +1,14 @@
+固件下载
+Firmware Download
+管脚之间的距离
+Distance between pins
+开发板
+Development Board
+开发板尺寸图
+Development board size chart
+开发板排针尺寸
+Development board pin size
+两排管脚之间的距离
+Distance between two rows of pins
+原理图
+Schematic diagram

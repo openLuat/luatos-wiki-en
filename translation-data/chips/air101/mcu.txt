@@ -1,0 +1,22 @@
+串口烧录教程
+Serial Burn Tutorial
+大QQ群
+Large QQ group
+合宙商城
+Hizhou Mall
+合宙Air101是一款QFN32 封装，4mm x 4mm 大小的
+Hex Air101 is a QFN32 package, 4mm x 4mm size
+模块购买
+Module Purchase
+是什么
+What is it?
+刷机烧录教程
+Brush machine burning tutorial
+淘宝店
+Taobao shop
+芯片
+Chip
+注意：烧录前请设置波特率为
+Note: Please set the baud rate
+最新固件下载
+Latest Firmware Download

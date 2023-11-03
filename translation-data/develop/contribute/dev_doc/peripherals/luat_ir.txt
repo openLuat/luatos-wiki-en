@@ -1,0 +1,34 @@
+常量
+Constant
+或是直接使用外部pwm源，只用gpio控制通断
+Or directly use the external pwm source and only use gpio to control the on and off.
+基本信息
+Basic information
+接收解析功能待定，先能发再说
+The receiving and parsing function is to be determined, and can be sent first.
+目前无
+Currently None
+平台层
+Platform layer
+起草日期
+Date of drafting
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+实现常用的红外遥控协议
+Implementation of Common Infrared Remote Control Protocols
+使用芯片自带的pwm，输出38k/36kHz频率
+Use the chip's own pwm, output 38k/36kHz frequency
+需要支持us级精度延时
+Need to support us-level precision delay
+用例
+Use cases
+用途
+Use
+直接使用gpio与pwm的接口
+Use the interface between gpio and pwm directly
+至少实现NEC、RC5、sony协议，其他协议待定
+At least implement NEC, RC5, sony protocols, other protocols to be determined
+重复次数
+Number of repetitions

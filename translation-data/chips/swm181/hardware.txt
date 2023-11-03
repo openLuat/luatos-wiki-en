@@ -1,0 +1,6 @@
+开发板原理图
+Development Board Schematic
+芯片数据手册，[华芯微特SWM181数据手册V2.07.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220721163511464_华芯微特SWM181数据手册
+Chip Data Sheet, [Huacon Micro SWM181 Data Sheet V2.07.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220721163511464_华芯微特SWM181数据手册
+硬件资料
+Hardware Data

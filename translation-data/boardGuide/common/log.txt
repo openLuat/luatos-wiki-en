@@ -1,0 +1,50 @@
+本章介绍LuatOS的log库使用方式
+This chapter introduces how to use the log library of LuatOS.
+初始化看门狗，超时时长为
+Initialize the watchdog with a timeout
+代码如下
+The code is as follows
+调试风格1，包含日志打印处行号
+Debug style 1, including the line number of the log printing place
+调试风格2，包含日志打印处行号，但与调试风格1位置不同
+Debug style 2, including the line number where the log is printed, but different from debug style 1
+简介
+Introduction
+接口文档可参考：[log库
+Interface documentation can be referred to:[log library
+静默所有日志
+Silence all logs
+库是LuatOS进行日志输出的内置库，通过log库可以输出不同等级的用户日志
+The log library is a built-in library for LuatOS to output logs. The log library can output user logs of different levels.
+默认风格，包含日志标志和日志内容
+Default style, including log flag and log content
+默认日志等级是debug，可以输出debug及以上等级的日志
+The default log level is debug, which can output logs of debug level and above.
+任意LuatOS-SOC开发板一块
+Any LuatOS-SOC development board
+日志等级排序从低到高为
+Log rank ordering from low to high is
+日志如下
+The log is as follows
+日志输出
+Log Output
+软件部分
+Software part
+输出debug级别以上的日志
+Output logs above debug level
+输出error级别以上的日志
+Output logs above the error level
+输出info级别以上的日志
+Output logs above the info level
+输出warn级别以上的日志
+Output logs above the warn level
+修改日志风格
+modify the log style
+修改日志输出等级
+Modify log output level
+循环喂狗
+Cycle feeding the dog
+硬件准备
+Hardware preparation
+这条debug级别的日志不会输出
+This debug-level log will not be output.

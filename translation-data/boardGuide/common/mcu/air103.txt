@@ -1,0 +1,36 @@
+本章介绍LuatOS的mcu库使用方式
+This chapter describes how to use the mcu library of LuatOS
+代码如下
+The code is as follows
+个
+One
+获取启动后的tick数和每秒的tick数量
+Get the number of ticks after startup and the number of ticks per second
+获取设备唯一
+Get Device Unique
+简介
+Introduction
+接口文档可参考：[mcu库
+Interface documentation can be referred to:[mcu library
+开发板
+Development Board
+可以设置的主频有以下几种，通常来说，主频越低，功耗越低
+The main frequency that can be set is as follows. Generally speaking, the lower the main frequency, the lower the power consumption
+库封装了一些对应mcu的特殊操作
+library encapsulates some special operations corresponding to mcu
+日志如下
+The log is as follows
+软件部分
+Software part
+设置为2MHz的时钟频率时，日志端口需要设置波特率为
+When the clock frequency is set to 2MHz, the log port needs to set the baud rate
+设置主频并查询设置的主频
+Set the main frequency and query the set main frequency
+延时5S后再查询tick比第一次查询多了5000个
+There are 5000 more tick queries after 5S delay than the first query.
+硬件准备
+Hardware preparation
+转换10进制数为16进制字符串输出
+Convert decimal number to hexadecimal string output
+最大转换4个字节的数字
+Maximum conversion of 4 bytes of numbers

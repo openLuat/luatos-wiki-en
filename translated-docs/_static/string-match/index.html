@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lua正则在线测试工具</title>
+
+    <meta name="author" content="chenxuuu">
+    <script src="encoding-indexes.js"></script>
+    <script src="encoding.js"></script>
+    <script src="fengari-web.js"></script>
+    <script src="../js/baidu.js"></script>
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    Lua正则在线测试工具
+                </h3>
+                <div class="alert alert-warning alert-dismissable">
+                    <h4>注意！</h4>
+                    本工具使用的版本为Lua5.3<br/>
+                    如有bug，请到<a href="https://github.com/openLuat/luatos-wiki/issues/new">此处</a>反馈
+                </div>
+                <div class="form-group">
+                    <label>
+                        要测试的字符串
+                    </label>
+                    <input type="text" class="form-control" id="rawText" autofocus placeholder="输入你要测试的字符串"
+                    oninput="getResult()" onporpertychange="getResult()">
+                </div>
+                <div class="form-group">
+                    <label>
+                        要测试的正则表达式
+                    </label>
+                    <input type="text" class="form-control" id="regText" placeholder="输入你要测试的正则表达式"
+                    oninput="getResult()" onporpertychange="getResult()">
+                </div>
+                <div class="form-group">
+                    <label>
+                        可视化：
+                    </label>
+                    <label id="resultShow" style="letter-spacing:3px;font-family: Consolas,Monaco,monospace;font-size: 23px;"></label>
+                    <br>
+                    <label>
+                        string.find(<span class="lua-function-input">输入, 匹配</span>) 的结果：
+                    </label>
+                    <br>
+                    <label id="stringfindText">等待测试</label>
+                    <br>
+                    <label>
+                        string.match(<span class="lua-function-input">输入, 匹配</span>) 的结果：
+                    </label>
+                    <br>
+                    <label id="stringmatchText">等待测试</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script>
+class LuaTask {
+
+    doString(s) {
+        var r = fengari.lauxlib.luaL_dostring(this.L,fengari.to_luastring(s));
+        if(r){
+            var err = fengari.lua.lua_tojsstring(this.L, -1);
+            return {success:false,error:err};
+        }
+        else{
+            return {success:true,error:""};
+        }
+    }
+
+    clean() {
+        fengari.lua.lua_close(this.L);
+    }
+}
+
+var matchResult = [];
+function addMatchResult(s)
+{
+    matchResult.push(s);
+}
+function htmlEncode(value){
+    return $('<div/>').text(value).html();
+}
+function showResult(a,b) {
+    var raw = $("#rawText").val();
+    if(a > b || a <= 0 || b <= 0)
+    {
+        $("#resultShow").html("<span style='background-color: lightblue;'>"+htmlEncode(raw)+"</span>");
+        return;
+    }
+    var u8arr = new TextEncoder("utf-8").encode(raw);
+    var s1 = new TextDecoder("utf-8").decode(u8arr.subarray(0,a-1));
+    var s2 = new TextDecoder("utf-8").decode(u8arr.subarray(a-1,b));
+    var s3 = new TextDecoder("utf-8").decode(u8arr.subarray(b));
+    $("#resultShow").html(
+        "<span style='background-color: lightblue;'>"+htmlEncode(s1)+"</span>"+
+        "<span style='background-color: pink;'>"+htmlEncode(s2)+"</span>"+
+        "<span style='background-color: lightblue;'>"+htmlEncode(s3)+"</span>"
+        );
+}
+function getResult(){
+    var raw = $("#rawText").val();
+    var reg = $("#regText").val();
+    $(".lua-function-input").text('"'+raw.replaceAll('"','\\"')+'","'+reg.replaceAll('"','\\"')+'"');
+    //新建虚拟机
+    var L = fengari.lauxlib.luaL_newstate();
+    fengari.lualib.luaL_openlibs(L);
+    fengari.lauxlib.luaL_requiref(L, fengari.to_luastring("js"), fengari.interop.luaopen_js, 1);
+    try{
+        //传入俩值
+        fengari.lua.lua_pushstring(L, fengari.to_luastring(raw));
+        fengari.lua.lua_setglobal(L, fengari.to_luastring("raw"));
+        fengari.lua.lua_pushstring(L, fengari.to_luastring(reg));
+        fengari.lua.lua_setglobal(L, fengari.to_luastring("reg"));
+
+        //准备执行！
+        fengari.lua.lua_getglobal(L, fengari.to_luastring("string"));
+        fengari.lua.lua_getfield(L, -1, "find");
+        fengari.lua.lua_remove(L, -2);
+        fengari.lua.lua_pushstring(L, fengari.to_luastring(raw));
+        fengari.lua.lua_pushstring(L, fengari.to_luastring(reg));
+        fengari.lua.lua_call(L,2,2);
+        if(fengari.lua.lua_toboolean(L,-2))
+        {
+            var a = fengari.lua.lua_tointeger(L,-2);
+            var b = fengari.lua.lua_tointeger(L,-1);
+            $("#stringfindText").html('<table border="1" cellpadding="5"><tr><td>'+a+"</td><td>"+b+"</td></tr></table>");
+            showResult(a,b);
+        }
+        else
+        {
+            $("#stringfindText").html('<table border="1" cellpadding="5"><tr><td>nil</td></tr></table>');
+            showResult(0,0);
+        }
+
+        matchResult = [];
+        fengari.lauxlib.luaL_dostring(L,fengari.to_luastring(`
+local r = {string.match(raw,reg)}
+for _,j in ipairs(r) do
+    js.global:addMatchResult(j)
+end`));
+        if(matchResult.length > 0)
+        {
+            var r = '<table border="1" cellpadding="5"><tr>';
+            for(var i=0;i<matchResult.length;i++)
+                r += '<td>'+htmlEncode(matchResult[i])+'</td>';
+            r += '</tr></table>';
+            $("#stringmatchText").html(r);
+        }
+        else
+        {
+            $("#stringmatchText").html('<table border="1" cellpadding="5"><tr><td>nil</td></tr></table>');
+        }
+
+    }catch{
+        $("#stringfindText").text("炸了，请检查正则语法是否合规");
+        $("#stringmatchText").text("炸了，请检查正则语法是否合规");
+        showResult(0,0);
+    }
+    //清理
+    fengari.lua.lua_close(L);
+}
+getResult();
+    </script>
+</body>
+
+</html>

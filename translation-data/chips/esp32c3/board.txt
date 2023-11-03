@@ -1,0 +1,144 @@
+按键按下时，芯片复位         | 低电平有效
+When the key is pressed, the chip reset | active low
+按键按下时，芯片进入下载模式 | 低电平有效
+When the key is pressed, the chip enters download mode | active low
+按键编号** | **管脚功能**                 | **描述
+Key Number **|** Pin Function **|** Description
+按键介绍
+Key introduction
+板载出厂demo可通过串口工具查看，会虚拟一个串口，可以通过网页控制板载的LED灯。
+The on-board factory demo can be viewed through serial port tools, a virtual serial port can be used to control the on-board LED lights through web pages.
+板载天线
+onboard antenna
+编号 | **对应GPIO** | **管脚功能** | **描述
+Number | **Corresponds to GPIO** | **Pin function** | **Description
+编号** | **名称** | **复位后默认功能**                      | **复用功能**    | **电源域** | **上下拉能力
+Number **|** Name **|** Default function after reset **|** Multiplexing function **|** Power domain **|** Pull-down capability
+表
+Table
+尺寸长宽
+Dimension length and width
+串口烧录教程](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html)，**日志波特率为
+Serial Burning Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html),**Log baud rate is
+串口烧录教程](https://wiki.luatos.com/boardGuide/flash.html)，**日志波特率为
+Serial Burning Tutorial](https://wiki.luatos.com/boardGuide/flash.html),**Log baud rate is
+电源接口，与USB的VBUS相连
+Power interface, connected to USB VBUS
+调试过程中优先推荐的供电方式：TYPE-C USB接口供电。
+Power supply mode to be recommend preferentially during debugging: power supply TYPE-C USB interface.
+二、硬件资源
+2. hardware resources
+附表
+Schedule
+供电电源
+Power supply
+管脚标号** | **对应GPIO** | **管脚功能**                  | **上下拉能力
+Pin label **|** corresponds to GPIO **|** Pin function **|** Pull-up capability
+管脚控制参考表
+Pin Control Reference Table
+管脚上电前不能下拉，ESP32会进入下载模式
+The pin cannot be pulled down before power-on, ESP32 will enter download mode.
+合宙CORE ESP32核心板板载2颗LED，开发者可参考表4-1进行对应管脚的控制。
+The CORE ESP32 core board carries 2 LEDs. Developers can refer to Table 4-1 for control of corresponding pins.
+合宙CORE ESP32核心板板载两颗按键，其中BOOT键可实现BOOT下载功能，RST键可实现复位功能，管脚控制参考表
+The CORE ESP32 core board carries two keys, of which BOOT key can realize BOOT download function, RST key can realize reset function, and pin control reference table
+和 GND 排针供电
+and GND pin supply
+和GND排针供电
+and GND pin supply
+核心板是基于乐鑫ESP32-C3进行设计的一款核心板，尺寸仅有21mm*51mm，板边采用邮票孔设计，方便开发者在不同场景下的使用。核心板支持UART、GPIO、SPI、I2C、ADC、PWM等接口，可根据实际需要选择。
+The core board is a core board designed based on Lexin ESP32-C3, with a size of only 21mm * 51mm. The board edge is designed with stamp holes, which is convenient for developers to use in different scenes. The core board supports UART, GPIO, SPI, I2C, ADC, PWM and other interfaces, which can be selected according to actual needs.
+核心板支持以下3种方式供电
+The core board supports the following 3 ways of power supply
+接地
+Grounding
+接口供电（默认
+Interface power supply (default
+经典款（带TTL串口转USB的版本）一定要安装CH343的驱动才能正常下载固件，默认的CDC驱动只能打印日志，但是速率太慢会导致下载失败。[驱动传送门
+The classic model (version with TTL serial port to USB) must install the driver of CH343 to download the firmware normally. The default CDC driver can only print logs, but the speed is too slow to cause the download to fail. [Drive portal
+开发板
+Development Board
+开源仓库链接
+Open Source Warehouse Link
+控制
+Control
+链接
+Link
+路 12 比特 ADC，最高采样率
+12-bit ADC, highest sampling rate
+路低速SPI接口，支持主模式
+Low-speed SPI interface, support master mode
+路复位按键+1路BOOT按键
+Road reset button 1 road BOOT button
+路贴片LED指示灯
+Road patch LED indicator
+路IIC控制器
+Road IIC controller
+路PWM接口,可使用任意
+PWM interface, can use any
+路SPI FLASH，板载4MB，支持最高
+SPI FLASH, onboard 4MB, support the highest
+路UART接口，UART0~UART1,其中下载口为
+UART interface, UART0 ~ UART1, where the download port is
+路USB转TTL下载调试口
+Road USB to TTL download debugging port
+默认为SPI flash的VDD引脚，需要配置后才能作为GPIO使用
+The default is the VDD pin of SPI flash and needs to be configured before it can be used as GPIO.
+配置   | 高电平有效
+Configuration | Active High
+配置，FLASH_CK，时钟
+Configure, FLASH_CK, Clock
+配置，FLASH_CS，片选
+Configuration, FLASH_CS, slice selection
+配置，FLASH_D0，数据脚
+Configuration, FLASH_D0, Data Foot
+配置，FLASH_D1，数据脚
+Configuration, FLASH_D1, Data Foot
+任意GPIO均可作为PWM脚, 编号与GPIO一致, 但`同时只能开启4路PWM`,务必注意
+Any GPIO can be used as a PWM pin, and the number is the same as that of GPIO, but only 4 PWMs can be turned on at the same time. Please pay attention
+如果你使用的是`Arduino`，请选择开发板型号为
+If you are using `Arduino`, please select the development board model
+三、管脚定义
+3. Pin Definition
+使用到IO08管脚进行设计，不建议外部直接下拉，因为在下载烧录时，IO08管脚为低电平，不能使用串口进行下载
+Use the IO08 pin for design, and direct external pull-down is not recommended, because the IO08 pin is low when downloading and burning, and serial port cannot be used for downloading.
+使用注意事项
+Precautions for use
+输入
+Input
+输入，输出，高阻
+input, output, high resistance
+刷机烧录教程
+Brush machine burning tutorial
+四、功能介绍
+4. function introduction
+特别注意
+Special attention
+外部管脚15路，可复用
+15 external pins, reusable
+外置SPI flash的VDD已链接至3.3V电源系统，使用时不需再配置其他电源，采用普通2线SPI通信方式，对应管脚如表
+The VDD of the external SPI flash has been linked to the 3.3V power supply system. No other power supplies need to be configured during use. The common 2-wire SPI communication mode is adopted. The corresponding pins are shown in the table.
+外置SPI FLASH控制
+External SPI FLASH control
+相关资料链接
+Related Information Links
+详细管脚描述
+Detailed Pin Description
+芯片3.3V供电控制,高电平有效，不用可悬空
+Chip 3.3V power supply control, high level valid, no need to suspend
+芯片电源
+Chip power supply
+芯片复位
+Chip Reset
+新款（USB直连）可以直接烧录，Win8及以上系统无需安装驱动。可以正常使用Luatools烧录，但是无法使用LuatIDE。除烧录时需要选择带`USB`字样的固件，*GPIO18/19会被占用为USB脚*, 应避免使用, 其他功能没有任何区别。
+The new (USB direct connection) can be directly burned, Win8 and above systems do not need to install drivers. Luatools burning can be used normally, but LuatIDE cannot be used. Except that firmware with the words` USB` needs to be selected when burning, * GPIO18/19 will be occupied as USB pin *, which should be avoided, and other functions have no difference.
+新款若需要使用GPIO18/19, 可外接USB-TTL到UART0进行刷机和查看日志,不使用板载TypeC进行刷机和日志查看
+If GPIO18/19 is required for the new model, it can be USB-TTL externally to UART0 for brushing and log viewing, instead of using on-board TypeC for brushing and log viewing.
+一、产品描述
+1. Product Description
+在QIO模式下为SPI信号SPIHD和SPIWP复用，为了增加可用GPIO数量，开发板选择采用2线SPI的DIO模式，IO12、IO13并未连接flash，使用自己编译的软件时需要注意配置flash为DIO模式
+In QIO mode, SPI signals SPIHD and SPIWP are multiplexed. In order to increase the number of available GPIO, the development board selects DIO mode using 2-wire SPI. IO12 and IO13 are not connected to flash. When using self-compiled software, attention should be paid to configuring flash to DIO mode
+注：CORE ESP32核心板搭载ESP32-C3是不带内置FLASH版本，默认贴装外置SPI FLASH，如遇到不贴装外置SPI FLASH的核心，需要注意主芯片的具体型号。 使用内置Flash的, `GPIO11/12/13` 不可用
+Note: The CORE ESP32 core board is equipped with a ESP32-C3 without a built-in FLASH version. The external SPI FLASH is mounted by default. If you encounter a core that does not mount an external SPI FLASH, you need to pay attention to the specific model of the main chip. Using built-in Flash, `GPIO11/12/13 `is not available
+注意，由于**win7**系统不自带`winusb`驱动，且该系统早在2020年微软就已停止支持，所以如需使用`简约版开发板`，请升级至**win8以上系统**，或前往[乐鑫原厂手册](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html)安装驱动
+Note that since the **win7** system does not come with` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to use the` simple version development boade`, please upgrade to the system above **win8 * *, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver.

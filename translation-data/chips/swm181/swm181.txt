@@ -1,0 +1,78 @@
+安装支持包
+Install Support Package
+安装MDK5，具体方法请百度，安装后需要激活才能编译大文件
+Install MDK5, the specific method please Baidu, after installation need to activate to compile large files
+背景：本文档主要解决SWM181系列芯片的KEIL开发环境搭建相关问题
+Background: This document mainly solves the problems related to the construction of KEIL development environment for SWM181 series chips.
+编译一下，没有问题
+Compile it, no problem
+测试代码
+Test code
+查看设备是否连接正常，连接正常可以在SW Device列表里看到设备，可以调整时钟速度提高效率
+Check whether the device is connected normally. If the connection is normal, you can see the device in the SW Device list, and you can adjust the clock speed to improve efficiency.
+创建文件夹和工程名，路径根据自己实际选
+Create a folder and project name, and select the path according to your actual choice.
+点击菜单栏的
+Click on the menu bar
+点击工程配置魔术棒，找到Debug选项卡，在下拉列表中选择CMSIS-DAP Debugger，点击
+Click the project configuration magic wand, find the Debug tab, select the CMSIS-DAP Debugger in the drop-down list, and click
+点击Flash Download选项卡，可以看到我们的支持包已经默认帮我们添加了下载算法，我们可以勾选Reset and Run选项卡，每次下载完自动复位运行代码，就不用手动按复位按钮了。
+Click on the Flash Download tab, you can see that our support package has added a download algorithm for us by default. We can check the Reset and Run tab, and every time we download the automatic reset running code, we don't need to manually press the reset button.
+二、环境搭建
+2. environment construction
+反转LED亮灭状态
+Reverse LED on/off state
+复位
+Reset
+技术定位：初级/中级/高级
+Technical positioning: junior/intermediate/advanced
+简单写个点灯的代码
+Simply write a lighting code
+开发板出厂默认为DAPLINK固件，所以可以直接作为调试器给另一个设备调试烧录。这里介绍DAPLINK的使用方法，其他调试器类似。
+The development board factory defaults to DAPLINK firmware, so it can be directly used as a debugger to debug and burn to another device. Here is how to use the DAPLINK, similar to other debuggers.
+开发板的DAPLINK固件，PB13连接被调试设备的SWDCLK，PB14连接被调试设备的SWDIO，PB0连接复位
+The DAPLINK firmware of the development board, PB13 is connected to the SWDCLK of the debugged device, PB14 is connected to the SWDIO of the debugged device, and PB0 is connected to reset
+每0.25秒钟触发一次中断
+Trigger an interrupt every 0.25 seconds
+目标群体：使用KEIL进行开发的用户
+Target group: Users who use KEIL for development
+配置完成以后就可以直接点击烧录按钮下载烧录代码到设备了。
+After the configuration is completed, you can directly click the burn button to download the burn code to the device.
+三、下载烧录
+3. Download Burn
+设置一下Waring的级别为
+Set Waring's level
+使用手册
+Manual
+输出，接
+output, connected
+双击pack包默认安装即可，安装后可在keil设备列表的Synwit目录看到SWM181的设备
+Double-click the pack package to install by default. After installation, you can see the SWM181 device in the Synwit directory of the keil device list.
+添加启动文件，勾选CMSIS下的CORE和Device下的Startup，即可自动配置启动文件
+Add a startup file and check the Startup under CORE and Device under CMSIS to automatically configure the startup file.
+添加外设库支持，例如添加GPIO库，我们勾选GPIO和Port库，其他根据自己需要勾选即可，也可以全部勾选。
+Add peripheral library support, for example, add GPIO library, we check GPIO and Port library, others can be checked according to their own needs, or all can be checked.
+添加文件，右键工程文件列表的文件夹，选择添加文件
+Add a file, right-click the folder in the project file list, and select Add File
+添加一个C文件，叫
+Add a C file called
+下载安装SWM181的keil支持包[pack文件
+Download the keil support package for installing SWM181 [pack file
+下载完成后设备自动重启，可以看到板子上的蓝灯一闪一闪的亮起来了。
+After the download is completed, the device will restart automatically, and you can see the blue light on the board flashing.
+新建工程
+New construction
+虚拟串口的
+virtual serial port
+选择设备列表中的Synwit目录下的
+Select the Synwit directory in the device list
+一、背景
+1. background
+引脚 |     功能
+Pin | Function
+整体连接图如下图所示
+The overall connection diagram is shown in the following figure
+注意，由于**win7**系统不自带`winusb`驱动，且该系统早在2020年微软就已停止支持，所以如需使用DAPLINK功能，请升级至**win8以上系统**，或自行手动安装驱动：[Zadig驱动安装器
+Note that since **win7** system does not have a` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to use DAPLINK function, please upgrade to **win8 or above system**, or manually install the driver yourself:[Zadig driver installer
+准备工作
+Preparations

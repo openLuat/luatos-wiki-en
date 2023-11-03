@@ -1,0 +1,234 @@
+本文涉及Luat底层运行机制, 初学者建议略过
+This article deals with the underlying operating mechanism of Luat, which is recommended for beginners to skip.
+标记id和callback关系
+tag id and callback relationship
+参数检测，参数不能为负值
+Parameter detection, parameter cannot be negative
+查看coroutine的状态注：coroutine的状态有三种
+View the status of the coroutine Note: There are three coroutine statuses
+程序流程
+Procedure flow
+创建并运行该线程，进入sys.wait函数，taskTimerId的初始值为0，所以+1，taskTimerId=1，coroutine.running()会返回正在运行的任务的线程号，也就是当前任务的线程号，比如该例中为0x8218dbc0。注意：线程号是唯一不会改变的。所以taskTimerPool[0x8218dbc0] = 1，timerPool[1] = 0x8218dbc0。这样就将定时器ID和线程号联系起来了。然后开启定时器，挂起该任务，执行下一任务。
+Create and run the thread, enter the sys.wait function, the initial value of the taskTimerId is 0, so 1,taskTimerId = 1,coroutine.running() returns the thread number of the running task, that is, the thread number of the current task, such as x8218dbc0 0 in this example. Note: The thread number is the only one that does not change. So taskTimerPool[0 x8218dbc0] = 1,timerPool[1] = 0 x8218dbc0. This associates the timer ID with the thread number. Then start the timer, suspend the task, and execute the next task.
+创建一个 coroutine 需要调用一次`coroutine.create`。它只接收单个参数，这个参数是 coroutine 的主函数。 `create` 函数仅仅创建一个新的 coroutine 然后返回它的控制器（一个类型为 thread 的对象）；它并不会启动 coroutine 的运行。
+Creating a coroutine requires a single call to `coroutine.create `. It only receives a single argument, which is the main function of the coroutine. The `create` function simply creates a new coroutine and returns its controller (an object of type thread); it does not start the coroutine.
+创建coroutine，返回thread， 参数是一个函数建之后线程属于挂起状态，并没有执行
+Create coroutine, return thread, parameter is a function after the thread is built belongs to the suspended state, and did not execute
+此时message为
+At this time the message is
+此时messageQueue中为
+In this messageQueue is
+此时subscribers\["TEST"][subCallBack] = true。表明TEST消息对应的回掉函数为
+subscribers\["TEST"][subCallBack] = true. Indicates that the return function corresponding to the TEST message is
+的值为第一次调用协同程序时传入
+The value of is passed in the first call to the co-program.
+等待超时时间，单位ms，最大等待126322567毫秒
+Wait timeout, unit: ms, maximum 126322567 ms
+第二次调用resume唤醒线程，并且传入7,8。此时回到上次挂起的位置，并将赋值给a，b。相当于
+The second call to resume wakes up the thread and passes in 7,8. At this point, it returns to the last suspended position and assigns a, B. Equivalent
+第二次调用resume唤醒线程，传入参数“r”，注意：此时传入的参数“r”，赋值给coroutine.yield，所以相当于local r = "r"，输出“第二次协同程序执行输出r”。再次遇到yeild，挂起线程，此时程序停留在这儿，下次唤醒线程时从该处继续执行。返回yeild的参数。输出
+The second call to resume wakes up the thread and passes in the parameter "r". note: the parameter "r" passed in at this time is assigned to coroutine.yield, so it is equivalent to local r = "r" and outputs "output r of second coprogram execution". When yeild is encountered again, the thread is suspended. At this time, the program stays here and resumes execution from there the next time the thread is awakened. Returns the arguments for yeild. Output
+第二次协同程序执行输出
+Second collaborative program execution output
+第三次调用resume唤醒线程，传入参数“x”，“y”，赋值给coroutine.yield，相当于local r,s = "r","s"，输出“第三次协同程序执行输出xy”。到这儿整个线程就结束了，输出“main	true	10	结束协同程序
+The third call to resume wakes up the thread, passes in the parameters "x" and "y" and assigns them to the coroutine.yield, which is equivalent to local r,s = "r","s" and outputs "xy output from the third coprogram execution". Here the whole thread ends, outputting "main true 10" to end the co-program.
+第三次协同程序执行输出
+Third collaborative program execution output
+第四次调用resume唤醒线程，此时线程已经为dead了，无法唤醒。
+The fourth time resume is called to wake up the thread. At this time, the thread is dead and cannot be woken up.
+第一次协同程序执行输出
+First Coprogram Execution Output
+调用core的rtos定时器
+Call the rtos timer of the core
+调用resume唤醒线程，并传参1,10。输出“第一次协同程序执行输出	1	10”。接下来执行foo函数，输出“foo 函数输出	2”。在foo函数中遇到了yeild，挂起线程，此时程序停留在这儿，下次唤醒线程时从该处继续执行。返回yeild的参数。输出
+Call resume to wake up the thread and pass parameters 1 and 10. Output "First coprogram execution output 1 10". Next, execute the foo function and output "foo function output 2". In the foo function, yeild is encountered and the thread is suspended. At this time, the program stays here and resumes execution from there the next time the thread is awakened. Returns the arguments for yeild. Output
+调用resume唤醒线程，并且传入4,5。遇到yeild，挂起程序，返回a+b。所以输出
+Call resume to wake up the thread and pass in 4,5. Encounter yeild, suspend the program, return a B. So the output
+订阅消息
+Subscribe to messages
+订阅者列表
+Subscriber List
+订阅id，并传入线程号
+subscription id, and pass in the thread number
+定时器ID加
+Timer ID Plus
+读取外部消息，当定时器达到定时时间后，会发生一个消息。
+Read the external message, when the timer reaches the timer time, a message will occur.
+发布内部消息，存储在内部消息队列中
+Publish internal messages, stored in the internal message queue
+返回  2*a 的值
+Returns the value of 2 * a
+返回第二个到最后一个
+Return second to last
+返回结果
+Return Results
+返回正在跑的coroutine，一个coroutine就是一个线程，当使用running的时候，就是返回一个corouting的线程号
+Returns the running coroutine, a coroutine is a thread, when using running, is to return a corouting thread number
+方法                | 释义
+method | paraphrase
+分发内部消息
+Distribute internal messages
+分发消息
+distribution message
+分割线
+Split line
+该测试程序总共创建了2个任务，第一个任务每次加1，挂起1000ms，第二个任务每次加1，挂起2000ms，所以最后的输出为：输出两次task_A\_cnt， 输出一次task_B_cnt。如果在单片机上习惯写UCOS或者FreeRTOS的开发者看到这样的结构肯定不会陌生。
+The test program has created a total of 2 tasks. The first task is added 1 at a time and suspended for 1000ms. The second task is added 1 at a time and suspended for 2000ms. Therefore, the final output is: output task_A\_cnt twice and output task_ B _cnt once. If you are used to writing UCOS or FreeRTOS on the microcontroller, developers will certainly not be unfamiliar with such a structure.
+根据timerPool获取线程号并清除
+Get thread number as timerPool and clear
+挂起调用的任务线程
+Suspend calling task thread
+挂起coroutine，将coroutine设置为挂起状态。下次执行resume，程序将回到挂起的位置继续执行而不是从头再执行。挂起成功返回
+Pending coroutine to set the coroutine to the pending state. The next time resume is executed, the program will return to the suspended position to continue execution instead of restarting from the beginning. Suspend successful return
+还有一种为
+There is also a kind of
+函数输出
+Function Output
+和UCOS，FreeRTOS的任务体大致相同，一个while死循环，然后通过延时切换任务。
+And UCOS, the FreeRTOS task body is roughly the same, a while dead loop, and then switch tasks through delay.
+和yield的配合强大之处在于，resume处于主程中，它将外部状态（数据）传入到协同程序内部；而yield则将内部的状态（数据）返回到主程中。
+The strength of the combination with yield is that resume is in the main process, which passes external state (data) into the collaborative program, while yield returns internal state (data) to the main process.
+唤醒线程，传入参数，此时执行线程，线程状态为running，输出
+Wake up the thread, pass in the parameter, execute the thread at this time, the thread state is running, output
+获取队列的第一个
+Get the first of the queue
+检测定时时间是否正确
+Check whether the timing time is correct
+将不定参数插入队列中
+Inserting indeterminate parameters into the queue
+接收到消息返回消息参数
+Message Received Return Message Parameters
+接收到消息返回true，超时返回
+Received message returns true, timeout returns
+接下来分析一下sys.taskInit和sys.wait两个重要的函数
+Next, analyze the two important functions of sys.taskInit and sys.wait
+接下来我们分析一个更详细的实例(引用于Lua手册
+Next we analyze a more detailed example (quoted in the Lua manual
+结束协同程序
+End Collaboration
+结束协同程序"                   -- b的值为第二次调用协同程序时传入
+End the co-program "-the value of B is passed in when the co-program is called the second time.
+进入正题
+get to the point
+开启定时器
+Start Timer
+看下面的代码
+Look at the code below
+可变参数，用户自定义
+Variable parameters, user-defined
+可以通过两种方式来终止运行：一种是正常退出，指它的主函数返回（最后一条指令被运行后，无论有没有显式的返回指令）; 另一种是非正常退出，它发生在未保护的错误发生的时候。第一种情况中， `coroutine.resume`返回 true，接下来会跟着 coroutine 主函数的一系列返回值。第二种发生错误的情况下， `coroutine.resume`返回 false ，紧接着是一条错误信息。
+There are two ways to terminate a run: a normal exit, which means that its main function returns (after the last instruction is run, with or without an explicit return instruction), and an abnormal exit, which occurs when an unprotected error occurs. In the first case, `coroutine.resume` returns true, followed by a series of return values coroutine the main function. In the second case, `coroutine.resume` returns false, followed by an error message.
+框架(进阶-底层机制
+framework (advanced-underlying mechanism
+内部消息队列
+Internal Message Queue
+判断定时器是否用完，如果没有，则分配一个未使用的定时器ID给该任务线程
+Determine whether the timer runs out, and if not, assign an unused timer ID to the task thread.
+判断是否为定时器消息，并且消息是否注册
+Determine whether it is a timer message and whether the message is registered
+判断是否为任务开启的定时器，若是，判断定时器ID是否超过最大值
+Determine whether the timer is started for the task. If yes, determine whether the timer ID exceeds the maximum value.
+其他消息（音频消息、充电管理消息、按键消息等
+Other messages (audio messages, charge management messages, key messages, etc.
+取消订阅该
+Unsubscribe from this
+取消订阅消息
+Unsubscribe message
+任务的条件等待函数（包括事件消息和定时器消息等条件），只能用于任务函数中。
+The conditional wait function of a task (including conditions such as event messages and timer messages) can only be used in task functions.
+如果订消息存在
+If the subscription message exists
+如果队列长度为  跳出循环
+If the queue length is out of loop
+如果没有重复消息
+If there are no duplicate messages
+如果能在taskTimerPool中找到定时器ID和任务号对应，则唤醒该线程
+If the timer ID and task number can be found in the taskTimerPool, the thread is woken up.
+如果callback是函数，那么将publish时候的参数传给回调函数。
+If the callback is a function, pass the parameters at publish time to the callback function.
+如果callback是线程，那么唤醒该线程。
+If the callback is a thread, the thread is awakened.
+如何将定时器和任务组织起来的呢？其中最重要的就是taskTimerPool，timerPool这两个表。在此之前我们得每个线程的线程号都是唯一不变的。
+How are timers and tasks organized? One of the most important is the taskTimerPool,timerPool these two tables. Before that, the thread number of each thread is unique and unchanged.
+删除id和callback关系
+delete id and callback relationship
+实际是封装了`coroutine.create`和`coroutine.resume`。创建一个任务线程,并执行该线程，返回线程号。
+It actually encapsulates `coroutine.create` and `coroutine.resume `. Creates a task thread and executes the thread, returning the thread number.
+首先调用sys.taskInit创建任务，任务体的格式为
+First, call sys.taskInit to create a task. The format of the task body is
+输出
+Output
+输出当前线程状态，为suspend（挂起，并未执行
+Output the current thread state, which is suspend (suspended, not executed
+输出结果
+Output Results
+输出结果,只摘抄了一小部分
+Output results, only a small part of the excerpt
+所以，msg为rtos.MSG_TIMER，param为定时器ID号。
+So, msg is rtos.MSG_TIMER and param is the timer ID number.
+通过pairs遍历得到消息对应的回调函数或者任务。
+The callback function or task corresponding to the message is obtained by traversing the path.
+为了更好的理解LuaTask，花了大量时间讲解Lua的协同式多线程 ，接下来进入正题
+In order to better understand the LuaTask, spent a lot of time to explain Lua collaborative multi-threading, and then get down to business.
+问题来了，定时器达到定时时间的时候怎么处理呢
+Here comes the problem. What should I do when the timer reaches the timing?
+无
+None
+先看一个简单的程序
+First look at a simple program
+先看sys.taskInit的源码
+First look at the source code of sys.taskInit
+先写一个测试程序
+Write a test program first
+显然，这个例子比上面例子复杂许多，不过只要仔细分析，理解起来也不会困难
+Obviously, this example is much more complicated than the one above, but it won't be difficult to understand if you analyze it carefully.
+线程结束，正常退出，`coroutine.resume(co, 1)`返回true。输出线程状态，为dead。注意：dead之后不能再resume（死了的人怎么能唤醒呢？/滑稽
+The thread ends and exits normally, `coroutine.resume(co, 1)`returns true. Output thread status, which is dead. Note: you can`t resume after dead (how can a dead person wake up?/funny
+消息
+Message
+消息回调处理
+Message callback processing
+选一个未使用的定时器ID给该任务线程
+Select an unused timer ID for the task thread
+以定时器ID号为下标存储线程号ID到timerPool表中
+Store the thread ID in the timerPool table with the timer ID number as the subscript.
+以上只是单个消息举例，多个消息同理，因为每次循环都会将messageQueue的头部出队列，满足FIFO原则。
+The above is only an example of a single message, and the same applies to multiple messages, because each cycle will send the head of the messageQueue out of the queue, meeting the FIFO principle.
+以线程号为下标存储定时器ID号到taskTimerPool表中
+Store the timer ID number in the taskTimerPool table with the thread number as the subscript.
+以这个简单的例子来解释
+Explain with this simple example
+以sys.publish("TEST",a)和sys.subscribe("TEST",subCallBack)，订阅者列表为local subscribers = {}。内部消息队列为local messageQueue = {}为例
+With sys.publish("TEST",a) and sys.subscribe("TEST",subCallBack), the subscriber list is local subscribers = {}. Internal message queue for local messageQueue = {}
+应用消息订阅/发布接口
+Application message subscription/publishing interface
+运行原理
+Operating principle
+再举个小例子说明resume和yield关系
+Let's take another small example to illustrate the relationship between resume and yield.
+再看
+Look again
+在有上基础下容易的理解waitUntil()的实现
+It is easy to understand the implementation of waitUntil() on the basis
+在dispatch()函数中，获得表头列表。
+In the dispatch() function, get the list of headers.
+在publish函数中，将"TEST"消息和参数插入messageQueue列表中
+In the publish function, insert the "TEST" message and argument into the messageQueue list
+在subscribe函数中判断消息和callback类型是否正确，如果正确则在subscribers中建立消息与回调函数之间的关系。
+Determine whether the message and callback types are correct in the subscribe function, and establish the relationship between the message and the callback function in the subscribers if they are correct.
+找到该消息对应的回调函数或消息。将message中的参数传给回调函数。
+Find the callback function or message corresponding to the message. Pass the arguments in the message to the callback function.
+这儿提到了三种状态，画了一个图来描述它们之间的关系
+Three states are mentioned here, and a diagram is drawn to describe the relationship between them.
+这样，就能实现任务与任务之间的调度了。
+In this way, scheduling between tasks can be achieved.
+这样描述比较抽象，举个例子会更好理解一点
+This description is more abstract, and an example will be better understood.
+支持 coroutine ，这个东西也被称为协同式多线程 (collaborative multithreading)。 Lua 为每个 coroutine 提供一个独立的运行线路。举个通俗易懂的例子：去饭店吃饭，假设饭店只有一个厨师，这时候来了三个客人，分别点了一号菜，二号菜，三号菜。如果按照一二三这样的顺序做菜的话，效率很低。现在引入一种新模式，每个菜花2分钟时间去做。这样的顺序就变为了花两分钟做第一道菜，两分钟到了，做第二道菜，二分钟到了，然后第三道菜。这样的好处是每个客人的菜都有一段时间正在制作过程中，不会出现其他菜必须等到一道菜结束后才可以去做。客人就是上帝，二号客人比较饿，所以可以要求厨师花5分钟制作二号菜。这样的好处之一是可以对每道菜灵活分配时间。不太恰当的比喻，厨师就是CPU，客人就是任务。
+Support for coroutine, this thing is also known as collaborative multi-threading (collaborative multithreading). Lua provides a separate running line for each coroutine. Let's take an easy-to-understand example: when we go to a restaurant for dinner, suppose there is only one chef in the restaurant. At this time, three guests come and order dishes 1, 2 and 3 respectively. If you cook in the order of one, two, three, the efficiency is very low. Now introduce a new mode, each cauliflower takes 2 minutes to do. The order becomes two minutes for the first course, two minutes to go, the second course, two minutes to go, and then the third course. The advantage of this is that each guest's dish is in the process of being made for a period of time, and there will be no other dishes that must wait until the end of one dish. The guest is God. The second guest is hungry, so you can ask the chef to spend 5 minutes making the second dish. One of the benefits of this is the flexibility to allocate time to each dish. In an inappropriate analogy, the chef is the CPU and the guest is the task.
+执行线程，和create配合使用，此时线程为running状态
+Execute the thread, which is used in conjunction with create, when the thread is in the running state.
+阻塞读取外部消息
+Blocking reading external messages
+阻塞线程，如果接收到了消息，那么返回
+Blocking thread, if a message is received, returns

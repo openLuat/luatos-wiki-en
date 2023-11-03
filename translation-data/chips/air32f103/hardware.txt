@@ -1,0 +1,6 @@
+开发板原理图
+Development Board Schematic
+芯片数据手册[AIR32F103芯片数据手册1.0.0.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220605164850945_AIR32F103芯片数据手册
+Chip Data Sheet [AIR32F103 Chip Data Sheet 1.0.0.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220605164850945_AIR32F103芯片数据手册
+硬件资料
+Hardware Data

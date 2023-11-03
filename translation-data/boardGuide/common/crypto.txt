@@ -1,0 +1,22 @@
+本章将会向大家介绍LuatOS的CRYPTO功能。将会实现使用Air101开发板进行加密、解密并在日志中打印。
+This chapter will introduce you to the CRYPTO features of LuatOS. Will be implemented using the Air101 development board for encryption, decryption and printing in the log.
+从打印日志查看
+View from Print Log
+加密, 未经Hex编码
+Encrypted, not Hex encoded
+加密是以某种算法改变原有的信息数据，使得未授权用户即使获得了已加密信息，因不知解密的方法，无法得知信息真正的含义，通过这种方式提高网络数据传输的安全性，加密算法常见的有哈希算法、HMAC 算法、签名、对称性加密算法和非对称性加密算法，加密算法也分为可逆和不可逆，比如 `md5` 就是不可逆的hash算法，我们在开发中经常使用这些加密算法，`crypto` 模块提供了加解密功能。
+Encryption is to change the original information data by a certain algorithm, so that even if unauthorized users get the encrypted information, they cannot know the real meaning of the information because they do not know the decryption method. In this way, the security of network data transmission is improved. The common encryption algorithms are hash algorithm, HMAC algorithm, signature, symmetric encryption algorithm and asymmetric encryption algorithm. Encryption algorithm is also divided into reversible and irreversible, for example, `md5` is an irreversible hash algorithm. We often use these encryption algorithms in development. The `crypto` module provides encryption and decryption functions.
+简介
+Introduction
+接口文档可参考：[crypto库
+Interface documentation can be referred to:[crypto library
+解密, 未经Hex编码
+Decrypted, not Hex encoded
+开发板一块
+A development board
+软件使用
+Software usage
+输出结果已经hex编码
+The output result has been hex encoded
+硬件准备
+Hardware preparation

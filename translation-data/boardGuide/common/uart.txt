@@ -1,0 +1,44 @@
+本章将会向大家介绍LuatOS的UART功能。将会实现使用Air101开发板循环向UART1发送数据并将UART1接收的数据在日志中打印。
+This chapter will introduce you to the UART features of LuatOS. The Air101 development board will be used to send data to UART1 and print the data received by UART1 in the log.
+波特率
+Baud rate
+初始化
+Initialization
+串口
+Serial port
+串口的特点是将数据一位一位地顺序传送，只要 2 根传输线就可以实现双向通信，一根线发送数据的同时用另一根线接收数据。UART 串口通信有几个重要的参数，分别是波特率、起始位、数据位、停止位和奇偶检验位，对于两个使用 UART 串口通信的端口，这些参数必须匹配，否则通信将无法正常完成。
+The characteristic of the serial port is to transmit data bit by bit in sequence. Two-way communication can be realized as long as two transmission lines. One line sends data while receiving data with another line. There are several important parameters for UART serial communication, namely baud rate, start bit, data bit, stop bit and parity bit. For two ports using UART serial communication, these parameters must match, otherwise the communication will not be completed normally.
+代码介绍
+Code Introduction
+定时器循环向串口1发送数据
+Timer loops to send data to serial port 1
+简介
+Introduction
+接口文档可参考：[uart库
+Interface documentation can be found in:[uart library
+开发板一块，USB转TTL模块一块
+A development board, USB to TTL module
+如图将TTL的TX、RX、GND分别连接Air101的
+As shown in the figure, connect TTL TX, RX and GND to Air101 respectively
+软件使用
+Software usage
+若打印不可见字符,或者叫"二进制数据", 可以把数据转为HEX值显示
+If you print invisible characters, or "binary data", you can convert the data to HEX value display.
+数据位
+data bit
+停止位
+Stop bit
+通用异步收发传输器，UART 作为异步串口通信协议的一种，工作原理是将传输数据的每个字符一位接一位地传输。是在应用程序开发过程中使用频率最高的数据总线。
+Universal asynchronous transceiver, UART as a kind of asynchronous serial communication protocol, the working principle is to transmit each character of the data one by one. Is the most frequently used data bus in the application development process.
+循环发数据
+Cycle data
+硬件连接图
+Hardware connection diagram
+硬件准备
+Hardware preparation
+注册串口1发送事件回调
+Register Serial Port 1 Send Event Callback
+注册串口1接收事件回调
+Register Serial Port 1 Receive Event Callback
+注意TTL电平是3.3V, 不能直接与RS232/RS485连接, 必须使用额外的转换芯片
+Note that the TTL level is 3.3V, which cannot be directly connected to RS232/RS485, and an additional conversion chip must be used

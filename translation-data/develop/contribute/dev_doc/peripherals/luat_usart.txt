@@ -1,0 +1,56 @@
+波特率
+Baud rate
+不阻塞的延时函数
+non-blocking delay function
+常量
+Constant
+成功返回
+Successful return
+初始化配置串口各项参数，并打开串口
+Initialize the configuration of the serial port parameters, and open the serial port
+串口
+Serial port
+发数据
+Send data
+发送串口数据
+Send serial port data
+发送完成回调
+Send Completion Callback
+返回值为0，表示打开成功
+The return value is 0, indicating successful opening
+高低位顺序
+High and low bit sequence
+关闭串口，成功返回
+Close the serial port and return successfully
+管理并抽象Uart的C API, 提供一套Lua API供用户代码调用
+Manages and abstracts Uart's C API, providing a set of Lua APIs for user code to call
+缓冲区大小
+Buffer Size
+基本信息
+Basic information
+接收回调
+Receive Callback
+轮询方式，和回调方式二选一来用
+The polling method and the callback method are both used.
+平台层
+Platform layer
+起草日期
+Date of drafting
+设计人员
+Designer
+设计思路和边界
+Design ideas and boundaries
+手动读取缓存中的串口数据
+Manually read the serial port data in the cache
+数据位
+data bit
+停止位
+Stop bit
+为什么需要
+Why need
+校验位
+check digit
+用例
+Use cases
+与外部设备收发数据进行通信
+Receive and receive data to communicate with external devices

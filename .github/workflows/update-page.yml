@@ -22,12 +22,19 @@ jobs:
         run: |
           sudo apt update
           sudo pip3 install setuptools
-          sudo pip3 install -r requirements.txt
+          sudo pip3 install -r translated-docs/requirements.txt
           rm -rf docs/
           sphinx-build -b html translated-docs docs -E
           cd docs/
           echo "this is offline version, please visit wiki.luatos.com for latest version, document update on $(TZ=UTC-8 date +%Y-%m-%d,%H:%m:%S)" > "readme.txt"
-          cd ..
+          touch .nojekyll
+          rm -rf .doctrees/
+          rm -rf _sources/
+      - name: commit changes
+        run: |
+          git config --global credential.helper store
+          git config --global user.email "bot@luatos.com"
+          git config --global user.name "luatos_bot"
           git add .
           git commit -m "ci auto update docs"
       - name: Push changes

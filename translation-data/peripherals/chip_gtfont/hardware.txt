@@ -1,0 +1,4 @@
+高通矢量字体芯片
+Qualcomm Vector Font Chip
+硬件资料
+Hardware Data

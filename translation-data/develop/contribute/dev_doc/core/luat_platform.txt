@@ -1,0 +1,102 @@
+编码规范
+Coding Specification
+操作
+Operation
+从原理上说, 即使没有rtos, 只要实现上述3组API, Luat跑着裸板上也是没有问题的
+In principle, even if there is no rtos, as long as the above three groups of API are implemented, Luat will have no problem running on the bare board.
+待完成网络通信的API设计
+API design for network communication to be completed
+的跨平台
+cross-platform
+的C语言实现, 代码基本上跨平台,但不是全部
+C language implementation, the code is basically cross-platform, but not all
+的io操作涉及4个方面
+The io operation involves 4 aspects.
+定时器
+Timer
+定时器 timer   --  单次/循环触发中断
+Timer timer -- single/cycle trigger interrupt
+对设备接口和网络通信的封装, 本质上就是对厂商私有API的封装
+The encapsulation of device interfaces and network communications is essentially the encapsulation of vendor private APIs.
+关闭lua所在的进程, 不需要支持,相关lua API删除
+Close the process where lua is located, no support is required, and the related lua API is deleted.
+还有一点, 就是对任务调度的抽象,包括定时器和消息队列
+Another point is the abstraction of task scheduling, including timers and message queues.
+基本上是跨平台, 可以认为是95%以上, 以下为需要抽象的平台功能
+Basically, it is cross-platform and can be considered as more than 95%. The following are platform functions that need abstraction.
+加载lua文件, 涉及 `fopen`/`fread`/`close` 等方法
+Loading lua files, involving `fopen`/`fread`/`close` and other methods
+可见, 只有time方法是必须实现的, 而time的实现跟具体平台强相关, 所以必须抽象
+It can be seen that only the time method must be implemented, and the implementation of time is strongly related to the specific platform, so it must be abstract.
+库, 涉及`fopen`/`fread`/`fseek`/`close`/`feof`/`ferror` 等POSIX常用方法
+Library, involving common POSIX methods such as `fopen`/`fread`/`fseek`/`close`/`feof`/`ferror`
+库, 涉及`getc`方法, 从标准输入(stdin)读取用户输入
+library, involving a `getc` method that reads user input from standard input (stdin)
+里面的系统
+The system inside
+里面与系统密切相关的API, 分别是
+The APIs closely related to the system are
+没有一个全局变量, 所有内存都是通过 `lua_newstate(l_alloc, NULL)` 的`l_alloc`参数(一个方法指针) 来分配
+Without a global variable, all memory is allocated through the l_alloc parameter (a method pointer) of the lua_newstate(l_alloc, NULL)
+模块, 关闭进程, 不需要支持,相关lua API删除
+Module, close process, no support required, delete related lua API
+模块,获取系统时间, 需要支持
+Module, get system time, need support
+模块,启动一个新进程, 不需要支持,相关lua API删除
+module, start a new process, no support required, delete the relevant lua API
+那Luat依赖任务调度相关的API, rtos层
+That Luat relies on the API related to task scheduling, rtos layer
+内存池
+Memory Pool
+内存分配
+Memory allocation
+能跑Luat的硬件, 其资源肯定能跑rtos. 是否使用rtos, 由厂商SDK决定
+For hardware that can run Luat, its resources can definitely run rtos. Whether to use rtos or not is determined by the manufacturer SDK.
+平台层
+Platform layer
+任务调度
+Task Scheduling
+如果假设不存在lwip之类的封装, 则需要非常详尽的API设计(照抄lwip也未尝不可
+If you assume that there is no encapsulation such as lwip, you need a very detailed API design (copying lwip is not impossible.
+所以, 上面3组API, 也有对应的抽象
+Therefore, the above three sets of API also have corresponding abstractions.
+所以, 我们需要定义一个抽象的
+So, we need to define an abstract
+外设
+Peripherals
+外设大多是同步API, 这C API 与 Lua API会非常相像
+Most peripherals are synchronous APIs, which are very similar to Lua APIs.
+网络通信
+Network Communication
+为了跨平台, 需要一个"平台层"来隔离不同底层的实现
+In order to be cross-platform, a "platform layer" is needed to isolate the different underlying implementations.
+为什么需要"平台层
+Why you need a "platform layer"
+文件系统
+File System
+相关知识点
+Relevant knowledge points
+详细的API设计, 在 [内存池](/markdown/core/luat_memory) 中定义, 其中还有`malloc`的抽象形式
+Detailed API design, defined in [memory pool](/markdown/core/luat_memory), including the abstract form of` malloc`
+详细的API设计, 在 [文件系统](/markdown/core/luat_fs) 中定义
+Detailed API design, defined in [Filesystem](/markdown/core/luat_fs)
+消息队列 queue --  消息排队处理
+message queue -- message queuing
+消息总线
+Message Bus
+信号量 sem     --  预留
+semaphore sem -- reserved
+信号量]() 暂无场景支撑,未设计
+Semaphore]() No scene support for the time being, not designed
+原始实现是把数据传给标准输出
+The original implementation is to pass the data to the standard output.
+原形如下
+The prototype is as follows
+这部分的修改, 是需要改动lua源码的, 替换原有的api调用
+This part of the modification needs to change the lua source code and replace the original api call.
+这部分非常依赖于厂商的SDK, 如果假设均提供lwip之类的通信封装,则这部分没有太多的内容
+This part is very dependent on the SDK of the manufacturer. If it is assumed that communication packages such as lwip are provided, there is not much content in this part.
+这里讨论的是
+What is being discussed here is
+作为对硬件平台的封装,需要抽象为
+As an encapsulation of the hardware platform, it needs to be abstracted

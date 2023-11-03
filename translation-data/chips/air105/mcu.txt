@@ -1,0 +1,160 @@
+安全相关特性
+Safety-related features
+编号** | **名称**    | **类型** | **复用功能**                 | **上下拉能力**                                               | **备注
+Number **|** Name **|** Type **|** Reuse Function **|** Pull Up and Down Capability **|** Remarks
+参数**        | **说明**                     | **范围**           | **单位
+Parameter **|** Description **|** Range **|** Unit
+参数**   | **条件（-40°C to+85°C）** | **值**   |          | **单位
+Parameter **|** Condition (-40°C to 85°C)**|** Value **| |** Unit
+参数对照表
+parameter comparison table
+产品概述
+Product overview
+充电模块电路
+Charging module circuit
+储藏温度
+Storage temperature
+传感器**     | **说明**               | **范围** | **单位
+Sensor **|** Description **|** Range **|** Unit
+串接100Ω电阻抗浪涌
+Series 100Ω electrical impedance surge
+串口下载                                                     | 固定
+Serial download | fixed
+地
+ground
+电池电压低压检测范围
+Battery voltage low voltage detection range
+电池电压高压检测范围
+Battery voltage high voltage detection range
+电路
+Circuit
+电气特性
+Electrical characteristics
+电气性能
+Electrical Performance
+电压传感器     | 主电源电压高压检测范围
+Voltage Sensor | Main Supply Voltage High Voltage Detection Range
+电源输出，接电池                                       | 可以给3.7V锂电池充电，最大充电电流
+Power output, connected to the battery | can charge 3.7V lithium battery, the maximum charging current
+电源输入                                               | 可输入最小电压为4.7V，最大电压为
+Power input | minimum input voltage is 4.7V, maximum voltage is
+二、外围电路设计
+2. peripheral circuit design
+复用为 IO 时必须先 打开IC 卡电源，且输 出信号的高电平为IC 卡输出电平
+When multiplexing is IO, the IC card power must be turned on first, and the high level of the output signal is the IC card output level
+工作温度
+Working temperature
+供电电路
+power supply circuit
+固定
+Fixed
+关机电流
+Shutdown current
+关机功能可以通过POWER_KEY 拉高7S关闭内部LDO输出，以达到关机目的。
+The shutdown function can turn off the internal LDO output by POWER_KEY pulling up 7S to achieve the purpose of shutdown.
+管脚定义
+Pin Definition
+管脚详细信息**（**所有通用I/O复位后默认状态为上拉，电阻值
+Pin Details **(** Default state after all general I/O reset is pull-up, resistance value
+灌电流
+Irrigation current
+灌电流(其他
+Sprinkling current (other
+合宙Air105是一款QFN88 封装，10mm x 10mm 大小的MCU, 不仅提供UART/GPIO/I2C/ADC/SPI等基础外设，更提供DAC/USB/DCMI/HSPI/LCDI/KCU等高级外设接口，内置充电功能，支持5V/3.3V供电，同时自带5v转3.3V的LDO，4M字节Flash，640K字节RAM。内部flash起始地址
+Hezhou Air105 is a QFN88 MCU with a size of 10mm x 10mm. It not only provides basic peripherals such as UART/GPIO/I2C/ADC/SPI, but also provides advanced peripheral interfaces such as DAC/USB/DCMI/HSPI/LCDI/KCU. It has built-in charging function, supports 5V/3.3V power supply, and comes with 5v to 3.3V LDO,4M byte Flash and 640K byte RAM. Internal flash start address
+极限参数
+Limit parameter
+接1uF电容到地
+1uF capacitor to ground
+接1uF对地电容
+1uF ground capacitance
+截图
+Screenshot
+晶体摆放尽量靠近芯片，走线尽量短，并且远离干扰源，时钟周围多地孔隔离。时钟下面各层禁止其它走线穿过，防止干扰时钟源。
+The crystal is placed as close to the chip as possible, the trace is as short as possible, and it is far away from the interference source. The clock is isolated from many holes. The layers below the clock prohibit other traces from passing through to prevent interference with the clock source.
+开关机电路
+on/off circuit
+开关机电路通过控制内部5V转3.3V LDO使能/关闭，实现芯片的开关机的功能。使用 CHARGE_VBAT 供电，并使用开关机功能时，要注意VBAT33管脚在位，芯片未上电时 POWER_KEY 拉高 150ms 内部 LDO 使能，通过POWER_KEY开机电路，注意：POWER_KEY键平时为低电平，按下拉高；CHARGE_VCC 有电时（电压范围4.7V~5.4V）内部 LDO 直接使能输出 3.3V 且无法关闭。可以参考下图中的两种开机供电方式。
+The on-off circuit realizes the on-off function of the chip by controlling the internal 5V to 3.3V LDO enable/close. When using the CHARGE_VBAT power supply and the on-off function, it should be noted that the VBAT33 pin is in place. When the chip is not powered on, the internal LDO enable is POWER_KEY pulled up for 150ms. By POWER_KEY the power-on circuit, it should be noted that the POWER_KEY key is usually low and pressed to pull up. When the CHARGE_VCC is powered (voltage range 4.7V ~ 5.4V), the internal LDO can directly output 3.3V and cannot be shut down. You can refer to the two power-on power supply methods in the following figure.
+可配置输出
+Configurable output
+可输入最小电压为3.6V，最大电压为
+The minimum input voltage is 3.6V, and the maximum voltage is
+拉电流
+pull current
+拉电流(其他
+pull current (other
+连接USB时，要注意DN、DP保证90 Ohm的阻抗控制，差分走线；在VBUS管脚到芯片要串接100Ω的电阻用于抗浪涌，信号线上要串接22欧姆电阻（也可以是其他如33欧姆），防止信号反射，可以参考如下原理图。
+When connecting USB, attention should be paid to DN and DP to ensure impedance control of 90 Ohm and differential routing. A resistor of 100Ω should be connected in series from VBUS pin to chip for surge resistance, and a resistor of 22 ohms (or other resistors such as 33 ohms) should be connected in series on the signal line to prevent signal reflection. Please refer to the following schematic diagram.
+内部LDO, 通过VCC脚输入电源, 内部转换输出3.3V, 供电来源为3.6~5.5V的USB或锂电池的. 内部LDO输出能力有限,如需驱动大功率外设,请添加额外的LDO或
+Internal LDO, input power supply through VCC pin, internal conversion output 3.3V, power supply source is 3.6~5.5V USB or lithium battery. Internal LDO output capacity is limited, if you need to drive high-power peripherals, please add additional LDO or
+纽扣电池
+button battery
+三、参考电路设计
+3. Reference Circuit Design
+时钟电路
+clock circuit
+时钟频率传感器 | 12M 时钟频率检测范围
+Clock Frequency Sensor | 12M Clock Frequency Detection Range
+时钟频率检测范围
+Clock Frequency Detection Range
+数字输出低电平
+Digital output low level
+数字输出高电平
+Digital output high level
+数字输入低电平
+Digital input low level
+数字输入高电平
+Digital input high level
+数字音频转换为模拟音频接口
+Digital Audio to Analog Audio Interface
+四、封装尺寸
+4. Package Size
+同上
+Ibid.
+下图为Air105管脚定义，支持最多54个GPIO，每个IO都与外设复用管脚。每个GPIO均可配置为输入、输出、 中断模式，当作为输出时，每个IO输出值都可单独配置。IO支持强推挽输出/开漏输出模式。
+The following figure shows the pin definition of Air105, which supports up to 54 GPIO, and each IO is multiplexed with peripherals. Each GPIO can be configured as an input, output, interrupt mode, when as an output, each IO output value can be individually configured. The IO supports strong push-pull output/open-drain output mode.
+芯片
+Chip
+芯片 3.3V 输出                                               | 芯片的输出能力约为400mA，外围负载使用芯片的3.3V时，要注意最大电流情况
+Chip 3.3V Output | The output capacity of the chip is about 400mA. When the peripheral load uses the chip's 3.3V, pay attention to the maximum current
+芯片地
+Chip ground
+芯片的整个安全区基于内部32KHz工作，RTC默认基于内部OSC 32K工作，可软件切换使用外 部XTAL 32K工作，支持内部或外部32KHz输出。
+The entire safety zone of the chip works based on the internal 32KHz. RTC works based on the internal OSC 32K by default. The software can switch to use the external XTAL 32K to work and support the internal or external 32KHz output.
+芯片的VCC输入电压为4-5.5V时，内部的LD0最大的驱动能力在400mA，所以当外围负载比较多的时候，要考虑增加一些外置LDO电路。
+When the VCC input voltage of the chip is 4-5.5V, the maximum driving capability of the internal LD0 is 400mA, so when there are many peripheral loads, some external LDO circuits should be considered.
+芯片供电电压为5V，正常工作供电范围：4.0V~5.5V，内部LDO最大驱动能力在400mA，注意外围负载避免超出最大驱动能力。芯片每个电源输入脚应放置相应的滤波电容，在61、67、74这3个管脚处要加对地1uF的电容。
+The power supply voltage of the chip is 5V, the normal working power supply range is 4.0V ~ 5.5V, and the maximum driving capacity of the internal LDO is 400mA. Pay attention to the peripheral load to avoid exceeding the maximum driving capacity. Each power input pin of the chip should be placed with a corresponding filter capacitor, and a capacitor of 1uF to ground should be added to the three pins 61, 67 and 74.
+芯片间)总线接口连接微控制器和串行I2C总线。它提供多主机功能，控制所有I2C总线特定 的时序、协议、仲裁和定时。支持标准和快速两种模式。根据特定设备的需要，可以使用DMA以减 轻CPU的负担。
+Inter-chip) bus interface connects the microcontroller and the serial I2C bus. It provides multi-master functionality, controlling all I2C bus-specific timing, protocol, arbitration, and timing. Supports both standard and fast modes. Depending on the needs of a particular device, DMA may be used to reduce the burden on the CPU.
+芯片有2种供电模式
+The chip has 2 power supply modes
+芯片支持电池充电功能，可以给3.7V锂电池充电，支持最大200mA的充电电流，电池充满电压为4.15±0.05V，电池充满后电压降到4.05V之后将重新给电池充电。电池这块给模块供电的时候，建议外加二极管切换电路
+The chip supports the battery charging function, can charge 3.7V lithium battery, supports a maximum charging current of 200mA, and the battery is fully charged at a voltage of 4.15±0.05V. After the battery is fully charged, the battery will be recharged after the voltage drops to 4.05V. When the battery supplies power to the module, it is recommended to add a diode switching circuit.
+芯片支持内部12MHz振荡器和外置12MHz晶体，内部集成的12MHz晶体的精度为±2%，经过PLL 倍频后为系统提供输入，倍频后的PLL时钟频率可通过软件进行配置，其频率可配为
+The chip supports an internal 12MHz oscillator and an external 12MHz crystal. The accuracy of the internally integrated 12MHz crystal is 2%. After PLL frequency multiplication, it provides input to the system. The PLL clock frequency after frequency multiplication can be configured by software, and its frequency can be configured
+芯片支持内部12MHz振荡器和外置12MHz晶体，使用外置12MHz晶体时的芯片对接口，可以参考下文中的时钟电路
+The chip supports an internal 12MHz oscillator and an external 12MHz crystal. For chip-to-chip interface when using an external 12MHz crystal, please refer to the clock circuit below.
+芯片支持内部或外部的32KHz输出，使用外部32KHz电路可以参考下文中的时钟电路
+The chip supports internal or external 32KHz output, using external 32KHz circuit can refer to the following clock circuit
+选择外部的12MHz晶振时，根据实际产品需求选用不同温度等级、稳定度、负载电容值的晶体。晶体两端所接负载电容根据不同厂家晶体及频偏情况需要调整。
+When selecting an external 12MHz crystal oscillator, crystals with different temperature levels, stability and load capacitance values are selected according to actual product requirements. The load capacitance connected to both ends of the crystal needs to be adjusted according to the crystal of different manufacturers and the frequency offset.
+一、概述
+1. Overview
+在电路方面要在I2C接口处要加4.7K的上拉到
+In terms of circuit, 4.7K pull-up should be added at I2C interface
+直供, 供电范围为3.2V~3.4V，直接供电到芯片的VCC33管脚。
+Direct supply, the power supply range is 3.2V ~ 3.4V, which is directly supplied to the VCC33 pin of the chip.
+主电源电压低压检测范围
+Main power supply voltage low voltage detection range
+注意: LuatOS固件下, PWM6/7 不可用
+Note: PWM6/7 is not available under LuatOS firmware
+注意：I、代表输入；O、代表输出；P、代表电源
+Note: I, on behalf of the input; O, on behalf of the output; P, on behalf of the power supply
+注意保持差分走线，阻抗做好90 Ohm控制
+Pay attention to maintain differential routing, and do a good job of 90 Ohm control of impedance.
+最小** | **最大
+Minimum **|** Maximum
+最小电压2.7V，最大电压
+Minimum voltage 2.7V, maximum voltage

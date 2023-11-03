@@ -1,0 +1,66 @@
+保留区域, 扩展用, 默认
+reserved area, for extension, default
+编译进ROM时, 下面4个均为指针
+When compiled into ROM, the following 4 are pointers
+表单个字符的字节大小, 可以是
+The byte size of the table characters, which can be
+表情包, 3字节unicode, 映射到4字节(待定
+Emotional package, 3-byte unicode, mapped to 4-byte (pending
+代表映射表的类型
+Represents the type of the mapping table
+当前为
+Currently
+点阵字库格式
+dot matrix font format
+而寻址总是按 `unicode` 进行查找
+And the addressing always looks up by `unicode`
+访问模式
+Access Mode
+后面就是文件与ROM的差异了
+The following is the difference between the file and the ROM
+基础映射表 0x20 ~ 0xFE, 因为是连续的, 无需内置
+The basic mapping table 0x 20 ~ 0xFE, because it is continuous, does not need to be built-in.
+仅定义2种相对宽度的点阵数据, 分别对应 `半角` 和 `全角
+Only two relative widths of dot matrix data are defined, corresponding to `half-angle` and `full-angle` respectively.
+类型数据, 后面有详细说明
+Type data, detailed description later
+例如, font_data_count 为2 时
+For example, when the font_data_count is 2
+模式下, 为
+mode,
+模式下, 为 uint8_t font_map[map0对应的map长度], uint8_t font_map[map1对应的map长度
+In the mode, to uint8_t font_map[map length corresponding to map0], uint8_t font_map[map length corresponding to map1
+全表, 内置在源码里, 作用是生成字体文件时可省略
+Full table, built in the source code, the role is to generate font files can be omitted
+设 `行高` 为 `X`, 且`X`总是偶数, `半角`字符的宽度为 `X/2`, `半角`字符的宽度为
+Let `row heet` be `x`, and` x` is always an even number, the width of` half-width `character is` X/2`, and the width of` half-width `character is
+数据表, 数据排列总是按对应的font_map顺序
+Data table, the data is always arranged in the corresponding font_map order.
+数据结构
+data structure
+数据总数, 通常就1或2个,不会很多
+The total number of data, usually 1 or 2, not many
+为了适应U8G2/EINK/LCD/LVGL的字符显示需求, 解决多种字体格式浪费的问题
+In order to meet the character display requirements of U8G2/EINK/LCD/LVGL, the problem of waste of multiple font formats is solved.
+文件存储时, 数据依次排序
+When the file is stored, the data is sorted in turn.
+文件结构
+File Structure
+映射表与点阵数据分开存放, 支持多份点阵数据使用同一份映射表
+The mapping table is stored separately from the dot matrix data, and multiple dot matrix data are supported using the same mapping table.
+与map同理
+Same with map.
+约定
+Agreement
+约束条件
+constraint condition
+在内存中尽量为常数,可存放于
+Try to be constant in memory and can be stored in
+字符数量
+Number of characters
+字号
+Font Size
+自定义map数据
+Custom map data
+总是
+Always

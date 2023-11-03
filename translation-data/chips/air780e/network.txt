@@ -1,0 +1,28 @@
+不支持, 也不支持其语音功能
+Does not support, nor does it support its voice function
+不支持, WCDMA/CDMA2000/TD-SCDMA均不支持
+Not supported, WCDMA/CDMA2000/TD-SCDMA are not supported
+等需要加密的tcp/ip协议, 以下为LuatOS固件默认支持的加密套件
+The following are the encryption suites supported by LuatOS firmware by default
+加密套件
+Cipher Suite
+可通过以下语句查询
+can be queried by the following statement
+默认禁用
+Disabled by default
+默认未开启, 未测试
+Default not on, not tested
+如果您使用的加密套件不在上述范围内, 欢迎[给我们反馈
+If the encryption suite you are using is not within the above range, welcome [Give us feedback
+完全不支持
+not supported at all
+网络特性
+Network Characteristics
+网络制式
+network system
+协议及加密套件
+Protocol and Cipher Suite
+支持
+Support
+支持 Cat.1 模式, 不支持VoLTE, 不支持中国电信的短信服务
+Support Cat. 1 mode, does not support VoLTE, does not support China Telecom's SMS service

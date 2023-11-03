@@ -1,0 +1,48 @@
+本库有专属demo，[点此链接查看iconv的demo例子
+This library has its own demo,[click this link to view the demo example of iconv
+编码转换函数的转换句柄
+The conversion handle of the encoding conversion function.
+编码转换函数的转换句柄,若不存在会返回
+The conversion handle of the encoding conversion function, which returns if it does not exist.
+参数
+Parameters
+操作
+Operation
+传入值类型|解释
+Incoming Value Type | Explanation
+打开相应字符编码转换函数
+Open the corresponding character encoding conversion function
+大端编码 转化为 utf8编码
+Big Endian Code Converts to utf8 Code
+返回编码转换后的结果$0成功,-1失败
+Returns the result after code conversion $0 succeeded,-1 failed
+返回的句柄
+Handle returned
+返回值
+Return Value
+返回值类型|解释
+return value type | explanation
+关闭字符编码转换
+Turn off character encoding conversion
+例子
+Examples
+目标编码格式
+Target Encoding Format
+释义：待转换字符串
+Interpretation: String to be converted
+释义：返回编码转换后的结果<br>取值：0成功,-1失败
+Interpretation: return the result after code conversion <br> value: 0 success,-1 failure
+释义：目标编码格式<br>取值
+Interpretation: target encoding format <br> value
+释义：源编码格式<br>取值
+Interpretation: source encoding format <br> value
+输入字符串$例如
+Enter the string $for example
+无
+None
+已适配
+Adapted
+源编码格式
+Source encoding format
+字符编码转换
+Character encoding conversion

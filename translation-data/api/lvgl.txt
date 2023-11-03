@@ -1,0 +1,196 @@
+按键值，默认为0，按键抬起
+Key value, default 0, key up
+本库有专属demo，[点此链接查看lvgl的demo例子
+This library has its own demo,[click this link to view the demo example of lvgl
+参数
+Parameters
+操作
+Operation
+成功返回true, 对象已被删除的话返回false或者
+Returns true on success, false if the object has been deleted, or
+成功返回true,否则返回
+Returns true on success, otherwise
+初始化
+Initialization
+传入值类型|解释
+Incoming Value Type | Explanation
+创建并初始化一个
+Create and initialize a
+创建并显示
+Create and display
+创建一个
+Create a
+创建一个style并初始化
+Create a style and initialize
+创建gif组件
+create gif component
+创建qrcode组件
+Create the qrcode component
+从文件系统加载字体
+Loading fonts from the file system
+底层返回值,如果obj为nil就返回
+The underlying return value, if obj is nil
+动画指针
+Animated Pointer
+二维码的内容数据
+Content data of two-dimensional code
+二维码中背景点的颜色, RGB颜色, 默认
+The color of the back scenic spot in the two-dimensional code, RGB color, default
+二维码中数据点的颜色, RGB颜色, 默认
+Color of data points in QR code, RGB color, default
+发送事件给组件
+Send events to components
+返回值
+Return Value
+返回值类型|解释
+return value type | explanation
+父组件
+Parent Component
+父组件,可以是nil,但通常不会是
+The parent component, which can be nil, but typically will not be
+高通矢量字库
+Qualcomm Vector Font
+更新成功返回true,否则返回false. 通常只有数据太长无法容纳才会返回
+If the update is successful, it returns true, otherwise it returns false. It is usually returned only if the data is too long to accommodate.
+更新键盘输入设备的按键值
+Update key values for keyboard input devices
+更新模拟输入设备的坐标数据
+Update coordinate data for analog input devices
+函数, 参数有1个 (anim), 其中anim是当前对象
+function with 1 argument (anim), where anim is the current object
+函数, 参数有1个 (path), 其中path是当前对象
+function with 1 parameter (path), where path is the current object
+函数, 参数有2个 (obj, event), 其中obj是当前对象, event是事件类型, 为整型
+Function, there are 2 parameters (obj, event), where obj is the current object, event is the event type, which is integer
+函数, 参数有2个 (obj, signal), 其中obj是当前对象, signal是信号类型, 为整型
+Function, there are 2 parameters (obj, signal), where obj is the current object, signal is the signal type, is integer
+函数, 参数有2个 (obj, value), 其中obj是当前对象, signal是信号类型, 为整型
+Function, there are 2 parameters (obj, value), where obj is the current object, signal is the signal type, is integer
+黑白主题
+Black and White Theme
+缓冲模式,默认0, 单buff模式, 可选1,双buff模式
+Buffer mode, default 0, single buff mode, optional 1, double buff mode
+缓冲区大小,默认宽*10, 不含色深
+Buffer size, default width * 10, without color depth
+恢复刷新，系统不休眠
+Resume refresh, system does not sleep
+获取
+Get
+获取当前活跃的screen对象
+Get the currently active screen object
+获取内置字体
+Get Built-in Font
+可选 粗细值 默认size * bpp(使用高通矢量字库
+Optional weight value Default size * bpp (use Qualcomm vector font
+可选 默认0(使用高通矢量字库
+Optional default 0 (use Qualcomm vector font
+可选 深度 默认4(使用高通矢量字库
+Optional Depth Default 4 (Use Qualcomm Vector Font
+可选 选择字体 默认1(使用高通矢量字库
+OPTIONAL SELECT FONT DEFAULT 1 (USING QUALCOMM VECTOR FONT
+可选 选择字体 默认3(使用高通矢量字库
+OPTIONAL SELECT FONT DEFAULT 3 (USING QUALCOMM VECTOR FONT
+可选,字号 16-192 默认16(使用高通矢量字库
+Optional, font size 16-192 defaults to 16 (use Qualcomm vector font
+空白主题
+Blank Theme
+类型, 支持
+types, support
+例子
+Examples
+模拟在屏幕上的点击,通过timeout模拟长按和短按
+Simulate clicks on the screen, simulate long and short presses through the timeout
+屏幕高,可选,默认从lcd取
+Screen height, optional, default from LCD
+屏幕宽,可选,默认从lcd取
+screen width, optional, taken from LCD by default
+确定字体不被使用,不被引用,且内存紧张需要释放
+Make sure the font is not used, not referenced, and the memory is tight and needs to be released.
+删除qrcode组件
+Remove qrcode component
+删除style_list,慎用,通常不会执行删除操作
+Delete style_list, use caution, usually do not perform delete operation
+删除style,慎用,通常不会执行删除操作
+Delete style, use caution, usually do not perform delete operation
+设备类型，当前支持"pointer",指针类/触摸类均可，"keyboard",键盘类型
+Device type, currently supports "pointer", pointer class/touch class, "keyboard", keyboard type
+设备型号，当前支持"emulator",模拟器类型
+Device model, currently supports "emulator", emulator type
+设置动画回调
+Set Animation Callback
+设置动画路径方式
+Set the animation path method
+设置主题
+Set Theme
+设置组件的事件回调
+Set event callbacks for components
+设置组件的信号回调
+Set signal callbacks for components
+设置qrcode组件的二维码内容,配合qrcode_create使用
+set the qrcode component's qr code content and use it with the qrcode_create
+事件id, 例如
+event id, for example
+释放一个
+Release one.
+释放字体,慎用!!!仅通过font_load加载的字体允许卸载,通过font_get获取的字体不允许卸载
+Release the font and use it with caution!!! Only fonts loaded by font_load are allowed to be unloaded, and fonts obtained by font_get are not allowed to be unloaded
+图像库
+Image Library
+文件路径
+File Path
+无
+None
+无返回值
+No return value
+休眠控制，暂停/恢复刷新定时器，目前只有105和EC618可以用
+Sleep control, pause/resume refresh timer, currently only 105 and EC618 can be used
+已适配
+Adapted
+原函数
+primitive function
+载入指定的
+Load the specified
+载入指定的screen并使用指定的转场动画
+Load the specified screen and use the specified transition animation
+暂停 false恢复
+Pause False Resume
+暂停刷新，系统可以休眠
+Pause refresh, system can sleep
+长度,因为qrcode是正方形
+length, because qrcode is square
+指针
+Pointer
+指针,可选,lcd初始化后有默认值,预留的多屏入口
+pointer, optional, default value after LCD initialization, reserved multi-screen entry
+指针|layer指针
+pointer | layer pointer
+指针|screen指针
+pointer | screen pointer
+重新播放gif组件
+Replay the gif component
+主题名称,可选值有
+Subject name, optional values are
+注册输入设备驱动
+Register Input Device Driver
+状态, 0 为 释放, 1 为按下
+State, 0 is released, 1 is pressed
+字体路径
+Font Path
+字体路径/spi_device (spi_device为使用外置高通矢量字库芯片
+Font path/spi_device (spi_device to use an external Qualcomm vector font chip
+字体名称+字号, 例如
+Font name font size, for example
+字体指针
+Font Pointer
+组件
+Components
+组件,由qrcode_create创建
+components, created by qrcode_create
+组件支持, 由gif_create方法返回
+Component support, returned by the gif_create method
+组件指针
+Component Pointer
+组件指针,若失败会返回nil,建议检查
+The component pointer. If it fails, nil is returned. We recommend that you check
+坐标,以左上角为0,右下角为最大值
+Coordinates, with the upper left corner as 0 and the lower right corner as the maximum value

@@ -1,0 +1,50 @@
+高频配置
+High Frequency Configuration
+关闭
+Close
+开启内部上拉
+Open internal pull-up
+描述：支持 PLL 时钟的 1/1.5/2/2.5/3/3.5/4/4.5 倍分频作为 USB 时钟
+Description: Supports 1/1.5/2/2.5/3/3.5/4/4.5 frequency division of PLL clock as USB clock
+描述：AIR32F103 内置的 PLL 可输出 216MHz 时钟
+Description: AIR32F103 built-in PLL can output 216MHz clock
+描述：AIR32F103 支持独立上下拉控制(40K)，当 IO为复用功能时，可代替外部电路电阻。例如
+Description: The AIR32F103 supports independent pull-down control (40K). When IO is a multiplexing function, it can replace external circuit resistors. For example
+描述：MCO支持输出 PLL 2-16 分频输出
+Description: MCO support output PLL 2-16 frequency output
+描述：USB 内部 DP可选1.5K上拉电阻，可替代外部电路上拉电阻;并且可以实现软件重枚举(不需要PCB外部加三极管控制
+Description: USB internal DP optional 1.5K pull-up resistor, which can replace external circuit pull-up resistor; And can realize software re-enumeration (no need to add triode control outside PCB
+内部可选1.5K上拉电阻
+Internal optional 1.5K pull-up resistor
+配置
+Configuration
+强化功能使用说明
+Enhanced function instructions
+上拉
+Pull-up
+时钟配置函数
+Clock Configuration Functions
+时钟使能
+Clock enable
+使能
+enable
+使用 SDIO 模块时，D0-D3 和 CMD 可用内部上拉电阻
+When using SDIO module, D0-D3 and CMD can use internal pull-up resistor
+使用范例：参考[\ModuleDemo\IIC\IIC_IntTransmit工程
+Example of use: Reference [\ModuleDemo\IIC\IIC_IntTransmit Project
+使用范例：参考[\ModuleDemo\MCO\MCO_PllDiv工程
+Example of use: Reference [\ModuleDemo\MCO\MCO_PllDiv Project
+使用范例：参考[\ModuleDemo\RCC\RCC_ClockConfig工程
+Example of use: Reference [\ModuleDemo\RCC\RCC_ClockConfig Project
+使用范例：参考[\ModuleDemo\USB\Virtual_COM_Port工程
+Example: Reference [\ModuleDemo\USB\Virtual_COM_Port Engineering
+使用IIC是，当IIC 速率小于等于100K，可用内部上拉电阻
+The use of IIC is, when the IIC rate is less than or equal to 100K, the available internal pull-up resistor
+这篇迁移指南旨在帮助您使用AIR32F103器件所支持的增强型功能
+This migration guide is designed to help you use the enhanced features supported by AIR32F103 devices
+支持独立上下拉控制
+Support independent pull-up control
+支持输出PLL 2-16分频输出
+Output PLL 2-16 Divided Output Support
+支持PLL时钟的 1/1.5/2/2.5/3/3.5/4/4.5 倍分频作为 USB 时钟
+Supports 1/1.5/2/2.5/3/3.5/4/4.5 frequency division of PLL clock as USB clock

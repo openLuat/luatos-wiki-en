@@ -1,0 +1,38 @@
+按你板子改成自己的引脚编号
+Press your board to change your pin number.
+本章将会向大家介绍LuatOS的DISP功能。将会实现使用Air101开发板驱动oled进行显示。
+This chapter will introduce you to the DISP features of LuatOS. Will achieve the use of Air101 development board driver oled display.
+初始化显示屏
+Initialize display
+代码介绍
+Code Introduction
+简介
+Introduction
+接口文档可参考：[disp库
+Interface documentation can be referred to:[disp library
+开发板一块，0.96寸
+A development board, 0.96 inches
+库是内置库,内置库均不需要
+library is a built-in library, none of the built-in libraries need
+模拟i2c,pin0是SCL，pin1是SDA, 也可以用硬件i2c脚
+Analog i2c,pin0 is SCL,pin1 is SDA, can also use hardware i2c pin
+启动中
+Starting
+启用中文字体,文泉驿点阵宋体
+Enable Chinese fonts, Wenquanyi dot matrix Song style
+清屏
+Clear screen
+软件使用
+Software usage
+实际上是封装了部分U8G2的API进行显示，使大家能使用lua快速驱动
+In fact, it encapsulates part of U8G2 API for display, so that everyone can use lua to drive quickly.
+是也是内置库
+is also a built-in library
+写版本号
+Write version number
+写日期
+Write date
+硬件连接图
+Hardware connection diagram
+硬件准备
+Hardware preparation

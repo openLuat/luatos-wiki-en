@@ -1,0 +1,36 @@
+编号 | 命名 | 默认功能及扩展功能
+Numbering | Naming | Default Features and Extended Features
+编号（LuatOS） | 功能
+Number (LuatOS) | Features
+管脚映射表
+Pin Mapping Table
+核心板设计手册: [Air103_核心板设计手册V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193519160_Air103_核心板设计手册
+Core Board Design Manual: [Air103_Core Board Design Manual V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193519160_Air103_核心板设计手册
+寄存器手册(不推荐): [寄存器手册与W800通用
+Register manual (not recommend): [Register manual and W800 common
+开发板
+Development Board
+开发板晶振
+Development Board Crystal Oscillator
+开机时仅配置了`BOOT`和`UART0_TX/RX`，其他数字脚均为GPIO脚，状态为输入高阻
+Only `BOOT` and` UART0_TX/RX` are configured when starting up, other digital pins are GPIO pins, and the status is input high resistance
+模块
+Module
+内部电压
+Internal voltage
+请注意, 这是**Air103**的资料页, 不是**Air32F103**, 这是两款完全不同的芯片
+Please note that this is the information page of **Air103**, not **Air32F103**, these are two completely different chips
+如需查找**Air32F103**系列芯片的资料, 请在左侧菜单栏选择
+For information about **Air32F103** series chips, please select
+手册
+Manual
+温度
+Temperature
+芯片和管脚定义
+Chip and Pin Definition
+硬件设计手册: [Air103_MCU设计手册V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193606476_Air103_MCU设计手册
+Hardware Design Manual: [Air103_MCU Design Manual V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193606476_Air103_MCU设计手册
+硬件资料
+Hardware Data
+资料链接
+Data Link

@@ -1,0 +1,132 @@
+参数
+Parameters
+传入值类型|释义
+Incoming Value Type | Paraphrase
+传统定时器
+Traditional Timer
+创建一个任务线程,在模块最末行调用该函数并注册模块中的任务函数，main.lua导入该模块即可
+Create a task thread, call the function at the end of the module and register the task function in the module, and main.lua can import the module.
+从底层获取core消息并及时处理相关消息，查询定时器并调度各注册成功的任务线程运行和挂起
+Obtain core messages from the bottom layer and process related messages in time, query timers and schedule successfully registered task threads to run and suspend.
+单独订阅，可以当回调来用
+A separate subscription can be used as a callback.
+当使用LuaTask框架时，需要在代码中引用`sys`库（`_G.sys=require("sys")`），并且在代码的最后一行，调用`sys.run()`以启动LuaTask框架，框架内的任务代码会在`sys.run()`中运行。
+When using the LuaTask framework, you need to reference the `sys` library (`_G.sys = require("sys")`) in the code, and on the last line of the code, call `sys.run()`to start the LuaTask framework, and the task code in the framework will run in `sys.run().
+等待超时时间，单位ms，最大等待126322567毫秒
+Wait timeout, unit: ms, maximum 126322567 ms
+等待超时时间500ms，超过就返回false而且不等了
+Waiting for timeout time of 500ms, if it exceeds, it will return false and will not wait.
+等待这个消息，这个任务阻塞在这里了
+Waiting for this message, this task is blocked here.
+第二个任务
+Second task
+第三个任务
+Third task
+第一个任务
+The first task
+点我快速测试下面的代码
+Point me to quickly test the following code
+订阅消息
+Subscribe to messages
+定时结束返回nil,被其他线程唤起返回调用线程传入的参数
+The timing end returns nil, which is evoked by other threads and returns the parameters passed in by the calling thread.
+定时器回调函数
+Timer callback function
+定时器ID，如果失败，返回
+Timer ID, if failed, returns
+多任务
+Multitasking
+多任务之间互相等待
+Multitasking waiting for each other
+多任务之间互相等待并传递数据
+Waiting and passing data between multiple tasks
+发布内部消息，存储在内部消息队列中
+Publish internal messages, stored in the internal message queue
+发布这个消息，并且带上一个数据
+Publish this message and bring a data
+发布这个消息，此时所有在等的都会收到这条消息
+Release this message and all those waiting will receive it at this time.
+返回该任务的线程号
+Returns the thread number of the task
+返回值
+Return Value
+关闭定时器
+Close Timer
+关闭同一回调函数的所有定时器
+Turn off all timers for the same callback function
+接收到消息返回消息参数
+Message Received Return Message Parameters
+接收到消息返回message，超时返回
+Received message returns message, timeout returns
+接收到消息返回true，超时返回
+Received message returns true, timeout returns
+开启一个定时器
+Start a timer
+开启一个循环定时器
+Start a cycle timer
+开启状态返回true，否则
+On status returns true, otherwise
+可变参数
+variable parameter
+可变参数 fnc的参数
+Parameters of variable parameter fnc
+可变参数，用户自定义
+Variable parameters, user-defined
+库接口文档
+Library Interface Documentation
+框架
+Framework
+框架，利用协程，在Lua中实现了多任务功能。开发者可以用最简单的方式，新建多个任务，而不是像传统的开发方式一样，只能用定时器进行延时。
+The framework, using the coroutet, implements the multitasking function in Lua. Developers can create multiple tasks in the simplest way, instead of using timers to delay as in the traditional development method.
+框架简述
+Brief description of the framework
+例子
+Examples
+每秒执行，永久循环，返回定时器编号
+Execute per second, loop permanently, return timer number
+秒后手动停止上面的无限循环定时器
+Manually stop the infinite loop timer above after seconds
+判断某个定时器是否处于开启状态
+Determine whether a timer is on
+取消订阅消息
+Unsubscribe message
+任务的条件等待函数（包括事件消息和定时器消息等条件），只能用于任务函数中。
+The conditional wait function of a task (including conditions such as event messages and timer messages) can only be used in task functions.
+任务的条件等待函数扩展（包括事件消息和定时器消息等条件），只能用于任务函数中。
+The conditional wait function extension of a task (including conditions such as event messages and timer messages) can only be used in task functions.
+任务函数名，用于resume唤醒时调用
+The name of the task function, which is called when the resume wakes up.
+任务函数fun的可变参数
+Variable parameters of the task function fun
+任务延时函数，只能用于任务函数中
+The task delay function can only be used in task functions.
+上手使用
+get started use
+视频教程参见此处：[【LuatOS】③LuaTask多任务框架
+Video tutorial can be found here: [[LuatOS] ③ LuaTask multitasking framework
+无
+None
+消息
+Message
+消息回调处理
+Message callback processing
+延时0.5秒，这段时间里可以运行其他代码
+Delay of 0.5 seconds, during which time other code can be run
+延时1秒，这段时间里可以运行其他代码
+Delay 1 second, this time can run other code
+一秒后执行某函数，可以在后面传递参数
+Execute a function after one second, you can pass parameters later.
+有两种形式<br>一种是开启定时器时返回的定时器id，此形式时不需要再传入可变参数...就能唯一标记一个定时器<br>另一种是开启定时器时的回调函数，此形式时必须再传入可变参数...才能唯一标记一个定时器
+There are two forms <br> one is the timer id returned when the timer is started. in this form, a timer can be uniquely marked without passing in variable parameters... the other is a callback function when the timer is started. in this form, a timer can be uniquely marked with variable parameters...
+在代码块附近加上快速测试代码链接
+Add quick test code link near code block
+整数，最大等待126322567毫秒
+Integer, maximum wait 126322567 milliseconds
+整数，最大定时126322567毫秒
+Integer, maximum timing 126322567 ms
+之间写个function也行
+Write a function
+值为函数时，函数的可变参数
+When the value is a function, the variable parameter of the function
+值为number时，识别为定时器ID，值为回调函数时，需要传参数
+When the value is number, it is identified as timer ID, and when the value is callback function, parameters need to be passed

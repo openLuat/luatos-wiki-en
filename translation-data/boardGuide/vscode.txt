@@ -1,0 +1,46 @@
+安装推荐的拓展
+Expansion of installation recommend
+打开安装包后，需要注意其中两个选项要勾选（图片是英文的，也一样
+After opening the installation package, you need to pay attention to checking two of the options (the picture is in English, too
+打开项目时，推荐使用右键，选择`通过使用 Code 打开`，这样插件才能完美运行
+When opening the project, you recommend right-click and select` Open by Using Code` so that the plug-in can run perfectly.
+打开vscode官网
+Open vscode official website
+当然，可能有些同学会发现下载速度很慢，怎么办呢？当然是有办法的，我们可以复制当前正在下载的文件**下载链接**，将域名（`https://`和下一个`/`中间的东西）替换成`vscode.cdn.azure.cn`再下载，速度就快了。
+Of course, some classmates may find that the download speed is very slow. What should we do? Of course, there is a way. We can copy the file currently being downloaded * * download link * *, replace the domain name (`https://` and the middle of the next`/`) with` vscode.cdn.azure.cn` and download it again, which will be faster.
+点击那个大大的**Download for xxxxxx**，下载该软件
+Click on the big * * Download for xxxxxx * * to download the software
+点击右上角的`打开设置(json)`图标
+Click on the `Open Settings (json)`icon in the upper right corner
+点击左侧的拓展按键，搜索`LuatOS-SOC推荐拓展包`，认准作者，点击`Install`安装即可
+Click the expansion button on the left, search` LuatOS-SOC recommend expansion Package`, identify the author, and click `Install` to install
+更改默认的配置
+Change the default configuration
+既然是使用LuatOS进行开发，那一定有一个好用的编辑器环境吧
+Since LuatOS is used for development, there must be a good editor environment
+将"通过Code打开"操作添加到Windows资源管理器目录上下文菜单
+Add the Open via Code action to the Windows Explorer catalog context menu
+将"通过Code打开"操作添加到Windows资源管理器文件上下文菜单
+Add the Open via Code action to the Windows Explorer file context menu
+将文件内容替换成下面的数据，保存即可（如果已经有东西了，请自行添加缺少项
+Replace the contents of the file with the following data and save it (if you already have something, please add the missing item yourself
+开发环境搭建
+Construction of development environment
+视频教程参见此处：[【LuatOS】②开发环境搭建+hello world工程
+For video tutorials, see here: [[LuatOS] ② Development environment to build hello world project
+是的，有。这里推荐使用微软推出的Visual Studio Code（简称vscode）代码编辑器来编写代码
+Yes, there is. Here recommend use Microsoft's Visual Studio Code (vscode) code editor to write code
+特别提醒：如果遇到下面的提示，请按图片描述进行操作，不然安装的拓展不会运行
+Special reminder: if you encounter the following tips, please follow the picture description to operate, otherwise the installation of the expansion will not run
+推荐写代码时，每个项目都新建一个文件夹
+When writing code recommend, each project creates a new folder.
+新建/编辑已有项目
+New/Edit Existing Item
+在正常页面，按下快捷键`Ctrl+,（逗号）`，打开设置页面
+On the normal page, press the shortcut key `Ctrl ,(comma) `to open the settings page
+装上
+Install
+装完打开就好了，你可能会发现软件都是英文，没关系，下一步装个插件就是中文了
+Just open it after loading. You may find that the software is all in English. It doesn't matter. The next step to install a plug-in is Chinese.
+装完之后，点击右下角的`Change Language and Restart`，就变成中文啦
+After loading, click "Change Language and Restart" in the lower right corner to become Chinese

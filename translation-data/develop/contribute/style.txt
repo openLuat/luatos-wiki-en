@@ -1,0 +1,214 @@
+按习惯进行编写（如串口使用的是`read`/`write`，而socket使用的是
+Write according to habit (for example, serial port uses `read`/`write`, while socket uses
+巴拉巴拉
+Barabala
+版本号，可选
+Version number, optional
+比如
+Such
+避免**使用纯数字作为成功与否的结果返回
+Avoid **using pure numbers to return as a result of success or failure
+编码规范
+Coding Specification
+常量名 类型 解释
+Constant name type explanation
+初始化操作使用`setup`开头
+Initialization operation begins with `setup`
+打开操作使用`open`开头
+Open operations begin with `open`
+第二个参数
+Second parameter
+第二个数据
+Second data
+第三个参数
+The third parameter
+第一个参数，@后跟参数类型，空格后跟参数解释。如有默认值，需要全部写明
+The first argument, @ followed by the argument type, and a space followed by the argument explanation. If there is a default value, it needs to be stated in full.
+第一个传递的数据，@后跟数据类型，空格后跟数据解释，如果没有就别写这几行
+The first data passed, @ followed by data type, space followed by data explanation, if not, don't write these lines
+第一行写明函数的用途，如：打开adc通道
+The first line states the purpose of the function, such as opening the adc channel.
+第一行写明消息的用途，如：WIFI扫描结束
+The first line states the purpose of the message, such as: WIFI scanning is over.
+调用时用到的完整函数名
+The full function name used when the call is made.
+端口号**不存在**时，使用`负数`来代表，尽量避免使用特定的正数或0（有些MCU存在
+When the port number * * does not exist * *, use` negative number` to represent, try to avoid using a specific positive number or 0 (some MCU exist
+发布的topic描述规范
+published topic description specification
+发送**原始数据**操作使用`send`开头
+Send **raw data** operation starts with `send`
+发送**c代码处理过的信息**操作使用`write`开头（如按寄存器地址写
+Send information processed by **c code * * the operation starts with` write` (e.g. write by register address
+发送与接收接口
+Send and receive interface
+返回成功执行进度的数字（如串口、spi发送成功的数据长度
+Returns the number of successful execution progress (such as the length of data sent successfully by the serial port and spi.
+返回的第二个值，类型为
+The second value returned, of type
+返回结果的接口
+Interface of the returned result
+该topic的完整名称
+The full name of the topic.
+该topic所属的模块
+the module to which the topic belongs
+根据实际，列出所有参数
+According to the actual, list all parameters
+根据实际，列出所有传递的数据
+According to the actual, list all the data passed
+根据实际，列处所有返回值
+According to the actual, all return values at the column.
+更改状态操作使用`set`开头
+Change state operations begin with `set`
+关闭操作使用`close`开头
+Close operation begins with `close`
+规范
+Specification
+回滚某个操作
+Roll back an operation
+会返回进度的接口
+Interface that returns progress
+会返回具体数据的接口
+Interface that returns specific data
+会自动在文档中生成 库名.常量名 的结果
+The library name is automatically generated in the document. Result of constant name
+获取状态操作使用`get`开头
+Get status operation starts with `get`
+交互规范
+Interaction Specification
+接口注释规范
+Interface Annotation Specification
+接收**原始数据**操作使用`recv`开头
+The receive **raw data** operation starts with `recv`
+接收**c代码处理过的信息**操作使用`read`开头
+Receive information processed by **c code** operation starts with `read`
+尽量避免**使用特定的`topic`让用户手动调用`sys.waitUntil`的方式进行适配
+Try to avoid using the specific` topic` to allow users to manually call` sys.waitUntil` for adaptation
+尽量避免**添加阻塞时间较长的接口
+Try to avoid **adding interfaces with longer blocking times
+静态常量，可在常量附近添加以下格式的注释
+Static constants, you can add comments in the following format near the constant
+举例
+Examples
+均以 `luat_` 开头, 后接模块名, 然后是方法名
+Start with `luat_`, followed by the module name, followed by the method name
+开发分支, 由开发者自行开立, 命名遵循: issue_xxx, feature_xxx 前缀
+The development branch, which is opened by the developer. The name follows: issue_xxx, feature_xxx prefix
+可调用的函数，与c接口格式的基本相同，如下
+callable function, basically the same as the c interface format, as follows
+可选，该库的视频教程网址
+Optional, the library's video tutorial URL
+可选，该库启用的宏定义标记，如
+Optional, the macro definition tags enabled by the library, such
+可选，如果接口只支持部分芯片，此处填上该库启用的宏定义标记，如
+Optionally, if the interface only supports some chips, fill in the macro definition tag enabled by the library, such
+可选，指LuatOS/demo文件夹中的demo名称
+Optional, the name of the demo in the LuatOS/demo folder
+可选，指LuatOS/demo中的文件夹名称
+Optional, the folder name in LuatOS/demo
+可以使用回调方式给用户上报事件
+You can use callbacks to report events to users.
+可以适配`C接口实现Task等待功能`方式提供可在任务中运行的异步接口（[实现方式参考此页
+You can adapt` C interface implements Task waiting function` to provide asynchronous interfaces that can be run in tasks ([refer to this page for implementation
+可以写多行
+Can write multiple lines
+库名称，全部使用小写字母
+Library name, all lowercase letters
+库内的常量，全部使用大写字母命名，以下划线分割
+Constants within the library, all named in uppercase letters, separated by underscores
+库内的接口，使用驼峰命名，首字母小写，**禁止使用下划线分隔的写法
+The interface in the library is named by hump, the first letter is lowercase, and the writing method separated by underscores is prohibited.
+类型 返回的第一个值，必须按格式填写，如有默认值，需要全部写明
+The first value returned by the type must be filled in according to the format. If there is a default value, it needs to be fully stated.
+明确修复指定的issue, 贴上#issue完整编号
+Explicitly fix the specified issue, affixing the# issue full number
+命名规范
+Naming Specification
+模块的调用名
+The call name of the module
+模块的简短描述信息
+Short description information for the module
+模块的简短描述信息，如：数模转换
+Short description information of the module, such as: Digital-to-analog conversion
+模块的名称，如
+The name of the module, such
+判断是否符号要求的接口，使用`is`开头
+Determine whether the symbol requires an interface, beginning with `is`
+其他待定
+Others to be determined
+日期，可选
+Date, optional
+如果返回的是`string`，没数据就使用`长度为0的字符串
+If the return is` string`, use the string with length 0 if there is no data
+如果返回的是长度，没数据就使用
+If the length is returned, use it without data.
+如果可以实现非阻塞
+If non-blocking can be achieved
+如果使用`nil`代表接收失败，需要在接口文档里的返回值部分**加粗提醒
+If you use `nil` to represent a reception failure, you need to bold the return value section in the interface document.
+删除功能,特性
+delete function, feature
+使用`nil,"reason"`返回，代表**失败
+Use `nil,"reason" `to return, representing **failure
+使用`true`返回，代表**成功
+Use `true` to return, representing **success
+使用抽象的类型定义, 例如不使用`int`, 使用
+Use abstract type definitions, such as not using `int`, using
+使用的例子，可多行
+The example of use can be multi-line
+使用下划线命名方式
+Use underline naming
+特殊技巧：GitHub与Gitee均会自动识别`#`号开头，后面附带issue编号的语法（前后需空格），会自动与指定issue关联。并且如果commit内容中有`close`和`fix`等字样，会自动关闭该issue。如
+Special skill: GitHub and Gitee will automatically recognize the beginning of the`# `sign, followed by the syntax of the issue number (spaces are required before and after), which will be automatically associated with the specified issue. And if there are words such as` close` and` fix` in the commit content, the issue will be automatically closed. Such
+提交规范
+Submission Specification
+提交时的
+at the time of submission
+添加功能,特性
+adding features, features
+同时存在`send`/`recv`与`read`/`write`时
+When both `send`/`recv` and `read`/`write` exist
+为了能自动生成接口文档，需要严格按照下面的格式对接口进行注释
+In order to automatically generate the interface document, the interface needs to be annotated strictly in the following format
+无校验
+No verification
+修改功能,特性, 改变行为
+Modify functions, features, change behavior
+需要传入GPIO的接口
+Interfaces that require incoming GPIO
+需要等一段时间才能获取结果的接口
+Interfaces that need to wait a while to get results
+严禁使用 `git push -f` 执行 强制推送
+Forced push using `git push -f` is strictly prohibited
+一堆代码
+a bunch of code
+异步接口（使用`C接口实现Task等待功能`适配的接口）使用`task`开头
+Asynchronous interface (interface adapted by using `C interface to implement Task waiting function`) starts with `task`
+在`lua_call`或`lua_pushstring`附近，加上对此消息的相关解释
+Near `lua_call or lua_pushstring, add relevant explanation to this message
+在文件的最上方，格式如下（如果无此开头，文件不会被扫描
+At the top of the file, the format is as follows (if there is no such beginning, the file will not be scanned
+在文件的最上方，与c接口格式的基本相同，只是多了库例子，格式如下
+At the top of the file, the format is basically the same as that of the C interface, except that there are more library examples. The format is as follows
+在C文件内的接口
+Interfaces within the C file
+在Lua内可调用的函数，格式如下
+Functions that can be called in Lua, in the following format
+在Lua文件内的接口
+Interfaces within Lua files
+这个库的简易使用例子，可选
+Simple use example of this library, optional
+这个库的使用例子
+Examples of use of this library
+只存在`send`/`recv`与`read`/`write`的其中一种时
+When only one of `send`/`recv` and `read`/`write` exists
+只可能返回成功或失败的接口
+Only interfaces that may return success or failure
+只需写常量名
+Just write the constant name
+主分支
+Master Branch
+注意，第一行的`/*`前面不能有任何缩进
+Note that the first line `/*` cannot be preceded by any indentation
+作者名，可选
+Author name, optional

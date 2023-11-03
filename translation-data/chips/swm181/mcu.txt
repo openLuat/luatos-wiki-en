@@ -1,0 +1,64 @@
+除法器模块**，支持 32 位整数除法、整数求余、整数或小数开方运算 ，除法实现约 30 个时钟周期，整数开方约 16 个时钟周期，小数开方约 30 个时钟周期。
+Divider module, supports 32-bit integer division, integer remainder, integer or decimal square operation, division to achieve about 30 clock cycles, integer open about 16 clock cycles, decimal open about 30 clock cycles.
+串行接口**，UART*4，具有独立 8 字节 FIFO，最高支持主时钟 16 分频
+Serial interface **,UART * 4, with independent 8-byte FIFO, maximum support for master clock divide by 16
+存储器
+Memory
+存储器**：64KB/120KB/248KB，支持用户定制 ISP（在系统编程）更新用户程序，支持自定义 BOOT 程序。
+Memory **:64KB/120KB/248KB, support user customization ISP (in-system programming) update user program, support custom BOOT program.
+低功耗**， 正常模式：30mA@48MHZ，浅睡眠：70uA，深睡眠
+Low power consumption **, normal mode: 30mA @ 48MHZ, light sleep: 70uA, deep sleep
+定时器模块** ，4 路 32 位通用定时器，可做计数器使用，1 路支持 HALL 接口。
+Timer module **,4-way 32-bit general-purpose timer, can be used as a counter, 1-way support HALL interface.
+合宙商城
+Hizhou Mall
+环境搭建教程
+Environment Construction Tutorial
+具有 8 字节独立 FIFO，支持 SPI、SSI 协议，支持 master/slave 模式
+With 8 bytes independent FIFO, support SPI, SSI protocol, support master/slave mode
+控制模块** ，8 通道 16 位 PWM 产生器 ，可设置高电平结束或周期开始两种条件触发中断，具有普通、互补、中心对称等多种输出模式 ， 死区控制 ， 由硬件完成与 ADC 的交互。
+Control module **,8-channel 16-bit PWM generator, can set high level end or cycle start two conditions to trigger interrupt, with common, complementary, central symmetry and other output modes, dead zone control, hardware to complete the interaction with ADC.
+控制模块**，支持 UART/I2C/COUNTER/PWM/CAN 功能引脚定义置任意
+Control module * *, support UART/I2C/COUNTER/PWM/CAN function pin definition set arbitrary
+灵活的中断配置**，触发类型设置（边沿检测、电平检测） 触发电平设置（高电平、低电平、双电平
+Flexible interrupt configuration **, trigger type setting (edge detection, level detection) trigger level setting (high level, low level, dual level
+路模拟比较器**，可以灵活选择片内、片外参考电压，比较结果可以触发中断通知 MCU 进行处理，欠压检测，支持 2.7V 欠压检测，支持欠压中断和复位选择
+Road analog comparator * *, can flexibly select on-chip and off-chip reference voltages, comparison results can trigger interrupt notification MCU for processing, undervoltage detection, support 2.7V undervoltage detection, support undervoltage interrupt and reset selection
+模块** ，支持 SAR ADC/SIGMA-DELTA ADC/CAN 模块与 SRAM 间数据搬运
+Module **, supports data handling between SAR ADC/SIGMA-DELTA ADC/CAN module and SRAM
+模块购买
+Module Purchase
+内核，拥有24 位系统定时器，工作频率最高 48MHz，硬件单周期乘法 ，集成嵌套向量中断控制器（NVIC），提供最多 32 个、4 级可配置优先级的中断 ，通过 SWD 接口烧录，内置 LDO，供电电压范围 2.3V（2.7V）至
+Core, with 24-bit system timer, operating frequency up to 48MHz, hardware single-cycle multiplication, integrated nested vector interrupt controller (NVIC), providing up to 32 interrupts with 4 configurable priorities, burning through SWD interface, built-in LDO, and power supply voltage ranging from 2.3V(2.7V)
+内置低功耗定时器模块**，使用内部 32KB 时钟，休眠计数并自唤醒
+Built-in low-power timer module **, uses internal 32KB clock, sleepcounts and self-wakeup
+其他**，自定义 BOOT 程序
+Other **, custom BOOT program
+驱动模块**，工作电压范围：2.4V~3.6V，静态电流：＜1uA ，最大支持 4*32 段 LCD 面板 ，支持 1/4duty+1/3bias 或 1/3duty+1/2bias 可选。
+Driver module * *, working voltage range: 2.4V ~ 3.6V, quiescent current:<1uA, maximum support 4*32 LCD panel, support 1/4duty 1/3bias or 1/3duty 1/2bias optional.
+时钟源**，24MHz、48MHz 精度可达 1%的片内时钟源，32KHZ 片内时钟源，片外 2～32Mhz 片外晶振
+Clock source * *, on-chip clock source with 24MHz and 48MHz accuracy up to 1%, 32KHZ on-chip clock source, off-chip 2~32Mhz off-chip crystal oscillator
+使用手册
+Manual
+是什么
+What is it?
+淘宝店
+Taobao shop
+位 8 通道高精度 SAR ADC**，采样率高达 1MSPS，支持 single/scan 两种模式，独立结果寄存器，提供独立 FIFO，可由软件/PWM/TIMER 触发，支持 DMA，**16 位 6 通道高精度 SIGMA-DELTA ADC** ，采样率 16KSPS，单通道快速模式可达 50KSPS，支持 single/scan 两种模式 ，独立结果寄存器，提供独立 FIFO ，可由软件或 TIMER 触发
+Bit 8-channel high-precision SAR ADC **, sampling rate up to 1MSPS, support single/scan two modes, independent result register, provide independent FIFO, can be triggered by software/PWM/TIMER, support DMA,** 16-bit 6-channel high-precision SIGMA-DELTA ADC **, sampling rate 16KSPS, single channel fast mode up to 50KSPS, support single/scan two modes, independent result register, provide independent FIFO, can be triggered by software or TIMER
+位看门狗定时器**，溢出后可配置触发中断或复位芯片。
+Bit watchdog timer **, after overflow can be configured to trigger interrupt or reset the chip.
+详细信息见数据手册，[华芯微特SWM181数据手册V2.07.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220721163511464_华芯微特SWM181数据手册
+For details, please refer to the data sheet, [huaxin micro SWM181 data sheet V2.07.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220721163511464_华芯微特SWM181数据手册
+芯片
+Chip
+旋转坐标计算模块**，已知角度计算 sin/cos/arctan 值，结果为 14bit，可保证 11bit 有效值。
+The rotation coordinate calculation module **calculates the sin/cos/arctan value at a known angle, and the result is 14bit, which can guarantee an effective value of 11bit.
+压缩包
+Compressed package
+支持 8 位、10 位地址方式，支持 master/slave 模式
+Support 8-bit, 10-bit address mode, support master/slave mode
+支持协议 2.0A(11bit 标识符)和 2.0B（29bit 标识符
+Supports protocol 2.0A(11bit identifier) and 2.0B(29bit identifier
+最多可达 56 个 GPIO，可配置 4 种 IO 模式，上拉输入，下拉输入，推挽输出，开漏输出。
+Up to 56 GPIO, can be configured with 4 IO modes, pull-up input, pull-down input, push-pull output, open-drain output.

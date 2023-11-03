@@ -1,0 +1,4 @@
+本章将介绍LuatOS API的使用方式，使开发者熟悉基本使用步骤，并且可以将LuatOS提供的示例程序运行起来。
+This chapter describes how to use the LuatOS API so that developers are familiar with the basic steps to use it and can run the sample programs provided by LuatOS.
+教程
+Tutorial

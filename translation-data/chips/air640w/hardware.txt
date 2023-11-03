@@ -1,0 +1,10 @@
+除`BOOT`和`UART0_TX/RX`外，其他脚均可作为IO脚使用
+Except for `BOOT` and `UART0_TX/RX`, other feet can be used as IO feet
+管脚编号|命名|默认功能
+Pin Number | Naming | Default Function
+管脚编号对应w600芯片的管脚编号，也对应`gpio`库所使用的pin值
+The pin number corresponds to the pin number of the w600 chip and also corresponds to the pin value used by the `gpio` library
+管脚映射表
+Pin Mapping Table
+硬件资料
+Hardware Data

@@ -1,0 +1,76 @@
+安装支持包
+Install Support Package
+安装MDK5，具体方法请百度，安装后需要激活才能编译大文件
+Install MDK5, the specific method please Baidu, after installation need to activate to compile large files
+背景：本文档主要解决Air32F103系列芯片的KEIL开发环境搭建相关问题
+Background: This document mainly solves the problems related to the construction of KEIL development environment for Air32F103 series chips.
+测试代码
+Test code
+查看设备是否连接正常，连接正常可以在SW Device列表里看到设备，可以调整时钟速度提高效率
+Check whether the device is connected normally. If the connection is normal, you can see the device in the SW Device list, and you can adjust the clock speed to improve efficiency.
+创建文件夹和工程名，路径根据自己实际选
+Create a folder and project name, and select the path according to your actual choice.
+点击编译按钮测试是否能编译成功。
+Click the Compile button to test whether the compilation is successful.
+点击菜单栏的
+Click on the menu bar
+点击工程配置魔术棒，找到Debug选项卡，在下拉列表中选择CMSIS-DAP Debugger，点击
+Click the project configuration magic wand, find the Debug tab, select the CMSIS-DAP Debugger in the drop-down list, and click
+点击左上角新建一个文件，右键保存为main.c，添加一个main函数
+Click to create a new file in the upper left corner, right-click to save it as main.c, and add a main function
+点击Flash Download选项卡，可以看到我们的支持包已经默认帮我们添加了下载算法，我们可以勾选Reset and Run选项卡，每次下载完自动复位运行代码，就不用手动按复位按钮了。
+Click on the Flash Download tab, you can see that our support package has added a download algorithm for us by default. We can check the Reset and Run tab, and every time we download the automatic reset running code, we don't need to manually press the reset button.
+对外控制
+External control
+二、环境搭建
+2. environment construction
+复位（对外控制
+Reset (External Control
+根据提示勾选缺少的依赖以后就消除了提示，点击OK工程就建立好了。
+According to the prompt, check the missing dependencies and then eliminate the prompt. Click OK to set up the project.
+技术定位：初级/中级/高级
+Technical positioning: junior/intermediate/advanced
+接线图
+Wiring Diagram
+开发板出厂默认为DAPLINK固件（BluePill开发板默认无固件），所以可以直接作为调试器给另一个设备调试烧录。这里介绍DAPLINK的使用方法，其他调试器类似。
+The factory default development board is DAPLINK firmware (BluePill development board has no firmware by default), so it can be directly used as a debugger to debug and burn another device. Here is how to use the DAPLINK, similar to other debuggers.
+开发板的DAPLINK固件，PB13连接**被调试设备的SWDCLK**，PB14连接**被调试设备的SWDIO**，PB0连接复位
+DAPLINK firmware of the development board, PB13 connection **SWDCLK of the debugged device**,PB14 connection **SWDIO of the debugged device**,PB0 connection reset
+目标群体：使用KEIL进行开发的用户
+Target group: Users who use KEIL for development
+配置完成以后就可以直接点击烧录按钮下载烧录代码到设备了。
+After the configuration is completed, you can directly click the burn button to download the burn code to the device.
+三、下载烧录
+3. Download Burn
+使用手册
+Manual
+添加库函数定义
+Add a library function definition
+添加启动文件，勾选CMSIS下的CORE和Device下的Startup，即可自动配置启动文件
+Add a startup file and check the Startup under CORE and Device under CMSIS to automatically configure the startup file.
+添加外设库支持，例如添加GPIO库，勾选GPIO组件以后可以看到下面会提示缺少其他组件，根据提示勾选即可，也可以全部勾选
+Add peripheral library support, for example, add GPIO library. after checking GPIO components, you can see that the following will prompt the lack of other components. check according to the prompt, or check all of them.
+推荐升级至新版[DAPLink V2固件](https://gitee.com/openLuat/luatos-soc-air32f103/tree/master/AIR_Jlink_Keil)，烧录速度可提升一倍（[查看升级方法
+recommend upgrade to the new version of [DAPLink V2 firmware](https://gitee.com/openLuat/luatos-soc-air32f103/tree/master/AIR_Jlink_Keil), the burning speed can be doubled ([check the upgrade method
+下载安装AIR32F103的
+Download the installation AIR32F103
+新建工程
+New construction
+虚拟串口的
+virtual serial port
+选择设备列表中的Generic下的
+Select under Generic in the device list
+一、背景
+1. background
+引脚|功能
+Pin | Function
+由于**win7**系统不自带`winusb`驱动，且该系统早在2020年微软就已停止支持，所以如需使用DAPLINK功能，请升级至**win8以上系统**，或自行手动安装驱动：[Zadig驱动安装器
+Since **win7** system does not have a` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to use DAPLINK function, please upgrade to **win8 or above system**, or manually install the driver yourself:[Zadig driver installer
+由于最早一批开发板（22年上半年批次）默认的daplink固件封堵了SWD调试接口（后续出货无需关注此问题），所以**第一次**使用swd下载时，请先按住被调试板子的BOOT按键，再按一下复位按键，最后松开BOOT按键，然后点击keil中的下载按钮。第一次下载完成后，下次下载就不用这样操作了（或在下载前先按住被调试板子的复位按键，在点击keil的下载按钮后马上松开按键/或者直接用ISP工具擦除芯片
+Since the default daplink firmware of the first batch of development boards (batches in the first half of 22 years) blocked the SWD debugging interface (this problem does not need to be paid attention to for subsequent shipments), please press and hold the BOOT button of the debugged board first, then press the reset button, finally release the BOOT button, and then click the download button in keil. After the first download is completed, the next download will not need to do this (or press and hold the reset button of the debugged board before downloading, release the button immediately after clicking keil's download button/or directly erase the chip with ISP tool
+找到AIR_Jlink_Keil文件夹中最新版本的pack文件，双击安装即可，安装后可在keil设备列表的Generic下看到AIR32设备
+Find the latest version of the pack file in the AIR_Jlink_Keil folder and double-click to install it. After installation, you can see AIR32 devices under the Generic of keil device list.
+整体连接图如下图所示
+The overall connection diagram is shown in the following figure
+准备工作
+Preparations

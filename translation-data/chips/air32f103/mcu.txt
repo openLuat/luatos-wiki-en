@@ -1,0 +1,70 @@
+的SDK与
+SDK
+定时器 | 3个（没有定时器4） | 4个           | 10个          | 10个
+Timers | 3 (No Timer 4) | 4 | 10 | 10
+更灵活的时钟输出配置，除原有输出源外，另支持输出PLL 2-16分频输出。
+More flexible clock output configuration, in addition to the original output source, the other supports the output PLL 2-16 frequency output.
+合宙商城
+Hizhou Mall
+环境搭建教程
+Environment Construction Tutorial
+寄存器手册[Air32F103xx_User_Manual.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230907152950811_Air32F103xx_User_Manual_CN-带目录书签
+Register Manual [a](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230907152950811_Air32F103xx_User_Manual_CN-带目录书签
+具体使用方法可以看 [强化功能说明
+The specific usage method can be seen [description of enhanced function
+可选择输入Byte大小端是否翻转、计算结果高低位是否翻转、计算结果是0xFFFFFFFF异或、CRC16/32、CRC16 多项式。
+You can select whether the input Byte size end is flipped, whether the high and low bits of the calculation result are flipped, and the calculation result is 0xFFFFFFFF XOR, CRC16/32, CRC16 polynomial.
+例如
+For example
+模块购买
+Module Purchase
+内部可选1.5K上拉电阻
+Internal optional 1.5K pull-up resistor
+内部DP可选1.5K上拉电阻，可替代外部电路上拉电阻；并且可以实现软件重枚举（无需PCB外部加三极管控制
+Internal DP optional 1.5K pull-up resistor, can replace the external circuit pull-up resistor; And can realize software re-enumeration (no need to add triode control outside PCB
+强化GPIO设计
+Enhanced GPIO design
+区别
+Difference
+使用手册
+Manual
+使用Air32F103替换其他F103芯片说明[从SXX32F103移植到
+Instructions for replacing other F103 chips with Air32F103 [porting from SXX32F103
+使用IIC时，当IIC速率小于等于100K，可用内部上拉电阻。
+When using IIC, when the IIC rate is less than or equal to 100K, an internal pull-up resistor can be used.
+使用SDIO模块时，D0-D3和CMD可用内部上拉电阻
+When using SDIO module, D0-D3 and CMD can use internal pull-up resistor
+是什么
+What is it?
+淘宝店
+Taobao shop
+替换其他芯片说明
+Replace other chip instructions
+通道）        | 2（10通道）   | 3（16通道）   | 3（16通道
+channels) | 2(10 channels) | 3(16 channels) | 3(16 channels)
+为系列芯片，其外设和硬件设计兼容市场上一些主流F103型号，主频最高可达256M，96K RAM+256K Flash，每个IO都可设置独立的内部上下拉电阻。详细信息见数据手册，[Air32F103芯片手册
+For a series of chips, its peripherals and hardware design are compatible with some mainstream F103 models in the market, with a dominant frequency of up to 256M,96K RAM 256K Flash, and each IO can be set with independent internal pull-up resistors. For details see the data sheet,[Air32F103 Chip Manual
+无                 | 无            | 2（2通道）    | 2（2通道
+None | None | 2(2 channels) | 2(2 channels)
+芯片
+Chip
+芯片对比
+Chip contrast
+由于**win7**系统不自带`winusb`驱动，且该系统早在2020年微软就已停止支持，所以如需使用DAPLINK功能，请升级至**win8以上系统**，或自行手动安装驱动：[Zadig驱动安装器
+Since **win7** system does not have a` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to use DAPLINK function, please upgrade to **win8 or above system**, or manually install the driver yourself:[Zadig driver installer
+遇到替换完不能工作，或者CubeMX HAL库开发有问题的，一定先阅读下面的手册
+If you cannot work after replacement or have problems with CubeMX HAL library development, you must read the following manual first.
+增强功能
+Enhancements
+支持独立上下拉控制(40K)，当 IO为复用功能时，可代替外部电路电阻。
+Support independent pull-down control (40K), when IO is a multiplexing function, it can replace external circuit resistance.
+支持多种CRC模式
+Supports multiple CRC modes
+支持输出PLL 2-16分频输出
+Output PLL 2-16 Divided Output Support
+支持SM1/SM3/SM4/SM7国密算法
+Support SM1/SM3/SM4/SM7 national secret algorithm
+主频
+main frequency
+注意事项
+Precautions
