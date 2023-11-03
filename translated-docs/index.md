@@ -108,7 +108,7 @@ We are adapting more MCU and wireless chip modules, welcome you to join^_^
 ```{toctree}
 :hidden:
 :caption: 💁 LuatOS Introduction
-🏠️ Home Page <https://wiki.luatos.com>
+🏠️ Home Page <https://openluat.github.io/luatos-wiki-en>
 pages/emulator
 pages/tools
 pages/supports
