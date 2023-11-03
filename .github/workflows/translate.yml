@@ -2,6 +2,8 @@ name: translate
 
 on:
   push:
+    branches:
+      - 'master'
     paths:
       - 'translate-tool/**'
       - 'translation-data/**'

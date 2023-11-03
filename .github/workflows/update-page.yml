@@ -2,6 +2,8 @@ name: update-page
 
 on:
   push:
+    branches:
+      - 'master'
     paths:
       - 'translated-docs/**'
   workflow_dispatch:
