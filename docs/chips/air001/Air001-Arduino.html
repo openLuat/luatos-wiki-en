@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="🚗 Air101" href="../air101/index.html" /><link rel="prev" title="Air001 Keil MDK-based user manual" href="Air001-MDK.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="🚗 Air101" href="../air101/index.html" /><link rel="prev" title="Air001 Keil MDK-based user manual" href="Air001-MDK.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Air001 Arduino-based user manual - LuatOS 文档</title>
+        <title>Air001 Arduino-based user manual - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,19 +688,19 @@
         </div>
         <article role="main">
           <section id="air001-arduino-based-user-manual">
-<h1>Air001 Arduino-based user manual<a class="headerlink" href="#air001-arduino-based-user-manual" title="永久链接至标题">#</a></h1>
+<h1>Air001 Arduino-based user manual<a class="headerlink" href="#air001-arduino-based-user-manual" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p><a class="reference external" href="https://arduino.luatos.com/">Air001 The Arduino information station</a> is open! Will update the full hands-on tutorial with various examples, welcome favorites.</p>
 </div>
 <section id="developing-with-the-arduino-ide">
-<h2>Developing with the Arduino IDE<a class="headerlink" href="#developing-with-the-arduino-ide" title="永久链接至标题">#</a></h2>
+<h2>Developing with the Arduino IDE<a class="headerlink" href="#developing-with-the-arduino-ide" title="Permalink to this headline">#</a></h2>
 <section id="preparations">
-<h3>Preparations<a class="headerlink" href="#preparations" title="永久链接至标题">#</a></h3>
+<h3>Preparations<a class="headerlink" href="#preparations" title="Permalink to this headline">#</a></h3>
 <p>Install <a class="reference external" href="https://www.arduino.cc/en/software">Arduino IDE</a>, it is recommended to install Arduino IDE 2.x</p>
 </section>
 <section id="add-development-board-address">
-<h3>Add Development Board Address<a class="headerlink" href="#add-development-board-address" title="永久链接至标题">#</a></h3>
+<h3>Add Development Board Address<a class="headerlink" href="#add-development-board-address" title="Permalink to this headline">#</a></h3>
 <p>Click Arduino File-Preferences in the top left corner of the IDE
 <img alt="" src="../../_images/2023-05-08-23-12-46.png"/>
 Enter the address of your AirMCU in <code class="docutils literal notranslate"><span class="pre">Other</span> <span class="pre">Board</span> <span class="pre">Manager</span> <span class="pre">Address</span></code> <code class="docutils literal notranslate"><span class="pre">https://arduino.luatos.com/package_air_cn_index.json</span></code>
@@ -711,26 +709,26 @@ Enter the address of your AirMCU in <code class="docutils literal notranslate"><
 <img alt="" src="../../_images/2023-05-08-23-16-50.png"/></p>
 </section>
 <section id="installing-the-development-board">
-<h3>Installing the Development Board<a class="headerlink" href="#installing-the-development-board" title="永久链接至标题">#</a></h3>
+<h3>Installing the Development Board<a class="headerlink" href="#installing-the-development-board" title="Permalink to this headline">#</a></h3>
 <p>Search in <code class="docutils literal notranslate"><span class="pre">Development</span> <span class="pre">Board</span> <span class="pre">Manager``Air</span> <span class="pre">MCU</span></code>
 <img alt="" src="../../_images/2023-05-08-23-18-51.png"/>
 Just install the latest version</p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>The installation process requires the installation of multiple tool chains, which may be slightly slower, please wait patiently</p>
 </div>
 </section>
 <section id="choose-a-development-board">
-<h3>Choose a development board<a class="headerlink" href="#choose-a-development-board" title="永久链接至标题">#</a></h3>
+<h3>Choose a development board<a class="headerlink" href="#choose-a-development-board" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>If it is a purchased whiteboard and a DAPLink debugger, it can be directly connected to the mother through the pin row, and the direction is shown in the figure.
 <img alt="" src="../../_images/2023-05-08-21-19-23.jpg"/></p>
 </div>
 <p>The development board selects the AirMCU-Air001 Board, and the port selects the connected serial port.</p>
 </section>
 <section id="add-code">
-<h3>Add code<a class="headerlink" href="#add-code" title="永久链接至标题">#</a></h3>
+<h3>Add code<a class="headerlink" href="#add-code" title="Permalink to this headline">#</a></h3>
 <p>Add some test code in the main function</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="c1">// put your setup code here, to run once:</span>
@@ -755,13 +753,13 @@ Just install the latest version</p>
 </div>
 </section>
 <section id="compile-download">
-<h3>Compile Download<a class="headerlink" href="#compile-download" title="永久链接至标题">#</a></h3>
+<h3>Compile Download<a class="headerlink" href="#compile-download" title="Permalink to this headline">#</a></h3>
 <p>Refer to <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/chips/air001/mcu.html#id4">https://openluat.github.io/luatos-wiki-en/chips/air001/mcu.html#id4</a>’s tutorial for wiring.</p>
 <p>Click the Upload button and wait for the test code to be compiled and uploaded
 <img alt="" src="../../_images/2023-05-08-23-29-24.png"/></p>
 </section>
 <section id="view-serial-port-output">
-<h3>View Serial Port Output<a class="headerlink" href="#view-serial-port-output" title="永久链接至标题">#</a></h3>
+<h3>View Serial Port Output<a class="headerlink" href="#view-serial-port-output" title="Permalink to this headline">#</a></h3>
 <p>If the code compilation and upload are normal, then open the serial port monitor and you can see the output related logs.
 <img alt="" src="../../_images/2023-05-08-23-30-57.png"/>
 It can be observed that the LED flashes at an interval of 1 second.</p>
@@ -800,13 +798,13 @@ if (navigator.language.indexOf("CN") < 0 && confirm ("arduino Please go to the d
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -824,7 +822,7 @@ if (navigator.language.indexOf("CN") < 0 && confirm ("arduino Please go to the d
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -865,7 +863,6 @@ if (navigator.language.indexOf("CN") < 0 && confirm ("arduino Please go to the d
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

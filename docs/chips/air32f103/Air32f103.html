@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Transplant from SXX32F103" href="switchFromSxx.html" /><link rel="prev" title="Hardware Data" href="hardware.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Transplant from SXX32F103" href="switchFromSxx.html" /><link rel="prev" title="Hardware Data" href="hardware.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Air32F103 Manual - LuatOS 文档</title>
+        <title>Air32F103 Manual - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,9 +688,9 @@
         </div>
         <article role="main">
           <section id="air32f103-manual">
-<h1>Air32F103 Manual<a class="headerlink" href="#air32f103-manual" title="永久链接至标题">#</a></h1>
+<h1>Air32F103 Manual<a class="headerlink" href="#air32f103-manual" title="Permalink to this headline">#</a></h1>
 <section id="background">
-<h2>1. background<a class="headerlink" href="#background" title="永久链接至标题">#</a></h2>
+<h2>1. background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Background: This document mainly solves the problems related to the construction of KEIL development environment for Air32F103 series chips.</p></li>
 <li><p>Technical positioning: junior/intermediate/advanced</p></li>
@@ -700,21 +698,21 @@
 </ul>
 </section>
 <section id="environment-construction">
-<h2>2. environment construction<a class="headerlink" href="#environment-construction" title="永久链接至标题">#</a></h2>
+<h2>2. environment construction<a class="headerlink" href="#environment-construction" title="Permalink to this headline">#</a></h2>
 <section id="preparations">
-<h3>Preparations<a class="headerlink" href="#preparations" title="永久链接至标题">#</a></h3>
+<h3>Preparations<a class="headerlink" href="#preparations" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install MDK5, the specific method please Baidu, after installation need to activate to compile large files</p></li>
 <li><p>Download the installation AIR32F103 SDK：<a class="reference external" href="https://gitee.com/openLuat/luatos-soc-air32f103/">https://gitee.com/openLuat/luatos-soc-air32f103/</a></p></li>
 </ol>
 </section>
 <section id="install-support-package">
-<h3>Install Support Package<a class="headerlink" href="#install-support-package" title="永久链接至标题">#</a></h3>
+<h3>Install Support Package<a class="headerlink" href="#install-support-package" title="Permalink to this headline">#</a></h3>
 <p>Find the latest version of the pack file in the AIR_Jlink_Keil folder and double-click to install it. After installation, you can see AIR32 devices under the Generic of keil device list.</p>
 <p><img alt="image-20220605102938019" src="../../_images/image-20220605102938019.png"/></p>
 </section>
 <section id="new-construction">
-<h3>New construction<a class="headerlink" href="#new-construction" title="永久链接至标题">#</a></h3>
+<h3>New construction<a class="headerlink" href="#new-construction" title="Permalink to this headline">#</a></h3>
 <p>Click on the menu bar Project-&gt;New μVision Project</p>
 <p><img alt="image-20220605103617323" src="../../_images/image-20220605103617323.png"/></p>
 <p>Create a folder and project name, and select the path according to your actual choice.</p>
@@ -731,7 +729,7 @@
 <p><img alt="image-20220605105919398" src="../../_images/image-20220605105919398.png"/></p>
 </section>
 <section id="test-code">
-<h3>Test code<a class="headerlink" href="#test-code" title="永久链接至标题">#</a></h3>
+<h3>Test code<a class="headerlink" href="#test-code" title="Permalink to this headline">#</a></h3>
 <p>Click to create a new file in the upper left corner, right-click to save it as main.c, and add a main function</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
@@ -743,14 +741,14 @@
 </section>
 </section>
 <section id="download-burn">
-<h2>3. Download Burn<a class="headerlink" href="#download-burn" title="永久链接至标题">#</a></h2>
+<h2>3. Download Burn<a class="headerlink" href="#download-burn" title="Permalink to this headline">#</a></h2>
 <p>Air32F103 The factory default development board is DAPLINK firmware (BluePill development board has no firmware by default), so it can be directly used as a debugger to debug and burn another device. Here is how to use the DAPLINK, similar to other debuggers.</p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>recommend upgrade to the new version of <a class="reference external" href="https://gitee.com/openLuat/luatos-soc-air32f103/tree/master/AIR_Jlink_Keil">DAPLink V2 firmware</a>, the burning speed can be doubled (<a class="reference external" href="https://gitee.com/openLuat/luatos-soc-air32f103/blob/master/AIR_Jlink_Keil/air32_daplink_readme.txt">check the upgrade method</a>）</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>Since <strong>win7</strong> system does not have a<code class="docutils literal notranslate"> <span class="pre">winusb</span></code> driver, and Microsoft has stopped supporting the system as early as 2020, if you need to use DAPLINK function, please upgrade to <strong>win8 or above system</strong>, or manually install the driver yourself:<a class="reference external" href="https://zadig.akeo.ie/">Zadig driver installer</a></p>
 </div>
 <p>AIR32F103 DAPLINK firmware of the development board, PB13 connection <strong>SWDCLK of the debugged device</strong>,PB14 connection <strong>SWDIO of the debugged device</strong>,PB0 connection reset：</p>
@@ -788,7 +786,7 @@
 <p><img alt="image-20220605112817487" src="../../_images/image-20220605112817487.png"/></p>
 <p>After the configuration is completed, you can directly click the burn button to download the burn code to the device.</p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>Since the default daplink firmware of the first batch of development boards (batches in the first half of 22 years) blocked the SWD debugging interface (this problem does not need to be paid attention to for subsequent shipments), please press and hold the BOOT button of the debugged board first, then press the reset button, finally release the BOOT button, and then click the download button in keil. After the first download is completed, the next download will not need to do this (or press and hold the reset button of the debugged board before downloading, release the button immediately after clicking keil’s download button/or directly erase the chip with ISP tool）</p>
 </div>
 </section>
@@ -820,13 +818,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -844,7 +842,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -884,7 +882,6 @@
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

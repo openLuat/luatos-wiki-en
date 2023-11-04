@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Air700E Additional instructions" href="air700e.html" /><link rel="prev" title="LuatOS IO multiplexing configuration under firmware" href="iomux.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Air700E Additional instructions" href="air700e.html" /><link rel="prev" title="LuatOS IO multiplexing configuration under firmware" href="iomux.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Air780EG Additional instructions - LuatOS 文档</title>
+        <title>Air780EG Additional instructions - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,11 +688,11 @@
         </div>
         <article role="main">
           <section id="air780eg-additional-instructions">
-<h1>Air780EG Additional instructions<a class="headerlink" href="#air780eg-additional-instructions" title="永久链接至标题">#</a></h1>
+<h1>Air780EG Additional instructions<a class="headerlink" href="#air780eg-additional-instructions" title="Permalink to this headline">#</a></h1>
 <p>Air780EG It is Air780E + GNSS chip 6228, so 95% of the characteristics are the same as Air780E. Here are different places to say.</p>
 <p>GPS/GNSS Belonging to a bunch of things, the following, unless otherwise specified, refers to “satellite positioning system.””</p>
 <section id="internal-wiring">
-<h2>Internal wiring<a class="headerlink" href="#internal-wiring" title="永久链接至标题">#</a></h2>
+<h2>Internal wiring<a class="headerlink" href="#internal-wiring" title="Permalink to this headline">#</a></h2>
 <p>UART Part:</p>
 <ol class="arabic simple">
 <li><p>Air780EG The GPS chip is connected to<code class="docutils literal notranslate"><span class="pre">UART2/AUX_UART</span></code>, so this port is occupied</p></li>
@@ -712,7 +710,7 @@
 </ol>
 </section>
 <section id="positioning-characteristics">
-<h2>Positioning characteristics<a class="headerlink" href="#positioning-characteristics" title="永久链接至标题">#</a></h2>
+<h2>Positioning characteristics<a class="headerlink" href="#positioning-characteristics" title="Permalink to this headline">#</a></h2>
 <p>For a detailed description, please refer to the Air780EG hardware design manual, here to pick the focus, but also add some details</p>
 <ol class="arabic simple">
 <li><p>No backup power supply, no RTC hold, only <code class="docutils literal notranslate"><span class="pre">power</span> <span class="pre">on/power</span></code> two states, no low power tracking mode</p></li>
@@ -722,7 +720,7 @@
 </ol>
 </section>
 <section id="auxiliary-positioning-correlation">
-<h2>Auxiliary Positioning Correlation<a class="headerlink" href="#auxiliary-positioning-correlation" title="永久链接至标题">#</a></h2>
+<h2>Auxiliary Positioning Correlation<a class="headerlink" href="#auxiliary-positioning-correlation" title="Permalink to this headline">#</a></h2>
 <p>The built-in GPS chip loses all data after power failure, so auxiliary positioning depends on Cat in the Air780EG. 1 Capability of the chip</p>
 <ol class="arabic simple">
 <li><p>ephemeris, download from a co-server via http <code class="docutils literal notranslate"><span class="pre">http://download.openluat.com/9501-xingli/HXXT_GPS_BDS_AGNSS_DATA.dat</span></code></p></li>
@@ -731,7 +729,7 @@
 </ol>
 </section>
 <section id="about-ephemeris">
-<h2>About Ephemeris<a class="headerlink" href="#about-ephemeris" title="永久链接至标题">#</a></h2>
+<h2>About Ephemeris<a class="headerlink" href="#about-ephemeris" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>The ephemeris provided by the Zhou is GPS Beidou, both constellations have, about 5kb in size, updated about once an hour.</p></li>
 <li><p>GPS The valid time of the ephemeris is <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">hours</span></code></p></li>
@@ -741,21 +739,21 @@
 </ol>
 </section>
 <section id="about-power-consumption">
-<h2>About Power Consumption<a class="headerlink" href="#about-power-consumption" title="永久链接至标题">#</a></h2>
+<h2>About Power Consumption<a class="headerlink" href="#about-power-consumption" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>There is only one positioning mode, continuous positioning, the power consumption before and after successful positioning does not change much, but after a period of stable positioning, some power consumption will be reduced</p></li>
 <li><p>No low-power commands, no low-power modes</p></li>
 </ol>
 </section>
 <section id="about-packaging-and-software">
-<h2>About Packaging and Software<a class="headerlink" href="#about-packaging-and-software" title="永久链接至标题">#</a></h2>
+<h2>About Packaging and Software<a class="headerlink" href="#about-packaging-and-software" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>External package, Air780E and Air780EG are the same, the difference is that UART2 cannot connect other equipment</p></li>
 <li><p>AT Firmware to V1112 or above, LuatOS firmware to V1103 or above, to have Air780EG full support, brush</p></li>
 </ol>
 </section>
 <section id="development-board-pinout">
-<h2>Development Board pinout<a class="headerlink" href="#development-board-pinout" title="永久链接至标题">#</a></h2>
+<h2>Development Board pinout<a class="headerlink" href="#development-board-pinout" title="Permalink to this headline">#</a></h2>
 <p>Please note the difference with the Air780E development board:</p>
 <ol class="arabic simple">
 <li><p>UART2 No more multiplexing of GPIO10/11</p></li>
@@ -797,13 +795,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -821,7 +819,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -859,7 +857,6 @@
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

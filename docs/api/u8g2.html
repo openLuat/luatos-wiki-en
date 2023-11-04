@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="uart - serial port operation library" href="uart.html" /><link rel="prev" title="touchkey - Touch keys" href="touchkey.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="uart - serial port operation library" href="uart.html" /><link rel="prev" title="touchkey - Touch keys" href="touchkey.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>u8g2 - u8g2 graphics processing library - LuatOS 文档</title>
+        <title>u8g2 - u8g2 graphics processing library - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,18 +688,18 @@
         </div>
         <article role="main">
           <section id="u8g2-u8g2-graphics-processing-library">
-<h1>u8g2 - u8g2 graphics processing library<a class="headerlink" href="#u8g2-u8g2-graphics-processing-library" title="永久链接至标题">#</a></h1>
+<h1>u8g2 - u8g2 graphics processing library<a class="headerlink" href="#u8g2-u8g2-graphics-processing-library" title="Permalink to this headline">#</a></h1>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Adapted</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air101/Air103</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air601</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air105</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32C3</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32S3</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air780E/Air700E</span></p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>This page document is automatically generated by <a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/luat/../components/u8g2/luat_lib_u8g2.c">this file</a>. If there is any error, please submit issue or help modify pr, thank you！</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">小技巧</p>
+<p class="admonition-title">Tip</p>
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/u8g2">click this link to view the demo example of u8g2</a></p>
 </div>
 <section id="constant">
-<h2>Constant<a class="headerlink" href="#constant" title="永久链接至标题">#</a></h2>
+<h2>Constant<a class="headerlink" href="#constant" title="Permalink to this headline">#</a></h2>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>constant</p></th>
@@ -774,7 +772,7 @@
 </table></div>
 </section>
 <section id="u8g2-begin-conf">
-<h2>u8g2.begin(conf)<a class="headerlink" href="#u8g2-begin-conf" title="永久链接至标题">#</a></h2>
+<h2>u8g2.begin(conf)<a class="headerlink" href="#u8g2-begin-conf" title="Permalink to this headline">#</a></h2>
 <p>u8g2 Display initialization</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -814,7 +812,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-close">
-<h2>u8g2.close()<a class="headerlink" href="#u8g2-close" title="永久链接至标题">#</a></h2>
+<h2>u8g2.close()<a class="headerlink" href="#u8g2-close" title="Permalink to this headline">#</a></h2>
 <p>Turn off display</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -828,7 +826,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-clearbuffer">
-<h2>u8g2.ClearBuffer()<a class="headerlink" href="#u8g2-clearbuffer" title="永久链接至标题">#</a></h2>
+<h2>u8g2.ClearBuffer()<a class="headerlink" href="#u8g2-clearbuffer" title="Permalink to this headline">#</a></h2>
 <p>Clear screen, clear all pixels in memory frame buffer</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -842,7 +840,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-sendbuffer">
-<h2>u8g2.SendBuffer()<a class="headerlink" href="#u8g2-sendbuffer" title="永久链接至标题">#</a></h2>
+<h2>u8g2.SendBuffer()<a class="headerlink" href="#u8g2-sendbuffer" title="Permalink to this headline">#</a></h2>
 <p>Update data to the screen, send the contents of the memory frame buffer to the display</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -856,7 +854,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawutf8-str-x-y">
-<h2>u8g2.DrawUTF8(str, x, y)<a class="headerlink" href="#u8g2-drawutf8-str-x-y" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawUTF8(str, x, y)<a class="headerlink" href="#u8g2-drawutf8-str-x-y" title="Permalink to this headline">#</a></h2>
 <p>Draw a paragraph of text on the display screen, draw a paragraph of text on the display screen, to call u8g2.SendBuffer() will be updated to the screen</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -886,7 +884,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawbuttonutf8-str-x-y-flags-w-h-v-str">
-<h2>u8g2.DrawButtonUTF8(str, x, y, flags, w, h, v, str)<a class="headerlink" href="#u8g2-drawbuttonutf8-str-x-y-flags-w-h-v-str" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawButtonUTF8(str, x, y, flags, w, h, v, str)<a class="headerlink" href="#u8g2-drawbuttonutf8-str-x-y-flags-w-h-v-str" title="Permalink to this headline">#</a></h2>
 <p>Draw a box around the provided text. This is similar to DrawUTF8, but adds some decoration to the text., To call u8g2.SendBuffer() will update to the screen</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -928,7 +926,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-setfontmode-mode">
-<h2>u8g2.SetFontMode(mode)<a class="headerlink" href="#u8g2-setfontmode-mode" title="永久链接至标题">#</a></h2>
+<h2>u8g2.SetFontMode(mode)<a class="headerlink" href="#u8g2-setfontmode-mode" title="Permalink to this headline">#</a></h2>
 <p>Set font mode</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -952,7 +950,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-setfont-font">
-<h2>u8g2.SetFont(font)<a class="headerlink" href="#u8g2-setfont-font" title="永久链接至标题">#</a></h2>
+<h2>u8g2.SetFont(font)<a class="headerlink" href="#u8g2-setfont-font" title="Permalink to this headline">#</a></h2>
 <p>Set Font</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -977,7 +975,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-getdisplayheight">
-<h2>u8g2.GetDisplayHeight()<a class="headerlink" href="#u8g2-getdisplayheight" title="永久链接至标题">#</a></h2>
+<h2>u8g2.GetDisplayHeight()<a class="headerlink" href="#u8g2-getdisplayheight" title="Permalink to this headline">#</a></h2>
 <p>Get Display Height</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1001,7 +999,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-getdisplaywidth">
-<h2>u8g2.GetDisplayWidth()<a class="headerlink" href="#u8g2-getdisplaywidth" title="永久链接至标题">#</a></h2>
+<h2>u8g2.GetDisplayWidth()<a class="headerlink" href="#u8g2-getdisplaywidth" title="Permalink to this headline">#</a></h2>
 <p>Get Display Width</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1025,7 +1023,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-setdrawcolor-c">
-<h2>u8g2.SetDrawColor(c)<a class="headerlink" href="#u8g2-setdrawcolor-c" title="永久链接至标题">#</a></h2>
+<h2>u8g2.SetDrawColor(c)<a class="headerlink" href="#u8g2-setdrawcolor-c" title="Permalink to this headline">#</a></h2>
 <p>Assigns a drawing color to all drawing functions.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1049,7 +1047,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawpixel-x-y">
-<h2>u8g2.DrawPixel(x,y)<a class="headerlink" href="#u8g2-drawpixel-x-y" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawPixel(x,y)<a class="headerlink" href="#u8g2-drawpixel-x-y" title="Permalink to this headline">#</a></h2>
 <p>draw a dot.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1076,7 +1074,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawline-x0-y0-x1-y1">
-<h2>u8g2.DrawLine(x0,y0,x1,y1)<a class="headerlink" href="#u8g2-drawline-x0-y0-x1-y1" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawLine(x0,y0,x1,y1)<a class="headerlink" href="#u8g2-drawline-x0-y0-x1-y1" title="Permalink to this headline">#</a></h2>
 <p>draw a line between two points.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1109,7 +1107,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawcircle-x0-y0-rad-opt">
-<h2>u8g2.DrawCircle(x0,y0,rad,opt)<a class="headerlink" href="#u8g2-drawcircle-x0-y0-rad-opt" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawCircle(x0,y0,rad,opt)<a class="headerlink" href="#u8g2-drawcircle-x0-y0-rad-opt" title="Permalink to this headline">#</a></h2>
 <p>Draw a hollow circle with radius rad at x,y position.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1142,7 +1140,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawdisc-x0-y0-rad-opt">
-<h2>u8g2.DrawDisc(x0,y0,rad,opt)<a class="headerlink" href="#u8g2-drawdisc-x0-y0-rad-opt" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawDisc(x0,y0,rad,opt)<a class="headerlink" href="#u8g2-drawdisc-x0-y0-rad-opt" title="Permalink to this headline">#</a></h2>
 <p>Draw a solid circle with radius rad at x,y position.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1175,7 +1173,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawellipse-x0-y0-rx-ry-opt">
-<h2>u8g2.DrawEllipse(x0,y0,rx,ry,opt)<a class="headerlink" href="#u8g2-drawellipse-x0-y0-rx-ry-opt" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawEllipse(x0,y0,rx,ry,opt)<a class="headerlink" href="#u8g2-drawellipse-x0-y0-rx-ry-opt" title="Permalink to this headline">#</a></h2>
 <p>Draw a hollow ellipse with radius rad at x,y position.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1211,7 +1209,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawfilledellipse-x0-y0-rx-ry-opt">
-<h2>u8g2.DrawFilledEllipse(x0,y0,rx,ry,opt)<a class="headerlink" href="#u8g2-drawfilledellipse-x0-y0-rx-ry-opt" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawFilledEllipse(x0,y0,rx,ry,opt)<a class="headerlink" href="#u8g2-drawfilledellipse-x0-y0-rx-ry-opt" title="Permalink to this headline">#</a></h2>
 <p>Draw a solid ellipse with radius rad at x,y position.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1247,7 +1245,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawbox-x-y-w-h">
-<h2>u8g2.DrawBox(x,y,w,h)<a class="headerlink" href="#u8g2-drawbox-x-y-w-h" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawBox(x,y,w,h)<a class="headerlink" href="#u8g2-drawbox-x-y-w-h" title="Permalink to this headline">#</a></h2>
 <p>Draw a box (filled box starting from the x / y position (upper left edge)）.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1280,7 +1278,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawframe-x-y-w-h">
-<h2>u8g2.DrawFrame(x,y,w,h)<a class="headerlink" href="#u8g2-drawframe-x-y-w-h" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawFrame(x,y,w,h)<a class="headerlink" href="#u8g2-drawframe-x-y-w-h" title="Permalink to this headline">#</a></h2>
 <p>Draw a box from the x / y position (upper left edge) (empty box)）.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1313,7 +1311,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawrbox-x-y-w-h-r">
-<h2>u8g2.DrawRBox(x,y,w,h,r)<a class="headerlink" href="#u8g2-drawrbox-x-y-w-h-r" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawRBox(x,y,w,h,r)<a class="headerlink" href="#u8g2-drawrbox-x-y-w-h-r" title="Permalink to this headline">#</a></h2>
 <p>Draw a filled box/frame with a rounded edge starting from the x / y position (top left edge).</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1349,7 +1347,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawrframe-x-y-w-h-r">
-<h2>u8g2.DrawRFrame(x,y,w,h,r)<a class="headerlink" href="#u8g2-drawrframe-x-y-w-h-r" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawRFrame(x,y,w,h,r)<a class="headerlink" href="#u8g2-drawrframe-x-y-w-h-r" title="Permalink to this headline">#</a></h2>
 <p>Draw an empty box/frame with rounded edges starting from the x / y position (top left edge).</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1385,7 +1383,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawglyph-x-y-encoding">
-<h2>u8g2.DrawGlyph(x,y,encoding)<a class="headerlink" href="#u8g2-drawglyph-x-y-encoding" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawGlyph(x,y,encoding)<a class="headerlink" href="#u8g2-drawglyph-x-y-encoding" title="Permalink to this headline">#</a></h2>
 <p>Draws a graphic character. The character is placed at the specified pixel position x and y.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1416,7 +1414,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawtriangle-x0-y0-x1-y1-x2-y2">
-<h2>u8g2.DrawTriangle(x0,y0,x1,y1,x2,y2)<a class="headerlink" href="#u8g2-drawtriangle-x0-y0-x1-y1-x2-y2" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawTriangle(x0,y0,x1,y1,x2,y2)<a class="headerlink" href="#u8g2-drawtriangle-x0-y0-x1-y1-x2-y2" title="Permalink to this headline">#</a></h2>
 <p>Draw a triangle (solid polygon）.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1455,7 +1453,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-setbitmapmode-mode">
-<h2>u8g2.SetBitmapMode(mode)<a class="headerlink" href="#u8g2-setbitmapmode-mode" title="永久链接至标题">#</a></h2>
+<h2>u8g2.SetBitmapMode(mode)<a class="headerlink" href="#u8g2-setbitmapmode-mode" title="Permalink to this headline">#</a></h2>
 <p>Defines whether the bitmap function will write the background color</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1479,7 +1477,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawxbm-x-y-w-h-data">
-<h2>u8g2.DrawXBM(x, y, w, h, data)<a class="headerlink" href="#u8g2-drawxbm-x-y-w-h-data" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawXBM(x, y, w, h, data)<a class="headerlink" href="#u8g2-drawxbm-x-y-w-h-data" title="Permalink to this headline">#</a></h2>
 <p>Draw Bitmap</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1520,7 +1518,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawdrcode-x-y-str-size">
-<h2>u8g2.DrawDrcode(x, y, str, size)<a class="headerlink" href="#u8g2-drawdrcode-x-y-str-size" title="永久链接至标题">#</a></h2>
+<h2>u8g2.DrawDrcode(x, y, str, size)<a class="headerlink" href="#u8g2-drawdrcode-x-y-str-size" title="Permalink to this headline">#</a></h2>
 <p>Buffer Drawing QRCode</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1562,7 +1560,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-setcontrast-contrast">
-<h2>u8g2.SetContrast(contrast)<a class="headerlink" href="#u8g2-setcontrast-contrast" title="永久链接至标题">#</a></h2>
+<h2>u8g2.SetContrast(contrast)<a class="headerlink" href="#u8g2-setcontrast-contrast" title="Permalink to this headline">#</a></h2>
 <p>Adjust screen contrast</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1595,7 +1593,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawgtfontgb2312-str-size-x-y">
-<h2>u8g2.drawGtfontGb2312(str,size,x,y)<a class="headerlink" href="#u8g2-drawgtfontgb2312-str-size-x-y" title="永久链接至标题">#</a></h2>
+<h2>u8g2.drawGtfontGb2312(str,size,x,y)<a class="headerlink" href="#u8g2-drawgtfontgb2312-str-size-x-y" title="Permalink to this headline">#</a></h2>
 <p>Using gtfont to display gb2312 strings</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1628,7 +1626,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-drawgtfontutf8-str-size-x-y">
-<h2>u8g2.drawGtfontUtf8(str,size,x,y)<a class="headerlink" href="#u8g2-drawgtfontutf8-str-size-x-y" title="永久链接至标题">#</a></h2>
+<h2>u8g2.drawGtfontUtf8(str,size,x,y)<a class="headerlink" href="#u8g2-drawgtfontutf8-str-size-x-y" title="Permalink to this headline">#</a></h2>
 <p>Using gtfont to display UTF8 strings</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1661,7 +1659,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-copybuffer-buff">
-<h2>u8g2.CopyBuffer(buff)<a class="headerlink" href="#u8g2-copybuffer-buff" title="永久链接至标题">#</a></h2>
+<h2>u8g2.CopyBuffer(buff)<a class="headerlink" href="#u8g2-copybuffer-buff" title="Permalink to this headline">#</a></h2>
 <p>Get the underlying image buffer</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1703,7 +1701,7 @@
 </section>
 <hr class="docutils"/>
 <section id="u8g2-setpowersave-is-enable">
-<h2>u8g2.SetPowerSave(is_enable)<a class="headerlink" href="#u8g2-setpowersave-is-enable" title="永久链接至标题">#</a></h2>
+<h2>u8g2.SetPowerSave(is_enable)<a class="headerlink" href="#u8g2-setpowersave-is-enable" title="Permalink to this headline">#</a></h2>
 <p>Set power saving mode</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1769,13 +1767,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1793,7 +1791,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1856,7 +1854,6 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

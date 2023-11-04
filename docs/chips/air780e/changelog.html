@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="📡 ESP32-C3" href="../esp32c3/index.html" /><link rel="prev" title="Firmware Description" href="firmware.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="📡 ESP32-C3" href="../esp32c3/index.html" /><link rel="prev" title="Firmware Description" href="firmware.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Ec618 Series Firmware Release Notes - LuatOS 文档</title>
+        <title>Ec618 Series Firmware Release Notes - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,9 +688,9 @@
         </div>
         <article role="main">
           <section id="ec618-series-firmware-release-notes">
-<h1>Ec618 Series Firmware Release Notes<a class="headerlink" href="#ec618-series-firmware-release-notes" title="永久链接至标题">#</a></h1>
+<h1>Ec618 Series Firmware Release Notes<a class="headerlink" href="#ec618-series-firmware-release-notes" title="Permalink to this headline">#</a></h1>
 <section id="v1108">
-<h2>V1108<a class="headerlink" href="#v1108" title="永久链接至标题">#</a></h2>
+<h2>V1108<a class="headerlink" href="#v1108" title="Permalink to this headline">#</a></h2>
 <p>This version is in RC status, pending release</p>
 <p>Compatibility changes:</p>
 <ol class="arabic simple">
@@ -783,7 +781,7 @@
 </ul>
 </section>
 <section id="v1107">
-<h2>V1107<a class="headerlink" href="#v1107" title="永久链接至标题">#</a></h2>
+<h2>V1107<a class="headerlink" href="#v1107" title="Permalink to this headline">#</a></h2>
 <p>Compatibility changes:</p>
 <ol class="arabic simple">
 <li><p>No longer automatically query base station information</p>
@@ -830,7 +828,7 @@
 <p>Please refer to git’s commit log for more detailed updates.</p>
 </section>
 <section id="v1106">
-<h2>V1106<a class="headerlink" href="#v1106" title="永久链接至标题">#</a></h2>
+<h2>V1106<a class="headerlink" href="#v1106" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>New: mobile library adds network special configuration function</p></li>
 <li><p>New: obtain the cellid of the current serving cell, no need to search again</p></li>
@@ -881,7 +879,7 @@
 </ol>
 </section>
 <section id="luatos-soc-ec618-v1105">
-<h2>LuatOS-SoC@EC618 V1105<a class="headerlink" href="#luatos-soc-ec618-v1105" title="永久链接至标题">#</a></h2>
+<h2>LuatOS-SoC@EC618 V1105<a class="headerlink" href="#luatos-soc-ec618-v1105" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p>New: Add software DAC (PWM audio output) <strong>Note: This feature is not supported on the existing version development board</strong></p></li>
 <li><p>Fix: Rollback the difference between reading and writing integer/floating-point data in fskv library upgraded from V1103 to V1104</p>
@@ -890,7 +888,7 @@
 </ol>
 </section>
 <section id="luatos-soc-ec618-v1104">
-<h2>LuatOS-SoC@EC618 V1104<a class="headerlink" href="#luatos-soc-ec618-v1104" title="永久链接至标题">#</a></h2>
+<h2>LuatOS-SoC@EC618 V1104<a class="headerlink" href="#luatos-soc-ec618-v1104" title="Permalink to this headline">#</a></h2>
 <p>tag: v0007.ec618.v1104
 date: 2023-03-13</p>
 <ol class="arabic simple">
@@ -936,7 +934,7 @@ date: 2023-03-13</p>
 </ol>
 </section>
 <section id="changelog-for-luatos-ec618-v1103">
-<h2>ChangeLog for LuatOS@EC618 V1103<a class="headerlink" href="#changelog-for-luatos-ec618-v1103" title="永久链接至标题">#</a></h2>
+<h2>ChangeLog for LuatOS@EC618 V1103<a class="headerlink" href="#changelog-for-luatos-ec618-v1103" title="Permalink to this headline">#</a></h2>
 <p>tag: v0007.ec618.v1103
 date: 2023-02-06</p>
 <p><strong>Note: Since the return value of the socket interface is not compatible with the previous one, the version number is hereby raised from v1002 to v1103 as a reminder.</strong></p>
@@ -1011,13 +1009,13 @@ date: 2023-02-06</p>
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1035,7 +1033,7 @@ date: 2023-02-06</p>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1072,7 +1070,6 @@ date: 2023-02-06</p>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

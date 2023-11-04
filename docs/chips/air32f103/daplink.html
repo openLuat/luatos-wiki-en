@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="📡 RP2040" href="../rp2040/index.html" /><link rel="prev" title="Enhanced function instructions" href="enhancement.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="📡 RP2040" href="../rp2040/index.html" /><link rel="prev" title="Enhanced function instructions" href="enhancement.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>DAPLink Manual - LuatOS 文档</title>
+        <title>DAPLink Manual - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,12 +688,12 @@
         </div>
         <article role="main">
           <section id="daplink-manual">
-<h1>DAPLink Manual<a class="headerlink" href="#daplink-manual" title="永久链接至标题">#</a></h1>
+<h1>DAPLink Manual<a class="headerlink" href="#daplink-manual" title="Permalink to this headline">#</a></h1>
 <blockquote>
 <div><p><a class="reference external" href="https://item.taobao.com/item.htm?id=722898279573">Go to Taobao to buy</a></p>
 </div></blockquote>
 <div class="admonition warning">
-<p class="admonition-title">警告</p>
+<p class="admonition-title">Warning</p>
 <p>⚠Special instructions: please pay attention to users who deliver goods before June 17, 2023：</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -717,13 +715,13 @@ The plan will avoid issuing single coupons and notify you by unified text messag
 </div>
 </details></div>
 <section id="overview">
-<h2><strong>Overview</strong><a class="headerlink" href="#overview" title="永久链接至标题">#</a></h2>
+<h2><strong>Overview</strong><a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>DAPLink It is an official open source debugger scheme of ARM, with the official address of <a class="reference external" href="https://github.com/ARMmbed/DAPLink">ARMmbed/DAPLink (github.com)</a>. It can be used to debug almost all single chip computers of arm cortex kernel. The latest M33 and M85 kernels also support debugging.</p>
 <p>Based on ARM’s official code, Zeus was transplanted to Air32F103CBT6 and adapted the resources of * * 216M dominant frequency * * and * * 96K large RAM * *, supporting faster download speed (<a class="reference external" href="https://gitee.com/openLuat/daplink">firmware open source</a>), and designed an ultra-small DAPLink hardware</p>
 <p><img alt="img" src="../../_images/1685598778508-1.jpg"/></p>
 </section>
 <section id="main-functions">
-<h2>Main functions<a class="headerlink" href="#main-functions" title="永久链接至标题">#</a></h2>
+<h2>Main functions<a class="headerlink" href="#main-functions" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>**The whole series of **Arm-cortex core chip debugging and burning, ARM official maintenance, follow-up new kernel will still support</p></li>
 <li><p>A <strong>full-featured USB to serial port</strong>(CDC) with hardware DTR and RTS for automatic download</p></li>
@@ -735,7 +733,7 @@ The plan will avoid issuing single coupons and notify you by unified text messag
 <p><img alt="img" src="../../_images/1685598783342-4.png"/></p>
 </section>
 <section id="hardware">
-<h2>Hardware<a class="headerlink" href="#hardware" title="永久链接至标题">#</a></h2>
+<h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The size is only 2.5*1.3cm, which is smaller than USBA mouth.</p></li>
 <li><p>Use <strong>4-layer gold</strong> PCB design</p></li>
@@ -753,7 +751,7 @@ The plan will avoid issuing single coupons and notify you by unified text messag
 </ul>
 </section>
 <section id="open-source-tutorial">
-<h2>Open Source Tutorial<a class="headerlink" href="#open-source-tutorial" title="永久链接至标题">#</a></h2>
+<h2>Open Source Tutorial<a class="headerlink" href="#open-source-tutorial" title="Permalink to this headline">#</a></h2>
 <p>It’s so easy to use. I want to learn to make one myself, of course. All the information of the DAPLink of open source, all the software and hardware are open source.：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://gitee.com/openLuat/daplink">software open source</a></p></li>
@@ -763,29 +761,29 @@ The plan will avoid issuing single coupons and notify you by unified text messag
 <p>Tutorial Address: <a class="reference external" href="https://space.bilibili.com/393224264/channel/collectiondetail?sid=1241842">Collection KiCad7.0 Tutorial-Production DAPLink</a></p>
 </section>
 <section id="using-the-tutorial">
-<h2>Using the Tutorial<a class="headerlink" href="#using-the-tutorial" title="永久链接至标题">#</a></h2>
+<h2>Using the Tutorial<a class="headerlink" href="#using-the-tutorial" title="Permalink to this headline">#</a></h2>
 <p>DAPLink The pin functions are assigned as follows</p>
 <p><img alt="image-20230601135449140" src="../../_images/image-20230601135449140.png"/></p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>Since the design is only suitable for 3.3V level, if 5V equipment is connected for debugging, the risk of burning shall be borne by oneself.</p>
 </div>
 <section id="keil-configuration">
-<h3>KEIL Configuration<a class="headerlink" href="#keil-configuration" title="永久链接至标题">#</a></h3>
+<h3>KEIL Configuration<a class="headerlink" href="#keil-configuration" title="Permalink to this headline">#</a></h3>
 <p>Click the project configuration magic wand, find the Debug tab, select the CMSIS-DAP Debugger in the drop-down list, and click Settings</p>
 <p><img alt="image-20220605110335656" src="../../_images/image-20220605110335656.png"/></p>
 <p>Check whether the device is connected normally. If the connection is normal, you can see the device in the SW Device list, and you can adjust the clock speed to improve efficiency.</p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>Since this DAPLink uses the actual setting speed, if the device list is empty, it may be because the debugged chip cannot support higher frequencies, and can be used after lowering the frequency.</p>
 </div>
 <p><img alt="image-20220605112459682" src="../../_images/image-20220605112459682.png"/></p>
 </section>
 <section id="update-firmware">
-<h3>Update Firmware<a class="headerlink" href="#update-firmware" title="永久链接至标题">#</a></h3>
+<h3>Update Firmware<a class="headerlink" href="#update-firmware" title="Permalink to this headline">#</a></h3>
 <p>If the BUG is fixed later, the DAPLink firmware will be updated. At this time, we need to perform the following operations.</p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>Some computer systems are still using Win7 and cannot use DAPLink V2 version firmware. At this time, it is necessary to downgrade to V1 firmware.</p>
 </div>
 <ol class="arabic simple">
@@ -799,9 +797,9 @@ The plan will avoid issuing single coupons and notify you by unified text messag
 </section>
 </section>
 <section id="faq">
-<h2>FAQ<a class="headerlink" href="#faq" title="永久链接至标题">#</a></h2>
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">#</a></h2>
 <section id="there-is-no-driver-on-the-plug-in-computer">
-<h3>There is no driver on the plug-in computer<a class="headerlink" href="#there-is-no-driver-on-the-plug-in-computer" title="永久链接至标题">#</a></h3>
+<h3>There is no driver on the plug-in computer<a class="headerlink" href="#there-is-no-driver-on-the-plug-in-computer" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>If it is a WIN7 device, you recommend brush it into v1 firmware according to the above tutorial, or study how to install the driver yourself.</p></li>
 <li><p>If connected, the serial device name is <code class="docutils literal notranslate"><span class="pre">mdeb</span> <span class="pre">Serial</span> <span class="pre">Port</span></code>, and the WINUSB driver cannot be automatically recognized. If the drive is contaminated, the solution is as follows：</p>
@@ -814,12 +812,12 @@ The plan will avoid issuing single coupons and notify you by unified text messag
 </ul>
 </section>
 <section id="device-manager-has-a-device-but-keil-does-not-recognize-it">
-<h3>Device Manager has a device, but KEIL does not recognize it<a class="headerlink" href="#device-manager-has-a-device-but-keil-does-not-recognize-it" title="永久链接至标题">#</a></h3>
+<h3>Device Manager has a device, but KEIL does not recognize it<a class="headerlink" href="#device-manager-has-a-device-but-keil-does-not-recognize-it" title="Permalink to this headline">#</a></h3>
 <p>Please upgrade to the version after 2021 KEIL</p>
 <p>Or just like in the previous question, using a fake driver</p>
 </section>
 <section id="the-device-manager-has-devices-and-keil-is-the-latest-version-but-it-still-doesn-t-recognize-it">
-<h3>The device manager has devices, and KEIL is the latest version, but it still doesn’t recognize it.<a class="headerlink" href="#the-device-manager-has-devices-and-keil-is-the-latest-version-but-it-still-doesn-t-recognize-it" title="永久链接至标题">#</a></h3>
+<h3>The device manager has devices, and KEIL is the latest version, but it still doesn’t recognize it.<a class="headerlink" href="#the-device-manager-has-devices-and-keil-is-the-latest-version-but-it-still-doesn-t-recognize-it" title="Permalink to this headline">#</a></h3>
 <p>It may be a windows driver identification problem, which can be operated as follows：</p>
 <ol class="arabic simple">
 <li><p>Open `Device Manager``</p></li>
@@ -832,18 +830,18 @@ The plan will avoid issuing single coupons and notify you by unified text messag
 </ol>
 </section>
 <section id="device-manager-has-a-device-but-the-openocd-does-not-recognize-it">
-<h3>Device Manager has a device, but the openocd does not recognize it<a class="headerlink" href="#device-manager-has-a-device-but-the-openocd-does-not-recognize-it" title="永久链接至标题">#</a></h3>
+<h3>Device Manager has a device, but the openocd does not recognize it<a class="headerlink" href="#device-manager-has-a-device-but-the-openocd-does-not-recognize-it" title="Permalink to this headline">#</a></h3>
 <p>Please upgrade to the latest version after 2023 openocd</p>
 </section>
 <section id="the-burner-is-connected-but-the-debugged-board-is-not-displayed-in-the-keil-device-list">
-<h3>The burner is connected, but the debugged board is not displayed in the KEIL device list.<a class="headerlink" href="#the-burner-is-connected-but-the-debugged-board-is-not-displayed-in-the-keil-device-list" title="永久链接至标题">#</a></h3>
+<h3>The burner is connected, but the debugged board is not displayed in the KEIL device list.<a class="headerlink" href="#the-burner-is-connected-but-the-debugged-board-is-not-displayed-in-the-keil-device-list" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The chip being debugged cannot support higher frequencies and can be used after lowering the frequency.</p></li>
 <li><p>SWD function is turned off on the board being debugged</p></li>
 </ul>
 </section>
 <section id="keil-download-times-rddi-dap-error-solution">
-<h3>keil Download Times RDDI-DAP Error Solution<a class="headerlink" href="#keil-download-times-rddi-dap-error-solution" title="永久链接至标题">#</a></h3>
+<h3>keil Download Times RDDI-DAP Error Solution<a class="headerlink" href="#keil-download-times-rddi-dap-error-solution" title="Permalink to this headline">#</a></h3>
 <p>DAPLink and MDK, the solution can try the following methods：
 <img alt="Alt text" src="../../_images/6f5cebec3b90c4af60bbfd8f2d5fe6ca.png"/></p>
 <ol class="arabic simple">
@@ -870,9 +868,9 @@ The plan will avoid issuing single coupons and notify you by unified text messag
 </ol>
 </section>
 <section id="virtual-usb-flash-drive-not-recognized">
-<h3>Virtual USB flash drive not recognized<a class="headerlink" href="#virtual-usb-flash-drive-not-recognized" title="永久链接至标题">#</a></h3>
+<h3>Virtual USB flash drive not recognized<a class="headerlink" href="#virtual-usb-flash-drive-not-recognized" title="Permalink to this headline">#</a></h3>
 <div class="admonition warning">
-<p class="admonition-title">警告</p>
+<p class="admonition-title">Warning</p>
 <p>⚠Special Warning: After installing the driver of “Innovation Workshop” (PWLINK), it will cause all devices based on ARM`s official DAPLINK firmware to function abnormally, including but not limited to: the virtual U disk disappears and cannot be burned.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -919,13 +917,13 @@ We are getting in touch with the manufacturer, so as not to affect other home DA
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -943,7 +941,7 @@ We are getting in touch with the manufacturer, so as not to affect other home DA
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -993,7 +991,6 @@ We are getting in touch with the manufacturer, so as not to affect other home DA
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

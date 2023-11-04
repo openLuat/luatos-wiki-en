@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="API Tutorial" href="common/index.html" /><link rel="prev" title="Construction of development environment" href="vscode.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="API Tutorial" href="common/index.html" /><link rel="prev" title="Construction of development environment" href="vscode.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Burn Tutorial - LuatOS 文档</title>
+        <title>Burn Tutorial - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,17 +688,17 @@
         </div>
         <article role="main">
           <section id="burn-tutorial">
-<h1>Burn Tutorial<a class="headerlink" href="#burn-tutorial" title="永久链接至标题">#</a></h1>
+<h1>Burn Tutorial<a class="headerlink" href="#burn-tutorial" title="Permalink to this headline">#</a></h1>
 <blockquote>
 <div><p>See here for video tutorials: <a class="reference external" href="https://www.bilibili.com/video/BV1Mq4y1e7Eb">[LuatOS] ① Burning Tutorial</a></p>
 </div></blockquote>
 <section id="serial-burn">
-<h2>Serial Burn<a class="headerlink" href="#serial-burn" title="永久链接至标题">#</a></h2>
+<h2>Serial Burn<a class="headerlink" href="#serial-burn" title="Permalink to this headline">#</a></h2>
 <p>Preparations：</p>
 <p>A USB cable for a typec port</p>
 <p>A window system computer (recommend win10 or above）</p>
 <section id="tool-configuration">
-<h3>Tool Configuration<a class="headerlink" href="#tool-configuration" title="永久链接至标题">#</a></h3>
+<h3>Tool Configuration<a class="headerlink" href="#tool-configuration" title="Permalink to this headline">#</a></h3>
 <p>First download the latest version of the Luatools:<a class="reference external" href="https://luatos.com/luatools/download/last">click me to download</a></p>
 <p>It is recommended to create a new Luatools folder, put the exe file into it, and then open the exe file.</p>
 <div class="sd-tab-set docutils">
@@ -761,7 +759,7 @@ ESP32S3</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="burn-firmware">
-<h3>Burn Firmware<a class="headerlink" href="#burn-firmware" title="永久链接至标题">#</a></h3>
+<h3>Burn Firmware<a class="headerlink" href="#burn-firmware" title="Permalink to this headline">#</a></h3>
 <p>Need to get firmware before burning</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-6" name="sd-tab-set-1" type="radio"/>
@@ -788,7 +786,7 @@ ESP32C3 Simplified version</label><div class="sd-tab-content docutils">
 ESP32C3 Classic Edition</label><div class="sd-tab-content docutils">
 <p>Find the folder where the Luatools is located. The folder<code class="docutils literal notranslate"><span class="pre">s</span> </code>Luatools/resource/esp32c3_lua_lod/Version Number<code class="docutils literal notranslate"> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">without</span> <span class="pre">the</span> <span class="pre">words</span> <span class="pre">**</span></code>USB` is the official version firmware downloaded automatically.</p>
 <div class="admonition important">
-<p class="admonition-title">重要</p>
+<p class="admonition-title">Important</p>
 <p>The driver of CH343 must be installed to download the firmware normally. The default CDC driver prints the log without any problem, but the download fails if the speed is too slow. <a class="reference external" href="http://www.wch.cn/downloads/CH343SER_EXE.html">Drive portal</a></p>
 </div>
 </div>
@@ -797,7 +795,7 @@ ESP32C3 Classic Edition</label><div class="sd-tab-content docutils">
 Air780</label><div class="sd-tab-content docutils">
 <p>Find the folder where the Luatools is located, and the official version firmware downloaded automatically is in the<code class="docutils literal notranslate"> <span class="pre">Luatools/resource/618_lua_lod/version</span> <span class="pre">number</span></code> of the folder</p>
 <div class="admonition important">
-<p class="admonition-title">重要</p>
+<p class="admonition-title">Important</p>
 <p>Common brushing process (startup anti-shake off state):</p>
 <ol class="arabic simple">
 <li><p>Operation during burning: first press and hold the BOOT key, then press the reset key, and finally release the BOOT key</p></li>
@@ -823,7 +821,7 @@ Air780</label><div class="sd-tab-content docutils">
 ESP32S3</label><div class="sd-tab-content docutils">
 <p>Find the folder where the Luatools is located. The “Luatools/resource/esp32s3_lua_lod/Version Number” in the folder is the official version firmware downloaded automatically.</p>
 <div class="admonition important">
-<p class="admonition-title">重要</p>
+<p class="admonition-title">Important</p>
 <p>The driver of CH343 must be installed to download the firmware normally. The default CDC driver prints the log without any problem, but the download fails if the speed is too slow. <a class="reference external" href="http://www.wch.cn/downloads/CH343SER_EXE.html">Drive portal</a></p>
 </div>
 </div>
@@ -850,7 +848,7 @@ Use cloud compilation</label><div class="sd-tab-content docutils">
 <p><img alt="" src="../_images/80909300_1631695603.png"/></p>
 </section>
 <section id="burn-script">
-<h3>Burn Script<a class="headerlink" href="#burn-script" title="永久链接至标题">#</a></h3>
+<h3>Burn Script<a class="headerlink" href="#burn-script" title="Permalink to this headline">#</a></h3>
 <p>Click the <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Management</span> <span class="pre">Test</span></code> button and click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Project</span></code> in the bottom left corner to create a new project</p>
 <p>Select the firmware used by the chip and select the script to download it.</p>
 <p>demo Class script, can go to <a class="reference external" href="https://gitee.com/openLuat/LuatOS">LuatOS official repository</a>, can be found in the<code class="docutils literal notranslate"> <span class="pre">demo</span></code> folder</p>
@@ -859,7 +857,7 @@ Use cloud compilation</label><div class="sd-tab-content docutils">
 <p>If the firmware version currently burned by the chip is the same as the firmware selected here, you can click “Download Script” to download only the script. On the contrary, it is recommended to click “Download Bottom Layer and Script” to perform full brushing.</p>
 </section>
 <section id="view-log">
-<h3>View Log<a class="headerlink" href="#view-log" title="永久链接至标题">#</a></h3>
+<h3>View Log<a class="headerlink" href="#view-log" title="Permalink to this headline">#</a></h3>
 <p>If the serial port is not opened, click “Open Serial Port” to view the log</p>
 <p>If there is no response, check whether universal serial port printing is checked, reselect serial port to open, or try clicking<code class="docutils literal notranslate"> <span class="pre">restart</span> <span class="pre">serial</span> <span class="pre">port</span></code></p>
 <p><img alt="" src="../_images/28614300_1631695832.png"/></p>
@@ -893,13 +891,13 @@ Use cloud compilation</label><div class="sd-tab-content docutils">
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -917,7 +915,7 @@ Use cloud compilation</label><div class="sd-tab-content docutils">
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -955,7 +953,6 @@ Use cloud compilation</label><div class="sd-tab-content docutils">
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="🗃️ Data Archiving" href="../archives.html" /><link rel="prev" title="🔍 Version Comparison" href="devices.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="🗃️ Data Archiving" href="../archives.html" /><link rel="prev" title="🔍 Version Comparison" href="devices.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>🖥 PC Client - LuatOS 文档</title>
+        <title>🖥 PC Client - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,9 +688,9 @@
         </div>
         <article role="main">
           <section id="pc-client">
-<h1>🖥 PC Client<a class="headerlink" href="#pc-client" title="永久链接至标题">#</a></h1>
+<h1>🖥 PC Client<a class="headerlink" href="#pc-client" title="Permalink to this headline">#</a></h1>
 <section id="download">
-<h2>Download<a class="headerlink" href="#download" title="永久链接至标题">#</a></h2>
+<h2>Download<a class="headerlink" href="#download" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Microsoft Store Download: <a class="reference external" href="https://www.microsoft.com/store/apps/9N8S8M8226SH">Microsoft Store Page</a></p></li>
 <li><p>Independent exe version:<a class="reference external" href="https://arduino.luatos.com/iotpower/latest.html">IOT Power.exe</a>(note Microsoft/360 kill soft false alarm, tinder no problem）</p></li>
@@ -713,7 +711,7 @@ win7 Users may need<div class="sd-summary-down docutils">
 </div>
 </details></section>
 <section id="introduction-to-the-client">
-<h2>Introduction to the client<a class="headerlink" href="#introduction-to-the-client" title="永久链接至标题">#</a></h2>
+<h2>Introduction to the client<a class="headerlink" href="#introduction-to-the-client" title="Permalink to this headline">#</a></h2>
 <p>The following features are available on the client and may continue to increase：</p>
 <ul class="simple">
 <li><p>View Current Waveform</p></li>
@@ -733,16 +731,16 @@ win7 Users may need<div class="sd-summary-down docutils">
 </ul>
 <p><img alt="Picture.png" src="../_images/client1.png"/></p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>This tutorial was written in version 2.0.7.11. If there are any new or changed functions not mentioned, please leave a message at the bottom of the page to remind you to update, thank you.</p>
 </div>
 </section>
 <section id="software-interface">
-<h2>Software Interface<a class="headerlink" href="#software-interface" title="永久链接至标题">#</a></h2>
+<h2>Software Interface<a class="headerlink" href="#software-interface" title="Permalink to this headline">#</a></h2>
 <p>The layout of the software homepage is shown in the following figure</p>
 <p><img alt="pc_overview" src="../_images/pc_overview.png"/></p>
 <section id="current-display">
-<h3>Current Display<a class="headerlink" href="#current-display" title="永久链接至标题">#</a></h3>
+<h3>Current Display<a class="headerlink" href="#current-display" title="Permalink to this headline">#</a></h3>
 <p><img alt="pc_now1" src="../_images/pc_now1.png"/>
 <img alt="pc_now2" src="../_images/pc_now2.png"/></p>
 <p>The value of this area is the current data after the device is connected, which can be switched to the moving average or instantaneous value.</p>
@@ -752,22 +750,22 @@ win7 Users may need<div class="sd-summary-down docutils">
 </div></blockquote>
 </section>
 <section id="average-data">
-<h3>Average data<a class="headerlink" href="#average-data" title="永久链接至标题">#</a></h3>
+<h3>Average data<a class="headerlink" href="#average-data" title="Permalink to this headline">#</a></h3>
 <p><img alt="pc_avg" src="../_images/pc_avg.png"/></p>
 <p>The data here is the average value of <strong>all data since this device connection</strong>. Clear and reset</p>
 </section>
 <section id="other-data">
-<h3>Other data<a class="headerlink" href="#other-data" title="永久链接至标题">#</a></h3>
+<h3>Other data<a class="headerlink" href="#other-data" title="Permalink to this headline">#</a></h3>
 <p><img alt="pc_info" src="../_images/pc_info.png"/></p>
 <p>The data here is the relevant cumulative data of <strong>all data since the current device connection</strong>, cleared and reset</p>
 </section>
 </section>
 <section id="chart-area">
-<h2>Chart Area<a class="headerlink" href="#chart-area" title="永久链接至标题">#</a></h2>
+<h2>Chart Area<a class="headerlink" href="#chart-area" title="Permalink to this headline">#</a></h2>
 <p><img alt="pc_wave" src="../_images/pc_wave.png"/></p>
 <p>This area is the chart display area where you can preview the waveform</p>
 <section id="adjust-the-display-mode">
-<h3>Adjust the display mode<a class="headerlink" href="#adjust-the-display-mode" title="永久链接至标题">#</a></h3>
+<h3>Adjust the display mode<a class="headerlink" href="#adjust-the-display-mode" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Adaptive coordinates: dynamically determine the vertical coordinate range according to the maximum value of the current display area</p></li>
 <li><p>Set vertical coordinate by maximum value: set the vertical coordinate range by the maximum value of the captured data.</p></li>
@@ -775,19 +773,19 @@ win7 Users may need<div class="sd-summary-down docutils">
 </ul>
 </section>
 <section id="switch-data-display-mode">
-<h3>Switch data display mode<a class="headerlink" href="#switch-data-display-mode" title="永久链接至标题">#</a></h3>
+<h3>Switch data display mode<a class="headerlink" href="#switch-data-display-mode" title="Permalink to this headline">#</a></h3>
 <p><img alt="pc_wave_mode1" src="../_images/pc_wave_mode1.png"/>
 <img alt="pc_wave_mode2" src="../_images/pc_wave_mode2.png"/></p>
 <p>Press this button to switch between <strong>Real-time data/historical data</strong> and <strong>Select an area</strong>. The two modes are described below.</p>
 </section>
 <section id="real-time-data-historical-data-no-scaling">
-<h3>Real-time data/historical data (no scaling）<a class="headerlink" href="#real-time-data-historical-data-no-scaling" title="永久链接至标题">#</a></h3>
+<h3>Real-time data/historical data (no scaling）<a class="headerlink" href="#real-time-data-historical-data-no-scaling" title="Permalink to this headline">#</a></h3>
 <p>When the mouse is in the chart or on the drag axis, you can use the <strong>mouse wheel</strong> to adjust the time position of the waveform</p>
 <p><img alt="pc_wave_ctrl" src="../_images/pc_wave_ctrl.png"/></p>
 <p>You can also drag the lower joystick to control the time position of the currently displayed waveform</p>
 </section>
 <section id="select-an-area-enables-zoom">
-<h3>Select an Area (Enables Zoom）<a class="headerlink" href="#select-an-area-enables-zoom" title="永久链接至标题">#</a></h3>
+<h3>Select an Area (Enables Zoom）<a class="headerlink" href="#select-an-area-enables-zoom" title="Permalink to this headline">#</a></h3>
 <p>Use the left mouse button to drag **, you can select to view the data of a region, and enter the <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">regional</span> <span class="pre">data</span></code> mode</p>
 <p>When in <code class="docutils literal notranslate"><span class="pre">Pick</span> <span class="pre">Area</span> <span class="pre">Data</span></code> mode, you can use the <strong>mouse wheel</strong> to adjust the time position of the waveform</p>
 <p>You can also <strong>hold down the CTRL key and scroll the mouse wheel</strong> to zoom in or out of the currently displayed area</p>
@@ -800,51 +798,51 @@ win7 Users may need<div class="sd-summary-down docutils">
 </ul>
 </section>
 <section id="analyze-data">
-<h3>Analyze data<a class="headerlink" href="#analyze-data" title="永久链接至标题">#</a></h3>
+<h3>Analyze data<a class="headerlink" href="#analyze-data" title="Permalink to this headline">#</a></h3>
 <p>When in any mode, you can <strong>right-click and drag</strong> to select a time period to analyze the data in it.</p>
 <p><img alt="pc_wave_data" src="../_images/pc_wave_data.png"/></p>
 <p>When an area is selected, the <code class="docutils literal notranslate"><span class="pre">Analysis</span> <span class="pre">Window</span></code> will pop up to display the results of the analysis</p>
 </section>
 </section>
 <section id="control-device-output">
-<h2>Control device output<a class="headerlink" href="#control-device-output" title="永久链接至标题">#</a></h2>
+<h2>Control device output<a class="headerlink" href="#control-device-output" title="Permalink to this headline">#</a></h2>
 <p><img alt="output" src="../_images/client2.png"/></p>
 <ul class="simple">
 <li><p>Control the output and off state of the device through the <code class="docutils literal notranslate"><span class="pre">power</span> <span class="pre">symbol</span></code> button</p></li>
 <li><p>Set the output voltage and current of the device via the <code class="docutils literal notranslate"><span class="pre">device</span> <span class="pre">output</span></code> button</p></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>This function is only applicable to <code class="docutils literal notranslate"><span class="pre">Power</span> <span class="pre">Products</span></code> and products with <code class="docutils literal notranslate"><span class="pre">PPS</span> <span class="pre">decoy</span></code> function</p>
 </div>
 </section>
 <section id="importing-and-exporting-data">
-<h2>Importing and Exporting Data<a class="headerlink" href="#importing-and-exporting-data" title="永久链接至标题">#</a></h2>
+<h2>Importing and Exporting Data<a class="headerlink" href="#importing-and-exporting-data" title="Permalink to this headline">#</a></h2>
 <p><img alt="pc_import" src="../_images/pc_import.png"/>
 <img alt="pc_export" src="../_images/pc_export.png"/></p>
 <section id="import-data">
-<h3>Import Data<a class="headerlink" href="#import-data" title="永久链接至标题">#</a></h3>
+<h3>Import Data<a class="headerlink" href="#import-data" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Manually select files to import <code class="docutils literal notranslate"><span class="pre">.iotpl</span></code> files for IoT Power</p></li>
 <li><p>Import automatically saved file indicates to import from automatically saved file. Autosave function usually appears when closing and re-grabbing</p></li>
 </ul>
 </section>
 <section id="export-data">
-<h3>Export data<a class="headerlink" href="#export-data" title="永久链接至标题">#</a></h3>
+<h3>Export data<a class="headerlink" href="#export-data" title="Permalink to this headline">#</a></h3>
 <p>Data can be freely exported as <code class="docutils literal notranslate"><span class="pre">.iotpl</span></code> file,<code class="docutils literal notranslate"><span class="pre">.csv</span> </code>table file,<code class="docutils literal notranslate"><span class="pre">.exe</span> </code>self-executing file<br/>
 The difference is that the <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">csv</span></code> table file is used by the user to analyze the original data and cannot be re-imported.<br/>
 The <code class="docutils literal notranslate"><span class="pre">.iotpl</span></code> file can be imported into the software again, and the<code class="docutils literal notranslate"><span class="pre">.exe</span> </code>self-executing file can also be exported as a<code class="docutils literal notranslate"><span class="pre">.iotpl</span></code> file for import.</p>
 </section>
 </section>
 <section id="script-function">
-<h2>Script function<a class="headerlink" href="#script-function" title="永久链接至标题">#</a></h2>
+<h2>Script function<a class="headerlink" href="#script-function" title="Permalink to this headline">#</a></h2>
 <p><img alt="script" src="../_images/client3.png"/></p>
 <p>This function enables automatic control of output voltage and current<br/>
 The script uses the<code class="docutils literal notranslate"> <span class="pre">Lua</span> <span class="pre">language</span></code> and adapts to<code class="docutils literal notranslate"> <span class="pre">LuaTask</span></code> framework (<a class="reference external" href="https://openluat.github.io/luatos-wiki-en/luaGuide/luatask.html">tutorial  </a>）
 For specific interface documents, please refer to <a class="reference external" href="https://gitee.com/openLuat/iot-power">the data of this warehouse.</a></p>
 </section>
 <section id="force-firmware-upgrade">
-<h2>Force firmware upgrade<a class="headerlink" href="#force-firmware-upgrade" title="永久链接至标题">#</a></h2>
+<h2>Force firmware upgrade<a class="headerlink" href="#force-firmware-upgrade" title="Permalink to this headline">#</a></h2>
 <p><img alt="pc_upgrade" src="../_images/pc_upgrade.png"/></p>
 <p>Typically, the device firmware will automatically prompt for an upgrade. However, sometimes when the device is interrupted during the upgrade or the firmware is damaged due to other reasons, the firmware can be brushed manually.</p>
 <ul class="simple">
@@ -853,7 +851,7 @@ For specific interface documents, please refer to <a class="reference external" 
 </ul>
 </section>
 <section id="data-caching-method">
-<h2>Data caching method<a class="headerlink" href="#data-caching-method" title="永久链接至标题">#</a></h2>
+<h2>Data caching method<a class="headerlink" href="#data-caching-method" title="Permalink to this headline">#</a></h2>
 <p><img alt="pc_cache" src="../_images/pc_cache.png"/></p>
 <p>Because the device sampling rate is very high, so the amount of data is very large, stored in the memory may lead to insufficient computer memory<br/>
 Therefore, the software provides an automatic save function. When the time is reached, the data is automatically saved to a file to prevent excessive memory usage.</p>
@@ -896,13 +894,13 @@ if(navigator.userAgent.indexOf("Windows NT 6") >= 0) {
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -920,7 +918,7 @@ if(navigator.userAgent.indexOf("Windows NT 6") >= 0) {
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -976,7 +974,6 @@ if(navigator.userAgent.indexOf("Windows NT 6") >= 0) {
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

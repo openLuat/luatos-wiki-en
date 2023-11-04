@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="max30102 - Heart Rate Module(MAX30102)" href="max30102.html" /><link rel="prev" title="lora2 - lora2 Driver module (supports multi-hanging)" href="lora2.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="max30102 - Heart Rate Module(MAX30102)" href="max30102.html" /><link rel="prev" title="lora2 - lora2 Driver module (supports multi-hanging)" href="lora2.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>lvgl - LVGL Image Library - LuatOS 文档</title>
+        <title>lvgl - LVGL Image Library - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,14 +688,14 @@
         </div>
         <article role="main">
           <section id="lvgl-lvgl-image-library">
-<h1>lvgl - LVGL Image Library<a class="headerlink" href="#lvgl-lvgl-image-library" title="永久链接至标题">#</a></h1>
+<h1>lvgl - LVGL Image Library<a class="headerlink" href="#lvgl-lvgl-image-library" title="Permalink to this headline">#</a></h1>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Adapted</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air101/Air103</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air601</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air105</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32C3</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32S3</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air780E/Air700E</span></p>
 <div class="admonition tip">
-<p class="admonition-title">小技巧</p>
+<p class="admonition-title">Tip</p>
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/lvgl">click this link to view the demo example of lvgl</a></p>
 </div>
 <section id="lvgl-draw-mask-radius-param-t">
-<h2>lvgl.draw_mask_radius_param_t()<a class="headerlink" href="#lvgl-draw-mask-radius-param-t" title="永久链接至标题">#</a></h2>
+<h2>lvgl.draw_mask_radius_param_t()<a class="headerlink" href="#lvgl-draw-mask-radius-param-t" title="Permalink to this headline">#</a></h2>
 <p>Create a lv_draw_mask_radius_param_t</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -721,7 +719,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-draw-mask-radius-param-t-free-radius">
-<h2>lvgl.draw_mask_radius_param_t_free(radius)<a class="headerlink" href="#lvgl-draw-mask-radius-param-t-free-radius" title="永久链接至标题">#</a></h2>
+<h2>lvgl.draw_mask_radius_param_t_free(radius)<a class="headerlink" href="#lvgl-draw-mask-radius-param-t-free-radius" title="Permalink to this headline">#</a></h2>
 <p>Release one.lv_draw_mask_radius_param_t</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -734,7 +732,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-draw-mask-line-param-t">
-<h2>lvgl.draw_mask_line_param_t()<a class="headerlink" href="#lvgl-draw-mask-line-param-t" title="永久链接至标题">#</a></h2>
+<h2>lvgl.draw_mask_line_param_t()<a class="headerlink" href="#lvgl-draw-mask-line-param-t" title="Permalink to this headline">#</a></h2>
 <p>Create a lv_draw_mask_line_param_t</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -758,7 +756,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-draw-mask-line-param-t-free-line">
-<h2>lvgl.draw_mask_line_param_t_free(line)<a class="headerlink" href="#lvgl-draw-mask-line-param-t-free-line" title="永久链接至标题">#</a></h2>
+<h2>lvgl.draw_mask_line_param_t_free(line)<a class="headerlink" href="#lvgl-draw-mask-line-param-t-free-line" title="Permalink to this headline">#</a></h2>
 <p>Release one.lv_draw_mask_line_param_t</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -771,7 +769,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-draw-mask-fade-param-t">
-<h2>lvgl.draw_mask_fade_param_t()<a class="headerlink" href="#lvgl-draw-mask-fade-param-t" title="永久链接至标题">#</a></h2>
+<h2>lvgl.draw_mask_fade_param_t()<a class="headerlink" href="#lvgl-draw-mask-fade-param-t" title="Permalink to this headline">#</a></h2>
 <p>Create a lv_draw_mask_fade_param_t</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -795,7 +793,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-draw-mask-fade-param-t-free-fade">
-<h2>lvgl.draw_mask_fade_param_t_free(fade)<a class="headerlink" href="#lvgl-draw-mask-fade-param-t-free-fade" title="永久链接至标题">#</a></h2>
+<h2>lvgl.draw_mask_fade_param_t_free(fade)<a class="headerlink" href="#lvgl-draw-mask-fade-param-t-free-fade" title="Permalink to this headline">#</a></h2>
 <p>Release one.lv_draw_mask_fade_param_t</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -808,7 +806,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-font-get-name">
-<h2>lvgl.font_get(name)<a class="headerlink" href="#lvgl-font-get-name" title="永久链接至标题">#</a></h2>
+<h2>lvgl.font_get(name)<a class="headerlink" href="#lvgl-font-get-name" title="Permalink to this headline">#</a></h2>
 <p>Get Built-in Font</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -843,7 +841,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en">
-<h2>lvgl.font_load(path/spi_device,size,bpp,thickness,cache_size,sty_zh,sty_en)<a class="headerlink" href="#lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en" title="永久链接至标题">#</a></h2>
+<h2>lvgl.font_load(path/spi_device,size,bpp,thickness,cache_size,sty_zh,sty_en)<a class="headerlink" href="#lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en" title="Permalink to this headline">#</a></h2>
 <p>Loading fonts from the file system</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -897,7 +895,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-font-free-font">
-<h2>lvgl.font_free(font)<a class="headerlink" href="#lvgl-font-free-font" title="永久链接至标题">#</a></h2>
+<h2>lvgl.font_free(font)<a class="headerlink" href="#lvgl-font-free-font" title="Permalink to this headline">#</a></h2>
 <p>Release the font and use it with caution!!! Only fonts loaded by font_load are allowed to be unloaded, and fonts obtained by font_get are not allowed to be unloaded</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -935,7 +933,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-obj-set-event-cb-obj-func">
-<h2>lvgl.obj_set_event_cb(obj, func)<a class="headerlink" href="#lvgl-obj-set-event-cb-obj-func" title="永久链接至标题">#</a></h2>
+<h2>lvgl.obj_set_event_cb(obj, func)<a class="headerlink" href="#lvgl-obj-set-event-cb-obj-func" title="Permalink to this headline">#</a></h2>
 <p>Set event callbacks for components</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -971,7 +969,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-obj-set-signal-cb-obj-func">
-<h2>lvgl.obj_set_signal_cb(obj, func)<a class="headerlink" href="#lvgl-obj-set-signal-cb-obj-func" title="永久链接至标题">#</a></h2>
+<h2>lvgl.obj_set_signal_cb(obj, func)<a class="headerlink" href="#lvgl-obj-set-signal-cb-obj-func" title="Permalink to this headline">#</a></h2>
 <p>Set signal callbacks for components</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1007,7 +1005,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-anim-set-exec-cb-anim-func">
-<h2>lvgl.anim_set_exec_cb(anim, func)<a class="headerlink" href="#lvgl-anim-set-exec-cb-anim-func" title="永久链接至标题">#</a></h2>
+<h2>lvgl.anim_set_exec_cb(anim, func)<a class="headerlink" href="#lvgl-anim-set-exec-cb-anim-func" title="Permalink to this headline">#</a></h2>
 <p>Set Animation Callback</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1046,7 +1044,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-anim-set-ready-cb-anim-func">
-<h2>lvgl.anim_set_ready_cb(anim, func)<a class="headerlink" href="#lvgl-anim-set-ready-cb-anim-func" title="永久链接至标题">#</a></h2>
+<h2>lvgl.anim_set_ready_cb(anim, func)<a class="headerlink" href="#lvgl-anim-set-ready-cb-anim-func" title="Permalink to this headline">#</a></h2>
 <p>Set Animation Callback</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1085,7 +1083,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-anim-path-set-cb-path-func">
-<h2>lvgl.anim_path_set_cb(path, func)<a class="headerlink" href="#lvgl-anim-path-set-cb-path-func" title="永久链接至标题">#</a></h2>
+<h2>lvgl.anim_path_set_cb(path, func)<a class="headerlink" href="#lvgl-anim-path-set-cb-path-func" title="Permalink to this headline">#</a></h2>
 <p>Set Animation Callback</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1124,7 +1122,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-event-send-obj-ent">
-<h2>lvgl.event_send(obj, ent)<a class="headerlink" href="#lvgl-event-send-obj-ent" title="永久链接至标题">#</a></h2>
+<h2>lvgl.event_send(obj, ent)<a class="headerlink" href="#lvgl-event-send-obj-ent" title="Permalink to this headline">#</a></h2>
 <p>Send events to components</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1163,7 +1161,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-scr-act">
-<h2>lvgl.scr_act()<a class="headerlink" href="#lvgl-scr-act" title="永久链接至标题">#</a></h2>
+<h2>lvgl.scr_act()<a class="headerlink" href="#lvgl-scr-act" title="Permalink to this headline">#</a></h2>
 <p>Get the currently active screen object</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1187,7 +1185,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-layer-top">
-<h2>lvgl.layer_top()<a class="headerlink" href="#lvgl-layer-top" title="永久链接至标题">#</a></h2>
+<h2>lvgl.layer_top()<a class="headerlink" href="#lvgl-layer-top" title="Permalink to this headline">#</a></h2>
 <p>Get layer_top</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1209,7 +1207,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-layer-sys">
-<h2>lvgl.layer_sys()<a class="headerlink" href="#lvgl-layer-sys" title="永久链接至标题">#</a></h2>
+<h2>lvgl.layer_sys()<a class="headerlink" href="#lvgl-layer-sys" title="Permalink to this headline">#</a></h2>
 <p>Get layer_sys</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1231,7 +1229,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-scr-load-scr">
-<h2>lvgl.scr_load(scr)<a class="headerlink" href="#lvgl-scr-load-scr" title="永久链接至标题">#</a></h2>
+<h2>lvgl.scr_load(scr)<a class="headerlink" href="#lvgl-scr-load-scr" title="Permalink to this headline">#</a></h2>
 <p>Load the specified screen</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1260,7 +1258,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lvgl-scr-load-anim-scr">
-<h2>lvgl.scr_load_anim(scr)<a class="headerlink" href="#lvgl-scr-load-anim-scr" title="永久链接至标题">#</a></h2>
+<h2>lvgl.scr_load_anim(scr)<a class="headerlink" href="#lvgl-scr-load-anim-scr" title="Permalink to this headline">#</a></h2>
 <p>Load the specified screen and use the specified transition animation</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1299,7 +1297,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-theme-set-act-name">
-<h2>lvgl.theme_set_act(name)<a class="headerlink" href="#lvgl-theme-set-act-name" title="永久链接至标题">#</a></h2>
+<h2>lvgl.theme_set_act(name)<a class="headerlink" href="#lvgl-theme-set-act-name" title="Permalink to this headline">#</a></h2>
 <p>Set Theme</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1337,7 +1335,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-sleep-enable">
-<h2>lvgl.sleep(enable)<a class="headerlink" href="#lvgl-sleep-enable" title="永久链接至标题">#</a></h2>
+<h2>lvgl.sleep(enable)<a class="headerlink" href="#lvgl-sleep-enable" title="Permalink to this headline">#</a></h2>
 <p>LVGL Sleep control, pause/resume refresh timer, currently only 105 and EC618 can be used</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1362,7 +1360,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-init-w-h-lcd-buff-size-buff-mode">
-<h2>lvgl.init(w, h, lcd, buff_size, buff_mode)<a class="headerlink" href="#lvgl-init-w-h-lcd-buff-size-buff-mode" title="永久链接至标题">#</a></h2>
+<h2>lvgl.init(w, h, lcd, buff_size, buff_mode)<a class="headerlink" href="#lvgl-init-w-h-lcd-buff-size-buff-mode" title="Permalink to this headline">#</a></h2>
 <p>Initialization LVGL</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1407,7 +1405,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-anim-create">
-<h2>lvgl.anim_create()<a class="headerlink" href="#lvgl-anim-create" title="永久链接至标题">#</a></h2>
+<h2>lvgl.anim_create()<a class="headerlink" href="#lvgl-anim-create" title="Permalink to this headline">#</a></h2>
 <p>Create and initialize a anim</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1431,7 +1429,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-anim-free-anim">
-<h2>lvgl.anim_free(anim)<a class="headerlink" href="#lvgl-anim-free-anim" title="永久链接至标题">#</a></h2>
+<h2>lvgl.anim_free(anim)<a class="headerlink" href="#lvgl-anim-free-anim" title="Permalink to this headline">#</a></h2>
 <p>Release one.anim</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1444,7 +1442,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-anim-path-t">
-<h2>lvgl.anim_path_t()<a class="headerlink" href="#lvgl-anim-path-t" title="永久链接至标题">#</a></h2>
+<h2>lvgl.anim_path_t()<a class="headerlink" href="#lvgl-anim-path-t" title="Permalink to this headline">#</a></h2>
 <p>Create a lv_anim_path_t</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1468,7 +1466,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-anim-path-t-free-anim-path-t">
-<h2>lvgl.anim_path_t_free(anim_path_t)<a class="headerlink" href="#lvgl-anim-path-t-free-anim-path-t" title="永久链接至标题">#</a></h2>
+<h2>lvgl.anim_path_t_free(anim_path_t)<a class="headerlink" href="#lvgl-anim-path-t-free-anim-path-t" title="Permalink to this headline">#</a></h2>
 <p>Release one.lv_anim_path_t</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1481,7 +1479,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-anim-set-path-str-anim-tp">
-<h2>lvgl.anim_set_path_str(anim, tp)<a class="headerlink" href="#lvgl-anim-set-path-str-anim-tp" title="永久链接至标题">#</a></h2>
+<h2>lvgl.anim_set_path_str(anim, tp)<a class="headerlink" href="#lvgl-anim-set-path-str-anim-tp" title="Permalink to this headline">#</a></h2>
 <p>Set the animation path method</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1517,7 +1515,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-qrcode-create-parent-size-dark-color-light-color">
-<h2>lvgl.qrcode_create(parent, size, dark_color, light_color)<a class="headerlink" href="#lvgl-qrcode-create-parent-size-dark-color-light-color" title="永久链接至标题">#</a></h2>
+<h2>lvgl.qrcode_create(parent, size, dark_color, light_color)<a class="headerlink" href="#lvgl-qrcode-create-parent-size-dark-color-light-color" title="Permalink to this headline">#</a></h2>
 <p>Create the qrcode component</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1564,7 +1562,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-qrcode-update-qrcode-cnt">
-<h2>lvgl.qrcode_update(qrcode, cnt)<a class="headerlink" href="#lvgl-qrcode-update-qrcode-cnt" title="永久链接至标题">#</a></h2>
+<h2>lvgl.qrcode_update(qrcode, cnt)<a class="headerlink" href="#lvgl-qrcode-update-qrcode-cnt" title="Permalink to this headline">#</a></h2>
 <p>set the qrcode component’s qr code content and use it with the qrcode_create</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1600,7 +1598,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-qrcode-delete-qrcode">
-<h2>lvgl.qrcode_delete(qrcode)<a class="headerlink" href="#lvgl-qrcode-delete-qrcode" title="永久链接至标题">#</a></h2>
+<h2>lvgl.qrcode_delete(qrcode)<a class="headerlink" href="#lvgl-qrcode-delete-qrcode" title="Permalink to this headline">#</a></h2>
 <p>Remove qrcode component</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1633,7 +1631,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-style-t">
-<h2>lvgl.style_t()<a class="headerlink" href="#lvgl-style-t" title="永久链接至标题">#</a></h2>
+<h2>lvgl.style_t()<a class="headerlink" href="#lvgl-style-t" title="Permalink to this headline">#</a></h2>
 <p>Create a style</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1658,7 +1656,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-style-create">
-<h2>lvgl.style_create()<a class="headerlink" href="#lvgl-style-create" title="永久链接至标题">#</a></h2>
+<h2>lvgl.style_create()<a class="headerlink" href="#lvgl-style-create" title="Permalink to this headline">#</a></h2>
 <p>Create a style and initialize</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1682,7 +1680,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-style-list-create">
-<h2>lvgl.style_list_create()<a class="headerlink" href="#lvgl-style-list-create" title="永久链接至标题">#</a></h2>
+<h2>lvgl.style_list_create()<a class="headerlink" href="#lvgl-style-list-create" title="Permalink to this headline">#</a></h2>
 <p>Create a style_list</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1706,7 +1704,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-style-list-t">
-<h2>lvgl.style_list_t()<a class="headerlink" href="#lvgl-style-list-t" title="永久链接至标题">#</a></h2>
+<h2>lvgl.style_list_t()<a class="headerlink" href="#lvgl-style-list-t" title="Permalink to this headline">#</a></h2>
 <p>Create a style_list</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1730,7 +1728,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-style-delete-style">
-<h2>lvgl.style_delete(style)<a class="headerlink" href="#lvgl-style-delete-style" title="永久链接至标题">#</a></h2>
+<h2>lvgl.style_delete(style)<a class="headerlink" href="#lvgl-style-delete-style" title="Permalink to this headline">#</a></h2>
 <p>Delete style, use caution, usually do not perform delete operation</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1757,7 +1755,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-style-list-delete-style">
-<h2>lvgl.style_list_delete(style)<a class="headerlink" href="#lvgl-style-list-delete-style" title="永久链接至标题">#</a></h2>
+<h2>lvgl.style_list_delete(style)<a class="headerlink" href="#lvgl-style-list-delete-style" title="Permalink to this headline">#</a></h2>
 <p>Delete style_list, use caution, usually do not perform delete operation</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1784,7 +1782,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-demo-benchmark">
-<h2>lvgl.demo_benchmark()<a class="headerlink" href="#lvgl-demo-benchmark" title="永久链接至标题">#</a></h2>
+<h2>lvgl.demo_benchmark()<a class="headerlink" href="#lvgl-demo-benchmark" title="Permalink to this headline">#</a></h2>
 <p>lvgl benchmark demo</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1809,7 +1807,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-demo-keypad-encoder">
-<h2>lvgl.demo_keypad_encoder()<a class="headerlink" href="#lvgl-demo-keypad-encoder" title="永久链接至标题">#</a></h2>
+<h2>lvgl.demo_keypad_encoder()<a class="headerlink" href="#lvgl-demo-keypad-encoder" title="Permalink to this headline">#</a></h2>
 <p>lvgl keypad_encoder demo</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1834,7 +1832,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-demo-music">
-<h2>lvgl.demo_music()<a class="headerlink" href="#lvgl-demo-music" title="永久链接至标题">#</a></h2>
+<h2>lvgl.demo_music()<a class="headerlink" href="#lvgl-demo-music" title="Permalink to this headline">#</a></h2>
 <p>lvgl music demo</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1859,7 +1857,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-demo-printer">
-<h2>lvgl.demo_printer()<a class="headerlink" href="#lvgl-demo-printer" title="永久链接至标题">#</a></h2>
+<h2>lvgl.demo_printer()<a class="headerlink" href="#lvgl-demo-printer" title="Permalink to this headline">#</a></h2>
 <p>lvgl printer demo</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1884,7 +1882,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-demo-stress">
-<h2>lvgl.demo_stress()<a class="headerlink" href="#lvgl-demo-stress" title="永久链接至标题">#</a></h2>
+<h2>lvgl.demo_stress()<a class="headerlink" href="#lvgl-demo-stress" title="Permalink to this headline">#</a></h2>
 <p>lvgl stress demo</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1909,7 +1907,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-demo-widgets">
-<h2>lvgl.demo_widgets()<a class="headerlink" href="#lvgl-demo-widgets" title="永久链接至标题">#</a></h2>
+<h2>lvgl.demo_widgets()<a class="headerlink" href="#lvgl-demo-widgets" title="Permalink to this headline">#</a></h2>
 <p>lvgl widgets demo</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1934,7 +1932,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-indev-drv-register-tp-dtp">
-<h2>lvgl.indev_drv_register(tp, dtp)<a class="headerlink" href="#lvgl-indev-drv-register-tp-dtp" title="永久链接至标题">#</a></h2>
+<h2>lvgl.indev_drv_register(tp, dtp)<a class="headerlink" href="#lvgl-indev-drv-register-tp-dtp" title="Permalink to this headline">#</a></h2>
 <p>Register Input Device Driver</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1972,7 +1970,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-indev-point-emulator-update-x-y-state">
-<h2>lvgl.indev_point_emulator_update(x, y, state)<a class="headerlink" href="#lvgl-indev-point-emulator-update-x-y-state" title="永久链接至标题">#</a></h2>
+<h2>lvgl.indev_point_emulator_update(x, y, state)<a class="headerlink" href="#lvgl-indev-point-emulator-update-x-y-state" title="Permalink to this headline">#</a></h2>
 <p>Update coordinate data for analog input devices</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -2018,7 +2016,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-indev-kb-update-key">
-<h2>lvgl.indev_kb_update(key)<a class="headerlink" href="#lvgl-indev-kb-update-key" title="永久链接至标题">#</a></h2>
+<h2>lvgl.indev_kb_update(key)<a class="headerlink" href="#lvgl-indev-kb-update-key" title="Permalink to this headline">#</a></h2>
 <p>Update key values for keyboard input devices</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -2051,7 +2049,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-gif-create-parent-path">
-<h2>lvgl.gif_create(parent, path)<a class="headerlink" href="#lvgl-gif-create-parent-path" title="永久链接至标题">#</a></h2>
+<h2>lvgl.gif_create(parent, path)<a class="headerlink" href="#lvgl-gif-create-parent-path" title="Permalink to this headline">#</a></h2>
 <p>create gif component</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -2092,7 +2090,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 </section>
 <hr class="docutils"/>
 <section id="lvgl-gif-restart-gif">
-<h2>lvgl.gif_restart(gif)<a class="headerlink" href="#lvgl-gif-restart-gif" title="永久链接至标题">#</a></h2>
+<h2>lvgl.gif_restart(gif)<a class="headerlink" href="#lvgl-gif-restart-gif" title="Permalink to this headline">#</a></h2>
 <p>Replay the gif component</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -2157,13 +2155,13 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -2181,7 +2179,7 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -2260,7 +2258,6 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Air105 Development Board" href="board.html" /><link rel="prev" title="🚗 Air105" href="index.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Air105 Development Board" href="board.html" /><link rel="prev" title="🚗 Air105" href="index.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Air105 Chip - LuatOS 文档</title>
+        <title>Air105 Chip - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,15 +688,15 @@
         </div>
         <article role="main">
           <section id="air105-chip">
-<h1>Air105 Chip<a class="headerlink" href="#air105-chip" title="永久链接至标题">#</a></h1>
+<h1>Air105 Chip<a class="headerlink" href="#air105-chip" title="Permalink to this headline">#</a></h1>
 <section id="overview">
-<h2>1. Overview<a class="headerlink" href="#overview" title="永久链接至标题">#</a></h2>
+<h2>1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <section id="product-overview">
-<h3>1.1 Product overview<a class="headerlink" href="#product-overview" title="永久链接至标题">#</a></h3>
+<h3>1.1 Product overview<a class="headerlink" href="#product-overview" title="Permalink to this headline">#</a></h3>
 <p>Hezhou Air105 is a QFN88 MCU with a size of 10mm x 10mm. It not only provides basic peripherals such as UART/GPIO/I2C/ADC/SPI, but also provides advanced peripheral interfaces such as DAC/USB/DCMI/HSPI/LCDI/KCU. It has built-in charging function, supports 5V/3.3V power supply, and comes with 5v to 3.3V LDO,4M byte Flash and 640K byte RAM. Internal flash start address 0x01001000</p>
 </section>
 <section id="electrical-performance">
-<h3>1.2 Electrical Performance<a class="headerlink" href="#electrical-performance" title="永久链接至标题">#</a></h3>
+<h3>1.2 Electrical Performance<a class="headerlink" href="#electrical-performance" title="Permalink to this headline">#</a></h3>
 <p><strong>Limit parameter</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -888,7 +886,7 @@
 </table></div>
 </section>
 <section id="pin-definition">
-<h3>1.3 Pin Definition<a class="headerlink" href="#pin-definition" title="永久链接至标题">#</a></h3>
+<h3>1.3 Pin Definition<a class="headerlink" href="#pin-definition" title="Permalink to this headline">#</a></h3>
 <p>![](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220612160407604_QQ Screenshot 20220612160340.png)</p>
 <p>The following figure shows the pin definition of Air105, which supports up to 54 GPIO, and each IO is multiplexed with peripherals. Each GPIO can be configured as an input, output, interrupt mode, when as an output, each IO output value can be individually configured. The IO supports strong push-pull output/open-drain output mode.</p>
 <p><strong>Pin Details <strong>(</strong> Default state after all general I/O reset is pull-up, resistance value 51KΩ</strong>）</p>
@@ -1526,52 +1524,52 @@
 </section>
 </section>
 <section id="peripheral-circuit-design">
-<h2>2. peripheral circuit design<a class="headerlink" href="#peripheral-circuit-design" title="永久链接至标题">#</a></h2>
+<h2>2. peripheral circuit design<a class="headerlink" href="#peripheral-circuit-design" title="Permalink to this headline">#</a></h2>
 <section id="power-supply-circuit">
-<h3>2.1 power supply circuit<a class="headerlink" href="#power-supply-circuit" title="永久链接至标题">#</a></h3>
+<h3>2.1 power supply circuit<a class="headerlink" href="#power-supply-circuit" title="Permalink to this headline">#</a></h3>
 <p>The chip has 2 power supply modes:</p>
 <p>Internal LDO, input power supply through VCC pin, internal conversion output 3.3V, power supply source is 3.6~5.5V USB or lithium battery. Internal LDO output capacity is limited, if you need to drive high-power peripherals, please add additional LDO or DC2DC.</p>
 <p>3.3V Direct supply, the power supply range is 3.2V ~ 3.4V, which is directly supplied to the VCC33 pin of the chip.</p>
 </section>
 <section id="on-off-circuit">
-<h3>2.2 on/off circuit<a class="headerlink" href="#on-off-circuit" title="永久链接至标题">#</a></h3>
+<h3>2.2 on/off circuit<a class="headerlink" href="#on-off-circuit" title="Permalink to this headline">#</a></h3>
 <p>The on-off circuit realizes the on-off function of the chip by controlling the internal 5V to 3.3V LDO enable/close. When using the CHARGE_VBAT power supply and the on-off function, it should be noted that the VBAT33 pin is in place. When the chip is not powered on, the internal LDO enable is POWER_KEY pulled up for 150ms. By POWER_KEY the power-on circuit, it should be noted that the POWER_KEY key is usually low and pressed to pull up. When the CHARGE_VCC is powered (voltage range 4.7V ~ 5.4V), the internal LDO can directly output 3.3V and cannot be shut down. You can refer to the two power-on power supply methods in the following figure.</p>
 <p><img alt="" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/105powerkey.png"/></p>
 <p>The shutdown function can turn off the internal LDO output by POWER_KEY pulling up 7S to achieve the purpose of shutdown.</p>
 </section>
 <section id="charging-module-circuit">
-<h3>2.3 Charging module circuit<a class="headerlink" href="#charging-module-circuit" title="永久链接至标题">#</a></h3>
+<h3>2.3 Charging module circuit<a class="headerlink" href="#charging-module-circuit" title="Permalink to this headline">#</a></h3>
 <p>Air105 The chip supports the battery charging function, can charge 3.7V lithium battery, supports a maximum charging current of 200mA, and the battery is fully charged at a voltage of 4.15±0.05V. After the battery is fully charged, the battery will be recharged after the voltage drops to 4.05V. When the battery supplies power to the module, it is recommended to add a diode switching circuit.</p>
 <p><img alt="" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/105charge.png"/></p>
 </section>
 <section id="ldo">
-<h3>2.4 LDO<a class="headerlink" href="#ldo" title="永久链接至标题">#</a></h3>
+<h3>2.4 LDO<a class="headerlink" href="#ldo" title="Permalink to this headline">#</a></h3>
 <p>Air105 When the VCC input voltage of the chip is 4-5.5V, the maximum driving capability of the internal LD0 is 400mA, so when there are many peripheral loads, some external LDO circuits should be considered.</p>
 </section>
 <section id="clock-circuit">
-<h3>2.5 clock circuit<a class="headerlink" href="#clock-circuit" title="永久链接至标题">#</a></h3>
+<h3>2.5 clock circuit<a class="headerlink" href="#clock-circuit" title="Permalink to this headline">#</a></h3>
 <p>The chip supports an internal 12MHz oscillator and an external 12MHz crystal. The accuracy of the internally integrated 12MHz crystal is 2%. After PLL frequency multiplication, it provides input to the system. The PLL clock frequency after frequency multiplication can be configured by software, and its frequency can be configured：108MHz、 120MHz、132MHz、144MHz、156MHz、168MHz、180MHz、192MHz、204MHz。</p>
 <p>When selecting an external 12MHz crystal oscillator, crystals with different temperature levels, stability and load capacitance values are selected according to actual product requirements. The load capacitance connected to both ends of the crystal needs to be adjusted according to the crystal of different manufacturers and the frequency offset.</p>
 <p>The crystal is placed as close to the chip as possible, the trace is as short as possible, and it is far away from the interference source. The clock is isolated from many holes. The layers below the clock prohibit other traces from passing through to prevent interference with the clock source.</p>
 <p>The entire safety zone of the chip works based on the internal 32KHz. RTC works based on the internal OSC 32K by default. The software can switch to use the external XTAL 32K to work and support the internal or external 32KHz output.</p>
 </section>
 <section id="i2c-circuit">
-<h3>2.6 I2C Circuit<a class="headerlink" href="#i2c-circuit" title="永久链接至标题">#</a></h3>
+<h3>2.6 I2C Circuit<a class="headerlink" href="#i2c-circuit" title="Permalink to this headline">#</a></h3>
 <p>I2C(Inter-chip) bus interface connects the microcontroller and the serial I2C bus. It provides multi-master functionality, controlling all I2C bus-specific timing, protocol, arbitration, and timing. Supports both standard and fast modes. Depending on the needs of a particular device, DMA may be used to reduce the burden on the CPU.</p>
 <p>In terms of circuit, 4.7K pull-up should be added at I2C interface 3.3V。</p>
 </section>
 <section id="usb-circuit">
-<h3>2.7 USB Circuit<a class="headerlink" href="#usb-circuit" title="永久链接至标题">#</a></h3>
+<h3>2.7 USB Circuit<a class="headerlink" href="#usb-circuit" title="Permalink to this headline">#</a></h3>
 <p>Air105 When connecting USB, attention should be paid to DN and DP to ensure impedance control of 90 Ohm and differential routing. A resistor of 100Ω should be connected in series from VBUS pin to chip for surge resistance, and a resistor of 22 ohms (or other resistors such as 33 ohms) should be connected in series on the signal line to prevent signal reflection. Please refer to the following schematic diagram.</p>
 <img alt="image-20211214105553826" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211214105553826.png" style="zoom: 50%;"/>
 </section>
 </section>
 <section id="reference-circuit-design">
-<h2>3. Reference Circuit Design<a class="headerlink" href="#reference-circuit-design" title="永久链接至标题">#</a></h2>
+<h2>3. Reference Circuit Design<a class="headerlink" href="#reference-circuit-design" title="Permalink to this headline">#</a></h2>
 <p>Air105 The power supply voltage of the chip is 5V, the normal working power supply range is 4.0V ~ 5.5V, and the maximum driving capacity of the internal LDO is 400mA. Pay attention to the peripheral load to avoid exceeding the maximum driving capacity. Each power input pin of the chip should be placed with a corresponding filter capacitor, and a capacitor of 1uF to ground should be added to the three pins 61, 67 and 74.</p>
 </section>
 <section id="package-size">
-<h2>4. Package Size<a class="headerlink" href="#package-size" title="永久链接至标题">#</a></h2>
+<h2>4. Package Size<a class="headerlink" href="#package-size" title="Permalink to this headline">#</a></h2>
 <p><img alt="" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/1052021%E5%B9%B412%E6%9C%8814%E6%97%A5.png"/></p>
 <p><strong>parameter comparison table</strong></p>
 <p><img alt="" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/105%E5%8F%82%E6%95%B0%E5%AF%B9%E7%85%A7.png"/></p>
@@ -1604,13 +1602,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1628,7 +1626,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1677,7 +1675,6 @@
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

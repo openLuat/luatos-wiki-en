@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Operating Instructions - LuatOS 文档</title>
+        <title>Operating Instructions - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,7 +688,7 @@
         </div>
         <article role="main">
           <section id="operating-instructions">
-<h1>Operating Instructions<a class="headerlink" href="#operating-instructions" title="永久链接至标题">#</a></h1>
+<h1>Operating Instructions<a class="headerlink" href="#operating-instructions" title="Permalink to this headline">#</a></h1>
 <p>This part of the content will explain the specific meaning of each part of the function of the equipment and the key operation mode</p>
 <p>The device supports bilingual switching between Chinese and English. You can change the language by referring to the settings below.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -708,98 +706,98 @@ Switch language<div class="sd-summary-down docutils">
 <p class="sd-card-text"><img alt="en-font" src="../../_images/font-en.jpg"/></p>
 </div>
 </details><div class="admonition warning">
-<p class="admonition-title">警告</p>
+<p class="admonition-title">Warning</p>
 <p>⚠Risk Alert<br/>
 Some brands of fast charging heads (such as Huawei, Xiaomi and other private protocol fast charging heads) may misrecognize the fast charging protocol, resulting in providing high voltage exceeding 5.8V to the device, resulting in instantaneous burning of the device.<br/>
 It is recommended not to use this type of charging head to connect the PC communication power interface of the device.<br/>
 PC Communication interface, it is strictly prohibited to connect positive and negative or voltage greater than 6V, reverse connection or greater than 6V will burn！</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">警告</p>
+<p class="admonition-title">Warning</p>
 <p>⚠Warning<br/>
 Power output interface, it is strictly prohibited to reverse other power supply/battery, or connect other power supply/battery with voltage above 5V, so as not to burn the equipment.</p>
 </div>
 <section id="basic-operation">
-<h2>Basic operation<a class="headerlink" href="#basic-operation" title="永久链接至标题">#</a></h2>
+<h2>Basic operation<a class="headerlink" href="#basic-operation" title="Permalink to this headline">#</a></h2>
 <section id="page-turning">
-<h3>Page turning<a class="headerlink" href="#page-turning" title="永久链接至标题">#</a></h3>
+<h3>Page turning<a class="headerlink" href="#page-turning" title="Permalink to this headline">#</a></h3>
 <p>Press the <strong>page key</strong> to turn pages forward and backward</p>
 </section>
 <section id="select-controls-and-actions">
-<h3>Select controls and actions<a class="headerlink" href="#select-controls-and-actions" title="永久链接至标题">#</a></h3>
+<h3>Select controls and actions<a class="headerlink" href="#select-controls-and-actions" title="Permalink to this headline">#</a></h3>
 <p>Scroll <strong>wheel</strong> key to switch the selected control, press to operate the selected control</p>
 <p>Some controls will enter the control after being pressed. At this time, the * * wheel * * key can change the value of the control, and exit the modification after being pressed again.</p>
 </section>
 </section>
 <section id="output-power-supply">
-<h2>Output power supply<a class="headerlink" href="#output-power-supply" title="永久链接至标题">#</a></h2>
+<h2>Output power supply<a class="headerlink" href="#output-power-supply" title="Permalink to this headline">#</a></h2>
 <p><img alt="font" src="../../_images/font-cn.jpg"/></p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>The progress bar below the voltage value indicates the ratio of the current voltage value to the set voltage value.<br/>
 The progress bar below the current value indicates the ratio of the current current value to the set current value.<br/>
 The progress bar below the power/power value indicates the current power consumption as a percentage of the set simulated battery power.</p>
 </div>
 <section id="modify-voltage">
-<h3>Modify voltage<a class="headerlink" href="#modify-voltage" title="永久链接至标题">#</a></h3>
+<h3>Modify voltage<a class="headerlink" href="#modify-voltage" title="Permalink to this headline">#</a></h3>
 <p>On this page, use <strong>scroll wheel</strong>, select the voltage value <code class="docutils literal notranslate"><span class="pre">4.100</span> <span class="pre">v</span></code> below, and press <strong>scroll wheel</strong> to enter editing mode  ；
 **The page key <strong>can change the selected number, and the</strong> scroll wheel **key can change the value of this number  ；
 Press the <strong>wheel</strong> button again to exit the change</p>
 </section>
 <section id="modify-current">
-<h3>Modify Current<a class="headerlink" href="#modify-current" title="永久链接至标题">#</a></h3>
+<h3>Modify Current<a class="headerlink" href="#modify-current" title="Permalink to this headline">#</a></h3>
 <p>On this page, use the <strong>scroll wheel</strong>, select the current value <code class="docutils literal notranslate"><span class="pre">2.000A</span></code> below, and press the <strong>scroll wheel</strong> to enter the editing mode.  ；
 **The page key <strong>can change the selected number, and the</strong> scroll wheel **key can change the value of this number  ；
 Press the <strong>wheel</strong> button again to exit the change</p>
 <p>Select <code class="docutils literal notranslate"><span class="pre">A</span></code> or <code class="docutils literal notranslate"><span class="pre">mA</span></code> on the side of the current value, and press * * roller * * to switch the unit of <code class="docutils literal notranslate"><span class="pre">A</span></code> or <code class="docutils literal notranslate"><span class="pre">mA</span></code></p>
 </section>
 <section id="turn-the-output-on-and-off">
-<h3>Turn the output on and off<a class="headerlink" href="#turn-the-output-on-and-off" title="永久链接至标题">#</a></h3>
+<h3>Turn the output on and off<a class="headerlink" href="#turn-the-output-on-and-off" title="Permalink to this headline">#</a></h3>
 <p>Press the <strong>output button</strong> to turn the power output on or off</p>
 </section>
 <section id="viewing-average-data-in-seconds">
-<h3>Viewing Average Data in Seconds<a class="headerlink" href="#viewing-average-data-in-seconds" title="永久链接至标题">#</a></h3>
+<h3>Viewing Average Data in Seconds<a class="headerlink" href="#viewing-average-data-in-seconds" title="Permalink to this headline">#</a></h3>
 <p>Use the <strong>scroll wheel</strong>, select the <code class="docutils literal notranslate"><span class="pre">real-time</span> <span class="pre">data</span></code> at the top, and press the <strong>scroll wheel</strong> to switch to the second average display.</p>
 </section>
 <section id="switch-wwhah">
-<h3>Switch W、Wh、Ah<a class="headerlink" href="#switch-wwhah" title="永久链接至标题">#</a></h3>
+<h3>Switch W、Wh、Ah<a class="headerlink" href="#switch-wwhah" title="Permalink to this headline">#</a></h3>
 <p>Use the <strong>scroll wheel</strong> to select the unit after the yellow data in the third row, and press the <strong>scroll wheel</strong> to switch the display of W, Wh, and Ah.</p>
 </section>
 </section>
 <section id="view-detailed-data">
-<h2>View detailed data<a class="headerlink" href="#view-detailed-data" title="永久链接至标题">#</a></h2>
+<h2>View detailed data<a class="headerlink" href="#view-detailed-data" title="Permalink to this headline">#</a></h2>
 <p><img alt="font" src="../../_images/data.jpg"/></p>
 <p>Detailed data can be viewed on this page</p>
 </section>
 <section id="view-waveform">
-<h2>View Waveform<a class="headerlink" href="#view-waveform" title="永久链接至标题">#</a></h2>
+<h2>View Waveform<a class="headerlink" href="#view-waveform" title="Permalink to this headline">#</a></h2>
 <p><img alt="font" src="../../_images/wave.jpg"/></p>
 <p>Voltage and current waveforms can be viewed on this page</p>
 <section id="pause-waveform-refresh">
-<h3>Pause Waveform Refresh<a class="headerlink" href="#pause-waveform-refresh" title="永久链接至标题">#</a></h3>
+<h3>Pause Waveform Refresh<a class="headerlink" href="#pause-waveform-refresh" title="Permalink to this headline">#</a></h3>
 <p>Use * * scroll wheel * *, select <code class="docutils literal notranslate"><span class="pre">Run</span></code> below, press * * scroll wheel * * to pause waveform printing, at this time the text becomes  <code class="docutils literal notranslate"><span class="pre">Stop</span></code>；
 Press the <strong>scroll wheel</strong> again to turn waveform refresh on again</p>
 </section>
 <section id="switching-current-coordinate-range">
-<h3>Switching current coordinate range<a class="headerlink" href="#switching-current-coordinate-range" title="永久链接至标题">#</a></h3>
+<h3>Switching current coordinate range<a class="headerlink" href="#switching-current-coordinate-range" title="Permalink to this headline">#</a></h3>
 <p>Use <strong>scroll wheel</strong>, select <code class="docutils literal notranslate"><span class="pre">Auto</span></code> below, and press <strong>scroll wheel</strong> to switch the current coordinate range. At this time, the text changes  <code class="docutils literal notranslate"><span class="pre">Fixed</span></code>；
 You can press the <strong>wheel</strong> several times to switch between different fixed coordinates, and the automatic coordinate range function can be restored after switching several times.</p>
 </section>
 <section id="switch-the-data-below-wwhah">
-<h3>Switch the data below W、Wh、Ah<a class="headerlink" href="#switch-the-data-below-wwhah" title="永久链接至标题">#</a></h3>
+<h3>Switch the data below W、Wh、Ah<a class="headerlink" href="#switch-the-data-below-wwhah" title="Permalink to this headline">#</a></h3>
 <p>Use the <strong>scroll wheel</strong> to select the unit after the yellow data in the middle below, and press the <strong>scroll wheel</strong> to switch the display of W, Wh, and Ah.</p>
 </section>
 </section>
 <section id="analog-battery">
-<h2>Analog Battery<a class="headerlink" href="#analog-battery" title="永久链接至标题">#</a></h2>
+<h2>Analog Battery<a class="headerlink" href="#analog-battery" title="Permalink to this headline">#</a></h2>
 <p>The device can simulate the battery, can simulate the voltage drop waveform and capacity, the output will automatically change the output voltage according to the power consumption, and shut down the output when the power is exhausted.</p>
 <section id="modify-battery-voltage-curve-and-charge">
-<h3>Modify battery voltage curve and charge<a class="headerlink" href="#modify-battery-voltage-curve-and-charge" title="永久链接至标题">#</a></h3>
+<h3>Modify battery voltage curve and charge<a class="headerlink" href="#modify-battery-voltage-curve-and-charge" title="Permalink to this headline">#</a></h3>
 <p>Connect the device to the PC via USB, open the IoT Power client, connect the device, switch to the<code class="docutils literal notranslate"> <span class="pre">Settings</span> <span class="pre">Page</span></code>, modify the corresponding parameters of the simulated battery and update it to the device：</p>
 <p><img alt="battery-pc" src="../../_images/battery-pc.png"/></p>
 </section>
 <section id="turn-on-the-analog-battery-function">
-<h3>Turn on the analog battery function<a class="headerlink" href="#turn-on-the-analog-battery-function" title="永久链接至标题">#</a></h3>
+<h3>Turn on the analog battery function<a class="headerlink" href="#turn-on-the-analog-battery-function" title="Permalink to this headline">#</a></h3>
 <p><img alt="font" src="../../_images/battery.jpg"/></p>
 <p>You can view the current battery settings on the settings page<br/>
 Use the <strong>scroll wheel</strong>, select <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">analog</span> <span class="pre">battery</span></code>, and press the <strong>scroll wheel</strong> to switch the analog battery function on and off.<br/>
@@ -807,7 +805,7 @@ After this function is turned on, the voltage setting function of the first scre
 </section>
 </section>
 <section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="永久链接至标题">#</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
 <p><img alt="settings" src="../../_images/settings.jpg"/></p>
 <p>This page can be set, can be modified as needed</p>
 </section>
@@ -821,13 +819,13 @@ After this function is turned on, the voltage setting function of the first scre
           
           
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -845,7 +843,7 @@ After this function is turned on, the voltage setting function of the first scre
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -902,7 +900,6 @@ After this function is turned on, the voltage setting function of the first scre
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

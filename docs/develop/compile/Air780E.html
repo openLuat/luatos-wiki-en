@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="🚗 Air101 / Air103" href="Air101.html" /><link rel="prev" title="☁️ Cloud Compilation" href="Cloud_compilation.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="🚗 Air101 / Air103" href="Air101.html" /><link rel="prev" title="☁️ Cloud Compilation" href="Cloud_compilation.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>📶 Air780E Compilation Guide - LuatOS 文档</title>
+        <title>📶 Air780E Compilation Guide - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,7 +688,7 @@
         </div>
         <article role="main">
           <section id="air780e-compilation-guide">
-<h1>📶 Air780E Compilation Guide<a class="headerlink" href="#air780e-compilation-guide" title="永久链接至标题">#</a></h1>
+<h1>📶 Air780E Compilation Guide<a class="headerlink" href="#air780e-compilation-guide" title="Permalink to this headline">#</a></h1>
 <p>This document is suitable for combined modules based on the same chip scheme.</p>
 <ul class="simple">
 <li><p>Air780E</p></li>
@@ -700,7 +698,7 @@
 <li><p>Air780EX</p></li>
 </ul>
 <section id="preparations">
-<h2>Preparations<a class="headerlink" href="#preparations" title="永久链接至标题">#</a></h2>
+<h2>Preparations<a class="headerlink" href="#preparations" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Windows 10(In theory win7 can also be used, but not recommend), linux (only ubuntu verified)</p></li>
 <li><p>At least more than 5G of the remaining space, there will be a large number of temporary files</p></li>
@@ -708,7 +706,7 @@
 </ol>
 </section>
 <section id="download-source-code">
-<h2>Download source code<a class="headerlink" href="#download-source-code" title="永久链接至标题">#</a></h2>
+<h2>Download source code<a class="headerlink" href="#download-source-code" title="Permalink to this headline">#</a></h2>
 <p>Note that two libraries are required</p>
 <ul class="simple">
 <li><p>Master Library <code class="docutils literal notranslate"><span class="pre">https://gitee.com/openLuat/LuatOS</span></code></p></li>
@@ -731,13 +729,13 @@
 <p>If using zip download, <strong>be sure to correct the directory name to match the above structure!!</strong></p>
 </section>
 <section id="prepare-the-tool">
-<h2>Prepare the tool<a class="headerlink" href="#prepare-the-tool" title="永久链接至标题">#</a></h2>
+<h2>Prepare the tool<a class="headerlink" href="#prepare-the-tool" title="Permalink to this headline">#</a></h2>
 <p>Install xmake, which can be downloaded from xmake’s official website, and can be downloaded directly from <a class="reference external" href="https://cdn.openluat-luatcommunity.openluat.com/attachment/20221113234354456_xmake-v2.7.3.win64.exe">this link</a></p>
 <p>During installation, PATH **will be selected by default, and if not, it will be checked.</p>
 <p><strong>Note: Environment variables need to restart the computer to take effect</strong></p>
 </section>
 <section id="tool-chain-download">
-<h2>Tool chain download<a class="headerlink" href="#tool-chain-download" title="永久链接至标题">#</a></h2>
+<h2>Tool chain download<a class="headerlink" href="#tool-chain-download" title="Permalink to this headline">#</a></h2>
 <p>In a networked environment, xmake will download the gcc toolchain itself. If you have a normal internet connection, skip this step</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -766,7 +764,7 @@ Specific operation method<div class="sd-summary-down docutils">
 </div>
 </details></section>
 <section id="start-compiling">
-<h2>Start Compiling<a class="headerlink" href="#start-compiling" title="永久链接至标题">#</a></h2>
+<h2>Start Compiling<a class="headerlink" href="#start-compiling" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Double-click <code class="docutils literal notranslate"><span class="pre">cmd.lnk</span></code> under <code class="docutils literal notranslate"><span class="pre">luatos-soc-2022.</span> </code>. <strong>Do not use PowerShell!!</strong></p></li>
 <li><p>In the popup cmd command line, enter the command</p></li>
@@ -800,7 +798,7 @@ end
 <p>As an additional note, the soc file is a compressed package and does not represent the actual size of the firmware.!!</p>
 </section>
 <section id="common-compilation-issues">
-<h2>Common Compilation Issues<a class="headerlink" href="#common-compilation-issues" title="永久链接至标题">#</a></h2>
+<h2>Common Compilation Issues<a class="headerlink" href="#common-compilation-issues" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Prompt network failure, git error, please refer to<code class="docutils literal notranslate"><span class="pre">tool</span> <span class="pre">chain</span> <span class="pre">download</span> <span class="pre">(offline</span> <span class="pre">environment)</span></code>section</p></li>
 <li><p>Prompt missing <code class="docutils literal notranslate"><span class="pre">luat_msgbus.h</span> </code>files, please consult the <code class="docutils literal notranslate"><span class="pre">download</span> <span class="pre">source</span></code>, check the directory structure, and ensure that no path does not contain special characters</p></li>
@@ -835,13 +833,13 @@ end
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -859,7 +857,7 @@ end
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -896,7 +894,6 @@ end
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Air101 power consumption curve" href="power_dissipation.html" /><link rel="prev" title="Air101 Hardware Design Tutorial" href="Air101-Hard-design.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Air101 power consumption curve" href="power_dissipation.html" /><link rel="prev" title="Air101 Hardware Design Tutorial" href="Air101-Hard-design.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Air101 Getting Started Manual - LuatOS 文档</title>
+        <title>Air101 Getting Started Manual - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,24 +688,24 @@
         </div>
         <article role="main">
           <section id="air101-getting-started-manual">
-<h1>Air101 Getting Started Manual<a class="headerlink" href="#air101-getting-started-manual" title="永久链接至标题">#</a></h1>
+<h1>Air101 Getting Started Manual<a class="headerlink" href="#air101-getting-started-manual" title="Permalink to this headline">#</a></h1>
 <section id="construction-of-development-environment">
-<h2>Construction of development environment<a class="headerlink" href="#construction-of-development-environment" title="永久链接至标题">#</a></h2>
+<h2>Construction of development environment<a class="headerlink" href="#construction-of-development-environment" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/vscode.html">Construction of development environment</a></p>
 </section>
 <section id="burn-and-view-logs">
-<h2>Burn and view logs<a class="headerlink" href="#burn-and-view-logs" title="永久链接至标题">#</a></h2>
+<h2>Burn and view logs<a class="headerlink" href="#burn-and-view-logs" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html">Burn Tutorial</a></p>
 </section>
 <section id="gpio-output-lighting">
-<h2>GPIO Output (lighting）<a class="headerlink" href="#gpio-output-lighting" title="永久链接至标题">#</a></h2>
+<h2>GPIO Output (lighting）<a class="headerlink" href="#gpio-output-lighting" title="Permalink to this headline">#</a></h2>
 <p>This chapter will use the GPIO interface to control the LED lights of the development board to flash and be a lamp god.</p>
 <section id="hardware-preparation">
-<h3>Hardware preparation<a class="headerlink" href="#hardware-preparation" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#hardware-preparation" title="Permalink to this headline">#</a></h3>
 <p>One development board and one usb cable</p>
 </section>
 <section id="software-usage">
-<h3>Software usage<a class="headerlink" href="#software-usage" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#software-usage" title="Permalink to this headline">#</a></h3>
 <p>According to the pinout diagram, it can be found that the three lights brought by the development board are PB8,PB8 and PB10 control respectively, and the high level lights up.</p>
 <p><img alt="image-20211225182704003" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211225182704003.png"/></p>
 <p>Look for the gpio interface in wiki <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/gpio.html">gpio-GPIO operation-LuatOS document</a></p>
@@ -730,19 +728,19 @@
 <p><img alt="Video_20211225_063646_413" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/Video_20211225_063646_413.gif"/></p>
 </section>
 <section id="practice">
-<h3>Practice<a class="headerlink" href="#practice" title="永久链接至标题">#</a></h3>
+<h3>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">#</a></h3>
 <p>Write code to make the three lights on the board turn on and off in turn.</p>
 </section>
 </section>
 <section id="gpio-input-key">
-<h2>GPIO Input-Key<a class="headerlink" href="#gpio-input-key" title="永久链接至标题">#</a></h2>
+<h2>GPIO Input-Key<a class="headerlink" href="#gpio-input-key" title="Permalink to this headline">#</a></h2>
 <p>I learned output control in the previous section. I’ll learn input while the iron is hot.</p>
 <section id="id1">
-<h3>Hardware preparation<a class="headerlink" href="#id1" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>One development board and one usb cable</p>
 </section>
 <section id="id2">
-<h3>Software usage<a class="headerlink" href="#id2" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>The same routine, first look at the pinout diagram, button 2 is connected to BOOT, that is, PA0, then he.</p>
 <p><img alt="image-20211225185522888" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211225185522888.png"/></p>
 <p>According to the interface of <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/gpio.html">gpio-GPIO operation</a>, simply write a few lines of code</p>
@@ -755,23 +753,23 @@
 <p><img alt="image-20211225185409625" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211225185409625.png"/></p>
 </section>
 <section id="id3">
-<h3>Practice<a class="headerlink" href="#id3" title="永久链接至标题">#</a></h3>
+<h3>Practice<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>Write code, button control PB8 lamp status, each press the button to change the status of the lamp.</p>
 </section>
 </section>
 <section id="pwm">
-<h2>PWM<a class="headerlink" href="#pwm" title="永久链接至标题">#</a></h2>
+<h2>PWM<a class="headerlink" href="#pwm" title="Permalink to this headline">#</a></h2>
 <p>This chapter will use PWM to drive onboard LEDs to achieve a breathing light effect</p>
 <section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h3>
 <p>PWM(Pulse Width Modulation , Pulse width modulation) is a method of digitally encoding the level of an analog signal. The duty cycle of a square wave is used to encode the level of a specific analog signal through pulses of different frequencies, so that a series of pulses of equal amplitude are obtained at the output, and these pulses are used to replace the required waveform.</p>
 </section>
 <section id="id4">
-<h3>Hardware preparation<a class="headerlink" href="#id4" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>One development board and one usb cable</p>
 </section>
 <section id="id5">
-<h3>Software usage<a class="headerlink" href="#id5" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>As usual, look at pinout first. We can see that Air101 has 5 pwm pins. Let’s choose PWM0 to directly connect a small lamp to GND nearby to make a breathing light.</p>
 <p><img alt="image-20211225185945270" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211225185945270.png"/></p>
 <p>Check <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/pwm.html">API</a> and find that the use of PWM is very simple. Just open it directly, then adjust the duty cycle to adjust the brightness and code it.</p>
@@ -798,24 +796,24 @@
 <p><img alt="Video_20211225_071354_243" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/Video_20211225_071354_243.gif"/></p>
 </section>
 <section id="id6">
-<h3>Practice<a class="headerlink" href="#id6" title="永久链接至标题">#</a></h3>
+<h3>Practice<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>Write code to achieve three kinds of breathing effect, press the button to switch the breathing effect.</p>
 </section>
 </section>
 <section id="uart">
-<h2>UART<a class="headerlink" href="#uart" title="永久链接至标题">#</a></h2>
+<h2>UART<a class="headerlink" href="#uart" title="Permalink to this headline">#</a></h2>
 <p>This chapter will learn how to configure the serial port and send the received data back through the serial port.</p>
 <section id="id7">
-<h3>Introduction<a class="headerlink" href="#id7" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>UART（Universal Asynchronous Receiver/Transmitter）Universal asynchronous transceiver, UART as a kind of asynchronous serial communication protocol, the working principle is to transmit each character of the data one by one. Is the most frequently used data bus in the application development process.</p>
 <p>UART The characteristic of the serial port is to transmit data bit by bit in sequence. Two-way communication can be realized as long as two transmission lines. One line sends data while receiving data with another line. There are several important parameters for UART serial communication, namely baud rate, start bit, data bit, stop bit and parity bit. For two ports using UART serial communication, these parameters must match, otherwise the communication will not be completed normally.</p>
 </section>
 <section id="id8">
-<h3>Hardware preparation<a class="headerlink" href="#id8" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>One development board, one usb to serial port line</p>
 </section>
 <section id="id9">
-<h3>Software usage<a class="headerlink" href="#id9" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Looking at the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air101.html">LuatOS document</a>, we can see that Air101 has 4 uarts, of which uart0 is used for download and debugging, so let’s choose uart1. That is, PB6-&gt;TX then PB7-&gt;RX connect TX to serial line RX,RX to serial line TX, and then don’t forget to share the ground.</p>
 <p>After connecting the line, we began to write the code. According to the API interface description of <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/uart.html">UART </a>, we first initialized the serial port.</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">uart</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span>
@@ -866,23 +864,23 @@
 <p><img alt="image-20211104140609894" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211104140609894.png"/></p>
 </section>
 <section id="id10">
-<h3>Practice<a class="headerlink" href="#id10" title="永久链接至标题">#</a></h3>
+<h3>Practice<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>Write code, use serial port 1 to send and receive instructions, receive A,on turn on LED1, receive A,off turn off LED1</p>
 </section>
 </section>
 <section id="adc">
-<h2>ADC<a class="headerlink" href="#adc" title="永久链接至标题">#</a></h2>
+<h2>ADC<a class="headerlink" href="#adc" title="Permalink to this headline">#</a></h2>
 <p>This chapter will introduce you to the ADC features of LuatOS. The internal temperature will be read using the Air101 development board and printed in the log.</p>
 <section id="id11">
-<h3>Introduction<a class="headerlink" href="#id11" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>An analog-to-digital converter, or ADC for short, usually refers to an electronic component that converts an analog signal into a digital signal. A typical analog-to-digital converter converts an input voltage signal to an output digital signal. Air101 chip has two 16-bit ADC, the highest sampling rate 1KHz。</p>
 </section>
 <section id="id12">
-<h3>Hardware preparation<a class="headerlink" href="#id12" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>One development board and one adjustable power supply</p>
 </section>
 <section id="id13">
-<h3>Software usage<a class="headerlink" href="#id13" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>This time we first look for the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air101.html">LuatOS document</a> to see that in addition to reading the external IO voltage, we can also read the internal temperature and power supply voltage. This time we choose ADC0, which is the PA1 pin.</p>
 <p>We connect the PA1 pin with an adjustable power supply (be sure to pay attention to the voltage not exceeding 2.4V）</p>
 <p>According to the interface of the <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/adc.html">ADC library</a> library, simply write a few lines of code</p>
@@ -905,23 +903,23 @@
 <p>The measured ADC has a certain error, and it is recommended to use it for threshold detection.</p>
 </section>
 <section id="id14">
-<h3>Practice<a class="headerlink" href="#id14" title="永久链接至标题">#</a></h3>
+<h3>Practice<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <p>Write code to light up PB10 when the internal temperature of the chip is greater than 40 degrees.LED</p>
 </section>
 </section>
 <section id="i2c">
-<h2>I2C<a class="headerlink" href="#i2c" title="永久链接至标题">#</a></h2>
+<h2>I2C<a class="headerlink" href="#i2c" title="Permalink to this headline">#</a></h2>
 <p>This chapter will introduce you to the I2C features of LuatOS. Will be realized using the Air101 development board I2C to read the temperature and humidity of the SHT30 sensor</p>
 <section id="id15">
-<h3>Introduction<a class="headerlink" href="#id15" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p>I2C（Inter Integrated Circuit）The bus is a half-duplex, bidirectional two-wire synchronous serial bus developed by PHILIPS. The I2C bus only needs two signal lines to transmit data, one is a bidirectional data line SDA(serial data), and the other is a bidirectional clock line SCL（serial clock）</p>
 </section>
 <section id="id16">
-<h3>Hardware preparation<a class="headerlink" href="#id16" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p>One development board and one SHT30 sensor</p>
 </section>
 <section id="id17">
-<h3>Software usage<a class="headerlink" href="#id17" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
 <p>First of all, check the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air101.html">LuatOS document</a> and see the document that PA1 is SCL pin and PA4 is SDA pin. We attach the sensor to the board according to this definition.</p>
 <p>Start writing code, first find the interface description <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/i2c.html">i2c-I2C Operation-LuatOS Document</a>, initialize first, need the address, refer to SHT30 manual, the address is determined by the pin level of ADDR, my module is suspended, that is 0x44</p>
 <img alt="image-20211103192701546" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211103192701546.png" style="zoom:50%;"/>
@@ -957,23 +955,23 @@
 <p><img alt="image-20211225193114838" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211225193114838.png"/></p>
 </section>
 <section id="id18">
-<h3>Practice<a class="headerlink" href="#id18" title="永久链接至标题">#</a></h3>
+<h3>Practice<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <p>Write code to try to drive other I2C devices.</p>
 </section>
 </section>
 <section id="spi">
-<h2>SPI<a class="headerlink" href="#spi" title="永久链接至标题">#</a></h2>
+<h2>SPI<a class="headerlink" href="#spi" title="Permalink to this headline">#</a></h2>
 <p>This chapter will use the hardware SPI of Air101 to read the flah’s ID and print it.</p>
 <section id="id19">
-<h3>Introduction<a class="headerlink" href="#id19" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
 <p>SPI Serial Peripheral Interface (Serial Peripheral Interface) is an abbreviation, is a high-speed, full-duplex, synchronous communication bus, the device is divided into master and slave, the current Air101 SPI can only be used as a host.</p>
 </section>
 <section id="id20">
-<h3>Hardware preparation<a class="headerlink" href="#id20" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
 <p>A development board, SPI flash one.</p>
 </section>
 <section id="id21">
-<h3>Software usage<a class="headerlink" href="#id21" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
 <p>First look for the pin diagram to study how to connect, check the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air101.html">LuatOS document</a> to see the connection mode, that is, PB2 is connected to CLK,PB5 is connected to MOSI,PB3 is connected to MISO,PB4 is connected to CS. Next, study how to drive.</p>
 <p>The flash I use is W25Q128. According to the manual, there is a general command 0x9F for reading flash models. If normal, the W25Q128 should return 0xEF4018</p>
 <p><img alt="image-20211104124049436" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211104124049436.png"/></p>
@@ -996,23 +994,23 @@
 <p><img alt="image-20211225193619442" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211225193619442.png"/></p>
 </section>
 <section id="id22">
-<h3>Practice<a class="headerlink" href="#id22" title="永久链接至标题">#</a></h3>
+<h3>Practice<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
 <p>Write code to try to drive other SPI devices.</p>
 </section>
 </section>
 <section id="sfud-external-flash">
-<h2>SFUD-External flash<a class="headerlink" href="#sfud-external-flash" title="永久链接至标题">#</a></h2>
+<h2>SFUD-External flash<a class="headerlink" href="#sfud-external-flash" title="Permalink to this headline">#</a></h2>
 <p>This chapter will use Air101 hardware SPI to mount flash to the file system, read and write directly</p>
 <section id="id23">
-<h3>Introduction<a class="headerlink" href="#id23" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
 <p>In the last chapter, we learned to use SPI to read the ID of external flash. In fact, the read and write instructions of external spi flash are compatible. In the process of daily use, it will be very troublesome if we directly use spi to read and write flash through instructions. As a result, LuatOS has designed a set of interfaces to realize abstract read and write of external spi flash through this set of interfaces and realize simple read and write of Lua io.</p>
 </section>
 <section id="id24">
-<h3>Hardware preparation<a class="headerlink" href="#id24" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
 <p>A development board, SPI flash a</p>
 </section>
 <section id="id25">
-<h3>Software usage<a class="headerlink" href="#id25" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
 <p>Wiring diagram see SPI that chapter can not repeat</p>
 <p>Refer to <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/sfud.html">sfud Document</a> to write a simple demo. The general idea is to create a spi hardware device object for sfud first, and then operate spi through sfud’s abstract interface to realize the operation of flash.</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">spi_flash</span> <span class="o">=</span> <span class="n">spi</span><span class="p">.</span><span class="n">deviceSetup</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2000000</span><span class="p">,</span><span class="n">spi</span><span class="p">.</span><span class="n">MSB</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="c1">--PB6</span>
@@ -1044,26 +1042,26 @@
 <p>Fully in line with expectations, can directly operate flash through the file system, is not very convenient.</p>
 </section>
 <section id="id26">
-<h3>Practice<a class="headerlink" href="#id26" title="永久链接至标题">#</a></h3>
+<h3>Practice<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h3>
 <p>Write code to test flash read and write speed</p>
 </section>
 </section>
 <section id="sdio">
-<h2>SDIO<a class="headerlink" href="#sdio" title="永久链接至标题">#</a></h2>
+<h2>SDIO<a class="headerlink" href="#sdio" title="Permalink to this headline">#</a></h2>
 <p>This chapter will learn to use the SDIO interface to drive the TF card and mount the TF card to the file system for reading and writing.</p>
 <section id="id27">
-<h3>Introduction<a class="headerlink" href="#id27" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h3>
 <p>In the last chapter, we learned to mount flash directly with sfud, but spi is a bit slow on the two data lines and flash capacity is limited. At this time, I thought of a higher-speed SDIO interface. The SDIO interface was designed to read and write SD cards at the beginning. Later, it was also used in many high-speed communications.</p>
 </section>
 <section id="id28">
-<h3>Hardware preparation<a class="headerlink" href="#id28" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h3>
 <p>Development board a piece, support SDIO tf card or SD card module. Be sure to be similar to the figure below that supports SDIO 4 data lines.</p>
 <img alt="image-20211104171407771" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211104171407771.png" style="zoom:50%;"/>
 <p>Do not support this only SPI</p>
 <img alt="image-20211104171659482" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211104171659482.png" style="zoom:67%;"/>
 </section>
 <section id="id29">
-<h3>Software usage<a class="headerlink" href="#id29" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h3>
 <p>First look at the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air101.html">LuatOS document</a> and study how to connect the wires.</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -1117,23 +1115,23 @@
 <p>SD The card is so simple to use for the first time, and two lines of code are done.</p>
 </section>
 <section id="id30">
-<h3>Practice<a class="headerlink" href="#id30" title="永久链接至标题">#</a></h3>
+<h3>Practice<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h3>
 <p>Write code to record the data received by the serial port to the SD card</p>
 </section>
 </section>
 <section id="lcd">
-<h2>LCD<a class="headerlink" href="#lcd" title="永久链接至标题">#</a></h2>
+<h2>LCD<a class="headerlink" href="#lcd" title="Permalink to this headline">#</a></h2>
 <p>In this chapter, we will learn how to drive the LCD screen and display Chinese characters and graphics on the screen.</p>
 <section id="id31">
-<h3>Introduction<a class="headerlink" href="#id31" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h3>
 <p>Usually driving the screen is a very complicated thing, because the LCD screen has a lot of instructions, display data and make a font. LuatOS encapsulates the LCD and has a variety of commonly used screen drivers built in. If it is not in the list, it can also be driven by Lua script configuration instructions. Using the idea of virtual video memory, the hardware driver and image drawing are extracted, which is more simple and convenient to use.</p>
 </section>
 <section id="id32">
-<h3>Hardware preparation<a class="headerlink" href="#id32" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h3>
 <p>A development board, SPI screen, I use gc9306（240*320）</p>
 </section>
 <section id="id33">
-<h3>Software usage<a class="headerlink" href="#id33" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id33" title="Permalink to this headline">#</a></h3>
 <p>As usual, first look at the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air101.html">LuatOS Document</a> to study how to connect the wires. Only the first two pins must use the solution of this table. The latter can be connected casually. I recommend press my connection.</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -1200,23 +1198,23 @@
 <p>LuatOS The abstraction of display devices is worth learning.</p>
 </section>
 <section id="id34">
-<h3>Practice<a class="headerlink" href="#id34" title="永久链接至标题">#</a></h3>
+<h3>Practice<a class="headerlink" href="#id34" title="Permalink to this headline">#</a></h3>
 <p>Write code to display a table of the order of wiring in this chapter on the screen.</p>
 </section>
 </section>
 <section id="lvgl">
-<h2>LVGL<a class="headerlink" href="#lvgl" title="永久链接至标题">#</a></h2>
+<h2>LVGL<a class="headerlink" href="#lvgl" title="Permalink to this headline">#</a></h2>
 <p>This chapter will briefly introduce how to use LVGL to display a more beautiful picture</p>
 <section id="id35">
-<h3>Introduction<a class="headerlink" href="#id35" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id35" title="Permalink to this headline">#</a></h3>
 <p>In the last chapter, I learned the LCD library and can smoothly draw dots and lines to display Chinese characters. However, if I want to see the interface well, these simple interfaces still cannot meet the requirements. As a result, there are many graphics libraries, LuatOS integrated LVGL graphics library, you can use a large number of controls to write a beautiful interface.</p>
 </section>
 <section id="id36">
-<h3>Hardware preparation<a class="headerlink" href="#id36" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id36" title="Permalink to this headline">#</a></h3>
 <p>A development board, SPI screen, I use gc9306（240*320）</p>
 </section>
 <section id="id37">
-<h3>Software usage<a class="headerlink" href="#id37" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id37" title="Permalink to this headline">#</a></h3>
 <p>Note that firmware with LVGL suffix should be used, or cloud compilation by itself.</p>
 <p>The chapter on LCD is not repeated. LVGL as a graphics library is the initialization screen of LCD first, and then LVGL is used to render the screen content. Directly on the code</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"lvgl"</span><span class="p">,</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">())</span>
@@ -1234,7 +1232,7 @@
 <p>For more LVGL tutorials, please refer to API and lvgl official documents.</p>
 </section>
 <section id="id38">
-<h3>Practice<a class="headerlink" href="#id38" title="永久链接至标题">#</a></h3>
+<h3>Practice<a class="headerlink" href="#id38" title="Permalink to this headline">#</a></h3>
 <p>The practical requirements of the chapter on writing code using LVGL to implement LCD</p>
 </section>
 </section>
@@ -1266,13 +1264,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1290,7 +1288,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1398,7 +1396,6 @@
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

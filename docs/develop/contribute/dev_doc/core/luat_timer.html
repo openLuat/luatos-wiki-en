@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../../../genindex.html" /><link rel="search" title="搜索" href="../../../../search.html" /><link rel="next" title="C style buffer" href="luat_zbuff.html" /><link rel="prev" title="Power and Low Power Management" href="luat_pm.html" />
+<link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="C style buffer" href="luat_zbuff.html" /><link rel="prev" title="Power and Low Power Management" href="luat_pm.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Luat Timer - LuatOS 文档</title>
+        <title>Luat Timer - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,16 +688,16 @@
         </div>
         <article role="main">
           <section id="luat-timer">
-<h1>Luat Timer<a class="headerlink" href="#luat-timer" title="永久链接至标题">#</a></h1>
+<h1>Luat Timer<a class="headerlink" href="#luat-timer" title="Permalink to this headline">#</a></h1>
 <section id="basic-information">
-<h2>Basic information<a class="headerlink" href="#basic-information" title="永久链接至标题">#</a></h2>
+<h2>Basic information<a class="headerlink" href="#basic-information" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Date of drafting: 2019-11-25</p></li>
 <li><p>Designer: <a class="reference external" href="https://github.com/wendal">wendal</a></p></li>
 </ul>
 </section>
 <section id="why-do-you-need-a-timer">
-<h2>Why do you need a timer?<a class="headerlink" href="#why-do-you-need-a-timer" title="永久链接至标题">#</a></h2>
+<h2>Why do you need a timer?<a class="headerlink" href="#why-do-you-need-a-timer" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>The need for single timing, for example, to perform temperature measurement after 10 minutes</p></li>
 <li><p>Cycle timing needs, network once every 5 minutes, send heartbeat</p></li>
@@ -707,7 +705,7 @@
 </ol>
 </section>
 <section id="design-ideas-and-boundaries">
-<h2>Design ideas and boundaries<a class="headerlink" href="#design-ideas-and-boundaries" title="永久链接至标题">#</a></h2>
+<h2>Design ideas and boundaries<a class="headerlink" href="#design-ideas-and-boundaries" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>design based on rtos timer api</p></li>
 <li><p>After the timer expires, the message is produced and sent to the <code class="docutils literal notranslate"><span class="pre">message</span> <span class="pre">bus</span></code> for consumption by <code class="docutils literal notranslate"><span class="pre">rtos.receive</span></code></p></li>
@@ -715,15 +713,15 @@
 </ol>
 </section>
 <section id="c-api-platform-layer">
-<h2>C API(Platform layer)<a class="headerlink" href="#c-api-platform-layer" title="永久链接至标题">#</a></h2>
+<h2>C API(Platform layer)<a class="headerlink" href="#c-api-platform-layer" title="Permalink to this headline">#</a></h2>
 <section id="data-structure">
-<h3>data structure<a class="headerlink" href="#data-structure" title="永久链接至标题">#</a></h3>
+<h3>data structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define LUAT_TIMER_MAXID ((size_t) 0xFFFF)</span>
 </pre></div>
 </div>
 </section>
 <section id="interface-api">
-<h3>Interface API<a class="headerlink" href="#interface-api" title="永久链接至标题">#</a></h3>
+<h3>Interface API<a class="headerlink" href="#interface-api" title="Permalink to this headline">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint32_t</span><span class="w"> </span><span class="nf">luat_timer_start</span><span class="p">(</span><span class="n">luat_timer_t</span><span class="o">*</span><span class="w"> </span><span class="n">timer</span><span class="p">);</span><span class="w"></span>
 <span class="kt">uint32_t</span><span class="w"> </span><span class="nf">luat_timer_stop</span><span class="p">(</span><span class="n">luat_timer_t</span><span class="o">*</span><span class="w"> </span><span class="n">timer</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -731,17 +729,17 @@
 </section>
 </section>
 <section id="lua-api">
-<h2>Lua API<a class="headerlink" href="#lua-api" title="永久链接至标题">#</a></h2>
+<h2>Lua API<a class="headerlink" href="#lua-api" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="constant">
-<h2>Constant<a class="headerlink" href="#constant" title="永久链接至标题">#</a></h2>
+<h2>Constant<a class="headerlink" href="#constant" title="Permalink to this headline">#</a></h2>
 <p>Spare</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">timer</span><span class="p">.</span><span class="n">HW</span> <span class="c1">-- "HW" Hardware Timer</span>
 <span class="n">timer</span><span class="p">.</span><span class="n">OS</span> <span class="c1">-- "OS" Software Timer</span>
 </pre></div>
 </div>
 <section id="start-timer">
-<h3>Start Timer<a class="headerlink" href="#start-timer" title="永久链接至标题">#</a></h3>
+<h3>Start Timer<a class="headerlink" href="#start-timer" title="Permalink to this headline">#</a></h3>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- timerout Timeout duration, value, 1-0xFFFFFFFF, unit: milliseconds, meaningful if greater than 0</span>
 <span class="c1">-- repeat   Extra number of repetitions, value, 1-0xFFFFFFFF, unit milliseconds, default 0</span>
 <span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="n">timer</span><span class="p">.</span><span class="n">start</span><span class="p">(</span><span class="n">timeout</span><span class="p">,</span> <span class="n">_repeat</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span> <span class="kr">end</span><span class="p">)</span>
@@ -754,7 +752,7 @@
 </div>
 </section>
 <section id="turn-off-timer-including-delete">
-<h3>Turn off timer (including delete)<a class="headerlink" href="#turn-off-timer-including-delete" title="永久链接至标题">#</a></h3>
+<h3>Turn off timer (including delete)<a class="headerlink" href="#turn-off-timer-including-delete" title="Permalink to this headline">#</a></h3>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- timer_id clock id, numeric value, 0-0xFF, depends on LUAT_TIMER_MAXID</span>
 <span class="n">timer</span><span class="p">.</span><span class="n">stop</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="c1">-- As long as a numeric id is passed in, the timer_stop will always succeed.</span>
@@ -763,7 +761,7 @@
 </section>
 </section>
 <section id="relevant-knowledge-points">
-<h2>Relevant knowledge points<a class="headerlink" href="#relevant-knowledge-points" title="永久链接至标题">#</a></h2>
+<h2>Relevant knowledge points<a class="headerlink" href="#relevant-knowledge-points" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><span class="xref myst">Luat core mechanism</span></p></li>
 <li><p><span class="xref myst">Message Bus</span></p></li>
@@ -797,13 +795,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -821,7 +819,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -867,7 +865,6 @@
     <script src="../../../../_static/scripts/furo.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
-    <script src="../../../../_static/translations.js"></script>
     <script src="../../../../_static/design-tabs.js"></script>
     <script src="../../../../_static/js/baidu.js"></script>
     <script src="../../../../_static/js/a.js"></script>

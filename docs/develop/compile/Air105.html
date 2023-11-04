@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="📡 ESP32 Series Compilation Document" href="ESP32C3.html" /><link rel="prev" title="🚗 Air101 / Air103" href="Air101.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="📡 ESP32 Series Compilation Document" href="ESP32C3.html" /><link rel="prev" title="🚗 Air101 / Air103" href="Air101.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>🚗 Air105 - LuatOS 文档</title>
+        <title>🚗 Air105 - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,26 +688,26 @@
         </div>
         <article role="main">
           <section id="air105">
-<h1>🚗 Air105<a class="headerlink" href="#air105" title="永久链接至标题">#</a></h1>
+<h1>🚗 Air105<a class="headerlink" href="#air105" title="Permalink to this headline">#</a></h1>
 <p>Usually you don’t need this document, this is a high-level document for self-expanding firmware.</p>
 <p>The firmware package we provide contains the compiled firmware (soc suffix）</p>
 <p>If you just want to add an existing library to the firmware, you can use our <a class="reference internal" href="Cloud_compilation.html"><span class="doc std std-doc">Online Cloud Compilation</span></a> to generate a custom firmware.</p>
 <p>If you are looking for application-oriented documents such as machine brushing/compiling lua scripts, then this document is not what you need to check.</p>
 <p>Video tutorial link: <a class="reference external" href="https://www.bilibili.com/video/BV1D3411p7MK?p=1">Station B drinks porridge every day</a></p>
 <section id="prepare-the-environment">
-<h2>Prepare the environment<a class="headerlink" href="#prepare-the-environment" title="永久链接至标题">#</a></h2>
+<h2>Prepare the environment<a class="headerlink" href="#prepare-the-environment" title="Permalink to this headline">#</a></h2>
 <section id="windows-platform-users">
-<h3>Windows Platform Users<a class="headerlink" href="#windows-platform-users" title="永久链接至标题">#</a></h3>
+<h3>Windows Platform Users<a class="headerlink" href="#windows-platform-users" title="Permalink to this headline">#</a></h3>
 <p><strong>Install <a class="reference external" href="https://www.7-zip.org/">7-zip</a>, it is recommended to keep the default folder！！！</strong></p>
 <p><strong>Install <a class="reference external" href="https://github.com/xmake-io/xmake/releases">xmake</a> and restart the computer after installation！！！</strong></p>
 </section>
 <section id="linux-platform-users">
-<h3>Linux Platform Users<a class="headerlink" href="#linux-platform-users" title="永久链接至标题">#</a></h3>
+<h3>Linux Platform Users<a class="headerlink" href="#linux-platform-users" title="Permalink to this headline">#</a></h3>
 <p>**Install 7-zip with xmake!!! **, each platform has different loading methods (apt/yum/pacman), search for it yourself</p>
 </section>
 </section>
 <section id="prepare-the-project">
-<h2>Prepare the project<a class="headerlink" href="#prepare-the-project" title="永久链接至标题">#</a></h2>
+<h2>Prepare the project<a class="headerlink" href="#prepare-the-project" title="Permalink to this headline">#</a></h2>
 <p>recommend to use git, if you download zip, you must decompress and change the folder name.!!!</p>
 <p>Clone the LuatOS main warehouse to the appropriate location. If you are not familiar with git, strongly establish <a class="reference external" href="https://www.jianshu.com/p/db3396474b96">Getting Started</a></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://gitee.com/openLuat/LuatOS.git
@@ -732,11 +730,11 @@
 <p>Any additional characters are not available, e.g. LuatOS-master is the wrong name</p>
 </section>
 <section id="libraries-in-custom-firmware">
-<h2>Libraries in Custom Firmware<a class="headerlink" href="#libraries-in-custom-firmware" title="永久链接至标题">#</a></h2>
+<h2>Libraries in Custom Firmware<a class="headerlink" href="#libraries-in-custom-firmware" title="Permalink to this headline">#</a></h2>
 <p>Open <code class="docutils literal notranslate"><span class="pre">app/port/luat_conf_bsp.h</span> </code>to comment or uncomment as needed. Note that if the firmware does not fit, the compilation will fail.</p>
 </section>
 <section id="compile">
-<h2>Compile<a class="headerlink" href="#compile" title="永久链接至标题">#</a></h2>
+<h2>Compile<a class="headerlink" href="#compile" title="Permalink to this headline">#</a></h2>
 <p>Enter the 105 warehouse directory, executive<code class="docutils literal notranslate"> <span class="pre">xmake</span></code>, and start compiling. The generated file will be in the<code class="docutils literal notranslate"> <span class="pre">build/out/</span></code>directory with<code class="docutils literal notranslate"><span class="pre">.soc</span> <span class="pre">as</span> <span class="pre">the</span> <span class="pre">suffix</span></code></p>
 <div id="xmake-record"></div>
 <link href="../../_static/css/asciinema-player.css" rel="stylesheet" type="text/css"/>
@@ -744,7 +742,7 @@
 <script>AsciinemaPlayer.create('../../_static/terminal/build_air105.cast', document.getElementById('xmake-record'),{autoPlay:true});</script>
 </section>
 <section id="more-convenient-method-xmake-plugin">
-<h2>More convenient method-xmake plugin<a class="headerlink" href="#more-convenient-method-xmake-plugin" title="永久链接至标题">#</a></h2>
+<h2>More convenient method-xmake plugin<a class="headerlink" href="#more-convenient-method-xmake-plugin" title="Permalink to this headline">#</a></h2>
 <p><strong>The above compilation method has run through and can be compiled normally before looking here.！！！</strong></p>
 <p>vscode Install the xmake plugin in</p>
 <p><img alt="vscode_xmake" src="../../_images/vscode_xmake.png"/></p>
@@ -779,13 +777,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -803,7 +801,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -843,7 +841,6 @@
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

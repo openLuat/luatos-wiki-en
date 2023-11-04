@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="🔍 Version Comparison" href="../devices.html" /><link rel="prev" title="Operating Instructions" href="usage.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="🔍 Version Comparison" href="../devices.html" /><link rel="prev" title="Operating Instructions" href="usage.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>FAQ - LuatOS 文档</title>
+        <title>FAQ - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,14 +688,14 @@
         </div>
         <article role="main">
           <section id="faq">
-<h1>FAQ<a class="headerlink" href="#faq" title="永久链接至标题">#</a></h1>
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">#</a></h1>
 <section id="why-i-plug-in-the-usb-does-not-light-up">
-<h2>Why I plug in the usb does not light up？<a class="headerlink" href="#why-i-plug-in-the-usb-does-not-light-up" title="永久链接至标题">#</a></h2>
+<h2>Why I plug in the usb does not light up？<a class="headerlink" href="#why-i-plug-in-the-usb-does-not-light-up" title="Permalink to this headline">#</a></h2>
 <p>Please read the chapter <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/iotpower/cc/parts.html#id3">Power Supply Method</a> carefully.<br/>
 If it is the first time to power on, please refer to the steps in <a class="reference external" href="https://www.bilibili.com/video/BV15m4y1h7CG">this video</a>.</p>
 </section>
 <section id="why-can-t-i-upgrade-the-firmware">
-<h2>Why can’t I upgrade the firmware<a class="headerlink" href="#why-can-t-i-upgrade-the-firmware" title="永久链接至标题">#</a></h2>
+<h2>Why can’t I upgrade the firmware<a class="headerlink" href="#why-can-t-i-upgrade-the-firmware" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>If you are win7, please install the driver provided by the client download page first, and you need to manually install the driver (including the driver in upgrade mode）</p></li>
 <li><p>You need to open the client first and click the<code class="docutils literal notranslate"> <span class="pre">Connect</span></code> button on the first page to connect to the device.</p></li>
@@ -705,7 +703,7 @@ If it is the first time to power on, please refer to the steps in <a class="refe
 </ol>
 </section>
 <section id="why-have-i-been-circling-around-since-i-turned-on-pd">
-<h2>Why have I been circling around since I turned on PD？<a class="headerlink" href="#why-have-i-been-circling-around-since-i-turned-on-pd" title="永久链接至标题">#</a></h2>
+<h2>Why have I been circling around since I turned on PD？<a class="headerlink" href="#why-have-i-been-circling-around-since-i-turned-on-pd" title="Permalink to this headline">#</a></h2>
 <p>First of all, please look at the instructions, * * don’t * * lure the air, <a class="reference internal" href="wrong.html"><span class="doc std std-doc">like these * * wrong demonstration**</span></a></p>
 <p>If the operation is correct, you can try  ：
 In the settings, turn on<code class="docutils literal notranslate"> <span class="pre">power-on</span> <span class="pre">and</span> <span class="pre">self-start</span> <span class="pre">PD</span></code>, and only supply power from * * input * * terminal (dial code is changed to input power supply mode), and connect PD charger, there will be only a few phenomena：</p>
@@ -728,27 +726,27 @@ In the settings, turn on<code class="docutils literal notranslate"> <span class=
 </ul>
 </section>
 <section id="why-can-t-my-charging-head-recognize-pd-pps-clearly-the-mobile-phone-can-be-charged-quickly">
-<h2>Why can’t my charging head recognize PD/PPS? Clearly the mobile phone can be charged quickly<a class="headerlink" href="#why-can-t-my-charging-head-recognize-pd-pps-clearly-the-mobile-phone-can-be-charged-quickly" title="永久链接至标题">#</a></h2>
+<h2>Why can’t my charging head recognize PD/PPS? Clearly the mobile phone can be charged quickly<a class="headerlink" href="#why-can-t-my-charging-head-recognize-pd-pps-clearly-the-mobile-phone-can-be-charged-quickly" title="Permalink to this headline">#</a></h2>
 <p>Even if the mobile phone can be used to trigger fast charging, it cannot prove that PD is supported. For specific information, please refer to the chapter “Precautions on PD Function” in <a class="reference internal" href="usage.html"><span class="doc std std-doc">Operating Instructions</span></a></p>
 </section>
 <section id="can-it-trigger-the-fast-charging-of-the-mobile-phone-i-don-t-want-to-use-my-own-decoy-function">
-<h2>Can it trigger the fast charging of the mobile phone? I don’t want to use my own decoy function.<a class="headerlink" href="#can-it-trigger-the-fast-charging-of-the-mobile-phone-i-don-t-want-to-use-my-own-decoy-function" title="永久链接至标题">#</a></h2>
+<h2>Can it trigger the fast charging of the mobile phone? I don’t want to use my own decoy function.<a class="headerlink" href="#can-it-trigger-the-fast-charging-of-the-mobile-phone-i-don-t-want-to-use-my-own-decoy-function" title="Permalink to this headline">#</a></h2>
 <p>Yes, if you need to test, please * * turn off the pd decoy function of the device itself (take effect after restarting and powering on) * *, otherwise it will interfere. In addition, some mobile phone charging heads distinguish between front and back, please arrange and combine the test directions by yourself.</p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>Some equipment fast charging protocols are non-standard, and fast charging may not be triggered when using input port power supply. At this time, the PC-side power supply test is required to isolate the power supply of the device from the fast charging phase.</p>
 </div>
 </section>
 <section id="why-does-the-voltage-turn-on-and-off-for-a-while-when-my-output-terminal-is-connected-to-a-mobile-phone-charging-treasure-computer">
-<h2>Why does the voltage turn on and off for a while when my output terminal is connected to a mobile phone/charging treasure/computer?<a class="headerlink" href="#why-does-the-voltage-turn-on-and-off-for-a-while-when-my-output-terminal-is-connected-to-a-mobile-phone-charging-treasure-computer" title="永久链接至标题">#</a></h2>
+<h2>Why does the voltage turn on and off for a while when my output terminal is connected to a mobile phone/charging treasure/computer?<a class="headerlink" href="#why-does-the-voltage-turn-on-and-off-for-a-while-when-my-output-terminal-is-connected-to-a-mobile-phone-charging-treasure-computer" title="Permalink to this headline">#</a></h2>
 <p>If your output is connected to a mobile phone/charging treasure/computer that supports fast charging, please * * do not turn on * * <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">up</span> <span class="pre">and</span> <span class="pre">automatically</span> <span class="pre">enable</span> <span class="pre">PD</span></code> (it will take effect after restarting and powering up), otherwise the two devices will cheat together and cause interference.</p>
 </section>
 <section id="why-do-i-supply-power-from-the-input-port-cc-will-always-restart-plug-in-the-mobile-phone-and-turn-off-the-screen">
-<h2>Why do I supply power from the input port, CC will always restart/plug in the mobile phone and turn off the screen？<a class="headerlink" href="#why-do-i-supply-power-from-the-input-port-cc-will-always-restart-plug-in-the-mobile-phone-and-turn-off-the-screen" title="永久链接至标题">#</a></h2>
+<h2>Why do I supply power from the input port, CC will always restart/plug in the mobile phone and turn off the screen？<a class="headerlink" href="#why-do-i-supply-power-from-the-input-port-cc-will-always-restart-plug-in-the-mobile-phone-and-turn-off-the-screen" title="Permalink to this headline">#</a></h2>
 <p>Ibid.</p>
 </section>
 <section id="why-can-t-my-mobile-phone-trigger-fast-charge-dead-power-output-after-passing-through-cc">
-<h2>Why can’t my mobile phone trigger fast charge/dead power output after passing through CC<a class="headerlink" href="#why-can-t-my-mobile-phone-trigger-fast-charge-dead-power-output-after-passing-through-cc" title="永久链接至标题">#</a></h2>
+<h2>Why can’t my mobile phone trigger fast charge/dead power output after passing through CC<a class="headerlink" href="#why-can-t-my-mobile-phone-trigger-fast-charge-dead-power-output-after-passing-through-cc" title="Permalink to this headline">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Refer to the popular science map made next door.<div class="sd-summary-down docutils">
@@ -760,26 +758,26 @@ Refer to the popular science map made next door.<div class="sd-summary-down docu
 </div>
 </details></section>
 <section id="why-does-my-charging-head-support-20v-but-not-on-the-device">
-<h2>Why does my charging head support 20V, but not on the device<a class="headerlink" href="#why-does-my-charging-head-support-20v-but-not-on-the-device" title="永久链接至标题">#</a></h2>
+<h2>Why does my charging head support 20V, but not on the device<a class="headerlink" href="#why-does-my-charging-head-support-20v-but-not-on-the-device" title="Permalink to this headline">#</a></h2>
 <p>The device will enter PPS mode by default, and the PPS support range of some chargers is less than the PD fixed gear range. You can go to the setting to turn off the PPS function and only use the fixed gear function.</p>
 </section>
 <section id="why-can-t-the-computer-set-the-pd-value-and-the-device-displays-the-support-pd-fixed-gear">
-<h2>Why can’t the computer set the PD value, and the device displays the support PD fixed gear<a class="headerlink" href="#why-can-t-the-computer-set-the-pd-value-and-the-device-displays-the-support-pd-fixed-gear" title="永久链接至标题">#</a></h2>
+<h2>Why can’t the computer set the PD value, and the device displays the support PD fixed gear<a class="headerlink" href="#why-can-t-the-computer-set-the-pd-value-and-the-device-displays-the-support-pd-fixed-gear" title="Permalink to this headline">#</a></h2>
 <p>PC Only supports setting PPS value, please confirm that your charger supports</p>
 </section>
 <section id="do-you-support-non-standard-pps-mipps-etc">
-<h2>Do you support non-standard PPS (MIPPS, etc.）<a class="headerlink" href="#do-you-support-non-standard-pps-mipps-etc" title="永久链接至标题">#</a></h2>
+<h2>Do you support non-standard PPS (MIPPS, etc.）<a class="headerlink" href="#do-you-support-non-standard-pps-mipps-etc" title="Permalink to this headline">#</a></h2>
 <p>Not supported, only standard PPS/PD is supported. If you find a bug that cannot trigger the standard PPS, please grab the PD protocol package and feed it back to the group owner for repair.</p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>This device is a low-power tester, not a USB fast charging test meter, and will not add protocol detection related functions.</p>
 </div>
 </section>
 <section id="why-is-there-a-current-of-several-a-when-the-output-terminal-is-connected-to-the-typec-line">
-<h2>Why is there a current of several μA when the output terminal is connected to the TypeC line?<a class="headerlink" href="#why-is-there-a-current-of-several-a-when-the-output-terminal-is-connected-to-the-typec-line" title="永久链接至标题">#</a></h2>
+<h2>Why is there a current of several μA when the output terminal is connected to the TypeC line?<a class="headerlink" href="#why-is-there-a-current-of-several-a-when-the-output-terminal-is-connected-to-the-typec-line" title="Permalink to this headline">#</a></h2>
 <p>Some cables will have resistors or chips in them, which will cause a small current to appear.</p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>There is no such phenomenon in the<code class="docutils literal notranslate"> <span class="pre">TypeC</span> <span class="pre">to</span> <span class="pre">alligator</span> <span class="pre">clips</span></code> line officially sold by the United States, and it can be used with confidence.<br/>
 However, among the “ten yuan and ten” wires sold by the United States, TypeC turns to TypeC wire. The black end has resistance inside, and the four-wire core (no CC wire) cannot trigger PD fast charging.</p>
 </div>
@@ -787,32 +785,32 @@ However, among the “ten yuan and ten” wires sold by the United States, TypeC
 <p><img alt="type c r" src="../../_images/typec_r.jpg"/></p>
 </section>
 <section id="why-is-the-voltage-directly-changed-after-the-output-terminal-is-connected-to-the-typec-line-5v">
-<h2>Why is the voltage directly changed after the output terminal is connected to the TypeC line 5V<a class="headerlink" href="#why-is-the-voltage-directly-changed-after-the-output-terminal-is-connected-to-the-typec-line-5v" title="永久链接至标题">#</a></h2>
+<h2>Why is the voltage directly changed after the output terminal is connected to the TypeC line 5V<a class="headerlink" href="#why-is-the-voltage-directly-changed-after-the-output-terminal-is-connected-to-the-typec-line-5v" title="Permalink to this headline">#</a></h2>
 <p>You may have a CC pull-down resistor in your wire head (refer to the above figure), or the device under test has pulled down the CC pin.</p>
 </section>
 <section id="why-is-nothing-even-voltage-and-current-are-not-0">
-<h2>Why is nothing even, voltage and current are not 0<a class="headerlink" href="#why-is-nothing-even-voltage-and-current-are-not-0" title="永久链接至标题">#</a></h2>
+<h2>Why is nothing even, voltage and current are not 0<a class="headerlink" href="#why-is-nothing-even-voltage-and-current-are-not-0" title="Permalink to this headline">#</a></h2>
 <p>Small knowledge：1A = 1 000 000μA</p>
 </section>
 <section id="why-is-there-several-differences-between-current-and-multimeter-a">
-<h2>Why is there several differences between current and multimeter?μA？<a class="headerlink" href="#why-is-there-several-differences-between-current-and-multimeter-a" title="永久链接至标题">#</a></h2>
+<h2>Why is there several differences between current and multimeter?μA？<a class="headerlink" href="#why-is-there-several-differences-between-current-and-multimeter-a" title="Permalink to this headline">#</a></h2>
 <p>（On the premise that the table is not damaged) it is possible that the μA result is incorrect due to the existence of reverse current (CC cannot detect reverse current）</p>
 <p>As shown in the following figure, the same equipment uses different power supply methods. In the left figure, reverse current occurs due to unstable power supply, which will cause the detection result to be too large.</p>
 <p><img alt="cc-c" src="../../_images/cc-c.png"/></p>
 </section>
 <section id="i-use-iot-power-v1-v2-to-supply-power-and-connect-it-in-seriesiot-power-cc">
-<h2>I use <strong>Iot Power V1/V2</strong> to supply power and connect it in series<strong>Iot Power CC</strong><a class="headerlink" href="#i-use-iot-power-v1-v2-to-supply-power-and-connect-it-in-seriesiot-power-cc" title="永久链接至标题">#</a></h2>
+<h2>I use <strong>Iot Power V1/V2</strong> to supply power and connect it in series<strong>Iot Power CC</strong><a class="headerlink" href="#i-use-iot-power-v1-v2-to-supply-power-and-connect-it-in-seriesiot-power-cc" title="Permalink to this headline">#</a></h2>
 <section id="why-are-the-current-numbers-inconsistent">
-<h3>Why are the current numbers inconsistent？<a class="headerlink" href="#why-are-the-current-numbers-inconsistent" title="永久链接至标题">#</a></h3>
+<h3>Why are the current numbers inconsistent？<a class="headerlink" href="#why-are-the-current-numbers-inconsistent" title="Permalink to this headline">#</a></h3>
 <p>During the test, the two devices cannot be on the same ground. Please use different power supplies respectively to supply power. Otherwise, the current measured by power is the load current cc sampling shunt current.</p>
 </section>
 <section id="i-have-already-supplied-power-separately-and-have-no-common-ground-why-is-the-current-number-still-inconsistent">
-<h3>I have already supplied power separately and have no common ground. Why is the current number still inconsistent?？<a class="headerlink" href="#i-have-already-supplied-power-separately-and-have-no-common-ground-why-is-the-current-number-still-inconsistent" title="永久链接至标题">#</a></h3>
+<h3>I have already supplied power separately and have no common ground. Why is the current number still inconsistent?？<a class="headerlink" href="#i-have-already-supplied-power-separately-and-have-no-common-ground-why-is-the-current-number-still-inconsistent" title="Permalink to this headline">#</a></h3>
 <p>If the four-wire mode is used, the CC sampling resistor will consume part of the current. If the current is exactly the same, please use the two-wire mode.</p>
 </section>
 </section>
 <section id="my-device-can-t-start-can-i-brush-the-firmware-again">
-<h2>My device can’t start, can I brush the firmware again?？<a class="headerlink" href="#my-device-can-t-start-can-i-brush-the-firmware-again" title="永久链接至标题">#</a></h2>
+<h2>My device can’t start, can I brush the firmware again?？<a class="headerlink" href="#my-device-can-t-start-can-i-brush-the-firmware-again" title="Permalink to this headline">#</a></h2>
 <p>Please refer to <a class="reference internal" href="usage.html"><span class="doc std std-doc">Operating Instructions</span></a>-Chapter <code class="docutils literal notranslate"><span class="pre">Manually</span> <span class="pre">Entering</span> <span class="pre">Upgrade</span> <span class="pre">Mode</span></code> to force the machine</p>
 </section>
 </section>
@@ -843,13 +841,13 @@ However, among the “ten yuan and ten” wires sold by the United States, TypeC
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -867,7 +865,7 @@ However, among the “ten yuan and ten” wires sold by the United States, TypeC
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -919,7 +917,6 @@ However, among the “ten yuan and ten” wires sold by the United States, TypeC
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

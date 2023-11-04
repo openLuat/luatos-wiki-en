@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="🧮 Chips and Development Boards" href="../chips/index.html" /><link rel="prev" title="Basic Grammar" href="introduction.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="🧮 Chips and Development Boards" href="../chips/index.html" /><link rel="prev" title="Basic Grammar" href="introduction.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>LuaTask Framework - LuatOS 文档</title>
+        <title>LuaTask Framework - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,19 +688,19 @@
         </div>
         <article role="main">
           <section id="luatask-framework">
-<h1>LuaTask Framework<a class="headerlink" href="#luatask-framework" title="永久链接至标题">#</a></h1>
+<h1>LuaTask Framework<a class="headerlink" href="#luatask-framework" title="Permalink to this headline">#</a></h1>
 <blockquote>
 <div><p>Video tutorial can be found here: <a class="reference external" href="https://www.bilibili.com/video/BV1194y1o7q2">[LuatOS] ③ LuaTask multitasking framework</a></p>
 </div></blockquote>
 <section id="brief-description-of-the-framework">
-<h2>Brief description of the framework<a class="headerlink" href="#brief-description-of-the-framework" title="永久链接至标题">#</a></h2>
+<h2>Brief description of the framework<a class="headerlink" href="#brief-description-of-the-framework" title="Permalink to this headline">#</a></h2>
 <p>LuaTask The framework, using the coroutet, implements the multitasking function in Lua. Developers can create multiple tasks in the simplest way, instead of using timers to delay as in the traditional development method.</p>
 <p>When using the LuaTask framework, you need to reference the <code class="docutils literal notranslate"><span class="pre">sys</span></code> library (<code class="docutils literal notranslate"><span class="pre">_G.sys</span> <span class="pre">=</span> <span class="pre">require("sys")</span></code>) in the code, and on the last line of the code, call <code class="docutils literal notranslate"><span class="pre">sys.run()</span></code>to start the LuaTask framework, and the task code in the framework will run in `sys.run().</p>
 </section>
 <section id="get-started-use">
-<h2>get started use<a class="headerlink" href="#get-started-use" title="永久链接至标题">#</a></h2>
+<h2>get started use<a class="headerlink" href="#get-started-use" title="Permalink to this headline">#</a></h2>
 <section id="multitasking">
-<h3>Multitasking<a class="headerlink" href="#multitasking" title="永久链接至标题">#</a></h3>
+<h3>Multitasking<a class="headerlink" href="#multitasking" title="Permalink to this headline">#</a></h3>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"sys"</span><span class="p">)</span>
 <span class="c1">--The first task</span>
 <span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
@@ -725,7 +723,7 @@
 </div>
 </section>
 <section id="multitasking-waiting-for-each-other">
-<h3>Multitasking waiting for each other<a class="headerlink" href="#multitasking-waiting-for-each-other" title="永久链接至标题">#</a></h3>
+<h3>Multitasking waiting for each other<a class="headerlink" href="#multitasking-waiting-for-each-other" title="Permalink to this headline">#</a></h3>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"sys"</span><span class="p">)</span>
 <span class="c1">--The first task</span>
 <span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
@@ -762,7 +760,7 @@
 </div>
 </section>
 <section id="waiting-and-passing-data-between-multiple-tasks">
-<h3>Waiting and passing data between multiple tasks<a class="headerlink" href="#waiting-and-passing-data-between-multiple-tasks" title="永久链接至标题">#</a></h3>
+<h3>Waiting and passing data between multiple tasks<a class="headerlink" href="#waiting-and-passing-data-between-multiple-tasks" title="Permalink to this headline">#</a></h3>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"sys"</span><span class="p">)</span>
 <span class="c1">--The first task</span>
 <span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
@@ -799,7 +797,7 @@
 </div>
 </section>
 <section id="traditional-timer">
-<h3>Traditional Timer<a class="headerlink" href="#traditional-timer" title="永久链接至标题">#</a></h3>
+<h3>Traditional Timer<a class="headerlink" href="#traditional-timer" title="Permalink to this headline">#</a></h3>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"sys"</span><span class="p">)</span>
 
 <span class="c1">--Execute a function after one second, you can pass parameters later.</span>
@@ -832,9 +830,9 @@ window.onload = function(){
 </section>
 </section>
 <section id="sys-library-interface-documentation">
-<h2>sys Library Interface Documentation<a class="headerlink" href="#sys-library-interface-documentation" title="永久链接至标题">#</a></h2>
+<h2>sys Library Interface Documentation<a class="headerlink" href="#sys-library-interface-documentation" title="Permalink to this headline">#</a></h2>
 <section id="sys-wait-ms">
-<h3>sys.wait(ms)<a class="headerlink" href="#sys-wait-ms" title="永久链接至标题">#</a></h3>
+<h3>sys.wait(ms)<a class="headerlink" href="#sys-wait-ms" title="Permalink to this headline">#</a></h3>
 <p>Task The task delay function can only be used in task functions.</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -864,7 +862,7 @@ window.onload = function(){
 </section>
 <hr class="docutils"/>
 <section id="sys-waituntil-id-ms">
-<h3>sys.waitUntil(id, ms)<a class="headerlink" href="#sys-waituntil-id-ms" title="永久链接至标题">#</a></h3>
+<h3>sys.waitUntil(id, ms)<a class="headerlink" href="#sys-waituntil-id-ms" title="Permalink to this headline">#</a></h3>
 <p>Task The conditional wait function of a task (including conditions such as event messages and timer messages) can only be used in task functions.</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -898,7 +896,7 @@ data Message Received Return Message Parameters</p>
 </section>
 <hr class="docutils"/>
 <section id="sys-waituntilext-id-ms">
-<h3>sys.waitUntilExt(id, ms)<a class="headerlink" href="#sys-waituntilext-id-ms" title="永久链接至标题">#</a></h3>
+<h3>sys.waitUntilExt(id, ms)<a class="headerlink" href="#sys-waituntilext-id-ms" title="Permalink to this headline">#</a></h3>
 <p>Task The conditional wait function extension of a task (including conditions such as event messages and timer messages) can only be used in task functions.</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -932,7 +930,7 @@ data Message Received Return Message Parameters</p>
 </section>
 <hr class="docutils"/>
 <section id="sys-taskinit-fun">
-<h3>sys.taskInit(fun, …)<a class="headerlink" href="#sys-taskinit-fun" title="永久链接至标题">#</a></h3>
+<h3>sys.taskInit(fun, …)<a class="headerlink" href="#sys-taskinit-fun" title="Permalink to this headline">#</a></h3>
 <p>Create a task thread, call the function at the end of the module and register the task function in the module, and main.lua can import the module.</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -965,7 +963,7 @@ data Message Received Return Message Parameters</p>
 </section>
 <hr class="docutils"/>
 <section id="sys-timerstop-val">
-<h3>sys.timerStop(val, …)<a class="headerlink" href="#sys-timerstop-val" title="永久链接至标题">#</a></h3>
+<h3>sys.timerStop(val, …)<a class="headerlink" href="#sys-timerstop-val" title="Permalink to this headline">#</a></h3>
 <p>Close Timer</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -998,7 +996,7 @@ data Message Received Return Message Parameters</p>
 </section>
 <hr class="docutils"/>
 <section id="sys-timerstopall-fnc">
-<h3>sys.timerStopAll(fnc)<a class="headerlink" href="#sys-timerstopall-fnc" title="永久链接至标题">#</a></h3>
+<h3>sys.timerStopAll(fnc)<a class="headerlink" href="#sys-timerstopall-fnc" title="Permalink to this headline">#</a></h3>
 <p>Turn off all timers for the same callback function</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -1028,7 +1026,7 @@ data Message Received Return Message Parameters</p>
 </section>
 <hr class="docutils"/>
 <section id="sys-timerstart-fnc-ms">
-<h3>sys.timerStart(fnc, ms, …)<a class="headerlink" href="#sys-timerstart-fnc-ms" title="永久链接至标题">#</a></h3>
+<h3>sys.timerStart(fnc, ms, …)<a class="headerlink" href="#sys-timerstart-fnc-ms" title="Permalink to this headline">#</a></h3>
 <p>Start a timer</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -1062,7 +1060,7 @@ data Message Received Return Message Parameters</p>
 </section>
 <hr class="docutils"/>
 <section id="sys-timerloopstart-fnc-ms">
-<h3>sys.timerLoopStart(fnc, ms, …)<a class="headerlink" href="#sys-timerloopstart-fnc-ms" title="永久链接至标题">#</a></h3>
+<h3>sys.timerLoopStart(fnc, ms, …)<a class="headerlink" href="#sys-timerloopstart-fnc-ms" title="Permalink to this headline">#</a></h3>
 <p>Start a cycle timer</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -1096,7 +1094,7 @@ data Message Received Return Message Parameters</p>
 </section>
 <hr class="docutils"/>
 <section id="sys-timerisactive-val">
-<h3>sys.timerIsActive(val, …)<a class="headerlink" href="#sys-timerisactive-val" title="永久链接至标题">#</a></h3>
+<h3>sys.timerIsActive(val, …)<a class="headerlink" href="#sys-timerisactive-val" title="Permalink to this headline">#</a></h3>
 <p>Determine whether a timer is on</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -1127,7 +1125,7 @@ data Message Received Return Message Parameters</p>
 </section>
 <hr class="docutils"/>
 <section id="sys-subscribe-id-callback">
-<h3>sys.subscribe(id, callback)<a class="headerlink" href="#sys-subscribe-id-callback" title="永久链接至标题">#</a></h3>
+<h3>sys.subscribe(id, callback)<a class="headerlink" href="#sys-subscribe-id-callback" title="Permalink to this headline">#</a></h3>
 <p>Subscribe to messages</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -1160,7 +1158,7 @@ data Message Received Return Message Parameters</p>
 </section>
 <hr class="docutils"/>
 <section id="sys-unsubscribe-id-callback">
-<h3>sys.unsubscribe(id, callback)<a class="headerlink" href="#sys-unsubscribe-id-callback" title="永久链接至标题">#</a></h3>
+<h3>sys.unsubscribe(id, callback)<a class="headerlink" href="#sys-unsubscribe-id-callback" title="Permalink to this headline">#</a></h3>
 <p>Unsubscribe message</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -1193,7 +1191,7 @@ data Message Received Return Message Parameters</p>
 </section>
 <hr class="docutils"/>
 <section id="sys-publish">
-<h3>sys.publish(…)<a class="headerlink" href="#sys-publish" title="永久链接至标题">#</a></h3>
+<h3>sys.publish(…)<a class="headerlink" href="#sys-publish" title="Permalink to this headline">#</a></h3>
 <p>Publish internal messages, stored in the internal message queue</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -1223,7 +1221,7 @@ data Message Received Return Message Parameters</p>
 </section>
 <hr class="docutils"/>
 <section id="sys-run">
-<h3>sys.run()<a class="headerlink" href="#sys-run" title="永久链接至标题">#</a></h3>
+<h3>sys.run()<a class="headerlink" href="#sys-run" title="Permalink to this headline">#</a></h3>
 <p>run()Obtain core messages from the bottom layer and process related messages in time, query timers and schedule successfully registered task threads to run and suspend.</p>
 <ul class="simple">
 <li><p>Parameters</p></li>
@@ -1269,13 +1267,13 @@ data Message Received Return Message Parameters</p>
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1293,7 +1291,7 @@ data Message Received Return Message Parameters</p>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1348,7 +1346,6 @@ data Message Received Return Message Parameters</p>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

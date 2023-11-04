@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="🧷 Peripheral expansion data" href="../peripherals/index.html" /><link rel="prev" title="Equipment Support/Supported Devices" href="supported.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="🧷 Peripheral expansion data" href="../peripherals/index.html" /><link rel="prev" title="Equipment Support/Supported Devices" href="supported.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>FAQ List - LuatOS 文档</title>
+        <title>FAQ List - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,207 +688,207 @@
         </div>
         <article role="main">
           <section id="faq-list">
-<h1>FAQ List<a class="headerlink" href="#faq-list" title="永久链接至标题">#</a></h1>
+<h1>FAQ List<a class="headerlink" href="#faq-list" title="Permalink to this headline">#</a></h1>
 <section id="air101-there-are-several-serial-ports">
-<h2>Air101 There are several serial ports<a class="headerlink" href="#air101-there-are-several-serial-ports" title="永久链接至标题">#</a></h2>
+<h2>Air101 There are several serial ports<a class="headerlink" href="#air101-there-are-several-serial-ports" title="Permalink to this headline">#</a></h2>
 <p>A total of 5 serial ports, of which serial port 0 is used for downloading and debugging, and 4 channels are available.</p>
 </section>
 <section id="air101-what-is-the-id-of-i2c-of-the-development-board">
-<h2>Air101 What is the ID of I2C of the development board<a class="headerlink" href="#air101-what-is-the-id-of-i2c-of-the-development-board" title="永久链接至标题">#</a></h2>
+<h2>Air101 What is the ID of I2C of the development board<a class="headerlink" href="#air101-what-is-the-id-of-i2c-of-the-development-board" title="Permalink to this headline">#</a></h2>
 <p>See demo is used 0</p>
 </section>
 <section id="air101-does-it-support-single-bus">
-<h2>Air101 Does it support single bus?<a class="headerlink" href="#air101-does-it-support-single-bus" title="永久链接至标题">#</a></h2>
+<h2>Air101 Does it support single bus?<a class="headerlink" href="#air101-does-it-support-single-bus" title="Permalink to this headline">#</a></h2>
 <p>Support <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/sensor.html#sensor">sensor-sensor action library</a></p>
 </section>
 <section id="air101-can-you-simulate-the-mouse-and-keyboard">
-<h2>Air101 Can you simulate the mouse and keyboard?<a class="headerlink" href="#air101-can-you-simulate-the-mouse-and-keyboard" title="永久链接至标题">#</a></h2>
+<h2>Air101 Can you simulate the mouse and keyboard?<a class="headerlink" href="#air101-can-you-simulate-the-mouse-and-keyboard" title="Permalink to this headline">#</a></h2>
 <p>No.</p>
 </section>
 <section id="air101-do-you-want-to-install-drivers-for-the-equipment">
-<h2>Air101 Do you want to install drivers for the equipment<a class="headerlink" href="#air101-do-you-want-to-install-drivers-for-the-equipment" title="永久链接至标题">#</a></h2>
+<h2>Air101 Do you want to install drivers for the equipment<a class="headerlink" href="#air101-do-you-want-to-install-drivers-for-the-equipment" title="Permalink to this headline">#</a></h2>
 <p>ch340</p>
 </section>
 <section id="air101-download-unsuccessful">
-<h2>Air101 Download unsuccessful<a class="headerlink" href="#air101-download-unsuccessful" title="永久链接至标题">#</a></h2>
+<h2>Air101 Download unsuccessful<a class="headerlink" href="#air101-download-unsuccessful" title="Permalink to this headline">#</a></h2>
 <p>Check serial port printing, select the corresponding serial port, baud rate setting bit：921600
 [Burn Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html “Burn Tutorial””)</p>
 </section>
 <section id="air101-why-did-i-modify-the-gpio-routine-after-burning-it-in-the-indicator-light-is-the-same-as-the-original-one-there-is-no-change-it-is-not-possible-to-download-the-script-alone">
-<h2>Air101 Why did I modify the gpio routine? After burning it in, the indicator light is the same as the original one. There is no change. It is not possible to download the script alone.<a class="headerlink" href="#air101-why-did-i-modify-the-gpio-routine-after-burning-it-in-the-indicator-light-is-the-same-as-the-original-one-there-is-no-change-it-is-not-possible-to-download-the-script-alone" title="永久链接至标题">#</a></h2>
+<h2>Air101 Why did I modify the gpio routine? After burning it in, the indicator light is the same as the original one. There is no change. It is not possible to download the script alone.<a class="headerlink" href="#air101-why-did-i-modify-the-gpio-routine-after-burning-it-in-the-indicator-light-is-the-same-as-the-original-one-there-is-no-change-it-is-not-possible-to-download-the-script-alone" title="Permalink to this headline">#</a></h2>
 <p>Download to ensure that the luatools installation path, project path, firmware path does not appear Chinese \space \special symbols</p>
 </section>
 <section id="air101-do-the-bosses-have-air101-information-i-don-t-think-the-community-seems-to-have-it-yet">
-<h2>Air101 Do the bosses have air101 information? I don’t think the community seems to have it yet.<a class="headerlink" href="#air101-do-the-bosses-have-air101-information-i-don-t-think-the-community-seems-to-have-it-yet" title="永久链接至标题">#</a></h2>
+<h2>Air101 Do the bosses have air101 information? I don’t think the community seems to have it yet.<a class="headerlink" href="#air101-do-the-bosses-have-air101-information-i-don-t-think-the-community-seems-to-have-it-yet" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://doc.openluat.com/article/3508">Air101 Data summary (software and hardware data, firmware download, technical support)</a></p>
 </section>
 <section id="air101-can-the-delay-of-us-be-realized">
-<h2>Air101 Can the delay of us be realized<a class="headerlink" href="#air101-can-the-delay-of-us-be-realized" title="永久链接至标题">#</a></h2>
+<h2>Air101 Can the delay of us be realized<a class="headerlink" href="#air101-can-the-delay-of-us-be-realized" title="Permalink to this headline">#</a></h2>
 <p>Yes, <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/statem.html">statem-SM state machine</a></p>
 </section>
 <section id="air101-support-nvm-function">
-<h2>Air101 support nvm function<a class="headerlink" href="#air101-support-nvm-function" title="永久链接至标题">#</a></h2>
+<h2>Air101 support nvm function<a class="headerlink" href="#air101-support-nvm-function" title="Permalink to this headline">#</a></h2>
 <p>There are alternative libraries fdb <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/fdb.html">fdb-kv database (based on FlashDB)</a></p>
 </section>
 <section id="air101-support-ink-screen">
-<h2>Air101 Support ink screen<a class="headerlink" href="#air101-support-ink-screen" title="永久链接至标题">#</a></h2>
+<h2>Air101 Support ink screen<a class="headerlink" href="#air101-support-ink-screen" title="Permalink to this headline">#</a></h2>
 <p>Support,[eink-ink screen operation library](https://openluat.github.io/luatos-wiki-en/api/eink.html “eink-ink screen operation library””)</p>
 </section>
 <section id="does-air101-support-it-debug">
-<h2>Does Air101 support it?debug<a class="headerlink" href="#does-air101-support-it-debug" title="永久链接至标题">#</a></h2>
+<h2>Does Air101 support it?debug<a class="headerlink" href="#does-air101-support-it-debug" title="Permalink to this headline">#</a></h2>
 <p>ide Single-step debugging of 101 is temporarily not supported.</p>
 </section>
 <section id="bit-how-to-use-air101">
-<h2>bit How to use Air101?<a class="headerlink" href="#bit-how-to-use-air101" title="永久链接至标题">#</a></h2>
+<h2>bit How to use Air101?<a class="headerlink" href="#bit-how-to-use-air101" title="Permalink to this headline">#</a></h2>
 <p>101 It’s 5.3 grammar, just use it directly.</p>
 </section>
 <section id="air101-the-lpmem-library-is-not-used">
-<h2>Air101 The lpmem library is not used.<a class="headerlink" href="#air101-the-lpmem-library-is-not-used" title="永久链接至标题">#</a></h2>
+<h2>Air101 The lpmem library is not used.<a class="headerlink" href="#air101-the-lpmem-library-is-not-used" title="Permalink to this headline">#</a></h2>
 <p>lpmem library currently only 302 have</p>
 </section>
 <section id="air101-can-i-use-the-ili9341-screen-with-touch">
-<h2>Air101 Can I use the ILI9341 screen with touch?<a class="headerlink" href="#air101-can-i-use-the-ili9341-screen-with-touch" title="永久链接至标题">#</a></h2>
+<h2>Air101 Can I use the ILI9341 screen with touch?<a class="headerlink" href="#air101-can-i-use-the-ili9341-screen-with-touch" title="Permalink to this headline">#</a></h2>
 <p>Can, refer to DEMO to modify initialization parameters <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/chips/air101/Air101.html#lcd">lcd</a></p>
 </section>
 <section id="air101-can-i-plug-in-wireless-devices-with-spi-interface">
-<h2>Air101 Can I plug in wireless devices with spi interface?<a class="headerlink" href="#air101-can-i-plug-in-wireless-devices-with-spi-interface" title="永久链接至标题">#</a></h2>
+<h2>Air101 Can I plug in wireless devices with spi interface?<a class="headerlink" href="#air101-can-i-plug-in-wireless-devices-with-spi-interface" title="Permalink to this headline">#</a></h2>
 <p>Yes，<a class="reference external" href="https://openluat.github.io/luatos-wiki-en/chips/air101/Air101.html#spi">SPI</a></p>
 </section>
 <section id="air101-did-the-spi-screen-above-run-through">
-<h2>Air101 Did the SPI screen above run through<a class="headerlink" href="#air101-did-the-spi-screen-above-run-through" title="永久链接至标题">#</a></h2>
+<h2>Air101 Did the SPI screen above run through<a class="headerlink" href="#air101-did-the-spi-screen-above-run-through" title="Permalink to this headline">#</a></h2>
 <p>have reference LCD DEMO <a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/lcd">DEMO/LCD</a></p>
 </section>
 <section id="air103-is-there-a-connection-method-for-bluetooth-large-screen-4-3-and-7-inches">
-<h2>Air103 Is there a connection method for Bluetooth large screen (4.3 and 7 inches)<a class="headerlink" href="#air103-is-there-a-connection-method-for-bluetooth-large-screen-4-3-and-7-inches" title="永久链接至标题">#</a></h2>
+<h2>Air103 Is there a connection method for Bluetooth large screen (4.3 and 7 inches)<a class="headerlink" href="#air103-is-there-a-connection-method-for-bluetooth-large-screen-4-3-and-7-inches" title="Permalink to this headline">#</a></h2>
 <p>103 Can’t support such a big screen</p>
 </section>
 <section id="air103-is-there-a-pin-for-the-external-real-time-clock-crystal-rtc">
-<h2>Air103 Is there a pin for the external real-time clock crystal (RTC)?<a class="headerlink" href="#air103-is-there-a-pin-for-the-external-real-time-clock-crystal-rtc" title="永久链接至标题">#</a></h2>
+<h2>Air103 Is there a pin for the external real-time clock crystal (RTC)?<a class="headerlink" href="#air103-is-there-a-pin-for-the-external-real-time-clock-crystal-rtc" title="Permalink to this headline">#</a></h2>
 <p>It has been done internally. With this function, there is no external pin.</p>
 </section>
 <section id="air103-brush-101-lighting-code-no-effect-the-light-is-not-on">
-<h2>Air103 Brush 101 lighting code, no effect, the light is not on<a class="headerlink" href="#air103-brush-101-lighting-code-no-effect-the-light-is-not-on" title="永久链接至标题">#</a></h2>
+<h2>Air103 Brush 101 lighting code, no effect, the light is not on<a class="headerlink" href="#air103-brush-101-lighting-code-no-effect-the-light-is-not-on" title="Permalink to this headline">#</a></h2>
 <p>Because the GPIO of the three lamps of the 103 development board is different from that of the three lamps of the 101 development board, the 103 is 40,41 and 42 GPIO</p>
 <p><a class="reference external" href="https://doc.openluat.com/article/3674">Air103 Data Summary (Software and Hardware Data, Firmware Download, Technical Support)</a></p>
 </section>
 <section id="air105-is-the-register-manual-the-same-as-the-w800-register">
-<h2>Air105 Is the register manual the same as the W800 register?<a class="headerlink" href="#air105-is-the-register-manual-the-same-as-the-w800-register" title="永久链接至标题">#</a></h2>
+<h2>Air105 Is the register manual the same as the W800 register?<a class="headerlink" href="#air105-is-the-register-manual-the-same-as-the-w800-register" title="Permalink to this headline">#</a></h2>
 <p>Not the same</p>
 </section>
 <section id="air105-how-many-megabytes-of-network-ports-can-the-development-board-connect">
-<h2>Air105 How many megabytes of network ports can the development board connect?<a class="headerlink" href="#air105-how-many-megabytes-of-network-ports-can-the-development-board-connect" title="永久链接至标题">#</a></h2>
+<h2>Air105 How many megabytes of network ports can the development board connect?<a class="headerlink" href="#air105-how-many-megabytes-of-network-ports-can-the-development-board-connect" title="Permalink to this headline">#</a></h2>
 <p>It can be connected to 10Mbps or 100Mbps, depending on the capability of the external spi Ethernet conversion chip, the firmware supporting Ethernet is still under development, and the maximum speed cannot be answered yet, but it is no problem to run to a few Mbps, which is enough to meet the general Ethernet iot application.</p>
 </section>
 <section id="soc-can-the-development-version-of-the-bluetooth-antenna-be-introduced">
-<h2>soc Can the development version of the Bluetooth antenna be introduced<a class="headerlink" href="#soc-can-the-development-version-of-the-bluetooth-antenna-be-introduced" title="永久链接至标题">#</a></h2>
+<h2>soc Can the development version of the Bluetooth antenna be introduced<a class="headerlink" href="#soc-can-the-development-version-of-the-bluetooth-antenna-be-introduced" title="Permalink to this headline">#</a></h2>
 <p>Can, 101 8 feet, 103 nc feet, self-flying line</p>
 </section>
 <section id="air105-how-many-pixels-of-the-camera-is-supported-and-what-type-of-camera-interface-is-it-does-the-camera-support-usb">
-<h2>Air105 How many pixels of the camera is supported, and what type of camera interface is it? Does the camera support usb<a class="headerlink" href="#air105-how-many-pixels-of-the-camera-is-supported-and-what-type-of-camera-interface-is-it-does-the-camera-support-usb" title="永久链接至标题">#</a></h2>
+<h2>Air105 How many pixels of the camera is supported, and what type of camera interface is it? Does the camera support usb<a class="headerlink" href="#air105-how-many-pixels-of-the-camera-is-supported-and-what-type-of-camera-interface-is-it-does-the-camera-support-usb" title="Permalink to this headline">#</a></h2>
 <p>Not yet, currently 640x 480,DCIM interface</p>
 </section>
 <section id="air105-can-it-be-used-in-industrial-occasions-no-can-it-drive-stepping-motor-with-can-port-and-multi-periodic">
-<h2>Air105 Can it be used in industrial occasions? No, can it drive stepping motor, with can port and multi-periodic<a class="headerlink" href="#air105-can-it-be-used-in-industrial-occasions-no-can-it-drive-stepping-motor-with-can-port-and-multi-periodic" title="永久链接至标题">#</a></h2>
+<h2>Air105 Can it be used in industrial occasions? No, can it drive stepping motor, with can port and multi-periodic<a class="headerlink" href="#air105-can-it-be-used-in-industrial-occasions-no-can-it-drive-stepping-motor-with-can-port-and-multi-periodic" title="Permalink to this headline">#</a></h2>
 <p>No motor, no can, multiple timers</p>
 </section>
 <section id="air105-what-is-the-12m-crystal-oscillator-error-inside-the-development-board-and-if-uart-or-usb-is-used-is-it-necessary-to-connect-an-external-crystal-oscillator">
-<h2>Air105 What is the 12M crystal oscillator error inside the development board, and if UART or USB is used, is it necessary to connect an external crystal oscillator?<a class="headerlink" href="#air105-what-is-the-12m-crystal-oscillator-error-inside-the-development-board-and-if-uart-or-usb-is-used-is-it-necessary-to-connect-an-external-crystal-oscillator" title="永久链接至标题">#</a></h2>
+<h2>Air105 What is the 12M crystal oscillator error inside the development board, and if UART or USB is used, is it necessary to connect an external crystal oscillator?<a class="headerlink" href="#air105-what-is-the-12m-crystal-oscillator-error-inside-the-development-board-and-if-uart-or-usb-is-used-is-it-necessary-to-connect-an-external-crystal-oscillator" title="Permalink to this headline">#</a></h2>
 <p>The deviation is relatively large at high and low temperatures, so it is not recommended to save. The crystal oscillator error of 12M is 2%</p>
 </section>
 <section id="air101-will-it-be-very-inefficient-to-do-algorithms-like-fft">
-<h2>Air101 Will it be very inefficient to do algorithms like fft?<a class="headerlink" href="#air101-will-it-be-very-inefficient-to-do-algorithms-like-fft" title="永久链接至标题">#</a></h2>
+<h2>Air101 Will it be very inefficient to do algorithms like fft?<a class="headerlink" href="#air101-will-it-be-very-inefficient-to-do-algorithms-like-fft" title="Permalink to this headline">#</a></h2>
 <p>101 with dsp, with hardware fft acceleration</p>
 </section>
 <section id="scm-module-is-there-any-support-for-tts-voice">
-<h2>SCM module, is there any support for TTS voice<a class="headerlink" href="#scm-module-is-there-any-support-for-tts-voice" title="永久链接至标题">#</a></h2>
+<h2>SCM module, is there any support for TTS voice<a class="headerlink" href="#scm-module-is-there-any-support-for-tts-voice" title="Permalink to this headline">#</a></h2>
 <p>without</p>
 </section>
 <section id="air105-what-model-and-how-many-pixels-is-the-camera-sent-by-the-development-board">
-<h2>Air105 What model and how many pixels is the camera sent by the development board?<a class="headerlink" href="#air105-what-model-and-how-many-pixels-is-the-camera-sent-by-the-development-board" title="永久链接至标题">#</a></h2>
+<h2>Air105 What model and how many pixels is the camera sent by the development board?<a class="headerlink" href="#air105-what-model-and-how-many-pixels-is-the-camera-sent-by-the-development-board" title="Permalink to this headline">#</a></h2>
 <p>gc032a，30w Pixel</p>
 </section>
 <section id="air105-brush-the-firmware-just-sent-print-garbled-code">
-<h2>Air105 Brush the firmware just sent, print garbled code<a class="headerlink" href="#air105-brush-the-firmware-just-sent-print-garbled-code" title="永久链接至标题">#</a></h2>
+<h2>Air105 Brush the firmware just sent, print garbled code<a class="headerlink" href="#air105-brush-the-firmware-just-sent-print-garbled-code" title="Permalink to this headline">#</a></h2>
 <p>The baud rate needs to be set 1500000</p>
 </section>
 <section id="air105-or-will-the-10x-series-open-the-register-manual">
-<h2>Air105 Or will the 10x series open the register manual?<a class="headerlink" href="#air105-or-will-the-10x-series-open-the-register-manual" title="永久链接至标题">#</a></h2>
+<h2>Air105 Or will the 10x series open the register manual?<a class="headerlink" href="#air105-or-will-the-10x-series-open-the-register-manual" title="Permalink to this headline">#</a></h2>
 <p>Will</p>
 </section>
 <section id="lvgl-img-set-src-img1-img-imgbtn-green-png-is-this-not-good-either">
-<h2>lvgl.img_set_src(img1, “/img/imgbtn_green.png”); Is this not good either?<a class="headerlink" href="#lvgl-img-set-src-img1-img-imgbtn-green-png-is-this-not-good-either" title="永久链接至标题">#</a></h2>
+<h2>lvgl.img_set_src(img1, “/img/imgbtn_green.png”); Is this not good either?<a class="headerlink" href="#lvgl-img-set-src-img1-img-imgbtn-green-png-is-this-not-good-either" title="Permalink to this headline">#</a></h2>
 <p>/luadb/xxxx.png</p>
 </section>
 <section id="air105-can-the-development-board-read-sd-card">
-<h2>Air105 Can the development board read SD card?<a class="headerlink" href="#air105-can-the-development-board-read-sd-card" title="永久链接至标题">#</a></h2>
+<h2>Air105 Can the development board read SD card?<a class="headerlink" href="#air105-can-the-development-board-read-sd-card" title="Permalink to this headline">#</a></h2>
 <p>Can, through spi, slower than sdio</p>
 </section>
 <section id="air105-support-can-bus">
-<h2>Air105 support can bus<a class="headerlink" href="#air105-support-can-bus" title="永久链接至标题">#</a></h2>
+<h2>Air105 support can bus<a class="headerlink" href="#air105-support-can-bus" title="Permalink to this headline">#</a></h2>
 <p>Not supported, to plug-in</p>
 </section>
 <section id="rtos-sdk-do-you-support-it-and-provide-relevant-information">
-<h2>rtos-sdk Do you support it and provide relevant information?<a class="headerlink" href="#rtos-sdk-do-you-support-it-and-provide-relevant-information" title="永久链接至标题">#</a></h2>
+<h2>rtos-sdk Do you support it and provide relevant information?<a class="headerlink" href="#rtos-sdk-do-you-support-it-and-provide-relevant-information" title="Permalink to this headline">#</a></h2>
 <p>esp32 Hizhou only provides LuatOS support, and other information can be directly seen from Lexin’s original factory.</p>
 </section>
 <section id="esp32-can-you-connect-lcd-expansion-board-and-1-8-inch-display-screen">
-<h2>ESP32 Can you connect, LCD expansion board and 1.8 inch display screen<a class="headerlink" href="#esp32-can-you-connect-lcd-expansion-board-and-1-8-inch-display-screen" title="永久链接至标题">#</a></h2>
+<h2>ESP32 Can you connect, LCD expansion board and 1.8 inch display screen<a class="headerlink" href="#esp32-can-you-connect-lcd-expansion-board-and-1-8-inch-display-screen" title="Permalink to this headline">#</a></h2>
 <p>Yes</p>
 </section>
 <section id="air105-what-is-the-turnover-speed-of-gpio-software-under-the-highest-frequency">
-<h2>Air105 What is the turnover speed of gpio software under the highest frequency?<a class="headerlink" href="#air105-what-is-the-turnover-speed-of-gpio-software-under-the-highest-frequency" title="永久链接至标题">#</a></h2>
+<h2>Air105 What is the turnover speed of gpio software under the highest frequency?<a class="headerlink" href="#air105-what-is-the-turnover-speed-of-gpio-software-under-the-highest-frequency" title="Permalink to this headline">#</a></h2>
 <p>3M</p>
 </section>
 <section id="fdb-will-the-previously-saved-data-be-emptied-for-each-initialization">
-<h2>fdb Will the previously saved data be emptied for each initialization?<a class="headerlink" href="#fdb-will-the-previously-saved-data-be-emptied-for-each-initialization" title="永久链接至标题">#</a></h2>
+<h2>fdb Will the previously saved data be emptied for each initialization?<a class="headerlink" href="#fdb-will-the-previously-saved-data-be-emptied-for-each-initialization" title="Permalink to this headline">#</a></h2>
 <p>No.</p>
 </section>
 <section id="air105-can-it-be-developed-with-keil">
-<h2>Air105 Can it be developed with keil?<a class="headerlink" href="#air105-can-it-be-developed-with-keil" title="永久链接至标题">#</a></h2>
+<h2>Air105 Can it be developed with keil?<a class="headerlink" href="#air105-can-it-be-developed-with-keil" title="Permalink to this headline">#</a></h2>
 <p>Unable to debug peripherals with keil’s debug, no SVD file</p>
 </section>
 <section id="what-features-are-supported-by-the-default-firmware">
-<h2>What features are supported by the default firmware<a class="headerlink" href="#what-features-are-supported-by-the-default-firmware" title="永久链接至标题">#</a></h2>
+<h2>What features are supported by the default firmware<a class="headerlink" href="#what-features-are-supported-by-the-default-firmware" title="Permalink to this headline">#</a></h2>
 <p>Can decompress soc to see luat_conf_bsp.h</p>
 </section>
 <section id="air105-can-you-run-freertos">
-<h2>Air105 Can you run?Freertos<a class="headerlink" href="#air105-can-you-run-freertos" title="永久链接至标题">#</a></h2>
+<h2>Air105 Can you run?Freertos<a class="headerlink" href="#air105-can-you-run-freertos" title="Permalink to this headline">#</a></h2>
 <p>105 Now the open csdk is running freertos</p>
 </section>
 <section id="air101-can-i-get-the-uuid-of-the-chip">
-<h2>Air101 Can I get the uuid of the chip?<a class="headerlink" href="#air101-can-i-get-the-uuid-of-the-chip" title="永久链接至标题">#</a></h2>
+<h2>Air101 Can I get the uuid of the chip?<a class="headerlink" href="#air101-can-i-get-the-uuid-of-the-chip" title="Permalink to this headline">#</a></h2>
 <p>mcu.unique_id()</p>
 </section>
 <section id="lcd-how-to-clear-the-screen-at-the-specified-position">
-<h2>LCD How to clear the screen at the specified position<a class="headerlink" href="#lcd-how-to-clear-the-screen-at-the-specified-position" title="永久链接至标题">#</a></h2>
+<h2>LCD How to clear the screen at the specified position<a class="headerlink" href="#lcd-how-to-clear-the-screen-at-the-specified-position" title="Permalink to this headline">#</a></h2>
 <p>Specified position brush Specified color</p>
 </section>
 <section id="lcd-drawline-20-20-150-20-0x001f-where-can-i-find-this-color-the-standard-rgb-is-3-bytes-and-the-color-here-is-2-bytes">
-<h2>lcd.drawLine(20,20,150,20,0x001F))Where can I find this color? The standard RGB is 3 bytes, and the color here is 2 bytes.<a class="headerlink" href="#lcd-drawline-20-20-150-20-0x001f-where-can-i-find-this-color-the-standard-rgb-is-3-bytes-and-the-color-here-is-2-bytes" title="永久链接至标题">#</a></h2>
+<h2>lcd.drawLine(20,20,150,20,0x001F))Where can I find this color? The standard RGB is 3 bytes, and the color here is 2 bytes.<a class="headerlink" href="#lcd-drawline-20-20-150-20-0x001f-where-can-i-find-this-color-the-standard-rgb-is-3-bytes-and-the-color-here-is-2-bytes" title="Permalink to this headline">#</a></h2>
 <p>rgb565</p>
 </section>
 <section id="air103-what-is-u4-reserved-on-the-back-of-the-board">
-<h2>Air103 What is u4 reserved on the back of the board?<a class="headerlink" href="#air103-what-is-u4-reserved-on-the-back-of-the-board" title="永久链接至标题">#</a></h2>
+<h2>Air103 What is u4 reserved on the back of the board?<a class="headerlink" href="#air103-what-is-u4-reserved-on-the-back-of-the-board" title="Permalink to this headline">#</a></h2>
 <p>psram</p>
 </section>
 <section id="air105-which-screen-does-camera-match-with-a-sample-program">
-<h2>Air105 Which screen does camera match with a sample program<a class="headerlink" href="#air105-which-screen-does-camera-match-with-a-sample-program" title="永久链接至标题">#</a></h2>
+<h2>Air105 Which screen does camera match with a sample program<a class="headerlink" href="#air105-which-screen-does-camera-match-with-a-sample-program" title="Permalink to this headline">#</a></h2>
 <p>2.4 Inch TFT LCD 240X320 GC9306 SPI serial port screen</p>
 </section>
 <section id="air103-and-105-support-multi-threading">
-<h2>Air103 And 105 support multi-threading<a class="headerlink" href="#air103-and-105-support-multi-threading" title="永久链接至标题">#</a></h2>
+<h2>Air103 And 105 support multi-threading<a class="headerlink" href="#air103-and-105-support-multi-threading" title="Permalink to this headline">#</a></h2>
 <p>RTOS support for multitasking</p>
 </section>
 <section id="st7735-v1-1-the-screen-displays-the-white-edge">
-<h2>ST7735 V1.1 The screen displays the white edge<a class="headerlink" href="#st7735-v1-1-the-screen-displays-the-white-edge" title="永久链接至标题">#</a></h2>
+<h2>ST7735 V1.1 The screen displays the white edge<a class="headerlink" href="#st7735-v1-1-the-screen-displays-the-white-edge" title="Permalink to this headline">#</a></h2>
 <p>Just set the screen drive offset to 0（xoffset = 0,yoffset = 0）</p>
 </section>
 <section id="air105-what-is-the-maximum-frequency-of-the-pwm">
-<h2>Air105 What is the maximum frequency of the PWM<a class="headerlink" href="#air105-what-is-the-maximum-frequency-of-the-pwm" title="永久链接至标题">#</a></h2>
+<h2>Air105 What is the maximum frequency of the PWM<a class="headerlink" href="#air105-what-is-the-maximum-frequency-of-the-pwm" title="Permalink to this headline">#</a></h2>
 <p>The limit is 26M, the highest = main frequency /8</p>
 </section>
 <section id="air105-support-dual-adc-mode-does-not">
-<h2>Air105 support dual adc mode does not<a class="headerlink" href="#air105-support-dual-adc-mode-does-not" title="永久链接至标题">#</a></h2>
+<h2>Air105 support dual adc mode does not<a class="headerlink" href="#air105-support-dual-adc-mode-does-not" title="Permalink to this headline">#</a></h2>
 <p>Not supported, only 1 ADC controller</p>
 </section>
 </section>
@@ -921,13 +919,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -945,7 +943,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1026,7 +1024,6 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

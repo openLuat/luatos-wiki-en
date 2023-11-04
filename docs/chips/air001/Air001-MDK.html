@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Air001 Arduino-based user manual" href="Air001-Arduino.html" /><link rel="prev" title="Hardware Data" href="hardware.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Air001 Arduino-based user manual" href="Air001-Arduino.html" /><link rel="prev" title="Hardware Data" href="hardware.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Air001 Keil MDK-based user manual - LuatOS 文档</title>
+        <title>Air001 Keil MDK-based user manual - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,14 +688,14 @@
         </div>
         <article role="main">
           <section id="air001-keil-mdk-based-user-manual">
-<h1>Air001 Keil MDK-based user manual<a class="headerlink" href="#air001-keil-mdk-based-user-manual" title="永久链接至标题">#</a></h1>
+<h1>Air001 Keil MDK-based user manual<a class="headerlink" href="#air001-keil-mdk-based-user-manual" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>You can <a class="reference external" href="https://cdn.openluat-luatcommunity.openluat.com/attachment/20230721175456214_HAL_LL%E5%87%BD%E6%95%B0%E5%BA%93%E8%AF%B4%E6%98%8E%E6%89%8B%E5%86%8C%20v1.0.0.pdf">get the HAL_LL Library Instruction Manual here</a></p>
 <p>SWD Max Clock needs to be manually set to 100KHz or lower when burning.</p>
 </div>
 <section id="background">
-<h2>1. background<a class="headerlink" href="#background" title="永久链接至标题">#</a></h2>
+<h2>1. background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Background: This document mainly solves the problems related to the construction of Keil MDK integrated development environment for Air001 chip, and demonstrates by creating a new project to light up LED.</p></li>
 <li><p>Technical positioning: junior/intermediate/advanced</p></li>
@@ -705,45 +703,45 @@
 </ul>
 </section>
 <section id="the-hal-library-environment-to-build-and-the-following-ll-library-environment-to-build-either">
-<h2>2. the HAL library environment to build (and the following LL library environment to build either）<a class="headerlink" href="#the-hal-library-environment-to-build-and-the-following-ll-library-environment-to-build-either" title="永久链接至标题">#</a></h2>
+<h2>2. the HAL library environment to build (and the following LL library environment to build either）<a class="headerlink" href="#the-hal-library-environment-to-build-and-the-following-ll-library-environment-to-build-either" title="Permalink to this headline">#</a></h2>
 <section id="preparations">
-<h3>Preparations<a class="headerlink" href="#preparations" title="永久链接至标题">#</a></h3>
+<h3>Preparations<a class="headerlink" href="#preparations" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install MDK5, the specific method please Baidu, after installation need to activate to compile large files</p></li>
 <li><p>Download and install the Air001 chip SDK：<a class="reference external" href="https://gitee.com/openLuat/luatos-soc-air001">https://gitee.com/openLuat/luatos-soc-air001</a></p></li>
 </ol>
 </section>
 <section id="install-support-package">
-<h3>Install Support Package<a class="headerlink" href="#install-support-package" title="永久链接至标题">#</a></h3>
+<h3>Install Support Package<a class="headerlink" href="#install-support-package" title="Permalink to this headline">#</a></h3>
 <p>Find the latest version of the pack file in the PACK folder and double-click to install it. After installation, you can see the Air001 device under the Generic of keil device list.</p>
 <p><img alt="" src="../../_images/2023-05-08-19-33-22.png"/></p>
 </section>
 <section id="new-construction">
-<h3>New construction<a class="headerlink" href="#new-construction" title="永久链接至标题">#</a></h3>
+<h3>New construction<a class="headerlink" href="#new-construction" title="Permalink to this headline">#</a></h3>
 <section id="x00-new-construction">
-<h4>0x00 New construction<a class="headerlink" href="#x00-new-construction" title="永久链接至标题">#</a></h4>
+<h4>0x00 New construction<a class="headerlink" href="#x00-new-construction" title="Permalink to this headline">#</a></h4>
 <p>Click on the menu bar Project-&gt;New μVision Project</p>
 <p><img alt="" src="../../_images/2023-05-08-19-34-46.png"/></p>
 <p>Create a folder and project name, and select the path according to your actual choice.</p>
 <p><img alt="" src="../../_images/2023-05-08-19-35-28.png"/></p>
 </section>
 <section id="x01-select-device">
-<h4>0x01 Select device<a class="headerlink" href="#x01-select-device" title="永久链接至标题">#</a></h4>
+<h4>0x01 Select device<a class="headerlink" href="#x01-select-device" title="Permalink to this headline">#</a></h4>
 <p>Select AIR001 in the AIR001 Series under AirM2M in the device list AIR001Dev</p>
 <p><img alt="" src="../../_images/2023-05-08-19-34-46.png"/></p>
 </section>
 <section id="x02-adding-cmsis-core-and-startup-files">
-<h4>0x02 Adding CMSIS CORE and Startup Files<a class="headerlink" href="#x02-adding-cmsis-core-and-startup-files" title="永久链接至标题">#</a></h4>
+<h4>0x02 Adding CMSIS CORE and Startup Files<a class="headerlink" href="#x02-adding-cmsis-core-and-startup-files" title="Permalink to this headline">#</a></h4>
 <p>Check the CORE under CMSIS and the Startup under Device to automatically configure the startup file.</p>
 <p><img alt="" src="../../_images/2023-05-08-19-37-00.png"/></p>
 </section>
 <section id="x03-add-hal-library">
-<h4>0x03 Add HAL Library<a class="headerlink" href="#x03-add-hal-library" title="永久链接至标题">#</a></h4>
+<h4>0x03 Add HAL Library<a class="headerlink" href="#x03-add-hal-library" title="Permalink to this headline">#</a></h4>
 <p>Here, we use the HAL library as an example. We need to copy the AIR001xx_HAL_Driver folder under the Libraries directory in the SDK folder to the project directory. The added project directory is like this</p>
 <p><img alt="" src="../../_images/2023-05-08-19-39-56.png"/></p>
 </section>
 <section id="x04-adding-hal-library-peripheral-source-files">
-<h4>0x04 Adding HAL Library Peripheral Source Files<a class="headerlink" href="#x04-adding-hal-library-peripheral-source-files" title="永久链接至标题">#</a></h4>
+<h4>0x04 Adding HAL Library Peripheral Source Files<a class="headerlink" href="#x04-adding-hal-library-peripheral-source-files" title="Permalink to this headline">#</a></h4>
 <p>Add the source files of the peripherals used in Keil. A minimum project based on HAL library needs to add at least<code class="docutils literal notranslate"><span class="pre">air001xx_hal_rcc.c</span></code>、<code class="docutils literal notranslate"><span class="pre">air001xx_hal_rcc_ex.c</span></code>、<code class="docutils literal notranslate"><span class="pre">air001xx_hal_pwr.c</span></code>、<code class="docutils literal notranslate"><span class="pre">air001xx_hal_pwr_ex.c</span></code>、<code class="docutils literal notranslate"><span class="pre">air001xx_hal_cortex.c</span></code>、<code class="docutils literal notranslate"><span class="pre">air001xx_hal_flash.c</span></code>、<code class="docutils literal notranslate"><span class="pre">air001xx_hal.c</span></code></p>
 <p>Add <code class="docutils literal notranslate"><span class="pre">main.c</span></code> file</p>
 <p><img alt="" src="../../_images/2023-05-08-19-43-17.png"/></p>
@@ -751,7 +749,7 @@
 <p><img alt="" src="../../_images/2023-05-08-20-57-25.png"/></p>
 </section>
 <section id="x05-add-the-hal-conf-header-file">
-<h4>0x05 Add the hal conf header file<a class="headerlink" href="#x05-add-the-hal-conf-header-file" title="永久链接至标题">#</a></h4>
+<h4>0x05 Add the hal conf header file<a class="headerlink" href="#x05-add-the-hal-conf-header-file" title="Permalink to this headline">#</a></h4>
 <p>To use the HAL library, you need to define a<code class="docutils literal notranslate"><span class="pre">air001xx_hal_conf.h</span></code>file for configuration. Here we create one</p>
 <p><img alt="" src="../../_images/2023-05-08-19-54-32.png"/></p>
 <p>A typical example is</p>
@@ -796,7 +794,7 @@
 </div>
 </section>
 <section id="x06-add-necessary-break-file">
-<h4>0x06 Add necessary break file<a class="headerlink" href="#x06-add-necessary-break-file" title="永久链接至标题">#</a></h4>
+<h4>0x06 Add necessary break file<a class="headerlink" href="#x06-add-necessary-break-file" title="Permalink to this headline">#</a></h4>
 <p>A minimum project requires at least some interrupt functions, we need to manually add</p>
 <ol class="arabic simple">
 <li><p>Create a new <code class="docutils literal notranslate"><span class="pre">air001xx_it.h</span> </code>header file, a typical example is as follows</p></li>
@@ -851,7 +849,7 @@
 </div>
 </section>
 <section id="x07-add-a-header-file-reference">
-<h4>0x07 Add a header file reference<a class="headerlink" href="#x07-add-a-header-file-reference" title="永久链接至标题">#</a></h4>
+<h4>0x07 Add a header file reference<a class="headerlink" href="#x07-add-a-header-file-reference" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p>Click the magic wand button in the toolbar to open the Options for Target window</p></li>
 </ol>
@@ -866,7 +864,7 @@
 <p><img alt="" src="../../_images/2023-05-08-20-07-27.png"/></p>
 </section>
 <section id="x08-add-macro-definition">
-<h4>0x08 Add Macro Definition<a class="headerlink" href="#x08-add-macro-definition" title="永久链接至标题">#</a></h4>
+<h4>0x08 Add Macro Definition<a class="headerlink" href="#x08-add-macro-definition" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p>Click the magic wand button in the toolbar to open the Options for Target window</p></li>
 </ol>
@@ -877,7 +875,7 @@
 <p><img alt="" src="../../_images/2023-05-08-20-07-46.png"/></p>
 </section>
 <section id="x09-modifying-the-main-c-file">
-<h4>0x09 Modifying the <code class="docutils literal notranslate"><span class="pre">main.c</span></code> File<a class="headerlink" href="#x09-modifying-the-main-c-file" title="永久链接至标题">#</a></h4>
+<h4>0x09 Modifying the <code class="docutils literal notranslate"><span class="pre">main.c</span></code> File<a class="headerlink" href="#x09-modifying-the-main-c-file" title="Permalink to this headline">#</a></h4>
 <p>A typical example is as follows</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">"air001xx_hal.h"</span><span class="cp"></span>
 
@@ -906,53 +904,53 @@
 </section>
 </section>
 <section id="faq">
-<h3>FAQ<a class="headerlink" href="#faq" title="永久链接至标题">#</a></h3>
+<h3>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">#</a></h3>
 <section id="an-error-such-as-error-l6985e-unable-to-automatically-place-at-section-system-air001xx-o-arm-at-0x20000000-with-required-base-address-0x20000000-please-manually-place-in-the-scatter-file-using-the-no-autoat-option">
-<h4>An error such as <code class="docutils literal notranslate"><span class="pre">Error:</span> <span class="pre">L6985E:</span> <span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">automatically</span> <span class="pre">place</span> <span class="pre">AT</span> <span class="pre">section</span> <span class="pre">system_air001xx.o(.ARM._at_0x20000000)</span> <span class="pre">with</span> <span class="pre">required</span> <span class="pre">base</span> <span class="pre">address</span> <span class="pre">0x20000000.</span> <span class="pre">Please</span> <span class="pre">manually</span> <span class="pre">place</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">scatter</span> <span class="pre">file</span> <span class="pre">using</span> <span class="pre">the</span> <span class="pre">--</span> <span class="pre">no_autoat</span> <span class="pre">option.</span></code><a class="headerlink" href="#an-error-such-as-error-l6985e-unable-to-automatically-place-at-section-system-air001xx-o-arm-at-0x20000000-with-required-base-address-0x20000000-please-manually-place-in-the-scatter-file-using-the-no-autoat-option" title="永久链接至标题">#</a></h4>
+<h4>An error such as <code class="docutils literal notranslate"><span class="pre">Error:</span> <span class="pre">L6985E:</span> <span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">automatically</span> <span class="pre">place</span> <span class="pre">AT</span> <span class="pre">section</span> <span class="pre">system_air001xx.o(.ARM._at_0x20000000)</span> <span class="pre">with</span> <span class="pre">required</span> <span class="pre">base</span> <span class="pre">address</span> <span class="pre">0x20000000.</span> <span class="pre">Please</span> <span class="pre">manually</span> <span class="pre">place</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">scatter</span> <span class="pre">file</span> <span class="pre">using</span> <span class="pre">the</span> <span class="pre">--</span> <span class="pre">no_autoat</span> <span class="pre">option.</span></code><a class="headerlink" href="#an-error-such-as-error-l6985e-unable-to-automatically-place-at-section-system-air001xx-o-arm-at-0x20000000-with-required-base-address-0x20000000-please-manually-place-in-the-scatter-file-using-the-no-autoat-option" title="Permalink to this headline">#</a></h4>
 <p><img alt="" src="../../_images/2023-05-08-21-44-57.png"/>
 In this case, generally speaking, there is no corresponding interrupt function/no macro required for HAL. You can manually check whether there are any errors.</p>
 </section>
 </section>
 </section>
 <section id="ll-library-environment-construction-choose-one-from-the-previous-hal-library-environment-construction">
-<h2>2. LL library environment construction (choose one from the previous HAL library environment construction）<a class="headerlink" href="#ll-library-environment-construction-choose-one-from-the-previous-hal-library-environment-construction" title="永久链接至标题">#</a></h2>
+<h2>2. LL library environment construction (choose one from the previous HAL library environment construction）<a class="headerlink" href="#ll-library-environment-construction-choose-one-from-the-previous-hal-library-environment-construction" title="Permalink to this headline">#</a></h2>
 <section id="id1">
-<h3>Preparations<a class="headerlink" href="#id1" title="永久链接至标题">#</a></h3>
+<h3>Preparations<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install MDK5, the specific method please Baidu, after installation need to activate to compile large files</p></li>
 <li><p>Download and install the Air001 chip SDK：<a class="reference external" href="https://gitee.com/openLuat/luatos-soc-air001">https://gitee.com/openLuat/luatos-soc-air001</a></p></li>
 </ol>
 </section>
 <section id="id2">
-<h3>Install Support Package<a class="headerlink" href="#id2" title="永久链接至标题">#</a></h3>
+<h3>Install Support Package<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>Find the latest version of the pack file in the PACK folder and double-click to install it. After installation, you can see the Air001 device under the Generic of keil device list.</p>
 <p><img alt="" src="../../_images/2023-05-08-19-33-22.png"/></p>
 </section>
 <section id="id3">
-<h3>New construction<a class="headerlink" href="#id3" title="永久链接至标题">#</a></h3>
+<h3>New construction<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <section id="id4">
-<h4>0x00 New construction<a class="headerlink" href="#id4" title="永久链接至标题">#</a></h4>
+<h4>0x00 New construction<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <p><img alt="" src="../../_images/2023-05-08-19-34-46.png"/></p>
 <p>Create a folder and project name, and select the path according to your actual choice.</p>
 <p><img alt="" src="../../_images/2023-05-08-19-35-28.png"/></p>
 </section>
 <section id="id5">
-<h4>0x01 Select device<a class="headerlink" href="#id5" title="永久链接至标题">#</a></h4>
+<h4>0x01 Select device<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
 <p>Select AIR001 in the AIR001 Series under AirM2M in the device list AIR001Dev</p>
 <p><img alt="" src="../../_images/2023-05-08-19-34-46.png"/></p>
 </section>
 <section id="id6">
-<h4>0x02 Adding CMSIS CORE and Startup Files<a class="headerlink" href="#id6" title="永久链接至标题">#</a></h4>
+<h4>0x02 Adding CMSIS CORE and Startup Files<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <p>Check the CORE under CMSIS and the Startup under Device to automatically configure the startup file.</p>
 <p><img alt="" src="../../_images/2023-05-08-19-37-00.png"/></p>
 </section>
 <section id="x03-add-ll-library">
-<h4>0x03 Add LL Library<a class="headerlink" href="#x03-add-ll-library" title="永久链接至标题">#</a></h4>
+<h4>0x03 Add LL Library<a class="headerlink" href="#x03-add-ll-library" title="Permalink to this headline">#</a></h4>
 <p>Here we use LL library as an example, we need to copy the AIR001xx_HAL_Driver folder under the Libraries directory in the SDK folder to the project directory, and the added project directory is probably like this</p>
 <p><img alt="" src="../../_images/2023-05-08-21-51-57.png"/></p>
 </section>
 <section id="x04-add-ll-library-peripheral-source-files">
-<h4>0x04 Add LL library peripheral source files<a class="headerlink" href="#x04-add-ll-library-peripheral-source-files" title="永久链接至标题">#</a></h4>
+<h4>0x04 Add LL library peripheral source files<a class="headerlink" href="#x04-add-ll-library-peripheral-source-files" title="Permalink to this headline">#</a></h4>
 <p>Add the source files of the peripherals used in Keil. A minimum LL library-based project needs to add at least<code class="docutils literal notranslate"><span class="pre">air001xx_ll_utils.c</span></code></p>
 <p><img alt="" src="../../_images/2023-05-08-22-32-07.png"/></p>
 <p>Add <code class="docutils literal notranslate"><span class="pre">main.c</span></code> file</p>
@@ -960,7 +958,7 @@ In this case, generally speaking, there is no corresponding interrupt function/n
 <p>This is similar after all additions are completed.</p>
 </section>
 <section id="x05-add-interrupt-function-related-files">
-<h4>0x05 Add Interrupt Function Related Files<a class="headerlink" href="#x05-add-interrupt-function-related-files" title="永久链接至标题">#</a></h4>
+<h4>0x05 Add Interrupt Function Related Files<a class="headerlink" href="#x05-add-interrupt-function-related-files" title="Permalink to this headline">#</a></h4>
 <p>LL The library relies on some interrupt functions that we need to rewrite.</p>
 <ol class="arabic simple">
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">air001_assert.h</span> </code>and <code class="docutils literal notranslate"><span class="pre">air001xx_it.h</span></code> and <code class="docutils literal notranslate"><span class="pre">main.h</span></code> files, each with roughly the following contents</p></li>
@@ -1073,7 +1071,7 @@ In this case, generally speaking, there is no corresponding interrupt function/n
 </div>
 </section>
 <section id="x06-add-a-reference-to-the-header-file">
-<h4>0x06 Add a reference to the header file<a class="headerlink" href="#x06-add-a-reference-to-the-header-file" title="永久链接至标题">#</a></h4>
+<h4>0x06 Add a reference to the header file<a class="headerlink" href="#x06-add-a-reference-to-the-header-file" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p>Click the magic wand button in the toolbar to open the Options for Target window</p></li>
 </ol>
@@ -1088,7 +1086,7 @@ In this case, generally speaking, there is no corresponding interrupt function/n
 <p><img alt="" src="../../_images/2023-05-08-22-23-15.png"/></p>
 </section>
 <section id="x07-add-chip-macro-definition">
-<h4>0x07 Add chip macro definition<a class="headerlink" href="#x07-add-chip-macro-definition" title="永久链接至标题">#</a></h4>
+<h4>0x07 Add chip macro definition<a class="headerlink" href="#x07-add-chip-macro-definition" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p>Click the magic wand button in the toolbar to open the Options for Target window</p></li>
 </ol>
@@ -1099,7 +1097,7 @@ In this case, generally speaking, there is no corresponding interrupt function/n
 <p><img alt="" src="../../_images/2023-05-08-22-23-56.png"/></p>
 </section>
 <section id="x08-modifying-the-main-c-file">
-<h4>0x08 Modifying the <code class="docutils literal notranslate"><span class="pre">main.c</span></code> File<a class="headerlink" href="#x08-modifying-the-main-c-file" title="永久链接至标题">#</a></h4>
+<h4>0x08 Modifying the <code class="docutils literal notranslate"><span class="pre">main.c</span></code> File<a class="headerlink" href="#x08-modifying-the-main-c-file" title="Permalink to this headline">#</a></h4>
 <p>A typical example is as follows</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">"main.h"</span><span class="cp"></span>
 
@@ -1174,19 +1172,19 @@ In this case, generally speaking, there is no corresponding interrupt function/n
 <p><img alt="" src="../../_images/2023-05-08-22-25-20.png"/></p>
 <p>The open source link for this sample project is<a class="reference external" href="https://gitee.com/openLuat/luatos-soc-air001/tree/master/ModuleDemo/Templates/Example_LL">https://gitee.com/openLuat/luatos-soc-air001/tree/master/ModuleDemo/Templates/Example_LL</a></p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>It should be noted that LL library is<code class="docutils literal notranslate"> <span class="pre">Header-Only</span></code>, which means that if we need to introduce a new peripheral, we only need to add the corresponding header file in<code class="docutils literal notranslate"> <span class="pre">main.h</span></code> instead of manually adding peripheral source files like HAL library</p>
 </div>
 </section>
 </section>
 </section>
 <section id="download-burn">
-<h2>3. Download Burn<a class="headerlink" href="#download-burn" title="永久链接至标题">#</a></h2>
+<h2>3. Download Burn<a class="headerlink" href="#download-burn" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Use a debugger that supports SWD to connect SWCLK(PA14) and SWDIO(PA13) of Air001 chip respectively. It is recommended to use a combined DAP-Link debugger connection.</p></li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>If it is a purchased whiteboard and a DAPLink debugger, it can be directly connected to the mother through the pin row, and the direction is shown in the figure.
 <img alt="" src="../../_images/2023-05-08-21-19-23.jpg"/></p>
 </div>
@@ -1237,13 +1235,13 @@ In this case, generally speaking, there is no corresponding interrupt function/n
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1261,7 +1259,7 @@ In this case, generally speaking, there is no corresponding interrupt function/n
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1333,7 +1331,6 @@ In this case, generally speaking, there is no corresponding interrupt function/n
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

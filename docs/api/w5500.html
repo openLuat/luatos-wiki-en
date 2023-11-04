@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="wdt - watchdog Operation Library" href="wdt.html" /><link rel="prev" title="usbapp - USB Functional operation" href="usbapp.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="wdt - watchdog Operation Library" href="wdt.html" /><link rel="prev" title="usbapp - USB Functional operation" href="usbapp.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>w5500 - w5500 Ethernet driver - LuatOS 文档</title>
+        <title>w5500 - w5500 Ethernet driver - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,18 +688,18 @@
         </div>
         <article role="main">
           <section id="w5500-w5500-ethernet-driver">
-<h1>w5500 - w5500 Ethernet driver<a class="headerlink" href="#w5500-w5500-ethernet-driver" title="永久链接至标题">#</a></h1>
+<h1>w5500 - w5500 Ethernet driver<a class="headerlink" href="#w5500-w5500-ethernet-driver" title="Permalink to this headline">#</a></h1>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Adapted</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air101/Air103</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air601</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air105</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32C3</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32S3</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air780E/Air700E</span></p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>This page document is automatically generated by <a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/luat/../components/ethernet/w5500/luat_lib_w5500.c">this file</a>. If there is any error, please submit issue or help modify pr, thank you！</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">小技巧</p>
+<p class="admonition-title">Tip</p>
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/w5500">click this link to view the demo example of w5500</a></p>
 </div>
 <section id="w5500-init-spiid-speed-cs-pin-irq-pin-rst-pin-link-pin">
-<h2>w5500.init(spiid, speed, cs_pin, irq_pin, rst_pin, link_pin)<a class="headerlink" href="#w5500-init-spiid-speed-cs-pin-irq-pin-rst-pin-link-pin" title="永久链接至标题">#</a></h2>
+<h2>w5500.init(spiid, speed, cs_pin, irq_pin, rst_pin, link_pin)<a class="headerlink" href="#w5500-init-spiid-speed-cs-pin-irq-pin-rst-pin-link-pin" title="Permalink to this headline">#</a></h2>
 <p>Initialization w5500</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -740,7 +738,7 @@
 </section>
 <hr class="docutils"/>
 <section id="w5500-config-ip-submask-gateway-mac-rtr-rcr-speed">
-<h2>w5500.config(ip, submask, gateway, mac, RTR, RCR, speed)<a class="headerlink" href="#w5500-config-ip-submask-gateway-mac-rtr-rcr-speed" title="永久链接至标题">#</a></h2>
+<h2>w5500.config(ip, submask, gateway, mac, RTR, RCR, speed)<a class="headerlink" href="#w5500-config-ip-submask-gateway-mac-rtr-rcr-speed" title="Permalink to this headline">#</a></h2>
 <p>w5500 Configure network information</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -782,7 +780,7 @@
 </section>
 <hr class="docutils"/>
 <section id="w5500-bind-id">
-<h2>w5500.bind(id)<a class="headerlink" href="#w5500-bind-id" title="永久链接至标题">#</a></h2>
+<h2>w5500.bind(id)<a class="headerlink" href="#w5500-bind-id" title="Permalink to this headline">#</a></h2>
 <p>Register the w5500 into the Common Network Interface</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -807,7 +805,7 @@
 </section>
 <hr class="docutils"/>
 <section id="w5500-getmac">
-<h2>w5500.getMac()<a class="headerlink" href="#w5500-getmac" title="永久链接至标题">#</a></h2>
+<h2>w5500.getMac()<a class="headerlink" href="#w5500-getmac" title="Permalink to this headline">#</a></h2>
 <p>Obtaining the current MAC of w5500 must be used after init. If your own MAC is set in config, you need to delay reading it again.</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -859,13 +857,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -883,7 +881,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -918,7 +916,6 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../../genindex.html" /><link rel="search" title="搜索" href="../../../search.html" /><link rel="next" title="LCD Drive screen" href="../lcd.html" /><link rel="prev" title="air103" href="air103.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="LCD Drive screen" href="../lcd.html" /><link rel="prev" title="air103" href="air103.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>air105 - LuatOS 文档</title>
+        <title>air105 - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,17 +688,17 @@
         </div>
         <article role="main">
           <section id="air105">
-<h1>air105<a class="headerlink" href="#air105" title="永久链接至标题">#</a></h1>
+<h1>air105<a class="headerlink" href="#air105" title="Permalink to this headline">#</a></h1>
 <p>This chapter describes how to use the uart library for LuatOS</p>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>UART（Universal Asynchronous Receiver/Transmitter）Universal asynchronous transceiver, UART as a kind of asynchronous serial communication protocol, the working principle is to transmit each character of the data one by one. Is the most frequently used data bus in the application development process.</p>
 <p>UART The characteristic of the serial port is to transmit data bit by bit in sequence. Two-way communication can be realized as long as two transmission lines. One line sends data while receiving data with another line. There are several important parameters for UART serial communication, namely baud rate, start bit, data bit, stop bit and parity bit. For two ports using UART serial communication, these parameters must match, otherwise the communication will not be completed normally.</p>
 <p>Looking up <a class="reference external" href="https://cdn.openluat-luatcommunity.openluat.com/attachment/20220513112445291_Air105_MCU%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8CV1.7.pdf">Air105_MCU Design Manual V1.7.pdf</a>, we can see that Air105 has 4 UART channels, and UART0 is fixed as download and log port.</p>
 <p>We use UART1 to connect with PC through TTL to USB module to realize data transfer between PC and Air105</p>
 </section>
 <section id="hardware-preparation">
-<h2>Hardware preparation<a class="headerlink" href="#hardware-preparation" title="永久链接至标题">#</a></h2>
+<h2>Hardware preparation<a class="headerlink" href="#hardware-preparation" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Air105 Development Board</p></li>
 <li><p>USB TTL Module</p></li>
@@ -713,11 +711,11 @@ Air105  U1_TX/GPIO33  ------  RX      USB-TTL-&gt;PC
 </div>
 </section>
 <section id="software-part">
-<h2>Software part<a class="headerlink" href="#software-part" title="永久链接至标题">#</a></h2>
+<h2>Software part<a class="headerlink" href="#software-part" title="Permalink to this headline">#</a></h2>
 <p>Interface documentation can be found in:<a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/uart.html">uart library</a></p>
 <p>uart When sending and receiving data, you can directly pass string type data, or you can pass zbuff objects, the following will demonstrate the two methods respectively.</p>
 <section id="create-two-zbuff-arrays">
-<h3>Create two zbuff arrays<a class="headerlink" href="#create-two-zbuff-arrays" title="永久链接至标题">#</a></h3>
+<h3>Create two zbuff arrays<a class="headerlink" href="#create-two-zbuff-arrays" title="Permalink to this headline">#</a></h3>
 <p>Skip this step if you don’t use zbuff to process the data</p>
 <p>The code is as follows</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Create a 1KB send buffer</span>
@@ -732,7 +730,7 @@ Air105  U1_TX/GPIO33  ------  RX      USB-TTL-&gt;PC
 </div>
 </section>
 <section id="initialization-uart">
-<h3>Initialization uart<a class="headerlink" href="#initialization-uart" title="永久链接至标题">#</a></h3>
+<h3>Initialization uart<a class="headerlink" href="#initialization-uart" title="Permalink to this headline">#</a></h3>
 <p>Initialize UART1, baud rate is 115200,8 data bits, 1 stop bit, no check</p>
 <p>The code is as follows</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">uart</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">115200</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">uart</span><span class="p">.</span><span class="n">None</span><span class="p">)</span>
@@ -740,10 +738,10 @@ Air105  U1_TX/GPIO33  ------  RX      USB-TTL-&gt;PC
 </div>
 </section>
 <section id="register-serial-port-event-callback">
-<h3>Register Serial Port Event Callback<a class="headerlink" href="#register-serial-port-event-callback" title="永久链接至标题">#</a></h3>
+<h3>Register Serial Port Event Callback<a class="headerlink" href="#register-serial-port-event-callback" title="Permalink to this headline">#</a></h3>
 <p>Register a receive event callback for UART1 to read and print when Air105 UART1 receives data</p>
 <section id="receive-data-of-type-string">
-<h4>Receive data of type string<a class="headerlink" href="#receive-data-of-type-string" title="永久链接至标题">#</a></h4>
+<h4>Receive data of type string<a class="headerlink" href="#receive-data-of-type-string" title="Permalink to this headline">#</a></h4>
 <p>The code is as follows</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">uart</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"receive"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">len</span><span class="p">)</span>
     <span class="kd">local</span> <span class="n">data</span> <span class="o">=</span> <span class="n">uart</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">len</span><span class="p">)</span>
@@ -753,7 +751,7 @@ Air105  U1_TX/GPIO33  ------  RX      USB-TTL-&gt;PC
 </div>
 </section>
 <section id="receiving-data-using-zbuff">
-<h4>Receiving data using zbuff<a class="headerlink" href="#receiving-data-using-zbuff" title="永久链接至标题">#</a></h4>
+<h4>Receiving data using zbuff<a class="headerlink" href="#receiving-data-using-zbuff" title="Permalink to this headline">#</a></h4>
 <p>The code is as follows</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">uart</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"receive"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">len</span><span class="p">)</span>
     <span class="c1">-- Read data to receive buffer</span>
@@ -771,9 +769,9 @@ Air105  U1_TX/GPIO33  ------  RX      USB-TTL-&gt;PC
 </section>
 </section>
 <section id="create-a-new-cycle-timer-to-send-data-to-uart1">
-<h3>Create a new cycle timer to send data to UART1<a class="headerlink" href="#create-a-new-cycle-timer-to-send-data-to-uart1" title="永久链接至标题">#</a></h3>
+<h3>Create a new cycle timer to send data to UART1<a class="headerlink" href="#create-a-new-cycle-timer-to-send-data-to-uart1" title="Permalink to this headline">#</a></h3>
 <section id="send-string-data">
-<h4>Send string data<a class="headerlink" href="#send-string-data" title="永久链接至标题">#</a></h4>
+<h4>Send string data<a class="headerlink" href="#send-string-data" title="Permalink to this headline">#</a></h4>
 <p>The code is as follows</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">timerLoopStart</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
     <span class="n">uart</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"Hi,I am Air105</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
@@ -782,7 +780,7 @@ Air105  U1_TX/GPIO33  ------  RX      USB-TTL-&gt;PC
 </div>
 </section>
 <section id="send-data-using-zbuff">
-<h4>Send data using zbuff<a class="headerlink" href="#send-data-using-zbuff" title="永久链接至标题">#</a></h4>
+<h4>Send data using zbuff<a class="headerlink" href="#send-data-using-zbuff" title="Permalink to this headline">#</a></h4>
 <p>The code is as follows</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">timerLoopStart</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
     <span class="n">uart</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">sendBuff</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
@@ -792,7 +790,7 @@ Air105  U1_TX/GPIO33  ------  RX      USB-TTL-&gt;PC
 </section>
 </section>
 <section id="full-code">
-<h3>Full Code<a class="headerlink" href="#full-code" title="永久链接至标题">#</a></h3>
+<h3>Full Code<a class="headerlink" href="#full-code" title="Permalink to this headline">#</a></h3>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">PROJECT</span> <span class="o">=</span> <span class="s2">"uart"</span>
 <span class="n">VERSION</span> <span class="o">=</span> <span class="s2">"1.0.0"</span>
 
@@ -873,13 +871,13 @@ Air105  U1_TX/GPIO33  ------  RX      USB-TTL-&gt;PC
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -897,7 +895,7 @@ Air105  U1_TX/GPIO33  ------  RX      USB-TTL-&gt;PC
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -946,7 +944,6 @@ Air105  U1_TX/GPIO33  ------  RX      USB-TTL-&gt;PC
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/translations.js"></script>
     <script src="../../../_static/design-tabs.js"></script>
     <script src="../../../_static/js/baidu.js"></script>
     <script src="../../../_static/js/a.js"></script>

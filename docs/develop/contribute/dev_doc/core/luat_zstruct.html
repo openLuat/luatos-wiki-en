@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../../../genindex.html" /><link rel="search" title="搜索" href="../../../../search.html" /><link rel="next" title="Peripherals API" href="../peripherals/index.html" /><link rel="prev" title="C Interface implements Task waiting function" href="sys_wait_pub.html" />
+<link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Peripherals API" href="../peripherals/index.html" /><link rel="prev" title="C Interface implements Task waiting function" href="sys_wait_pub.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>C The Structure of Style - LuatOS 文档</title>
+        <title>C The Structure of Style - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,32 +688,32 @@
         </div>
         <article role="main">
           <section id="c-the-structure-of-style">
-<h1>C The Structure of Style<a class="headerlink" href="#c-the-structure-of-style" title="永久链接至标题">#</a></h1>
+<h1>C The Structure of Style<a class="headerlink" href="#c-the-structure-of-style" title="Permalink to this headline">#</a></h1>
 <section id="basic-information">
-<h2>Basic information<a class="headerlink" href="#basic-information" title="永久链接至标题">#</a></h2>
+<h2>Basic information<a class="headerlink" href="#basic-information" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Date of drafting: 2022-06-24</p></li>
 <li><p>Designer: <a class="reference external" href="https://github.com/wendal">wendal</a></p></li>
 </ul>
 </section>
 <section id="motivation">
-<h2>Motivation<a class="headerlink" href="#motivation" title="永久链接至标题">#</a></h2>
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Processing structured data, using the pack library is not intuitive enough, zbuff is suitable for byte-by-byte</p></li>
 <li><p>c Layer processing table data is quite troublesome, and a lot of configuration information needs table to be transmitted.</p></li>
 </ul>
 </section>
 <section id="design-ideas-and-boundaries">
-<h2>Design ideas and boundaries<a class="headerlink" href="#design-ideas-and-boundaries" title="永久链接至标题">#</a></h2>
+<h2>Design ideas and boundaries<a class="headerlink" href="#design-ideas-and-boundaries" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Supports basic types, does not support nested types, does not support uion</p></li>
 <li><p>Support fixed-length data, only supports first-level pointers</p></li>
 </ul>
 </section>
 <section id="use-scenario">
-<h2>Use Scenario<a class="headerlink" href="#use-scenario" title="永久链接至标题">#</a></h2>
+<h2>Use Scenario<a class="headerlink" href="#use-scenario" title="Permalink to this headline">#</a></h2>
 <section id="modbus-synthesis-and-analysis">
-<h3>modbus synthesis and analysis<a class="headerlink" href="#modbus-synthesis-and-analysis" title="永久链接至标题">#</a></h3>
+<h3>modbus synthesis and analysis<a class="headerlink" href="#modbus-synthesis-and-analysis" title="Permalink to this headline">#</a></h3>
 <p>Host Send: <code class="docutils literal notranslate"><span class="pre">01</span> <span class="pre">06</span> <span class="pre">01</span> <span class="pre">05</span> <span class="pre">01</span> <span class="pre">90</span> <span class="pre">99</span> <span class="pre">CB</span></code>
 Reply from machine: <code class="docutils literal notranslate"><span class="pre">01</span> <span class="pre">06</span> <span class="pre">01</span> <span class="pre">05</span> <span class="pre">01</span> <span class="pre">90</span> <span class="pre">99</span> <span class="pre">CB</span></code></p>
 <p>C The structure is declared as follows</p>
@@ -790,7 +788,7 @@ Reply from machine: <code class="docutils literal notranslate"><span class="pre"
 </section>
 </section>
 <section id="data-types-to-be-supported">
-<h2>Data types to be supported<a class="headerlink" href="#data-types-to-be-supported" title="永久链接至标题">#</a></h2>
+<h2>Data types to be supported<a class="headerlink" href="#data-types-to-be-supported" title="Permalink to this headline">#</a></h2>
 <p>Note: <code class="docutils literal notranslate"><span class="pre">_t</span></code> suffix optional.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Symbolic Class</span>
 <span class="kt">char</span><span class="w"></span>
@@ -814,7 +812,7 @@ Reply from machine: <code class="docutils literal notranslate"><span class="pre"
 </div>
 </section>
 <section id="extended-support">
-<h2>Extended Support<a class="headerlink" href="#extended-support" title="永久链接至标题">#</a></h2>
+<h2>Extended Support<a class="headerlink" href="#extended-support" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Support for default values <code class="docutils literal notranslate"><span class="pre">uint8</span> <span class="pre">addr</span> <span class="pre">=</span> <span class="pre">0;</span></code></p></li>
 <li><p>Support Bit Field   <code class="docutils literal notranslate"><span class="pre">uint8</span> <span class="pre">addr</span> <span class="pre">:</span> <span class="pre">4;</span></code></p></li>
@@ -848,13 +846,13 @@ Reply from machine: <code class="docutils literal notranslate"><span class="pre"
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -872,7 +870,7 @@ Reply from machine: <code class="docutils literal notranslate"><span class="pre"
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -912,7 +910,6 @@ Reply from machine: <code class="docutils literal notranslate"><span class="pre"
     <script src="../../../../_static/scripts/furo.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
-    <script src="../../../../_static/translations.js"></script>
     <script src="../../../../_static/design-tabs.js"></script>
     <script src="../../../../_static/js/baidu.js"></script>
     <script src="../../../../_static/js/a.js"></script>

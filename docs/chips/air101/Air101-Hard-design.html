@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Air101 Getting Started Manual" href="Air101.html" /><link rel="prev" title="Hardware Data" href="hardware.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Air101 Getting Started Manual" href="Air101.html" /><link rel="prev" title="Hardware Data" href="hardware.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Air101 Hardware Design Tutorial - LuatOS 文档</title>
+        <title>Air101 Hardware Design Tutorial - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,17 +688,17 @@
         </div>
         <article role="main">
           <section id="air101-hardware-design-tutorial">
-<h1>Air101 Hardware Design Tutorial<a class="headerlink" href="#air101-hardware-design-tutorial" title="永久链接至标题">#</a></h1>
+<h1>Air101 Hardware Design Tutorial<a class="headerlink" href="#air101-hardware-design-tutorial" title="Permalink to this headline">#</a></h1>
 <section id="resource-preparation">
-<h2>Resource preparation<a class="headerlink" href="#resource-preparation" title="永久链接至标题">#</a></h2>
+<h2>Resource preparation<a class="headerlink" href="#resource-preparation" title="Permalink to this headline">#</a></h2>
 <p>First you need to master at least one EDA tool, such as AD,PADS,KICAD, etc. recommend use KICAD, open source and free, and the hardware design of the MCU series products is used.KICAD。</p>
 <p>Air101 Relevant hardware data can be downloaded from wiki <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/chips/air101/hardware.html">Air101 hardware data</a></p>
 </section>
 <section id="minimum-system">
-<h2>Minimum system<a class="headerlink" href="#minimum-system" title="永久链接至标题">#</a></h2>
+<h2>Minimum system<a class="headerlink" href="#minimum-system" title="Permalink to this headline">#</a></h2>
 <p>The hardware minimum system contains the minimum circuit for the chip to work. For Air101, the minimum system only needs power supply and crystal oscillator.</p>
 <section id="power">
-<h3>Power<a class="headerlink" href="#power" title="永久链接至标题">#</a></h3>
+<h3>Power<a class="headerlink" href="#power" title="Permalink to this headline">#</a></h3>
 <p>The power supply range of the chip is **3.0V-3.6V * *. Do not exceed this range. **More than 3.6V may cause permanent damage to the chip * *. Below 3.0V may degrade overall performance.</p>
 <p>See the following requirements for different pin placement capacitors：</p>
 <p>Chip 7 pin to place 1uf filter capacitor.</p>
@@ -715,12 +713,12 @@
 <p>There will be a large current when the chip is powered on, so it is necessary to choose a power chip with high dynamic response speed, or increase the capacitance of the power inlet to ensure no voltage drop.</p>
 </section>
 <section id="crystal-oscillator">
-<h3>crystal oscillator<a class="headerlink" href="#crystal-oscillator" title="永久链接至标题">#</a></h3>
+<h3>crystal oscillator<a class="headerlink" href="#crystal-oscillator" title="Permalink to this headline">#</a></h3>
 <p>The crystal is placed as close to the chip as possible, the trace is as short as possible away from the interference source, and the clock is isolated by many holes. The layers below the clock prohibit other traces from passing through to prevent interference with the clock source. The crystal frequency is 40M. Customers choose crystals with different temperature levels, stability and load capacitance values according to actual product requirements. The load capacitance connected to both ends of the crystal needs to be adjusted according to the crystal of different manufacturers and the frequency offset.</p>
 <p><img alt="image-20220321093731697" src="../../_images/image-20220321093731697.png"/></p>
 </section>
 <section id="troubleshooting">
-<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="永久链接至标题">#</a></h3>
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h3>
 <p>Under normal circumstances, the minimum system is designed according to the reference circuit, and the chip can work normally. However, I can’t design it myself. How can I check the problem at this time?？</p>
 <p>First check whether the hardware has problems such as virtual welding, ensure good contact, and measure whether there is a short circuit.</p>
 <p>Then use an oscilloscope to measure whether the power supply voltage meets the requirements, whether the ripple is too large, and whether the voltage will drop significantly. You must use an oscilloscope to see it. The multimeter is an average value and cannot observe the voltage mutation.</p>
@@ -729,36 +727,36 @@
 </section>
 </section>
 <section id="download-and-debug">
-<h2>Download and Debug<a class="headerlink" href="#download-and-debug" title="永久链接至标题">#</a></h2>
+<h2>Download and Debug<a class="headerlink" href="#download-and-debug" title="Permalink to this headline">#</a></h2>
 <section id="reset">
-<h3>Reset<a class="headerlink" href="#reset" title="永久链接至标题">#</a></h3>
+<h3>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">#</a></h3>
 <p>The reset circuit is recommended to be designed as an RC circuit, power-on automatic reset, and Air101 low-level reset. If the external control RESET pin is used, the chip is in the reset state when the level value is lower than 2.0v. The low level needs to last more than 100us when resetting.</p>
 </section>
 <section id="download-circuit">
-<h3>Download Circuit<a class="headerlink" href="#download-circuit" title="永久链接至标题">#</a></h3>
+<h3>Download Circuit<a class="headerlink" href="#download-circuit" title="Permalink to this headline">#</a></h3>
 <p>The chip defaults to UART0 as the download port. When the chip has no initial firmware download, it is directly connected to the UART0 interface, and firmware download can be realized through related download software. When there is firmware in the chip, the download mode is entered again, and the download mode can be entered by pulling down PA0 and then powering on. After the download is completed, remove the PA0 pull-down operation and need to restart before the firmware can run.</p>
 <p>Pull PA0 low before power-on, the chip will enter download mode, and the UART0_TX will always send ccccc at 115200 baud rate waiting for download instructions. When the chip leaves the factory without burning the program, it will always be in download mode and send ccccc at 115200 baud rate, which can be used to judge whether the chip can work.</p>
 <p>Burning Tutorial Link <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html">Burning Tutorial-LuatOS Documentation</a></p>
 </section>
 <section id="debugging">
-<h3>Debugging<a class="headerlink" href="#debugging" title="永久链接至标题">#</a></h3>
+<h3>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">#</a></h3>
 <p>After the chip is powered on, pins 1 and 2 default to UART0 port, which provides download and instruction ports and log output ports. Customers should be careful not to use this port as GPIO at will to prevent it from being occupied and unable to download and debug. After the system is up, the port can be reused for other ports. If it is really necessary to reuse, keep the boot pin to ensure firmware burning.</p>
 <p>The automatic download circuit can be designed with reference to the schematic diagram of Air101, and the automatic download can be realized with the luatools. During mass production, test points for RX0,TX0 and Reaet pins can be set aside for automatic download using fixtures.</p>
 <p><img alt="image-20220321105638948" src="../../_images/image-20220321105638948.png"/></p>
 </section>
 </section>
 <section id="adc">
-<h2>ADC<a class="headerlink" href="#adc" title="永久链接至标题">#</a></h2>
+<h2>ADC<a class="headerlink" href="#adc" title="Permalink to this headline">#</a></h2>
 <p>The 14-pin (PA1) and 15-pin (PA4) pins of the chip can be used as ordinary ADC, and the input voltage range is 0~2.4V. When it is higher than 2.4V, the ADC interface can only be entered after external voltage division processing. When using the voltage divider circuit, be sure to use high-precision resistors, and select the appropriate resistance value according to the voltage divider. The voltage dividing circuit is referred to as follows.</p>
 <p><img alt="image-20220321110425987" src="../../_images/image-20220321110425987.png"/></p>
 </section>
 <section id="gpio-and-wake-up">
-<h2>GPIO And wake up.<a class="headerlink" href="#gpio-and-wake-up" title="永久链接至标题">#</a></h2>
+<h2>GPIO And wake up.<a class="headerlink" href="#gpio-and-wake-up" title="Permalink to this headline">#</a></h2>
 <p>If a pull-up resistor is configured for all GPIOs, the typical pull-up resistance value is 40K. If a pull-down resistor is configured for all GPIOs, the typical pull-down resistance value is 40K.  49K。</p>
 <p>Wakeup The foot is an external wake-up foot. When the chip enters a sleep state, the Wakeup foot gives a high level, and the chip wakes up. Normal working state, the port is low.</p>
 </section>
 <section id="about-brush-machine">
-<h2>About Brush Machine<a class="headerlink" href="#about-brush-machine" title="永久链接至标题">#</a></h2>
+<h2>About Brush Machine<a class="headerlink" href="#about-brush-machine" title="Permalink to this headline">#</a></h2>
 <p>One thing to emphasize: there are 2 brush programs on the chip of air101/air103, but the combination of reset boot button can always be used to brush the machine. there is no “brush death” unless the hardware is damaged..</p>
 <p>all the logs are in uart0, and the following descriptions refer uart0.</p>
 <p>Brush machine is divided into several situations:</p>
@@ -797,13 +795,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -821,7 +819,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -868,7 +866,6 @@
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

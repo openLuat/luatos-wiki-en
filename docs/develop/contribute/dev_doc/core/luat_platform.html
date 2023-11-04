@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../../../genindex.html" /><link rel="search" title="搜索" href="../../../../search.html" /><link rel="next" title="Power and Low Power Management" href="luat_pm.html" /><link rel="prev" title="Message Bus" href="luat_msgbus.html" />
+<link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Power and Low Power Management" href="luat_pm.html" /><link rel="prev" title="Message Bus" href="luat_msgbus.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Luat Platform layer - LuatOS 文档</title>
+        <title>Luat Platform layer - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,10 +688,10 @@
         </div>
         <article role="main">
           <section id="luat-platform-layer">
-<h1>Luat Platform layer<a class="headerlink" href="#luat-platform-layer" title="永久链接至标题">#</a></h1>
+<h1>Luat Platform layer<a class="headerlink" href="#luat-platform-layer" title="Permalink to this headline">#</a></h1>
 <p>In order to be cross-platform, a “platform layer” is needed to isolate the different underlying implementations.</p>
 <section id="why-you-need-a-platform-layer">
-<h2>Why you need a “platform layer””<a class="headerlink" href="#why-you-need-a-platform-layer" title="永久链接至标题">#</a></h2>
+<h2>Why you need a “platform layer””<a class="headerlink" href="#why-you-need-a-platform-layer" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Lua C language implementation, the code is basically cross-platform, but not all</p></li>
 <li><p>Luat As an encapsulation of the hardware platform, it needs to be abstracted HAL</p></li>
@@ -702,12 +700,12 @@
 </section>
 <hr class="docutils"/>
 <section id="lua-cross-platform">
-<h2>Lua cross-platform<a class="headerlink" href="#lua-cross-platform" title="永久链接至标题">#</a></h2>
+<h2>Lua cross-platform<a class="headerlink" href="#lua-cross-platform" title="Permalink to this headline">#</a></h2>
 <p>What is being discussed here is<code class="docutils literal notranslate"><span class="pre">Lua</span> <span class="pre">5.3.5</span></code>.</p>
 <p>Lua Basically, it is cross-platform and can be considered as more than 95%. The following are platform functions that need abstraction.</p>
 <hr class="docutils"/>
 <section id="memory-allocation">
-<h3>Memory allocation<a class="headerlink" href="#memory-allocation" title="永久链接至标题">#</a></h3>
+<h3>Memory allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this headline">#</a></h3>
 <p>lua Without a global variable, all memory is allocated through the l_alloc parameter (a method pointer) of the lua_newstate(l_alloc, NULL).</p>
 <p>The prototype is as follows</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">l_alloc</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ud</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">osize</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nsize</span><span class="p">)</span><span class="w"></span>
@@ -721,7 +719,7 @@
 </section>
 <hr class="docutils"/>
 <section id="io-operation">
-<h3>io Operation<a class="headerlink" href="#io-operation" title="永久链接至标题">#</a></h3>
+<h3>io Operation<a class="headerlink" href="#io-operation" title="Permalink to this headline">#</a></h3>
 <p>lua The io operation involves 4 aspects.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">loadfile</span></code> Loading lua files, involving <code class="docutils literal notranslate"><span class="pre">fopen</span></code>/<code class="docutils literal notranslate"><span class="pre">fread</span></code>/<code class="docutils literal notranslate"><span class="pre">close</span></code> and other methods</p></li>
@@ -737,7 +735,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lua-the-system-inside-api">
-<h3>lua The system inside API<a class="headerlink" href="#lua-the-system-inside-api" title="永久链接至标题">#</a></h3>
+<h3>lua The system inside API<a class="headerlink" href="#lua-the-system-inside-api" title="Permalink to this headline">#</a></h3>
 <p>lua The APIs closely related to the system are</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">time</span><span class="p">()</span><span class="w">    </span><span class="c1">// os Module, get system time, need support</span>
 <span class="n">popen</span><span class="p">()</span><span class="w">   </span><span class="c1">// io/os module, start a new process, no support required, delete the relevant lua API</span>
@@ -753,11 +751,11 @@
 </section>
 <hr class="docutils"/>
 <section id="luat-cross-platform">
-<h2>Luat cross-platform<a class="headerlink" href="#luat-cross-platform" title="永久链接至标题">#</a></h2>
+<h2>Luat cross-platform<a class="headerlink" href="#luat-cross-platform" title="Permalink to this headline">#</a></h2>
 <p>The encapsulation of device interfaces and network communications is essentially the encapsulation of vendor private APIs..</p>
 <hr class="docutils"/>
 <section id="peripherals">
-<h3>Peripherals<a class="headerlink" href="#peripherals" title="永久链接至标题">#</a></h3>
+<h3>Peripherals<a class="headerlink" href="#peripherals" title="Permalink to this headline">#</a></h3>
 <p>Most peripherals are synchronous APIs, which are very similar to Lua APIs.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">luat_gpio_setup</span><span class="p">(</span><span class="n">LuatGpioPin</span><span class="w"> </span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">Lua_Value</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">LuatGpioPULL</span><span class="w"> </span><span class="n">pullup</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -769,7 +767,7 @@
 </section>
 <hr class="docutils"/>
 <section id="network-communication">
-<h3>Network Communication<a class="headerlink" href="#network-communication" title="永久链接至标题">#</a></h3>
+<h3>Network Communication<a class="headerlink" href="#network-communication" title="Permalink to this headline">#</a></h3>
 <p>This part is very dependent on the SDK of the manufacturer. If it is assumed that communication packages such as lwip are provided, there is not much content in this part..</p>
 <p>If you assume that there is no encapsulation such as lwip, you need a very detailed API design (copying lwip is not impossible.)</p>
 <p>TODO API design for network communication to be completed</p>
@@ -777,7 +775,7 @@
 </section>
 <hr class="docutils"/>
 <section id="task-scheduling">
-<h2>Task Scheduling<a class="headerlink" href="#task-scheduling" title="永久链接至标题">#</a></h2>
+<h2>Task Scheduling<a class="headerlink" href="#task-scheduling" title="Permalink to this headline">#</a></h2>
 <p>That Luat relies on the API related to task scheduling, rtos layer</p>
 <ul class="simple">
 <li><p>Timer timer – single/cycle trigger interrupt</p></li>
@@ -794,7 +792,7 @@
 </ul>
 </section>
 <section id="relevant-knowledge-points">
-<h2>Relevant knowledge points<a class="headerlink" href="#relevant-knowledge-points" title="永久链接至标题">#</a></h2>
+<h2>Relevant knowledge points<a class="headerlink" href="#relevant-knowledge-points" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><span class="xref myst">Coding Specification</span></p></li>
 <li><p><span class="xref myst">File System</span></p></li>
@@ -831,13 +829,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -855,7 +853,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -900,7 +898,6 @@
     <script src="../../../../_static/scripts/furo.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
-    <script src="../../../../_static/translations.js"></script>
     <script src="../../../../_static/design-tabs.js"></script>
     <script src="../../../../_static/js/baidu.js"></script>
     <script src="../../../../_static/js/a.js"></script>

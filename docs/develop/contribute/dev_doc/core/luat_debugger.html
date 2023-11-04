@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../../../genindex.html" /><link rel="search" title="搜索" href="../../../../search.html" /><link rel="next" title="File System" href="luat_fs.html" /><link rel="prev" title="Luat Core" href="luat_core.html" />
+<link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="File System" href="luat_fs.html" /><link rel="prev" title="Luat Core" href="luat_core.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Luat Debugger - LuatOS 文档</title>
+        <title>Luat Debugger - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,9 +688,9 @@
         </div>
         <article role="main">
           <section id="luat-debugger">
-<h1>Luat Debugger<a class="headerlink" href="#luat-debugger" title="永久链接至标题">#</a></h1>
+<h1>Luat Debugger<a class="headerlink" href="#luat-debugger" title="Permalink to this headline">#</a></h1>
 <section id="basic-information">
-<h2>Basic information<a class="headerlink" href="#basic-information" title="永久链接至标题">#</a></h2>
+<h2>Basic information<a class="headerlink" href="#basic-information" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Date of drafting: 2021-01-02</p></li>
 <li><p>Designer: <a class="reference external" href="https://github.com/wendal">wendal</a></p></li>
@@ -700,16 +698,16 @@
 <p>This document describes the LuatOS debugger-related information, mainly used for single-step debugging of lua scripts.</p>
 </section>
 <section id="glossary-of-terms">
-<h2>Glossary of Terms<a class="headerlink" href="#glossary-of-terms" title="永久链接至标题">#</a></h2>
+<h2>Glossary of Terms<a class="headerlink" href="#glossary-of-terms" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>DAP - debug-adapter-protocol A debug adaptation protocol led by Microsoft, mainly used vscode</p></li>
 <li><p>Debugger - Debugger, this article is basically equivalent to Lua script debugger, single-step debugging, up and down variable viewing and setting, stack query, etc.</p></li>
 </ul>
 </section>
 <section id="communication-process">
-<h2>Communication process<a class="headerlink" href="#communication-process" title="永久链接至标题">#</a></h2>
+<h2>Communication process<a class="headerlink" href="#communication-process" title="Permalink to this headline">#</a></h2>
 <section id="designed-hardware-and-software-entities">
-<h3>Designed hardware and software entities<a class="headerlink" href="#designed-hardware-and-software-entities" title="永久链接至标题">#</a></h3>
+<h3>Designed hardware and software entities<a class="headerlink" href="#designed-hardware-and-software-entities" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>module, which specifically executes LuatOS and scripts</p></li>
 <li><p>Serial port/USB/UART, communication mode between module and debugger</p></li>
@@ -719,7 +717,7 @@
 </ul>
 </section>
 <section id="mutual-communication-links">
-<h3>Mutual communication links<a class="headerlink" href="#mutual-communication-links" title="永久链接至标题">#</a></h3>
+<h3>Mutual communication links<a class="headerlink" href="#mutual-communication-links" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Module &lt;-&gt; serial port/USB. The external communication channel of the module is different from the process debugging under windows/linux/macos, but it can still be abstracted Input/Output</p></li>
 <li><p>Serial/USB &lt;-&gt; LuaTools. LuaTools is responsible for parsing the output data of the module, separating the debugging data inside, sending it to the debugger, receiving the debugger’s commands, converting it to a format recognized by the module, and writing it to the serial port./USB.</p></li>
@@ -740,10 +738,10 @@
 </section>
 </section>
 <section id="luatos-commissioning-protocol">
-<h2>LuatOS Commissioning Protocol<a class="headerlink" href="#luatos-commissioning-protocol" title="永久链接至标题">#</a></h2>
+<h2>LuatOS Commissioning Protocol<a class="headerlink" href="#luatos-commissioning-protocol" title="Permalink to this headline">#</a></h2>
 <p>Current Protocol Version v1</p>
 <section id="basic-communication-method-output">
-<h3>Basic communication method (output)<a class="headerlink" href="#basic-communication-method-output" title="永久链接至标题">#</a></h3>
+<h3>Basic communication method (output)<a class="headerlink" href="#basic-communication-method-output" title="Permalink to this headline">#</a></h3>
 <p>The output of the protocol, in the form of <code class="docutils literal notranslate"><span class="pre">[head]</span> <span class="pre">exts</span></code>, is output by row</p>
 <p>Among them:</p>
 <ul class="simple">
@@ -752,7 +750,7 @@
 </ul>
 </section>
 <section id="basic-communication-method-input">
-<h3>Basic communication method (input)<a class="headerlink" href="#basic-communication-method-input" title="永久链接至标题">#</a></h3>
+<h3>Basic communication method (input)<a class="headerlink" href="#basic-communication-method-input" title="Permalink to this headline">#</a></h3>
 <p>The input of the protocol, in the form of <code class="docutils literal notranslate"><span class="pre">cmd</span> <span class="pre">arg1</span> <span class="pre">arg2</span> <span class="pre">...</span></code>, is entered by line, generally as a command.</p>
 <p>Among them:</p>
 <ul class="simple">
@@ -760,7 +758,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">arg1</span> <span class="pre">arg2</span></code> for different string parameters</p></li>
 </ul>
 <section id="status-change-output-state-changed">
-<h4>Status Change Output(state,changed)<a class="headerlink" href="#status-change-output-state-changed" title="永久链接至标题">#</a></h4>
+<h4>Status Change Output(state,changed)<a class="headerlink" href="#status-change-output-state-changed" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">[state,changed,1,2]</span></code></p>
 <p>Debugging state changes, the former is the original state, the latter is the updated state</p>
 <ul class="simple">
@@ -774,17 +772,17 @@
 </ul>
 </section>
 <section id="wait-for-debugger-event-waitc">
-<h4>Wait for Debugger(event,waitc)<a class="headerlink" href="#wait-for-debugger-event-waitc" title="永久链接至标题">#</a></h4>
+<h4>Wait for Debugger(event,waitc)<a class="headerlink" href="#wait-for-debugger-event-waitc" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">[event,waitc]</span></code></p>
 <p>Usually, after adding the <code class="docutils literal notranslate"><span class="pre">dbg.wait(300)</span></code>statement to the lua script, luatos will stop at the statement and wait for the debugger`s command.</p>
 </section>
 <section id="wait-for-debugger-event-waitt">
-<h4>Wait for Debugger(event,waitt)<a class="headerlink" href="#wait-for-debugger-event-waitt" title="永久链接至标题">#</a></h4>
+<h4>Wait for Debugger(event,waitt)<a class="headerlink" href="#wait-for-debugger-event-waitt" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">[event,waitt]</span></code></p>
 <p>After waiting for the specified number of seconds, the<code class="docutils literal notranslate"> <span class="pre">start</span></code> command is still not received, the waiting is automatically exited, the status is restored to 0, and the debugging mode is closed.</p>
 </section>
 <section id="program-suspended-event-stopped">
-<h4>Program suspended(event,stopped)<a class="headerlink" href="#program-suspended-event-stopped" title="永久链接至标题">#</a></h4>
+<h4>Program suspended(event,stopped)<a class="headerlink" href="#program-suspended-event-stopped" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">[event,stopped,break]</span></code>
 <code class="docutils literal notranslate"><span class="pre">[event,stopped,step]</span></code>
 <code class="docutils literal notranslate"><span class="pre">[event,stopped,stepIn]</span></code>
@@ -793,7 +791,7 @@
 <p>Meanwhile, <code class="docutils literal notranslate"><span class="pre">[state,changed,X,3]</span></code> should come together</p>
 </section>
 <section id="response-class">
-<h4>Response Class<a class="headerlink" href="#response-class" title="永久链接至标题">#</a></h4>
+<h4>Response Class<a class="headerlink" href="#response-class" title="Permalink to this headline">#</a></h4>
 <p>TODO resp Class and executable command parameters</p>
 </section>
 </section>
@@ -826,13 +824,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -850,7 +848,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -900,7 +898,6 @@
     <script src="../../../../_static/scripts/furo.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
-    <script src="../../../../_static/translations.js"></script>
     <script src="../../../../_static/design-tabs.js"></script>
     <script src="../../../../_static/js/baidu.js"></script>
     <script src="../../../../_static/js/a.js"></script>

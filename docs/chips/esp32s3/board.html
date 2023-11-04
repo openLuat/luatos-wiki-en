@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Hardware Data" href="hardware.html" /><link rel="prev" title="📡 ESP32-S3" href="index.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Hardware Data" href="hardware.html" /><link rel="prev" title="📡 ESP32-S3" href="index.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>ESP32S3-CORE Development Board - LuatOS 文档</title>
+        <title>ESP32S3-CORE Development Board - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,17 +688,17 @@
         </div>
         <article role="main">
           <section id="esp32s3-core-development-board">
-<h1>ESP32S3-CORE Development Board<a class="headerlink" href="#esp32s3-core-development-board" title="永久链接至标题">#</a></h1>
+<h1>ESP32S3-CORE Development Board<a class="headerlink" href="#esp32s3-core-development-board" title="Permalink to this headline">#</a></h1>
 <section id="special-attention">
-<h2>Special attention<a class="headerlink" href="#special-attention" title="永久链接至标题">#</a></h2>
+<h2>Special attention<a class="headerlink" href="#special-attention" title="Permalink to this headline">#</a></h2>
 <p>The driver of CH343 must be installed to download firmware normally when burning through USB to serial port. The default CDC driver can only print logs, but the download fails if the speed is too slow. <a class="reference external" href="http://www.wch.cn/downloads/CH343SER_EXE.html">Drive portal</a></p>
 <p>Through USB download (USB direct connection) can be directly burned, Win8 and above systems do not need to install drivers. Luatools burning can be used normally, but LuatIDE cannot be used. In addition to the need to select the firmware with<code class="docutils literal notranslate"> <span class="pre">USB</span></code> when burning, * GPIO19/20 will be occupied as USB pin *, should be avoided, other functions have no difference.</p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>Note that since <strong>win7</strong> system does not have a<code class="docutils literal notranslate"> <span class="pre">winusb</span></code> driver, and Microsoft has stopped supporting the system as early as 2020, if you need to<code class="docutils literal notranslate"> <span class="pre">USB</span> <span class="pre">download</span></code>, please upgrade to **win8 or above system * *, or go to <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html">Lexin Original Factory Manual</a> to install the driver</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">警告</p>
+<p class="admonition-title">Warning</p>
 <p>The first batch of ESP32S3 core boards, due to FLASH thermal expansion and cold contraction, will have a small probability of causing virtual welding after hand. (Firmware will be burned before leaving the factory, and will not leave the factory until it is successfully burned. This is the reason  ）
 If the<code class="docutils literal notranslate"> <span class="pre">default</span> <span class="pre">flashing</span> <span class="pre">light</span> <span class="pre">program</span></code> on the back board cannot run and * * cannot burn firmware (stuck in the step of FLASH download) * *, try to repair and solder the pad at * * FLASH * (tin added  ）。
 Therefore, please check the usb port with power on after you get it, and then carry out the welding needle arrangement operation after confirming that there is no problem.</p>
@@ -708,11 +706,11 @@ Therefore, please check the usb port with power on after you get it, and then ca
 <p><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html">Serial Burning Tutorial</a>,<strong>Log baud rate is 921600</strong></p>
 </section>
 <section id="product-description">
-<h2>1. Product Description<a class="headerlink" href="#product-description" title="永久链接至标题">#</a></h2>
+<h2>1. Product Description<a class="headerlink" href="#product-description" title="Permalink to this headline">#</a></h2>
 <p>CORE ESP32S3 The core board is a core board designed based on Lexin ESP32-S3, with a size of only 21mm * 51mm. The board edge is designed with stamp holes, which is convenient for developers to use in different scenes. Core board onboard 2.4G antenna, support wifi and bluetooth. Core board built-in 8MB psram,16MB flash luxury configuration. Onboard ch343p USB to serial port chip, easy to download and burn; At the same time, an analog switch circuit is designed, which can be switched to S3 built-in USB with one key to develop and debug USB functions. The core board supports UART, GPIO, SPI, I2C, ADC, PWM,SDIO,Camera and other interfaces, and can be connected to peripherals for debugging according to actual needs.</p>
 </section>
 <section id="hardware-resources">
-<h2>2. hardware resources<a class="headerlink" href="#hardware-resources" title="永久链接至标题">#</a></h2>
+<h2>2. hardware resources<a class="headerlink" href="#hardware-resources" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>ESP32S3采用Xtensa® 32 Bit LX7 dual-core processor, five-stage pipeline architecture, frequency up to 240M. Built-in 512K SRAM, this release model and seal 8MB psram。</p></li>
 <li><p>4 × SPI</p></li>
@@ -733,16 +731,16 @@ Therefore, please check the usb port with power on after you get it, and then ca
 </ul>
 </section>
 <section id="pin-definition">
-<h2>3. Pin Definition<a class="headerlink" href="#pin-definition" title="永久链接至标题">#</a></h2>
+<h2>3. Pin Definition<a class="headerlink" href="#pin-definition" title="Permalink to this headline">#</a></h2>
 <p><img alt="footprint" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/PinOut_esp32s3.png"/></p>
 <ul class="simple">
 <li><p>Any GPIO can be used as a PWM pin, and the number is the same as that of GPIO, but only 8 PWMs can be turned on at the same time. Attention must be paid</p></li>
 </ul>
 </section>
 <section id="function-introduction">
-<h2>4. function introduction<a class="headerlink" href="#function-introduction" title="永久链接至标题">#</a></h2>
+<h2>4. function introduction<a class="headerlink" href="#function-introduction" title="Permalink to this headline">#</a></h2>
 <section id="power-supply">
-<h3><strong>1.</strong> <strong>Power supply</strong><a class="headerlink" href="#power-supply" title="永久链接至标题">#</a></h3>
+<h3><strong>1.</strong> <strong>Power supply</strong><a class="headerlink" href="#power-supply" title="Permalink to this headline">#</a></h3>
 <p>CORE-ESP32-S3 The core board supports the following 3 ways of power supply：</p>
 <ul class="simple">
 <li><p>Type-C Interface power supply (default）</p></li>
@@ -753,7 +751,7 @@ Therefore, please check the usb port with power on after you get it, and then ca
 <p>Power supply mode to be recommend preferentially during debugging: power supply TYPE-C USB interface.</p>
 </section>
 <section id="led-control">
-<h3><strong>2.</strong> <strong>LED Control</strong><a class="headerlink" href="#led-control" title="永久链接至标题">#</a></h3>
+<h3><strong>2.</strong> <strong>LED Control</strong><a class="headerlink" href="#led-control" title="Permalink to this headline">#</a></h3>
 <p>The CORE ESP32S3 core board carries 2 LEDs. Developers can refer to Table 4-1 for control of corresponding pins.</p>
 <p><img alt="image-20230109141355277" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20230109141355277.png"/></p>
 <p>Table 4-1</p>
@@ -780,7 +778,7 @@ Therefore, please check the usb port with power on after you get it, and then ca
 </table></div>
 </section>
 <section id="key-introduction">
-<h3><strong>3.</strong> <strong>Key introduction</strong><a class="headerlink" href="#key-introduction" title="永久链接至标题">#</a></h3>
+<h3><strong>3.</strong> <strong>Key introduction</strong><a class="headerlink" href="#key-introduction" title="Permalink to this headline">#</a></h3>
 <p>The CORE ESP32S3 core board carries two keys, of which BOOT key can realize BOOT download function, RST key can realize reset function, and pin control reference table 4-2。</p>
 <p><img alt="image-20230109141521515" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20230109141521515.png"/></p>
 <p>Table 4-2</p>
@@ -805,7 +803,7 @@ Therefore, please check the usb port with power on after you get it, and then ca
 </section>
 </section>
 <section id="related-information-links">
-<h2><strong>Related Information Links</strong><a class="headerlink" href="#related-information-links" title="永久链接至标题">#</a></h2>
+<h2><strong>Related Information Links</strong><a class="headerlink" href="#related-information-links" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://gitee.com/openLuat/luatos-soc-idf5">Open Source Warehouse Link</a></p>
 <p><a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo">demo Link</a></p>
 </section>
@@ -837,13 +835,13 @@ Therefore, please check the usb port with power on after you get it, and then ca
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -861,7 +859,7 @@ Therefore, please check the usb port with power on after you get it, and then ca
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -903,7 +901,6 @@ Therefore, please check the usb port with power on after you get it, and then ca
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

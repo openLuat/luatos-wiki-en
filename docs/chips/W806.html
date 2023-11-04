@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="🖥️ PC End version" href="win32.html" /><link rel="prev" title="Hardware Data" href="air640w/hardware.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="🖥️ PC End version" href="win32.html" /><link rel="prev" title="Hardware Data" href="air640w/hardware.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>🚗 W806 - LuatOS 文档</title>
+        <title>🚗 W806 - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,13 +688,13 @@
         </div>
         <article role="main">
           <section id="w806">
-<h1>🚗 W806<a class="headerlink" href="#w806" title="永久链接至标题">#</a></h1>
+<h1>🚗 W806<a class="headerlink" href="#w806" title="Permalink to this headline">#</a></h1>
 <section id="w806-what-is-it">
-<h2>W806 What is it??<a class="headerlink" href="#w806-what-is-it" title="永久链接至标题">#</a></h2>
+<h2>W806 What is it??<a class="headerlink" href="#w806-what-is-it" title="Permalink to this headline">#</a></h2>
 <p>W806 It is a QFN56 package, 6mm x 6mm mcu. This chip is interchangeable with the combined Air103..</p>
 </section>
 <section id="luatos-what-functions-are-provided-for-it">
-<h2>LuatOS What functions are provided for it<a class="headerlink" href="#luatos-what-functions-are-provided-for-it" title="永久链接至标题">#</a></h2>
+<h2>LuatOS What functions are provided for it<a class="headerlink" href="#luatos-what-functions-are-provided-for-it" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Based on Lua 5.3.6 with 95% native library support</p></li>
 <li><p>Adapts to the LuaTask and provides extremely friendly<code class="docutils literal notranslate"><span class="pre">sys.lua</span></code></p></li>
@@ -725,20 +723,20 @@
 <p>LuatOS Large QQ group: 1061642968</p>
 </section>
 <section id="special-notes">
-<h2>Special Notes<a class="headerlink" href="#special-notes" title="永久链接至标题">#</a></h2>
+<h2>Special Notes<a class="headerlink" href="#special-notes" title="Permalink to this headline">#</a></h2>
 <p>Since the reset pin of W806 development board is not connected to rts of serial port chip, manual reset and download are required, which is troublesome during development. As shown in the figure below, connect the rts pin flying wire of the serial port chip to the reset pin of the chip, and download the software to automatically reset the chip.</p>
 <p><img alt="image-20211103172223853" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211103172223853.png"/></p>
 </section>
 <section id="compile-firmware">
-<h2>Compile Firmware<a class="headerlink" href="#compile-firmware" title="永久链接至标题">#</a></h2>
+<h2>Compile Firmware<a class="headerlink" href="#compile-firmware" title="Permalink to this headline">#</a></h2>
 <p>If you only want to compile custom function firmware you can directly use <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html">Online Cloud Compilation</a> to generate custom firmware. Without any environment installation, you can customize the selection of various functions.</p>
 <p>I want to compile my own tutorial reference <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/develop/compile/Air101.html">source code compilation tutorial</a> to compile according to Air103</p>
 </section>
 <section id="burn-firmware">
-<h2>Burn Firmware<a class="headerlink" href="#burn-firmware" title="永久链接至标题">#</a></h2>
+<h2>Burn Firmware<a class="headerlink" href="#burn-firmware" title="Permalink to this headline">#</a></h2>
 <p>After compiling the firmware, I believe you have obtained the firmware file with the. soc suffix. Here is how to burn the firmware into the device.</p>
 <section id="tool-configuration">
-<h3>Tool Configuration<a class="headerlink" href="#tool-configuration" title="永久链接至标题">#</a></h3>
+<h3>Tool Configuration<a class="headerlink" href="#tool-configuration" title="Permalink to this headline">#</a></h3>
 <p>First download the latest version of the Luatools:<a class="reference external" href="https://luatos.com/luatools/download/last">click me to download</a></p>
 <p>It is recommended to create a new Luatools folder, put the exe file into it, and then open the exe file.</p>
 <p>Select <code class="docutils literal notranslate"><span class="pre">Options</span> <span class="pre">and</span> <span class="pre">Tools</span></code>-<code class="docutils literal notranslate"><span class="pre">Tool</span> <span class="pre">Configurations</span></code></p>
@@ -746,7 +744,7 @@
 <p>On the <code class="docutils literal notranslate"><span class="pre">uart</span></code> tab, set the baud rate to 921600 and restart the software.</p>
 </section>
 <section id="burn">
-<h3>Burn<a class="headerlink" href="#burn" title="永久链接至标题">#</a></h3>
+<h3>Burn<a class="headerlink" href="#burn" title="Permalink to this headline">#</a></h3>
 <p>Connect the device to the computer through usb cable, you can see a new COM port, check<code class="docutils literal notranslate"> <span class="pre">universal</span> <span class="pre">serial</span> <span class="pre">port</span> <span class="pre">print</span></code>, and select this COM port in the tool</p>
 <p><img alt="image-20211028153429404" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211028153429404.png"/></p>
 <p>Click the “Download Firmware” button, select the soc file just downloaded, and download it directly. Because the rts pin of the serial chip of the w806 development board is not connected to the chip reset pin, you need to manually press the rst key on the board to restart after clicking the download. If the price increase is changed according to the special instructions, there is no need to reset it manually.</p>
@@ -755,7 +753,7 @@
 <p><img alt="image-20211028154052448" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211028154052448.png"/></p>
 </section>
 <section id="burn-script">
-<h3>Burn Script<a class="headerlink" href="#burn-script" title="永久链接至标题">#</a></h3>
+<h3>Burn Script<a class="headerlink" href="#burn-script" title="Permalink to this headline">#</a></h3>
 <p>Click the <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Management</span> <span class="pre">Test</span></code> button and click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Project</span></code> in the bottom left corner to create a new project</p>
 <p>Select the firmware used by the chip and select the script to download it.</p>
 <p>demo The script of the class can be found in the <code class="docutils literal notranslate"><span class="pre">/demo</span></code> folder by going to <a class="reference external" href="https://gitee.com/openLuat/LuatOS">LuatOS Official Warehouse</a>.</p>
@@ -764,21 +762,21 @@
 <p>If the firmware version currently burned by the chip is the same as the firmware selected here, you can click “Download Script” to download only the script. On the contrary, it is recommended to click “Download Bottom Layer and Script” to perform a full brush.</p>
 </section>
 <section id="view-log">
-<h3>View Log<a class="headerlink" href="#view-log" title="永久链接至标题">#</a></h3>
+<h3>View Log<a class="headerlink" href="#view-log" title="Permalink to this headline">#</a></h3>
 <p>If the serial port is not opened, click “Open Serial Port” to view the log</p>
 <p>If there is no response, you can try clicking<code class="docutils literal notranslate"> <span class="pre">restart</span> <span class="pre">serial</span> <span class="pre">port</span></code></p>
 <p><img alt="image-20211028154337785" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211028154337785.png"/></p>
 </section>
 </section>
 <section id="gpio-output-lighting">
-<h2>GPIO Output-lighting<a class="headerlink" href="#gpio-output-lighting" title="永久链接至标题">#</a></h2>
+<h2>GPIO Output-lighting<a class="headerlink" href="#gpio-output-lighting" title="Permalink to this headline">#</a></h2>
 <p>This chapter will use the GPIO interface to control the LED lights of the development board to flash and be a lamp god.</p>
 <section id="hardware-preparation">
-<h3>Hardware preparation<a class="headerlink" href="#hardware-preparation" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#hardware-preparation" title="Permalink to this headline">#</a></h3>
 <p>One development board and one usb cable</p>
 </section>
 <section id="software-usage">
-<h3>Software usage<a class="headerlink" href="#software-usage" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#software-usage" title="Permalink to this headline">#</a></h3>
 <p>According to the schematic diagram, it can be found that the three lamps brought by the development board are PB0,1 and 2 control respectively, and the low level lights up.</p>
 <p><img alt="image-20211103173519650" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211103173519650.png"/></p>
 <p>We look up the document of Air103/W806 <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html">LuatOS document</a> and know that the pin number of PB0 is 16</p>
@@ -802,14 +800,14 @@
 </section>
 </section>
 <section id="gpio-input-key">
-<h2>GPIO Input-Key<a class="headerlink" href="#gpio-input-key" title="永久链接至标题">#</a></h2>
+<h2>GPIO Input-Key<a class="headerlink" href="#gpio-input-key" title="Permalink to this headline">#</a></h2>
 <p>I learned output control in the previous section. I’ll learn input while the iron is hot.</p>
 <section id="id1">
-<h3>Hardware preparation<a class="headerlink" href="#id1" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>One development board and one usb cable</p>
 </section>
 <section id="id2">
-<h3>Software usage<a class="headerlink" href="#id2" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>The same routine, first look at the schematic diagram, RESET button don’t want to reset once pressed, then choose BOOT, that is PA0</p>
 <p><img alt="image-20211103175057318" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211103175057318.png"/></p>
 <p>As usual, looking for Air103/W806 documents <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html">LuatOS documents</a> shows that the pin number of PA0 is 0</p>
@@ -825,18 +823,18 @@
 </section>
 </section>
 <section id="pwm">
-<h2>PWM<a class="headerlink" href="#pwm" title="永久链接至标题">#</a></h2>
+<h2>PWM<a class="headerlink" href="#pwm" title="Permalink to this headline">#</a></h2>
 <p>This chapter will use PWM to drive onboard LEDs to achieve a breathing light effect</p>
 <section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h3>
 <p>PWM(Pulse Width Modulation , Pulse width modulation) is a method of digitally encoding the level of an analog signal. The duty cycle of a square wave is used to encode the level of a specific analog signal through pulses of different frequencies, so that a series of pulses of equal amplitude are obtained at the output, and these pulses are used to replace the required waveform.</p>
 </section>
 <section id="id3">
-<h3>Hardware preparation<a class="headerlink" href="#id3" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>One development board and one usb cable</p>
 </section>
 <section id="id4">
-<h3>Software usage<a class="headerlink" href="#id4" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>According to the previous GPIO study, we know that the onboard lamps are connected to PB0,1 and 2, and these pins all support PWM, so try to be a breathing lamp.</p>
 <p>Check <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/pwm.html">API</a> and find that the use of PWM is very simple. Just open it directly, then adjust the duty cycle to adjust the brightness and code it. Complete code in demo’s pwm folder</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
@@ -864,19 +862,19 @@
 </section>
 </section>
 <section id="uart">
-<h2>UART<a class="headerlink" href="#uart" title="永久链接至标题">#</a></h2>
+<h2>UART<a class="headerlink" href="#uart" title="Permalink to this headline">#</a></h2>
 <p>This chapter will learn how to configure the serial port and send the received data back through the serial port.</p>
 <section id="id5">
-<h3>Introduction<a class="headerlink" href="#id5" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>UART（Universal Asynchronous Receiver/Transmitter）Universal asynchronous transceiver, UART as a kind of asynchronous serial communication protocol, the working principle is to transmit each character of the data one by one. Is the most frequently used data bus in the application development process.</p>
 <p>UART The characteristic of the serial port is to transmit data bit by bit in sequence. Two-way communication can be realized as long as two transmission lines. One line sends data while receiving data with another line. There are several important parameters for UART serial communication, namely baud rate, start bit, data bit, stop bit and parity bit. For two ports using UART serial communication, these parameters must match, otherwise the communication will not be completed normally.</p>
 </section>
 <section id="id6">
-<h3>Hardware preparation<a class="headerlink" href="#id6" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>W806 One development board, one usb to serial port line</p>
 </section>
 <section id="id7">
-<h3>Software usage<a class="headerlink" href="#id7" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>Looking at the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html">LuatOS Document</a>, we can see that W806 has 5 uarts, of which uart0 is used for download and debugging, so let’s choose uart1. That is, PB6-&gt;TX then PB7-&gt;RX connect TX to serial line RX,RX to serial line TX, and then don’t forget to share the ground.</p>
 <p>After connecting the line, we began to write the code. According to the API interface description of <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/uart.html">UART </a>, we first initialized the serial port.</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">uart</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span>
@@ -928,18 +926,18 @@
 </section>
 </section>
 <section id="adc">
-<h2>ADC<a class="headerlink" href="#adc" title="永久链接至标题">#</a></h2>
+<h2>ADC<a class="headerlink" href="#adc" title="Permalink to this headline">#</a></h2>
 <p>This chapter will introduce you to the ADC features of LuatOS. The internal temperature will be read using the Air101 development board and printed in the log.</p>
 <section id="id8">
-<h3>Introduction<a class="headerlink" href="#id8" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>An analog-to-digital converter, or ADC for short, usually refers to an electronic component that converts an analog signal into a digital signal. A typical analog-to-digital converter converts an input voltage signal to an output digital signal. W806 chip has two 16-bit ADC, the highest sampling rate 1KHz。</p>
 </section>
 <section id="id9">
-<h3>Hardware preparation<a class="headerlink" href="#id9" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>W806 One development board and one adjustable power supply</p>
 </section>
 <section id="id10">
-<h3>Software usage<a class="headerlink" href="#id10" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>This time we first look for the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html">LuatOS document</a> to see that in addition to reading the external IO voltage, we can also read the internal temperature and power supply voltage. This time we choose ADC0, which is the PA1 pin.</p>
 <p>We connect the PA1 pin with an adjustable power supply (be sure to pay attention to the voltage not exceeding 2.4V）</p>
 <p>According to the interface of <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/adc.html">ADC library</a> library, write a few lines of code simply. See the adc folder of demo directory for the complete code.</p>
@@ -963,18 +961,18 @@
 </section>
 </section>
 <section id="i2c">
-<h2>I2C<a class="headerlink" href="#i2c" title="永久链接至标题">#</a></h2>
+<h2>I2C<a class="headerlink" href="#i2c" title="Permalink to this headline">#</a></h2>
 <p>This chapter will introduce you to the I2C features of LuatOS. W806 development board I2C will be used to read the temperature and humidity of the SHT30 sensor</p>
 <section id="id11">
-<h3>Introduction<a class="headerlink" href="#id11" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>I2C（Inter Integrated Circuit）The bus is a half-duplex, bidirectional two-wire synchronous serial bus developed by PHILIPS. The I2C bus only needs two signal lines to transmit data, one is a bidirectional data line SDA(serial data), and the other is a bidirectional clock line SCL（serial clock）</p>
 </section>
 <section id="id12">
-<h3>Hardware preparation<a class="headerlink" href="#id12" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>W806 One development board and one SHT30 sensor</p>
 </section>
 <section id="id13">
-<h3>Software usage<a class="headerlink" href="#id13" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>First of all, check the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html">LuatOS document</a> and see the document that PA1 is SCL pin and PA4 is SDA pin. We attach the sensor to the board according to this definition.</p>
 <p>Start writing code, first find the interface description <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/i2c.html">i2c-I2C Operation-LuatOS Document</a>, initialize first, need the address, refer to SHT30 manual, the address is determined by the pin level of ADDR, my module is suspended, that is 0x44</p>
 <img alt="image-20211103192701546" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211103192701546.png" style="zoom:50%;"/>
@@ -1011,18 +1009,18 @@
 </section>
 </section>
 <section id="spi">
-<h2>SPI<a class="headerlink" href="#spi" title="永久链接至标题">#</a></h2>
+<h2>SPI<a class="headerlink" href="#spi" title="Permalink to this headline">#</a></h2>
 <p>In this chapter, the hardware SPI of W806 will be used to read the ID of flah and print it.</p>
 <section id="id14">
-<h3>Introduction<a class="headerlink" href="#id14" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <p>SPI Serial Peripheral Interface (Serial Peripheral Interface) is an abbreviation, is a high-speed, full-duplex, synchronous communication bus, the device is divided into master and slave, the current SPI W806 can only be used as a host.</p>
 </section>
 <section id="id15">
-<h3>Hardware preparation<a class="headerlink" href="#id15" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p>W806 A development board, SPI flash a</p>
 </section>
 <section id="id16">
-<h3>Software usage<a class="headerlink" href="#id16" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p>First look for the pin diagram to study how to connect, check the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html">LuatOS document</a> to see that W806 chip has two sets of hardware SPI, we choose to use SPI0, that is, PB2 to CLK,PB5 to MOSI,PB3 to MISO,PB4 to CS. Next, study how to drive.</p>
 <p>The flash I use is W25Q128. According to the manual, there is a general command 0x9F for reading flash models. If normal, the W25Q128 should return 0xEF4018</p>
 <p><img alt="image-20211104124049436" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211104124049436.png"/></p>
@@ -1046,18 +1044,18 @@
 </section>
 </section>
 <section id="sfud-external-flash">
-<h2>SFUD-External flash<a class="headerlink" href="#sfud-external-flash" title="永久链接至标题">#</a></h2>
+<h2>SFUD-External flash<a class="headerlink" href="#sfud-external-flash" title="Permalink to this headline">#</a></h2>
 <p>This chapter will use W806 hardware SPI to mount flash to the file system, read and write directly</p>
 <section id="id17">
-<h3>Introduction<a class="headerlink" href="#id17" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
 <p>In the last chapter, we learned to use SPI to read the ID of external flash. In fact, the read and write instructions of external spi flash are compatible. In the process of daily use, it will be very troublesome if we directly use spi to read and write flash through instructions. As a result, LuatOS has designed a set of interfaces to realize abstract read and write of external spi flash through this set of interfaces and realize simple read and write of Lua io.</p>
 </section>
 <section id="id18">
-<h3>Hardware preparation<a class="headerlink" href="#id18" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <p>W806 A development board, SPI flash a</p>
 </section>
 <section id="id19">
-<h3>Software usage<a class="headerlink" href="#id19" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
 <p>Wiring diagram see SPI that chapter can not repeat</p>
 <p>Refer to <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/api/sfud.html">sfud Document</a> to write a simple demo. The general idea is to create a spi hardware device object for sfud first, and then operate spi through sfud’s abstract interface to realize the operation of flash.</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">spi_flash</span> <span class="o">=</span> <span class="n">spi</span><span class="p">.</span><span class="n">deviceSetup</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2000000</span><span class="p">,</span><span class="n">spi</span><span class="p">.</span><span class="n">MSB</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="c1">--PB6</span>
@@ -1091,21 +1089,21 @@
 </section>
 </section>
 <section id="sdio">
-<h2>SDIO<a class="headerlink" href="#sdio" title="永久链接至标题">#</a></h2>
+<h2>SDIO<a class="headerlink" href="#sdio" title="Permalink to this headline">#</a></h2>
 <p>This chapter will learn to use the SDIO interface to drive the TF card and mount the TF card to the file system for reading and writing.</p>
 <section id="id20">
-<h3>Introduction<a class="headerlink" href="#id20" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
 <p>In the last chapter, we learned to mount flash directly with sfud, but spi is a bit slow on the two data lines and flash capacity is limited. At this time, I thought of a higher-speed SDIO interface. The SDIO interface was designed to read and write SD cards at the beginning. Later, it was also used in many high-speed communications.</p>
 </section>
 <section id="id21">
-<h3>Hardware preparation<a class="headerlink" href="#id21" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
 <p>W806 Development board a piece, support SDIO tf card or SD card module. Be sure to be similar to the figure below that supports SDIO 4 data lines.</p>
 <img alt="image-20211104171407771" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211104171407771.png" style="zoom:50%;"/>
 <p>Do not support this only SPI</p>
 <img alt="image-20211104171659482" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20211104171659482.png" style="zoom:67%;"/>
 </section>
 <section id="id22">
-<h3>Software usage<a class="headerlink" href="#id22" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
 <p>First look at the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html">LuatOS document</a> and study how to connect the wires.</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -1151,18 +1149,18 @@
 </section>
 </section>
 <section id="lcd">
-<h2>LCD<a class="headerlink" href="#lcd" title="永久链接至标题">#</a></h2>
+<h2>LCD<a class="headerlink" href="#lcd" title="Permalink to this headline">#</a></h2>
 <p>In this chapter, we will learn how to drive the LCD screen and display Chinese characters and graphics on the screen.</p>
 <section id="id23">
-<h3>Introduction<a class="headerlink" href="#id23" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
 <p>Usually driving the screen is a very complicated thing, because the LCD screen has a lot of instructions, display data and make a font. LuatOS encapsulates the LCD and has a variety of commonly used screen drivers built in. If it is not in the list, it can also be driven by Lua script configuration instructions. Using the idea of virtual video memory, the hardware driver and image drawing are extracted, which is more simple and convenient to use.</p>
 </section>
 <section id="id24">
-<h3>Hardware preparation<a class="headerlink" href="#id24" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
 <p>W806 A development board, SPI screen, I use ST7735</p>
 </section>
 <section id="id25">
-<h3>Software usage<a class="headerlink" href="#id25" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
 <p>As usual, first look at the document <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html">LuatOS Document</a> to study how to connect the wires. Only the first two pins must use the solution of this table. The latter can be connected casually. I recommend press my connection.</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -1219,18 +1217,18 @@
 </section>
 </section>
 <section id="lvgl">
-<h2>LVGL<a class="headerlink" href="#lvgl" title="永久链接至标题">#</a></h2>
+<h2>LVGL<a class="headerlink" href="#lvgl" title="Permalink to this headline">#</a></h2>
 <p>This chapter will briefly introduce how to use LVGL to display a more beautiful picture</p>
 <section id="id26">
-<h3>Introduction<a class="headerlink" href="#id26" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h3>
 <p>In the last chapter, I learned the LCD library and can smoothly draw dots and lines to display Chinese characters. However, if I want to see the interface well, these simple interfaces still cannot meet the requirements. As a result, there are many graphics libraries, LuatOS integrated LVGL graphics library, you can use a large number of controls to write a beautiful interface.</p>
 </section>
 <section id="id27">
-<h3>Hardware preparation<a class="headerlink" href="#id27" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h3>
 <p>W806 A development board, SPI screen, I use ST7735</p>
 </section>
 <section id="id28">
-<h3>Software usage<a class="headerlink" href="#id28" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h3>
 <p>The chapter on LCD is not repeated. LVGL as a graphics library is the initialization screen of LCD first, and then LVGL is used to render the screen content. Directly on the code</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"lvgl"</span><span class="p">,</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">())</span>
 <span class="n">lvgl</span><span class="p">.</span><span class="n">disp_set_bg_color</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="mh">0xFFFFFF</span><span class="p">)</span>
@@ -1248,18 +1246,18 @@
 </section>
 </section>
 <section id="rtc">
-<h2>RTC<a class="headerlink" href="#rtc" title="永久链接至标题">#</a></h2>
+<h2>RTC<a class="headerlink" href="#rtc" title="Permalink to this headline">#</a></h2>
 <p>This chapter will introduce you to the RTC features of LuatOS. The value of the RTC will be read using the W806 development board and printed in the log.</p>
 <section id="id29">
-<h3>Introduction<a class="headerlink" href="#id29" title="永久链接至标题">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h3>
 <p>RTC （Real-Time Clock）Real-time clock can provide accurate real-time time, it can be used to produce years, months, days, hours, minutes, seconds and other information. At present, most real-time clock chips use a crystal oscillator with high precision as the clock source. Some clock chips will add battery power to keep the time information valid in order to work when the main power supply is down.</p>
 </section>
 <section id="id30">
-<h3>Hardware preparation<a class="headerlink" href="#id30" title="永久链接至标题">#</a></h3>
+<h3>Hardware preparation<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h3>
 <p>W806 A development board</p>
 </section>
 <section id="id31">
-<h3>Software usage<a class="headerlink" href="#id31" title="永久链接至标题">#</a></h3>
+<h3>Software usage<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h3>
 <p>Code display</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"os.date()"</span><span class="p">,</span> <span class="nb">os.date</span><span class="p">())</span><span class="c1">--Print Time</span>
 <span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="n">rtc</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="c1">--Get RTC Time</span>
@@ -1299,13 +1297,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1323,7 +1321,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1435,7 +1433,6 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

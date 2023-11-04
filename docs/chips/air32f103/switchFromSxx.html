@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Enhanced function instructions" href="enhancement.html" /><link rel="prev" title="Air32F103 Manual" href="Air32f103.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Enhanced function instructions" href="enhancement.html" /><link rel="prev" title="Air32F103 Manual" href="Air32f103.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Transplant from SXX32F103 - LuatOS 文档</title>
+        <title>Transplant from SXX32F103 - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,9 +688,9 @@
         </div>
         <article role="main">
           <section id="transplant-from-sxx32f103">
-<h1>Transplant from SXX32F103<a class="headerlink" href="#transplant-from-sxx32f103" title="永久链接至标题">#</a></h1>
+<h1>Transplant from SXX32F103<a class="headerlink" href="#transplant-from-sxx32f103" title="Permalink to this headline">#</a></h1>
 <section id="foreword">
-<h2>Foreword<a class="headerlink" href="#foreword" title="永久链接至标题">#</a></h2>
+<h2>Foreword<a class="headerlink" href="#foreword" title="Permalink to this headline">#</a></h2>
 <p>This migration guide is designed to help you analyze the steps required to migrate from an existing SXX32F103 device to a AIR32F103 device. This document collects the most important information and lists the important things to be aware.</p>
 <p>To migrate applications from SXX32F103 series to AIR32F103 series, users need to analyze hardware migration, peripheral migration, and firmware migration.</p>
 <blockquote>
@@ -700,7 +698,7 @@
 </div></blockquote>
 </section>
 <section id="fast-replacement-sxx32f103-chip">
-<h2>Fast replacement SXX32F103 chip<a class="headerlink" href="#fast-replacement-sxx32f103-chip" title="永久链接至标题">#</a></h2>
+<h2>Fast replacement SXX32F103 chip<a class="headerlink" href="#fast-replacement-sxx32f103-chip" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Compare peripheral specifications, Flash capacity, SRAM capacity, etc., unsoldered SXX32F103, and replace them with AIR32F103 corresponding models.</p></li>
 <li><p>Using ISP or KEIL, download SXX32F103 HEX file or BIN file.</p></li>
@@ -711,10 +709,10 @@
 </ol>
 </section>
 <section id="air32f103-hardware-usage-differences">
-<h2>AIR32F103 Hardware usage differences<a class="headerlink" href="#air32f103-hardware-usage-differences" title="永久链接至标题">#</a></h2>
+<h2>AIR32F103 Hardware usage differences<a class="headerlink" href="#air32f103-hardware-usage-differences" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="tim2-module-reuse-differences">
-<h2>TIM2 Module reuse differences<a class="headerlink" href="#tim2-module-reuse-differences" title="永久链接至标题">#</a></h2>
+<h2>TIM2 Module reuse differences<a class="headerlink" href="#tim2-module-reuse-differences" title="Permalink to this headline">#</a></h2>
 <p>AIR32F103 The Channel1-Channel4 output of the chip TIM2 can be reused pins and SXX32F103 are different, the detailed differences are as follows：</p>
 <style>
 .x21
@@ -991,7 +989,7 @@
 </table></div>
 </section>
 <section id="gpio-description-of-pin-withstand-voltage">
-<h2>GPIO Description of pin withstand voltage<a class="headerlink" href="#gpio-description-of-pin-withstand-voltage" title="永久链接至标题">#</a></h2>
+<h2>GPIO Description of pin withstand voltage<a class="headerlink" href="#gpio-description-of-pin-withstand-voltage" title="Permalink to this headline">#</a></h2>
 <p>AIR32F103 The upper limit of the withstand voltage of the PA11 and PA12 pins is 3.6V. Pay attention to the voltage range when designing the hardware circuit.</p>
 <ul class="simple">
 <li><p>PA11 Pin-selectable multiplexing function CAN_RX、USART1_CTS、USBDM、TIM1_CH4</p></li>
@@ -999,7 +997,7 @@
 </ul>
 </section>
 <section id="bootstrap-mode-select-pin">
-<h2>bootstrap mode select pin<a class="headerlink" href="#bootstrap-mode-select-pin" title="永久链接至标题">#</a></h2>
+<h2>bootstrap mode select pin<a class="headerlink" href="#bootstrap-mode-select-pin" title="Permalink to this headline">#</a></h2>
 <p>BOOT0 When the pin is suspended, it is in a floating state, and there is a probability that the execution program will be started from the non-Flash area after the chip is reset and started. If you need to start from the user Flash, please avoid BOOT0 hanging situation</p>
 <p>**recommend the BOOT0 pin is externally connected with a 10K pull-down resistor or directly grounded **, it can be stably started from the user Flash.</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1030,12 +1028,12 @@
 </table></div>
 </section>
 <section id="air32f103-software-use-differences">
-<h2>AIR32F103 Software Use Differences<a class="headerlink" href="#air32f103-software-use-differences" title="永久链接至标题">#</a></h2>
+<h2>AIR32F103 Software Use Differences<a class="headerlink" href="#air32f103-software-use-differences" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="system-function">
-<h2>System function<a class="headerlink" href="#system-function" title="永久链接至标题">#</a></h2>
+<h2>System function<a class="headerlink" href="#system-function" title="Permalink to this headline">#</a></h2>
 <section id="configure-debug-state-enable-sw-turn-off-jtag-difference">
-<h3>Configure DEBUG state, enable SW, turn off JTAG difference<a class="headerlink" href="#configure-debug-state-enable-sw-turn-off-jtag-difference" title="永久链接至标题">#</a></h3>
+<h3>Configure DEBUG state, enable SW, turn off JTAG difference<a class="headerlink" href="#configure-debug-state-enable-sw-turn-off-jtag-difference" title="Permalink to this headline">#</a></h3>
 <p>Configure DEBUG state, enable SW and turn off JTAG, as shown in the following figure</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">GPIO_PinRemapConfig</span><span class="p">(</span><span class="n">GPIO_Remap_SWJJTAGDISABLE</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -1071,7 +1069,7 @@
 </div>
 </section>
 <section id="turning-off-jtag-or-releasing-jtrst-in-the-emulated-state-will-result-in-a-reset">
-<h3>Turning off JTAG or releasing JTRST in the emulated state will result in a reset<a class="headerlink" href="#turning-off-jtag-or-releasing-jtrst-in-the-emulated-state-will-result-in-a-reset" title="永久链接至标题">#</a></h3>
+<h3>Turning off JTAG or releasing JTRST in the emulated state will result in a reset<a class="headerlink" href="#turning-off-jtag-or-releasing-jtrst-in-the-emulated-state-will-result-in-a-reset" title="Permalink to this headline">#</a></h3>
 <p>In the emulation state, turning off JTAG or releasing JTRST will cause the chip to reset immediately and cannot execute subsequent codes.</p>
 <p>Solution：</p>
 <ul class="simple">
@@ -1080,7 +1078,7 @@
 </ul>
 </section>
 <section id="configuration-option-for-bootstrap-mode-not-reloaded-on-soft-reset">
-<h3>Configuration option for bootstrap mode not reloaded on soft reset<a class="headerlink" href="#configuration-option-for-bootstrap-mode-not-reloaded-on-soft-reset" title="永久链接至标题">#</a></h3>
+<h3>Configuration option for bootstrap mode not reloaded on soft reset<a class="headerlink" href="#configuration-option-for-bootstrap-mode-not-reloaded-on-soft-reset" title="Permalink to this headline">#</a></h3>
 <p>Example of Exceptions (Read/Write Protection is enabled via ISP）：</p>
 <ul class="simple">
 <li><p>BOOT0 Connect high, BOOT1 connect low, external Reset, connect successfully using ISP</p></li>
@@ -1093,7 +1091,7 @@
 <p>After the bootstrap mode is modified, the chip is reset by an external RESET or by re-powering on and off.</p>
 </section>
 <section id="some-sxx32f103-specific-burner-downloads-are-not-supported">
-<h3>Some SXX32F103-specific burner downloads are not supported.<a class="headerlink" href="#some-sxx32f103-specific-burner-downloads-are-not-supported" title="永久链接至标题">#</a></h3>
+<h3>Some SXX32F103-specific burner downloads are not supported.<a class="headerlink" href="#some-sxx32f103-specific-burner-downloads-are-not-supported" title="Permalink to this headline">#</a></h3>
 <p>AIR32F103 Different from SXX32F103 ARM M3 Core version, SW, JTAG IDCODE</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -1122,7 +1120,7 @@
 <p>Use a burner that does not judge Core ID, SW IDCODE and JTAG IDCODE</p>
 </section>
 <section id="some-third-party-burners-failed-to-download">
-<h3>Some third-party burners failed to download.<a class="headerlink" href="#some-third-party-burners-failed-to-download" title="永久链接至标题">#</a></h3>
+<h3>Some third-party burners failed to download.<a class="headerlink" href="#some-third-party-burners-failed-to-download" title="Permalink to this headline">#</a></h3>
 <p>SW/JTAG interaction is not supported for some burners when RESET is pulled low. Because AIR32F103 when RESET is pulled low, SW and JTAG cannot be used (e.g. WizPro200ST8 programmer）</p>
 <p>Solution：</p>
 <ol class="arabic simple">
@@ -1131,14 +1129,14 @@
 </ol>
 </section>
 <section id="when-accessing-apb-bus-with-non-32bit-alignment-the-phenomenon-is-different">
-<h3>When accessing APB bus with non-32bit alignment, the phenomenon is different<a class="headerlink" href="#when-accessing-apb-bus-with-non-32bit-alignment-the-phenomenon-is-different" title="永久链接至标题">#</a></h3>
+<h3>When accessing APB bus with non-32bit alignment, the phenomenon is different<a class="headerlink" href="#when-accessing-apb-bus-with-non-32bit-alignment-the-phenomenon-is-different" title="Permalink to this headline">#</a></h3>
 <p>When accessing the APB bus, it must be aligned with 32 bits, otherwise it cannot be accessed, such：</p>
 <p>ADC When configured in left alignment mode, the converted high 8bit data is obtained from the 0x4001244E address, and the obtained value is fixed. 0</p>
 <p>Solution：</p>
 <p>When accessing the registers of the APB bus, 32bit alignment is required. If a field in the 32bit register is required, the 32bit alignment is read out before processing.</p>
 </section>
 <section id="interrupt-controller-differences">
-<h3>Interrupt Controller Differences<a class="headerlink" href="#interrupt-controller-differences" title="永久链接至标题">#</a></h3>
+<h3>Interrupt Controller Differences<a class="headerlink" href="#interrupt-controller-differences" title="Permalink to this headline">#</a></h3>
 <p>SXX32F103：</p>
 <ol class="arabic simple">
 <li><p>Supports up to 60 maskable interrupt channels</p></li>
@@ -1160,7 +1158,7 @@
 <p><img alt="image-20220623095717980" src="../../_images/image-20220623095717980.png"/></p>
 </section>
 <section id="the-method-of-distinguishing-between-the-air32-chip-and-the-sxx32f103-chip">
-<h3>The method of distinguishing between the Air32 chip and the SXX32F103 chip.<a class="headerlink" href="#the-method-of-distinguishing-between-the-air32-chip-and-the-sxx32f103-chip" title="永久链接至标题">#</a></h3>
+<h3>The method of distinguishing between the Air32 chip and the SXX32F103 chip.<a class="headerlink" href="#the-method-of-distinguishing-between-the-air32-chip-and-the-sxx32f103-chip" title="Permalink to this headline">#</a></h3>
 <p>Read base address 0 x1FFFF7E8, obtain 32bit mark to distinguish.</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -1191,7 +1189,7 @@
 </table></div>
 </section>
 <section id="software-delay-difference">
-<h3>Software delay difference<a class="headerlink" href="#software-delay-difference" title="永久链接至标题">#</a></h3>
+<h3>Software delay difference<a class="headerlink" href="#software-delay-difference" title="Permalink to this headline">#</a></h3>
 <p>Some software delays implemented using other platforms need to be adjusted, such as the simple software delay function shown in the figure below.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">delay</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
@@ -1207,7 +1205,7 @@
 <p>If the software delay time requirements are strict in the application, please adjust the delay parameters implemented by the software.</p>
 </section>
 <section id="rtc-clock-algorithm-difference-when-pre-divider-load-value-exceeds-0xffff">
-<h3>RTC Clock, algorithm difference when pre-divider load value exceeds 0xffff<a class="headerlink" href="#rtc-clock-algorithm-difference-when-pre-divider-load-value-exceeds-0xffff" title="永久链接至标题">#</a></h3>
+<h3>RTC Clock, algorithm difference when pre-divider load value exceeds 0xffff<a class="headerlink" href="#rtc-clock-algorithm-difference-when-pre-divider-load-value-exceeds-0xffff" title="Permalink to this headline">#</a></h3>
 <p>Air32 internal RTC =(PRLH 1)*(PRLL 1), unlike SXX32</p>
 <p>For example, 16M crystal oscillator, configure RTC clock HSE 128 frequency division, time unit is 1 second：</p>
 <ul class="simple">
@@ -1217,7 +1215,7 @@
 <p>16000000 / 128 = 125000；A total of 20bit, if the upper four bits are 3, the lower 16 bits are 125000/(31)-1=31249, combined 227857</p>
 </section>
 <section id="traceswo-instructions-for-use-as-a-printf-function">
-<h3>TRACESWO Instructions for use as a Printf function<a class="headerlink" href="#traceswo-instructions-for-use-as-a-printf-function" title="永久链接至标题">#</a></h3>
+<h3>TRACESWO Instructions for use as a Printf function<a class="headerlink" href="#traceswo-instructions-for-use-as-a-printf-function" title="Permalink to this headline">#</a></h3>
 <p>Using TRACESWO pin (PB3) as Log output, no Log normal output found</p>
 <p>Cause of the problem：</p>
 <p>AIR32F103 PB3 The JTDO function has a higher priority than the TRACESWO function.</p>
@@ -1229,7 +1227,7 @@
 </div>
 </section>
 <section id="description-of-the-size-of-the-write-protected-area-automatically-turned-on-after-the-read-protection-is-turned-on">
-<h3>Description of the size of the write-protected area automatically turned on after the read protection is turned on<a class="headerlink" href="#description-of-the-size-of-the-write-protected-area-automatically-turned-on-after-the-read-protection-is-turned-on" title="永久链接至标题">#</a></h3>
+<h3>Description of the size of the write-protected area automatically turned on after the read protection is turned on<a class="headerlink" href="#description-of-the-size-of-the-write-protected-area-automatically-turned-on-after-the-read-protection-is-turned-on" title="Permalink to this headline">#</a></h3>
 <p>After the read protection is turned on, the size of the write protection area is automatically turned on as follows：</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -1264,9 +1262,9 @@
 </section>
 </section>
 <section id="adc">
-<h2>ADC<a class="headerlink" href="#adc" title="永久链接至标题">#</a></h2>
+<h2>ADC<a class="headerlink" href="#adc" title="Permalink to this headline">#</a></h2>
 <section id="after-configuring-the-adc-for-continuous-sampling-and-enabling-the-adc-only-turning-off-the-adc-enable-cannot-stop-the-conversion">
-<h3>After configuring the ADC for continuous sampling and enabling the ADC, only turning off the ADC enable cannot stop the conversion<a class="headerlink" href="#after-configuring-the-adc-for-continuous-sampling-and-enabling-the-adc-only-turning-off-the-adc-enable-cannot-stop-the-conversion" title="永久链接至标题">#</a></h3>
+<h3>After configuring the ADC for continuous sampling and enabling the ADC, only turning off the ADC enable cannot stop the conversion<a class="headerlink" href="#after-configuring-the-adc-for-continuous-sampling-and-enabling-the-adc-only-turning-off-the-adc-enable-cannot-stop-the-conversion" title="Permalink to this headline">#</a></h3>
 <p>The steps to reproduce the problem are as follows：</p>
 <ul class="simple">
 <li><p>Configure the ADC to continuous sampling mode (continuous trigger mode) and enable DMA transfer. After the software triggers, ADC completes every conversion, DMA transfers once, and DMA completes interruption once.</p></li>
@@ -1294,7 +1292,7 @@
 </div>
 </section>
 <section id="adc-software-trigger-considerations-for-enabling-adon-twice-in-a-row-and-then-performing-external-events">
-<h3>ADC Software trigger considerations for enabling ADON twice in a row and then performing external events<a class="headerlink" href="#adc-software-trigger-considerations-for-enabling-adon-twice-in-a-row-and-then-performing-external-events" title="永久链接至标题">#</a></h3>
+<h3>ADC Software trigger considerations for enabling ADON twice in a row and then performing external events<a class="headerlink" href="#adc-software-trigger-considerations-for-enabling-adon-twice-in-a-row-and-then-performing-external-events" title="Permalink to this headline">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ADC_Cmd</span><span class="p">(</span><span class="n">ADC1</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w"></span>
 <span class="n">ADC_Cmd</span><span class="p">(</span><span class="n">ADC1</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w"></span>
 <span class="n">ADC_SoftwareStartConvCmd</span><span class="p">(</span><span class="n">ADC1</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w"></span>
@@ -1314,7 +1312,7 @@
 <p>When the ADC is enabled and the ADC is enabled again, both the SXX32F103 and the AIR32F103 will trigger an ADC conversion.</p>
 </section>
 <section id="adc-software-trigger-considerations-for-enabling-external-events-twice-in-a-row">
-<h3>ADC Software trigger considerations for enabling external events twice in a row<a class="headerlink" href="#adc-software-trigger-considerations-for-enabling-external-events-twice-in-a-row" title="永久链接至标题">#</a></h3>
+<h3>ADC Software trigger considerations for enabling external events twice in a row<a class="headerlink" href="#adc-software-trigger-considerations-for-enabling-external-events-twice-in-a-row" title="Permalink to this headline">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ADC_SoftwareStartConvCmd</span><span class="p">(</span><span class="n">ADC1</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w"></span>
 <span class="n">ADC_SoftwareStartConvCmd</span><span class="p">(</span><span class="n">ADC1</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -1332,7 +1330,7 @@
 </div>
 </section>
 <section id="dual-adc-different-mode-differences">
-<h3>Dual ADC Different Mode Differences<a class="headerlink" href="#dual-adc-different-mode-differences" title="永久链接至标题">#</a></h3>
+<h3>Dual ADC Different Mode Differences<a class="headerlink" href="#dual-adc-different-mode-differences" title="Permalink to this headline">#</a></h3>
 <p>Synchronous injection, alternating trigger mode：</p>
 <ul class="simple">
 <li><p>SXX32F103：After the injection group channel/rule group channel is triggered, the conversion is normal.</p></li>
@@ -1345,7 +1343,7 @@
 </ul>
 </section>
 <section id="adc-and-dma-configuration-usage-considerations">
-<h3>ADC and DMA configuration usage considerations<a class="headerlink" href="#adc-and-dma-configuration-usage-considerations" title="永久链接至标题">#</a></h3>
+<h3>ADC and DMA configuration usage considerations<a class="headerlink" href="#adc-and-dma-configuration-usage-considerations" title="Permalink to this headline">#</a></h3>
 <p>Problem Description：</p>
 <p>When configuring the ADC to continuously sample multiple channels and use DMA to transfer data, the ADC quantization value is wrong (misaligned).<br/>
 For example, convert 5 channels, configure as a rule group, continuous scan conversion<br/>
@@ -1355,7 +1353,7 @@ The value obtained by the actual software is  {1.5V,2V,2,5V,0V,1V, 1.5V,2V,2,5V,
 <p>Configure DMA first and then enable ADC, ADC quantization value error (misalignment) problem will not occur</p>
 </section>
 <section id="adc-automatic-injection-of-conversion-differences-using-adc">
-<h3>ADC Automatic injection of conversion differences using ADC<a class="headerlink" href="#adc-automatic-injection-of-conversion-differences-using-adc" title="永久链接至标题">#</a></h3>
+<h3>ADC Automatic injection of conversion differences using ADC<a class="headerlink" href="#adc-automatic-injection-of-conversion-differences-using-adc" title="Permalink to this headline">#</a></h3>
 <p>SXX32F103：ADC Automatic injection transformation directly using</p>
 <p>AIR32F103：ADC The automatic injection transformation gets to a value 0</p>
 <p>Workaround: AIR32F103 to use automatic injection conversion ADC_ScanConvMode need to be configured to be on</p>
@@ -1365,15 +1363,15 @@ The value obtained by the actual software is  {1.5V,2V,2,5V,0V,1V, 1.5V,2V,2,5V,
 </section>
 </section>
 <section id="tim">
-<h2>TIM<a class="headerlink" href="#tim" title="永久链接至标题">#</a></h2>
+<h2>TIM<a class="headerlink" href="#tim" title="Permalink to this headline">#</a></h2>
 <section id="the-channel3-of-the-general-purpose-timer-tim2-tim5-does-not-support-the-comparison-output-function">
-<h3>The Channel3 of the general-purpose timer TIM2-TIM5 does not support the comparison output function<a class="headerlink" href="#the-channel3-of-the-general-purpose-timer-tim2-tim5-does-not-support-the-comparison-output-function" title="永久链接至标题">#</a></h3>
+<h3>The Channel3 of the general-purpose timer TIM2-TIM5 does not support the comparison output function<a class="headerlink" href="#the-channel3-of-the-general-purpose-timer-tim2-tim5-does-not-support-the-comparison-output-function" title="Permalink to this headline">#</a></h3>
 <p>AIR32F103 The Channel3 of the general-purpose timer TIM2-TIM5 does not support the comparison output function, and only supports the capture input function</p>
 <p>Solution：</p>
 <p>Select another channel of the TIM2-TIM5, or select a channel of another TIM for output use</p>
 </section>
 <section id="bif-cannot-be-cleared-when-the-time-interval-between-two-consecutive-braking-is-less-than-one-tim-clock-cycle">
-<h3>BIF cannot be cleared when the time interval between two consecutive braking is less than one TIM clock cycle<a class="headerlink" href="#bif-cannot-be-cleared-when-the-time-interval-between-two-consecutive-braking-is-less-than-one-tim-clock-cycle" title="永久链接至标题">#</a></h3>
+<h3>BIF cannot be cleared when the time interval between two consecutive braking is less than one TIM clock cycle<a class="headerlink" href="#bif-cannot-be-cleared-when-the-time-interval-between-two-consecutive-braking-is-less-than-one-tim-clock-cycle" title="Permalink to this headline">#</a></h3>
 <p>When the time interval between two consecutive braking is less than one TIM clock cycle, the BIF (brake interrupt flag) cannot be cleared after it is set to 1.</p>
 <p>Solution (Choose one of two）：</p>
 <ol class="arabic simple">
@@ -1382,7 +1380,7 @@ The value obtained by the actual software is  {1.5V,2V,2,5V,0V,1V, 1.5V,2V,2,5V,
 </ol>
 </section>
 <section id="tim-does-not-reconfigure-cnt-to-count-after-software-modifies-cnt-value">
-<h3>TIM does not reconfigure CNT to count after software modifies CNT value<a class="headerlink" href="#tim-does-not-reconfigure-cnt-to-count-after-software-modifies-cnt-value" title="永久链接至标题">#</a></h3>
+<h3>TIM does not reconfigure CNT to count after software modifies CNT value<a class="headerlink" href="#tim-does-not-reconfigure-cnt-to-count-after-software-modifies-cnt-value" title="Permalink to this headline">#</a></h3>
 <p>In some cases TIM did not reconfigure the CNT count after the software modified the CNT value</p>
 <p>Case 1：</p>
 <p>1．TIM Configure single pulse mode and turn on update interrupt</p>
@@ -1429,9 +1427,9 @@ In single pulse mode, the SXX32F103 and AIR32F103 TIM counters automatically sto
 </section>
 </section>
 <section id="can">
-<h2>CAN<a class="headerlink" href="#can" title="永久链接至标题">#</a></h2>
+<h2>CAN<a class="headerlink" href="#can" title="Permalink to this headline">#</a></h2>
 <section id="configuration-filter-considerations-in-sleep-mode">
-<h3>Configuration Filter Considerations in Sleep Mode<a class="headerlink" href="#configuration-filter-considerations-in-sleep-mode" title="永久链接至标题">#</a></h3>
+<h3>Configuration Filter Considerations in Sleep Mode<a class="headerlink" href="#configuration-filter-considerations-in-sleep-mode" title="Permalink to this headline">#</a></h3>
 <p>Problem Description：</p>
 <p>CAN The module initializes the filter first, and then initializes the controller, resulting in the phenomenon that data can be sent but cannot be received</p>
 <p>Cause of the problem：</p>
@@ -1440,7 +1438,7 @@ In single pulse mode, the SXX32F103 and AIR32F103 TIM counters automatically sto
 <p>Initialize the CAN controller first, then configure the filter to solve</p>
 </section>
 <section id="can-when-the-timestamp-is-sent-the-timestamp-fills-the-position-difference-of-the-message">
-<h3>CAN When the timestamp is sent, the timestamp fills the position difference of the message.<a class="headerlink" href="#can-when-the-timestamp-is-sent-the-timestamp-fills-the-position-difference-of-the-message" title="永久链接至标题">#</a></h3>
+<h3>CAN When the timestamp is sent, the timestamp fills the position difference of the message.<a class="headerlink" href="#can-when-the-timestamp-is-sent-the-timestamp-fills-the-position-difference-of-the-message" title="Permalink to this headline">#</a></h3>
 <p>CAN Configure time-triggered communication mode when the last 2 data bytes are sent with a timestamp<br/>
 Due to different designs, CAN is AIR32F103 used to send timestamps, CAN_TDTxR the TIME[15:0] field in the register is filled with different message positions and SXX32F103.</p>
 <p>SXX32F103：TIME[7:0] As the 7th byte, TIME[15:8] is the 8th byte, which replaces the data written to CAN_TDHxR[31:16] (DATA6[7:0] and DATA7[7:0])</p>
@@ -1449,7 +1447,7 @@ Due to different designs, CAN is AIR32F103 used to send timestamps, CAN_TDTxR th
 <p>When other CAN nodes use the received timestamp, the software rolls over</p>
 </section>
 <section id="txfp-fifo-priority-difference-at-1">
-<h3>TXFP FIFO priority difference at 1<a class="headerlink" href="#txfp-fifo-priority-difference-at-1" title="永久链接至标题">#</a></h3>
+<h3>TXFP FIFO priority difference at 1<a class="headerlink" href="#txfp-fifo-priority-difference-at-1" title="Permalink to this headline">#</a></h3>
 <p>Due to different designs, the AIR32F103 configuration TXFP is 1. When there are multiple messages waiting to be sent, the priority and SXX32F103 of message sending are different</p>
 <p>SXX32F103：TXFP When 1, when multiple messages are waiting to be sent, the order of message sending is determined by the order of requests</p>
 <p>AIR32F103：TXFP When it is 1, when multiple messages are waiting to be sent, the order of message sending is determined by the order of the priority of the mailbox number.<br/>
@@ -1457,9 +1455,9 @@ Mailbox number priority: Mailbox number 0&gt; Mailbox number 1&gt; Mailbox numbe
 </section>
 </section>
 <section id="flash">
-<h2>FLASH<a class="headerlink" href="#flash" title="永久链接至标题">#</a></h2>
+<h2>FLASH<a class="headerlink" href="#flash" title="Permalink to this headline">#</a></h2>
 <section id="flash-write-protect-the-first-block-after-erasing-other-page-for-the-first-time-phenomenon-difference">
-<h3>FLASH Write protect the first block after erasing other Page for the first time, phenomenon difference<a class="headerlink" href="#flash-write-protect-the-first-block-after-erasing-other-page-for-the-first-time-phenomenon-difference" title="永久链接至标题">#</a></h3>
+<h3>FLASH Write protect the first block after erasing other Page for the first time, phenomenon difference<a class="headerlink" href="#flash-write-protect-the-first-block-after-erasing-other-page-for-the-first-time-phenomenon-difference" title="Permalink to this headline">#</a></h3>
 <p>SXX32F103：After writing to protect the first block, erase other Page, which can be erased normally.</p>
 <p>AIR32F103：After the first block is write-protected, the other Page is erased for the first time, the erase fails, and the WRPRTERR write protection error is reported.</p>
 <p>Solution：</p>
@@ -1467,7 +1465,7 @@ Mailbox number priority: Mailbox number 0&gt; Mailbox number 1&gt; Mailbox numbe
 <p><img alt="flash Code" src="../../_images/flash.png"/></p>
 </section>
 <section id="probability-when-calling-flash-eraseoptionbytes-interface-to-erase-option-bytes-fault">
-<h3>probability when calling FLASH_EraseOptionBytes() interface to erase option bytes Fault<a class="headerlink" href="#probability-when-calling-flash-eraseoptionbytes-interface-to-erase-option-bytes-fault" title="永久链接至标题">#</a></h3>
+<h3>probability when calling FLASH_EraseOptionBytes() interface to erase option bytes Fault<a class="headerlink" href="#probability-when-calling-flash-eraseoptionbytes-interface-to-erase-option-bytes-fault" title="Permalink to this headline">#</a></h3>
 <p>When the FLASH_EraseOptionBytes() interface is used in the program to erase the option byte area, there is a probability of HardFault_Handler abnormal interruption.</p>
 <p>Solution：</p>
 <p>AIR32F103 The FLASH_EraseOptionBytes() interface will be modified to replace the following instructions with the <code class="docutils literal notranslate"><span class="pre">SetStrt()</span></code>interface：</p>
@@ -1481,9 +1479,9 @@ Mailbox number priority: Mailbox number 0&gt; Mailbox number 1&gt; Mailbox numbe
 </section>
 </section>
 <section id="usart">
-<h2>USART<a class="headerlink" href="#usart" title="永久链接至标题">#</a></h2>
+<h2>USART<a class="headerlink" href="#usart" title="Permalink to this headline">#</a></h2>
 <section id="no-clock-output-in-smart-card-mode">
-<h3>No clock output in smart card mode<a class="headerlink" href="#no-clock-output-in-smart-card-mode" title="永久链接至标题">#</a></h3>
+<h3>No clock output in smart card mode<a class="headerlink" href="#no-clock-output-in-smart-card-mode" title="Permalink to this headline">#</a></h3>
 <p>SXX32F103：USART Smart card mode clock output, no need to configure USART TE (transmit enable)/RE (receive enable))</p>
 <p>AIR32F103：USART Smart card mode clock output, need to configure USART TE (send enable)/RE (receive enable), otherwise no clock output</p>
 <p>Cause of the problem：</p>
@@ -1493,15 +1491,15 @@ Mailbox number priority: Mailbox number 0&gt; Mailbox number 1&gt; Mailbox numbe
 After configuring the clock frequency division and enabling the smart card mode, set the sending enable TE to 1, which can solve the problem.</p>
 </section>
 <section id="use-dma-to-send-data-and-judge-whether-all-data-is-sent-through-usart-tc-flag-bit">
-<h3>Use DMA to send data, and judge whether all data is sent through USART TC flag bit<a class="headerlink" href="#use-dma-to-send-data-and-judge-whether-all-data-is-sent-through-usart-tc-flag-bit" title="永久链接至标题">#</a></h3>
+<h3>Use DMA to send data, and judge whether all data is sent through USART TC flag bit<a class="headerlink" href="#use-dma-to-send-data-and-judge-whether-all-data-is-sent-through-usart-tc-flag-bit" title="Permalink to this headline">#</a></h3>
 <p>When DMA is used to send more than 2Byte data, it is confirmed whether the data is sent by judging the USART TC flag bit.<br/>
 TE should be turned off before DMA is configured. After DMA is configured, TE is turned on for data transmission.</p>
 </section>
 </section>
 <section id="spi-iis">
-<h2>SPI/IIS<a class="headerlink" href="#spi-iis" title="永久链接至标题">#</a></h2>
+<h2>SPI/IIS<a class="headerlink" href="#spi-iis" title="Permalink to this headline">#</a></h2>
 <section id="iis-i2se-phenomenon-difference-off-in-main-receive-mode-and-in-pcm-standard-mode">
-<h3>IIS I2SE phenomenon difference off in main receive mode and in PCM standard mode<a class="headerlink" href="#iis-i2se-phenomenon-difference-off-in-main-receive-mode-and-in-pcm-standard-mode" title="永久链接至标题">#</a></h3>
+<h3>IIS I2SE phenomenon difference off in main receive mode and in PCM standard mode<a class="headerlink" href="#iis-i2se-phenomenon-difference-off-in-main-receive-mode-and-in-pcm-standard-mode" title="Permalink to this headline">#</a></h3>
 <p>SXX32F103：The host output clock can be stopped by configuring the I2SE</p>
 <p>AIR32F103：It is not possible to stop the host output clock by configuring I2SE</p>
 <p>Solution：</p>
@@ -1511,7 +1509,7 @@ TE should be turned off before DMA is configured. After DMA is configured, TE is
 </ol>
 </section>
 <section id="as-a-master-considerations-for-sending-and-receiving-data-in-full-duplex-mode">
-<h3>As a Master, considerations for sending and receiving data in full duplex mode<a class="headerlink" href="#as-a-master-considerations-for-sending-and-receiving-data-in-full-duplex-mode" title="永久链接至标题">#</a></h3>
+<h3>As a Master, considerations for sending and receiving data in full duplex mode<a class="headerlink" href="#as-a-master-considerations-for-sending-and-receiving-data-in-full-duplex-mode" title="Permalink to this headline">#</a></h3>
 <p>When using SPI as the master for communication, the received data is abnormal, such：</p>
 <p>SPI Configure Master two-wire full-duplex mode, and send and receive data according to the following figure</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>//Send Data0 , Datal; Receive without operation DR
@@ -1560,7 +1558,7 @@ SPI_I2S_ReceiveData(SPIx);
 </div>
 </section>
 <section id="when-spe-is-closed-in-busy-state-there-is-a-probability-that-data-cannot-be-sent-and-received">
-<h3>When SPE is closed in BUSY state, there is a probability that data cannot be sent and received.<a class="headerlink" href="#when-spe-is-closed-in-busy-state-there-is-a-probability-that-data-cannot-be-sent-and-received" title="永久链接至标题">#</a></h3>
+<h3>When SPE is closed in BUSY state, there is a probability that data cannot be sent and received.<a class="headerlink" href="#when-spe-is-closed-in-busy-state-there-is-a-probability-that-data-cannot-be-sent-and-received" title="Permalink to this headline">#</a></h3>
 <p>When operating SPI, if the software does not judge the non-BUSY state when turning off SPE, there is a probability that the subsequent data cannot be sent and received normally. The following operations can normally send 0xAA, but cannot be sent 0x55：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">SPI_I2S_SendData</span><span class="p">(</span><span class="n">SPIx</span><span class="p">,</span><span class="mh">0xAA</span><span class="p">);</span><span class="w"></span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">SPI_12s_GetFlagStatus</span><span class="w"> </span><span class="p">(</span><span class="n">SPIx</span><span class="p">,</span><span class="n">SPI_I2s_FLAG_BSY</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">RESET</span><span class="p">);</span><span class="w"></span>
@@ -1577,7 +1575,7 @@ SPI_I2S_ReceiveData(SPIx);
 <p>Before turning off SPE, it is necessary to judge whether it is in BUSY state. Only when SPE is in non-BUSY state can it be turned off SPE</p>
 </section>
 <section id="spi-transferring-data-using-dma">
-<h3>SPI Transferring data using DMA<a class="headerlink" href="#spi-transferring-data-using-dma" title="永久链接至标题">#</a></h3>
+<h3>SPI Transferring data using DMA<a class="headerlink" href="#spi-transferring-data-using-dma" title="Permalink to this headline">#</a></h3>
 <p>When SPI uses DMA to transfer data, it is recommended that <code class="docutils literal notranslate"><span class="pre">Peripheral</span> <span class="pre">DAM</span> <span class="pre">Enable</span></code> and <code class="docutils literal notranslate"><span class="pre">DMA</span> <span class="pre">Channel</span> <span class="pre">Enable</span></code> be both <code class="docutils literal notranslate"><span class="pre">ENABLE</span></code> and <code class="docutils literal notranslate"><span class="pre">DISABLE</span> </code>. Otherwise, you may encounter incorrect data received.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">DMA_Cmd</span><span class="p">(</span><span class="n">FLASH_SPI_RX_DMA_CHANNEL</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w"></span>
 <span class="n">DMA_Cmd</span><span class="p">(</span><span class="n">FLASH_SPI_TX_DMA_CHANNEL</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w"></span>
@@ -1593,7 +1591,7 @@ SPI_I2S_ReceiveData(SPIx);
 </div>
 </section>
 <section id="spi-rxe-set-data-in-the-dr-remains-after-the-dr-is-read">
-<h3>SPI RXE set, data in the DR remains after the DR is read<a class="headerlink" href="#spi-rxe-set-data-in-the-dr-remains-after-the-dr-is-read" title="永久链接至标题">#</a></h3>
+<h3>SPI RXE set, data in the DR remains after the DR is read<a class="headerlink" href="#spi-rxe-set-data-in-the-dr-remains-after-the-dr-is-read" title="Permalink to this headline">#</a></h3>
 <p>SXX32F103：When RXE is set, the read operation will return the data in the receive buffer and will clear the DR.0</p>
 <p>AIR32F103：When RXE is set, the read operation will return the data in the receive buffer and will not clear the DR.0</p>
 <p>Solution：</p>
@@ -1601,7 +1599,7 @@ SPI_I2S_ReceiveData(SPIx);
 </section>
 </section>
 <section id="usb-module">
-<h2>USB Module<a class="headerlink" href="#usb-module" title="永久链接至标题">#</a></h2>
+<h2>USB Module<a class="headerlink" href="#usb-module" title="Permalink to this headline">#</a></h2>
 <p>USB If it is configured in Slave mode, the Host terminal continuously sends requests from different endpoints or requests from the same endpoint in different directions within a short period of time, and there is a probability of crash.</p>
 <p>Cause of the problem：</p>
 <p>AIR32F103 USB The USB_ISTR (interrupt status register) in the EP_ID and DIR update mechanism and SXX32F103 are different.</p>
@@ -1648,7 +1646,7 @@ SPI_I2S_ReceiveData(SPIx);
 </div>
 </section>
 <section id="dma-module">
-<h2>DMA Module<a class="headerlink" href="#dma-module" title="永久链接至标题">#</a></h2>
+<h2>DMA Module<a class="headerlink" href="#dma-module" title="Permalink to this headline">#</a></h2>
 <p>When the DMA module has Channel transferring data, modifying the CNT value (data transfer quantity) of other Channel may not take effect.</p>
 <p>Cause of the problem：
 AIR32F103 DMA Channel The conditions and SXX32F103 for effecting the modification of the CNT (data transmission quantity) are different.</p>
@@ -1656,29 +1654,29 @@ AIR32F103 DMA Channel The conditions and SXX32F103 for effecting the modificatio
 <p>The software avoids modifying the CNT value of other Channel (the number of data transfers when the DMA Channel is moving data.)</p>
 </section>
 <section id="ispconsiderations-for-the-use-of-emulators-and-offline-burners">
-<h2>ISP、Considerations for the use of emulators and offline burners<a class="headerlink" href="#ispconsiderations-for-the-use-of-emulators-and-offline-burners" title="永久链接至标题">#</a></h2>
+<h2>ISP、Considerations for the use of emulators and offline burners<a class="headerlink" href="#ispconsiderations-for-the-use-of-emulators-and-offline-burners" title="Permalink to this headline">#</a></h2>
 <section id="isp-tools">
-<h3>ISP Tools<a class="headerlink" href="#isp-tools" title="永久链接至标题">#</a></h3>
+<h3>ISP Tools<a class="headerlink" href="#isp-tools" title="Permalink to this headline">#</a></h3>
 <p>AIR32F103 Supports commonly used ISP tools in the market, including STMFlashLoader, FlyMcu, and STM32CubeProgrammer<br/>
 <strong>Not supported mcuisp V0.993</strong></p>
 </section>
 <section id="emulator">
-<h3>Emulator<a class="headerlink" href="#emulator" title="永久链接至标题">#</a></h3>
+<h3>Emulator<a class="headerlink" href="#emulator" title="Permalink to this headline">#</a></h3>
 <p>AIR32F103 Supported emulators include ST-LINKV2, JLINK, ARM Emulator, etc.<br/>
 <strong>Not supported ST-LINKV3</strong></p>
 </section>
 <section id="precautions-for-using-pack-sxx32f1xx-above-keil-dfp-2-3-0">
-<h3>Precautions for using pack SXX32F1xx above Keil. DFP.2.3.0<a class="headerlink" href="#precautions-for-using-pack-sxx32f1xx-above-keil-dfp-2-3-0" title="永久链接至标题">#</a></h3>
+<h3>Precautions for using pack SXX32F1xx above Keil. DFP.2.3.0<a class="headerlink" href="#precautions-for-using-pack-sxx32f1xx-above-keil-dfp-2-3-0" title="Permalink to this headline">#</a></h3>
 <p>When using ULINK2 or CMSIS-DAP emulator and using Keil.SXX32F1xx_DFP.2.3.0 or higher (including 2.3.0) pack package, the program cannot be downloaded. Prompt information when downloading<code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">a</span> <span class="pre">genuine</span> <span class="pre">ST</span> <span class="pre">Device!</span> <span class="pre">Abort</span> <span class="pre">connection</span></code></p>
 <p>Solution：</p>
 <p>Replace the project chip type from SXX32 to AIR32 PACK package</p>
 <p>or replace the debugger ST-LINKV2</p>
 </section>
 <section id="downloader">
-<h3>Downloader<a class="headerlink" href="#downloader" title="永久链接至标题">#</a></h3>
+<h3>Downloader<a class="headerlink" href="#downloader" title="Permalink to this headline">#</a></h3>
 <p>The currently unsupported burner is：SmartPRO T9000-PLUS、XELTEK SUPERPRO 6100N</p>
 <section id="burning-exception-when-the-chip-is-in-read-write-protection-state">
-<h4>Burning exception when the chip is in read-write protection state<a class="headerlink" href="#burning-exception-when-the-chip-is-in-read-write-protection-state" title="永久链接至标题">#</a></h4>
+<h4>Burning exception when the chip is in read-write protection state<a class="headerlink" href="#burning-exception-when-the-chip-is-in-read-write-protection-state" title="Permalink to this headline">#</a></h4>
 <p>Problem Description：</p>
 <p>When using off-line burners such as punctive atomic MINI and punctive atomic P100 to burn chips that have been configured with read-write protection, the phenomenon of burning failure occurs.</p>
 <p>Solution：</p>
@@ -1686,7 +1684,7 @@ AIR32F103 DMA Channel The conditions and SXX32F103 for effecting the modificatio
 Note: If the chip is empty, using the above burner will not cause burning failure.</p>
 </section>
 <section id="burn-failed-with-wizpro200st8-programmer">
-<h4>Burn failed with WizPro200ST8 programmer<a class="headerlink" href="#burn-failed-with-wizpro200st8-programmer" title="永久链接至标题">#</a></h4>
+<h4>Burn failed with WizPro200ST8 programmer<a class="headerlink" href="#burn-failed-with-wizpro200st8-programmer" title="Permalink to this headline">#</a></h4>
 <p>Burn failure occurs when using the WizPro200ST8 programmer.</p>
 <p>Solution：</p>
 <p>Disconnect the Reset pin of the WizPro200ST8 programmer from the chip. Only connect VDD, SWCLK and SWDIO to burn normally.</p>
@@ -1721,13 +1719,13 @@ Note: If the chip is empty, using the above burner will not cause burning failur
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1745,7 +1743,7 @@ Note: If the chip is empty, using the above burner will not cause burning failur
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1850,7 +1848,6 @@ Note: If the chip is empty, using the above burner will not cause burning failur
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

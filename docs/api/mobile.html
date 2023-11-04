@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="mqtt - mqtt Client" href="mqtt.html" /><link rel="prev" title="mlx90640 - infrared temperature measurement(MLX90640)" href="mlx90640.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="mqtt - mqtt Client" href="mqtt.html" /><link rel="prev" title="mlx90640 - infrared temperature measurement(MLX90640)" href="mlx90640.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>mobile - Cellular Network - LuatOS 文档</title>
+        <title>mobile - Cellular Network - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,14 +688,14 @@
         </div>
         <article role="main">
           <section id="mobile-cellular-network">
-<h1>mobile - Cellular Network<a class="headerlink" href="#mobile-cellular-network" title="永久链接至标题">#</a></h1>
+<h1>mobile - Cellular Network<a class="headerlink" href="#mobile-cellular-network" title="Permalink to this headline">#</a></h1>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Adapted</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air780E/Air700E</span></p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>This page document is automatically generated by <a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/luat/../components/mobile/luat_lib_mobile.c">this file</a>. If there is any error, please submit issue or help modify pr, thank you！</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">小技巧</p>
+<p class="admonition-title">Tip</p>
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/mobile">click this link to view the demo example of mobile</a></p>
 </div>
 <p><strong>Example</strong></p>
@@ -720,7 +718,7 @@
 </pre></div>
 </div>
 <section id="constant">
-<h2>Constant<a class="headerlink" href="#constant" title="永久链接至标题">#</a></h2>
+<h2>Constant<a class="headerlink" href="#constant" title="Permalink to this headline">#</a></h2>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>constant</p></th>
@@ -829,7 +827,7 @@
 </table></div>
 </section>
 <section id="mobile-imei-index">
-<h2>mobile.imei(index)<a class="headerlink" href="#mobile-imei-index" title="永久链接至标题">#</a></h2>
+<h2>mobile.imei(index)<a class="headerlink" href="#mobile-imei-index" title="Permalink to this headline">#</a></h2>
 <p>Get IMEI</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -862,7 +860,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-imsi-index">
-<h2>mobile.imsi(index)<a class="headerlink" href="#mobile-imsi-index" title="永久链接至标题">#</a></h2>
+<h2>mobile.imsi(index)<a class="headerlink" href="#mobile-imsi-index" title="Permalink to this headline">#</a></h2>
 <p>Get IMSI</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -895,7 +893,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-sn">
-<h2>mobile.sn()<a class="headerlink" href="#mobile-sn" title="永久链接至标题">#</a></h2>
+<h2>mobile.sn()<a class="headerlink" href="#mobile-sn" title="Permalink to this headline">#</a></h2>
 <p>Get SN</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -921,7 +919,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-muid">
-<h2>mobile.muid()<a class="headerlink" href="#mobile-muid" title="永久链接至标题">#</a></h2>
+<h2>mobile.muid()<a class="headerlink" href="#mobile-muid" title="Permalink to this headline">#</a></h2>
 <p>Get MUID</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -943,7 +941,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-iccid-id">
-<h2>mobile.iccid(id)<a class="headerlink" href="#mobile-iccid-id" title="永久链接至标题">#</a></h2>
+<h2>mobile.iccid(id)<a class="headerlink" href="#mobile-iccid-id" title="Permalink to this headline">#</a></h2>
 <p>Gets or sets ICCID</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -976,7 +974,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-number-id">
-<h2>mobile.number(id)<a class="headerlink" href="#mobile-number-id" title="永久链接至标题">#</a></h2>
+<h2>mobile.number(id)<a class="headerlink" href="#mobile-number-id" title="Permalink to this headline">#</a></h2>
 <p>Obtain the mobile phone card number. Note that it can only be read out if the mobile phone number is written, so it may be empty.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1009,7 +1007,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-simid-id">
-<h2>mobile.simid(id)<a class="headerlink" href="#mobile-simid-id" title="永久链接至标题">#</a></h2>
+<h2>mobile.simid(id)<a class="headerlink" href="#mobile-simid-id" title="Permalink to this headline">#</a></h2>
 <p>Get the current SIM card slot, or switch card slots</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1051,7 +1049,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-simpin-id-operation-pin1-pin2">
-<h2>mobile.simPin(id,operation,pin1,pin2)<a class="headerlink" href="#mobile-simpin-id-operation-pin1-pin2" title="永久链接至标题">#</a></h2>
+<h2>mobile.simPin(id,operation,pin1,pin2)<a class="headerlink" href="#mobile-simpin-id-operation-pin1-pin2" title="Permalink to this headline">#</a></h2>
 <p>Check whether the current SIM card is ready and perform relevant operations on the PIN code of the SIM card.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1096,7 +1094,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-rtime-time-auto-reset-stack">
-<h2>mobile.rtime(time, auto_reset_stack)<a class="headerlink" href="#mobile-rtime-time-auto-reset-stack" title="永久链接至标题">#</a></h2>
+<h2>mobile.rtime(time, auto_reset_stack)<a class="headerlink" href="#mobile-rtime-time-auto-reset-stack" title="Permalink to this headline">#</a></h2>
 <p>Set the RRC automatic release time interval. When the RRC is enabled, frequent data operations may cause serious network failures when extremely weak signals are encountered. Therefore, additional automatic restart protocol stack settings are required.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1132,7 +1130,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-setauto-check-sim-period-get-cell-period-search-cell-time-auto-reset-stack-network-check-period">
-<h2>mobile.setAuto(check_sim_period, get_cell_period, search_cell_time, auto_reset_stack, network_check_period)<a class="headerlink" href="#mobile-setauto-check-sim-period-get-cell-period-search-cell-time-auto-reset-stack-network-check-period" title="永久链接至标题">#</a></h2>
+<h2>mobile.setAuto(check_sim_period, get_cell_period, search_cell_time, auto_reset_stack, network_check_period)<a class="headerlink" href="#mobile-setauto-check-sim-period-get-cell-period-search-cell-time-auto-reset-stack-network-check-period" title="Permalink to this headline">#</a></h2>
 <p>Set up some auxiliary periodic or automatic functions. Currently, it supports recovery after the SIM card is temporarily separated, periodically obtains cell information, and tries to recover automatically when the network encounters serious faults.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1177,7 +1175,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-apn-index-cid-new-apn-name-user-name-password-ip-type-protocol">
-<h2>mobile.apn(index, cid, new_apn_name, user_name, password, ip_type, protocol)<a class="headerlink" href="#mobile-apn-index-cid-new-apn-name-user-name-password-ip-type-protocol" title="永久链接至标题">#</a></h2>
+<h2>mobile.apn(index, cid, new_apn_name, user_name, password, ip_type, protocol)<a class="headerlink" href="#mobile-apn-index-cid-new-apn-name-user-name-password-ip-type-protocol" title="Permalink to this headline">#</a></h2>
 <p>To obtain or set the APN, the APN must be set before entering the network, for example, before the SIM card identification is completed.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1234,7 +1232,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-ipv6-onff">
-<h2>mobile.ipv6(onff)<a class="headerlink" href="#mobile-ipv6-onff" title="永久链接至标题">#</a></h2>
+<h2>mobile.ipv6(onff)<a class="headerlink" href="#mobile-ipv6-onff" title="Permalink to this headline">#</a></h2>
 <p>Whether the IPV6 function is enabled by default must be set before LTE network connection</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1269,7 +1267,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-csq">
-<h2>mobile.csq()<a class="headerlink" href="#mobile-csq" title="永久链接至标题">#</a></h2>
+<h2>mobile.csq()<a class="headerlink" href="#mobile-csq" title="Permalink to this headline">#</a></h2>
 <p>Get csq</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1293,7 +1291,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-rssi">
-<h2>mobile.rssi()<a class="headerlink" href="#mobile-rssi" title="永久链接至标题">#</a></h2>
+<h2>mobile.rssi()<a class="headerlink" href="#mobile-rssi" title="Permalink to this headline">#</a></h2>
 <p>Get rssi</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1315,7 +1313,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-rsrp">
-<h2>mobile.rsrp()<a class="headerlink" href="#mobile-rsrp" title="永久链接至标题">#</a></h2>
+<h2>mobile.rsrp()<a class="headerlink" href="#mobile-rsrp" title="Permalink to this headline">#</a></h2>
 <p>Get rsrp, reference signal received power</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1337,7 +1335,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-rsrq">
-<h2>mobile.rsrq()<a class="headerlink" href="#mobile-rsrq" title="永久链接至标题">#</a></h2>
+<h2>mobile.rsrq()<a class="headerlink" href="#mobile-rsrq" title="Permalink to this headline">#</a></h2>
 <p>Get rsrq, reference signal transmit power</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1359,7 +1357,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-snr">
-<h2>mobile.snr()<a class="headerlink" href="#mobile-snr" title="永久链接至标题">#</a></h2>
+<h2>mobile.snr()<a class="headerlink" href="#mobile-snr" title="Permalink to this headline">#</a></h2>
 <p>obtain snr, signal-to-noise ratio</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1381,7 +1379,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-eci">
-<h2>mobile.eci()<a class="headerlink" href="#mobile-eci" title="永久链接至标题">#</a></h2>
+<h2>mobile.eci()<a class="headerlink" href="#mobile-eci" title="Permalink to this headline">#</a></h2>
 <p>Get the current serving cell ECI(E-UTRAN Cell Identifier)</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1403,7 +1401,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-tac">
-<h2>mobile.tac()<a class="headerlink" href="#mobile-tac" title="永久链接至标题">#</a></h2>
+<h2>mobile.tac()<a class="headerlink" href="#mobile-tac" title="Permalink to this headline">#</a></h2>
 <p>Obtain the TAC of the current serving cell or LAC</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1427,7 +1425,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-enbid">
-<h2>mobile.enbid()<a class="headerlink" href="#mobile-enbid" title="永久链接至标题">#</a></h2>
+<h2>mobile.enbid()<a class="headerlink" href="#mobile-enbid" title="Permalink to this headline">#</a></h2>
 <p>Get the current serving cell eNBID(eNodeB Identifier)</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1449,7 +1447,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-flymode-index-enable">
-<h2>mobile.flymode(index, enable)<a class="headerlink" href="#mobile-flymode-index-enable" title="永久链接至标题">#</a></h2>
+<h2>mobile.flymode(index, enable)<a class="headerlink" href="#mobile-flymode-index-enable" title="Permalink to this headline">#</a></h2>
 <p>In and out of flight mode</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1485,7 +1483,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-status">
-<h2>mobile.status()<a class="headerlink" href="#mobile-status" title="永久链接至标题">#</a></h2>
+<h2>mobile.status()<a class="headerlink" href="#mobile-status" title="Permalink to this headline">#</a></h2>
 <p>Get Network Status</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1507,7 +1505,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-getcellinfo">
-<h2>mobile.getCellInfo()<a class="headerlink" href="#mobile-getcellinfo" title="永久链接至标题">#</a></h2>
+<h2>mobile.getCellInfo()<a class="headerlink" href="#mobile-getcellinfo" title="Permalink to this headline">#</a></h2>
 <p>Obtain mechanism information</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1556,7 +1554,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-reqcellinfo-timeout">
-<h2>mobile.reqCellInfo(timeout)<a class="headerlink" href="#mobile-reqcellinfo-timeout" title="永久链接至标题">#</a></h2>
+<h2>mobile.reqCellInfo(timeout)<a class="headerlink" href="#mobile-reqcellinfo-timeout" title="Permalink to this headline">#</a></h2>
 <p>Initiate base station information query, including adjacent cells</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1591,7 +1589,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-reset">
-<h2>mobile.reset()<a class="headerlink" href="#mobile-reset" title="永久链接至标题">#</a></h2>
+<h2>mobile.reset()<a class="headerlink" href="#mobile-reset" title="Permalink to this headline">#</a></h2>
 <p>Restart the protocol stack</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1605,7 +1603,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-datatraffic-clearuplink-cleardownlink">
-<h2>mobile.dataTraffic(clearUplink, clearDownlink)<a class="headerlink" href="#mobile-datatraffic-clearuplink-cleardownlink" title="永久链接至标题">#</a></h2>
+<h2>mobile.dataTraffic(clearUplink, clearDownlink)<a class="headerlink" href="#mobile-datatraffic-clearuplink-cleardownlink" title="Permalink to this headline">#</a></h2>
 <p>Data volume traffic processing</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1658,7 +1656,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-config-item-value">
-<h2>mobile.config(item, value)<a class="headerlink" href="#mobile-config-item-value" title="永久链接至标题">#</a></h2>
+<h2>mobile.config(item, value)<a class="headerlink" href="#mobile-config-item-value" title="Permalink to this headline">#</a></h2>
 <p>Special network configuration, different configurations for different platforms, careful use, currently only EC618</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1716,7 +1714,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-getband-band-is-default">
-<h2>mobile.getBand(band, is_default)<a class="headerlink" href="#mobile-getband-band-is-default" title="永久链接至标题">#</a></h2>
+<h2>mobile.getBand(band, is_default)<a class="headerlink" href="#mobile-getband-band-is-default" title="Permalink to this headline">#</a></h2>
 <p>Gets the currently used/supported band</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1755,7 +1753,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-setband-band-num">
-<h2>mobile.setBand(band, num)<a class="headerlink" href="#mobile-setband-band-num" title="永久链接至标题">#</a></h2>
+<h2>mobile.setBand(band, num)<a class="headerlink" href="#mobile-setband-band-num" title="Permalink to this headline">#</a></h2>
 <p>Set band</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1798,7 +1796,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-nstonoff-onoff-uart-id">
-<h2>mobile.nstOnOff(onoff, uart_id)<a class="headerlink" href="#mobile-nstonoff-onoff-uart-id" title="永久链接至标题">#</a></h2>
+<h2>mobile.nstOnOff(onoff, uart_id)<a class="headerlink" href="#mobile-nstonoff-onoff-uart-id" title="Permalink to this headline">#</a></h2>
 <p>RF Test switches and configurations</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1837,7 +1835,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mobile-nstinput-data">
-<h2>mobile.nstInput(data)<a class="headerlink" href="#mobile-nstinput-data" title="永久链接至标题">#</a></h2>
+<h2>mobile.nstInput(data)<a class="headerlink" href="#mobile-nstinput-data" title="Permalink to this headline">#</a></h2>
 <p>RF Test data input</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1900,13 +1898,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1924,7 +1922,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1987,7 +1985,6 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

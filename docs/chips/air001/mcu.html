@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Development Board" href="board.html" /><link rel="prev" title="🛴 Air001" href="index.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Development Board" href="board.html" /><link rel="prev" title="🛴 Air001" href="index.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Air001 Chip - LuatOS 文档</title>
+        <title>Air001 Chip - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,24 +688,24 @@
         </div>
         <article role="main">
           <section id="air001-chip">
-<h1>Air001 Chip<a class="headerlink" href="#air001-chip" title="永久链接至标题">#</a></h1>
+<h1>Air001 Chip<a class="headerlink" href="#air001-chip" title="Permalink to this headline">#</a></h1>
 <section id="air001-what-is-it">
-<h2>Air001 What is it??<a class="headerlink" href="#air001-what-is-it" title="永久链接至标题">#</a></h2>
+<h2>Air001 What is it??<a class="headerlink" href="#air001-what-is-it" title="Permalink to this headline">#</a></h2>
 <p>合宙Air001是一款TSSOP20封装的MCU，采用高性能的32位ARM®Cortex®-M0+Kernel, built-in 32Kbytes of Flash and 4Kbytes of RAM. Chip Set
 Multi-channel USART, IIC, SPI and other communication peripherals, 5 16bit timers, 1 12bit ADC and 2 comparators. For details, see the data sheet,<a class="reference external" href="https://cdn.openluat-luatcommunity.openluat.com/attachment/20230721175506039_AIR001%E8%8A%AF%E7%89%87%E6%95%B0%E6%8D%AE%E6%89%8B%E5%86%8C1.0.4.pdf">AIR001 chip data book.pdf</a> and the register manual <a class="reference external" href="https://cdn.openluat-luatcommunity.openluat.com/attachment/20230721175429182_AIR001%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%20v1.0.pdf">Air001 register manual</a>。</p>
 <p>LuatOS Large QQ group: 1061642968</p>
 </section>
 <section id="environment-construction-tutorial">
-<h2>Environment Construction Tutorial<a class="headerlink" href="#environment-construction-tutorial" title="永久链接至标题">#</a></h2>
+<h2>Environment Construction Tutorial<a class="headerlink" href="#environment-construction-tutorial" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/chips/air001/Air001-MDK.html">Air001 Keil MDK-based user manual</a></p>
 <p><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/chips/air001/Air001-Arduino.html">Air001 Arduino-based user manual</a></p>
 </section>
 <section id="brush-machine-burning-tutorial">
-<h2>Brush machine burning tutorial<a class="headerlink" href="#brush-machine-burning-tutorial" title="永久链接至标题">#</a></h2>
+<h2>Brush machine burning tutorial<a class="headerlink" href="#brush-machine-burning-tutorial" title="Permalink to this headline">#</a></h2>
 <section id="use-serial-port-to-download">
-<h3>Use serial port to download<a class="headerlink" href="#use-serial-port-to-download" title="永久链接至标题">#</a></h3>
+<h3>Use serial port to download<a class="headerlink" href="#use-serial-port-to-download" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>In Arduino, we recommend use AirISP to download via serial port<br/>
 AirISP The tool can also be used alone, using the documentation:<a class="reference external" href="https://arduino.luatos.com/airisp/">AirISP Tool Documentation</a></p>
 </div>
@@ -720,21 +718,21 @@ AirISP The tool can also be used alone, using the documentation:<a class="refere
 <li><p>After the download is complete, you may need to manually press the RST button to reset normal operation</p></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>If you use the Arduino can not be automatically downloaded (currently more common in AMD processor computers). You can manually enter the bootloader to download.</p>
 </div>
 </section>
 <section id="debug-using-swd-download">
-<h3>Debug using SWD/Download<a class="headerlink" href="#debug-using-swd-download" title="永久链接至标题">#</a></h3>
+<h3>Debug using SWD/Download<a class="headerlink" href="#debug-using-swd-download" title="Permalink to this headline">#</a></h3>
 <p>The wiring for debugging/downloading using SWD is the debugger<code class="docutils literal notranslate"> <span class="pre">SWDIO</span></code> of the debugger<code class="docutils literal notranslate"> <span class="pre">SWDIO</span></code>(<code class="docutils literal notranslate"><span class="pre">PA13</span></code>) of Air001, the debugger<code class="docutils literal notranslate"> <span class="pre">SWCLK</span></code> of the debugger<code class="docutils literal notranslate"> <span class="pre">SWCLK</span></code>(<code class="docutils literal notranslate"><span class="pre">PA14</span></code>) of Air001, and the <code class="docutils literal notranslate"><span class="pre">GND</span></code> of the chip or development board is connected to the <code class="docutils literal notranslate"><span class="pre">GND</span></code> of the debugger.</p>
 <div class="admonition warning">
-<p class="admonition-title">警告</p>
+<p class="admonition-title">Warning</p>
 <p>SWD Max Clock needs to be manually 100KHz or lower when burning, otherwise the chip cannot be identified.</p>
 </div>
 </section>
 </section>
 <section id="chip-purchase">
-<h2>Chip Purchase<a class="headerlink" href="#chip-purchase" title="永久链接至标题">#</a></h2>
+<h2>Chip Purchase<a class="headerlink" href="#chip-purchase" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p><a class="reference external" href="https://appc6kjfor22343.h5.xiaoeknow.com">Hizhou Mall</a></p></li>
 <li><p><a class="reference external" href="https://luat.taobao.com">Taobao shop</a></p>
@@ -743,7 +741,7 @@ AirISP The tool can also be used alone, using the documentation:<a class="refere
 </ul>
 </section>
 <section id="chip-pinout">
-<h2>Chip PinOut<a class="headerlink" href="#chip-pinout" title="永久链接至标题">#</a></h2>
+<h2>Chip PinOut<a class="headerlink" href="#chip-pinout" title="Permalink to this headline">#</a></h2>
 <p><img alt="" src="../../_images/2023-05-08-21-40-54.png"/></p>
 </section>
 </section>
@@ -774,13 +772,13 @@ AirISP The tool can also be used alone, using the documentation:<a class="refere
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -798,7 +796,7 @@ AirISP The tool can also be used alone, using the documentation:<a class="refere
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -838,7 +836,6 @@ AirISP The tool can also be used alone, using the documentation:<a class="refere
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

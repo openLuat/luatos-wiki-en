@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Development Board" href="board.html" /><link rel="prev" title="🚗 Air103" href="index.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Development Board" href="board.html" /><link rel="prev" title="🚗 Air103" href="index.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Air103 Chip - LuatOS 文档</title>
+        <title>Air103 Chip - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,33 +688,33 @@
         </div>
         <article role="main">
           <section id="air103-chip">
-<h1>Air103 Chip<a class="headerlink" href="#air103-chip" title="永久链接至标题">#</a></h1>
+<h1>Air103 Chip<a class="headerlink" href="#air103-chip" title="Permalink to this headline">#</a></h1>
 <p>Heshuo Air103 is a QFN56 package, 6mm x 6mm mcu. This chip is interchangeable with Lianshengde w806..</p>
 <p>Please note that this is the information page of <strong>Air103</strong>, not <strong>Air32F103</strong>, these are two completely different chips.</p>
 <p>For information about <strong>Air32F103</strong> series chips, please select<strong>air32f103</strong></p>
 <section id="chip-pinout">
-<h2>Chip PinOut<a class="headerlink" href="#chip-pinout" title="永久链接至标题">#</a></h2>
+<h2>Chip PinOut<a class="headerlink" href="#chip-pinout" title="Permalink to this headline">#</a></h2>
 <p><img alt="" src="https://cdn.openluat-luatcommunity.openluat.com/images/20220329175558817_air103_chip_pinout%5B1%5D.png"/></p>
 </section>
 <section id="brush-machine-burning-tutorial">
-<h2>Brush machine burning tutorial<a class="headerlink" href="#brush-machine-burning-tutorial" title="永久链接至标题">#</a></h2>
+<h2>Brush machine burning tutorial<a class="headerlink" href="#brush-machine-burning-tutorial" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html">Serial Burn Tutorial</a></p>
 <p><strong>Note: Please set the baud rate 921600</strong></p>
 <p>Latest Firmware Download: https://gitee.com/openLuat/LuatOS/releases</p>
 </section>
 <section id="module-purchase">
-<h2>Module Purchase<a class="headerlink" href="#module-purchase" title="永久链接至标题">#</a></h2>
+<h2>Module Purchase<a class="headerlink" href="#module-purchase" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://appc6kjfor22343.h5.xiaoeknow.com">Hizhou Mall</a></p></li>
 <li><p><a class="reference external" href="https://luat.taobao.com">Taobao shop 1</a></p></li>
 </ul>
 </section>
 <section id="technical-support">
-<h2>Technical Support<a class="headerlink" href="#technical-support" title="永久链接至标题">#</a></h2>
+<h2>Technical Support<a class="headerlink" href="#technical-support" title="Permalink to this headline">#</a></h2>
 <p>LuatOS Large QQ group: 1061642968</p>
 </section>
 <section id="bsp-source-code">
-<h2>bsp source code<a class="headerlink" href="#bsp-source-code" title="永久链接至标题">#</a></h2>
+<h2>bsp source code<a class="headerlink" href="#bsp-source-code" title="Permalink to this headline">#</a></h2>
 <p>Use the same source code as air101 https://gitee.com/openLuat/luatos-soc-air101</p>
 </section>
 </section>
@@ -747,13 +745,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -771,7 +769,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -807,7 +805,6 @@
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

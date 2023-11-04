@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="os - os Operation" href="os.html" /><link rel="prev" title="nes - nes Simulator" href="nes.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="os - os Operation" href="os.html" /><link rel="prev" title="nes - nes Simulator" href="nes.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>nimble - Bluetooth BLE library (nimble version) - LuatOS 文档</title>
+        <title>nimble - Bluetooth BLE library (nimble version) - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,14 +688,14 @@
         </div>
         <article role="main">
           <section id="nimble-bluetooth-ble-library-nimble-version">
-<h1>nimble - Bluetooth BLE library (nimble version)<a class="headerlink" href="#nimble-bluetooth-ble-library-nimble-version" title="永久链接至标题">#</a></h1>
+<h1>nimble - Bluetooth BLE library (nimble version)<a class="headerlink" href="#nimble-bluetooth-ble-library-nimble-version" title="Permalink to this headline">#</a></h1>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Adapted</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air101/Air103</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air601</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32C3</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32S3</span></p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>This page document is automatically generated by <a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/luat/../components/nimble/src/luat_lib_nimble.c">this file</a>. If there is any error, please submit issue or help modify pr, thank you！</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">小技巧</p>
+<p class="admonition-title">Tip</p>
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/nimble">click this link to view nimble’s demo example</a></p>
 </div>
 <p><strong>Example</strong></p>
@@ -715,7 +713,7 @@
 </pre></div>
 </div>
 <section id="constant">
-<h2>Constant<a class="headerlink" href="#constant" title="永久链接至标题">#</a></h2>
+<h2>Constant<a class="headerlink" href="#constant" title="Permalink to this headline">#</a></h2>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>constant</p></th>
@@ -752,7 +750,7 @@
 </table></div>
 </section>
 <section id="nimble-init-name">
-<h2>nimble.init(name)<a class="headerlink" href="#nimble-init-name" title="永久链接至标题">#</a></h2>
+<h2>nimble.init(name)<a class="headerlink" href="#nimble-init-name" title="Permalink to this headline">#</a></h2>
 <p>Initialize BLE context and start external broadcasting/scanning</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -788,7 +786,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-deinit">
-<h2>nimble.deinit()<a class="headerlink" href="#nimble-deinit" title="永久链接至标题">#</a></h2>
+<h2>nimble.deinit()<a class="headerlink" href="#nimble-deinit" title="Permalink to this headline">#</a></h2>
 <p>Close BLE context</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -813,7 +811,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-mode-tp">
-<h2>nimble.mode(tp)<a class="headerlink" href="#nimble-mode-tp" title="永久链接至标题">#</a></h2>
+<h2>nimble.mode(tp)<a class="headerlink" href="#nimble-mode-tp" title="Permalink to this headline">#</a></h2>
 <p>Set Mode</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -850,7 +848,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-connok">
-<h2>nimble.connok()<a class="headerlink" href="#nimble-connok" title="永久链接至标题">#</a></h2>
+<h2>nimble.connok()<a class="headerlink" href="#nimble-connok" title="Permalink to this headline">#</a></h2>
 <p>Whether the connection has been established</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -877,7 +875,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-send-msg-conn-handle-data">
-<h2>nimble.send_msg(conn, handle, data)<a class="headerlink" href="#nimble-send-msg-conn-handle-data" title="永久链接至标题">#</a></h2>
+<h2>nimble.send_msg(conn, handle, data)<a class="headerlink" href="#nimble-send-msg-conn-handle-data" title="Permalink to this headline">#</a></h2>
 <p>Send message</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -919,7 +917,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-setuuid-tp-addr">
-<h2>nimble.setUUID(tp, addr)<a class="headerlink" href="#nimble-setuuid-tp-addr" title="永久链接至标题">#</a></h2>
+<h2>nimble.setUUID(tp, addr)<a class="headerlink" href="#nimble-setuuid-tp-addr" title="Permalink to this headline">#</a></h2>
 <p>Set the server/peripheral UUID</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -967,7 +965,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-mac">
-<h2>nimble.mac()<a class="headerlink" href="#nimble-mac" title="永久链接至标题">#</a></h2>
+<h2>nimble.mac()<a class="headerlink" href="#nimble-mac" title="Permalink to this headline">#</a></h2>
 <p>Get Bluetooth MAC</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -994,7 +992,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-sendnotify-srv-uuid-chr-uuid-data">
-<h2>nimble.sendNotify(srv_uuid, chr_uuid, data)<a class="headerlink" href="#nimble-sendnotify-srv-uuid-chr-uuid-data" title="永久链接至标题">#</a></h2>
+<h2>nimble.sendNotify(srv_uuid, chr_uuid, data)<a class="headerlink" href="#nimble-sendnotify-srv-uuid-chr-uuid-data" title="Permalink to this headline">#</a></h2>
 <p>Send notify</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1037,7 +1035,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-sendindicate-srv-uuid-chr-uuid-data">
-<h2>nimble.sendIndicate(srv_uuid, chr_uuid, data)<a class="headerlink" href="#nimble-sendindicate-srv-uuid-chr-uuid-data" title="永久链接至标题">#</a></h2>
+<h2>nimble.sendIndicate(srv_uuid, chr_uuid, data)<a class="headerlink" href="#nimble-sendindicate-srv-uuid-chr-uuid-data" title="Permalink to this headline">#</a></h2>
 <p>Send indicate</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1080,7 +1078,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-advparams-conn-mode-disc-mode-itvl-min-itvl-max-channel-map-filter-policy-high-duty-cycle">
-<h2>nimble.advParams(conn_mode, disc_mode, itvl_min, itvl_max, channel_map, filter_policy, high_duty_cycle)<a class="headerlink" href="#nimble-advparams-conn-mode-disc-mode-itvl-min-itvl-max-channel-map-filter-policy-high-duty-cycle" title="永久链接至标题">#</a></h2>
+<h2>nimble.advParams(conn_mode, disc_mode, itvl_min, itvl_max, channel_map, filter_policy, high_duty_cycle)<a class="headerlink" href="#nimble-advparams-conn-mode-disc-mode-itvl-min-itvl-max-channel-map-filter-policy-high-duty-cycle" title="Permalink to this headline">#</a></h2>
 <p>Set broadcast parameters</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1137,7 +1135,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-setchr-index-uuid-flags">
-<h2>nimble.setChr(index, uuid, flags)<a class="headerlink" href="#nimble-setchr-index-uuid-flags" title="永久链接至标题">#</a></h2>
+<h2>nimble.setChr(index, uuid, flags)<a class="headerlink" href="#nimble-setchr-index-uuid-flags" title="Permalink to this headline">#</a></h2>
 <p>set the characteristics of chr</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1182,7 +1180,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-config-id-value">
-<h2>nimble.config(id, value)<a class="headerlink" href="#nimble-config-id-value" title="永久链接至标题">#</a></h2>
+<h2>nimble.config(id, value)<a class="headerlink" href="#nimble-config-id-value" title="Permalink to this headline">#</a></h2>
 <p>set the characteristics of chr</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1224,7 +1222,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-ibeacon-data-major-minor-measured-power">
-<h2>nimble.ibeacon(data, major, minor, measured_power)<a class="headerlink" href="#nimble-ibeacon-data-major-minor-measured-power" title="永久链接至标题">#</a></h2>
+<h2>nimble.ibeacon(data, major, minor, measured_power)<a class="headerlink" href="#nimble-ibeacon-data-major-minor-measured-power" title="Permalink to this headline">#</a></h2>
 <p>Configure iBeacon parameters, only iBeacon mode available</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1271,7 +1269,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-advdata-data-flags">
-<h2>nimble.advData(data, flags)<a class="headerlink" href="#nimble-advdata-data-flags" title="永久链接至标题">#</a></h2>
+<h2>nimble.advData(data, flags)<a class="headerlink" href="#nimble-advdata-data-flags" title="Permalink to this headline">#</a></h2>
 <p>Configure broadcast data, only iBeacon mode is available</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1324,7 +1322,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-scan-timeout">
-<h2>nimble.scan(timeout)<a class="headerlink" href="#nimble-scan-timeout" title="永久链接至标题">#</a></h2>
+<h2>nimble.scan(timeout)<a class="headerlink" href="#nimble-scan-timeout" title="Permalink to this headline">#</a></h2>
 <p>Scan slave</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1365,7 +1363,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-connect-mac">
-<h2>nimble.connect(mac)<a class="headerlink" href="#nimble-connect-mac" title="永久链接至标题">#</a></h2>
+<h2>nimble.connect(mac)<a class="headerlink" href="#nimble-connect-mac" title="Permalink to this headline">#</a></h2>
 <p>Connect to slave</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1401,7 +1399,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-disconnect">
-<h2>nimble.disconnect()<a class="headerlink" href="#nimble-disconnect" title="永久链接至标题">#</a></h2>
+<h2>nimble.disconnect()<a class="headerlink" href="#nimble-disconnect" title="Permalink to this headline">#</a></h2>
 <p>Disconnect from the slave</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1426,7 +1424,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-discsvr">
-<h2>nimble.discSvr()<a class="headerlink" href="#nimble-discsvr" title="永久链接至标题">#</a></h2>
+<h2>nimble.discSvr()<a class="headerlink" href="#nimble-discsvr" title="Permalink to this headline">#</a></h2>
 <p>List of services for scanning slave</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1452,7 +1450,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-listsvr">
-<h2>nimble.listSvr()<a class="headerlink" href="#nimble-listsvr" title="永久链接至标题">#</a></h2>
+<h2>nimble.listSvr()<a class="headerlink" href="#nimble-listsvr" title="Permalink to this headline">#</a></h2>
 <p>Obtain the service list of the slave.</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1476,7 +1474,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-discchr-svr-uuid">
-<h2>nimble.discChr(svr_uuid)<a class="headerlink" href="#nimble-discchr-svr-uuid" title="永久链接至标题">#</a></h2>
+<h2>nimble.discChr(svr_uuid)<a class="headerlink" href="#nimble-discchr-svr-uuid" title="Permalink to this headline">#</a></h2>
 <p>Characteristic value of the specified service of the scanning slave</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1511,7 +1509,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-listchr-svr-uuid">
-<h2>nimble.listChr(svr_uuid)<a class="headerlink" href="#nimble-listchr-svr-uuid" title="永久链接至标题">#</a></h2>
+<h2>nimble.listChr(svr_uuid)<a class="headerlink" href="#nimble-listchr-svr-uuid" title="Permalink to this headline">#</a></h2>
 <p>Obtain the feature value list of the specified service of the slave.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1546,7 +1544,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-discdsc-svr-uuid-chr-uuid">
-<h2>nimble.discDsc(svr_uuid, chr_uuid)<a class="headerlink" href="#nimble-discdsc-svr-uuid-chr-uuid" title="永久链接至标题">#</a></h2>
+<h2>nimble.discDsc(svr_uuid, chr_uuid)<a class="headerlink" href="#nimble-discdsc-svr-uuid-chr-uuid" title="Permalink to this headline">#</a></h2>
 <p>Scan other properties of the characteristic value of the specified service of the slave.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1584,7 +1582,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-writechr-svr-uuid-chr-uuid-data">
-<h2>nimble.writeChr(svr_uuid, chr_uuid, data)<a class="headerlink" href="#nimble-writechr-svr-uuid-chr-uuid-data" title="永久链接至标题">#</a></h2>
+<h2>nimble.writeChr(svr_uuid, chr_uuid, data)<a class="headerlink" href="#nimble-writechr-svr-uuid-chr-uuid-data" title="Permalink to this headline">#</a></h2>
 <p>Writes data to the specified feature value of the specified service.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1625,7 +1623,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-writechr-svr-uuid-chr-uuid">
-<h2>nimble.writeChr(svr_uuid, chr_uuid)<a class="headerlink" href="#nimble-writechr-svr-uuid-chr-uuid" title="永久链接至标题">#</a></h2>
+<h2>nimble.writeChr(svr_uuid, chr_uuid)<a class="headerlink" href="#nimble-writechr-svr-uuid-chr-uuid" title="Permalink to this headline">#</a></h2>
 <p>Read data from the specified feature value of the specified service (asynchronous)</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1664,7 +1662,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-subchr-svr-uuid-chr-uuid">
-<h2>nimble.subChr(svr_uuid, chr_uuid)<a class="headerlink" href="#nimble-subchr-svr-uuid-chr-uuid" title="永久链接至标题">#</a></h2>
+<h2>nimble.subChr(svr_uuid, chr_uuid)<a class="headerlink" href="#nimble-subchr-svr-uuid-chr-uuid" title="Permalink to this headline">#</a></h2>
 <p>Subscribe to the specified characteristic value of the specified service</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1703,7 +1701,7 @@
 </section>
 <hr class="docutils"/>
 <section id="nimble-unsubchr-svr-uuid-chr-uuid">
-<h2>nimble.unsubChr(svr_uuid, chr_uuid)<a class="headerlink" href="#nimble-unsubchr-svr-uuid-chr-uuid" title="永久链接至标题">#</a></h2>
+<h2>nimble.unsubChr(svr_uuid, chr_uuid)<a class="headerlink" href="#nimble-unsubchr-svr-uuid-chr-uuid" title="Permalink to this headline">#</a></h2>
 <p>Unsubscribe from the specified feature value of the specified service</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1769,13 +1767,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1793,7 +1791,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1851,7 +1849,6 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

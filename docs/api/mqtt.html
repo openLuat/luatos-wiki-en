@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="nbiot - NB-IOT Operation Library" href="nbiot.html" /><link rel="prev" title="mobile - Cellular Network" href="mobile.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="nbiot - NB-IOT Operation Library" href="nbiot.html" /><link rel="prev" title="mobile - Cellular Network" href="mobile.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>mqtt - mqtt Client - LuatOS 文档</title>
+        <title>mqtt - mqtt Client - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,18 +688,18 @@
         </div>
         <article role="main">
           <section id="mqtt-mqtt-client">
-<h1>mqtt - mqtt Client<a class="headerlink" href="#mqtt-mqtt-client" title="永久链接至标题">#</a></h1>
+<h1>mqtt - mqtt Client<a class="headerlink" href="#mqtt-mqtt-client" title="Permalink to this headline">#</a></h1>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Adapted</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air101/Air103</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air601</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air105</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32C3</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32S3</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air780E/Air700E</span></p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>This page document is automatically generated by <a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/luat/../components/network/libemqtt/luat_lib_mqtt.c">this file</a>. If there is any error, please submit issue or help modify pr, thank you！</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">小技巧</p>
+<p class="admonition-title">Tip</p>
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/mqtt">click this link to view the demo example of mqtt</a></p>
 </div>
 <section id="constant">
-<h2>Constant<a class="headerlink" href="#constant" title="永久链接至标题">#</a></h2>
+<h2>Constant<a class="headerlink" href="#constant" title="Permalink to this headline">#</a></h2>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>constant</p></th>
@@ -730,7 +728,7 @@
 </table></div>
 </section>
 <section id="mqttc-subscribe-topic-qos">
-<h2>mqttc:subscribe(topic, qos)<a class="headerlink" href="#mqttc-subscribe-topic-qos" title="永久链接至标题">#</a></h2>
+<h2>mqttc:subscribe(topic, qos)<a class="headerlink" href="#mqttc-subscribe-topic-qos" title="Permalink to this headline">#</a></h2>
 <p>Subscribe to Topic</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -773,7 +771,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-unsubscribe-topic">
-<h2>mqttc:unsubscribe(topic)<a class="headerlink" href="#mqttc-unsubscribe-topic" title="永久链接至标题">#</a></h2>
+<h2>mqttc:unsubscribe(topic)<a class="headerlink" href="#mqttc-unsubscribe-topic" title="Permalink to this headline">#</a></h2>
 <p>Unsubscribe from a topic</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -798,7 +796,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-debug-onoff">
-<h2>mqttc:debug(onoff)<a class="headerlink" href="#mqttc-debug-onoff" title="永久链接至标题">#</a></h2>
+<h2>mqttc:debug(onoff)<a class="headerlink" href="#mqttc-debug-onoff" title="Permalink to this headline">#</a></h2>
 <p>Configure whether to open debug information</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -831,7 +829,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqtt-create-adapter-host-port-ssl-isipv6">
-<h2>mqtt.create(adapter,host,port,ssl,isipv6)<a class="headerlink" href="#mqtt-create-adapter-host-port-ssl-isipv6" title="永久链接至标题">#</a></h2>
+<h2>mqtt.create(adapter,host,port,ssl,isipv6)<a class="headerlink" href="#mqtt-create-adapter-host-port-ssl-isipv6" title="Permalink to this headline">#</a></h2>
 <p>mqtt Client Creation</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -892,7 +890,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-auth-client-id-username-password-cleansession">
-<h2>mqttc:auth(client_id,username,password,cleanSession)<a class="headerlink" href="#mqttc-auth-client-id-username-password-cleansession" title="永久链接至标题">#</a></h2>
+<h2>mqttc:auth(client_id,username,password,cleanSession)<a class="headerlink" href="#mqttc-auth-client-id-username-password-cleansession" title="Permalink to this headline">#</a></h2>
 <p>mqtt Triple configuration and cleanSession</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -943,7 +941,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-keepalive-time">
-<h2>mqttc:keepalive(time)<a class="headerlink" href="#mqttc-keepalive-time" title="永久链接至标题">#</a></h2>
+<h2>mqttc:keepalive(time)<a class="headerlink" href="#mqttc-keepalive-time" title="Permalink to this headline">#</a></h2>
 <p>mqtt Heartbeat Settings</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -978,7 +976,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-on-cb">
-<h2>mqttc:on(cb)<a class="headerlink" href="#mqttc-on-cb" title="永久链接至标题">#</a></h2>
+<h2>mqttc:on(cb)<a class="headerlink" href="#mqttc-on-cb" title="Permalink to this headline">#</a></h2>
 <p>register mqtt callback</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1027,7 +1025,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-connect">
-<h2>mqttc:connect()<a class="headerlink" href="#mqttc-connect" title="永久链接至标题">#</a></h2>
+<h2>mqttc:connect()<a class="headerlink" href="#mqttc-connect" title="Permalink to this headline">#</a></h2>
 <p>Connection Server</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1053,7 +1051,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-disconnect">
-<h2>mqttc:disconnect()<a class="headerlink" href="#mqttc-disconnect" title="永久链接至标题">#</a></h2>
+<h2>mqttc:disconnect()<a class="headerlink" href="#mqttc-disconnect" title="Permalink to this headline">#</a></h2>
 <p>Disconnect the server (resources are not released)</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1078,7 +1076,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-autoreconn-reconnect-reconnect-time">
-<h2>mqttc:autoreconn(reconnect, reconnect_time)<a class="headerlink" href="#mqttc-autoreconn-reconnect-reconnect-time" title="永久链接至标题">#</a></h2>
+<h2>mqttc:autoreconn(reconnect, reconnect_time)<a class="headerlink" href="#mqttc-autoreconn-reconnect-reconnect-time" title="Permalink to this headline">#</a></h2>
 <p>Automatic reconnect</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1105,7 +1103,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-publish-topic-data-qos-retain">
-<h2>mqttc:publish(topic, data, qos, retain)<a class="headerlink" href="#mqttc-publish-topic-data-qos-retain" title="永久链接至标题">#</a></h2>
+<h2>mqttc:publish(topic, data, qos, retain)<a class="headerlink" href="#mqttc-publish-topic-data-qos-retain" title="Permalink to this headline">#</a></h2>
 <p>Publish message</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1149,7 +1147,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-close">
-<h2>mqttc:close()<a class="headerlink" href="#mqttc-close" title="永久链接至标题">#</a></h2>
+<h2>mqttc:close()<a class="headerlink" href="#mqttc-close" title="Permalink to this headline">#</a></h2>
 <p>mqtt Client shutdown (resources released after shutdown can no longer be used)</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1162,7 +1160,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-ready">
-<h2>mqttc:ready()<a class="headerlink" href="#mqttc-ready" title="永久链接至标题">#</a></h2>
+<h2>mqttc:ready()<a class="headerlink" href="#mqttc-ready" title="Permalink to this headline">#</a></h2>
 <p>mqtt Whether the client is ready</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1186,7 +1184,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-state">
-<h2>mqttc:state()<a class="headerlink" href="#mqttc-state" title="永久链接至标题">#</a></h2>
+<h2>mqttc:state()<a class="headerlink" href="#mqttc-state" title="Permalink to this headline">#</a></h2>
 <p>mqtt Client Status</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
@@ -1210,7 +1208,7 @@
 </section>
 <hr class="docutils"/>
 <section id="mqttc-will-topic-payload-qos-retain">
-<h2>mqttc:will(topic, payload, qos, retain)<a class="headerlink" href="#mqttc-will-topic-payload-qos-retain" title="永久链接至标题">#</a></h2>
+<h2>mqttc:will(topic, payload, qos, retain)<a class="headerlink" href="#mqttc-will-topic-payload-qos-retain" title="Permalink to this headline">#</a></h2>
 <p>Set Will Message</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1282,13 +1280,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1306,7 +1304,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1353,7 +1351,6 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

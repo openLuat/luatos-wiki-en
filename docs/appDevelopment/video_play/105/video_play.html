@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../../genindex.html" /><link rel="search" title="搜索" href="../../../search.html" /><link rel="next" title="⏳ IoT Power Power consumption test artifact" href="../../../iotpower/index.html" /><link rel="prev" title="Video playback" href="../index.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="⏳ IoT Power Power consumption test artifact" href="../../../iotpower/index.html" /><link rel="prev" title="Video playback" href="../index.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Air105 Video playback - LuatOS 文档</title>
+        <title>Air105 Video playback - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,28 +688,28 @@
         </div>
         <article role="main">
           <section id="air105-video-playback">
-<h1><strong>Air105 Video playback</strong><a class="headerlink" href="#air105-video-playback" title="永久链接至标题">#</a></h1>
+<h1><strong>Air105 Video playback</strong><a class="headerlink" href="#air105-video-playback" title="Permalink to this headline">#</a></h1>
 <section id="foreword">
-<h2>Foreword<a class="headerlink" href="#foreword" title="永久链接至标题">#</a></h2>
+<h2>Foreword<a class="headerlink" href="#foreword" title="Permalink to this headline">#</a></h2>
 <p>Before, we had <a class="reference external" href="https://doc.openluat.com/article/3535">video playback</a> on Air101 and made demo:<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/video_play">video_play</a>. Today, we are using Air105 to play video again.</p>
 </section>
 <section id="preparations">
-<h2>Preparations<a class="headerlink" href="#preparations" title="永久链接至标题">#</a></h2>
+<h2>Preparations<a class="headerlink" href="#preparations" title="Permalink to this headline">#</a></h2>
 <p>Before proceeding, let’s talk about the principle. The principle is very simple, that is, read out the video byte stream data in the TF card and draw it on the LCD.</p>
 <p>Then start preparing the video byte stream data, we need to use it.<a class="reference external" href="https://www.ffmpeg.org/">ffmpeg</a></p>
 <section id="linux-platform">
-<h3>linux Platform<a class="headerlink" href="#linux-platform" title="永久链接至标题">#</a></h3>
+<h3>linux Platform<a class="headerlink" href="#linux-platform" title="Permalink to this headline">#</a></h3>
 <p>Direct terminal input <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ffmpeg</span></code> can be</p>
 </section>
 <section id="windows-platform">
-<h3>windows Platform<a class="headerlink" href="#windows-platform" title="永久链接至标题">#</a></h3>
+<h3>windows Platform<a class="headerlink" href="#windows-platform" title="Permalink to this headline">#</a></h3>
 <p>We can download <a class="reference external" href="https://www.gyan.dev/ffmpeg/builds/">here</a> to get the win version of the compressed package, and decompress to get ffmpeg.exe</p>
 <p>Take the windows platform as an example.</p>
 <p>First of all, let’s take a look at the basic ffmpeg parameters.</p>
 </section>
 </section>
 <section id="video-file-production">
-<h2>Video file production<a class="headerlink" href="#video-file-production" title="永久链接至标题">#</a></h2>
+<h2>Video file production<a class="headerlink" href="#video-file-production" title="Permalink to this headline">#</a></h2>
 <p>First of all, prepare a video to be played. For copyright reasons, the video address is not placed here. Prepare the previous ffmpeg.exe as well.</p>
 <p><img alt="1" src="../../../_images/11.png"/></p>
 <p>powershell Enter <code class="docutils literal notranslate"><span class="pre">.\ffmpeg-I</span> <span class="pre">mwsy.mp4</span> <span class="pre">-r</span> <span class="pre">20</span> <span class="pre">-vf</span> <span class="pre">scale</span> <span class="pre">=</span> <span class="pre">160:128</span> <span class="pre">-pix_fmt</span> <span class="pre">rgb565be</span> <span class="pre">-vcodec</span> <span class="pre">rawvideo</span> <span class="pre">mwsy.rgb</span></code> to convert the video to a 160x 128 resolution byte stream file</p>
@@ -719,7 +717,7 @@
 <p>Place the generated mwsy.rgb in the sd card</p>
 </section>
 <section id="play-video">
-<h2>Play video<a class="headerlink" href="#play-video" title="永久链接至标题">#</a></h2>
+<h2>Play video<a class="headerlink" href="#play-video" title="Permalink to this headline">#</a></h2>
 <p>Then we’ll start writing code.</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
     <span class="c1">--Initialization lcd</span>
@@ -782,11 +780,11 @@
 <p><a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/video_play/Air105">demo Connection</a></p>
 </section>
 <section id="effect-display">
-<h2>effect display<a class="headerlink" href="#effect-display" title="永久链接至标题">#</a></h2>
+<h2>effect display<a class="headerlink" href="#effect-display" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://www.bilibili.com/video/BV1Yg411R7Tc/">Video effect display</a></p>
 </section>
 <section id="related-connections">
-<h2>Related Connections<a class="headerlink" href="#related-connections" title="永久链接至标题">#</a></h2>
+<h2>Related Connections<a class="headerlink" href="#related-connections" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://gitee.com/openLuat/LuatOS">LuatOS-SoC Warehouse</a></p>
 <p><a class="reference external" href="https://openluat.github.io/luatos-wiki-en/index.html">LuatOS-SoC WIKI</a></p>
 <p><a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/bsp/air101">bsp-Air101</a></p>
@@ -819,13 +817,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -843,7 +841,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -884,7 +882,6 @@
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/translations.js"></script>
     <script src="../../../_static/design-tabs.js"></script>
     <script src="../../../_static/js/baidu.js"></script>
     <script src="../../../_static/js/a.js"></script>

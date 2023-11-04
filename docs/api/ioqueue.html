@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="iotauth - IoT Authentication library, used to generate parameters for various cloud platforms" href="iotauth.html" /><link rel="prev" title="io - io action (extended)" href="io.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="iotauth - IoT Authentication library, used to generate parameters for various cloud platforms" href="iotauth.html" /><link rel="prev" title="io - io action (extended)" href="io.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>ioqueue - io Sequence operation - LuatOS 文档</title>
+        <title>ioqueue - io Sequence operation - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,18 +688,18 @@
         </div>
         <article role="main">
           <section id="ioqueue-io-sequence-operation">
-<h1>ioqueue - io Sequence operation<a class="headerlink" href="#ioqueue-io-sequence-operation" title="永久链接至标题">#</a></h1>
+<h1>ioqueue - io Sequence operation<a class="headerlink" href="#ioqueue-io-sequence-operation" title="Permalink to this headline">#</a></h1>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Adapted</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air105</span></p>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>This page document is automatically generated by <a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/luat/../components/io_queue/luat_lib_io_queue.c">this file</a>. If there is any error, please submit issue or help modify pr, thank you！</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">小技巧</p>
+<p class="admonition-title">Tip</p>
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/io_queue">click this link to view ioqueue demo examples</a></p>
 </div>
 <section id="ioqueue-init-hwtimer-id-cmd-cnt-repeat-cnt">
-<h2>ioqueue.init(hwtimer_id,cmd_cnt,repeat_cnt)<a class="headerlink" href="#ioqueue-init-hwtimer-id-cmd-cnt-repeat-cnt" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.init(hwtimer_id,cmd_cnt,repeat_cnt)<a class="headerlink" href="#ioqueue-init-hwtimer-id-cmd-cnt-repeat-cnt" title="Permalink to this headline">#</a></h2>
 <p>initialize an io operation queue</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -734,7 +732,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-setdelay-hwtimer-id-time-us-time-tick-continue">
-<h2>ioqueue.setdelay(hwtimer_id,time_us,time_tick,continue)<a class="headerlink" href="#ioqueue-setdelay-hwtimer-id-time-us-time-tick-continue" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.setdelay(hwtimer_id,time_us,time_tick,continue)<a class="headerlink" href="#ioqueue-setdelay-hwtimer-id-time-us-time-tick-continue" title="Permalink to this headline">#</a></h2>
 <p>add a delay command to the io operation queue</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -765,7 +763,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-delay-hwtimer-id">
-<h2>ioqueue.delay(hwtimer_id)<a class="headerlink" href="#ioqueue-delay-hwtimer-id" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.delay(hwtimer_id)<a class="headerlink" href="#ioqueue-delay-hwtimer-id" title="Permalink to this headline">#</a></h2>
 <p>add a repeat delay to the I/o operation queue. the delay must be setdelay and continuous.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -793,7 +791,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-setgpio-hwtimer-id-pin-is-input-pull-mode-init-level">
-<h2>ioqueue.setgpio(hwtimer_id,pin,is_input,pull_mode,init_level)<a class="headerlink" href="#ioqueue-setgpio-hwtimer-id-pin-is-input-pull-mode-init-level" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.setgpio(hwtimer_id,pin,is_input,pull_mode,init_level)<a class="headerlink" href="#ioqueue-setgpio-hwtimer-id-pin-is-input-pull-mode-init-level" title="Permalink to this headline">#</a></h2>
 <p>add the gpio command to the io operation queue</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -833,7 +831,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-input-hwtimer-id-pin">
-<h2>ioqueue.input(hwtimer_id,pin)<a class="headerlink" href="#ioqueue-input-hwtimer-id-pin" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.input(hwtimer_id,pin)<a class="headerlink" href="#ioqueue-input-hwtimer-id-pin" title="Permalink to this headline">#</a></h2>
 <p>add the read gpio command to the io operation queue</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -863,7 +861,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-output-hwtimer-id-pin-level">
-<h2>ioqueue.output(hwtimer_id,pin,level)<a class="headerlink" href="#ioqueue-output-hwtimer-id-pin-level" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.output(hwtimer_id,pin,level)<a class="headerlink" href="#ioqueue-output-hwtimer-id-pin-level" title="Permalink to this headline">#</a></h2>
 <p>Adding Output GPIO Commands to the IO Operation Queue</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -896,7 +894,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-setcap-hwtimer-id-pin-pull-mode-irq-mode-max-tick">
-<h2>ioqueue.setcap(hwtimer_id,pin,pull_mode,irq_mode,max_tick)<a class="headerlink" href="#ioqueue-setcap-hwtimer-id-pin-pull-mode-irq-mode-max-tick" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.setcap(hwtimer_id,pin,pull_mode,irq_mode,max_tick)<a class="headerlink" href="#ioqueue-setcap-hwtimer-id-pin-pull-mode-irq-mode-max-tick" title="Permalink to this headline">#</a></h2>
 <p>add settings to the io operation queue to capture a certain IO command</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -935,7 +933,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-capture-hwtimer-id">
-<h2>ioqueue.capture(hwtimer_id)<a class="headerlink" href="#ioqueue-capture-hwtimer-id" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.capture(hwtimer_id)<a class="headerlink" href="#ioqueue-capture-hwtimer-id" title="Permalink to this headline">#</a></h2>
 <p>Add a capture IO status command to the IO operation queue</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -962,7 +960,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-capend-hwtimer-id-pin">
-<h2>ioqueue.capend(hwtimer_id,pin)<a class="headerlink" href="#ioqueue-capend-hwtimer-id-pin" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.capend(hwtimer_id,pin)<a class="headerlink" href="#ioqueue-capend-hwtimer-id-pin" title="Permalink to this headline">#</a></h2>
 <p>Add the IO operation queue to end the capture of an IO command.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -992,7 +990,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-get-hwtimer-id-input-buff-capture-buff">
-<h2>ioqueue.get(hwtimer_id, input_buff, capture_buff)<a class="headerlink" href="#ioqueue-get-hwtimer-id-input-buff-capture-buff" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.get(hwtimer_id, input_buff, capture_buff)<a class="headerlink" href="#ioqueue-get-hwtimer-id-input-buff-capture-buff" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>get the data entered and captured in the io operation queue</p></li>
 </ul>
@@ -1038,7 +1036,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-start-hwtimer-id">
-<h2>ioqueue.start(hwtimer_id)<a class="headerlink" href="#ioqueue-start-hwtimer-id" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.start(hwtimer_id)<a class="headerlink" href="#ioqueue-start-hwtimer-id" title="Permalink to this headline">#</a></h2>
 <p>start io operation queue</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1065,7 +1063,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-stop-hwtimer-id">
-<h2>ioqueue.stop(hwtimer_id)<a class="headerlink" href="#ioqueue-stop-hwtimer-id" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.stop(hwtimer_id)<a class="headerlink" href="#ioqueue-stop-hwtimer-id" title="Permalink to this headline">#</a></h2>
 <p>stop the io operation queue, you can start from the beginning</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1103,7 +1101,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-release-hwtimer-id">
-<h2>ioqueue.release(hwtimer_id)<a class="headerlink" href="#ioqueue-release-hwtimer-id" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.release(hwtimer_id)<a class="headerlink" href="#ioqueue-release-hwtimer-id" title="Permalink to this headline">#</a></h2>
 <p>release the resources of the I/o operation queue. the resource must be re-used next time.init</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1130,7 +1128,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-clear-hwtimer-id">
-<h2>ioqueue.clear(hwtimer_id)<a class="headerlink" href="#ioqueue-clear-hwtimer-id" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.clear(hwtimer_id)<a class="headerlink" href="#ioqueue-clear-hwtimer-id" title="Permalink to this headline">#</a></h2>
 <p>empty the io operation queue</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1157,7 +1155,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-done-hwtimer-id">
-<h2>ioqueue.done(hwtimer_id)<a class="headerlink" href="#ioqueue-done-hwtimer-id" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.done(hwtimer_id)<a class="headerlink" href="#ioqueue-done-hwtimer-id" title="Permalink to this headline">#</a></h2>
 <p>Check whether the io operation queue has been completed</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1192,7 +1190,7 @@
 </section>
 <hr class="docutils"/>
 <section id="ioqueue-exti-pin-pull-mode-irq-mode-onoff">
-<h2>ioqueue.exti(pin,pull_mode,irq_mode,onoff)<a class="headerlink" href="#ioqueue-exti-pin-pull-mode-irq-mode-onoff" title="永久链接至标题">#</a></h2>
+<h2>ioqueue.exti(pin,pull_mode,irq_mode,onoff)<a class="headerlink" href="#ioqueue-exti-pin-pull-mode-irq-mode-onoff" title="Permalink to this headline">#</a></h2>
 <p>Start/stop an external interrupt with a system tick return</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1256,13 +1254,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1280,7 +1278,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1327,7 +1325,6 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="LuaTask Framework" href="luatask.html" /><link rel="prev" title="🌙 Lua Tutorial" href="index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="LuaTask Framework" href="luatask.html" /><link rel="prev" title="🌙 Lua Tutorial" href="index.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Basic Grammar - LuatOS 文档</title>
+        <title>Basic Grammar - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,9 +688,9 @@
         </div>
         <article role="main">
           <section id="basic-grammar">
-<h1>Basic Grammar<a class="headerlink" href="#basic-grammar" title="永久链接至标题">#</a></h1>
+<h1>Basic Grammar<a class="headerlink" href="#basic-grammar" title="Permalink to this headline">#</a></h1>
 <section id="video-tutorial">
-<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="永久链接至标题">#</a></h2>
+<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this headline">#</a></h2>
 <div class="admonition">
 <p class="admonition-title">Lua Quick Start</p>
 <iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" id="spjc" scrolling="no" src="//player.bilibili.com/player.html?aid=291542005&amp;bvid=BV1vf4y1L7Rb&amp;cid=368202399&amp;page=1" width="100%"> </iframe><script type="text/javascript">
@@ -704,16 +702,16 @@
 </div></blockquote>
 </section>
 <section id="text-version-tutorial">
-<h2>Text version tutorial<a class="headerlink" href="#text-version-tutorial" title="永久链接至标题">#</a></h2>
+<h2>Text version tutorial<a class="headerlink" href="#text-version-tutorial" title="Permalink to this headline">#</a></h2>
 <section id="first-understanding-lua">
-<h3>First understanding Lua<a class="headerlink" href="#first-understanding-lua" title="永久链接至标题">#</a></h3>
+<h3>First understanding Lua<a class="headerlink" href="#first-understanding-lua" title="Permalink to this headline">#</a></h3>
 <p>Lua It is a lightweight and compact scripting language, which is written in standard C language and is open in source code form. This means that the Lua virtual machine can be easily embedded in other programs, providing flexible extension and customization capabilities for applications. However, the entire Lua virtual machine is only over 100 K after compilation, which can be smaller after proper tailoring, which is very suitable for embedded development.</p>
 <p>At the same time, in the current script engine, Lua’s running speed has an absolute advantage. These all determine that Lua is the best choice for embedded scripts.</p>
 <p>Before we write the code, we need to make some preparations, that is: * * make sure you are not using Chinese input method when entering punctuation marks。**</p>
 </section>
 <hr class="docutils"/>
 <section id="the-first-lua-program">
-<h3>The first Lua program<a class="headerlink" href="#the-first-lua-program" title="永久链接至标题">#</a></h3>
+<h3>The first Lua program<a class="headerlink" href="#the-first-lua-program" title="Permalink to this headline">#</a></h3>
 <p>The first line of code in almost all languages is the output <code class="docutils literal notranslate"><span class="pre">hello</span> <span class="pre">world</span></code>, and this tutorial is not surprising.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">Lua</span></code>, you only need to use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to print the result. At the same time, if you need to use <code class="docutils literal notranslate"><span class="pre">function</span></code>, just add double parentheses after the function name and pass in the value you want to pass in.</p>
 <p>So, let<code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">execute</span> <span class="pre">the</span> <span class="pre">following</span> <span class="pre">code</span> <span class="pre">and</span> <span class="pre">print</span></code> hello world`！</p>
@@ -723,7 +721,7 @@
 </section>
 <hr class="docutils"/>
 <section id="output-data">
-<h3>Output data<a class="headerlink" href="#output-data" title="永久链接至标题">#</a></h3>
+<h3>Output data<a class="headerlink" href="#output-data" title="Permalink to this headline">#</a></h3>
 <p>In the last part, we learned that in <code class="docutils literal notranslate"><span class="pre">Lua</span></code>, you can use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to print the result you want.</p>
 <p>It is also known that <code class="docutils literal notranslate"><span class="pre">function</span></code> refers to a subroutine that can implement certain functions and can be executed using the `function name (parameter).</p>
 <p>Let’s try to output something else! Use multiple print functions to output the data you want to output.</p>
@@ -735,7 +733,7 @@
 </section>
 <hr class="docutils"/>
 <section id="code-comments">
-<h3>Code Comments<a class="headerlink" href="#code-comments" title="永久链接至标题">#</a></h3>
+<h3>Code Comments<a class="headerlink" href="#code-comments" title="Permalink to this headline">#</a></h3>
 <p>Code “comments” are the parts of the code that will not run. <code class="docutils literal notranslate"><span class="pre">Annotation</span></code> will not be run at all.</p>
 <p>This is partly for better immediate meaning of existing code when viewing it.</p>
 <p>We can start with <code class="docutils literal notranslate"><span class="pre">--</span></code> and write a one-line comment.`</p>
@@ -754,9 +752,9 @@
 </section>
 <hr class="docutils"/>
 <section id="variable">
-<h2>Variable<a class="headerlink" href="#variable" title="永久链接至标题">#</a></h2>
+<h2>Variable<a class="headerlink" href="#variable" title="Permalink to this headline">#</a></h2>
 <section id="number-variable">
-<h3>number Variable<a class="headerlink" href="#number-variable" title="永久链接至标题">#</a></h3>
+<h3>number Variable<a class="headerlink" href="#number-variable" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Variable</span></code>, can be regarded as a bucket, in which you want to put the content. These can be all legal types that Lua contains.</p>
 <p>For example, I want to create a new bucket named bucket and put the number 233 in it, which can be as follows：</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">bucket</span> <span class="o">=</span> <span class="mi">233</span>
@@ -779,7 +777,7 @@
 </section>
 <hr class="docutils"/>
 <section id="understanding-nil">
-<h3>Understanding nil<a class="headerlink" href="#understanding-nil" title="永久链接至标题">#</a></h3>
+<h3>Understanding nil<a class="headerlink" href="#understanding-nil" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">nil</span></code>The type indicates that there is no valid value, as long as it is an undeclared value, it is.<code class="docutils literal notranslate"><span class="pre">nil</span></code></p>
 <p>For example, if I print a value without a declaration, it will output<code class="docutils literal notranslate"><span class="pre">nil</span></code>：</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">ccc</span> <span class="o">=</span> <span class="mi">233</span>
@@ -797,7 +795,7 @@
 </section>
 <hr class="docutils"/>
 <section id="assignment-statement">
-<h3>assignment statement<a class="headerlink" href="#assignment-statement" title="永久链接至标题">#</a></h3>
+<h3>assignment statement<a class="headerlink" href="#assignment-statement" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Assignment</span></code> is the most basic way to change the value of a variable.</p>
 <p>As below, use the <code class="docutils literal notranslate"><span class="pre">equal</span> <span class="pre">sign</span></code> to assign the <code class="docutils literal notranslate"><span class="pre">variable</span></code> on the <code class="docutils literal notranslate"><span class="pre">left</span></code></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
@@ -840,7 +838,7 @@
 </section>
 <hr class="docutils"/>
 <section id="swap-variables">
-<h3>Swap Variables<a class="headerlink" href="#swap-variables" title="永久链接至标题">#</a></h3>
+<h3>Swap Variables<a class="headerlink" href="#swap-variables" title="Permalink to this headline">#</a></h3>
 <p>This part requires you to complete a task on your own.：</p>
 <p>Knowing the following code, and knowing the values of <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>, please exchange their values to make the printout.<code class="docutils literal notranslate"><span class="pre">12</span>  <span class="pre">34</span></code></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">34</span>
@@ -855,7 +853,7 @@
 </section>
 <hr class="docutils"/>
 <section id="output-variable">
-<h3>output variable<a class="headerlink" href="#output-variable" title="永久链接至标题">#</a></h3>
+<h3>output variable<a class="headerlink" href="#output-variable" title="Permalink to this headline">#</a></h3>
 <p>We already know that in Lua, you can use the print function to print the result you want.</p>
 <p>Also in the previous section, we learned to create new variables and set their values.</p>
 <p>Let<code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">try</span> <span class="pre">to</span> <span class="pre">output</span> <span class="pre">a</span> <span class="pre">variable!</span> <span class="pre">Use</span> <span class="pre">the</span> </code>print function<code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">output</span> <span class="pre">known</span> <span class="pre">variables.</span> <span class="pre">We</span> <span class="pre">know</span> <span class="pre">that</span> <span class="pre">the</span> <span class="pre">variable</span></code>num` is a number, try to output its value.！</p>
@@ -867,7 +865,7 @@
 </section>
 <hr class="docutils"/>
 <section id="arithmetic-operator">
-<h3>arithmetic operator<a class="headerlink" href="#arithmetic-operator" title="永久链接至标题">#</a></h3>
+<h3>arithmetic operator<a class="headerlink" href="#arithmetic-operator" title="Permalink to this headline">#</a></h3>
 <p>An operator is a special symbol that tells the interpreter to perform a particular mathematical or logical operation.</p>
 <p>In the previous section, we created a new numeric variable, which we call a <code class="docutils literal notranslate"><span class="pre">number</span></code> type variable.</p>
 <p>In this section we learn to use <code class="docutils literal notranslate"><span class="pre">arithmetic</span> <span class="pre">operators</span></code>, as follows：</p>
@@ -914,9 +912,9 @@
 </section>
 <hr class="docutils"/>
 <section id="string">
-<h2>String<a class="headerlink" href="#string" title="永久链接至标题">#</a></h2>
+<h2>String<a class="headerlink" href="#string" title="Permalink to this headline">#</a></h2>
 <section id="string-type-variable">
-<h3>string Type variable<a class="headerlink" href="#string-type-variable" title="永久链接至标题">#</a></h3>
+<h3>string Type variable<a class="headerlink" href="#string-type-variable" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">String</span> </code>(I. e. <code class="docutils literal notranslate"><span class="pre">string</span></code>) is a string of text data that can store the text you want.</p>
 <p>In the second section, the data from <code class="docutils literal notranslate"><span class="pre">print</span></code> is a string.</p>
 <p>Lua Strings in the language can be represented in the following three ways：</p>
@@ -955,7 +953,7 @@
 </section>
 <hr class="docutils"/>
 <section id="escape-character">
-<h3>escape character<a class="headerlink" href="#escape-character" title="永久链接至标题">#</a></h3>
+<h3>escape character<a class="headerlink" href="#escape-character" title="Permalink to this headline">#</a></h3>
 <p>In the previous section, we learned how to declare strings.</p>
 <p>But we sometimes encounter some special problems, such as: <strong>How to output single quotation marks and double quotation marks? How to output carriage return and line feed？</strong></p>
 <p>Perhaps we can simply circumvent it in the following way, when outputting single quotes, the declaration string is enclosed in double quotes, like the following</p>
@@ -1018,7 +1016,7 @@
 </section>
 <hr class="docutils"/>
 <section id="string-splicing">
-<h3>string Splicing<a class="headerlink" href="#string-splicing" title="永久链接至标题">#</a></h3>
+<h3>string Splicing<a class="headerlink" href="#string-splicing" title="Permalink to this headline">#</a></h3>
 <p>Can strings and strings be added? Yes! We can use the splice symbol to put together two independent strings.</p>
 <p>We use <code class="docutils literal notranslate"><span class="pre">..</span></code> to represent the string concatenation symbol, as in the following example code：</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'abc'</span><span class="o">..</span><span class="s1">'def'</span><span class="p">)</span>
@@ -1038,7 +1036,7 @@
 </section>
 <hr class="docutils"/>
 <section id="number-turn-string">
-<h3>number Turn string<a class="headerlink" href="#number-turn-string" title="永久链接至标题">#</a></h3>
+<h3>number Turn string<a class="headerlink" href="#number-turn-string" title="Permalink to this headline">#</a></h3>
 <p>The above section learned how to splice strings. This method is certainly very useful, but sometimes we will encounter a requirement, that is, to splice the<code class="docutils literal notranslate"> <span class="pre">number</span></code> type variable and<code class="docutils literal notranslate"> <span class="pre">string</span></code> type variable to form a new one.<code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>For example, the following variables <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">s</span></code>, how to join together？</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">123</span>
@@ -1066,7 +1064,7 @@
 </section>
 <hr class="docutils"/>
 <section id="string-turn-number">
-<h3>string Turn number<a class="headerlink" href="#string-turn-number" title="永久链接至标题">#</a></h3>
+<h3>string Turn number<a class="headerlink" href="#string-turn-number" title="Permalink to this headline">#</a></h3>
 <p>The above section learned how to convert number to string. In this section, we will learn how to convert string to string.number</p>
 <p>For example, the following variable <code class="docutils literal notranslate"><span class="pre">s</span></code>, the stored content is a string, but represents a number, how to convert it into number and add it to n？</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">123</span>
@@ -1094,9 +1092,9 @@
 </section>
 <hr class="docutils"/>
 <section id="logical-operation">
-<h2>logical operation<a class="headerlink" href="#logical-operation" title="永久链接至标题">#</a></h2>
+<h2>logical operation<a class="headerlink" href="#logical-operation" title="Permalink to this headline">#</a></h2>
 <section id="boolean-and-comparison-operations">
-<h3>Boolean and comparison operations<a class="headerlink" href="#boolean-and-comparison-operations" title="永久链接至标题">#</a></h3>
+<h3>Boolean and comparison operations<a class="headerlink" href="#boolean-and-comparison-operations" title="Permalink to this headline">#</a></h3>
 <p>Boolean (boolean) has only two optional values: <code class="docutils literal notranslate"><span class="pre">true</span></code> (true) and <code class="docutils literal notranslate"><span class="pre">false</span></code> (false)）</p>
 <p>Lua False and nil are regarded as<code class="docutils literal notranslate"> <span class="pre">false</span></code>, and the others are true (including the value of 0, which is also equivalent<code class="docutils literal notranslate"><span class="pre">true</span></code>）</p>
 <p>Lua There are also many <code class="docutils literal notranslate"><span class="pre">relational</span> <span class="pre">operators</span></code> for comparing sizes or whether comparisons are equal. The symbols and their meanings are as follows：</p>
@@ -1153,7 +1151,7 @@
 </section>
 <hr class="docutils"/>
 <section id="logical-operators">
-<h3>Logical operators<a class="headerlink" href="#logical-operators" title="永久链接至标题">#</a></h3>
+<h3>Logical operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">#</a></h3>
 <p>Logical operators are calculated based on Boolean values and give results. The following table lists common logical operators in Lua language：</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -1198,7 +1196,7 @@
 </section>
 <hr class="docutils"/>
 <section id="test-size-self-test-questions">
-<h3>Test size (self-test questions）<a class="headerlink" href="#test-size-self-test-questions" title="永久链接至标题">#</a></h3>
+<h3>Test size (self-test questions）<a class="headerlink" href="#test-size-self-test-questions" title="Permalink to this headline">#</a></h3>
 <p>Topic: If the number variable<code class="docutils literal notranslate"> <span class="pre">n</span></code> is known, then if it is necessary to judge whether n meets the following conditions：</p>
 <p>3&lt;n≤10</p>
 <p>The following four lines of judgment code, correct is？</p>
@@ -1214,9 +1212,9 @@
 </section>
 <hr class="docutils"/>
 <section id="branch-judgment">
-<h2>branch judgment<a class="headerlink" href="#branch-judgment" title="永久链接至标题">#</a></h2>
+<h2>branch judgment<a class="headerlink" href="#branch-judgment" title="Permalink to this headline">#</a></h2>
 <section id="condition-judgment">
-<h3>condition judgment<a class="headerlink" href="#condition-judgment" title="永久链接至标题">#</a></h3>
+<h3>condition judgment<a class="headerlink" href="#condition-judgment" title="Permalink to this headline">#</a></h3>
 <p>The above section learned about Boolean types, so where does this need to be used? We need to use it to make some judgments.</p>
 <p>In Lua, you can use the<code class="docutils literal notranslate"> <span class="pre">if</span></code> statement to judge, such as the code shown below, you can judge whether the<code class="docutils literal notranslate"> <span class="pre">n</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">number</span> <span class="pre">less</span> <span class="pre">than</span> <span class="pre">10</span></code>：</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
@@ -1251,7 +1249,7 @@
 </section>
 <hr class="docutils"/>
 <section id="multi-condition-judgment">
-<h3>multi-condition judgment<a class="headerlink" href="#multi-condition-judgment" title="永久链接至标题">#</a></h3>
+<h3>multi-condition judgment<a class="headerlink" href="#multi-condition-judgment" title="Permalink to this headline">#</a></h3>
 <p>The above section learned how to write a simple if statement. In this section, we will learn a multi-conditional branch statement.</p>
 <p>In Lua, you can use the<code class="docutils literal notranslate"> <span class="pre">if</span></code> statement to judge, and you can use the<code class="docutils literal notranslate"> <span class="pre">else</span></code> statement to judge multiple branches.</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">if</span> <span class="n">Condition</span> <span class="mi">1</span> <span class="kr">then</span>
@@ -1302,7 +1300,7 @@
 </section>
 <hr class="docutils"/>
 <section id="judging-the-legality-of-triangles-self-test-questions">
-<h3>Judging the legality of triangles (self-test questions）<a class="headerlink" href="#judging-the-legality-of-triangles-self-test-questions" title="永久链接至标题">#</a></h3>
+<h3>Judging the legality of triangles (self-test questions）<a class="headerlink" href="#judging-the-legality-of-triangles-self-test-questions" title="Permalink to this headline">#</a></h3>
 <p>You need to use the knowledge of the previous chapters to complete the following topics</p>
 <p>It is known that three variables of type number A, B and C represent the lengths of three sticks respectively.</p>
 <p>Please judge, using these three sticks, whether you can form a triangle (the sum of the two short sides is greater than the third side）</p>
@@ -1318,7 +1316,7 @@
 </section>
 <hr class="docutils"/>
 <section id="if-the-basis-of-judgment-self-test-questions">
-<h3>if The basis of judgment (self-test questions）<a class="headerlink" href="#if-the-basis-of-judgment-self-test-questions" title="永久链接至标题">#</a></h3>
+<h3>if The basis of judgment (self-test questions）<a class="headerlink" href="#if-the-basis-of-judgment-self-test-questions" title="Permalink to this headline">#</a></h3>
 <p>As we learned earlier, Lua regards <code class="docutils literal notranslate"><span class="pre">false</span></code> and<code class="docutils literal notranslate"> <span class="pre">nil</span></code> as<code class="docutils literal notranslate"> <span class="pre">false</span></code>, and the rest is<code class="docutils literal notranslate"> <span class="pre">true</span></code> (including the value of<code class="docutils literal notranslate"><span class="pre">0</span></code>, which is also equivalent<code class="docutils literal notranslate"><span class="pre">true</span></code>）</p>
 <p><strong>Then the question arises, what will be output by executing the following code？</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="s1">''</span>
@@ -1339,9 +1337,9 @@
 </section>
 <hr class="docutils"/>
 <section id="function">
-<h2>Function<a class="headerlink" href="#function" title="永久链接至标题">#</a></h2>
+<h2>Function<a class="headerlink" href="#function" title="Permalink to this headline">#</a></h2>
 <section id="initial-knowledge-function">
-<h3>initial knowledge function<a class="headerlink" href="#initial-knowledge-function" title="永久链接至标题">#</a></h3>
+<h3>initial knowledge function<a class="headerlink" href="#initial-knowledge-function" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">function</span></code> refers to a program that can do something together, also called a subroutine.</p>
 <p>In the previous content, we have already touched the call of the function, which is used many times before.<code class="docutils literal notranslate"><span class="pre">print(...)</span></code>。</p>
 <p>The call function only needs to be in the following format：</p>
@@ -1397,7 +1395,7 @@
 </section>
 <hr class="docutils"/>
 <section id="local-variable">
-<h3>local Variable<a class="headerlink" href="#local-variable" title="永久链接至标题">#</a></h3>
+<h3>local Variable<a class="headerlink" href="#local-variable" title="Permalink to this headline">#</a></h3>
 <p>The variables we created before are global variables, which are not destroyed from beginning to end in the code run cycle and can be called anywhere.</p>
 <p>However, when our code volume increases, a large number of new global variables will often lead to a surge in memory. We need a variable that can be used temporarily and can be automatically destroyed to release memory resources. How should we solve this problem?？</p>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">local</span></code> flag to create a new temporary variable, and use <code class="docutils literal notranslate"><span class="pre">local</span></code> to create a local variable. Unlike global variables, local variables are only valid within the code block being declared.</p>
@@ -1424,7 +1422,7 @@
 </section>
 <hr class="docutils"/>
 <section id="function-parameters">
-<h3>Function Parameters<a class="headerlink" href="#function-parameters" title="永久链接至标题">#</a></h3>
+<h3>Function Parameters<a class="headerlink" href="#function-parameters" title="Permalink to this headline">#</a></h3>
 <p>In the use of the previous chapters, we know that functions can pass in parameters, such<code class="docutils literal notranslate"><span class="pre">print(123)</span></code></p>
 <p>So, how do we write a function that can pass in parameters?</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span> <span class="nf">Function</span> <span class="n">name</span> <span class="p">(</span><span class="n">parameter</span> <span class="mi">1</span><span class="p">,</span> <span class="n">parameter</span> <span class="mi">2</span><span class="p">,...)</span>
@@ -1471,7 +1469,7 @@
 </section>
 <hr class="docutils"/>
 <section id="function-return-value">
-<h3>function return value<a class="headerlink" href="#function-return-value" title="永久链接至标题">#</a></h3>
+<h3>function return value<a class="headerlink" href="#function-return-value" title="Permalink to this headline">#</a></h3>
 <p>In the previous code, we implemented a function that inputs variables <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>, and the function automatically outputs the sum of the two values.</p>
 <p>But generally speaking, our needs are far more than these, we may need a function with the following functions：</p>
 <p><code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">the</span> <span class="pre">function,</span> <span class="pre">enter</span> <span class="pre">two</span> <span class="pre">values,</span> <span class="pre">get</span> <span class="pre">the</span> <span class="pre">sum</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">two</span> <span class="pre">values</span></code></p>
@@ -1516,7 +1514,7 @@
 </section>
 <hr class="docutils"/>
 <section id="judging-the-legality-of-triangles-2-self-test-questions">
-<h3>Judging the legality of triangles 2 (self-test questions）<a class="headerlink" href="#judging-the-legality-of-triangles-2-self-test-questions" title="永久链接至标题">#</a></h3>
+<h3>Judging the legality of triangles 2 (self-test questions）<a class="headerlink" href="#judging-the-legality-of-triangles-2-self-test-questions" title="Permalink to this headline">#</a></h3>
 <p>You need to use the knowledge of the previous chapters to complete the following topics</p>
 <ul class="simple">
 <li><p>Three variables of type number are known, representing the lengths of three sticks respectively.</p></li>
@@ -1534,7 +1532,7 @@
 </section>
 <hr class="docutils"/>
 <section id="returns-multiple-values-self-test-questions">
-<h3>Returns multiple values (self-test questions）<a class="headerlink" href="#returns-multiple-values-self-test-questions" title="永久链接至标题">#</a></h3>
+<h3>Returns multiple values (self-test questions）<a class="headerlink" href="#returns-multiple-values-self-test-questions" title="Permalink to this headline">#</a></h3>
 <p>You need to use the knowledge of the previous chapters to complete the following topics</p>
 <ul class="simple">
 <li><p>Two variables of type number are known, representing the length and width of a cuboid respectively.</p></li>
@@ -1556,9 +1554,9 @@
 </section>
 <hr class="docutils"/>
 <section id="table">
-<h2>table<a class="headerlink" href="#table" title="永久链接至标题">#</a></h2>
+<h2>table<a class="headerlink" href="#table" title="Permalink to this headline">#</a></h2>
 <section id="understanding-the-array">
-<h3>Understanding the array<a class="headerlink" href="#understanding-the-array" title="永久链接至标题">#</a></h3>
+<h3>Understanding the array<a class="headerlink" href="#understanding-the-array" title="Permalink to this headline">#</a></h3>
 <p>Array, using a variable name, to store a series of values</p>
 <p>Many languages have the concept of arrays. In Lua, we can use <code class="docutils literal notranslate"><span class="pre">table</span></code> (table) to implement this function.</p>
 <p>In Lua, table is a collection of a series of elements, represented by curly brackets, separated by commas, similar to the following code：</p>
@@ -1597,7 +1595,7 @@
 </section>
 <hr class="docutils"/>
 <section id="simple-table">
-<h3>Simple table<a class="headerlink" href="#simple-table" title="永久链接至标题">#</a></h3>
+<h3>Simple table<a class="headerlink" href="#simple-table" title="Permalink to this headline">#</a></h3>
 <p>In the previous section, we will <code class="docutils literal notranslate"><span class="pre">table</span></code> to signify <code class="docutils literal notranslate"><span class="pre">array</span></code>, in fact, <code class="docutils literal notranslate"><span class="pre">table</span></code> can include <code class="docutils literal notranslate"><span class="pre">any</span> <span class="pre">type</span> <span class="pre">of</span> <span class="pre">data.</span></code></p>
 <p>For example, we can put <code class="docutils literal notranslate"><span class="pre">number</span></code> and<code class="docutils literal notranslate"><span class="pre">string</span></code> data in <code class="docutils literal notranslate"><span class="pre">table</span></code>, similar to the following code：</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"abc"</span><span class="p">,</span><span class="mi">223</span><span class="p">,</span><span class="s2">",..a"</span><span class="p">,</span><span class="mi">123123</span><span class="p">}</span>
@@ -1639,7 +1637,7 @@
 </section>
 <hr class="docutils"/>
 <section id="table-subscript">
-<h3>table Subscript<a class="headerlink" href="#table-subscript" title="永久链接至标题">#</a></h3>
+<h3>table Subscript<a class="headerlink" href="#table-subscript" title="Permalink to this headline">#</a></h3>
 <p>In the first two sections, our <code class="docutils literal notranslate"><span class="pre">table</span></code> is just some simple List (list), and the <code class="docutils literal notranslate"><span class="pre">subscription</span></code> of each element is automatically arranged from 1</p>
 <p>In fact, in Lua, subscripts can be specified directly at the time of declaration, like the following：</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}</span>
@@ -1688,7 +1686,7 @@
 </section>
 <hr class="docutils"/>
 <section id="subscript-advanced">
-<h3>Subscript Advanced<a class="headerlink" href="#subscript-advanced" title="永久链接至标题">#</a></h3>
+<h3>Subscript Advanced<a class="headerlink" href="#subscript-advanced" title="Permalink to this headline">#</a></h3>
 <p>In the previous section, we learned how to customize subscripts, but in Lua, subscripts can also be strings, as in the following example</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">{</span>
     <span class="p">[</span><span class="s2">"apple"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
@@ -1736,7 +1734,7 @@
 </section>
 <hr class="docutils"/>
 <section id="table-quiz">
-<h3>table Quiz<a class="headerlink" href="#table-quiz" title="永久链接至标题">#</a></h3>
+<h3>table Quiz<a class="headerlink" href="#table-quiz" title="Permalink to this headline">#</a></h3>
 <p><strong>The following code will print what？</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">apple</span> <span class="o">=</span> <span class="p">{</span>
@@ -1761,7 +1759,7 @@
 </section>
 <hr class="docutils"/>
 <section id="table-quiz-2">
-<h3>table Quiz 2<a class="headerlink" href="#table-quiz-2" title="永久链接至标题">#</a></h3>
+<h3>table Quiz 2<a class="headerlink" href="#table-quiz-2" title="Permalink to this headline">#</a></h3>
 <p><strong>The following code will print what？</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">{</span>
     <span class="p">{</span>
@@ -1786,7 +1784,7 @@
 </section>
 <hr class="docutils"/>
 <section id="lua-global-variables-and-table">
-<h3>Lua Global variables and table<a class="headerlink" href="#lua-global-variables-and-table" title="永久链接至标题">#</a></h3>
+<h3>Lua Global variables and table<a class="headerlink" href="#lua-global-variables-and-table" title="Permalink to this headline">#</a></h3>
 <p>As we learned earlier, in the<code class="docutils literal notranslate"> <span class="pre">table</span></code>, elements can be accessed directly with<code class="docutils literal notranslate"><span class="pre">table</span> <span class="pre">name</span> <span class="pre">[subscript]</span></code>or<code class="docutils literal notranslate"> <span class="pre">table</span> <span class="pre">name.</span> <span class="pre">string</span> <span class="pre">subscription</span></code></p>
 <p>In fact, in Lua, all global variables are stored in a large <code class="docutils literal notranslate"><span class="pre">table</span></code>, which is called：<code class="docutils literal notranslate"><span class="pre">_G</span></code></p>
 <p>We can use the following example to demonstrate：</p>
@@ -1821,7 +1819,7 @@
 </section>
 <hr class="docutils"/>
 <section id="table-small-test-3">
-<h3>table Small test 3<a class="headerlink" href="#table-small-test-3" title="永久链接至标题">#</a></h3>
+<h3>table Small test 3<a class="headerlink" href="#table-small-test-3" title="Permalink to this headline">#</a></h3>
 <p><strong>Create a new table named t that meets the following requirements</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">t[10]</span></code>Data of type <code class="docutils literal notranslate"><span class="pre">number</span></code> can be obtained<code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
@@ -1843,7 +1841,7 @@
 </section>
 <hr class="docutils"/>
 <section id="table-concat">
-<h3>table.concat<a class="headerlink" href="#table-concat" title="永久链接至标题">#</a></h3>
+<h3>table.concat<a class="headerlink" href="#table-concat" title="Permalink to this headline">#</a></h3>
 <p>table.concat (table [, sep [, i [, j ] ] ])</p>
 <p>The elements are <code class="docutils literal notranslate"><span class="pre">table</span></code> of type <code class="docutils literal notranslate"><span class="pre">string</span></code> or <code class="docutils literal notranslate"><span class="pre">number</span></code>, and each element is concatenated into a string and returned.</p>
 <p>The optional parameter <code class="docutils literal notranslate"><span class="pre">sep</span></code>, which represents the connection spacer, is empty by default.</p>
@@ -1873,7 +1871,7 @@
 </section>
 <hr class="docutils"/>
 <section id="table-deletion">
-<h3>table Deletion<a class="headerlink" href="#table-deletion" title="永久链接至标题">#</a></h3>
+<h3>table Deletion<a class="headerlink" href="#table-deletion" title="Permalink to this headline">#</a></h3>
 <p>table.insert (table, [pos ,] value)</p>
 <p>Insert value into the pos index position of the (array) table, and move other elements backward to empty places. The default value of pos is the length of the table plus one, that is, the default is inserted at the end of the table.</p>
 <p>table.remove (table [, pos])</p>
@@ -1922,9 +1920,9 @@
 </section>
 <hr class="docutils"/>
 <section id="cycle">
-<h2>Cycle<a class="headerlink" href="#cycle" title="永久链接至标题">#</a></h2>
+<h2>Cycle<a class="headerlink" href="#cycle" title="Permalink to this headline">#</a></h2>
 <section id="while-cycle">
-<h3>while Cycle<a class="headerlink" href="#while-cycle" title="永久链接至标题">#</a></h3>
+<h3>while Cycle<a class="headerlink" href="#while-cycle" title="Permalink to this headline">#</a></h3>
 <p>In the actual function implementation, we often encounter code that needs to be run in a loop, such as filling table data from 1 to 100. We can directly use loop statements to implement</p>
 <p>Let<code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">first</span> <span class="pre">learn</span> <span class="pre">the</span> <span class="pre">loop</span> <span class="pre">syntax</span> <span class="pre">of</span></code> while`. The overall format is as follows：</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">while</span> <span class="n">Judgment</span> <span class="n">basis</span> <span class="kr">for</span> <span class="n">continuing</span> <span class="n">cycle</span> <span class="kr">do</span>
@@ -1964,7 +1962,7 @@
 </section>
 <hr class="docutils"/>
 <section id="for-cycle">
-<h3>for Cycle<a class="headerlink" href="#for-cycle" title="永久链接至标题">#</a></h3>
+<h3>for Cycle<a class="headerlink" href="#for-cycle" title="Permalink to this headline">#</a></h3>
 <p>for Loops are similar to while loops to some extent, but for loops can express the amount of intermediate accumulation more concisely.</p>
 <p>First of all, let<code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">learn</span> <span class="pre">the</span> <span class="pre">loop</span> <span class="pre">syntax</span> <span class="pre">of</span></code> for`. The overall format is as follows：</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">for</span> <span class="n">Temporary</span> <span class="n">variable</span> <span class="n">name</span> <span class="o">=</span> <span class="n">start</span> <span class="n">value</span><span class="p">,</span> <span class="kr">end</span> <span class="n">value</span><span class="p">,</span> <span class="n">step</span> <span class="n">size</span> <span class="kr">do</span>
@@ -2003,7 +2001,7 @@
 </section>
 <hr class="docutils"/>
 <section id="interrupt-loop">
-<h3>Interrupt Loop<a class="headerlink" href="#interrupt-loop" title="永久链接至标题">#</a></h3>
+<h3>Interrupt Loop<a class="headerlink" href="#interrupt-loop" title="Permalink to this headline">#</a></h3>
 <p>Earlier we learned the loop statement, sometimes the loop runs to half, we don’t want to continue to run, how to do？</p>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">break</span></code> in a loop body to immediately end the loop and continue to run the following code</p>
 <p>For example, like the following, calculate the maximum sum of<code class="docutils literal notranslate"><span class="pre">less</span> <span class="pre">than</span> <span class="pre">100</span></code>on the way to the addition of 1-100`：</p>
@@ -2053,7 +2051,7 @@
 </section>
 <hr class="docutils"/>
 <section id="cycle-test-question-1-self-test-question">
-<h3>Cycle test question 1 (self-test question）<a class="headerlink" href="#cycle-test-question-1-self-test-question" title="永久链接至标题">#</a></h3>
+<h3>Cycle test question 1 (self-test question）<a class="headerlink" href="#cycle-test-question-1-self-test-question" title="Permalink to this headline">#</a></h3>
 <p>Earlier we learned the loop statement, we need to complete the following tasks</p>
 <p>We know that the <code class="docutils literal notranslate"><span class="pre">print</span></code> function can print a complete line of output</p>
 <p>Then, given the variable a, please print out the following result：</p>
@@ -2078,7 +2076,7 @@
 </section>
 <hr class="docutils"/>
 <section id="cycle-test-question-2-self-test-question">
-<h3>Cycle test question 2 (self-test question）<a class="headerlink" href="#cycle-test-question-2-self-test-question" title="永久链接至标题">#</a></h3>
+<h3>Cycle test question 2 (self-test question）<a class="headerlink" href="#cycle-test-question-2-self-test-question" title="Permalink to this headline">#</a></h3>
 <p>We need to complete the following tasks</p>
 <p>Then, given the variable a, please print out the following result：</p>
 <p>（a is an integer greater than 0, and a row of data needs to be output, with one * for the first row and one more for each subsequent row.*）</p>
@@ -2102,7 +2100,7 @@
 </section>
 <hr class="docutils"/>
 <section id="cycle-test-question-3-self-test-question">
-<h3>Cycle test question 3 (self-test question）<a class="headerlink" href="#cycle-test-question-3-self-test-question" title="永久链接至标题">#</a></h3>
+<h3>Cycle test question 3 (self-test question）<a class="headerlink" href="#cycle-test-question-3-self-test-question" title="Permalink to this headline">#</a></h3>
 <p>We need to complete the following tasks</p>
 <p>Then, given the variable a, please print out the following result：</p>
 <p>（a is an integer greater than 0, and a row of data needs to be output, which is output according to the rule shown in the figure.）</p>
@@ -2132,7 +2130,7 @@
 </section>
 <hr class="docutils"/>
 <section id="cycle-test-question-4-self-test-question">
-<h3>Cycle test question 4 (self-test question）<a class="headerlink" href="#cycle-test-question-4-self-test-question" title="永久链接至标题">#</a></h3>
+<h3>Cycle test question 4 (self-test question）<a class="headerlink" href="#cycle-test-question-4-self-test-question" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>There was a monkey who picked several peaches on the first day and ate half of them immediately, but he still felt that it was not enough, so he ate another one.</p></li>
 <li><p>The next morning, I ate half of the remaining peaches, but I still didn’t feel satisfied, so I ate two more.</p></li>
@@ -2154,9 +2152,9 @@
 </section>
 <hr class="docutils"/>
 <section id="explain-the-string-library-in-detail">
-<h2>Explain the string library in detail.<a class="headerlink" href="#explain-the-string-library-in-detail" title="永久链接至标题">#</a></h2>
+<h2>Explain the string library in detail.<a class="headerlink" href="#explain-the-string-library-in-detail" title="Permalink to this headline">#</a></h2>
 <section id="string-sub">
-<h3>string.sub<a class="headerlink" href="#string-sub" title="永久链接至标题">#</a></h3>
+<h3>string.sub<a class="headerlink" href="#string-sub" title="Permalink to this headline">#</a></h3>
 <p>The next few sections will explain the various interfaces of the string library.</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nb">string.sub</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">i</span> <span class="p">[,</span> <span class="n">j</span><span class="p">])</span>
 </pre></div>
@@ -2204,7 +2202,7 @@
 </section>
 <hr class="docutils"/>
 <section id="string-rep">
-<h3>string.rep<a class="headerlink" href="#string-rep" title="永久链接至标题">#</a></h3>
+<h3>string.rep<a class="headerlink" href="#string-rep" title="Permalink to this headline">#</a></h3>
 <p>string.rep(s, n)</p>
 <p>Returns n copies of string s.</p>
 <p>Sample code：</p>
@@ -2222,7 +2220,7 @@
 </section>
 <hr class="docutils"/>
 <section id="string-len">
-<h3>string.len<a class="headerlink" href="#string-len" title="永久链接至标题">#</a></h3>
+<h3>string.len<a class="headerlink" href="#string-len" title="Permalink to this headline">#</a></h3>
 <p>string.len(s)</p>
 <p>Receives a string and returns its length.</p>
 <p>Sample code：</p>
@@ -2247,7 +2245,7 @@
 </section>
 <hr class="docutils"/>
 <section id="case-conversion">
-<h3>Case Conversion<a class="headerlink" href="#case-conversion" title="永久链接至标题">#</a></h3>
+<h3>Case Conversion<a class="headerlink" href="#case-conversion" title="Permalink to this headline">#</a></h3>
 <p>string.lower(s)</p>
 <p>Receives a string s and returns a string that turns all uppercase letters into lowercase letters.</p>
 <p>string.upper(s)</p>
@@ -2274,7 +2272,7 @@
 </section>
 <hr class="docutils"/>
 <section id="string-format">
-<h3>string.format<a class="headerlink" href="#string-format" title="永久链接至标题">#</a></h3>
+<h3>string.format<a class="headerlink" href="#string-format" title="Permalink to this headline">#</a></h3>
 <p>string.format(formatstring, …)</p>
 <p>Follow the formatting parameter <code class="docutils literal notranslate"><span class="pre">formatstring</span></code> to return the formatted version of the content of the following.</p>
 <p>The rules for writing a formatted string are basically the same as the rules for the printf function in the standard c language：</p>
@@ -2306,7 +2304,7 @@
 </section>
 <hr class="docutils"/>
 <section id="string-the-essence">
-<h3>string the essence<a class="headerlink" href="#string-the-essence" title="永久链接至标题">#</a></h3>
+<h3>string the essence<a class="headerlink" href="#string-the-essence" title="Permalink to this headline">#</a></h3>
 <p>In this section we explain the nature of strings</p>
 <p><code class="docutils literal notranslate"><span class="pre">String</span> </code>, is used to store a string of characters,<code class="docutils literal notranslate"><span class="pre">but</span> <span class="pre">its</span> <span class="pre">essence</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">string</span> <span class="pre">of</span> <span class="pre">numeres</span></code>. How to use a string of numbers to represent a string of characters？</p>
 <p>In computers, each symbol corresponds to a number, but before explaining this knowledge, let’s learn about supplementary knowledge.：</p>
@@ -2346,7 +2344,7 @@ Of course, you can't say that the data you can't see does not exist, they are al
 </section>
 <hr class="docutils"/>
 <section id="string-char">
-<h3>string.char<a class="headerlink" href="#string-char" title="永久链接至标题">#</a></h3>
+<h3>string.char<a class="headerlink" href="#string-char" title="Permalink to this headline">#</a></h3>
 <p>string.char (…)</p>
 <p>Receives 0 or more integers (integer range: 0 to 255) and returns a string of ASCII characters corresponding to these integers. When the parameter is empty, the default is a 0。</p>
 <p>If you have studied the previous chapter carefully, this passage should be well understood. In essence, it is to turn a string of numbers known by the computer into a string variable, and the data in the string is the string of data to be stored.</p>
@@ -2375,7 +2373,7 @@ Of course, you can't say that the data you can't see does not exist, they are al
 </section>
 <hr class="docutils"/>
 <section id="string-byte">
-<h3>string.byte<a class="headerlink" href="#string-byte" title="永久链接至标题">#</a></h3>
+<h3>string.byte<a class="headerlink" href="#string-byte" title="Permalink to this headline">#</a></h3>
 <p>string.byte(s [, i [, j ] ])</p>
 <p>Returns the ASCII code for the characters s [I], s [I 1], s [I 2],…, s[j]. The default value of I is 1, the first byte, and the default value of j is i 。</p>
 <p>This function function is just the opposite of the previous string.char, which is to extract the actual value in the string.</p>
@@ -2404,7 +2402,7 @@ Of course, you can't say that the data you can't see does not exist, they are al
 </section>
 <hr class="docutils"/>
 <section id="string-find">
-<h3>string.find<a class="headerlink" href="#string-find" title="永久链接至标题">#</a></h3>
+<h3>string.find<a class="headerlink" href="#string-find" title="Permalink to this headline">#</a></h3>
 <p>string.find(s, p [, init [, plain] ])</p>
 <p>This function looks for data in the string <code class="docutils literal notranslate"><span class="pre">s</span></code> that matches the string <code class="docutils literal notranslate"><span class="pre">p.</span> <span class="pre">If</span> <span class="pre">it</span> <span class="pre">is</span> <span class="pre">successfully</span> <span class="pre">found,</span> <span class="pre">it</span> <span class="pre">will</span> <span class="pre">return</span> <span class="pre">the</span> <span class="pre">start</span> <span class="pre">and</span> <span class="pre">end</span> <span class="pre">positions</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">string</span> </code>p<code class="docutils literal notranslate"><span class="pre">in</span> <span class="pre">the</span> <span class="pre">string</span></code>s<code class="docutils literal notranslate"><span class="pre">;</span> <span class="pre">If</span> <span class="pre">it</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">found,</span> <span class="pre">it</span> <span class="pre">will</span> <span class="pre">return</span></code>nil`。</p>
 <p>The third parameter <code class="docutils literal notranslate"><span class="pre">init</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>, which indicates that the match starts from the first character. When <code class="docutils literal notranslate"><span class="pre">init</span></code> is a negative number, it indicates that the match starts from the last <code class="docutils literal notranslate"><span class="pre">-init</span></code> character of the <code class="docutils literal notranslate"><span class="pre">s</span></code> string.</p>
@@ -2446,7 +2444,7 @@ In fact, the default meaning of matching in lua is regular matching, and the reg
 </section>
 <hr class="docutils"/>
 <section id="string-gsub">
-<h3>string.gsub<a class="headerlink" href="#string-gsub" title="永久链接至标题">#</a></h3>
+<h3>string.gsub<a class="headerlink" href="#string-gsub" title="Permalink to this headline">#</a></h3>
 <p>string.gsub(s, p, r [, n])</p>
 <p>Replace all substrings <code class="docutils literal notranslate"><span class="pre">p</span></code> in target string <code class="docutils literal notranslate"><span class="pre">s</span></code> with strings r。</p>
 <p>Optional parameter <code class="docutils literal notranslate"><span class="pre">n</span></code>, which means to limit the number of replacements.</p>
@@ -2484,12 +2482,12 @@ In fact, the default meaning of matching in lua is regular matching, and the reg
 </section>
 <hr class="docutils"/>
 <section id="regular-matching-related-content-waiting-for-update">
-<h3>Regular matching related content waiting for update<a class="headerlink" href="#regular-matching-related-content-waiting-for-update" title="永久链接至标题">#</a></h3>
+<h3>Regular matching related content waiting for update<a class="headerlink" href="#regular-matching-related-content-waiting-for-update" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 <hr class="docutils"/>
 <section id="cross-file-call">
-<h2>Cross-file call<a class="headerlink" href="#cross-file-call" title="永久链接至标题">#</a></h2>
+<h2>Cross-file call<a class="headerlink" href="#cross-file-call" title="Permalink to this headline">#</a></h2>
 <p>When writing code, as the logic becomes more complex, our code volume will become larger. Although there are <code class="docutils literal notranslate"><span class="pre">functions</span></code> to encapsulate part of the code logic, it is obviously not a good idea to put all the code in one file.</p>
 <p>So we need to put some code into different files and distinguish the functions of these codes through files.</p>
 <p>For example, we have the following function：</p>
@@ -2577,7 +2575,7 @@ In fact, the default meaning of matching in lua is regular matching, and the reg
 <p>At the same time, each file will only be <code class="docutils literal notranslate"><span class="pre">require</span></code> once at most, if there are multiple <code class="docutils literal notranslate"><span class="pre">require</span></code>, only the first time will be executed.</p>
 </section>
 <section id="to-be-added">
-<h2>To be added<a class="headerlink" href="#to-be-added" title="永久链接至标题">#</a></h2>
+<h2>To be added<a class="headerlink" href="#to-be-added" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>table  -&gt; sort Sort</p></li>
 <li><p>string -&gt; regular、gsub、find、match</p></li>
@@ -2632,13 +2630,13 @@ window.onload = function(){
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -2656,7 +2654,7 @@ window.onload = function(){
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -2773,7 +2771,6 @@ window.onload = function(){
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

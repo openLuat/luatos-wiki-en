@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Lua Library File Writing Guide" href="add_lua_module.html" /><link rel="prev" title="Development practice" href="docs_use.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Lua Library File Writing Guide" href="add_lua_module.html" /><link rel="prev" title="Development practice" href="docs_use.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Add Custom Functions (Rapid Edition) - LuatOS 文档</title>
+        <title>Add Custom Functions (Rapid Edition) - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,7 +688,7 @@
         </div>
         <article role="main">
           <section id="add-custom-functions-rapid-edition">
-<h1>Add Custom Functions (Rapid Edition)<a class="headerlink" href="#add-custom-functions-rapid-edition" title="永久链接至标题">#</a></h1>
+<h1>Add Custom Functions (Rapid Edition)<a class="headerlink" href="#add-custom-functions-rapid-edition" title="Permalink to this headline">#</a></h1>
 <p>Do you have such trouble?</p>
 <ul class="simple">
 <li><p>There is an algorithm implemented by C, how to get it into LuatOS</p></li>
@@ -698,7 +696,7 @@
 </ul>
 <p>This article takes air101/air103 as an example to introduce how to add functions for lua code to call.</p>
 <section id="preparatory-knowledge">
-<h2>preparatory knowledge<a class="headerlink" href="#preparatory-knowledge" title="永久链接至标题">#</a></h2>
+<h2>preparatory knowledge<a class="headerlink" href="#preparatory-knowledge" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>A little vscode experience, basic C language programming ability</p></li>
 <li><p>Can compile existing code, such as air101/air103. If not, first look at <a class="reference internal" href="compile/Air101.html"><span class="doc std std-doc">Compile Tutorial</span></a></p></li>
@@ -706,14 +704,14 @@
 </ul>
 </section>
 <section id="expected-effect">
-<h2>Expected effect<a class="headerlink" href="#expected-effect" title="永久链接至标题">#</a></h2>
+<h2>Expected effect<a class="headerlink" href="#expected-effect" title="Permalink to this headline">#</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">ok</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">sayhi</span><span class="p">(</span><span class="s2">"wendal"</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
 <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"custom"</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span> <span class="c1">-- Print true/false and a paragraph</span>
 </pre></div>
 </div>
 </section>
 <section id="create-a-new-c-file-and-store-the-sample-code">
-<h2>Create a new c file and store the sample code.<a class="headerlink" href="#create-a-new-c-file-and-store-the-sample-code" title="永久链接至标题">#</a></h2>
+<h2>Create a new c file and store the sample code.<a class="headerlink" href="#create-a-new-c-file-and-store-the-sample-code" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Using vscode, open the source directory of air101/air103</p></li>
 <li><p>Navigate to the app/custom directory to create a new file <code class="docutils literal notranslate"><span class="pre">myapi.c</span></code></p></li>
@@ -770,7 +768,7 @@
 </div>
 </section>
 <section id="enable-custom-function-construction">
-<h2>Enable custom function construction<a class="headerlink" href="#enable-custom-function-construction" title="永久链接至标题">#</a></h2>
+<h2>Enable custom function construction<a class="headerlink" href="#enable-custom-function-construction" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">app/include/luat_conf_bsp.h</span></code></p></li>
 <li><p>In the middle, add the following macro definition</p></li>
@@ -780,7 +778,7 @@
 </div>
 </section>
 <section id="test-happily">
-<h2>test happily<a class="headerlink" href="#test-happily" title="永久链接至标题">#</a></h2>
+<h2>test happily<a class="headerlink" href="#test-happily" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Execute xmake and compile it regular</p></li>
 <li><p>Brush machine, under the script, see the effect</p></li>
@@ -794,14 +792,14 @@
 </ul>
 </section>
 <section id="can-t-do-it-ask-for-help-to-the-qq-group-for-help-or-gitee-post">
-<h2>Can’t do it? Ask for help? To the QQ group for help or gitee post.<a class="headerlink" href="#can-t-do-it-ask-for-help-to-the-qq-group-for-help-or-gitee-post" title="永久链接至标题">#</a></h2>
+<h2>Can’t do it? Ask for help? To the QQ group for help or gitee post.<a class="headerlink" href="#can-t-do-it-ask-for-help-to-the-qq-group-for-help-or-gitee-post" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>QQ Group: 1061642968</p></li>
 <li><p>gitee: https://gitee.com/openLuat/LuatOS By the way, order a star, thank you</p></li>
 </ol>
 </section>
 <section id="expansion-1-there-are-many-functions-can-i-make-a-library">
-<h2>Expansion 1-there are many functions, can I make a library?<a class="headerlink" href="#expansion-1-there-are-many-functions-can-i-make-a-library" title="永久链接至标题">#</a></h2>
+<h2>Expansion 1-there are many functions, can I make a library?<a class="headerlink" href="#expansion-1-there-are-many-functions-can-i-make-a-library" title="Permalink to this headline">#</a></h2>
 <p>It must be possible. It is also a quick way to change it directly with a ready-made copy of lib_xx.c.</p>
 <ul class="simple">
 <li><p>First, give the library a cool name.</p></li>
@@ -812,7 +810,7 @@
 </ul>
 </section>
 <section id="expansion-2-add-static-libraries-for-linking">
-<h2>Expansion 2-Add static libraries for linking<a class="headerlink" href="#expansion-2-add-static-libraries-for-linking" title="永久链接至标题">#</a></h2>
+<h2>Expansion 2-Add static libraries for linking<a class="headerlink" href="#expansion-2-add-static-libraries-for-linking" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Need a little xmake knowledge, but the search string can also be added</p></li>
 <li><p>Put the file into the lib directory, assuming the name is <code class="docutils literal notranslate"><span class="pre">libcool.a</span></code></p></li>
@@ -849,13 +847,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -873,7 +871,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -912,7 +910,6 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/baidu.js"></script>
     <script src="../_static/js/a.js"></script>

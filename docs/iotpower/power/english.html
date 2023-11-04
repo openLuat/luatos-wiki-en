@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>IoT Power User Guide - LuatOS 文档</title>
+        <title>IoT Power User Guide - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,13 +688,13 @@
         </div>
         <article role="main">
           <section id="iot-power-user-guide">
-<h1>IoT Power User Guide<a class="headerlink" href="#iot-power-user-guide" title="永久链接至标题">#</a></h1>
+<h1>IoT Power User Guide<a class="headerlink" href="#iot-power-user-guide" title="Permalink to this headline">#</a></h1>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="永久链接至标题">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>IOT Power is a full-featured, stable and reliable small handheld power meter. It can be powered through USB Type-C interface. The output voltage and current is adjustable, and it supports up to 5V2A. Overall, it is a perfect and helpful test tool for engineers in daily work.</p>
 </section>
 <section id="technical-characteristics">
-<h2>Technical Characteristics<a class="headerlink" href="#technical-characteristics" title="永久链接至标题">#</a></h2>
+<h2>Technical Characteristics<a class="headerlink" href="#technical-characteristics" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Maximum Output Range：voltage up to 5V, current up to 2A (Power Supply should meet certain requirements)</p></li>
 <li><p>Voltage Measurement Precision：1% (norminal)</p></li>
@@ -709,7 +707,7 @@
 </ul>
 </section>
 <section id="technical-index">
-<h2>Technical Index<a class="headerlink" href="#technical-index" title="永久链接至标题">#</a></h2>
+<h2>Technical Index<a class="headerlink" href="#technical-index" title="Permalink to this headline">#</a></h2>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="text-center head"><p><strong>Function</strong></p></th>
@@ -789,7 +787,7 @@
 </table></div>
 </section>
 <section id="attention">
-<h2>Attention<a class="headerlink" href="#attention" title="永久链接至标题">#</a></h2>
+<h2>Attention<a class="headerlink" href="#attention" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The maximum output voltage and current of IoT Power are limited by the voltage and current supply at the USB input interface. If the input voltage and current supply is less than 5.5V &amp; 2A, then the maximum output voltage and current will decrease accordingly.</p></li>
 <li><p>Please don’t supply over 5.8V at the USB port</p></li>
@@ -798,12 +796,12 @@
 <li><p>Be careful to use mobile phone power supply to power IoT Power.  It’s been noticed that some USB chargers, such as Xiaomi and Huawei, may supply over 5.8V voltage because of their private fast-charging protocols, which in turn burns out the tool instantly.</p></li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">警告</p>
+<p class="admonition-title">Warning</p>
 <p>⚠Warning: short circuit at the output terminal, and surge at the input terminal or output terminal may damage the device.</p>
 </div>
 </section>
 <section id="equipment-structure">
-<h2>Equipment Structure<a class="headerlink" href="#equipment-structure" title="永久链接至标题">#</a></h2>
+<h2>Equipment Structure<a class="headerlink" href="#equipment-structure" title="Permalink to this headline">#</a></h2>
 <p><img alt="Equipment diagram" src="../../_images/overview.png"/></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -840,9 +838,9 @@
 ⑥: Power output positive pole</p>
 </section>
 <section id="instructions-for-use">
-<h2>Instructions for Use<a class="headerlink" href="#instructions-for-use" title="永久链接至标题">#</a></h2>
+<h2>Instructions for Use<a class="headerlink" href="#instructions-for-use" title="Permalink to this headline">#</a></h2>
 <section id="voltage-setting">
-<h3>Voltage Setting<a class="headerlink" href="#voltage-setting" title="永久链接至标题">#</a></h3>
+<h3>Voltage Setting<a class="headerlink" href="#voltage-setting" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Move the cursor to the field of “setVol” by short press ③ multiple times</p></li>
 <li><p>Use ① and ② to move the cursor to the number to be modified</p></li>
@@ -851,7 +849,7 @@
 <p>Note: the display of the read-back voltage is inaccurate when the output is not loaded.</p>
 </section>
 <section id="maximum-output-current-setting">
-<h3>Maximum Output Current Setting<a class="headerlink" href="#maximum-output-current-setting" title="永久链接至标题">#</a></h3>
+<h3>Maximum Output Current Setting<a class="headerlink" href="#maximum-output-current-setting" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Move the cursor to the field of “setCur” by short press ③ multiple times</p></li>
 <li><p>Long press ③ to switch between mA and A scales if needed</p></li>
@@ -860,7 +858,7 @@
 </ul>
 </section>
 <section id="turn-the-output-on-off-switch-between-standby-and-normal-mode">
-<h3>Turn the Output on/off (switch between standby and normal mode)<a class="headerlink" href="#turn-the-output-on-off-switch-between-standby-and-normal-mode" title="永久链接至标题">#</a></h3>
+<h3>Turn the Output on/off (switch between standby and normal mode)<a class="headerlink" href="#turn-the-output-on-off-switch-between-standby-and-normal-mode" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>In standby mode, the device has no output and the status field in the upper left corner displays “STBY”.</p></li>
 <li><p>Short press ④ to switch the device to normal mode, indicating output is enabled; the status field in the upper-left corner changes to “NORM”</p></li>
@@ -869,7 +867,7 @@
 </ul>
 </section>
 <section id="zero-calibration">
-<h3>Zero Calibration<a class="headerlink" href="#zero-calibration" title="永久链接至标题">#</a></h3>
+<h3>Zero Calibration<a class="headerlink" href="#zero-calibration" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Ensure no external devices is connected</p></li>
 <li><p>Short press ④ to switch to normal mode to turn on the output</p></li>
@@ -877,28 +875,28 @@
 </ul>
 </section>
 <section id="switch-the-display-of-output-energy-nrg-capacity-cap-and-power-pwr">
-<h3>Switch the Display of output Energy(NRG), Capacity(CAP), and Power (PWR)<a class="headerlink" href="#switch-the-display-of-output-energy-nrg-capacity-cap-and-power-pwr" title="永久链接至标题">#</a></h3>
+<h3>Switch the Display of output Energy(NRG), Capacity(CAP), and Power (PWR)<a class="headerlink" href="#switch-the-display-of-output-energy-nrg-capacity-cap-and-power-pwr" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Move the cursor to the field of “NRG/CAP/PWR” by short press ③ multiple times</p></li>
 <li><p>Scroll ③ to change the mode between “Energy”(NRG), “Capacity”(CAP), and “Power”(PWR)</p></li>
 <li><p>The calculated results will display accordingly in the lower-right field.</p></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">Note</p>
 <p>“Energy”/NRG means the accumulated output power consumption (unit: μWh) that the tool has produced since its last power on.<br/>
 “Capacity”/CAP means the accumulated output electrical power (unit: mAh) that the tool has produced since its last power on.<br/>
 “Power”/PWR means instantaneous output power.</p>
 </div>
 </section>
 <section id="manual-range-switch">
-<h3>Manual Range Switch<a class="headerlink" href="#manual-range-switch" title="永久链接至标题">#</a></h3>
+<h3>Manual Range Switch<a class="headerlink" href="#manual-range-switch" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Long press ② to manually switch between  200uA, 2mA, 200mA, and 2A</p></li>
 <li><p>Return to automatic mode by turning the output off and on again</p></li>
 </ul>
 </section>
 <section id="firmware-upgrade">
-<h3>Firmware Upgrade<a class="headerlink" href="#firmware-upgrade" title="永久链接至标题">#</a></h3>
+<h3>Firmware Upgrade<a class="headerlink" href="#firmware-upgrade" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Click the “Manual Upgrade” button in PC Client</p></li>
 </ul>
@@ -906,7 +904,7 @@
 </section>
 </section>
 <section id="q-a">
-<h2>Q&amp;A<a class="headerlink" href="#q-a" title="永久链接至标题">#</a></h2>
+<h2>Q&amp;A<a class="headerlink" href="#q-a" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>What’s Constant Voltage (CV) and Constant Current (CC)?</p></li>
 </ol>
@@ -930,13 +928,13 @@
           
           
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -954,7 +952,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1001,7 +999,6 @@
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>

@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zh_CN">
+<html class="no-js" lang="en_US">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜索" href="../../search.html" /><link rel="next" title="Air780EG Additional instructions" href="air780eg.html" /><link rel="prev" title="Network Characteristics" href="network.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Air780EG Additional instructions" href="air780eg.html" /><link rel="prev" title="Network Characteristics" href="network.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>LuatOS IO multiplexing configuration under firmware - LuatOS 文档</title>
+        <title>LuatOS IO multiplexing configuration under firmware - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">LuatOS  文档</div></a>
+      <a href="../../index.html"><div class="brand">LuatOS  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,22 +148,20 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky">
-        <!-- 谷歌翻译 start -->
-        <div id="google_translate_element"></div>
+        <!-- 英文站提示 start -->
+        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
-          function googleTranslateElementInit() {
-            if (navigator.language.indexOf("CN") < 0) {
-              new google.translate.TranslateElement({
-                pageLanguage: 'cn'
-              }, 'google_translate_element');
-              $("#google_translate_element").after('<a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a>');
-            }
+          //在主站，而且是非中文用户
+          if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
+            $("#en-site-css").css("display","");
           }
-          if (navigator.language.indexOf("CN") < 0) {
-            var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })();
+          //在英文站
+          if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+            $("#discord-css").css("display","");
           }
         </script>
-        <!-- 谷歌翻译 end --><a class="sidebar-brand" href="../../index.html">
+        <!-- 英文站提示 end --><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="../../_static/logo.svg" alt="Light Logo"/>
@@ -172,7 +170,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -690,7 +688,7 @@
         </div>
         <article role="main">
           <section id="luatos-io-multiplexing-configuration-under-firmware">
-<h1>LuatOS IO multiplexing configuration under firmware<a class="headerlink" href="#luatos-io-multiplexing-configuration-under-firmware" title="永久链接至标题">#</a></h1>
+<h1>LuatOS IO multiplexing configuration under firmware<a class="headerlink" href="#luatos-io-multiplexing-configuration-under-firmware" title="Permalink to this headline">#</a></h1>
 <p><strong>This document describes the LuatOS perspective</strong></p>
 <ol class="arabic simple">
 <li><p>LuatOS’s io reuse is fixed due to the presence of firmware features.</p></li>
@@ -702,7 +700,7 @@
 <li><p>Cloud compilation and mcu.iomux function can adjust partial reuse relationship.</p></li>
 </ol>
 <section id="pwm-description">
-<h2>PWM Description<a class="headerlink" href="#pwm-description" title="永久链接至标题">#</a></h2>
+<h2>PWM Description<a class="headerlink" href="#pwm-description" title="Permalink to this headline">#</a></h2>
 <p>The actual available channels are 4 (0/1/2/4), but each has 2 configurations, PWM3/PWM5 has been used by the bottom layer.</p>
 <p>For example, PWM1 and PWM11 both use hardware channel 1, <strong>only one of them can be selected to use</strong>.</p>
 <p>PWM11 cannot be enabled when PWM1 is enabled. when calling the API of pwm library, fill in<code class="docutils literal notranslate"> <span class="pre">software</span> <span class="pre">channel</span> <span class="pre">id</span></code></p>
@@ -791,7 +789,7 @@
 </ol>
 </section>
 <section id="uart-description">
-<h2>UART Description<a class="headerlink" href="#uart-description" title="永久链接至标题">#</a></h2>
+<h2>UART Description<a class="headerlink" href="#uart-description" title="Permalink to this headline">#</a></h2>
 <p>physical uart has 3(0/1/2)</p>
 <ol class="arabic simple">
 <li><p>uart0 It is a log port (DBG_TX/DBG_RX), which is not recommend to use and has output during startup. LuatOS firmware does not allow users to use it by default uart0</p></li>
@@ -849,7 +847,7 @@
 </table></div>
 </section>
 <section id="i2c-description">
-<h2>I2C Description<a class="headerlink" href="#i2c-description" title="永久链接至标题">#</a></h2>
+<h2>I2C Description<a class="headerlink" href="#i2c-description" title="Permalink to this headline">#</a></h2>
 <p>Physics i2c has 2(0/1)</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -889,7 +887,7 @@
 </table></div>
 </section>
 <section id="spi-description">
-<h2>SPI Description<a class="headerlink" href="#spi-description" title="永久链接至标题">#</a></h2>
+<h2>SPI Description<a class="headerlink" href="#spi-description" title="Permalink to this headline">#</a></h2>
 <p>Physical SPI has 2(0/1)</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -958,7 +956,7 @@
 </ol>
 </section>
 <section id="gpio-additional-instructions">
-<h2>GPIO Additional Instructions<a class="headerlink" href="#gpio-additional-instructions" title="永久链接至标题">#</a></h2>
+<h2>GPIO Additional Instructions<a class="headerlink" href="#gpio-additional-instructions" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>GPIO14/15 There are changes in V1103, correctly mapped <code class="docutils literal notranslate"><span class="pre">PAD</span> <span class="pre">13/14</span></code></p></li>
 <li><p>Ordinary GPIO in deep sleep/SLEEP2, there will be periodic high-level pulses, be sure to pay attention</p></li>
@@ -1001,7 +999,7 @@
 </table></div>
 </section>
 <section id="virtual-gpio">
-<h2>Virtual GPIO<a class="headerlink" href="#virtual-gpio" title="永久链接至标题">#</a></h2>
+<h2>Virtual GPIO<a class="headerlink" href="#virtual-gpio" title="Permalink to this headline">#</a></h2>
 <p>Air780E(EC618 The whole system) supports multiple virtual GPIO, and non-GPIO pins are used by software simulation into GPIO.</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -1073,13 +1071,13 @@
               </div>
             </a>
         </div>
-        <p style="font-weight:bold">评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue</p>
+        <p style="font-weight:bold"></p>
         <div class="giscus"></div>
         <script src="https://giscus.app/client.js" data-repo="chenxuuu/luatos-wiki" data-repo-id="R_kgDOHD_oAA" data-category="zzzzz" data-category-id="DIC_kwDOHD_oAM4COQys" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-              Copyright © <a href="https://luatos.com/">LuatOS团队</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
+              Copyright © <a href="https://luatos.com/">LuatOS team</a> | <a href="https://nightly.link/openLuat/luatos-wiki/workflows/sphinx/master">下载离线版文档</a>
             </div>
           </div>
           <div class="right-details">
@@ -1097,7 +1095,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            目录
+            Contents
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1134,7 +1132,6 @@
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/translations.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/baidu.js"></script>
     <script src="../../_static/js/a.js"></script>
