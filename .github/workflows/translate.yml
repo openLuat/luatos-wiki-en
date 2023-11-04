@@ -39,6 +39,18 @@ jobs:
           rm -rf translated-docs/
           mkdir translated-docs/
           dotnet run --project translate-tool/translate-tool/ -- ../luatos-wiki/ translated-docs/ translation-data/ $ALIYUN_SID $ALIYUN_SKEY
+      - name: build html
+        run: |
+          sudo apt update
+          sudo pip3 install setuptools
+          sudo pip3 install -r translated-docs/requirements.txt
+          rm -rf docs/
+          sphinx-build -b html translated-docs docs -E
+          cd docs/
+          touch .nojekyll
+          echo "wiki.luatos.org" > "CNAME"
+          rm -rf .doctrees/
+          rm -rf _sources/
       - name: commit changes
         run: |
           git config --global credential.helper store
@@ -52,10 +64,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
-      - name: trigger update
-        env:
-          S_GITHUB_TOKEN: ${{ secrets.S_GITHUB_TOKEN }}
-        run: |
-          curl -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/openLuat/luatos-wiki-en/dispatches -H "Authorization: token $S_GITHUB_TOKEN" -d '{"event_type": "webhook-update-action"}'
 
 
