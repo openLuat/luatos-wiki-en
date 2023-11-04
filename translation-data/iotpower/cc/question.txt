@@ -25,7 +25,7 @@ Even if the mobile phone can be used to trigger fast charging, it cannot prove t
 假的PD头（因为PD不诱骗不会给电
 Fake PD head (because PD does not trick will not give electricity
 可以，如需测试，请**关闭设备自身的pd诱骗功能（重启新上电后生效）**，不然会干扰。另外某些手机充电头区分正反面，请自行排列组合测试方向
-Yes, if you need to test, please * * turn off the pd decoy function of the device itself (take effect after restarting and powering on) * *, otherwise it will interfere. In addition, some mobile phone charging heads distinguish between front and back, please arrange and combine the test directions by yourself.
+Yes, if you need to test, please **turn off the pd decoy function of the device itself (take effect after restarting and powering on)**, otherwise it will interfere. In addition, some mobile phone charging heads distinguish between front and back, please arrange and combine the test directions by yourself.
 没有cc1和cc2的线，只有usb四根线
 There are no cc1 and cc2 lines, only usb four lines
 某些线缆中会有电阻或芯片，他们会导致有小电流出现。
@@ -51,7 +51,7 @@ If it is bright, then it is possible
 如果你是win7，请先安装客户端下载页面提供的驱动，并且需要手动安装驱动（包括升级模式的驱动
 If you are win7, please install the driver provided by the client download page first, and you need to manually install the driver (including the driver in upgrade mode
 如果你输出端连接的是支持快充的手机/充电宝/电脑，请**不要开启**`开机自动启用PD`（重启新上电后生效），不然两设备一起诱骗会导致干扰
-If your output is connected to a mobile phone/charging treasure/computer that supports fast charging, please * * do not turn on * * `start up and automatically enable PD` (it will take effect after restarting and powering up), otherwise the two devices will cheat together and cause interference.
+If your output is connected to a mobile phone/charging treasure/computer that supports fast charging, please **do not turn on** `start up and automatically enable PD` (it will take effect after restarting and powering up), otherwise the two devices will cheat together and cause interference.
 如果使用了四线模式，CC采样电阻会消耗部分电流。如需电流示数完全一致，请使用双线模式
 If the four-wire mode is used, the CC sampling resistor will consume part of the current. If the current is exactly the same, please use the two-wire mode.
 如果是首次上电，可以参考[这个视频](https://www.bilibili.com/video/BV15m4y1h7CG)里的步骤
@@ -65,7 +65,7 @@ As shown in the following figure, the same equipment uses different power supply
 设备默认会进入PPS模式，某些充电器的PPS支持范围小于PD固定档位范围。可以前往设置关闭PPS功能，只使用固定档位功能
 The device will enter PPS mode by default, and the PPS support range of some chargers is less than the PD fixed gear range. You can go to the setting to turn off the PPS function and only use the fixed gear function.
 首先请看一下说明书，**不要**诱骗空气，[像这些**错误示范
-First of all, please look at the instructions, * * don't * * lure the air, [like these * * wrong demonstration
+First of all, please look at the instructions, **don't** lure the air, [like these **wrong demonstration
 同上
 Ibid.
 为什么电流和万用表差值有好几
@@ -109,7 +109,7 @@ Tricking success (go to PD page to check
 在表没有损坏的前提下）有可能因为存在反向电流，导致μA结果不正确（CC无法检测反向电流
 On the premise that the table is not damaged) it is possible that the μA result is incorrect due to the existence of reverse current (CC cannot detect reverse current
 在设置里打开`开机自启PD`、并且只从**输入**端供电（拨码改为输入供电方式），连接PD充电器，只会有几种现象
-In the settings, turn on` power-on and self-start PD`, and only supply power from * * input * * terminal (dial code is changed to input power supply mode), and connect PD charger, there will be only a few phenomena
+In the settings, turn on` power-on and self-start PD`, and only supply power from **input** terminal (dial code is changed to input power supply mode), and connect PD charger, there will be only a few phenomena
 这些线缆的连接头如下图
 The connectors of these cables are as follows
 支持非标PPS吗（MIPPS等

@@ -33,7 +33,7 @@ Open the pack installer in keil; Select the corresponding device and update the 
 大电流LDO**在稳定为air32供电的同时还能为外界设备提供电源
 High-current LDO **can provide power supply for external equipment while stably supplying power to air32
 带**U盘拖拽烧录**功能，可以直接将hex或者bin文件拖拽到U盘实现烧录（仅支持烧录
-With * * U disk drag and drop burn * * function, you can directly drag hex or binfile to U disk to burn (only support burn
+With **U disk drag and drop burn** function, you can directly drag hex or binfile to U disk to burn (only support burn
 点击工程配置魔术棒，找到Debug选项卡，在下拉列表中选择CMSIS-DAP Debugger，点击
 Click the project configuration magic wand, find the Debug tab, select the CMSIS-DAP Debugger in the drop-down list, and click
 点击设备管理器上方的 `扫描检测硬件改动`按钮
@@ -63,7 +63,7 @@ Update MDK to 5.36 or later version
 勾选`删除此设备的驱动程序软件`，点击确定即可卸载
 Check "Delete the driver software of this device" and click OK to uninstall it.
 合宙基于ARM官方代码移植到了Air32F103CBT6，并适配了**216M主频**和**96K大RAM**的资源，支持更快的的下载速度（[固件开源](https://gitee.com/openLuat/daplink)），并设计了一个超小体积的DAPLink硬件
-Based on ARM's official code, Zeus was transplanted to Air32F103CBT6 and adapted the resources of * * 216M dominant frequency * * and * * 96K large RAM * *, supporting faster download speed ([firmware open source](https://gitee.com/openLuat/daplink)), and designed an ultra-small DAPLink hardware
+Based on ARM's official code, Zeus was transplanted to Air32F103CBT6 and adapted the resources of **216M dominant frequency** and **96K large RAM**, supporting faster download speed ([firmware open source](https://gitee.com/openLuat/daplink)), and designed an ultra-small DAPLink hardware
 和MDK之间的常见问题，解决办法可以尝试以下方法
 and MDK, the solution can try the following methods
 很多人会说我用别的DAPLINK没问题,那是因为DAPLINK V1版本速度很慢，对线没要求。
@@ -155,7 +155,7 @@ Virtual USB flash drive not recognized
 下载时报RDDI-DAP Error的解决办法
 Download Times RDDI-DAP Error Solution
 选用**沉板TYPEC口**更加结实稳定
-Selection of * * sink TYPEC mouth * * more solid and stable
+Selection of **sink TYPEC mouth** more solid and stable
 一个**全功能USB转串口**（CDC），带硬件DTR和RTS，可以实现自动下载功能
 A **full-featured USB to serial port**(CDC) with hardware DTR and RTS for automatic download
 一个个双击打开他们，切到`详细信息`选项卡，将`属性`改为`设备实例路径

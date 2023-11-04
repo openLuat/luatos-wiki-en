@@ -59,7 +59,7 @@ Full Speed
 任意GPIO均可作为PWM脚, 编号与GPIO一致, 但`同时只能开启8路PWM`,务必注意
 Any GPIO can be used as a PWM pin, and the number is the same as that of GPIO, but only 8 PWMs can be turned on at the same time. Attention must be paid
 如若到手后板子`默认的闪灯程序`无法运行，且**无法烧录固件（卡在FLASH下载那一步）**，可尝试补焊**FLASH处的焊盘**（加锡
-If the` default flashing light program` on the back board cannot run and * * cannot burn firmware (stuck in the step of FLASH download) * *, try to repair and solder the pad at * * FLASH * (tin added
+If the` default flashing light program` on the back board cannot run and **cannot burn firmware (stuck in the step of FLASH download)**, try to repair and solder the pad at * * FLASH * (tin added
 三、管脚定义
 3. Pin Definition
 四、功能介绍

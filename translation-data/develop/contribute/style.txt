@@ -33,7 +33,7 @@ The first line states the purpose of the message, such as: WIFI scanning is over
 调用时用到的完整函数名
 The full function name used when the call is made.
 端口号**不存在**时，使用`负数`来代表，尽量避免使用特定的正数或0（有些MCU存在
-When the port number * * does not exist * *, use` negative number` to represent, try to avoid using a specific positive number or 0 (some MCU exist
+When the port number **does not exist**, use` negative number` to represent, try to avoid using a specific positive number or 0 (some MCU exist
 发布的topic描述规范
 published topic description specification
 发送**原始数据**操作使用`send`开头

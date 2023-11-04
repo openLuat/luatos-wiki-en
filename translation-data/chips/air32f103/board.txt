@@ -7,7 +7,7 @@ Wiring Diagram
 开发板
 Development Board
 开发板出厂默认为daplink固件（BluePill开发板默认无固件），固件支持**对外控制**调试下载功能，并且支持U盘模式烧录和虚拟串口
-The factory default of the development board is daplink firmware (BluePill the development board has no firmware by default). The firmware supports * * external control * * debugging and downloading function, and supports USB flash drive mode burning and virtual serial port
+The factory default of the development board is daplink firmware (BluePill the development board has no firmware by default). The firmware supports **external control** debugging and downloading function, and supports USB flash drive mode burning and virtual serial port
 开发板工程[传送门
 Development Board Engineering [portal
 开发板原理图

@@ -3,7 +3,7 @@ Press the **page key** to turn pages forward and backward
 按下**输出按钮**即可开启或关闭电源输出
 Press the **output button** to turn the power output on or off
 部分控件按下后会进入该控件，此时**滚轮**键可更改该控件的值，再次按下后退出修改
-Some controls will enter the control after being pressed. At this time, the * * wheel * * key can change the value of the control, and exit the modification after being pressed again.
+Some controls will enter the control after being pressed. At this time, the **wheel** key can change the value of the control, and exit the modification after being pressed again.
 部分品牌快充充电头（如华为、小米等私有协议快充头）可能会误识别快充协议，导致向设备提供超过5.8V的高电压导致瞬间烧毁设备。
 Some brands of fast charging heads (such as Huawei, Xiaomi and other private protocol fast charging heads) may misrecognize the fast charging protocol, resulting in providing high voltage exceeding 5.8V to the device, resulting in instantaneous burning of the device.
 操作说明
@@ -79,7 +79,7 @@ Use the **scroll wheel** to select the unit after the yellow data in the third r
 使用**滚轮**，选中下方的`Auto`，按下**滚轮**即可切换电流坐标范围，此时文字变为
 Use **scroll wheel**, select `Auto` below, and press **scroll wheel** to switch the current coordinate range. At this time, the text changes
 使用**滚轮**，选中下方的`Run`，按下**滚轮**即可暂停波形打印，此时文字变为
-Use * * scroll wheel * *, select `Run` below, press * * scroll wheel * * to pause waveform printing, at this time the text becomes
+Use **scroll wheel**, select `Run` below, press **scroll wheel** to pause waveform printing, at this time the text becomes
 使用**滚轮**，选中下方中间黄色数据后的单位，按下**滚轮**即可切换W、Wh、Ah显示
 Use the **scroll wheel** to select the unit after the yellow data in the middle below, and press the **scroll wheel** to switch the display of W, Wh, and Ah.
 使用**滚轮**，选中最上方的`实时数据`，按下**滚轮**即可切换至秒平均显示
@@ -99,7 +99,7 @@ Switch pages after modification to take effect immediately
 选择控件与操作
 Select controls and actions
 选中电流值边上的`A`或`mA`，按下**滚轮**可切换`A`或`mA`的单位
-Select `A` or `mA` on the side of the current value, and press * * roller * * to switch the unit of `A` or `mA`
+Select `A` or `mA` on the side of the current value, and press **roller** to switch the unit of `A` or `mA`
 再次按下**滚轮**键即可退出更改
 Press the **wheel** button again to exit the change
 再次按下**滚轮**可重新开启波形刷新

@@ -101,7 +101,7 @@ Full platform * * command line data logger, dll/so dynamic runtime please go to 
 软件界面
 Software Interface
 软件上方的**数据浮窗**开关可以打开浮窗，显示的数据与此处数据完全相同，始终置顶显示，方便最小化软件后查看实时数据
-The * * data floating window * * switch on the top of the software can open the floating window, and the displayed data is exactly the same as the data here. it is always displayed on the top, which is convenient to view real-time data after minimizing the software.
+The **data floating window** switch on the top of the software can open the floating window, and the displayed data is exactly the same as the data here. it is always displayed on the top, which is convenient to view real-time data after minimizing the software.
 软件首页布局如下图所示
 The layout of the software homepage is shown in the following figure
 若在瞬时值档位，可能会与设备端显示不一致，此为正常现象，因为刷新时间点不可能完全一致

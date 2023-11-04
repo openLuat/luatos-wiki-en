@@ -21,7 +21,7 @@ High precision, small error, details can be found in [technical indicators](http
 精度高，误差小，详情可查阅[技术指标](https://wiki.luatos.com/iotpower/pro/tech.html)，欢迎验证
 High precision, small error, details can be found in [technical indicators](https://wiki.luatos.com/iotpower/pro/tech.html), welcome to verify
 可**连接PC客户端**查看与分析电流波形，也可使用命令行版本在任意设备(win/linux/mac)上抓取串口数据（如树莓派），使用pc客户端导入查看
-You can * * connect a PC client * * to view and analyze the current waveform, or use the command line version to capture serial port data (such as strawberry pie) on any device (win/linux/mac) and use the pc client to import and view
+You can **connect a PC client** to view and analyze the current waveform, or use the command line version to capture serial port data (such as strawberry pie) on any device (win/linux/mac) and use the pc client to import and view
 了解更多
 Learn more
 连接与外观

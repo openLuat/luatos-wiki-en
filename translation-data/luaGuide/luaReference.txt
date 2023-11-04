@@ -625,7 +625,7 @@ Reads a line and retains the end-of-line tag (if any), when at the end of the fi
 读取一行并忽略行结束标记。 当在文件末尾时，返回 **nil** 这是默认格式。
 Reads a row and ignores the end-of-line tag. When at the end of the file, returns **nil** which is the default format.
 读文件 `file`， 指定的格式决定了要读什么。 对于每种格式，函数返回读出的字符对应的字符串或数字。 若不能以该格式对应读出数据则返回 **nil**。 （对于最后这种情况， 函数不会读出后续的格式。） 当调用时不传格式，它会使用默认格式读下一行（见下面描述
-Read the file `file`, the specified format determines what to read. For each format, the function returns the string or number corresponding to the read character. **nil** is returned if the data cannot be read in this format * *. (For this last case, the function does not read the subsequent format.) When called without passing the format, it reads the next line using the default format (see description below.
+Read the file `file`, the specified format determines what to read. For each format, the function returns the string or number corresponding to the read character. **nil** is returned if the data cannot be read in this format. (For this last case, the function does not read the subsequent format.) When called without passing the format, it reads the next line using the default format (see description below.
 对齐行为按如下规则工作： 对每个选项，格式化时都会填充一些字节直到数据从一个特定偏移处开始， 这个位置是该选项的大小和最大对齐数中较小的那个数的倍数； 这个较小值必须是 2 个整数次方。 选项 "`c`" 及 "`z`" 不做对齐处理； 选项 "`s`" 对对齐遵循其开头的整数。
 Alignment works according to the following rules: for each option, formatting will be filled with some bytes until the data starts at a specific offset, which is a multiple of the smaller of the size and maximum alignment number of the option; This smaller value must be 2 integer powers. Options "`c`" and "`z`" do not do alignment; option "`s`" follows its beginning integer for alignment.
 对全局变量 `x` 的操作等价于操作 `_ENV.x`。 由于代码块编译的方式， `_ENV` 永远也不可能是一个全局名字 （参见
@@ -1389,7 +1389,7 @@ If `modname` is not in [`package.loaded`](#pdf-package.loaded), the function `op
 如果 `msgh` 是 0 ， 返回在栈顶的错误消息就和原始错误消息完全一致。 否则， `msgh` 就被当成是 _错误处理函数_ 在栈上的索引位置。 （在当前的实现里，这个索引不能是伪索引。） 在发生运行时错误时， 这个函数会被调用而参数就是错误消息。 错误处理函数的返回值将被 [`lua_pcall`](#lua_pcall) 作为错误消息返回在堆栈上。
 If `msgh` is 0, the error message returned at the top of the stack is exactly the same as the original error message. Otherwise, `msgh` is treated as the index position of the_error handler_on the stack. (In the current implementation, this index cannot be a pseudo-index.) When a runtime error occurs, this function is called and the parameter is the error message. The return value of the error handling function will be returned on the stack as an error message by [lua_pcall](#lua_pcall).
 如果 `object` 不包含元表，返回 **nil** 。 否则，如果在该对象的元表中有 `"__metatable"` 域时返回其关联值， 没有时返回该对象的元表。
-If `object` does not contain a meta table, **nil** is returned * *. Otherwise, return its associated value if there is a `"__metatable"` field in the object`s meta table, and return the object`s meta table if not.
+If `object` does not contain a meta table, **nil** is returned. Otherwise, return its associated value if there is a `"__metatable"` field in the object`s meta table, and return the object`s meta table if not.
 如果 `ptr` 不是 `NULL`， `osize` 是 `ptr` 指向的内存块的尺寸， 即这个内存块当初被分配或重分配的尺寸。
 If `ptr` is not `NULL`, `osize` is the size of the memory block pointed to by `ptr`, that is, the size of the memory block originally allocated or reallocated.
 如果 `ptr` 是 `NULL`， `osize` 是 Lua 即将分配对象类型的编码。 当（且仅当）Lua 创建一个对应类型的新对象时， `osize` 是 [`LUA_TSTRING`](#pdf-LUA_TSTRING)，[`LUA_TTABLE`](#pdf-LUA_TTABLE)，[`LUA_TFUNCTION`](#pdf-LUA_TFUNCTION)， [`LUA_TUSERDATA`](#pdf-LUA_TUSERDATA)，或 [`LUA_TTHREAD`](#pdf-LUA_TTHREAD) 中的一个。 若 `osize` 是其它类型，Lua 将为其它东西分配内存。
@@ -2087,7 +2087,7 @@ A portion beginning with a double-bar (`--`) that appears anywhere outside the s
 在遵循 [Lua license](http://www.lua.org/license.html) 条款下，可自由使用。
 It can be used freely under the terms of [Lua license](http://www.lua.org/license.html).
 在作赋值操作之前， 那值列表会被 _调整_ 为左边变量列表的个数。 如果值比需要的更多的话，多余的值就被扔掉。 如果值的数量不够需求， 将会按所需扩展若干个 **nil**。 如果表达式列表以一个函数调用结束， 这个函数所返回的所有值都会在调整操作之前被置入值列表中 （除非这个函数调用被用括号括了起来；参见
-Before the assignment operation, the value list will be adjusted to the number of variables on the left. If there are more values than needed, the extra values are thrown away. If the number of values is not enough, it will be expanded as many **nil** as needed * *. If the expression list ends with a function call, all values returned by the function will be placed in the value list before the adjustment operation (unless the function call is enclosed in parentheses; see
+Before the assignment operation, the value list will be adjusted to the number of variables on the left. If there are more values than needed, the extra values are thrown away. If the number of values is not enough, it will be expanded as many **nil** as needed. If the expression list ends with a function call, all values returned by the function will be placed in the value list before the adjustment operation (unless the function call is enclosed in parentheses; see
 栈
 Stack
 栈大小

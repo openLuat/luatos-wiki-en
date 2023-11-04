@@ -79,9 +79,9 @@ Therefore, although there will be a certain voltage drop at the output end compa
 通讯接口，严禁反接或电压大于6V，反接或大于6V必烧
 Communication interface, it is strictly prohibited to reverse connection or voltage greater than 6V, reverse connection or greater than 6V will burn
 外部供电 负极- （与②对应）|**⑿**|翻页键/强制进入升级模式
-External power supply negative pole-(corresponding to ②) | **()** | Page turn key/force to enter upgrade mode
+External power supply negative pole-(corresponding to ②) | **⑿** | Page turn key/force to enter upgrade mode
 外部供电 正极+ （与②对应）|**⑾**|取消键
-External power supply positive pole (corresponding to ②) | **(11)** | Cancel button
+External power supply positive pole (corresponding to ②) | **⑾** | Cancel button
 外壳拼装步骤
 Shell assembly steps
 外壳拼装完成

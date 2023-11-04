@@ -95,7 +95,7 @@ Weld the seat
 仅支持PD、PPS快充协议的诱骗，其他快充协议不支持
 Only the decoy of PD and PPS fast charging protocols is supported, and other fast charging protocols are not supported.
 可以先断开设备的电源连接，按住 `⑿翻页键/强制进入升级模式`，再插入USB供电，这时可以看见**设备屏幕上显示DFU模式的信息**，也可以在电脑的 `设备管理器`的 `通用串行总线设备`中找到名为 `IotPower DFU`的设备
-You can disconnect the power supply of the device first, hold down the` page turning key/force to enter upgrade mode`, and then insert USB power supply. at this time, you can see * * the information of DFU mode displayed on the device screen * *, or you can find the` IotPower DFU` device in the` universal serial bus device` of the` device manager` of the computer.
+You can disconnect the power supply of the device first, hold down the` page turning key/force to enter upgrade mode`, and then insert USB power supply. at this time, you can see **the information of DFU mode displayed on the device screen**, or you can find the` IotPower DFU` device in the` universal serial bus device` of the` device manager` of the computer.
 如果用户在升级设备的途中出错，导致设备无法正常使用，可以手动进入升级模式（DFU）手动升级
 If the user makes an error on the way to upgrade the device and the device cannot be used normally, you can manually enter the upgrade mode (DFU) to manually upgrade
 设备基本外观如下
@@ -121,9 +121,9 @@ Data Overview Page
 通讯接口，严禁反接或电压大于6V，反接或大于6V必烧
 Communication interface, it is strictly prohibited to reverse connection or voltage greater than 6V, reverse connection or greater than 6V will burn
 外部供电 负极- （与②对应）                           | **⑿** | 翻页键/强制进入升级模式/清除底电流归零
-External power supply negative-(corresponding to ②) | **()** | Page turn key/force to enter upgrade mode/clear bottom current to zero
+External power supply negative-(corresponding to ②) | **⑿** | Page turn key/force to enter upgrade mode/clear bottom current to zero
 外部供电 正极+ （与②对应）                           | **⑾** |      取消键
-External power supply positive pole (corresponding to ②) | **(11)** | Cancel button
+External power supply positive pole (corresponding to ②) | **⑾** | Cancel button
 详细数据页
 Detailed Data Page
 小拨码** | 切换CC的供电来源（[用法见此

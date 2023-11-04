@@ -113,7 +113,7 @@ Find the folder where the Luatools is located, and the official firmware downloa
 找到Luatools所在的文件夹，文件夹的`Luatools/resource/618_lua_lod/版本号`中就是自动下载的正式版本固件
 Find the folder where the Luatools is located, and the official version firmware downloaded automatically is in the` Luatools/resource/618_lua_lod/version number` of the folder
 找到Luatools所在的文件夹，文件夹的`Luatools/resource/esp32c3_lua_lod/版本号`中**不带有**`USB`字样的，就是自动下载的正式版本固件
-Find the folder where the Luatools is located. The folder`s `Luatools/resource/esp32c3_lua_lod/Version Number` * * without the words **`USB` is the official version firmware downloaded automatically.
+Find the folder where the Luatools is located. The folder`s `Luatools/resource/esp32c3_lua_lod/Version Number` without the words **`USB`** is the official version firmware downloaded automatically.
 找到Luatools所在的文件夹，文件夹的`Luatools/resource/esp32c3_lua_lod/版本号`中带有`USB`字样的，就是自动下载的正式版本固件
 Find the folder where the Luatools is located. The "Luatools/resource/esp32c3_lua_lod/Version Number" in the folder is the official version firmware downloaded automatically.
 找到Luatools所在的文件夹，文件夹的`Luatools/resource/esp32s3_lua_lod/版本号`中的，就是自动下载的正式版本固件

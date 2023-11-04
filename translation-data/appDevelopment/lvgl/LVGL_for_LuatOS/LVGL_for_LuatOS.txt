@@ -1869,7 +1869,7 @@ Send before inserting characters or text. The event data is the text that is sch
 在单行模式下，仅当文本保持对齐时才能水平滚动文本。
 In single-line mode, text can be scrolled horizontally only when the text remains aligned.
 在地图中使用以**换行**。例如。每行按钮的宽度都会自动计算。例如:`{"btn1", "btn2", "\n", "btn3", ""}`，每行按钮的宽度自动计算。
-Use to wrap lines in the map * *. For example. The width of each row of buttons is calculated automatically. For example: `{"btn1", "btn2", "\n", "btn3", ""}`, the width of each row of buttons is automatically calculated.
+Use to **wrap lines** in the map. For example. The width of each row of buttons is calculated automatically. For example: `{"btn1", "btn2", "\n", "btn3", ""}`, the width of each row of buttons is automatically calculated.
 在底部对齐的行中对齐子级。请 `pad_left` 在左边，空间 `pad_bottom` 空间的底部和 `pad_inner` 孩子之间的空间。
 Aligns children in bottom-aligned rows. Please `pad_left` on the left, space `pad_bottom` space at the bottom and `pad_inner` space between children.
 在顶部对齐的行中对齐子级。请pad_left在左边，空间pad_top空间的顶部和pad_inner`` 孩子之间的空间。
@@ -2049,7 +2049,7 @@ The path to the font file (ttf/woff/woff2/otf). Can be used multiple times for c
 字体我们选择我们的ttf字体，选择字体大小，点击确定
 Font We select our ttf font, select the font size, click OK
 字体支持很全，支持 **UTF-8** 编码的 Unicode 字符，分内部字体和外部字体，字体制作工具也很多：[LVGL官方的字体制作工具](https://lvgl.io/tools/fontconverter)，第三方的[LvglFontTool](http://www.lfly.xyz/forum.php?mod=viewthread&tid=24&extra=page%3D1)和[MCU_Font](https://gitee.com/WuBinCPP/MCU_Font_Release)等。本文会介绍不同字体制作方法时分别使用不同工具使大家对其都有了解。
-Font support is very complete, support * * UTF-8 * * encoded Unicode characters, divided into internal fonts and external fonts, font production tools are also many:[LVGL official font production tools](https://lvgl.io/tools/fontconverter), third-party [LvglFontTool](http://www.lfly.xyz/forum.php?mod=viewthread&tid=24&extra=page=1) and [MCU_Font](https://gitee.com/WuBinCPP/MCU_Font_Release), etc. This article will introduce different font production methods using different tools to make everyone understand it.
+Font support is very complete, support **UTF-8** encoded Unicode characters, divided into internal fonts and external fonts, font production tools are also many:[LVGL official font production tools](https://lvgl.io/tools/fontconverter), third-party [LvglFontTool](http://www.lfly.xyz/forum.php?mod=viewthread&tid=24&extra=page=1) and [MCU_Font](https://gitee.com/WuBinCPP/MCU_Font_Release), etc. This article will introduce different font production methods using different tools to make everyone understand it.
 字体指针
 Font Pointer
 自定义风格的
