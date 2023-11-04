@@ -95,7 +95,7 @@ html_search_options = {'dict': 'luatos-wiki/keyworks.txt'}
 
 html_show_sphinx = False
 html_search_language = 'en'
-html_baseurl = 'https://openluat.github.io/luatos-wiki-en/'
+html_baseurl = 'https://wiki.luatos.org/'
 sitemap_url_scheme = "{link}"
 
 myst_enable_extensions = [

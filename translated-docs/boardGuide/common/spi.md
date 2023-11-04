@@ -14,7 +14,7 @@ Connect flash to the development board in SPI line sequence
 
 ## Software usage
 
-Interface documentation can be found at:[spi library](https://openluat.github.io/luatos-wiki-en/api/spi.html)
+Interface documentation can be found at:[spi library](https://wiki.luatos.org/api/spi.html)
 
 Code display
 

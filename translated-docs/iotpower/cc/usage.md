@@ -24,7 +24,7 @@ The basic appearance of the equipment is as follows
 |   **③**   |                               USB TYPE-C Power supply output | **⑩** | right shift key `>`      |
 |   **④**   |                           External power supply positive pole (corresponding to ②) | **⑾** | Cancel button `X`      |
 |   **⑤**   |                           External power supply negative-(corresponding to ②) | **⑿** | Page turn key/force to enter upgrade mode/clear bottom current to zero |
-| **Small dial code **| Switch the power supply source of CC ([see this for usage](https://openluat.github.io/luatos-wiki-en/iotpower/cc/parts.html#id3)） |              |                        |
+| **Small dial code **| Switch the power supply source of CC ([see this for usage](https://wiki.luatos.org/iotpower/cc/parts.html#id3)） |              |                        |
 |   **⑥**   |                           External output positive pole (corresponding to ③）                           |              |                        |
 |   **⑦**   |                           External output negative pole-(corresponding to ③）                           |              |                        |
 

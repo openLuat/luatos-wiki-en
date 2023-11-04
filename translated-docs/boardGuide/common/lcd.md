@@ -18,7 +18,7 @@ Hardware connection diagram
 
 ## Software usage
 
-Interface documentation can be referred to: [LCD library](https://openluat.github.io/luatos-wiki-en/api/lcd.html)
+Interface documentation can be referred to: [LCD library](https://wiki.luatos.org/api/lcd.html)
 
 Modify the LCD example in demo, change the screen driver to st7735. If each pin is configured as we are connected, we can see the dotted line we draw on the screen.
 

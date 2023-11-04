@@ -10,7 +10,7 @@ See demo is used 0
 
 ## Air101 Does it support single bus?
 
-Support [sensor-sensor action library](https://openluat.github.io/luatos-wiki-en/api/sensor.html#sensor "sensor-sensor action library")
+Support [sensor-sensor action library](https://wiki.luatos.org/api/sensor.html#sensor "sensor-sensor action library")
 
 ## Air101 Can you simulate the mouse and keyboard?
 
@@ -23,7 +23,7 @@ ch340
 ## Air101 Download unsuccessful
 
 Check serial port printing, select the corresponding serial port, baud rate setting bit：921600
-[Burn Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html "Burn Tutorial"")
+[Burn Tutorial](https://wiki.luatos.org/boardGuide/flash.html "Burn Tutorial"")
 
 ## Air101 Why did I modify the gpio routine? After burning it in, the indicator light is the same as the original one. There is no change. It is not possible to download the script alone.
 
@@ -35,15 +35,15 @@ Download to ensure that the luatools installation path, project path, firmware p
 
 ## Air101 Can the delay of us be realized
 
-Yes, [statem-SM state machine](https://openluat.github.io/luatos-wiki-en/api/statem.html "statem-SM state machine")
+Yes, [statem-SM state machine](https://wiki.luatos.org/api/statem.html "statem-SM state machine")
 
 ## Air101 support nvm function
 
-There are alternative libraries fdb [fdb-kv database (based on FlashDB)](https://openluat.github.io/luatos-wiki-en/api/fdb.html "fdb-kv database (based on FlashDB)")
+There are alternative libraries fdb [fdb-kv database (based on FlashDB)](https://wiki.luatos.org/api/fdb.html "fdb-kv database (based on FlashDB)")
 
 ## Air101 Support ink screen
 
-Support,[eink-ink screen operation library](https://openluat.github.io/luatos-wiki-en/api/eink.html "eink-ink screen operation library"")
+Support,[eink-ink screen operation library](https://wiki.luatos.org/api/eink.html "eink-ink screen operation library"")
 
 ## Does Air101 support it?debug
 
@@ -59,11 +59,11 @@ lpmem library currently only 302 have
 
 ## Air101 Can I use the ILI9341 screen with touch?
 
-Can, refer to DEMO to modify initialization parameters [lcd](https://openluat.github.io/luatos-wiki-en/chips/air101/Air101.html#lcd "LCD")
+Can, refer to DEMO to modify initialization parameters [lcd](https://wiki.luatos.org/chips/air101/Air101.html#lcd "LCD")
 
 ## Air101 Can I plug in wireless devices with spi interface?
 
-Yes，[SPI](https://openluat.github.io/luatos-wiki-en/chips/air101/Air101.html#spi "SPI")
+Yes，[SPI](https://wiki.luatos.org/chips/air101/Air101.html#spi "SPI")
 
 ## Air101 Did the SPI screen above run through
 

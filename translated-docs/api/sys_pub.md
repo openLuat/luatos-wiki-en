@@ -9,7 +9,7 @@ Here is a list of system messages that come with the LuatOS framework
 
 
 
-[touchkey Interface Documentation Page](https://openluat.github.io/luatos-wiki-en/api/touchkey.html)
+[touchkey Interface Documentation Page](https://wiki.luatos.org/api/touchkey.html)
 
 
 
@@ -41,7 +41,7 @@ end)
 
 
 
-[keyboard Interface Documentation Page](https://openluat.github.io/luatos-wiki-en/api/keyboard.html)
+[keyboard Interface Documentation Page](https://wiki.luatos.org/api/keyboard.html)
 
 
 
@@ -75,7 +75,7 @@ end)
 
 
 
-[sys Interface Documentation Page](https://openluat.github.io/luatos-wiki-en/api/sys.html)
+[sys Interface Documentation Page](https://wiki.luatos.org/api/sys.html)
 
 
 
@@ -102,7 +102,7 @@ for system messaging inside luatos
 
 
 
-[w5500 Interface Documentation Page](https://openluat.github.io/luatos-wiki-en/api/w5500.html)
+[w5500 Interface Documentation Page](https://wiki.luatos.org/api/w5500.html)
 
 
 
@@ -150,7 +150,7 @@ end)
 
 
 
-[libgnss Interface Documentation Page](https://openluat.github.io/luatos-wiki-en/api/libgnss.html)
+[libgnss Interface Documentation Page](https://wiki.luatos.org/api/libgnss.html)
 
 
 
@@ -181,7 +181,7 @@ end)
 
 
 
-[mobile Interface Documentation Page](https://openluat.github.io/luatos-wiki-en/api/mobile.html)
+[mobile Interface Documentation Page](https://wiki.luatos.org/api/mobile.html)
 
 
 
@@ -294,7 +294,7 @@ end)
 
 
 
-[softkeyboard Interface Documentation Page](https://openluat.github.io/luatos-wiki-en/api/softkeyboard.html)
+[softkeyboard Interface Documentation Page](https://wiki.luatos.org/api/softkeyboard.html)
 
 
 
@@ -328,7 +328,7 @@ end)
 
 
 
-[socket Interface Documentation Page](https://openluat.github.io/luatos-wiki-en/api/socket.html)
+[socket Interface Documentation Page](https://wiki.luatos.org/api/socket.html)
 
 
 
@@ -374,7 +374,7 @@ end)
 
 
 
-[lora Interface Documentation Page](https://openluat.github.io/luatos-wiki-en/api/lora.html)
+[lora Interface Documentation Page](https://wiki.luatos.org/api/lora.html)
 
 
 
@@ -479,7 +479,7 @@ end)
 
 
 
-[sms Interface Documentation Page](https://openluat.github.io/luatos-wiki-en/api/sms.html)
+[sms Interface Documentation Page](https://wiki.luatos.org/api/sms.html)
 
 
 

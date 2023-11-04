@@ -16,7 +16,7 @@ If the` default flashing light program` on the back board cannot run and **canno
 Therefore, please check the usb port with power on after you get it, and then carry out the welding needle arrangement operation after confirming that there is no problem.
 ```
 
-[Serial Burning Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html),**Log baud rate is 921600**
+[Serial Burning Tutorial](https://wiki.luatos.org/boardGuide/flash.html),**Log baud rate is 921600**
 
 ## 1. Product Description
 

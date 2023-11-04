@@ -2,7 +2,7 @@
 
 ## Why I plug in the usb does not light up？
 
-Please read the chapter [Power Supply Method](https://openluat.github.io/luatos-wiki-en/iotpower/cc/parts.html#id3) carefully.  
+Please read the chapter [Power Supply Method](https://wiki.luatos.org/iotpower/cc/parts.html#id3) carefully.  
 If it is the first time to power on, please refer to the steps in [this video](https://www.bilibili.com/video/BV15m4y1h7CG).
 
 ## Why can't I upgrade the firmware

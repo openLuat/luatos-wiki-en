@@ -44,7 +44,7 @@ The official version can be downloaded from the release page, and the firmware o
 
 ## Brush machine burning tutorial
 
-[https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html)
+[https://wiki.luatos.org/boardGuide/flash.html](https://wiki.luatos.org/boardGuide/flash.html)
 
 ## Related Information Links
 

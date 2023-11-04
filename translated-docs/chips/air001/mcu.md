@@ -9,9 +9,9 @@ LuatOS Large QQ group: 1061642968
 
 ## Environment Construction Tutorial
 
-[Air001 Keil MDK-based user manual](https://openluat.github.io/luatos-wiki-en/chips/air001/Air001-MDK.html)
+[Air001 Keil MDK-based user manual](https://wiki.luatos.org/chips/air001/Air001-MDK.html)
 
-[Air001 Arduino-based user manual](https://openluat.github.io/luatos-wiki-en/chips/air001/Air001-Arduino.html)
+[Air001 Arduino-based user manual](https://wiki.luatos.org/chips/air001/Air001-Arduino.html)
 
 ## Brush machine burning tutorial
 

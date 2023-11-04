@@ -61,7 +61,7 @@ camera.setup(...)
 - Interfaces that need to wait a while to get results
   - If non-blocking can be achieved
     - You can use callbacks to report events to users.
-    - You can adapt` C interface implements Task waiting function` to provide asynchronous interfaces that can be run in tasks ([refer to this page for implementation](https://openluat.github.io/luatos-wiki-en/develop/c_wait.html)）
+    - You can adapt` C interface implements Task waiting function` to provide asynchronous interfaces that can be run in tasks ([refer to this page for implementation](https://wiki.luatos.org/develop/c_wait.html)）
     - **Try to avoid using the specific` topic` to allow users to manually call` sys.waitUntil` for adaptation
   - **Try to avoid **adding interfaces with longer blocking times
 

@@ -4,7 +4,7 @@
 mcu
 board
 hardware
-Air105_PCB <https://openluat.github.io/luatos-wiki-en/_static/bom/Air105.html>
+Air105_PCB <https://wiki.luatos.org/_static/bom/Air105.html>
 power_dissipation
 encrypt
 ```

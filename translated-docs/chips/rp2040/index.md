@@ -10,5 +10,5 @@ At present, it can be developed by using the official CSDK of Raspberry Pi, or b
 arduino For development materials and routines, please refer to the [Arduino Materials website](https://arduino.luatos.com/)
 
 ```{toctree}
-RP2040_PCB <https://openluat.github.io/luatos-wiki-en/_static/bom/rp2040.html>
+RP2040_PCB <https://wiki.luatos.org/_static/bom/rp2040.html>
 ```

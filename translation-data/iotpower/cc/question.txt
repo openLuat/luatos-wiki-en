@@ -1,51 +1,65 @@
-板子上的PD诱骗芯片坏了
-The PD decoy chip on the board is broken
 不支持，只支持标准PPS/PD。如若发现无法触发标准PPS的bug，请抓取PD协议包，反馈给群主修复
 Not supported, only standard PPS/PD is supported. If you find a bug that cannot trigger the standard PPS, please grab the PD protocol package and feed it back to the group owner for repair.
-部分设备快充协议为非标，使用输入口供电时可能无法触发快充。此时需要使用PC端供电测试，使设备自身的供电与快充相隔离
-Some equipment fast charging protocols are non-standard, and fast charging may not be triggered when using input port power supply. At this time, the PC-side power supply test is required to isolate the power supply of the device from the fast charging phase.
-参考下隔壁做的科普图
-Refer to the popular science map made next door.
-测试时两个设备不可共地，请分别使用不同的电源供电，不然power测的电流是负载电流cc采样分流电流
-During the test, the two devices cannot be on the same ground. Please use different power supplies respectively to supply power. Otherwise, the current measured by power is the load current cc sampling shunt current.
-常见问题
-FAQ
-充电头或充电线，铁定有一个不支持
-Charging head or charging line, there must be one that does not support
-此设备为低功耗测试仪，并非USB快充检测表，不会添加协议检测相关功能
-This device is a low-power tester, not a USB fast charging test meter, and will not add protocol detection related functions.
+为什么什么都没连，电压和电流不为
+Why is nothing even, voltage and current are not
+为什么我从输入口供电，CC会一直重启/插上手机就灭屏
+Why do I supply power from the input port, CC will always restart/plug in the mobile phone and turn off the screen
+为什么我开启PD后一直在转圈圈
+Why have I been circling around since I turned on PD
+为什么我手机经过CC后就不能触发快充/没电输出
+Why can't my mobile phone trigger fast charge/dead power output after passing through CC
+为什么我插上usb不亮
+Why I plug in the usb does not light up
+为什么我无法升级固件
+Why can't I upgrade the firmware
+为什么我的充电头支持20V，但是设备上不能
+Why does my charging head support 20V, but not on the device
+为什么我的充电头无法识别PD/PPS？明明手机可以快充
+Why can't my charging head recognize PD/PPS? Clearly the mobile phone can be charged quickly
+为什么我输出端连上手机/充电宝/电脑后，电压会一会儿开一会儿关
+Why does the voltage turn on and off for a while when my output terminal is connected to a mobile phone/charging treasure/computer?
+为什么电流和万用表差值有好几
+Why is there several differences between current and multimeter?
+为什么电流示数不一致
+Why are the current numbers inconsistent
+为什么电脑不能设置PD数值，设备上显示支持PD固定档位
+Why can't the computer set the PD value, and the device displays the support PD fixed gear
+为什么输出端连上TypeC线后，就会有几μA的电流
+Why is there a current of several μA when the output terminal is connected to the TypeC line?
+为什么输出端连上TypeC线后，电压直接变成了
+Why is the voltage directly changed after the output terminal is connected to the TypeC line
 但是合宙售卖的`十元十根`线材中，TypeC转TypeC线，黑色那端内部有电阻，并且四线芯（无CC线），无法触发PD快充
 However, among the "ten yuan and ten" wires sold by the United States, TypeC turns to TypeC wire. The black end has resistance inside, and the four-wire core (no CC wire) cannot trigger PD fast charging.
-非标的充电头（同上，没有使用标准PD协议检测设备
-Non-standard charging head (as above, standard PD protocol detection equipment is not used
-合宙官方售卖的`TypeC转鳄鱼夹`线中没有这个现象，可以放心使用
-There is no such phenomenon in the` TypeC to alligator clips` line officially sold by the United States, and it can be used with confidence.
-即使能使用手机触发快充，也不能证明支持PD，具体信息请见[操作说明](usage.md)--`有关PD功能的注意事项`章节
-Even if the mobile phone can be used to trigger fast charging, it cannot prove that PD is supported. For specific information, please refer to the chapter "Precautions on PD Function" in [Operating Instructions](usage.md)
-假的PD头（因为PD不诱骗不会给电
-Fake PD head (because PD does not trick will not give electricity
-可以，如需测试，请**关闭设备自身的pd诱骗功能（重启新上电后生效）**，不然会干扰。另外某些手机充电头区分正反面，请自行排列组合测试方向
-Yes, if you need to test, please **turn off the pd decoy function of the device itself (take effect after restarting and powering on)**, otherwise it will interfere. In addition, some mobile phone charging heads distinguish between front and back, please arrange and combine the test directions by yourself.
-没有cc1和cc2的线，只有usb四根线
-There are no cc1 and cc2 lines, only usb four lines
-某些线缆中会有电阻或芯片，他们会导致有小电流出现。
-Some cables will have resistors or chips in them, which will cause a small current to appear.
-能触发手机的快充吗，我不想使用自带的诱骗功能
-Can it trigger the fast charging of the mobile phone? I don't want to use my own decoy function.
+你在骗人
+You're lying
 你的线头里可能带CC下拉电阻（参考上图），或者被测设备下拉了CC引脚
 You may have a CC pull-down resistor in your wire head (refer to the above figure), or the device under test has pulled down the CC pin.
 你需要先打开客户端，点击第一页的`连接`按钮连上设备
 You need to open the client first and click the` Connect` button on the first page to connect to the device.
-你在骗人
-You're lying
-请参考[操作说明](usage.md)--`手动进入升级模式`章节，强制刷机
-Please refer to [Operating Instructions](usage.md)-Chapter `Manually Entering Upgrade Mode` to force the machine
-请仔细阅读[供电方式](https://openluat.github.io/luatos-wiki-en/iotpower/cc/parts.html#id3)章节
-Please read the chapter [Power Supply Method](https://openluat.github.io/luatos-wiki-en/iotpower/cc/parts.html#id3) carefully.
-请仔细阅读[供电方式](https://wiki.luatos.com/iotpower/cc/parts.html#id3)章节
-Please read the chapter [Power Supply Method](https://wiki.luatos.com/iotpower/cc/parts.html#id3) carefully.
-如果操作正确，可以尝试
-If the operation is correct, you can try
+假的PD头（因为PD不诱骗不会给电
+Fake PD head (because PD does not trick will not give electricity
+充电头或充电线，铁定有一个不支持
+Charging head or charging line, there must be one that does not support
+即使能使用手机触发快充，也不能证明支持PD，具体信息请见[操作说明](usage.md)--`有关PD功能的注意事项`章节
+Even if the mobile phone can be used to trigger fast charging, it cannot prove that PD is supported. For specific information, please refer to the chapter "Precautions on PD Function" in [Operating Instructions](usage.md)
+参考下隔壁做的科普图
+Refer to the popular science map made next door.
+只支持设置PPS数值，请确认你的充电器支持
+Only supports setting PPS value, please confirm that your charger supports
+可以，如需测试，请**关闭设备自身的pd诱骗功能（重启新上电后生效）**，不然会干扰。另外某些手机充电头区分正反面，请自行排列组合测试方向
+Yes, if you need to test, please **turn off the pd decoy function of the device itself (take effect after restarting and powering on)**, otherwise it will interfere. In addition, some mobile phone charging heads distinguish between front and back, please arrange and combine the test directions by yourself.
+合宙官方售卖的`TypeC转鳄鱼夹`线中没有这个现象，可以放心使用
+There is no such phenomenon in the` TypeC to alligator clips` line officially sold by the United States, and it can be used with confidence.
+同上
+Ibid.
+在表没有损坏的前提下）有可能因为存在反向电流，导致μA结果不正确（CC无法检测反向电流
+On the premise that the table is not damaged) it is possible that the μA result is incorrect due to the existence of reverse current (CC cannot detect reverse current
+在设置里打开`开机自启PD`、并且只从**输入**端供电（拨码改为输入供电方式），连接PD充电器，只会有几种现象
+In the settings, turn on` power-on and self-start PD`, and only supply power from **input** terminal (dial code is changed to input power supply mode), and connect PD charger, there will be only a few phenomena
+如下图，同一设备使用不同供电方法，左图由于电源不稳定出现反向电流，会导致检测结果偏大
+As shown in the following figure, the same equipment uses different power supply methods. In the left figure, reverse current occurs due to unstable power supply, which will cause the detection result to be too large.
+如果CC不亮，那么
+If the CC is not lit, then
 如果亮了，那么有可能
 If it is bright, then it is possible
 如果你是win7，请先安装客户端下载页面提供的驱动，并且需要手动安装驱动（包括升级模式的驱动
@@ -54,65 +68,53 @@ If you are win7, please install the driver provided by the client download page 
 If your output is connected to a mobile phone/charging treasure/computer that supports fast charging, please **do not turn on** `start up and automatically enable PD` (it will take effect after restarting and powering up), otherwise the two devices will cheat together and cause interference.
 如果使用了四线模式，CC采样电阻会消耗部分电流。如需电流示数完全一致，请使用双线模式
 If the four-wire mode is used, the CC sampling resistor will consume part of the current. If the current is exactly the same, please use the two-wire mode.
-如果是首次上电，可以参考[这个视频](https://www.bilibili.com/video/BV15m4y1h7CG)里的步骤
-If it is the first time to power on, please refer to the steps in [this video](https://www.bilibili.com/video/BV15m4y1h7CG).
+如果操作正确，可以尝试
+If the operation is correct, you can try
 如果无法识别设备，请检查设备管理器是否有设备，如果没有，请换根线
 If the device cannot be recognized, please check whether the device manager has a device, if not, please change the line
-如果CC不亮，那么
-If the CC is not lit, then
-如下图，同一设备使用不同供电方法，左图由于电源不稳定出现反向电流，会导致检测结果偏大
-As shown in the following figure, the same equipment uses different power supply methods. In the left figure, reverse current occurs due to unstable power supply, which will cause the detection result to be too large.
-设备默认会进入PPS模式，某些充电器的PPS支持范围小于PD固定档位范围。可以前往设置关闭PPS功能，只使用固定档位功能
-The device will enter PPS mode by default, and the PPS support range of some chargers is less than the PD fixed gear range. You can go to the setting to turn off the PPS function and only use the fixed gear function.
-首先请看一下说明书，**不要**诱骗空气，[像这些**错误示范
-First of all, please look at the instructions, **don't** lure the air, [like these **wrong demonstration
-同上
-Ibid.
-为什么电流和万用表差值有好几
-Why is there several differences between current and multimeter?
-为什么电流示数不一致
-Why are the current numbers inconsistent
-为什么电脑不能设置PD数值，设备上显示支持PD固定档位
-Why can't the computer set the PD value, and the device displays the support PD fixed gear
-为什么什么都没连，电压和电流不为
-Why is nothing even, voltage and current are not
-为什么输出端连上TypeC线后，电压直接变成了
-Why is the voltage directly changed after the output terminal is connected to the TypeC line
-为什么输出端连上TypeC线后，就会有几μA的电流
-Why is there a current of several μA when the output terminal is connected to the TypeC line?
-为什么我插上usb不亮
-Why I plug in the usb does not light up
-为什么我从输入口供电，CC会一直重启/插上手机就灭屏
-Why do I supply power from the input port, CC will always restart/plug in the mobile phone and turn off the screen
-为什么我的充电头无法识别PD/PPS？明明手机可以快充
-Why can't my charging head recognize PD/PPS? Clearly the mobile phone can be charged quickly
-为什么我的充电头支持20V，但是设备上不能
-Why does my charging head support 20V, but not on the device
-为什么我开启PD后一直在转圈圈
-Why have I been circling around since I turned on PD
-为什么我手机经过CC后就不能触发快充/没电输出
-Why can't my mobile phone trigger fast charge/dead power output after passing through CC
-为什么我输出端连上手机/充电宝/电脑后，电压会一会儿开一会儿关
-Why does the voltage turn on and off for a while when my output terminal is connected to a mobile phone/charging treasure/computer?
-为什么我无法升级固件
-Why can't I upgrade the firmware
-我的设备启动不了了，可以重刷固件吗
-My device can't start, can I brush the firmware again?
+如果是首次上电，可以参考[这个视频](https://www.bilibili.com/video/BV15m4y1h7CG)里的步骤
+If it is the first time to power on, please refer to the steps in [this video](https://www.bilibili.com/video/BV15m4y1h7CG).
+小知识
+Small knowledge
+常见问题
+FAQ
 我使用**Iot Power V1/V2**供电，串接了
 I use **Iot Power V1/V2** to supply power and connect it in series
 我已经分开供电没有共地了，为什么电流示数还是不一致
 I have already supplied power separately and have no common ground. Why is the current number still inconsistent?
-小知识
-Small knowledge
-诱骗成功（前往PD页面检查
-Tricking success (go to PD page to check
-在表没有损坏的前提下）有可能因为存在反向电流，导致μA结果不正确（CC无法检测反向电流
-On the premise that the table is not damaged) it is possible that the μA result is incorrect due to the existence of reverse current (CC cannot detect reverse current
-在设置里打开`开机自启PD`、并且只从**输入**端供电（拨码改为输入供电方式），连接PD充电器，只会有几种现象
-In the settings, turn on` power-on and self-start PD`, and only supply power from **input** terminal (dial code is changed to input power supply mode), and connect PD charger, there will be only a few phenomena
-这些线缆的连接头如下图
-The connectors of these cables are as follows
+我的设备启动不了了，可以重刷固件吗
+My device can't start, can I brush the firmware again?
 支持非标PPS吗（MIPPS等
 Do you support non-standard PPS (MIPPS, etc.
-只支持设置PPS数值，请确认你的充电器支持
-Only supports setting PPS value, please confirm that your charger supports
+板子上的PD诱骗芯片坏了
+The PD decoy chip on the board is broken
+某些线缆中会有电阻或芯片，他们会导致有小电流出现。
+Some cables will have resistors or chips in them, which will cause a small current to appear.
+此设备为低功耗测试仪，并非USB快充检测表，不会添加协议检测相关功能
+This device is a low-power tester, not a USB fast charging test meter, and will not add protocol detection related functions.
+没有cc1和cc2的线，只有usb四根线
+There are no cc1 and cc2 lines, only usb four lines
+测试时两个设备不可共地，请分别使用不同的电源供电，不然power测的电流是负载电流cc采样分流电流
+During the test, the two devices cannot be on the same ground. Please use different power supplies respectively to supply power. Otherwise, the current measured by power is the load current cc sampling shunt current.
+能触发手机的快充吗，我不想使用自带的诱骗功能
+Can it trigger the fast charging of the mobile phone? I don't want to use my own decoy function.
+设备默认会进入PPS模式，某些充电器的PPS支持范围小于PD固定档位范围。可以前往设置关闭PPS功能，只使用固定档位功能
+The device will enter PPS mode by default, and the PPS support range of some chargers is less than the PD fixed gear range. You can go to the setting to turn off the PPS function and only use the fixed gear function.
+诱骗成功（前往PD页面检查
+Tricking success (go to PD page to check
+请仔细阅读[供电方式](https://openluat.github.io/luatos-wiki-en/iotpower/cc/parts.html#id3)章节
+Please read the chapter [Power Supply Method](https://openluat.github.io/luatos-wiki-en/iotpower/cc/parts.html#id3) carefully.
+请仔细阅读[供电方式](https://wiki.luatos.com/iotpower/cc/parts.html#id3)章节
+Please read the chapter [Power Supply Method](https://wiki.luatos.com/iotpower/cc/parts.html#id3) carefully.
+请仔细阅读[供电方式](https://wiki.luatos.org/iotpower/cc/parts.html#id3)章节
+Please read the chapter [Power Supply Method](https://wiki.luatos.org/iotpower/cc/parts.html#id3) carefully.
+请参考[操作说明](usage.md)--`手动进入升级模式`章节，强制刷机
+Please refer to [Operating Instructions](usage.md)-Chapter `Manually Entering Upgrade Mode` to force the machine
+这些线缆的连接头如下图
+The connectors of these cables are as follows
+部分设备快充协议为非标，使用输入口供电时可能无法触发快充。此时需要使用PC端供电测试，使设备自身的供电与快充相隔离
+Some equipment fast charging protocols are non-standard, and fast charging may not be triggered when using input port power supply. At this time, the PC-side power supply test is required to isolate the power supply of the device from the fast charging phase.
+非标的充电头（同上，没有使用标准PD协议检测设备
+Non-standard charging head (as above, standard PD protocol detection equipment is not used
+首先请看一下说明书，**不要**诱骗空气，[像这些**错误示范
+First of all, please look at the instructions, **don't** lure the air, [like these **wrong demonstration

@@ -6,7 +6,7 @@ Of course, let's demonstrate script encryption using Luatools.
 
 **Note: If you use Air105 firmware after 2.1.53 and Luatools and 20220511**
 
-**Before previewing this article, please make sure that you will use Luatools to brush the machine. If not, please refer to [Burning Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html)**
+**Before previewing this article, please make sure that you will use Luatools to brush the machine. If not, please refer to [Burning Tutorial](https://wiki.luatos.org/boardGuide/flash.html)**
 
 Open our program download interface, that is, Luatools-project management test：
 

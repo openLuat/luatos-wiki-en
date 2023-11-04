@@ -7,7 +7,7 @@ This article will teach you how to compile the appropriate LuatOS firmware for 8
 ## **Wait a minute.！！**
 
 ```{warning}
-Before replacing flash, please press [ESP32C3 Firmware Compilation Guide](https://openluat.github.io/luatos-wiki-en/develop/compile/ESP32C3.html) to ensure that the default firmware can be successfully compiled and that the module can be used normally after burning, and then try to replace it.flash。
+Before replacing flash, please press [ESP32C3 Firmware Compilation Guide](https://wiki.luatos.org/develop/compile/ESP32C3.html) to ensure that the default firmware can be successfully compiled and that the module can be used normally after burning, and then try to replace it.flash。
 ```
 
 ## Replace hardware

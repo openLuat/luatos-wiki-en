@@ -100,7 +100,7 @@ Air105                         adjustable power supply
 
 ## Software part
 
-Interface documentation can be found at:[ADC Library](https://openluat.github.io/luatos-wiki-en/api/adc.html)
+Interface documentation can be found at:[ADC Library](https://wiki.luatos.org/api/adc.html)
 
 The code is as follows
 

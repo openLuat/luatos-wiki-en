@@ -1,9 +1,267 @@
-按键按下接地，因此需要上拉
-The key is pressed to ground, so it needs to be pulled up
-按照这个方式接好模块，别忘了放卡。
-According to this way to connect the module, don't forget to put the card.
+一样的套路，先看原理图，RESET按键别想了一按就复位，那就选BOOT了，也就是
+The same routine, first look at the schematic diagram, RESET button don't want to reset once pressed, then choose BOOT, that is
+一闪一闪亮晶晶，GPIO输出搞定
+Twinkle, twinkle, gpio output done
+上一章学了LCD的库，可以顺利的画点画线显示汉字了，可是想把界面做好看，这些简单的接口还是不能满足需求。于是乎就出现了很多图形库，LuatOS集成了LVGL图形库，可以利用大量控件写出美观的界面。
+In the last chapter, I learned the LCD library and can smoothly draw dots and lines to display Chinese characters. However, if I want to see the interface well, these simple interfaces still cannot meet the requirements. As a result, there are many graphics libraries, LuatOS integrated LVGL graphics library, you can use a large number of controls to write a beautiful interface.
+上一章我们学会了用sfud这个接口直接挂载flash，可是spi就俩数据线有点慢，而且flash容量有限。这时候就想到更高速率的SDIO接口了，SDIO接口设计之初就是为了读写SD卡，后来被拓展很多高速通信中也借用这个接口。
+In the last chapter, we learned to mount flash directly with sfud, but spi is a bit slow on the two data lines and flash capacity is limited. At this time, I thought of a higher-speed SDIO interface. The SDIO interface was designed to read and write SD cards at the beginning. Later, it was also used in many high-speed communications.
+上一章我们学会了用SPI读取外置flash的ID，实际通常外挂的spi flash的读写指令都是兼容的，我们在日常使用的过程中如果直接使用spi通过指令对flash进行读写会很麻烦，于是乎LuatOS就设计了一套接口，将外置的spi flash通过这套接口实现抽象读写，并对接Lua的io实现简单读写。
+In the last chapter, we learned to use SPI to read the ID of external flash. In fact, the read and write instructions of external spi flash are compatible. In the process of daily use, it will be very troublesome if we directly use spi to read and write flash through instructions. As a result, LuatOS has designed a set of interfaces to realize abstract read and write of external spi flash through this set of interfaces and realize simple read and write of Lua io.
+下载到设备，可以看到日志中打印的值是EF4018符合手册说明，SPI通信正常
+Downloaded to the device, you can see that the value printed in the log is EF4018 in accordance with the manual instructions, SPI communication is normal
+下载查看效果，收到不定长数据后回环输出。
+Download the viewing effect and loop back the output after receiving the indefinite length data.
+不要这种只支持SPI的
+Do not support this only SPI
+个adc通道外部电平检测，一个内部温度检测
+adc channel external level detection, an internal temperature detection
+串口
+Serial port
+串口ID,串口读缓冲区
+Serial ID, Serial Read Buffer
+串口的数据读完后清空缓冲区
+Empty the buffer after reading the serial data
+串口的特点是将数据一位一位地顺序传送，只要 2 根传输线就可以实现双向通信，一根线发送数据的同时用另一根线接收数据。UART 串口通信有几个重要的参数，分别是波特率、起始位、数据位、停止位和奇偶检验位，对于两个使用 UART 串口通信的端口，这些参数必须匹配，否则通信将无法正常完成。
+The characteristic of the serial port is to transmit data bit by bit in sequence. Two-way communication can be realized as long as two transmission lines. One line sends data while receiving data with another line. There are several important parameters for UART serial communication, namely baud rate, start bit, data bit, stop bit and parity bit. For two ports using UART serial communication, these parameters must match, otherwise the communication will not be completed normally.
+串口超时，串口准备好后发布的消息
+Serial port timeout, messages posted when the serial port is ready
+串口输入输出功能，支持uart0(芯片日志/调试/刷机)/uart1~4(用户可用
+Serial port input and output function, support uart0 (chip log/debug/brush machine)/uart1 ~ 4 (user available
+为它提供哪些功能
+What functions are provided for it
+主频调节，最低可到2M(需调低uart波特率
+Main frequency adjustment, minimum to 2M (need to reduce uart baud rate
+代码如下，完整代码见demo目录的i2c文件夹
+The code is as follows. For the complete code, see the i2c folder in the demo directory.
+代码展示
+Code display
+仿呼吸灯效果
+Imitation breathing light effect
+例子是100ms，按需求改
+The example is 100ms, changed according to demand
 保证读完不能丢包
 Ensure that you cannot lose packets after reading.
+停止位
+Stop bit
+像C语言一样操作内存字节数组，高效可靠
+Operate memory byte arrays like C language, efficient and reliable
+先找引脚图研究怎么接线，查文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)查阅文档可知W806芯片有两组硬件SPI，我们选择使用SPI0，也就是PB2接CLK，PB5接MOSI，PB3接MISO，PB4接CS。接下来研究如何驱动。
+First look for the pin diagram to study how to connect, check the document [LuatOS document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) to see that W806 chip has two sets of hardware SPI, we choose to use SPI0, that is, PB2 to CLK,PB5 to MOSI,PB3 to MISO,PB4 to CS. Next, study how to drive.
+先找引脚图研究怎么接线，查文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)查阅文档可知W806芯片有两组硬件SPI，我们选择使用SPI0，也就是PB2接CLK，PB5接MOSI，PB3接MISO，PB4接CS。接下来研究如何驱动。
+First look for the pin diagram to study how to connect, check the document [LuatOS document](https://wiki.luatos.com/boardGuide/Air103.html) to see that W806 chip has two sets of hardware SPI, we choose to use SPI0, that is, PB2 to CLK,PB5 to MOSI,PB3 to MISO,PB4 to CS. Next, study how to drive.
+先找引脚图研究怎么接线，查文档[LuatOS 文档](https://wiki.luatos.org/boardGuide/Air103.html)查阅文档可知W806芯片有两组硬件SPI，我们选择使用SPI0，也就是PB2接CLK，PB5接MOSI，PB3接MISO，PB4接CS。接下来研究如何驱动。
+First look for the pin diagram to study how to connect, check the document [LuatOS document](https://wiki.luatos.org/boardGuide/Air103.html) to see that W806 chip has two sets of hardware SPI, we choose to use SPI0, that is, PB2 to CLK,PB5 to MOSI,PB3 to MISO,PB4 to CS. Next, study how to drive.
+先测试一下能不能正常连接设备，烧录。查看日志可以看到sfud的库在初始化的时候自动帮我们获取了flash的厂商、大小等信息，我们通过sfud.write()和read()接口读写也都正常。
+First test whether the equipment can be connected normally and burn. Looking at the log, we can see that sfud's library automatically helped us obtain flash's manufacturer, size and other information during initialization. We also read and write normally through sfud.write() and read() interfaces.
+先看查文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)研究一下怎么接线
+First look at the document [LuatOS document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) and study how to connect the wires.
+先看查文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)研究一下怎么接线
+First look at the document [LuatOS document](https://wiki.luatos.com/boardGuide/Air103.html) and study how to connect the wires.
+先看查文档[LuatOS 文档](https://wiki.luatos.org/boardGuide/Air103.html)研究一下怎么接线
+First look at the document [LuatOS document](https://wiki.luatos.org/boardGuide/Air103.html) and study how to connect the wires.
+关掉
+Turn off
+关闭
+Close
+初始化
+Initialization
+初始化i2c，使用id为
+Initialize i2c with id
+功耗管理，可进入低功耗模式并定时唤醒
+Power management for low-power mode entry and timed wake-up
+单总线驱动，默认支持
+Single bus driver, default support
+卡使用第一次这么简单，两行代码就搞定。
+The card is so simple to use for the first time, and two lines of code are done.
+参考[sfud 文档](https://openluat.github.io/luatos-wiki-en/api/sfud.html)写个简单的demo,大致思路就是先给sfud创建一个spi的硬件设备对象，然后通过sfud的抽象接口操作spi实现对flash的操作
+Refer to [sfud Document](https://openluat.github.io/luatos-wiki-en/api/sfud.html) to write a simple demo. The general idea is to create a spi hardware device object for sfud first, and then operate spi through sfud's abstract interface to realize the operation of flash.
+参考[sfud 文档](https://wiki.luatos.com/api/sfud.html)写个简单的demo,大致思路就是先给sfud创建一个spi的硬件设备对象，然后通过sfud的抽象接口操作spi实现对flash的操作
+Refer to [sfud Document](https://wiki.luatos.com/api/sfud.html) to write a simple demo. The general idea is to create a spi hardware device object for sfud first, and then operate spi through sfud's abstract interface to realize the operation of flash.
+参考[sfud 文档](https://wiki.luatos.org/api/sfud.html)写个简单的demo,大致思路就是先给sfud创建一个spi的硬件设备对象，然后通过sfud的抽象接口操作spi实现对flash的操作
+Refer to [sfud Document](https://wiki.luatos.org/api/sfud.html) to write a simple demo. The general idea is to create a spi hardware device object for sfud first, and then operate spi through sfud's abstract interface to realize the operation of flash.
+发0x9F指令，读取返回的3个字节
+Send the 0x9F instruction to read the returned 3 bytes
+发送单次采集命令
+Send single acquisition command
+可是这样我们就满足了吗？不！我们要把flash变成文件系统的一部分直接通过lua原生接口读写。根据API的说明我们可以找到sfud.mount()这个函数，通过他就可以直接挂载到文件系统了，mount很像linux的操作，有没有。
+But is that enough for us? No! We want to turn flash into a part of the file system and read and write directly through the native lua interface. According to the API's instructions, we can find the function sfud.mount(), through which we can directly mount to the file system. mount is very similar to linux's operation, is there any.
+向串口发送收到的字符串
+Send the received string to the serial port
+呼吸灯实现了
+The breathing light achieved
+回复
+Reply
+在`uart`选项卡，设置波特率为921600，然后重启软件。
+On the `uart` tab, set the baud rate to 921600 and restart the software.
+在这里处理接收到的数据，这是例子
+Processing the received data here, this is the example
+基于i2c的显示屏支持，例如
+i2c based display support, such
+基于Lua 5.3.6，提供95%的原生库支持
+Based on Lua 5.3.6 with 95% native library support
+外接表显PA1电压2.092V，实测ADC有一定误差，建议之作阈值检测之类的用。
+The external display PA1 voltage is 2.092V, and the measured ADC has certain errors. It is recommended to use it for threshold detection.
+外置
+External
+多个PWM输出管脚，存在复用关系
+Multiple PWM output pins, there is a multiplexing relationship
+大QQ群
+Large QQ group
+如果只想编译自定义功能的固件可以直接使用的[在线云编译](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html)生成自定义固件。无需任何环境安装，可以自定义选择各种功能。
+If you only want to compile custom function firmware you can directly use [Online Cloud Compilation](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html) to generate custom firmware. Without any environment installation, you can customize the selection of various functions.
+如果只想编译自定义功能的固件可以直接使用的[在线云编译](https://wiki.luatos.com/develop/compile/Cloud_compilation.html)生成自定义固件。无需任何环境安装，可以自定义选择各种功能。
+If you only want to compile custom function firmware you can directly use [Online Cloud Compilation](https://wiki.luatos.com/develop/compile/Cloud_compilation.html) to generate custom firmware. Without any environment installation, you can customize the selection of various functions.
+如果只想编译自定义功能的固件可以直接使用的[在线云编译](https://wiki.luatos.org/develop/compile/Cloud_compilation.html)生成自定义固件。无需任何环境安装，可以自定义选择各种功能。
+If you only want to compile custom function firmware you can directly use [Online Cloud Compilation](https://wiki.luatos.org/develop/compile/Cloud_compilation.html) to generate custom firmware. Without any environment installation, you can customize the selection of various functions.
+如果没有打开串口，点击`打开串口`即可查看日志
+If the serial port is not opened, click "Open Serial Port" to view the log
+如果芯片当前已经烧录的固件版本，和这里选择的固件相同，那么可以点击`下载脚本`只下载脚本；反之，建议点击`下载底层和脚本`，进行全刷。
+If the firmware version currently burned by the chip is the same as the firmware selected here, you can click "Download Script" to download only the script. On the contrary, it is recommended to click "Download Bottom Layer and Script" to perform a full brush.
+如果还没反应，可以试试点击`重启串口
+If there is no response, you can try clicking` restart serial port
+存在
+Existence
+完全符合预期，可以直接通过文件系统操作flash，是不是很方便。
+Fully in line with expectations, can directly operate flash through the file system, is not very convenient.
+完成编译固件以后，我相信大家已经获得了.soc后缀的固件文件，下面介绍如何把固件烧录进设备。
+After compiling the firmware, I believe you have obtained the firmware file with the. soc suffix. Here is how to burn the firmware into the device.
+完整代码在demo的sfud文件夹
+Complete code in demo sfud folder
+实时时钟(开发中
+Real-time clock (under development
+实时时钟可以提供精确的实时时间，它可以用于产生年、月、日、时、分、秒等信息。目前实时时钟芯片大多采用精度较高的晶体振荡器作为时钟源。有些时钟芯片为了在主电源掉电时还可以工作，会外加电池供电，使时间信息一直保持有效
+Real-time clock can provide accurate real-time time, it can be used to produce years, months, days, hours, minutes, seconds and other information. At present, most real-time clock chips use a crystal oscillator with high precision as the clock source. Some clock chips will add battery power to keep the time information valid in order to work when the main power supply is down.
+对于不定长的数据接收一般采用超时断帧机制，也就是在收到前一个字节开启定时器，在一定时间内没有收到下一个字节就认为这是一包数据。
+For indefinite data reception, a timeout frame breaking mechanism is generally adopted, that is, a timer is started before a byte is received, and if the next byte is not received within a certain period of time, it is considered to be a packet of data.
+对显示设备的抽象很值得学习
+The abstraction of display devices is worth learning.
+对象与json字符串的双向转换
+bi-directional conversion between object and json string
+将设备通过usb线连接到电脑，可以看到出现一个新的COM口，勾选`通用串口打印`，并在工具中选中这个COM口
+Connect the device to the computer through usb cable, you can see a new COM port, check` universal serial port print`, and select this COM port in the tool
+工具也自动下载了正式版本的一些实例脚本可以在`resource\某种型号\某个版本\demo`文件夹看到，可以直接选择脚本进行烧录测试
+The tool also automatically downloaded some example scripts of the official version, which can be seen in the` resource \certain model \certain version \demo` folder, and can be directly selected for burning test
+工具配置
+Tool Configuration
+延迟
+Delay
+建议新建一个Luatools文件夹，将exe文件放入其中后，再打开exe文件
+It is recommended to create a new Luatools folder, put the exe file into it, and then open the exe file.
+开发板一块
+A development board
+开发板一块，SHT30传感器一个
+One development board and one SHT30 sensor
+开发板一块，SPI的flash一个
+A development board, SPI flash a
+开发板一块，SPI的屏幕一个，我用的
+A development board, SPI screen, I use
+开发板一块，usb线一根
+One development board and one usb cable
+开发板一块，usb转串口线一根
+One development board, one usb to serial port line
+开发板一块，可调电源一个
+One development board and one adjustable power supply
+开发板一块，支持SDIO的tf卡或SD卡模块。一定要类似下图这种支持SDIO的4数据线的。
+Development board a piece, support SDIO tf card or SD card module. Be sure to be similar to the figure below that supports SDIO 4 data lines.
+开启
+Open
+开始写代码，先找接口说明[i2c - I2C操作 - LuatOS 文档](https://openluat.github.io/luatos-wiki-en/api/i2c.html)，先初始化，需要地址，查阅SHT30手册，地址是由ADDR这个引脚电平决定，我这个模块悬空，就是
+Start writing code, first find the interface description [i2c-I2C Operation-LuatOS Document](https://openluat.github.io/luatos-wiki-en/api/i2c.html), initialize first, need the address, refer to SHT30 manual, the address is determined by the pin level of ADDR, my module is suspended, that is
+开始写代码，先找接口说明[i2c - I2C操作 - LuatOS 文档](https://wiki.luatos.com/api/i2c.html)，先初始化，需要地址，查阅SHT30手册，地址是由ADDR这个引脚电平决定，我这个模块悬空，就是
+Start writing code, first find the interface description [i2c-I2C Operation-LuatOS Document](https://wiki.luatos.com/api/i2c.html), initialize first, need the address, refer to SHT30 manual, the address is determined by the pin level of ADDR, my module is suspended, that is
+开始写代码，先找接口说明[i2c - I2C操作 - LuatOS 文档](https://wiki.luatos.org/api/i2c.html)，先初始化，需要地址，查阅SHT30手册，地址是由ADDR这个引脚电平决定，我这个模块悬空，就是
+Start writing code, first find the interface description [i2c-I2C Operation-LuatOS Document](https://wiki.luatos.org/api/i2c.html), initialize first, need the address, refer to SHT30 manual, the address is determined by the pin level of ADDR, my module is suspended, that is
+总线master功能，并自带多种温湿度传感器驱动
+Bus master function, and comes with a variety of temperature and humidity sensor driver
+总线是 PHILIPS 公司开发的一种半双工、双向二线制同步串行总线。I2C 总线传输数据时只需两根信号线，一根是双向数据线 SDA（serial data），另一根是双向时钟线
+The bus is a half-duplex, bidirectional two-wire synchronous serial bus developed by PHILIPS. The I2C bus only needs two signal lines to transmit data, one is a bidirectional data line SDA(serial data), and the other is a bidirectional clock line
+想自己编译教程参考[源码编译教程](https://openluat.github.io/luatos-wiki-en/develop/compile/Air101.html)按照Air103的方式进行编译
+I want to compile my own tutorial reference [source code compilation tutorial](https://openluat.github.io/luatos-wiki-en/develop/compile/Air101.html) to compile according to Air103
+想自己编译教程参考[源码编译教程](https://wiki.luatos.com/develop/compile/Air101.html)按照Air103的方式进行编译
+I want to compile my own tutorial reference [source code compilation tutorial](https://wiki.luatos.com/develop/compile/Air101.html) to compile according to Air103
+想自己编译教程参考[源码编译教程](https://wiki.luatos.org/develop/compile/Air101.html)按照Air103的方式进行编译
+I want to compile my own tutorial reference [source code compilation tutorial](https://wiki.luatos.org/develop/compile/Air101.html) to compile according to Air103
+我们参照[API手册](https://openluat.github.io/luatos-wiki-en/api/spi.html)先初始化SPI，创建一个SPI对象
+We refer to [API Manual](https://openluat.github.io/luatos-wiki-en/api/spi.html) to initialize SPI first and create an SPI object
+我们参照[API手册](https://wiki.luatos.com/api/spi.html)先初始化SPI，创建一个SPI对象
+We refer to [API Manual](https://wiki.luatos.com/api/spi.html) to initialize SPI first and create an SPI object
+我们参照[API手册](https://wiki.luatos.org/api/spi.html)先初始化SPI，创建一个SPI对象
+We refer to [API Manual](https://wiki.luatos.org/api/spi.html) to initialize SPI first and create an SPI object
+我们挂载到文件系统后，新建一个文件写入1000字节数据，然后读一下文件大小，再把文件内容读出来。
+After we mount it to the file system, create a new file and write 1000 bytes of data, then read the file size, and then read the contents of the file.
+我们查找Air103/W806的文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)可知PB0的引脚标号为
+We look up the document of Air103/W806 [LuatOS document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) and know that the pin number of PB0 is
+我们查找Air103/W806的文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)可知PB0的引脚标号为
+We look up the document of Air103/W806 [LuatOS document](https://wiki.luatos.com/boardGuide/Air103.html) and know that the pin number of PB0 is
+我们查找Air103/W806的文档[LuatOS 文档](https://wiki.luatos.org/boardGuide/Air103.html)可知PB0的引脚标号为
+We look up the document of Air103/W806 [LuatOS document](https://wiki.luatos.org/boardGuide/Air103.html) and know that the pin number of PB0 is
+我们给PA1脚接可调电源（一定注意电压不要超过
+We connect the PA1 pin with an adjustable power supply (be sure to pay attention to the voltage not exceeding
+我用的flash是W25Q128，根据手册可以查到有一个读flash的型号的通用命令0x9F，正常的话W25Q128应该会返回
+The flash I use is W25Q128. According to the manual, there is a general command 0x9F for reading flash models. If normal, the W25Q128 should return
+打印RTC时间
+Print RTC Time
+打印时间
+Print Time
+拼接所有收到的数据
+Splice all received data
+按照这个方式接好模块，别忘了放卡。
+According to this way to connect the module, don't forget to put the card.
+按键按下接地，因此需要上拉
+The key is pressed to ground, so it needs to be pulled up
+换个屏试试，只需要改一下初始化参数，ili9341也就驱动起来了
+Try changing the screen, just change the initialization parameters, and the ili9341 will be driven.
+接下找[API 文档](https://openluat.github.io/luatos-wiki-en/api/sdio.html)，和sfud一个套路，初始化硬件，读写测试（最好别这么测，直接读写sd卡插windows上都不识别），我就不测了
+Next, find [API document](https://openluat.github.io/luatos-wiki-en/api/sdio.html), and sfud a routine, initialize the hardware, read and write tests (it is better not to do this test, direct read and write sd card insertion windows are not recognized), I will be unexpected
+接下找[API 文档](https://wiki.luatos.com/api/sdio.html)，和sfud一个套路，初始化硬件，读写测试（最好别这么测，直接读写sd卡插windows上都不识别），我就不测了
+Next, find [API document](https://wiki.luatos.com/api/sdio.html), and sfud a routine, initialize the hardware, read and write tests (it is better not to do this test, direct read and write sd card insertion windows are not recognized), I will be unexpected
+接下找[API 文档](https://wiki.luatos.org/api/sdio.html)，和sfud一个套路，初始化硬件，读写测试（最好别这么测，直接读写sd卡插windows上都不识别），我就不测了
+Next, find [API document](https://wiki.luatos.org/api/sdio.html), and sfud a routine, initialize the hardware, read and write tests (it is better not to do this test, direct read and write sd card insertion windows are not recognized), I will be unexpected
+接下来实践一下，在前面的代码基础上增加如下代码
+Next, practice and add the following code to the previous code.
+接下来研究怎么显示一点东西，就简单画个框画个圆显示一下汉字吧，API里写的比较清楚了，这里就不多解释了。其中设置字体那个地方的字体是可以在前面讲过的本地编译或者云编译的时候选择，选的不一样这里设置也不一样，需要注意。完整代码在demo的lcd文件。
+Next, I will study how to display something. I will simply draw a frame and a circle to display Chinese characters. The API is clearly written, so there is not much explanation here. The font in the place where the font is set can be selected during local compilation or cloud compilation as mentioned earlier. The settings here are also different if the selection is different. Attention should be paid. Complete code in the demo LCD file.
+接下来老规矩看[API](https://openluat.github.io/luatos-wiki-en/api/lcd.html)思路都一样，先初始化硬件，在搞其他。按照接口的说明，我们要先初始话一个spi对象，然后根据硬件配置RES和DC等引脚，引脚列表前面我写了，所以初始化代码如下
+Next, the old rule is to look at [API](https://openluat.github.io/luatos-wiki-en/api/ LCD .html) with the same thinking. First, initialize the hardware and do other things. According to the description of the interface, we need to start with a spi object, and then configure pins such as RES and DC according to the hardware. I wrote the pin list before, so the initialization code is as follows
+接下来老规矩看[API](https://wiki.luatos.com/api/lcd.html)思路都一样，先初始化硬件，在搞其他。按照接口的说明，我们要先初始话一个spi对象，然后根据硬件配置RES和DC等引脚，引脚列表前面我写了，所以初始化代码如下
+Next, the old rule is to look at [API](https://wiki.luatos.com/api/ LCD .html) with the same thinking. First, initialize the hardware and do other things. According to the description of the interface, we need to start with a spi object, and then configure pins such as RES and DC according to the hardware. I wrote the pin list before, so the initialization code is as follows
+接下来老规矩看[API](https://wiki.luatos.org/api/lcd.html)思路都一样，先初始化硬件，在搞其他。按照接口的说明，我们要先初始话一个spi对象，然后根据硬件配置RES和DC等引脚，引脚列表前面我写了，所以初始化代码如下
+Next, the old rule is to look at [API](https://wiki.luatos.org/api/ LCD .html) with the same thinking. First, initialize the hardware and do other things. According to the description of the interface, we need to start with a spi object, and then configure pins such as RES and DC according to the hardware. I wrote the pin list before, so the initialization code is as follows
+接好线以后开始写代码，根据[UART ](https://openluat.github.io/luatos-wiki-en/api/uart.html)的API接口说明，首先我们初始化串口
+After connecting the line, we began to write the code. According to the API interface description of [UART ](https://openluat.github.io/luatos-wiki-en/api/uart.html), we first initialized the serial port.
+接好线以后开始写代码，根据[UART ](https://wiki.luatos.com/api/uart.html)的API接口说明，首先我们初始化串口
+After connecting the line, we began to write the code. According to the API interface description of [UART ](https://wiki.luatos.com/api/uart.html), we first initialized the serial port.
+接好线以后开始写代码，根据[UART ](https://wiki.luatos.org/api/uart.html)的API接口说明，首先我们初始化串口
+After connecting the line, we began to write the code. According to the API interface description of [UART ](https://wiki.luatos.org/api/uart.html), we first initialized the serial port.
+接线图看SPI那一章即可不在赘述
+Wiring diagram see SPI that chapter can not repeat
+接线看LCD那一章不重复，LVGL作为图形库首先还是LCD那套初始化屏幕，然后就是使用LVGL渲染屏幕内容。直接上代码了
+The chapter on LCD is not repeated. LVGL as a graphics library is the initialization screen of LCD first, and then LVGL is used to render the screen content. Directly on the code
+支持全部LVGL原生组件和动画效果，并内嵌中文字体
+Supports all LVGL native components and animation effects, and embedded Chinese fonts
+支持外挂psram，最大
+Support plug-in PSRAM, maximum
+支持多款彩色SPI屏
+Support multiple color SPI screen
+支持多款墨水屏
+Support a variety of ink screen
+数据位
+data bit
+整体代码如下，完整代码见demo目录的SPI文件夹
+The overall code is as follows. For the complete code, see the SPI folder in the demo directory.
+文件系统大小112KB，格式
+File system size 112KB, format
+时间设置
+Time Settings
+是一款QFN56 封装，6mm x 6mm 大小的mcu. 本芯片与合宙Air103可互换
+It is a QFN56 package, 6mm x 6mm mcu. This chip is interchangeable with the combined Air103.
+是串行外设接口（Serial Peripheral Interface）的缩写，是一种高速的，全双工，同步的通信总线，设备分为主机和从机，目前W806的SPI仅能作为主机使用。
+Serial Peripheral Interface (Serial Peripheral Interface) is an abbreviation, is a high-speed, full-duplex, synchronous communication bus, the device is divided into master and slave, the current SPI W806 can only be used as a host.
+是什么
+What is it?
+更多的LVGL使用教程可以参考API和lvgl官方文档
+For more LVGL tutorials, please refer to API and lvgl official documents.
 本章将会向大家介绍LuatOS的ADC功能。将会实现使用Air101开发板读取内部温度并在日志中打印。
 This chapter will introduce you to the ADC features of LuatOS. The internal temperature will be read using the Air101 development board and printed in the log.
 本章将会向大家介绍LuatOS的I2C功能。将会实现使用W806开发板I2C读取SHT30传感器的温湿度
@@ -12,409 +270,191 @@ This chapter will introduce you to the I2C features of LuatOS. W806 development 
 This chapter will introduce you to the RTC features of LuatOS. The value of the RTC will be read using the W806 development board and printed in the log.
 本章将会学习使用SDIO接口驱动TF卡，并把TF卡挂载到文件系统进行读写
 This chapter will learn to use the SDIO interface to drive the TF card and mount the TF card to the file system for reading and writing.
-本章将简单介绍如何使用LVGL显示更美观的画面
-This chapter will briefly introduce how to use LVGL to display a more beautiful picture
 本章将使用GPIO接口控制开发板的LED灯进行闪烁，做个灯神
 This chapter will use the GPIO interface to control the LED lights of the development board to flash and be a lamp god.
 本章将使用PWM驱动板载的led实现呼吸灯效果
 This chapter will use PWM to drive onboard LEDs to achieve a breathing light effect
-本章将使用W806的硬件SPI读取flah的ID并打印
-In this chapter, the hardware SPI of W806 will be used to read the ID of flah and print it.
 本章将使用W806的硬件SPI挂载flash到文件系统，直接读写
 This chapter will use W806 hardware SPI to mount flash to the file system, read and write directly
+本章将使用W806的硬件SPI读取flah的ID并打印
+In this chapter, the hardware SPI of W806 will be used to read the ID of flah and print it.
+本章将简单介绍如何使用LVGL显示更美观的画面
+This chapter will briefly introduce how to use LVGL to display a more beautiful picture
 本章讲学习如何配置串口，并通过串口发送收到的数据进行回环
 This chapter will learn how to configure the serial port and send the received data back through the serial port.
-编译固件
-Compile Firmware
-波特率
-Baud rate
-不要这种只支持SPI的
-Do not support this only SPI
-参考[sfud 文档](https://openluat.github.io/luatos-wiki-en/api/sfud.html)写个简单的demo,大致思路就是先给sfud创建一个spi的硬件设备对象，然后通过sfud的抽象接口操作spi实现对flash的操作
-Refer to [sfud Document](https://openluat.github.io/luatos-wiki-en/api/sfud.html) to write a simple demo. The general idea is to create a spi hardware device object for sfud first, and then operate spi through sfud's abstract interface to realize the operation of flash.
-参考[sfud 文档](https://wiki.luatos.com/api/sfud.html)写个简单的demo,大致思路就是先给sfud创建一个spi的硬件设备对象，然后通过sfud的抽象接口操作spi实现对flash的操作
-Refer to [sfud Document](https://wiki.luatos.com/api/sfud.html) to write a simple demo. The general idea is to create a spi hardware device object for sfud first, and then operate spi through sfud's abstract interface to realize the operation of flash.
-测试
-Test
-查看日志
-View Log
-查看文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)可以看到，W806有5个uart，其中uart0做下载调试用，所以我们就选uart1吧。也就是PB6->TX然后PB7->RX把TX接串口线RX，RX接串口线TX，然后别忘了共地。
-Looking at the document [LuatOS Document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html), we can see that W806 has 5 uarts, of which uart0 is used for download and debugging, so let's choose uart1. That is, PB6->TX then PB7->RX connect TX to serial line RX,RX to serial line TX, and then don't forget to share the ground.
-查看文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)可以看到，W806有5个uart，其中uart0做下载调试用，所以我们就选uart1吧。也就是PB6->TX然后PB7->RX把TX接串口线RX，RX接串口线TX，然后别忘了共地。
-Looking at the document [LuatOS Document](https://wiki.luatos.com/boardGuide/Air103.html), we can see that W806 has 5 uarts, of which uart0 is used for download and debugging, so let's choose uart1. That is, PB6->TX then PB7->RX connect TX to serial line RX,RX to serial line TX, and then don't forget to share the ground.
 查一下[API](https://openluat.github.io/luatos-wiki-en/api/pwm.html)发现PWM的使用很简单，就直接open就行，然后调节占空比就可以调节亮度，上代码。完整代码在demo的pwm文件夹
 Check [API](https://openluat.github.io/luatos-wiki-en/api/pwm.html) and find that the use of PWM is very simple. Just open it directly, then adjust the duty cycle to adjust the brightness and code it. Complete code in demo's pwm folder
 查一下[API](https://wiki.luatos.com/api/pwm.html)发现PWM的使用很简单，就直接open就行，然后调节占空比就可以调节亮度，上代码。完整代码在demo的pwm文件夹
 Check [API](https://wiki.luatos.com/api/pwm.html) and find that the use of PWM is very simple. Just open it directly, then adjust the duty cycle to adjust the brightness and code it. Complete code in demo's pwm folder
-初始化
-Initialization
-初始化i2c，使用id为
-Initialize i2c with id
-串口
-Serial port
-串口超时，串口准备好后发布的消息
-Serial port timeout, messages posted when the serial port is ready
-串口的数据读完后清空缓冲区
-Empty the buffer after reading the serial data
-串口的特点是将数据一位一位地顺序传送，只要 2 根传输线就可以实现双向通信，一根线发送数据的同时用另一根线接收数据。UART 串口通信有几个重要的参数，分别是波特率、起始位、数据位、停止位和奇偶检验位，对于两个使用 UART 串口通信的端口，这些参数必须匹配，否则通信将无法正常完成。
-The characteristic of the serial port is to transmit data bit by bit in sequence. Two-way communication can be realized as long as two transmission lines. One line sends data while receiving data with another line. There are several important parameters for UART serial communication, namely baud rate, start bit, data bit, stop bit and parity bit. For two ports using UART serial communication, these parameters must match, otherwise the communication will not be completed normally.
-串口输入输出功能，支持uart0(芯片日志/调试/刷机)/uart1~4(用户可用
-Serial port input and output function, support uart0 (chip log/debug/brush machine)/uart1 ~ 4 (user available
-串口ID,串口读缓冲区
-Serial ID, Serial Read Buffer
-存在
-Existence
-打印时间
-Print Time
-打印RTC时间
-Print RTC Time
-大QQ群
-Large QQ group
-代码如下，完整代码见demo目录的i2c文件夹
-The code is as follows. For the complete code, see the i2c folder in the demo directory.
-代码展示
-Code display
-单总线驱动，默认支持
-Single bus driver, default support
-的输入输出我们就学习完成了。
-The input and output of we have completed our study.
-等待采集
-Waiting for acquisition
-等待进度条走完固件就下载成功了
-Wait for the progress bar to finish and the firmware will be downloaded successfully.
-点击`下载固件`按钮，选中刚刚下载的soc文件，直接下载即可，因为w806开发板的串口芯片rts脚没有连接到芯片复位引脚，所以点击下载后需要手动按板子上的rst按键重启。如果按特别说明涨价改过，就无需手动复位。
-Click the "Download Firmware" button, select the soc file just downloaded, and download it directly. Because the rts pin of the serial chip of the w806 development board is not connected to the chip reset pin, you need to manually press the rst key on the board to restart after clicking the download. If the price increase is changed according to the special instructions, there is no need to reset it manually.
-点击`项目管理测试`按钮，点击左下角的`创建项目`新建一个新项目
-Click the `Project Management Test` button and click `Create Project` in the bottom left corner to create a new project
-电压,最新代码才支持
-Voltage, only the latest code is supported
-读取数据采集结果
-Read data acquisition results
-对显示设备的抽象很值得学习
-The abstraction of display devices is worth learning.
-对象与json字符串的双向转换
-bi-directional conversion between object and json string
-对于不定长的数据接收一般采用超时断帧机制，也就是在收到前一个字节开启定时器，在一定时间内没有收到下一个字节就认为这是一包数据。
-For indefinite data reception, a timeout frame breaking mechanism is generally adopted, that is, a timer is started before a byte is received, and if the next byte is not received within a certain period of time, it is considered to be a packet of data.
-多个PWM输出管脚，存在复用关系
-Multiple PWM output pins, there is a multiplexing relationship
-发0x9F指令，读取返回的3个字节
-Send the 0x9F instruction to read the returned 3 bytes
-发送单次采集命令
-Send single acquisition command
-仿呼吸灯效果
-Imitation breathing light effect
-个adc通道外部电平检测，一个内部温度检测
-adc channel external level detection, an internal temperature detection
+查一下[API](https://wiki.luatos.org/api/pwm.html)发现PWM的使用很简单，就直接open就行，然后调节占空比就可以调节亮度，上代码。完整代码在demo的pwm文件夹
+Check [API](https://wiki.luatos.org/api/pwm.html) and find that the use of PWM is very simple. Just open it directly, then adjust the duty cycle to adjust the brightness and code it. Complete code in demo's pwm folder
+查看文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)可以看到，W806有5个uart，其中uart0做下载调试用，所以我们就选uart1吧。也就是PB6->TX然后PB7->RX把TX接串口线RX，RX接串口线TX，然后别忘了共地。
+Looking at the document [LuatOS Document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html), we can see that W806 has 5 uarts, of which uart0 is used for download and debugging, so let's choose uart1. That is, PB6->TX then PB7->RX connect TX to serial line RX,RX to serial line TX, and then don't forget to share the ground.
+查看文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)可以看到，W806有5个uart，其中uart0做下载调试用，所以我们就选uart1吧。也就是PB6->TX然后PB7->RX把TX接串口线RX，RX接串口线TX，然后别忘了共地。
+Looking at the document [LuatOS Document](https://wiki.luatos.com/boardGuide/Air103.html), we can see that W806 has 5 uarts, of which uart0 is used for download and debugging, so let's choose uart1. That is, PB6->TX then PB7->RX connect TX to serial line RX,RX to serial line TX, and then don't forget to share the ground.
+查看文档[LuatOS 文档](https://wiki.luatos.org/boardGuide/Air103.html)可以看到，W806有5个uart，其中uart0做下载调试用，所以我们就选uart1吧。也就是PB6->TX然后PB7->RX把TX接串口线RX，RX接串口线TX，然后别忘了共地。
+Looking at the document [LuatOS Document](https://wiki.luatos.org/boardGuide/Air103.html), we can see that W806 has 5 uarts, of which uart0 is used for download and debugging, so let's choose uart1. That is, PB6->TX then PB7->RX connect TX to serial line RX,RX to serial line TX, and then don't forget to share the ground.
+查看日志
+View Log
 根据[ADC库](https://openluat.github.io/luatos-wiki-en/api/adc.html)库的接口，简单写几行代码，完整代码见demo目录的adc文件夹
 According to the interface of [ADC library](https://openluat.github.io/luatos-wiki-en/api/adc.html) library, write a few lines of code simply. See the adc folder of demo directory for the complete code.
 根据[ADC库](https://wiki.luatos.com/api/adc.html)库的接口，简单写几行代码，完整代码见demo目录的adc文件夹
 According to the interface of [ADC library](https://wiki.luatos.com/api/adc.html) library, write a few lines of code simply. See the adc folder of demo directory for the complete code.
+根据[ADC库](https://wiki.luatos.org/api/adc.html)库的接口，简单写几行代码，完整代码见demo目录的adc文件夹
+According to the interface of [ADC library](https://wiki.luatos.org/api/adc.html) library, write a few lines of code simply. See the adc folder of demo directory for the complete code.
 根据[gpio - GPIO操作 ](https://openluat.github.io/luatos-wiki-en/api/gpio.html)的接口，简单写几行代码，完整代码见demo目录的gpio文件夹
 According to the interface of [gpio-GPIO Operation](https://openluat.github.io/luatos-wiki-en/api/gpio.html), simply write a few lines of code. For the complete code, see the gpio folder in the demo directory.
 根据[gpio - GPIO操作 ](https://wiki.luatos.com/api/gpio.html)的接口，简单写几行代码，完整代码见demo目录的gpio文件夹
 According to the interface of [gpio-GPIO Operation](https://wiki.luatos.com/api/gpio.html), simply write a few lines of code. For the complete code, see the gpio folder in the demo directory.
+根据[gpio - GPIO操作 ](https://wiki.luatos.org/api/gpio.html)的接口，简单写几行代码，完整代码见demo目录的gpio文件夹
+According to the interface of [gpio-GPIO Operation](https://wiki.luatos.org/api/gpio.html), simply write a few lines of code. For the complete code, see the gpio folder in the demo directory.
 根据[GPIO操作 ](https://openluat.github.io/luatos-wiki-en/api/gpio.html)的接口，简单写几行代码，完整代码见demo目录的gpio文件夹
 According to the interface of [GPIO operation](https://openluat.github.io/luatos-wiki-en/api/gpio.html), write a few lines of code simply. see the gpio folder of demo directory for the complete code.
 根据[GPIO操作 ](https://wiki.luatos.com/api/gpio.html)的接口，简单写几行代码，完整代码见demo目录的gpio文件夹
 According to the interface of [GPIO operation](https://wiki.luatos.com/api/gpio.html), write a few lines of code simply. see the gpio folder of demo directory for the complete code.
+根据[GPIO操作 ](https://wiki.luatos.org/api/gpio.html)的接口，简单写几行代码，完整代码见demo目录的gpio文件夹
+According to the interface of [GPIO operation](https://wiki.luatos.org/api/gpio.html), write a few lines of code simply. see the gpio folder of demo directory for the complete code.
+根据SHT30传感器手册给的公式计算温度和湿度
+Calculate the temperature and humidity according to the formula given in the SHT30 sensor manual
 根据前面的GPIO学习我们知道板载的灯是接在PB0，1，2上的，恰好这几个引脚都支持PWM，所以就试试做个呼吸灯吧
 According to the previous GPIO study, we know that the onboard lamps are connected to PB0,1 and 2, and these pins all support PWM, so try to be a breathing lamp.
 根据原理图可以找到开发板所带的三个灯分别为PB0，1，2控制，低电平亮起
 According to the schematic diagram, it can be found that the three lamps brought by the development board are PB0,1 and 2 control respectively, and the low level lights up.
-根据SHT30传感器手册给的公式计算温度和湿度
-Calculate the temperature and humidity according to the formula given in the SHT30 sensor manual
-更多的LVGL使用教程可以参考API和lvgl官方文档
-For more LVGL tutorials, please refer to API and lvgl official documents.
-工具配置
-Tool Configuration
-工具也自动下载了正式版本的一些实例脚本可以在`resource\某种型号\某个版本\demo`文件夹看到，可以直接选择脚本进行烧录测试
-The tool also automatically downloaded some example scripts of the official version, which can be seen in the` resource \certain model \certain version \demo` folder, and can be directly selected for burning test
-功耗管理，可进入低功耗模式并定时唤醒
-Power management for low-power mode entry and timed wake-up
-关闭
-Close
-关掉
-Turn off
-管脚控制功能(映射表后面有提供
-Pin control function (provided after the mapping table
-呼吸灯实现了
-The breathing light achieved
-换个屏试试，只需要改一下初始化参数，ili9341也就驱动起来了
-Try changing the screen, just change the initialization parameters, and the ili9341 will be driven.
-回复
-Reply
-获取RTC时间
-Get RTC Time
-基于i2c的显示屏支持，例如
-i2c based display support, such
-基于Lua 5.3.6，提供95%的原生库支持
-Based on Lua 5.3.6 with 95% native library support
-简洁的日志功能
-Simple log function
-简介
-Introduction
-建议新建一个Luatools文件夹，将exe文件放入其中后，再打开exe文件
-It is recommended to create a new Luatools folder, put the exe file into it, and then open the exe file.
-将设备通过usb线连接到电脑，可以看到出现一个新的COM口，勾选`通用串口打印`，并在工具中选中这个COM口
-Connect the device to the computer through usb cable, you can see a new COM port, check` universal serial port print`, and select this COM port in the tool
-接好线以后开始写代码，根据[UART ](https://openluat.github.io/luatos-wiki-en/api/uart.html)的API接口说明，首先我们初始化串口
-After connecting the line, we began to write the code. According to the API interface description of [UART ](https://openluat.github.io/luatos-wiki-en/api/uart.html), we first initialized the serial port.
-接好线以后开始写代码，根据[UART ](https://wiki.luatos.com/api/uart.html)的API接口说明，首先我们初始化串口
-After connecting the line, we began to write the code. According to the API interface description of [UART ](https://wiki.luatos.com/api/uart.html), we first initialized the serial port.
-接下来老规矩看[API](https://openluat.github.io/luatos-wiki-en/api/lcd.html)思路都一样，先初始化硬件，在搞其他。按照接口的说明，我们要先初始话一个spi对象，然后根据硬件配置RES和DC等引脚，引脚列表前面我写了，所以初始化代码如下
-Next, the old rule is to look at [API](https://openluat.github.io/luatos-wiki-en/api/ LCD .html) with the same thinking. First, initialize the hardware and do other things. According to the description of the interface, we need to start with a spi object, and then configure pins such as RES and DC according to the hardware. I wrote the pin list before, so the initialization code is as follows
-接下来老规矩看[API](https://wiki.luatos.com/api/lcd.html)思路都一样，先初始化硬件，在搞其他。按照接口的说明，我们要先初始话一个spi对象，然后根据硬件配置RES和DC等引脚，引脚列表前面我写了，所以初始化代码如下
-Next, the old rule is to look at [API](https://wiki.luatos.com/api/ LCD .html) with the same thinking. First, initialize the hardware and do other things. According to the description of the interface, we need to start with a spi object, and then configure pins such as RES and DC according to the hardware. I wrote the pin list before, so the initialization code is as follows
-接下来实践一下，在前面的代码基础上增加如下代码
-Next, practice and add the following code to the previous code.
-接下来研究怎么显示一点东西，就简单画个框画个圆显示一下汉字吧，API里写的比较清楚了，这里就不多解释了。其中设置字体那个地方的字体是可以在前面讲过的本地编译或者云编译的时候选择，选的不一样这里设置也不一样，需要注意。完整代码在demo的lcd文件。
-Next, I will study how to display something. I will simply draw a frame and a circle to display Chinese characters. The API is clearly written, so there is not much explanation here. The font in the place where the font is set can be selected during local compilation or cloud compilation as mentioned earlier. The settings here are also different if the selection is different. Attention should be paid. Complete code in the demo LCD file.
-接下找[API 文档](https://openluat.github.io/luatos-wiki-en/api/sdio.html)，和sfud一个套路，初始化硬件，读写测试（最好别这么测，直接读写sd卡插windows上都不识别），我就不测了
-Next, find [API document](https://openluat.github.io/luatos-wiki-en/api/sdio.html), and sfud a routine, initialize the hardware, read and write tests (it is better not to do this test, direct read and write sd card insertion windows are not recognized), I will be unexpected
-接下找[API 文档](https://wiki.luatos.com/api/sdio.html)，和sfud一个套路，初始化硬件，读写测试（最好别这么测，直接读写sd卡插windows上都不识别），我就不测了
-Next, find [API document](https://wiki.luatos.com/api/sdio.html), and sfud a routine, initialize the hardware, read and write tests (it is better not to do this test, direct read and write sd card insertion windows are not recognized), I will be unexpected
-接线看LCD那一章不重复，LVGL作为图形库首先还是LCD那套初始化屏幕，然后就是使用LVGL渲染屏幕内容。直接上代码了
-The chapter on LCD is not repeated. LVGL as a graphics library is the initialization screen of LCD first, and then LVGL is used to render the screen content. Directly on the code
-接线图看SPI那一章即可不在赘述
-Wiring diagram see SPI that chapter can not repeat
-卡使用第一次这么简单，两行代码就搞定。
-The card is so simple to use for the first time, and two lines of code are done.
-开发板一块
-A development board
-开发板一块，可调电源一个
-One development board and one adjustable power supply
-开发板一块，支持SDIO的tf卡或SD卡模块。一定要类似下图这种支持SDIO的4数据线的。
-Development board a piece, support SDIO tf card or SD card module. Be sure to be similar to the figure below that supports SDIO 4 data lines.
-开发板一块，SHT30传感器一个
-One development board and one SHT30 sensor
-开发板一块，SPI的屏幕一个，我用的
-A development board, SPI screen, I use
-开发板一块，SPI的flash一个
-A development board, SPI flash a
-开发板一块，usb线一根
-One development board and one usb cable
-开发板一块，usb转串口线一根
-One development board, one usb to serial port line
-开启
-Open
-开始写代码，先找接口说明[i2c - I2C操作 - LuatOS 文档](https://openluat.github.io/luatos-wiki-en/api/i2c.html)，先初始化，需要地址，查阅SHT30手册，地址是由ADDR这个引脚电平决定，我这个模块悬空，就是
-Start writing code, first find the interface description [i2c-I2C Operation-LuatOS Document](https://openluat.github.io/luatos-wiki-en/api/i2c.html), initialize first, need the address, refer to SHT30 manual, the address is determined by the pin level of ADDR, my module is suspended, that is
-开始写代码，先找接口说明[i2c - I2C操作 - LuatOS 文档](https://wiki.luatos.com/api/i2c.html)，先初始化，需要地址，查阅SHT30手册，地址是由ADDR这个引脚电平决定，我这个模块悬空，就是
-Start writing code, first find the interface description [i2c-I2C Operation-LuatOS Document](https://wiki.luatos.com/api/i2c.html), initialize first, need the address, refer to SHT30 manual, the address is determined by the pin level of ADDR, my module is suspended, that is
-看看效果
-Look at the effect.
-看一下效果，这按键就比用画线做出来的好看多了
-Look at the effect, this button is much better than the one made by drawing lines.
-可是这样我们就满足了吗？不！我们要把flash变成文件系统的一部分直接通过lua原生接口读写。根据API的说明我们可以找到sfud.mount()这个函数，通过他就可以直接挂载到文件系统了，mount很像linux的操作，有没有。
-But is that enough for us? No! We want to turn flash into a part of the file system and read and write directly through the native lua interface. According to the API's instructions, we can find the function sfud.mount(), through which we can directly mount to the file system. mount is very similar to linux's operation, is there any.
-老规矩查找Air103/W806的文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)可知PA0的引脚标号为
-As usual, looking for Air103/W806 documents [LuatOS documents](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) shows that the pin number of PA0 is
-老规矩查找Air103/W806的文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)可知PA0的引脚标号为
-As usual, looking for Air103/W806 documents [LuatOS documents](https://wiki.luatos.com/boardGuide/Air103.html) shows that the pin number of PA0 is
-老规矩先看查文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)研究一下怎么接线，只需前两个引脚必须用这个表的解法，后面的可以随便接，我推荐按我的接
-As usual, first look at the document [LuatOS Document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) to study how to connect the wires. Only the first two pins must use the solution of this table. The latter can be connected casually. I recommend press my connection.
-老规矩先看查文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)研究一下怎么接线，只需前两个引脚必须用这个表的解法，后面的可以随便接，我推荐按我的接
-As usual, first look at the document [LuatOS Document](https://wiki.luatos.com/boardGuide/Air103.html) to study how to connect the wires. Only the first two pins must use the solution of this table. The latter can be connected casually. I recommend press my connection.
-类的脚本，可以前往[LuatOS官方仓库](https://gitee.com/openLuat/LuatOS)，在`/demo`文件夹可以找到
-The script of the class can be found in the `/demo` folder by going to [LuatOS Official Warehouse](https://gitee.com/openLuat/LuatOS).
-例子是100ms，按需求改
-The example is 100ms, changed according to demand
-脉冲宽度调制) 是一种对模拟信号电平进行数字编码的方法，通过不同频率的脉冲使用方波的占空比用来对一个具体模拟信号的电平进行编码，使输出端得到一系列幅值相等的脉冲，用这些脉冲来代替所需要波形的设备。
-Pulse width modulation) is a method of digitally encoding the level of an analog signal. The duty cycle of a square wave is used to encode the level of a specific analog signal through pulses of different frequencies, so that a series of pulses of equal amplitude are obtained at the output, and these pulses are used to replace the required waveform.
 模块上的ADC0脚-PA1, 0~2.4v,不要超过范围使用
 ADC0 pin on the module-PA1, 0~2.4v, do not exceed the range of use
 模拟数字转换器即A/D转换器，或简称ADC，通常是指一个将模拟信号转变为数字信号的电子元件。通常的模数转换器是将一个输入电压信号转换为一个输出的数字信号。W806芯片具有两路16位ADC，最高采样率
 An analog-to-digital converter, or ADC for short, usually refers to an electronic component that converts an analog signal into a digital signal. A typical analog-to-digital converter converts an input voltage signal to an output digital signal. W806 chip has two 16-bit ADC, the highest sampling rate
-拼接所有收到的数据
-Splice all received data
-频率1000hz, 占空比
-Frequency 1000hz, duty cycle
-然后接收数据，根据手册的公式计算实际温湿度。
-Then receive the data and calculate the actual temperature and humidity according to the formula in the manual.
-如果还没反应，可以试试点击`重启串口
-If there is no response, you can try clicking` restart serial port
-如果没有打开串口，点击`打开串口`即可查看日志
-If the serial port is not opened, click "Open Serial Port" to view the log
-如果芯片当前已经烧录的固件版本，和这里选择的固件相同，那么可以点击`下载脚本`只下载脚本；反之，建议点击`下载底层和脚本`，进行全刷。
-If the firmware version currently burned by the chip is the same as the firmware selected here, you can click "Download Script" to download only the script. On the contrary, it is recommended to click "Download Bottom Layer and Script" to perform a full brush.
-如果只想编译自定义功能的固件可以直接使用的[在线云编译](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html)生成自定义固件。无需任何环境安装，可以自定义选择各种功能。
-If you only want to compile custom function firmware you can directly use [Online Cloud Compilation](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html) to generate custom firmware. Without any environment installation, you can customize the selection of various functions.
-如果只想编译自定义功能的固件可以直接使用的[在线云编译](https://wiki.luatos.com/develop/compile/Cloud_compilation.html)生成自定义固件。无需任何环境安装，可以自定义选择各种功能。
-If you only want to compile custom function firmware you can directly use [Online Cloud Compilation](https://wiki.luatos.com/develop/compile/Cloud_compilation.html) to generate custom firmware. Without any environment installation, you can customize the selection of various functions.
-软件使用
-Software usage
-上一章我们学会了用sfud这个接口直接挂载flash，可是spi就俩数据线有点慢，而且flash容量有限。这时候就想到更高速率的SDIO接口了，SDIO接口设计之初就是为了读写SD卡，后来被拓展很多高速通信中也借用这个接口。
-In the last chapter, we learned to mount flash directly with sfud, but spi is a bit slow on the two data lines and flash capacity is limited. At this time, I thought of a higher-speed SDIO interface. The SDIO interface was designed to read and write SD cards at the beginning. Later, it was also used in many high-speed communications.
-上一章我们学会了用SPI读取外置flash的ID，实际通常外挂的spi flash的读写指令都是兼容的，我们在日常使用的过程中如果直接使用spi通过指令对flash进行读写会很麻烦，于是乎LuatOS就设计了一套接口，将外置的spi flash通过这套接口实现抽象读写，并对接Lua的io实现简单读写。
-In the last chapter, we learned to use SPI to read the ID of external flash. In fact, the read and write instructions of external spi flash are compatible. In the process of daily use, it will be very troublesome if we directly use spi to read and write flash through instructions. As a result, LuatOS has designed a set of interfaces to realize abstract read and write of external spi flash through this set of interfaces and realize simple read and write of Lua io.
-上一章学了LCD的库，可以顺利的画点画线显示汉字了，可是想把界面做好看，这些简单的接口还是不能满足需求。于是乎就出现了很多图形库，LuatOS集成了LVGL图形库，可以利用大量控件写出美观的界面。
-In the last chapter, I learned the LCD library and can smoothly draw dots and lines to display Chinese characters. However, if I want to see the interface well, these simple interfaces still cannot meet the requirements. As a result, there are many graphics libraries, LuatOS integrated LVGL graphics library, you can use a large number of controls to write a beautiful interface.
+波特率
+Baud rate
+注意打印会影响运行速度，调试完注释掉
+Note that printing will affect the running speed, and comment out after debugging.
+测试
+Test
+温度
+Temperature
+点击`下载固件`按钮，选中刚刚下载的soc文件，直接下载即可，因为w806开发板的串口芯片rts脚没有连接到芯片复位引脚，所以点击下载后需要手动按板子上的rst按键重启。如果按特别说明涨价改过，就无需手动复位。
+Click the "Download Firmware" button, select the soc file just downloaded, and download it directly. Because the rts pin of the serial chip of the w806 development board is not connected to the chip reset pin, you need to manually press the rst key on the board to restart after clicking the download. If the price increase is changed according to the special instructions, there is no need to reset it manually.
+点击`项目管理测试`按钮，点击左下角的`创建项目`新建一个新项目
+Click the `Project Management Test` button and click `Create Project` in the bottom left corner to create a new project
 烧录
 Burn
 烧录，测试一下。按下boot键再松开，日志可以看的正常触发中断
 Burn, test it. Press the boot key and then release it, the log can see the normal trigger interrupt.
 烧录，观察日志
 Burn, observe the log
-烧录查看结果，都11月份了，W806让我的板子在这个冬季不再寒冷
-Burn to check the results, it's November, W806 makes my board no longer cold this winter.
-烧录查看效果
-Burn to view the effect
 烧录固件
 Burn Firmware
-烧录脚本
-Burn Script
-烧录看看结果
-Burn and see the results.
-烧录看效果
-Burn to see the effect
+烧录查看效果
+Burn to view the effect
+烧录查看结果，都11月份了，W806让我的板子在这个冬季不再寒冷
+Burn to check the results, it's November, W806 makes my board no longer cold this winter.
 烧录看一下效果
 Burn to see the effect
-时间设置
-Time Settings
-实时时钟(开发中
-Real-time clock (under development
-实时时钟可以提供精确的实时时间，它可以用于产生年、月、日、时、分、秒等信息。目前实时时钟芯片大多采用精度较高的晶体振荡器作为时钟源。有些时钟芯片为了在主电源掉电时还可以工作，会外加电池供电，使时间信息一直保持有效
-Real-time clock can provide accurate real-time time, it can be used to produce years, months, days, hours, minutes, seconds and other information. At present, most real-time clock chips use a crystal oscillator with high precision as the clock source. Some clock chips will add battery power to keep the time information valid in order to work when the main power supply is down.
-是串行外设接口（Serial Peripheral Interface）的缩写，是一种高速的，全双工，同步的通信总线，设备分为主机和从机，目前W806的SPI仅能作为主机使用。
-Serial Peripheral Interface (Serial Peripheral Interface) is an abbreviation, is a high-speed, full-duplex, synchronous communication bus, the device is divided into master and slave, the current SPI W806 can only be used as a host.
-是什么
-What is it?
-是一款QFN56 封装，6mm x 6mm 大小的mcu. 本芯片与合宙Air103可互换
-It is a QFN56 package, 6mm x 6mm mcu. This chip is interchangeable with the combined Air103.
-适配LuaTask，提供极为友好的
-Adapts to the LuaTask and provides extremely friendly
-首先还是查文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)查阅文档可知PA1为SCL引脚，PA4为SDA引脚。我们将传感器按照这个定义连到板子上。
-First of all, check the document [LuatOS document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) and see the document that PA1 is SCL pin and PA4 is SDA pin. We attach the sensor to the board according to this definition.
-首先还是查文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)查阅文档可知PA1为SCL引脚，PA4为SDA引脚。我们将传感器按照这个定义连到板子上。
-First of all, check the document [LuatOS document](https://wiki.luatos.com/boardGuide/Air103.html) and see the document that PA1 is SCL pin and PA4 is SDA pin. We attach the sensor to the board according to this definition.
-首先下载最新版本的Luatools：[点我下载
-First download the latest version of the Luatools:[click me to download
+烧录看效果
+Burn to see the effect
+烧录看看结果
+Burn and see the results.
+烧录脚本
+Burn Script
+然后接收数据，根据手册的公式计算实际温湿度。
+Then receive the data and calculate the actual temperature and humidity according to the formula in the manual.
+特别说明
+Special Notes
+由于W806的开发板复位引脚没有连接串口芯片的rts，因此需要手动复位下载，开发的时候比较麻烦。可以如下图所示，将串口芯片的rts脚飞线接到芯片的复位引脚，下载软件就可以自动复位芯片了。
+Since the reset pin of W806 development board is not connected to rts of serial port chip, manual reset and download are required, which is troublesome during development. As shown in the figure below, connect the rts pin flying wire of the serial port chip to the reset pin of the chip, and download the software to automatically reset the chip.
+电压,最新代码才支持
+Voltage, only the latest code is supported
+的输入输出我们就学习完成了。
+The input and output of we have completed our study.
+直接上挂载的部分，除了前两句，剩下的全是原生接口，和sfud一样，挂载完直接使用，完整代码在demo的sdio文件夹
+For the part that is directly mounted, except for the first two sentences, the rest is all native interfaces. Like sfud, it is directly used after mounting. The complete code is in demo's sdio folder.
+看一下效果，这按键就比用画线做出来的好看多了
+Look at the effect, this button is much better than the one made by drawing lines.
+看看效果
+Look at the effect.
+知道地址了，接下来看一下怎么测量温度，手册说连续测量需要发命令0x2C06，参照LuatOS的接口，直接i2c.send()就完事
+Knowing the address, let's look at how to measure the temperature. The manual says that continuous measurement requires the command 0x2C06. Refer to the interface of LuatOS and direct i2c.send()
+硬件准备
+Hardware preparation
+硬件定时器(开发中
+hardware timer (in development
+硬件看门狗，安全保护
+Hardware watchdog, security protection
+等待进度条走完固件就下载成功了
+Wait for the progress bar to finish and the firmware will be downloaded successfully.
+等待采集
+Waiting for acquisition
+简介
+Introduction
+简洁的日志功能
+Simple log function
+管脚控制功能(映射表后面有提供
+Pin control function (provided after the mapping table
+类的脚本，可以前往[LuatOS官方仓库](https://gitee.com/openLuat/LuatOS)，在`/demo`文件夹可以找到
+The script of the class can be found in the `/demo` folder by going to [LuatOS Official Warehouse](https://gitee.com/openLuat/LuatOS).
+编译固件
+Compile Firmware
+老规矩先看查文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)研究一下怎么接线，只需前两个引脚必须用这个表的解法，后面的可以随便接，我推荐按我的接
+As usual, first look at the document [LuatOS Document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) to study how to connect the wires. Only the first two pins must use the solution of this table. The latter can be connected casually. I recommend press my connection.
+老规矩先看查文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)研究一下怎么接线，只需前两个引脚必须用这个表的解法，后面的可以随便接，我推荐按我的接
+As usual, first look at the document [LuatOS Document](https://wiki.luatos.com/boardGuide/Air103.html) to study how to connect the wires. Only the first two pins must use the solution of this table. The latter can be connected casually. I recommend press my connection.
+老规矩先看查文档[LuatOS 文档](https://wiki.luatos.org/boardGuide/Air103.html)研究一下怎么接线，只需前两个引脚必须用这个表的解法，后面的可以随便接，我推荐按我的接
+As usual, first look at the document [LuatOS Document](https://wiki.luatos.org/boardGuide/Air103.html) to study how to connect the wires. Only the first two pins must use the solution of this table. The latter can be connected casually. I recommend press my connection.
+老规矩查找Air103/W806的文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)可知PA0的引脚标号为
+As usual, looking for Air103/W806 documents [LuatOS documents](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) shows that the pin number of PA0 is
+老规矩查找Air103/W806的文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)可知PA0的引脚标号为
+As usual, looking for Air103/W806 documents [LuatOS documents](https://wiki.luatos.com/boardGuide/Air103.html) shows that the pin number of PA0 is
+老规矩查找Air103/W806的文档[LuatOS 文档](https://wiki.luatos.org/boardGuide/Air103.html)可知PA0的引脚标号为
+As usual, looking for Air103/W806 documents [LuatOS documents](https://wiki.luatos.org/boardGuide/Air103.html) shows that the pin number of PA0 is
+脉冲宽度调制) 是一种对模拟信号电平进行数字编码的方法，通过不同频率的脉冲使用方波的占空比用来对一个具体模拟信号的电平进行编码，使输出端得到一系列幅值相等的脉冲，用这些脉冲来代替所需要波形的设备。
+Pulse width modulation) is a method of digitally encoding the level of an analog signal. The duty cycle of a square wave is used to encode the level of a specific analog signal through pulses of different frequencies, so that a series of pulses of equal amplitude are obtained at the output, and these pulses are used to replace the required waveform.
+获取RTC时间
+Get RTC Time
+要做到串口数据回环首先要学习如何接收串口数据，接口里面的uart.on(id, event, func)注册串口事件回调，就是中断回调方式接收，收到以后再通过uart.write接口发出来就好了，理论分析完成，上代码
+In order to do serial port data loopback, we must first learn how to receive serial port data. uart.on(id, event, func) in the interface registers serial port event callback, which is to interrupt callback reception. after receiving it, we will send it out through uart.write interface. theoretical analysis is completed and the code is uploaded.
+读取数据采集结果
+Read data acquisition results
+软件使用
+Software usage
+输入-按键
+Input-Key
 输出-点灯
 Output-lighting
 输出控制上一节学会了，趁热打铁学一下输入
 I learned output control in the previous section. I'll learn input while the iron is hot.
 输出模式
 Output mode
-输入-按键
-Input-Key
-数据位
-data bit
-特别说明
-Special Notes
-停止位
-Stop bit
-通常驱动屏幕是一件很复杂的事情，因为LCD屏幕有很多指令，显示数据还要制作字库。LuatOS将LCD进行了封装，内置了多种常用的屏幕驱动，不在列表的也可以通过Lua脚本配置指令进行驱动。使用虚拟显存的思想，将硬件驱动和图像绘制抽离，使用更简单方便。
-Usually driving the screen is a very complicated thing, because the LCD screen has a lot of instructions, display data and make a font. LuatOS encapsulates the LCD and has a variety of commonly used screen drivers built in. If it is not in the list, it can also be driven by Lua script configuration instructions. Using the idea of virtual video memory, the hardware driver and image drawing are extracted, which is more simple and convenient to use.
-通过SDIO硬件接口读写TF卡
-Read and write TF card through SDIO hardware interface
-通用异步收发传输器，UART 作为异步串口通信协议的一种，工作原理是将传输数据的每个字符一位接一位地传输。是在应用程序开发过程中使用频率最高的数据总线。
-Universal asynchronous transceiver, UART as a kind of asynchronous serial communication protocol, the working principle is to transmit each character of the data one by one. Is the most frequently used data bus in the application development process.
-外接表显PA1电压2.092V，实测ADC有一定误差，建议之作阈值检测之类的用。
-The external display PA1 voltage is 2.092V, and the measured ADC has certain errors. It is recommended to use it for threshold detection.
-外置
-External
-完成编译固件以后，我相信大家已经获得了.soc后缀的固件文件，下面介绍如何把固件烧录进设备。
-After compiling the firmware, I believe you have obtained the firmware file with the. soc suffix. Here is how to burn the firmware into the device.
-完全符合预期，可以直接通过文件系统操作flash，是不是很方便。
-Fully in line with expectations, can directly operate flash through the file system, is not very convenient.
-完整代码在demo的sfud文件夹
-Complete code in demo sfud folder
-为它提供哪些功能
-What functions are provided for it
-温度
-Temperature
-文件系统大小112KB，格式
-File system size 112KB, format
-我们参照[API手册](https://openluat.github.io/luatos-wiki-en/api/spi.html)先初始化SPI，创建一个SPI对象
-We refer to [API Manual](https://openluat.github.io/luatos-wiki-en/api/spi.html) to initialize SPI first and create an SPI object
-我们参照[API手册](https://wiki.luatos.com/api/spi.html)先初始化SPI，创建一个SPI对象
-We refer to [API Manual](https://wiki.luatos.com/api/spi.html) to initialize SPI first and create an SPI object
-我们查找Air103/W806的文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)可知PB0的引脚标号为
-We look up the document of Air103/W806 [LuatOS document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) and know that the pin number of PB0 is
-我们查找Air103/W806的文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)可知PB0的引脚标号为
-We look up the document of Air103/W806 [LuatOS document](https://wiki.luatos.com/boardGuide/Air103.html) and know that the pin number of PB0 is
-我们给PA1脚接可调电源（一定注意电压不要超过
-We connect the PA1 pin with an adjustable power supply (be sure to pay attention to the voltage not exceeding
-我们挂载到文件系统后，新建一个文件写入1000字节数据，然后读一下文件大小，再把文件内容读出来。
-After we mount it to the file system, create a new file and write 1000 bytes of data, then read the file size, and then read the contents of the file.
-我用的flash是W25Q128，根据手册可以查到有一个读flash的型号的通用命令0x9F，正常的话W25Q128应该会返回
-The flash I use is W25Q128. According to the manual, there is a general command 0x9F for reading flash models. If normal, the W25Q128 should return
-下载查看效果，收到不定长数据后回环输出。
-Download the viewing effect and loop back the output after receiving the indefinite length data.
-下载到设备，可以看到日志中打印的值是EF4018符合手册说明，SPI通信正常
-Downloaded to the device, you can see that the value printed in the log is EF4018 in accordance with the manual instructions, SPI communication is normal
-先测试一下能不能正常连接设备，烧录。查看日志可以看到sfud的库在初始化的时候自动帮我们获取了flash的厂商、大小等信息，我们通过sfud.write()和read()接口读写也都正常。
-First test whether the equipment can be connected normally and burn. Looking at the log, we can see that sfud's library automatically helped us obtain flash's manufacturer, size and other information during initialization. We also read and write normally through sfud.write() and read() interfaces.
-先看查文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)研究一下怎么接线
-First look at the document [LuatOS document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) and study how to connect the wires.
-先看查文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)研究一下怎么接线
-First look at the document [LuatOS document](https://wiki.luatos.com/boardGuide/Air103.html) and study how to connect the wires.
-先找引脚图研究怎么接线，查文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)查阅文档可知W806芯片有两组硬件SPI，我们选择使用SPI0，也就是PB2接CLK，PB5接MOSI，PB3接MISO，PB4接CS。接下来研究如何驱动。
-First look for the pin diagram to study how to connect, check the document [LuatOS document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) to see that W806 chip has two sets of hardware SPI, we choose to use SPI0, that is, PB2 to CLK,PB5 to MOSI,PB3 to MISO,PB4 to CS. Next, study how to drive.
-先找引脚图研究怎么接线，查文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)查阅文档可知W806芯片有两组硬件SPI，我们选择使用SPI0，也就是PB2接CLK，PB5接MOSI，PB3接MISO，PB4接CS。接下来研究如何驱动。
-First look for the pin diagram to study how to connect, check the document [LuatOS document](https://wiki.luatos.com/boardGuide/Air103.html) to see that W806 chip has two sets of hardware SPI, we choose to use SPI0, that is, PB2 to CLK,PB5 to MOSI,PB3 to MISO,PB4 to CS. Next, study how to drive.
-想自己编译教程参考[源码编译教程](https://openluat.github.io/luatos-wiki-en/develop/compile/Air101.html)按照Air103的方式进行编译
-I want to compile my own tutorial reference [source code compilation tutorial](https://openluat.github.io/luatos-wiki-en/develop/compile/Air101.html) to compile according to Air103
-想自己编译教程参考[源码编译教程](https://wiki.luatos.com/develop/compile/Air101.html)按照Air103的方式进行编译
-I want to compile my own tutorial reference [source code compilation tutorial](https://wiki.luatos.com/develop/compile/Air101.html) to compile according to Air103
-向串口发送收到的字符串
-Send the received string to the serial port
-像C语言一样操作内存字节数组，高效可靠
-Operate memory byte arrays like C language, efficient and reliable
-选好芯片使用的固件，选好脚本即可下载
-Select the firmware used by the chip and select the script to download it.
-选择`选项及工具`–`工具配置
-Select `Options and Tools`-`Tool Configurations
-延迟
-Delay
-要做到串口数据回环首先要学习如何接收串口数据，接口里面的uart.on(id, event, func)注册串口事件回调，就是中断回调方式接收，收到以后再通过uart.write接口发出来就好了，理论分析完成，上代码
-In order to do serial port data loopback, we must first learn how to receive serial port data. uart.on(id, event, func) in the interface registers serial port event callback, which is to interrupt callback reception. after receiving it, we will send it out through uart.write interface. theoretical analysis is completed and the code is uploaded.
-一闪一闪亮晶晶，GPIO输出搞定
-Twinkle, twinkle, gpio output done
-一样的套路，先看原理图，RESET按键别想了一按就复位，那就选BOOT了，也就是
-The same routine, first look at the schematic diagram, RESET button don't want to reset once pressed, then choose BOOT, that is
-硬件定时器(开发中
-hardware timer (in development
-硬件看门狗，安全保护
-Hardware watchdog, security protection
-硬件准备
-Hardware preparation
-由于W806的开发板复位引脚没有连接串口芯片的rts，因此需要手动复位下载，开发的时候比较麻烦。可以如下图所示，将串口芯片的rts脚飞线接到芯片的复位引脚，下载软件就可以自动复位芯片了。
-Since the reset pin of W806 development board is not connected to rts of serial port chip, manual reset and download are required, which is troublesome during development. As shown in the figure below, connect the rts pin flying wire of the serial port chip to the reset pin of the chip, and download the software to automatically reset the chip.
-在`uart`选项卡，设置波特率为921600，然后重启软件。
-On the `uart` tab, set the baud rate to 921600 and restart the software.
-在这里处理接收到的数据，这是例子
-Processing the received data here, this is the example
+这一章我们将学习如何驱动LCD屏幕，并在屏幕上显示汉字和图形
+In this chapter, we will learn how to drive the LCD screen and display Chinese characters and graphics on the screen.
 这次我们先找文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)可以看到除了可以读取外接的IO电压之外，还以读取内部的温度和供电电压。我们这次选取ADC0，也就是PA1引脚。
 This time we first look for the document [LuatOS document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) to see that in addition to reading the external IO voltage, we can also read the internal temperature and power supply voltage. This time we choose ADC0, which is the PA1 pin.
 这次我们先找文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)可以看到除了可以读取外接的IO电压之外，还以读取内部的温度和供电电压。我们这次选取ADC0，也就是PA1引脚。
 This time we first look for the document [LuatOS document](https://wiki.luatos.com/boardGuide/Air103.html) to see that in addition to reading the external IO voltage, we can also read the internal temperature and power supply voltage. This time we choose ADC0, which is the PA1 pin.
-这里是湿度", h / 100) -- 打印湿度
-Here is humidity ", h / 100) -print humidity
+这次我们先找文档[LuatOS 文档](https://wiki.luatos.org/boardGuide/Air103.html)可以看到除了可以读取外接的IO电压之外，还以读取内部的温度和供电电压。我们这次选取ADC0，也就是PA1引脚。
+This time we first look for the document [LuatOS document](https://wiki.luatos.org/boardGuide/Air103.html) to see that in addition to reading the external IO voltage, we can also read the internal temperature and power supply voltage. This time we choose ADC0, which is the PA1 pin.
 这里是温度", t / 100) -- 打印温度
 Here is the temperature ", t / 100) -print temperature
-这一章我们将学习如何驱动LCD屏幕，并在屏幕上显示汉字和图形
-In this chapter, we will learn how to drive the LCD screen and display Chinese characters and graphics on the screen.
-整体代码如下，完整代码见demo目录的SPI文件夹
-The overall code is as follows. For the complete code, see the SPI folder in the demo directory.
-支持多款彩色SPI屏
-Support multiple color SPI screen
-支持多款墨水屏
-Support a variety of ink screen
-支持全部LVGL原生组件和动画效果，并内嵌中文字体
-Supports all LVGL native components and animation effects, and embedded Chinese fonts
-支持外挂psram，最大
-Support plug-in PSRAM, maximum
-知道地址了，接下来看一下怎么测量温度，手册说连续测量需要发命令0x2C06，参照LuatOS的接口，直接i2c.send()就完事
-Knowing the address, let's look at how to measure the temperature. The manual says that continuous measurement requires the command 0x2C06. Refer to the interface of LuatOS and direct i2c.send()
-直接上挂载的部分，除了前两句，剩下的全是原生接口，和sfud一样，挂载完直接使用，完整代码在demo的sdio文件夹
-For the part that is directly mounted, except for the first two sentences, the rest is all native interfaces. Like sfud, it is directly used after mounting. The complete code is in demo's sdio folder.
-主频调节，最低可到2M(需调低uart波特率
-Main frequency adjustment, minimum to 2M (need to reduce uart baud rate
-注意打印会影响运行速度，调试完注释掉
-Note that printing will affect the running speed, and comment out after debugging.
-总线是 PHILIPS 公司开发的一种半双工、双向二线制同步串行总线。I2C 总线传输数据时只需两根信号线，一根是双向数据线 SDA（serial data），另一根是双向时钟线
-The bus is a half-duplex, bidirectional two-wire synchronous serial bus developed by PHILIPS. The I2C bus only needs two signal lines to transmit data, one is a bidirectional data line SDA(serial data), and the other is a bidirectional clock line
-总线master功能，并自带多种温湿度传感器驱动
-Bus master function, and comes with a variety of temperature and humidity sensor driver
+这里是湿度", h / 100) -- 打印湿度
+Here is humidity ", h / 100) -print humidity
+适配LuaTask，提供极为友好的
+Adapts to the LuaTask and provides extremely friendly
+选好芯片使用的固件，选好脚本即可下载
+Select the firmware used by the chip and select the script to download it.
+选择`选项及工具`–`工具配置
+Select `Options and Tools`-`Tool Configurations
+通常驱动屏幕是一件很复杂的事情，因为LCD屏幕有很多指令，显示数据还要制作字库。LuatOS将LCD进行了封装，内置了多种常用的屏幕驱动，不在列表的也可以通过Lua脚本配置指令进行驱动。使用虚拟显存的思想，将硬件驱动和图像绘制抽离，使用更简单方便。
+Usually driving the screen is a very complicated thing, because the LCD screen has a lot of instructions, display data and make a font. LuatOS encapsulates the LCD and has a variety of commonly used screen drivers built in. If it is not in the list, it can also be driven by Lua script configuration instructions. Using the idea of virtual video memory, the hardware driver and image drawing are extracted, which is more simple and convenient to use.
+通用异步收发传输器，UART 作为异步串口通信协议的一种，工作原理是将传输数据的每个字符一位接一位地传输。是在应用程序开发过程中使用频率最高的数据总线。
+Universal asynchronous transceiver, UART as a kind of asynchronous serial communication protocol, the working principle is to transmit each character of the data one by one. Is the most frequently used data bus in the application development process.
+通过SDIO硬件接口读写TF卡
+Read and write TF card through SDIO hardware interface
+频率1000hz, 占空比
+Frequency 1000hz, duty cycle
+首先下载最新版本的Luatools：[点我下载
+First download the latest version of the Luatools:[click me to download
+首先还是查文档[LuatOS 文档](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html)查阅文档可知PA1为SCL引脚，PA4为SDA引脚。我们将传感器按照这个定义连到板子上。
+First of all, check the document [LuatOS document](https://openluat.github.io/luatos-wiki-en/boardGuide/Air103.html) and see the document that PA1 is SCL pin and PA4 is SDA pin. We attach the sensor to the board according to this definition.
+首先还是查文档[LuatOS 文档](https://wiki.luatos.com/boardGuide/Air103.html)查阅文档可知PA1为SCL引脚，PA4为SDA引脚。我们将传感器按照这个定义连到板子上。
+First of all, check the document [LuatOS document](https://wiki.luatos.com/boardGuide/Air103.html) and see the document that PA1 is SCL pin and PA4 is SDA pin. We attach the sensor to the board according to this definition.
+首先还是查文档[LuatOS 文档](https://wiki.luatos.org/boardGuide/Air103.html)查阅文档可知PA1为SCL引脚，PA4为SDA引脚。我们将传感器按照这个定义连到板子上。
+First of all, check the document [LuatOS document](https://wiki.luatos.org/boardGuide/Air103.html) and see the document that PA1 is SCL pin and PA4 is SDA pin. We attach the sensor to the board according to this definition.

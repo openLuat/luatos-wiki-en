@@ -8,5 +8,5 @@ board
 hardware
 Air001-MDK
 Air001-Arduino
-Air001_PCB <https://openluat.github.io/luatos-wiki-en/_static/bom/Air001.html>
+Air001_PCB <https://wiki.luatos.org/_static/bom/Air001.html>
 ```

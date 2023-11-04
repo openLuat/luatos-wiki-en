@@ -10,7 +10,7 @@ IOT Power Is a fully functional, stable and reliable small hand-held power meter
 - The maximum voltage is 5V and the maximum current is 2A (the power supply needs to meet the requirements）
 - Short circuit protection, short circuit automatically limit the current to 1.5A or less
 - Current **Multi-channel synchronous sampling**, no shift delay, highest resolution 0.05μA
-- High precision, small error, details can be found in [technical indicators](https://openluat.github.io/luatos-wiki-en/iotpower/pro/tech.html), welcome to verify
+- High precision, small error, details can be found in [technical indicators](https://wiki.luatos.org/iotpower/pro/tech.html), welcome to verify
 - Up to **10KHz sampling rate** to meet the power consumption test requirements of cellular modules, Bluetooth, WIFI, etc.
 - You can **connect a PC client** to view and analyze the current waveform, or use the command line version to capture serial port data (such as strawberry pie) on any device (win/linux/mac) and use the pc client to import and view
 

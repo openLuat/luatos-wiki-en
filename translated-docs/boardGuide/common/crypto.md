@@ -12,7 +12,7 @@ Air101 A development board
 
 ## Software usage
 
-Interface documentation can be referred to:[crypto library](https://openluat.github.io/luatos-wiki-en/api/crypto.html)
+Interface documentation can be referred to:[crypto library](https://wiki.luatos.org/api/crypto.html)
 
 ```lua
 -- MD5,The output result has been hex encoded

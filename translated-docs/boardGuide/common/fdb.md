@@ -12,7 +12,7 @@ Any LuatOS-SOC development board
 
 ## Software part
 
-Interface documentation can be found at:[fdb library](https://openluat.github.io/luatos-wiki-en/api/fdb.html)
+Interface documentation can be found at:[fdb library](https://wiki.luatos.org/api/fdb.html)
 
 Initialize the fdb database before using the fdb library
 

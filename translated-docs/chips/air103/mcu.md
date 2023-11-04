@@ -12,7 +12,7 @@ For information about **Air32F103** series chips, please select**air32f103**
 
 ## Brush machine burning tutorial
 
-[Serial Burn Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html)
+[Serial Burn Tutorial](https://wiki.luatos.org/boardGuide/flash.html)
 
 **Note: Please set the baud rate 921600**
 

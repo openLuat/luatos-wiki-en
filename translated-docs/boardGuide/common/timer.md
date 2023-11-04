@@ -12,7 +12,7 @@ Any LuatOS-SOC development board
 
 ## Software part
 
-Interface documentation can be referred to:[timer library](https://openluat.github.io/luatos-wiki-en/api/timer.html)
+Interface documentation can be referred to:[timer library](https://wiki.luatos.org/api/timer.html)
 
 ### hard blocking
 

@@ -1,56 +1,58 @@
+与其他USB表不同，测量输出端电压电流，更反映设备实际功耗
+Different from other USB meters, the voltage and current at the output terminal are measured to reflect the actual power consumption of the device.
+了解更多
+Learn more
+列举设备的各项参数与性能指标
+List the parameters and performance indicators of the equipment
+前往淘宝购买
+Go to Taobao to buy
+可**连接PC客户端**查看与分析电流波形，也可使用命令行版本在任意设备(win/linux/mac)上抓取串口数据（如树莓派），使用pc客户端导入查看
+You can **connect a PC client** to view and analyze the current waveform, or use the command line version to capture serial port data (such as strawberry pie) on any device (win/linux/mac) and use the pc client to import and view
+外壳资料开放，[开源外壳地址
+Shell data is open, [open source shell address
+展示CC与被测试设备的连接方式、外壳拼装说明
+Show the connection mode of CC and the tested equipment and the shell assembly instructions.
 彩蛋模式开源控制端
 Egg mode open source control terminal
-操作说明
-Operating Instructions
+微信商城购买
+WeChat Mall Purchase
 成本公开
 cost disclosure
 成本公开**（往下面拉就有），良心诚意之作，诚招有更优惠价格的供应商供货
 Cost disclosure * * (pull down to have), conscientious and sincere work, sincerely recruit suppliers with more favorable prices
-此处价格均为批量含税价，如有更低的供货价格，提供品质一致的产品，请联系我们
-Prices here are batch prices including tax. If you have a lower supply price and provide products of consistent quality, please contact us.
-电流**多通道同步采样**，无换挡延迟，最高分辨率
-Current **Multi-channel synchronous sampling**, no shift delay, highest resolution
-电压最大24V，电流最大
-Maximum voltage 24V, maximum current
-高达**10KHz采样速率**，满足蜂窝模组、蓝牙、WIFI等的功耗测试需求
-Up to **10KHz sampling rate** to meet the power consumption test requirements of cellular modules, Bluetooth, WIFI, etc.
-更多资料
-More information
 技术指标
 Technical indicators
+操作说明
+Operating Instructions
+是一款功能齐全，稳定可靠的小型手持式高精度功率计，它可以
+Is a fully functional, stable and reliable small handheld high-precision power meter, it can
+是广大用户随身携带的理想测试工具。
+Is the majority of users carry the ideal test tool.
+更多资料
+More information
+此处价格均为批量含税价，如有更低的供货价格，提供品质一致的产品，请联系我们
+Prices here are batch prices including tax. If you have a lower supply price and provide products of consistent quality, please contact us.
+电压最大24V，电流最大
+Maximum voltage 24V, maximum current
+电流**多通道同步采样**，无换挡延迟，最高分辨率
+Current **Multi-channel synchronous sampling**, no shift delay, highest resolution
 精度对比
 Accuracy comparison
 精度高，误差小，详情可查阅[技术指标](https://openluat.github.io/luatos-wiki-en/iotpower/cc/tech.html)，欢迎验证
 High precision, small error, details can be found in [technical indicators](https://openluat.github.io/luatos-wiki-en/iotpower/cc/tech.html), welcome to verify
 精度高，误差小，详情可查阅[技术指标](https://wiki.luatos.com/iotpower/cc/tech.html)，欢迎验证
 High precision, small error, details can be found in [technical indicators](https://wiki.luatos.com/iotpower/cc/tech.html), welcome to verify
-可**连接PC客户端**查看与分析电流波形，也可使用命令行版本在任意设备(win/linux/mac)上抓取串口数据（如树莓派），使用pc客户端导入查看
-You can **connect a PC client** to view and analyze the current waveform, or use the command line version to capture serial port data (such as strawberry pie) on any device (win/linux/mac) and use the pc client to import and view
-了解更多
-Learn more
+精度高，误差小，详情可查阅[技术指标](https://wiki.luatos.org/iotpower/cc/tech.html)，欢迎验证
+High precision, small error, details can be found in [technical indicators](https://wiki.luatos.org/iotpower/cc/tech.html), welcome to verify
+详细描述设备各个功能的用法
+Describe the usage of each function of the device in detail
+请选择左侧的具体页面查看各项资料。
+Please select the specific page on the left to view the information.
 连接**PD快充**充电器（支持PPS），诱骗指定的电压与电流输出
 Connect **PD fast charge** charger (support PPS), decoy the specified voltage and current output
 连接与组装
 Connection and assembly
-列举设备的各项参数与性能指标
-List the parameters and performance indicators of the equipment
-前往淘宝购买
-Go to Taobao to buy
-请选择左侧的具体页面查看各项资料。
-Please select the specific page on the left to view the information.
-是广大用户随身携带的理想测试工具。
-Is the majority of users carry the ideal test tool.
-是一款功能齐全，稳定可靠的小型手持式高精度功率计，它可以
-Is a fully functional, stable and reliable small handheld high-precision power meter, it can
 通过USB C供电，测量低功耗设备的电压与电流
 Measure voltage and current of low-power devices via USB C power supply
-外壳资料开放，[开源外壳地址
-Shell data is open, [open source shell address
-微信商城购买
-WeChat Mall Purchase
-详细描述设备各个功能的用法
-Describe the usage of each function of the device in detail
-与其他USB表不同，测量输出端电压电流，更反映设备实际功耗
-Different from other USB meters, the voltage and current at the output terminal are measured to reflect the actual power consumption of the device.
-展示CC与被测试设备的连接方式、外壳拼装说明
-Show the connection mode of CC and the tested equipment and the shell assembly instructions.
+高达**10KHz采样速率**，满足蜂窝模组、蓝牙、WIFI等的功耗测试需求
+Up to **10KHz sampling rate** to meet the power consumption test requirements of cellular modules, Bluetooth, WIFI, etc.

@@ -7,5 +7,5 @@ mcu
 board
 hardware
 swm181
-SWM181_PCB <https://openluat.github.io/luatos-wiki-en/_static/bom/SWM181.html>
+SWM181_PCB <https://wiki.luatos.org/_static/bom/SWM181.html>
 ```

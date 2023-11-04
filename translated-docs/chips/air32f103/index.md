@@ -10,6 +10,6 @@ Air32f103
 switchFromSxx
 enhancement
 daplink
-Air32F103_PCB <https://openluat.github.io/luatos-wiki-en/_static/bom/Air32F103.html>
-BluePill_PCB <https://openluat.github.io/luatos-wiki-en/_static/bom/BluePill.html>
+Air32F103_PCB <https://wiki.luatos.org/_static/bom/Air32F103.html>
+BluePill_PCB <https://wiki.luatos.org/_static/bom/BluePill.html>
 ```

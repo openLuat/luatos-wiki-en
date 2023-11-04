@@ -12,7 +12,7 @@ Any LuatOS-SOC development board
 
 ## Software part
 
-Interface documentation can be referred to:[log library](https://openluat.github.io/luatos-wiki-en/api/log.html)
+Interface documentation can be referred to:[log library](https://wiki.luatos.org/api/log.html)
 
 ### Log Output
 

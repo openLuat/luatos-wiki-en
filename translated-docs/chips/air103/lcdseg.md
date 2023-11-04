@@ -44,4 +44,4 @@
 
 ## API Call Demo
 
-API For an introduction, see [lcdseg-Segment lcd](https://openluat.github.io/luatos-wiki-en/api/lcdseg.html)
+API For an introduction, see [lcdseg-Segment lcd](https://wiki.luatos.org/api/lcdseg.html)

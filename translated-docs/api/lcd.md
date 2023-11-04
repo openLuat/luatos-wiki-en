@@ -562,7 +562,7 @@ None
 -- Set to font, valid for subsequent drawStr, be sure to set before calling LCD. drawStr
 
 -- If "only font pointer is allow" is prompted, it means that the current firmware does not contain the corresponding font and can be customized free of charge by using the cloud compilation service.
--- Cloud Compilation Document: https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html
+-- Cloud Compilation Document: https://wiki.luatos.org/develop/compile/Cloud_compilation.html
 
 -- lcd The default fonts for the library all start with LCD. font_
 lcd.setFont(lcd.font_opposansm12)

@@ -8,21 +8,21 @@
 | Total Flash | 2M | 1M | 4M | 4M | 1M/2M | 512k External Flash | External Flash|
 | Total Ram                                                 | 288k    | 288k   | 640k  | 256k   | 288k    | 64k+8M|400k|
 | Kernel                                                  | xt804   | xt804  | m4f   | m3     | m3      | m33    |risc-v|
-| [uart](https://openluat.github.io/luatos-wiki-en/api/uart.html)         | 5(4)    | 6(5)   | 4(3)  | 3(1)   | 3(2)    | 4(3)      |2|
-| [gpio](https://openluat.github.io/luatos-wiki-en/api/gpio.html)         | 18      | 44     | 56    | 20     | 16      | 74      |15|
-| [i2c](https://openluat.github.io/luatos-wiki-en/api/i2c.html)           | 1       | 1      | 1     | 1      | 1       | 2      |1|
-| [spi](https://openluat.github.io/luatos-wiki-en/api/spi.html)           | 1       | 1      | 4     | 1      | 1       | 2      |1|
-| [adc](https://openluat.github.io/luatos-wiki-en/api/adc.html)           | 2       | 4      | 5     | 2      | 2       | 19      |6|
-| [dac](https://openluat.github.io/luatos-wiki-en/api/dac.html)           | ✖      | ✖      | 1     | ✖      | ✖      | 1      |✖|
-| [usb](https://openluat.github.io/luatos-wiki-en/api/usb.html)           | ✖      | ✖      | 1     | ✖      | ✖      | 1      |1|
-| [keyboard](https://openluat.github.io/luatos-wiki-en/api/keyboard.html) | ✖      | ✖      | 1     | ✖      | ✖      | ✖      |✖|
-| [lcdseg](https://openluat.github.io/luatos-wiki-en/api/lcdseg.html)     | ✖      | 4*31    | ✖     | ✖     | ✖      | ✖      |✖|
-| [otp](https://openluat.github.io/luatos-wiki-en/api/otp.html)           | 1       | 1      | 1      | ✖     | ✖       | ✖      |✖|
-| [rtc](https://openluat.github.io/luatos-wiki-en/api/rtc.html)           | 1       | 1      | 1      | 1     | 1        | 1      |1|
-| [pwm](https://openluat.github.io/luatos-wiki-en/api/pwm.html)           | 5       | 5      | 5      | 4      | 5       | 20(18)      |4|
-| [sdio](https://openluat.github.io/luatos-wiki-en/api/sdio.html)         | 1       | 1      | ✖      | ✖     | ✖      | 1      |✖|
-| [硬狗](https://openluat.github.io/luatos-wiki-en/api/wdt.html)          | 1       | 1     | 1      | ✖     | 1      | 1      |1|
-| [硬件加速](https://openluat.github.io/luatos-wiki-en/api/crypto.html)   |md5/sha1 |md5/sha1| md5/sha| ✖    |md5/sha1| jpeg   |md5/sha1|
+| [uart](https://wiki.luatos.org/api/uart.html)         | 5(4)    | 6(5)   | 4(3)  | 3(1)   | 3(2)    | 4(3)      |2|
+| [gpio](https://wiki.luatos.org/api/gpio.html)         | 18      | 44     | 56    | 20     | 16      | 74      |15|
+| [i2c](https://wiki.luatos.org/api/i2c.html)           | 1       | 1      | 1     | 1      | 1       | 2      |1|
+| [spi](https://wiki.luatos.org/api/spi.html)           | 1       | 1      | 4     | 1      | 1       | 2      |1|
+| [adc](https://wiki.luatos.org/api/adc.html)           | 2       | 4      | 5     | 2      | 2       | 19      |6|
+| [dac](https://wiki.luatos.org/api/dac.html)           | ✖      | ✖      | 1     | ✖      | ✖      | 1      |✖|
+| [usb](https://wiki.luatos.org/api/usb.html)           | ✖      | ✖      | 1     | ✖      | ✖      | 1      |1|
+| [keyboard](https://wiki.luatos.org/api/keyboard.html) | ✖      | ✖      | 1     | ✖      | ✖      | ✖      |✖|
+| [lcdseg](https://wiki.luatos.org/api/lcdseg.html)     | ✖      | 4*31    | ✖     | ✖     | ✖      | ✖      |✖|
+| [otp](https://wiki.luatos.org/api/otp.html)           | 1       | 1      | 1      | ✖     | ✖       | ✖      |✖|
+| [rtc](https://wiki.luatos.org/api/rtc.html)           | 1       | 1      | 1      | 1     | 1        | 1      |1|
+| [pwm](https://wiki.luatos.org/api/pwm.html)           | 5       | 5      | 5      | 4      | 5       | 20(18)      |4|
+| [sdio](https://wiki.luatos.org/api/sdio.html)         | 1       | 1      | ✖      | ✖     | ✖      | 1      |✖|
+| [硬狗](https://wiki.luatos.org/api/wdt.html)          | 1       | 1     | 1      | ✖     | 1      | 1      |1|
+| [硬件加速](https://wiki.luatos.org/api/crypto.html)   |md5/sha1 |md5/sha1| md5/sha| ✖    |md5/sha1| jpeg   |md5/sha1|
 | Hardware Timer                                            | 5       | 5      | 8(6)      | 2      | 5      | 15(13)     |4|
 | 2d加速                                                | ✖      | ✖      | ✖     |  ✖     | ✖      | 1      |✖|
 | 摄像头                                                | ✖      | ✖      | 1      |  ✖     | ✖      | ✖      |✖|

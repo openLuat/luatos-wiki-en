@@ -12,7 +12,7 @@ Air101 A development board
 
 ## Software usage
 
-Interface documentation can be referred to:[pm library](https://openluat.github.io/luatos-wiki-en/api/pm.html)
+Interface documentation can be referred to:[pm library](https://wiki.luatos.org/api/pm.html)
 
 Code display
 

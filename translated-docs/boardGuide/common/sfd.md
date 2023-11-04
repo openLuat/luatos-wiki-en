@@ -12,7 +12,7 @@ Air101 A development board, a plug-in spi flash
 
 ## Software usage
 
-Interface documentation can be found in:[sfd library](https://openluat.github.io/luatos-wiki-en/api/sfd.html)
+Interface documentation can be found in:[sfd library](https://wiki.luatos.org/api/sfd.html)
 
 Code display
 

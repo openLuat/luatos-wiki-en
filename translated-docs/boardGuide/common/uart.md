@@ -22,7 +22,7 @@ Note that the TTL level is 3.3V, which cannot be directly connected to RS232/RS4
 
 ## Software usage
 
-Interface documentation can be found in:[uart library](https://openluat.github.io/luatos-wiki-en/api/uart.html)
+Interface documentation can be found in:[uart library](https://wiki.luatos.org/api/uart.html)
 
 Code Introduction
 

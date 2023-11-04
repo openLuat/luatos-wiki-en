@@ -109,6 +109,6 @@ You can see that the code is very simple, first initialize LCD, then initialize 
 
 [LuatOS-SoC Warehouse](https://gitee.com/openLuat/LuatOS)
 
-[LuatOS-SoC WIKI](https://openluat.github.io/luatos-wiki-en/index.html)
+[LuatOS-SoC WIKI](https://wiki.luatos.org/index.html)
 
 [bsp-Air101](https://gitee.com/openLuat/LuatOS/tree/master/bsp/air101)

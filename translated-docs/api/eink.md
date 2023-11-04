@@ -83,7 +83,7 @@ eink Display initialization
 
 |Incoming Value Type | Explanation|
 |-|-|
-|number|eink types, currently supported：https://openluat.github.io/luatos-wiki-en/api/eink.html#id1|
+|number|eink types, currently supported：https://wiki.luatos.org/api/eink.html#id1|
 |table|Additional parameters, related to specific devices:<br>pin_busy(busy)<br>port:spi port, such as 0,1,2... if it is device mode, it is "device"<br>pin_dc:eink data/command selection pin <br>pin_rst:eink reset pin|
 |userdata|spi Device, valid when port = "device"|
 

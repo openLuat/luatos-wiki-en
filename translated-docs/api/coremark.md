@@ -28,7 +28,7 @@ None
 ```lua
 -- In most cases, this library will not be included in the official version of the firmware.
 -- If you need to use it, you can refer to the wiki document to compile it yourself or use cloud compilation.
--- https://openluat.github.io/luatos-wiki-en/develop/compile.html
+-- https://wiki.luatos.org/develop/compile.html
 
 -- The main.lua running score should remove the hard dog code to prevent restart.
 -- If the device supports automatic hibernation, the hibernation function should be turned off.

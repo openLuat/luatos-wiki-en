@@ -1,27 +1,29 @@
-按键按下时，芯片复位         | 低电平有效
-When the key is pressed, the chip reset | active low
-按键按下时，芯片进入下载模式 | 低电平有效
-When the key is pressed, the chip enters download mode | active low
-按键编号** | **管脚功能**                 | **描述
-Key Number **|** Pin Function **|** Description
-按键介绍
-Key introduction
-编号 | **对应GPIO** | **管脚功能** | **描述
-Number | **Corresponds to GPIO** | **Pin function** | **Description
-表
-Table
+一、产品描述
+1. Product Description
+三、管脚定义
+3. Pin Definition
 串口烧录教程](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html)，**日志波特率为
 Serial Burning Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html),**Log baud rate is
 串口烧录教程](https://wiki.luatos.com/boardGuide/flash.html)，**日志波特率为
 Serial Burning Tutorial](https://wiki.luatos.com/boardGuide/flash.html),**Log baud rate is
-第一批ESP32S3核心板，由于FLASH热胀冷缩，会有小概率导致到手后虚焊。（出厂前均会烧录固件，烧录成功后才会出厂，猜测是这个原因
-The first batch of ESP32S3 core boards, due to FLASH thermal expansion and cold contraction, will have a small probability of causing virtual welding after hand. (Firmware will be burned before leaving the factory, and will not leave the factory until it is successfully burned. This is the reason
-调试过程中优先推荐的供电方式：TYPE-C USB接口供电。
-Power supply mode to be recommend preferentially during debugging: power supply TYPE-C USB interface.
+串口烧录教程](https://wiki.luatos.org/boardGuide/flash.html)，**日志波特率为
+Serial Burning Tutorial](https://wiki.luatos.org/boardGuide/flash.html),**Log baud rate is
+主机接口，具有 2 个卡槽
+Host interface with 2 card slots
 二、硬件资源
 2. hardware resources
+任意GPIO均可作为PWM脚, 编号与GPIO一致, 但`同时只能开启8路PWM`,务必注意
+Any GPIO can be used as a PWM pin, and the number is the same as that of GPIO, but only 8 PWMs can be turned on at the same time. Attention must be paid
+位 ~16 位摄像头接口
+Bit to 16 bit camera interface
+位 LX7 双核处理器，五级流水线架构，主频高达240M。内置512K SRAM，本次发布型号和封
+Bit LX7 dual-core processor, five-stage pipeline architecture, frequency up to 240M. Built-in 512K SRAM, this release model and seal
+位 SAR ADC，多达 20 个通道
+Bit SAR ADC, up to 20 channels
 供电电源
 Power supply
+全速
+Full Speed
 合宙CORE ESP32S3核心板板载2颗LED，开发者可参考表4-1进行对应管脚的控制。
 The CORE ESP32S3 core board carries 2 LEDs. Developers can refer to Table 4-1 for control of corresponding pins.
 合宙CORE ESP32S3核心板板载两颗按键，其中BOOT键可实现BOOT下载功能，RST键可实现复位功能，管脚控制参考表
@@ -30,61 +32,61 @@ The CORE ESP32S3 core board carries two keys, of which BOOT key can realize BOOT
 and GND pin supply
 和GND排针供电
 and GND pin supply
-核心板是基于乐鑫ESP32-S3进行设计的一款核心板，尺寸仅有21mm*51mm，板边采用邮票孔设计，方便开发者在不同场景下的使用。核心板板载2.4G天线，支持wifi和蓝牙。核心板内置8MB psram，16MB flash豪华配置。板载ch343p USB转串口芯片，方便下载烧录；同时还设计了模拟开关电路，可一键切换到S3内置的USB，进行USB功能的开发调试。核心板支持UART、GPIO、SPI、I2C、ADC、PWM，SDIO，Camera等接口，可根据实际需要连接外设进行调试。
-The core board is a core board designed based on Lexin ESP32-S3, with a size of only 21mm * 51mm. The board edge is designed with stamp holes, which is convenient for developers to use in different scenes. Core board onboard 2.4G antenna, support wifi and bluetooth. Core board built-in 8MB psram,16MB flash luxury configuration. Onboard ch343p USB to serial port chip, easy to download and burn; At the same time, an analog switch circuit is designed, which can be switched to S3 built-in USB with one key to develop and debug USB functions. The core board supports UART, GPIO, SPI, I2C, ADC, PWM,SDIO,Camera and other interfaces, and can be connected to peripherals for debugging according to actual needs.
-核心板支持以下3种方式供电
-The core board supports the following 3 ways of power supply
-接口（8 位 ~16 位并行 RGB, I8080, MOTO6800）, 支持 RGB565, YUV422, YUV420, YUV411 之间互相转换
-Interface (8-bit ~ 16-bit parallel RGB, I8080, MOTO6800), supports conversion between RGB565, YUV422, YUV420, YUV411
-接口供电（默认
-Interface power supply (default
+四、功能介绍
+4. function introduction
+如若到手后板子`默认的闪灯程序`无法运行，且**无法烧录固件（卡在FLASH下载那一步）**，可尝试补焊**FLASH处的焊盘**（加锡
+If the` default flashing light program` on the back board cannot run and **cannot burn firmware (stuck in the step of FLASH download)**, try to repair and solder the pad at * * FLASH * (tin added
 开发板
 Development Board
 开源仓库链接
 Open Source Warehouse Link
+所以到手后请先usb口上电检查一遍，确认无问题后再进行焊接排针操作。
+Therefore, please check the usb port with power on after you get it, and then carry out the welding needle arrangement operation after confirming that there is no problem.
+按键介绍
+Key introduction
+按键按下时，芯片复位         | 低电平有效
+When the key is pressed, the chip reset | active low
+按键按下时，芯片进入下载模式 | 低电平有效
+When the key is pressed, the chip enters download mode | active low
+按键编号** | **管脚功能**                 | **描述
+Key Number **|** Pin Function **|** Description
+接口（8 位 ~16 位并行 RGB, I8080, MOTO6800）, 支持 RGB565, YUV422, YUV420, YUV411 之间互相转换
+Interface (8-bit ~ 16-bit parallel RGB, I8080, MOTO6800), supports conversion between RGB565, YUV422, YUV420, YUV411
+接口供电（默认
+Interface power supply (default
 控制
 Control
 控制器
 Controller
 控制器，兼容 ISO 11898-1（CAN 规范
 controller, compatible with ISO 11898-1(CAN specification
-链接
-Link
-脉冲计数器 – LED PWM 控制器，多达 8 个通道
-Pulse Counter-LED PWM Controller, Up to 8 Channels
-配置   | 高电平有效
-Configuration | Active High
-全速
-Full Speed
-任意GPIO均可作为PWM脚, 编号与GPIO一致, 但`同时只能开启8路PWM`,务必注意
-Any GPIO can be used as a PWM pin, and the number is the same as that of GPIO, but only 8 PWMs can be turned on at the same time. Attention must be paid
-如若到手后板子`默认的闪灯程序`无法运行，且**无法烧录固件（卡在FLASH下载那一步）**，可尝试补焊**FLASH处的焊盘**（加锡
-If the` default flashing light program` on the back board cannot run and **cannot burn firmware (stuck in the step of FLASH download)**, try to repair and solder the pad at * * FLASH * (tin added
-三、管脚定义
-3. Pin Definition
-四、功能介绍
-4. function introduction
-所以到手后请先usb口上电检查一遍，确认无问题后再进行焊接排针操作。
-Therefore, please check the usb port with power on after you get it, and then carry out the welding needle arrangement operation after confirming that there is no problem.
+核心板支持以下3种方式供电
+The core board supports the following 3 ways of power supply
+核心板是基于乐鑫ESP32-S3进行设计的一款核心板，尺寸仅有21mm*51mm，板边采用邮票孔设计，方便开发者在不同场景下的使用。核心板板载2.4G天线，支持wifi和蓝牙。核心板内置8MB psram，16MB flash豪华配置。板载ch343p USB转串口芯片，方便下载烧录；同时还设计了模拟开关电路，可一键切换到S3内置的USB，进行USB功能的开发调试。核心板支持UART、GPIO、SPI、I2C、ADC、PWM，SDIO，Camera等接口，可根据实际需要连接外设进行调试。
+The core board is a core board designed based on Lexin ESP32-S3, with a size of only 21mm * 51mm. The board edge is designed with stamp holes, which is convenient for developers to use in different scenes. Core board onboard 2.4G antenna, support wifi and bluetooth. Core board built-in 8MB psram,16MB flash luxury configuration. Onboard ch343p USB to serial port chip, easy to download and burn; At the same time, an analog switch circuit is designed, which can be switched to S3 built-in USB with one key to develop and debug USB functions. The core board supports UART, GPIO, SPI, I2C, ADC, PWM,SDIO,Camera and other interfaces, and can be connected to peripherals for debugging according to actual needs.
+注意，由于**win7**系统不自带`winusb`驱动，且该系统早在2020年微软就已停止支持，所以如需使用`USB下载`，请升级至**win8以上系统**，或前往[乐鑫原厂手册](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html)安装驱动
+Note that since **win7** system does not have a` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to` USB download`, please upgrade to **win8 or above system * *, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver
 特别注意
 Special attention
+相关资料链接
+Related Information Links
+第一批ESP32S3核心板，由于FLASH热胀冷缩，会有小概率导致到手后虚焊。（出厂前均会烧录固件，烧录成功后才会出厂，猜测是这个原因
+The first batch of ESP32S3 core boards, due to FLASH thermal expansion and cold contraction, will have a small probability of causing virtual welding after hand. (Firmware will be burned before leaving the factory, and will not leave the factory until it is successfully burned. This is the reason
+编号 | **对应GPIO** | **管脚功能** | **描述
+Number | **Corresponds to GPIO** | **Pin function** | **Description
+脉冲计数器 – LED PWM 控制器，多达 8 个通道
+Pulse Counter-LED PWM Controller, Up to 8 Channels
+表
+Table
+调试过程中优先推荐的供电方式：TYPE-C USB接口供电。
+Power supply mode to be recommend preferentially during debugging: power supply TYPE-C USB interface.
+通用 DMA 控制器 (简称 GDMA)，5 个接收通 道和 5 个发送通道
+General purpose DMA controller (GDMA),5 receive channels and 5 transmit channels
 通过USB下载（USB直连）可以直接烧录，Win8及以上系统无需安装驱动。可以正常使用Luatools烧录，但是无法使用LuatIDE。除烧录时需要选择带`USB`字样的固件，*GPIO19/20会被占用为USB脚*, 应避免使用, 其他功能没有任何区别。
 Through USB download (USB direct connection) can be directly burned, Win8 and above systems do not need to install drivers. Luatools burning can be used normally, but LuatIDE cannot be used. In addition to the need to select the firmware with` USB` when burning, * GPIO19/20 will be occupied as USB pin *, should be avoided, other functions have no difference.
 通过USB转串口烧录一定要安装CH343的驱动才能正常下载固件，默认的CDC驱动只能打印日志，但是速率太慢会导致下载失败。[驱动传送门
 The driver of CH343 must be installed to download firmware normally when burning through USB to serial port. The default CDC driver can only print logs, but the download fails if the speed is too slow. [Drive portal
-通用 DMA 控制器 (简称 GDMA)，5 个接收通 道和 5 个发送通道
-General purpose DMA controller (GDMA),5 receive channels and 5 transmit channels
-位 ~16 位摄像头接口
-Bit to 16 bit camera interface
-位 LX7 双核处理器，五级流水线架构，主频高达240M。内置512K SRAM，本次发布型号和封
-Bit LX7 dual-core processor, five-stage pipeline architecture, frequency up to 240M. Built-in 512K SRAM, this release model and seal
-位 SAR ADC，多达 20 个通道
-Bit SAR ADC, up to 20 channels
-相关资料链接
-Related Information Links
-一、产品描述
-1. Product Description
-主机接口，具有 2 个卡槽
-Host interface with 2 card slots
-注意，由于**win7**系统不自带`winusb`驱动，且该系统早在2020年微软就已停止支持，所以如需使用`USB下载`，请升级至**win8以上系统**，或前往[乐鑫原厂手册](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html)安装驱动
-Note that since **win7** system does not have a` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to` USB download`, please upgrade to **win8 or above system * *, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver
+配置   | 高电平有效
+Configuration | Active High
+链接
+Link

@@ -10,7 +10,7 @@ Please confirm the following information before using this document:
 
 1. You "probably don`t need" this document, which is an advanced document for self-expansion of firmware.
 2. The firmware package we provide contains [compiled firmware](https://gitee.com/openLuat/LuatOS/releases)
-3. If you just want to add your existing libraries to the firmware, you can use our [Online Cloud Compilation](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html) to generate custom firmware.
+3. If you just want to add your existing libraries to the firmware, you can use our [Online Cloud Compilation](https://wiki.luatos.org/develop/compile/Cloud_compilation.html) to generate custom firmware.
 4. If you are looking for application-oriented documents such as machine brushing/compiling lua scripts, then this document is` not what you need` to view.
 
 Video tutorial link: [Station B drinks porridge every day](https://www.bilibili.com/video/BV1D3411p7MK?p=1)

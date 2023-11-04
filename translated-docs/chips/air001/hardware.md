@@ -8,4 +8,4 @@
 
 ![air001_hw](img/air001_hw.jpg)
 
-[PCB Layout](https://openluat.github.io/luatos-wiki-en/_static/bom/Air001.html)
+[PCB Layout](https://wiki.luatos.org/_static/bom/Air001.html)

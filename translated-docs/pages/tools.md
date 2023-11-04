@@ -14,7 +14,7 @@
 
 [Air The underlying firmware function optional compilation system](https://doc.openluat.com/article/2728)
 
-[SoC Cloud compilation](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html) support Air101/Air103/Air105/ESP32 series/Air780E series
+[SoC Cloud compilation](https://wiki.luatos.org/develop/compile/Cloud_compilation.html) support Air101/Air103/Air105/ESP32 series/Air780E series
 
 [Base station/Wi-Fi positioning](https://doc.openluat.com/wiki/21?wiki_page_id=1957)
 

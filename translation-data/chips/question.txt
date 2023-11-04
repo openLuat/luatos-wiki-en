@@ -1,101 +1,189 @@
-板子背面预留的u4是干嘛的
-What is u4 reserved on the back of the board?
-波特率需设置为
-The baud rate needs to be set
-不带
-without
+上面SPI屏有没有跑通过
+Did the SPI screen above run through
+下载不成功
+Download unsuccessful
+下载要确保luatools安装路径、项目路径、固件路径不要出现中文\空格\特殊符号
+Download to ensure that the luatools installation path, project path, firmware path does not appear Chinese \space \special symbols
+不一样
+Not the same
 不会
 No.
 不可以
 No.
-不一样
-Not the same
-不支持，要外挂
-Not supported, to plug-in
+不带
+without
 不支持，只有1个ADC控制器
 Not supported, only 1 ADC controller
-常见问题列表
-FAQ List
-寸TFT LCD 240X320 GC9306 SPI串口屏
-Inch TFT LCD 240X320 GC9306 SPI serial port screen
-大佬们有air101的资料吗，我看社区好像还没有
-Do the bosses have air101 information? I don't think the community seems to have it yet.
-单片机模块，有支持TTS语音的吗
-SCM module, is there any support for TTS voice
-的寄存器手册和W800寄存器一样吗
-Is the register manual the same as the W800 register?
-的屏幕显示白边
-The screen displays the white edge
-的lpmem库用不了
-The lpmem library is not used.
-的PWM的最高频率是多少
-What is the maximum frequency of the PWM
-高低温下偏差比较大，不建议省，12M的晶振误差是
-The deviation is relatively large at high and low temperatures, so it is not recommended to save. The crystal oscillator error of 12M is
-共5路串口，其中串口0被用于下载和调试，可用4路。
-A total of 5 serial ports, of which serial port 0 is used for downloading and debugging, and 4 channels are available.
-勾选串口打印，选择对应串口，波特率设置位
-Check serial port printing, select the corresponding serial port, baud rate setting bit
-还不能，当前是640x480，DCIM接口
-Not yet, currently 640x 480,DCIM interface
-合宙只提供LuatOS支持，其他资料直接看乐鑫原厂
-Hizhou only provides LuatOS support, and other information can be directly seen from Lexin's original factory.
-和105支持多线程的吧
-And 105 support multi-threading
+不支持，要外挂
+Not supported, to plug-in
+为什么我修改了gpio的例程，烧录进去后，指示灯也是和原来的一样，没有变化，单独下载脚本不行
+Why did I modify the gpio routine? After burning it in, the indicator light is the same as the original one. There is no change. It is not possible to download the script alone.
 会
 Will
-或者10x系列会开放寄存器手册吗
-Or will the 10x series open the register manual?
-极限是26M , 最高=主频
-The limit is 26M, the highest = main frequency
-接10Mbps、100Mbps都可以，看外挂的spi以太网转换芯片的能力，支持以太网的固件还在开发，最大速率还没法给出答复，不过跑到几Mbps没问题，满足一般的以太网iot应用够了
-It can be connected to 10Mbps or 100Mbps, depending on the capability of the external spi Ethernet conversion chip, the firmware supporting Ethernet is still under development, and the maximum speed cannot be answered yet, but it is no problem to run to a few Mbps, which is enough to meet the general Ethernet iot application.
-开发板的I2C的ID是几
-What is the ID of I2C of the development board
-开发板可以读SD卡吗
-Can the development board read SD card?
-开发板内部12M的晶振误差是多少，如果用UART或者USB是不是必须接外部晶振
-What is the 12M crystal oscillator error inside the development board, and if UART or USB is used, is it necessary to connect an external crystal oscillator?
-开发板能接最大多少兆网口
-How many megabytes of network ports can the development board connect?
-开发板送的摄像头是什么型号，多少像素的
-What model and how many pixels is the camera sent by the development board?
-开发版的蓝牙天线可以引出来吗
-Can the development version of the Bluetooth antenna be introduced
-看demo用的是
-See demo is used
-可接，LCD扩展板和1.8寸显示屏吗
-Can you connect, LCD expansion board and 1.8 inch display screen
+做fft之类的算法 效率会不会很低
+Will it be very inefficient to do algorithms like fft?
+像素
+Pixel
+共5路串口，其中串口0被用于下载和调试，可用4路。
+A total of 5 serial ports, of which serial port 0 is used for downloading and debugging, and 4 channels are available.
+内部做进去了，有这个功能，没有外部管脚
+It has been done internally. With this function, there is no external pin.
+最高支持多少像素的摄像头，摄像头接口是什么类型的？支持usb的摄像头吗
+How many pixels of the camera is supported, and what type of camera interface is it? Does the camera support usb
+最高频率下gpio软件翻转速度多少
+What is the turnover speed of gpio software under the highest frequency?
+刷101点灯代码 , 没效果，灯不亮
+Brush 101 lighting code, no effect, the light is not on
+刷了刚刚发的固件 ,打印乱码
+Brush the firmware just sent, print garbled code
+勾选串口打印，选择对应串口，波特率设置位
+Check serial port printing, select the corresponding serial port, baud rate setting bit
+单片机模块，有支持TTS语音的吗
+SCM module, is there any support for TTS voice
 可以
 Yes
 可以，[statem - SM状态机](https://openluat.github.io/luatos-wiki-en/api/statem.html "statem - SM状态机
 Yes, [statem-SM state machine](https://openluat.github.io/luatos-wiki-en/api/statem.html "statem-SM state machine
 可以，[statem - SM状态机](https://wiki.luatos.com/api/statem.html "statem - SM状态机
 Yes, [statem-SM state machine](https://wiki.luatos.com/api/statem.html "statem-SM state machine
+可以，[statem - SM状态机](https://wiki.luatos.org/api/statem.html "statem - SM状态机
+Yes, [statem-SM state machine](https://wiki.luatos.org/api/statem.html "statem-SM state machine
+可以外挂spi接口的无线设备吗
+Can I plug in wireless devices with spi interface?
+可以实现us的延时吗
+Can the delay of us be realized
+可以模拟鼠标和键盘的吗
+Can you simulate the mouse and keyboard?
+可以用keil开发吗
+Can it be developed with keil?
+可以用在工业场合不，能驱动步进电机吗，带can口和多定期器
+Can it be used in industrial occasions? No, can it drive stepping motor, with can port and multi-periodic
 可以获取到芯片的uuid吗
 Can I get the uuid of the chip?
 可以解压soc看看
 Can decompress soc to see
-可以模拟鼠标和键盘的吗
-Can you simulate the mouse and keyboard?
-可以实现us的延时吗
-Can the delay of us be realized
-可以外挂spi接口的无线设备吗
-Can I plug in wireless devices with spi interface?
-可以用在工业场合不，能驱动步进电机吗，带can口和多定期器
-Can it be used in industrial occasions? No, can it drive stepping motor, with can port and multi-periodic
-可以用keil开发吗
-Can it be developed with keil?
+可接，LCD扩展板和1.8寸显示屏吗
+Can you connect, LCD expansion board and 1.8 inch display screen
+合宙只提供LuatOS支持，其他资料直接看乐鑫原厂
+Hizhou only provides LuatOS support, and other information can be directly seen from Lexin's original factory.
+和105支持多线程的吧
+And 105 support multi-threading
+因为103开发板那三个灯的GPIO和101开发板的三个灯的GPIO不一样,103是 40，41，42 三个
+Because the GPIO of the three lamps of the 103 development board is different from that of the three lamps of the 101 development board, the 103 is 40,41 and 42
+在Air101里怎么使用
+How to use Air101?
+外部实时时钟晶振(RTC)的引脚有吗
+Is there a pin for the external real-time clock crystal (RTC)?
+大佬们有air101的资料吗，我看社区好像还没有
+Do the bosses have air101 information? I don't think the community seems to have it yet.
+寸TFT LCD 240X320 GC9306 SPI串口屏
+Inch TFT LCD 240X320 GC9306 SPI serial port screen
+屏幕驱动偏移设置成0就行
+Just set the screen drive offset to 0
+常见问题列表
+FAQ List
 库目前只有302有
 library currently only 302 have
-没有电机，没有can，有多个定时器
-No motor, no can, multiple timers
+开发板内部12M的晶振误差是多少，如果用UART或者USB是不是必须接外部晶振
+What is the 12M crystal oscillator error inside the development board, and if UART or USB is used, is it necessary to connect an external crystal oscillator?
+开发板可以读SD卡吗
+Can the development board read SD card?
+开发板的I2C的ID是几
+What is the ID of I2C of the development board
+开发板能接最大多少兆网口
+How many megabytes of network ports can the development board connect?
+开发板送的摄像头是什么型号，多少像素的
+What model and how many pixels is the camera sent by the development board?
+开发版的蓝牙天线可以引出来吗
+Can the development version of the Bluetooth antenna be introduced
+或者10x系列会开放寄存器手册吗
+Or will the 10x series open the register manual?
+指定位置刷指定颜色
+Specified position brush Specified color
+指定位置清屏怎么操作
+How to clear the screen at the specified position
+接10Mbps、100Mbps都可以，看外挂的spi以太网转换芯片的能力，支持以太网的固件还在开发，最大速率还没法给出答复，不过跑到几Mbps没问题，满足一般的以太网iot应用够了
+It can be connected to 10Mbps or 100Mbps, depending on the capability of the external spi Ethernet conversion chip, the firmware supporting Ethernet is still under development, and the maximum speed cannot be answered yet, but it is no problem to run to a few Mbps, which is enough to meet the general Ethernet iot application.
+支持 [sensor - 传感器操作库](https://openluat.github.io/luatos-wiki-en/api/sensor.html#sensor "sensor - 传感器操作库
+Support [sensor-sensor action library](https://openluat.github.io/luatos-wiki-en/api/sensor.html#sensor "sensor-sensor action library
+支持 [sensor - 传感器操作库](https://wiki.luatos.com/api/sensor.html#sensor "sensor - 传感器操作库
+Support [sensor-sensor action library](https://wiki.luatos.com/api/sensor.html#sensor "sensor-sensor action library
+支持 [sensor - 传感器操作库](https://wiki.luatos.org/api/sensor.html#sensor "sensor - 传感器操作库
+Support [sensor-sensor action library](https://wiki.luatos.org/api/sensor.html#sensor "sensor-sensor action library
+支持，[eink - 墨水屏操作库](https://openluat.github.io/luatos-wiki-en/api/eink.html "eink - 墨水屏操作库
+Support,[eink-ink screen operation library](https://openluat.github.io/luatos-wiki-en/api/eink.html "eink-ink screen operation library"
+支持，[eink - 墨水屏操作库](https://wiki.luatos.com/api/eink.html "eink - 墨水屏操作库
+Support,[eink-ink screen operation library](https://wiki.luatos.com/api/eink.html "eink-ink screen operation library"
+支持，[eink - 墨水屏操作库](https://wiki.luatos.org/api/eink.html "eink - 墨水屏操作库
+Support,[eink-ink screen operation library](https://wiki.luatos.org/api/eink.html "eink-ink screen operation library"
+支持can总线吗
+support can bus
+支持nvm功能吗
+support nvm function
+支持RTOS的多任务
+RTOS support for multitasking
+支持不了这么大屏幕
+Can't support such a big screen
+支持单总线吗
+Does it support single bus?
+支持双adc模式不
+support dual adc mode does not
+支持吗，提供相关资料吗
+Do you support it and provide relevant information?
+支持墨水屏
+Support ink screen
+无法用keil的debug来调试外设，没有SVD文件
+Unable to debug peripherals with keil's debug, no SVD file
+是5.3语法的，直接用就行
+It's 5.3 grammar, just use it directly.
+是不是能跑
+Can you run?
+暂时不支持101的单步调试
+Single-step debugging of 101 is temporarily not supported.
+有dsp，有硬件fft加速
+with dsp, with hardware fft acceleration
+有个示例程序camera配的哪个屏
+Which screen does camera match with a sample program
+有几路串口
+There are several serial ports
+有参考
+have reference
+有替代库 fdb [fdb - kv数据库(基于FlashDB)](https://openluat.github.io/luatos-wiki-en/api/fdb.html "fdb - kv数据库(基于
+There are alternative libraries fdb [fdb-kv database (based on FlashDB)](https://openluat.github.io/luatos-wiki-en/api/fdb.html "fdb-kv database (based on
+有替代库 fdb [fdb - kv数据库(基于FlashDB)](https://wiki.luatos.com/api/fdb.html "fdb - kv数据库(基于
+There are alternative libraries fdb [fdb-kv database (based on FlashDB)](https://wiki.luatos.com/api/fdb.html "fdb-kv database (based on
+有替代库 fdb [fdb - kv数据库(基于FlashDB)](https://wiki.luatos.org/api/fdb.html "fdb - kv数据库(基于
+There are alternative libraries fdb [fdb-kv database (based on FlashDB)](https://wiki.luatos.org/api/fdb.html "fdb-kv database (based on
+有蓝牙+大屏(4.3和7寸)的接线方式吗
+Is there a connection method for Bluetooth large screen (4.3 and 7 inches)
+极限是26M , 最高=主频
+The limit is 26M, the highest = main frequency
+板子背面预留的u4是干嘛的
+What is u4 reserved on the back of the board?
 每次初始化会清空之前保存的数据吗
 Will the previously saved data be emptied for each initialization?
-默认的固件都支持哪些功能
-What features are supported by the default firmware
-内部做进去了，有这个功能，没有外部管脚
-It has been done internally. With this function, there is no external pin.
+没有电机，没有can，有多个定时器
+No motor, no can, multiple timers
+波特率需设置为
+The baud rate needs to be set
+烧录教程](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html "烧录教程
+Burn Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html "Burn Tutorial"
+烧录教程](https://wiki.luatos.com/boardGuide/flash.html "烧录教程
+Burn Tutorial](https://wiki.luatos.com/boardGuide/flash.html "Burn Tutorial"
+烧录教程](https://wiki.luatos.org/boardGuide/flash.html "烧录教程
+Burn Tutorial](https://wiki.luatos.org/boardGuide/flash.html "Burn Tutorial"
+现在开放的csdk跑的就是
+Now the open csdk is running
+的lpmem库用不了
+The lpmem library is not used.
+的PWM的最高频率是多少
+What is the maximum frequency of the PWM
+的寄存器手册和W800寄存器一样吗
+Is the register manual the same as the W800 register?
+的屏幕显示白边
+The screen displays the white edge
+看demo用的是
+See demo is used
 能，101的8脚，103的nc脚，自行飞线
 Can, 101 8 feet, 103 nc feet, self-flying line
 能，参考DEMO修改初始化参数
@@ -104,99 +192,21 @@ Can, refer to DEMO to modify initialization parameters
 Can, through spi, slower than sdio
 能使用带触摸的ILI9341屏幕吗
 Can I use the ILI9341 screen with touch?
-屏幕驱动偏移设置成0就行
-Just set the screen drive offset to 0
-请问Air101支不支持
-Does Air101 support it?
-上面SPI屏有没有跑通过
-Did the SPI screen above run through
-烧录教程](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html "烧录教程
-Burn Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html "Burn Tutorial"
-烧录教程](https://wiki.luatos.com/boardGuide/flash.html "烧录教程
-Burn Tutorial](https://wiki.luatos.com/boardGuide/flash.html "Burn Tutorial"
 设备要安装驱动吗
 Do you want to install drivers for the equipment
-是5.3语法的，直接用就行
-It's 5.3 grammar, just use it directly.
-是不是能跑
-Can you run?
-刷101点灯代码 , 没效果，灯不亮
-Brush 101 lighting code, no effect, the light is not on
-刷了刚刚发的固件 ,打印乱码
-Brush the firmware just sent, print garbled code
-外部实时时钟晶振(RTC)的引脚有吗
-Is there a pin for the external real-time clock crystal (RTC)?
-为什么我修改了gpio的例程，烧录进去后，指示灯也是和原来的一样，没有变化，单独下载脚本不行
-Why did I modify the gpio routine? After burning it in, the indicator light is the same as the original one. There is no change. It is not possible to download the script alone.
-无法用keil的debug来调试外设，没有SVD文件
-Unable to debug peripherals with keil's debug, no SVD file
-下载不成功
-Download unsuccessful
-下载要确保luatools安装路径、项目路径、固件路径不要出现中文\空格\特殊符号
-Download to ensure that the luatools installation path, project path, firmware path does not appear Chinese \space \special symbols
-现在开放的csdk跑的就是
-Now the open csdk is running
-像素
-Pixel
-因为103开发板那三个灯的GPIO和101开发板的三个灯的GPIO不一样,103是 40，41，42 三个
-Because the GPIO of the three lamps of the 103 development board is different from that of the three lamps of the 101 development board, the 103 is 40,41 and 42
-有参考
-have reference
-有个示例程序camera配的哪个屏
-Which screen does camera match with a sample program
-有几路串口
-There are several serial ports
-有蓝牙+大屏(4.3和7寸)的接线方式吗
-Is there a connection method for Bluetooth large screen (4.3 and 7 inches)
-有替代库 fdb [fdb - kv数据库(基于FlashDB)](https://openluat.github.io/luatos-wiki-en/api/fdb.html "fdb - kv数据库(基于
-There are alternative libraries fdb [fdb-kv database (based on FlashDB)](https://openluat.github.io/luatos-wiki-en/api/fdb.html "fdb-kv database (based on
-有替代库 fdb [fdb - kv数据库(基于FlashDB)](https://wiki.luatos.com/api/fdb.html "fdb - kv数据库(基于
-There are alternative libraries fdb [fdb-kv database (based on FlashDB)](https://wiki.luatos.com/api/fdb.html "fdb-kv database (based on
-有dsp，有硬件fft加速
-with dsp, with hardware fft acceleration
-在Air101里怎么使用
-How to use Air101?
-暂时不支持101的单步调试
-Single-step debugging of 101 is temporarily not supported.
-这个颜色在哪里查呀，标准的RGB是3字节，这里颜色是2字节
-Where can I find this color? The standard RGB is 3 bytes, and the color here is 2 bytes.
-这样是不是也不行
-Is this not good either?
-支持 [sensor - 传感器操作库](https://openluat.github.io/luatos-wiki-en/api/sensor.html#sensor "sensor - 传感器操作库
-Support [sensor-sensor action library](https://openluat.github.io/luatos-wiki-en/api/sensor.html#sensor "sensor-sensor action library
-支持 [sensor - 传感器操作库](https://wiki.luatos.com/api/sensor.html#sensor "sensor - 传感器操作库
-Support [sensor-sensor action library](https://wiki.luatos.com/api/sensor.html#sensor "sensor-sensor action library
-支持，[eink - 墨水屏操作库](https://openluat.github.io/luatos-wiki-en/api/eink.html "eink - 墨水屏操作库
-Support,[eink-ink screen operation library](https://openluat.github.io/luatos-wiki-en/api/eink.html "eink-ink screen operation library"
-支持，[eink - 墨水屏操作库](https://wiki.luatos.com/api/eink.html "eink - 墨水屏操作库
-Support,[eink-ink screen operation library](https://wiki.luatos.com/api/eink.html "eink-ink screen operation library"
-支持不了这么大屏幕
-Can't support such a big screen
-支持单总线吗
-Does it support single bus?
-支持吗，提供相关资料吗
-Do you support it and provide relevant information?
-支持墨水屏
-Support ink screen
-支持双adc模式不
-support dual adc mode does not
-支持can总线吗
-support can bus
-支持nvm功能吗
-support nvm function
-支持RTOS的多任务
-RTOS support for multitasking
-指定位置清屏怎么操作
-How to clear the screen at the specified position
-指定位置刷指定颜色
-Specified position brush Specified color
+请问Air101支不支持
+Does Air101 support it?
 资料汇总(软硬件资料,固件下载,技术支持)](https://doc.openluat.com/article/3508 "Air101 资料汇总(软硬件资料,固件下载,技术支持
 Data summary (software and hardware data, firmware download, technical support)](https://doc.openluat.com/article/3508 "Air101 data summary (software and hardware data, firmware download, technical support)
 资料汇总(软硬件资料,固件下载,技术支持)](https://doc.openluat.com/article/3674 "Air103 资料汇总(软硬件资料,固件下载,技术支持
 Data Summary (Software and Hardware Data, Firmware Download, Technical Support)](https://doc.openluat.com/article/3674 "Air103 Data Summary (Software and Hardware Data, Firmware Download, Technical Support
-最高频率下gpio软件翻转速度多少
-What is the turnover speed of gpio software under the highest frequency?
-最高支持多少像素的摄像头，摄像头接口是什么类型的？支持usb的摄像头吗
-How many pixels of the camera is supported, and what type of camera interface is it? Does the camera support usb
-做fft之类的算法 效率会不会很低
-Will it be very inefficient to do algorithms like fft?
+还不能，当前是640x480，DCIM接口
+Not yet, currently 640x 480,DCIM interface
+这个颜色在哪里查呀，标准的RGB是3字节，这里颜色是2字节
+Where can I find this color? The standard RGB is 3 bytes, and the color here is 2 bytes.
+这样是不是也不行
+Is this not good either?
+高低温下偏差比较大，不建议省，12M的晶振误差是
+The deviation is relatively large at high and low temperatures, so it is not recommended to save. The crystal oscillator error of 12M is
+默认的固件都支持哪些功能
+What features are supported by the default firmware

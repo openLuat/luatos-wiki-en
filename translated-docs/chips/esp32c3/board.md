@@ -22,7 +22,7 @@ Note that since the **win7** system does not come with` winusb` driver, and Micr
 
 ## Brush machine burning tutorial
 
-[Serial Burning Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html),**Log baud rate is 921600**
+[Serial Burning Tutorial](https://wiki.luatos.org/boardGuide/flash.html),**Log baud rate is 921600**
 
 ## 1. Product Description
 

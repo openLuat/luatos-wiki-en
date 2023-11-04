@@ -8,7 +8,7 @@ LuatOS Large QQ group: 1061642968
 
 ## Brush machine burning tutorial
 
-[Serial Burn Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html)
+[Serial Burn Tutorial](https://wiki.luatos.org/boardGuide/flash.html)
 
 Latest Firmware Download: https://gitee.com/openLuat/LuatOS/releases
 

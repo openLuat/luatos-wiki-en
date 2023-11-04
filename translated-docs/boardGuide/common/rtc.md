@@ -12,7 +12,7 @@ Air101 A development board
 
 ## Software usage
 
-Interface documentation can be referred to:[rtc library](https://openluat.github.io/luatos-wiki-en/api/rtc.html)
+Interface documentation can be referred to:[rtc library](https://wiki.luatos.org/api/rtc.html)
 
 Code display
 

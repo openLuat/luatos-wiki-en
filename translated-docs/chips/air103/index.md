@@ -10,6 +10,6 @@ board
 hardware
 lcdseg
 touchkey
-Air103_PCB <https://openluat.github.io/luatos-wiki-en/_static/bom/Air103.html>
+Air103_PCB <https://wiki.luatos.org/_static/bom/Air103.html>
 power_dissipation
 ```

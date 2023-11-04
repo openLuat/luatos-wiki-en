@@ -16,7 +16,7 @@ Hardware connection diagram
 
 ## Software usage
 
-Interface documentation can be referred to:[disp library](https://openluat.github.io/luatos-wiki-en/api/disp.html)
+Interface documentation can be referred to:[disp library](https://wiki.luatos.org/api/disp.html)
 
 Code Introduction
 

@@ -62,7 +62,7 @@ void loop() {
 
 ### Compile Download
 
-Refer to <https://openluat.github.io/luatos-wiki-en/chips/air001/mcu.html#id4>'s tutorial for wiring.
+Refer to <https://wiki.luatos.org/chips/air001/mcu.html#id4>'s tutorial for wiring.
 
 Click the Upload button and wait for the test code to be compiled and uploaded
 ![](img/2023-05-08-23-29-24.png)

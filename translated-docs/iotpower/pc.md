@@ -157,7 +157,7 @@ The `.iotpl` file can be imported into the software again, and the`.exe `self-ex
 ![script](img/client3.png)
 
 This function enables automatic control of output voltage and current  
-The script uses the` Lua language` and adapts to` LuaTask` framework ([tutorial  ](https://openluat.github.io/luatos-wiki-en/luaGuide/luatask.html)）
+The script uses the` Lua language` and adapts to` LuaTask` framework ([tutorial  ](https://wiki.luatos.org/luaGuide/luatask.html)）
 For specific interface documents, please refer to [the data of this warehouse.](https://gitee.com/openLuat/iot-power)
 
 ## Force firmware upgrade

@@ -19,7 +19,7 @@ Chip contrast
 
 ## Environment Construction Tutorial
 
-[Air32F103 Manual](https://openluat.github.io/luatos-wiki-en/chips/air32f103/Air32f103.html)
+[Air32F103 Manual](https://wiki.luatos.org/chips/air32f103/Air32f103.html)
 
 [AIR32F103 SDK demo](https://gitee.com/openLuat/luatos-soc-air32f103)
 
@@ -27,11 +27,11 @@ Chip contrast
 
 **If you cannot work after replacement or have problems with CubeMX HAL library development, you must read the following manual first.**
 
-Instructions for replacing other F103 chips with Air32F103 [porting from SXX32F103 AIR32F103](https://openluat.github.io/luatos-wiki-en/chips/air32f103/switchFromSxx.html)
+Instructions for replacing other F103 chips with Air32F103 [porting from SXX32F103 AIR32F103](https://wiki.luatos.org/chips/air32f103/switchFromSxx.html)
 
 ## Enhancements
 
-The specific usage method can be seen [description of enhanced function](https://openluat.github.io/luatos-wiki-en/chips/air32f103/enhancement.html)
+The specific usage method can be seen [description of enhanced function](https://wiki.luatos.org/chips/air32f103/enhancement.html)
 
 **Enhanced GPIO design：**
 

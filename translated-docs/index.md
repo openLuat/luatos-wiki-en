@@ -56,7 +56,7 @@ Look at the functions of the chips supported by LuatOS at this stage and choose 
 ```
 
 - [Chip Data](chips/index)
-- [Lua Native API Manual](https://openluat.github.io/luatos-wiki-en/_static/lua53doc/index.html)
+- [Lua Native API Manual](https://wiki.luatos.org/_static/lua53doc/index.html)
 - [Simulator](pages/emulator)
 - [Development Board Purchase](https://luat.taobao.com)
 - [B Station video tutorial](https://space.bilibili.com/532832)
@@ -101,19 +101,19 @@ We are adapting more MCU and wireless chip modules, welcome you to join^_^
         border-bottom-right-radius: 5px;
     }
 </style>
-<div class="chatlink">
+<div class="chatlink" id="chatlink">
     <button onclick="window.open('https://chat.openluat.com')">The document was not resolved, the forum sent a post.！</button><p/>
 </div>
 <script>
 if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
-  $(".chatlink").css("display","none");
+  document.getElementById('chatlink').style.cssText = "display: none";
 }
 </script>
 
 ```{toctree}
 :hidden:
 :caption: 💁 LuatOS Introduction
-🏠️ Home Page <https://openluat.github.io/luatos-wiki-en>
+🏠️ Home Page <https://wiki.luatos.org>
 pages/emulator
 pages/tools
 pages/supports
@@ -134,7 +134,7 @@ Firmware Download <https://gitee.com/openLuat/LuatOS/releases>
 :caption: 📖 Reference Manual
 api/index
 api/sys_pub
-🌕 Native API Manual <https://openluat.github.io/luatos-wiki-en/_static/lua53doc/index.html>
+🌕 Native API Manual <https://wiki.luatos.org/_static/lua53doc/index.html>
 api/libs/index
 ```
 

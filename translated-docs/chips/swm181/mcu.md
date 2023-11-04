@@ -54,7 +54,7 @@ For details, please refer to the data sheet, [huaxin micro SWM181 data sheet V2.
 
 SDK Compressed package[SWM181_Lib-211013.rar](https://cdn.openluat-luatcommunity.openluat.com/attachment/20220721163704765_SWM181_Lib-211013.rar)
 
-[SWM81 Manual](https://openluat.github.io/luatos-wiki-en/chips/swm181/swm181.html)
+[SWM81 Manual](https://wiki.luatos.org/chips/swm181/swm181.html)
 
 ## Module Purchase
 

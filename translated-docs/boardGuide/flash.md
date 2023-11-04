@@ -198,7 +198,7 @@ The official version can be downloaded from the release page.：
 
 You can also use the official **cloud compilation** function to customize the modules included in the firmware.
 
-[Cloud Compilation Tutorial Point I View](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html)
+[Cloud Compilation Tutorial Point I View](https://wiki.luatos.org/develop/compile/Cloud_compilation.html)
 
 After downloading the firmware, decompress it to obtain the corresponding firmware.
 

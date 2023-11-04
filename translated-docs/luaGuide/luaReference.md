@@ -6,7 +6,7 @@ Translator [Yun Feng](http://blog.codingnow.com)
 
 Lua.org, PUC-Rio 版权所有 © 2015 ， It can be used freely under the terms of [Lua license](http://www.lua.org/license.html).
 
-If you are looking for the original manual page, please [click here to view](https://openluat.github.io/luatos-wiki-en/_static/lua53doc/index.html)
+If you are looking for the original manual page, please [click here to view](https://wiki.luatos.org/_static/lua53doc/index.html)
 
 * * *
 

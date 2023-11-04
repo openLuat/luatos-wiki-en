@@ -2,12 +2,12 @@
 
 ## Text tutorial line
 
-- [Lua Basic Grammar](https://openluat.github.io/luatos-wiki-en/luaGuide/introduction.html)
-- [LuaTask Framework](https://openluat.github.io/luatos-wiki-en/luaGuide/luatask.html)
-- [Chip and Development Board-Learn about the development board you purchased](https://openluat.github.io/luatos-wiki-en/chips/index.html)
-- [Construction of development environment](https://openluat.github.io/luatos-wiki-en/boardGuide/vscode.html)
-- [Burn Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html)
-- Refer to [demo Example of Main Warehouse](https://gitee.com/openLuat/LuatOS/tree/master/demo) and [Interface Document](https://openluat.github.io/luatos-wiki-en/api/index.html)
+- [Lua Basic Grammar](https://wiki.luatos.org/luaGuide/introduction.html)
+- [LuaTask Framework](https://wiki.luatos.org/luaGuide/luatask.html)
+- [Chip and Development Board-Learn about the development board you purchased](https://wiki.luatos.org/chips/index.html)
+- [Construction of development environment](https://wiki.luatos.org/boardGuide/vscode.html)
+- [Burn Tutorial](https://wiki.luatos.org/boardGuide/flash.html)
+- Refer to [demo Example of Main Warehouse](https://gitee.com/openLuat/LuatOS/tree/master/demo) and [Interface Document](https://wiki.luatos.org/api/index.html)
 
 ## Video Tutorial Line
 

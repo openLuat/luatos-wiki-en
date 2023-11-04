@@ -11,6 +11,6 @@ air780eg
 air700e
 tts
 firmware
-Air780E_PCB <https://openluat.github.io/luatos-wiki-en/_static/bom/Air780E.html>
+Air780E_PCB <https://wiki.luatos.org/_static/bom/Air780E.html>
 changelog
 ```

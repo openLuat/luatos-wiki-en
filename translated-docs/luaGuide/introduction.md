@@ -2233,7 +2233,7 @@ window.onload = function(){
     //Add quick test code link near code block
     $("pre").each(function () {
         if($(this).text().indexOf("print") >= 0)
-            $(this).before('<a class="run-code-btn" href="https://openluat.github.io/luatos-wiki-en/_static/luatos-emulator/lua.html?'+escape($(this).text())+'" target="_blank">Point me to quickly test the following code</a>');
+            $(this).before('<a class="run-code-btn" href="https://wiki.luatos.org/_static/luatos-emulator/lua.html?'+escape($(this).text())+'" target="_blank">Point me to quickly test the following code</a>');
     });
 }
 </script>

@@ -57,7 +57,7 @@
           //在主站，而且是非中文用户
           if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
             document.getElementById('en-site-css').style.cssText = "";
-            document.getElementById('en-site-link').href = location.href.replace("openluat.github.io/luatos-wiki-en","wiki.luatos.org");
+            document.getElementById('en-site-link').href = location.href.replace("wiki.luatos.org","wiki.luatos.org");
           }
           //在英文站
           if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {

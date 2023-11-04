@@ -10,7 +10,7 @@ Development Board Schematic: [CORE-Air105-V1.1.pdf](https://cdn.openluat-luatcom
 
 ## Brush machine burning tutorial
 
-[Serial Burn Tutorial](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html)
+[Serial Burn Tutorial](https://wiki.luatos.org/boardGuide/flash.html)
 
 [Firmware Download](https://gitee.com/openLuat/LuatOS/releases)
 

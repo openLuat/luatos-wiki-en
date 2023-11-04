@@ -4,7 +4,7 @@
 
 First you need to master at least one EDA tool, such as AD,PADS,KICAD, etc. recommend use KICAD, open source and free, and the hardware design of the MCU series products is used.KICAD。
 
-Air101 Relevant hardware data can be downloaded from wiki [Air101 hardware data](https://openluat.github.io/luatos-wiki-en/chips/air101/hardware.html)
+Air101 Relevant hardware data can be downloaded from wiki [Air101 hardware data](https://wiki.luatos.org/chips/air101/hardware.html)
 
 ## Minimum system
 
@@ -66,7 +66,7 @@ The chip defaults to UART0 as the download port. When the chip has no initial fi
 
 Pull PA0 low before power-on, the chip will enter download mode, and the UART0_TX will always send ccccc at 115200 baud rate waiting for download instructions. When the chip leaves the factory without burning the program, it will always be in download mode and send ccccc at 115200 baud rate, which can be used to judge whether the chip can work.
 
-Burning Tutorial Link [Burning Tutorial-LuatOS Documentation](https://openluat.github.io/luatos-wiki-en/boardGuide/flash.html)
+Burning Tutorial Link [Burning Tutorial-LuatOS Documentation](https://wiki.luatos.org/boardGuide/flash.html)
 
 ### Debugging
 

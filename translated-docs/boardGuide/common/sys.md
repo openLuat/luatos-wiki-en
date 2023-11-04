@@ -12,7 +12,7 @@ Any LuatOS-SOC development board
 
 ## Software part
 
-Interface documentation can be found in:[SYS Library](https://openluat.github.io/luatos-wiki-en/api/sys.html)
+Interface documentation can be found in:[SYS Library](https://wiki.luatos.org/api/sys.html)
 
 ### Initialize a LuatOS task and start it
 
@@ -256,7 +256,7 @@ window.onload = function(){
     //Add quick test code link near code block
     $("pre").each(function () {
         if($(this).text().indexOf("log.info") >= 0)
-            $(this).before('<a class="run-code-btn" href="https://openluat.github.io/luatos-wiki-en/_static/luatos-emulator/lua.html?'+escape($(this).text())+'" target="_blank">Point me to quickly test the following code</a>');
+            $(this).before('<a class="run-code-btn" href="https://wiki.luatos.org/_static/luatos-emulator/lua.html?'+escape($(this).text())+'" target="_blank">Point me to quickly test the following code</a>');
     });
 }
 </script>
