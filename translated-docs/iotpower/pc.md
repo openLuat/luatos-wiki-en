@@ -180,9 +180,6 @@ Of course, in order to store some users abnormal level of massive data (such as 
 In this mode, the fluency of the part is sacrificed in exchange for a greatly reduced memory footprint, and automatic saving is not triggered to ensure data continuity  
 
 <script>
-if (navigator.language.indexOf("CN") < 0 && confirm ("Are you want to switch to English version of this page?")) {
-    window.location.href = "pc-en.html";
-}
 if(navigator.userAgent.indexOf("Windows NT 6") >= 0) {
   alert("Win7 User notice, please read and then close! \nWin7 must manually install the driver to run! \n to install two drivers! Run and upgrade modes are installed separately. \n. net framework 4.6.2 is required to run the client! \n 32-bit computers with x86 architecture are not supported！");
 }

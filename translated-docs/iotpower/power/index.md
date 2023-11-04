@@ -148,9 +148,3 @@ Usually this phenomenon occurs after the output of the device is burned by a rev
 ### Black screen, no output, burning smell
 
 Usually this phenomenon occurs after the device is burned by a large current at the usb power supply end. For example, a fast charging head is connected, and the charging head mistakenly outputs a fast charging voltage, resulting in a power supply higher than the 5.8V withstand voltage of the device. This situation is difficult to repair. It may burn CP2102, DCDC voltage regulation and LDO parts. It is suggested not to have too much hope for repair. It is not expensive to replace it with a new one anyway.
-
-<script>
-if (navigator.language.indexOf("CN") < 0 && confirm ("Are you want to switch to English version of this page?")) {
-    window.location.href = "english.html";
-}
-</script>

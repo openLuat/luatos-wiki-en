@@ -20,9 +20,3 @@
 |  500μA   | 0.1uA-500μA | 0.15μA |    1%    |  <0.5%   | Automatic gear |
 |   50mA   | 500μA-50mA  |  15μA  |    1%    |  <0.5%   | Automatic gear |
 |    5A    |   50mA-5A   | 1.5mA  |    1%    |   <1%    | Automatic gear |
-
-<script>
-if (navigator.language.indexOf("CN") < 0 && confirm ("Are you want to switch to English version of this page?")) {
-    window.location.href = "tech-en.html";
-}
-</script>

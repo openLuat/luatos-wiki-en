@@ -120,9 +120,3 @@ If the user makes an error on the way to upgrade the device and the device canno
 You can disconnect the power supply of the device first, hold down the` page turning key/force to enter upgrade mode`, and then insert USB power supply. at this time, you can see **the information of DFU mode displayed on the device screen**, or you can find the` IotPower DFU` device in the` universal serial bus device` of the` device manager` of the computer.
 
 Finally, open the client-`device and software settings`-`force firmware upgrade` and upgrade it.
-
-<script>
-if (navigator.language.indexOf("CN") < 0 && confirm ("Are you want to switch to English version of this page?")) {
-    window.location.href = "usage-en.html";
-}
-</script>

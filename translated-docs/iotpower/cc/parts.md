@@ -118,9 +118,3 @@ Paste the panel on one side of the shell screen, and it is recommended to stick 
 ---
 
 You can continue to view the `Operating Instructions on the next page`
-
-<script>
-if (navigator.language.indexOf("CN") < 0 && confirm ("Are you want to switch to English version of this page?")) {
-    window.location.href = "parts-en.html";
-}
-</script>
