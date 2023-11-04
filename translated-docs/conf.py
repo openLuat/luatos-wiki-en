@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'LuatOS'
-copyright = 'LuatOS团队'
+copyright = 'LuatOS team'
 author = 'luatos'
 
 
@@ -44,7 +44,7 @@ templates_path = ['_templates']
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'zh_CN'
+language = 'en_US'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -94,7 +94,7 @@ html_search_options = {'dict': 'luatos-wiki/keyworks.txt'}
 
 
 html_show_sphinx = False
-html_search_language = 'zh'
+html_search_language = 'en'
 html_baseurl = 'https://openluat.github.io/luatos-wiki-en/'
 sitemap_url_scheme = "{link}"
 
