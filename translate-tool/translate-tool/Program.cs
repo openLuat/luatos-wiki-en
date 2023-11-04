@@ -48,7 +48,7 @@ namespace translate_tool
                     Path.GetExtension(file) == ".js")
                 {
                     var text = File.ReadAllText(file);
-                    text = text.Replace("wiki.luatos.com", "openluat.github.io/luatos-wiki-en");
+                    text = text.Replace("wiki.luatos.com", "wiki.luatos.org");
                     text = text.Replace("https://github.com/openluat/luatos-wiki", "https://github.com/openluat/luatos-wiki-en");
                     text = text.Replace("LuatOS团队", "LuatOS team");
                     text = text.Replace("评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue", "");
@@ -76,7 +76,7 @@ namespace translate_tool
                     translateFile = Path.ChangeExtension(translateFile, ".txt");
                     //翻译文件
                     var markdownText = File.ReadAllText(file);
-                    markdownText = markdownText.Replace("wiki.luatos.com", "openluat.github.io/luatos-wiki-en");
+                    markdownText = markdownText.Replace("wiki.luatos.com", "wiki.luatos.org");
                     var result = Parse.TranslateMarkdown(markdownText, (s) =>
                     {
                         return Translator.Translate(s, translateFile);
