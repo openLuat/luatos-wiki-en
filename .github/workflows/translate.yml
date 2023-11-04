@@ -46,6 +46,7 @@ jobs:
           git config --global user.name "luatos_bot"
           git add .
           git commit -m "ci auto translate docs"
+        continue-on-error: true
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
