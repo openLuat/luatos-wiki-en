@@ -149,12 +149,13 @@
       
       <div class="sidebar-sticky">
         <!-- 英文站提示 start -->
-        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="en-site-css" style="display: none;"><a id="en-site-link" style="font-size: 22px;font-weight: bold;background: red;color: white;" href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
         <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
           //在主站，而且是非中文用户
           if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
             document.getElementById('en-site-css').style.cssText = "";
+            document.getElementById('en-site-link').href = location.href.replace("openluat.github.io/luatos-wiki-en","wiki.luatos.org");
           }
           //在英文站
           if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
@@ -689,50 +690,9 @@
         <article role="main">
           <section id="iot-power-power-consumption-tester">
 <h1>⏳ IoT Power Power Consumption Tester<a class="headerlink" href="#iot-power-power-consumption-tester" title="Permalink to this headline">#</a></h1>
-<p>IOT Power series products are fully functional, stable and reliable small handheld power consumption test wizard. It can be powered by USB C, display data through the screen, and support powerful client software, is the ideal test tool for the majority of users to carry around.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-2 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<img alt="card-img-top" class="sd-card-img-top" src="../_images/classic.png"/>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-meter sd-mr-1" height="1.5em" version="1.1" viewbox="0 0 16 16" width="1.5em"><path d="M8 1.5a6.5 6.5 0 106.016 4.035.75.75 0 011.388-.57 8 8 0 11-4.37-4.37.75.75 0 01-.569 1.389A6.479 6.479 0 008 1.5zm6.28.22a.75.75 0 010 1.06l-4.063 4.064a2.5 2.5 0 11-1.06-1.06L13.22 1.72a.75.75 0 011.06 0zM7 8a1 1 0 112 0 1 1 0 01-2 0z" fill-rule="evenodd"></path></svg> V1 Version</div>
-<p class="sd-card-text">Iot Power V1: USB powered, used as power supply, output max 5V/2A, sampling rate 10K/s</p>
-</div>
-<div class="sd-card-footer docutils">
-<p class="sd-card-text"><a class="reference internal" href="power/index.html"><span class="doc std std-doc">Learn more »</span></a></p>
-</div>
-<a class="sd-stretched-link reference internal" href="power/index.html"><span class="doc"></span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<img alt="card-img-top" class="sd-card-img-top" src="../_images/font_small.jpg"/>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-iterations sd-mr-1" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M2.5 10.5a8 8 0 1116 0 .75.75 0 001.5 0 9.5 9.5 0 10-9.5 9.5h10.94l-2.72 2.72a.75.75 0 101.06 1.06l3.735-3.735c.44-.439.44-1.151 0-1.59L19.78 14.72a.75.75 0 00-1.06 1.06l2.72 2.72H10.5a8 8 0 01-8-8z"></path></svg> CC Version</div>
-<p class="sd-card-text">Iot Power CC: pure measurement device, supporting PD input decoy, adapted to higher voltages and higher currents</p>
-</div>
-<div class="sd-card-footer docutils">
-<p class="sd-card-text"><a class="reference internal" href="cc/index.html"><span class="doc std std-doc">Learn more »</span></a></p>
-</div>
-<a class="sd-stretched-link reference internal" href="cc/index.html"><span class="doc"></span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<img alt="card-img-top" class="sd-card-img-top" src="../_images/client1.png"/>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-graph sd-mr-1" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M2.5 2.75a.75.75 0 00-1.5 0v18.5c0 .414.336.75.75.75H20a.75.75 0 000-1.5H2.5V2.75z"></path><path d="M22.28 7.78a.75.75 0 00-1.06-1.06l-5.72 5.72-3.72-3.72a.75.75 0 00-1.06 0l-6 6a.75.75 0 101.06 1.06l5.47-5.47 3.72 3.72a.75.75 0 001.06 0l6.25-6.25z"></path></svg> PC client</div>
-<p class="sd-card-text">Supporting PC client software for easy viewing, analysis and sharing of power consumption data</p>
-</div>
-<div class="sd-card-footer docutils">
-<p class="sd-card-text"><a class="reference internal" href="pc.html"><span class="doc std std-doc">Learn more »</span></a></p>
-</div>
-<a class="sd-stretched-link reference internal" href="pc.html"><span class="doc"></span></a></div>
-</div>
-</div>
-</div>
+<script>
+window.location.href = "https://wiki.luatos.org/iotpower/index.html";
+</script>
 </section>
 
         </article>

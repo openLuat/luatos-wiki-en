@@ -7,7 +7,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Download - LuatOS documentation</title>
+        <title>&lt;no title&gt; - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -138,7 +138,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -149,12 +149,13 @@
       
       <div class="sidebar-sticky">
         <!-- 英文站提示 start -->
-        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="en-site-css" style="display: none;"><a id="en-site-link" style="font-size: 22px;font-weight: bold;background: red;color: white;" href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
         <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
           //在主站，而且是非中文用户
           if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
             document.getElementById('en-site-css').style.cssText = "";
+            document.getElementById('en-site-link').href = location.href.replace("openluat.github.io/luatos-wiki-en","wiki.luatos.org");
           }
           //在英文站
           if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
@@ -681,186 +682,16 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
           <p>#🖥 PC Client</p>
-<section id="download">
-<h1>Download<a class="headerlink" href="#download" title="Permalink to this headline">#</a></h1>
-<ul class="simple">
-<li><p>Microsoft Store download: <a class="reference external" href="https://www.microsoft.com/store/apps/9N8S8M8226SH">Microsoft Store page</a></p></li>
-<li><p>Standalone exe version: <a class="reference external" href="https://arduino.luatos.com/iotpower/latest.html">IOT Power.exe</a> (note Microsoft antivirus misrepresentation)</p></li>
-<li><p><strong>All Platform</strong> command line data logger, dll/so dynamic runtime library please go to <a class="reference external" href="https://gitee.com/openLuat/iot-power">gitee repository</a> to view</p></li>
-</ul>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-win7 users may need<div class="sd-summary-down docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">(Win10 or above no need to manually install driver)</p>
-<p class="sd-card-text">IoT Power V1 CP2102 driver: <a class="reference external" href="https://www.silabs.com/documents/public/software/CP210x_Windows_Drivers.zip">CP210x_Windows_Drivers</a></p>
-<p class="sd-card-text">IoT Power CC driver: <a class="reference external" href="https://arduino.luatos.com/iotpower/IoTPower_CC_usb_driver.7z">IoTPower_CC_usb_driver.7z</a></p>
-<p class="sd-card-text">net framework 4.6.2: <a class="reference external" href="https://dotnet.microsoft.com/zh-cn/download/dotnet-framework/thank-you/net462-offline-installer">Installer</a></p>
-</div>
-</details></section>
-<section id="client-introduction">
-<h1>Client Introduction<a class="headerlink" href="#client-introduction" title="Permalink to this headline">#</a></h1>
-<p>The following functions are available on the client and may continue to be added:</p>
-<ul class="simple">
-<li><p>View current waveforms</p></li>
-<li><p>Record historical data</p></li>
-<li><p>Analyze data for a specified time period</p>
-<ul>
-<li><p>Average current</p></li>
-<li><p>Average voltage</p></li>
-<li><p>Average power</p></li>
-<li><p>Max, min current</p></li>
-<li><p>Max, min voltage</p></li>
-</ul>
-</li>
-<li><p>Import and export of captured data, support export as standalone exe</p></li>
-<li><p>Upgrade firmware for devices</p></li>
-<li><p>Run lua scripts to control the output and simulate the discharge curve of batteries and other devices</p></li>
-</ul>
-<p><img alt="image.png" src="../_images/client1.png"/></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This tutorial was written in <code class="docutils literal notranslate"><span class="pre">2.0.7.11</span></code> version, if there are any new or changed features not mentioned, please leave a message at the bottom of the page to remind to update, thanks!</p>
-</div>
-</section>
-<section id="software-interface">
-<h1>Software Interface<a class="headerlink" href="#software-interface" title="Permalink to this headline">#</a></h1>
-<p>The layout of the software home page is shown below</p>
-<p><img alt="pc_overview" src="../_images/pc_overview.png"/></p>
-<section id="current-display">
-<h2>Current display<a class="headerlink" href="#current-display" title="Permalink to this headline">#</a></h2>
-<p><img alt="pc_now1" src="../_images/pc_now1.png"/>
-<img alt="pc_now2" src="../_images/pc_now2.png"/></p>
-<p>The value in this area is the current data after the device is connected, and can be switched to a sliding average or instantaneous value</p>
-<p>The <strong>data floating window</strong> switch at the top of the software can open the floating window, which displays the exact same data as here, and is always displayed at the top, making it easy to view real-time data after minimizing the software</p>
-<blockquote>
-<div><p>If you are in the instantaneous value slot, it may be inconsistent with the display on the device side, which is normal, because the refresh time point is not exactly the same</p>
-</div></blockquote>
-</section>
-<section id="average-data">
-<h2>Average data<a class="headerlink" href="#average-data" title="Permalink to this headline">#</a></h2>
-<p><img alt="pc_avg" src="../_images/pc_avg.png"/></p>
-<p>The data here is, <strong>the average of all data</strong> since this device was connected, cleared to zero after clearing</p>
-</section>
-<section id="other-data">
-<h2>Other data<a class="headerlink" href="#other-data" title="Permalink to this headline">#</a></h2>
-<p><img alt="pc_info" src="../_images/pc_info.png"/></p>
-<p>The data here is the cumulative data related to <strong>all data</strong> since this device was connected, cleared and zeroed out</p>
-</section>
-</section>
-<section id="chart-area">
-<h1>Chart area<a class="headerlink" href="#chart-area" title="Permalink to this headline">#</a></h1>
-<p><img alt="pc_wave" src="../_images/pc_wave.png"/></p>
-<p>This area is the graph display area, you can preview the waveform graph</p>
-<section id="adjusting-the-display">
-<h2>Adjusting the display<a class="headerlink" href="#adjusting-the-display" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Adaptive coordinates: dynamically determine the range of vertical coordinates according to the maximum value of the current display area</p></li>
-<li><p>Set vertical coordinates by maximum value: fixes the vertical coordinate range by the maximum value of this grabbed data</p></li>
-<li><p>Logarithmic coordinates: when the absolute value of current data is extremely different, this function can be enabled and the value of vertical coordinates will be displayed in multiples of 10</p></li>
-</ul>
-</section>
-<section id="toggle-data-display">
-<h2>Toggle data display<a class="headerlink" href="#toggle-data-display" title="Permalink to this headline">#</a></h2>
-<p><img alt="pc_wave_mode1" src="../_images/pc_wave_mode1.png"/>
-<img alt="pc_wave_mode2" src="../_images/pc_wave_mode2.png"/></p>
-<p>Press this button to toggle between two display modes, <strong>Real Time Data/Historical Data</strong> and <strong>Select a Region</strong>, which are described below</p>
-</section>
-<section id="real-time-data-historical-data-no-zoom">
-<h2>Real-time data/historical data (no zoom)<a class="headerlink" href="#real-time-data-historical-data-no-zoom" title="Permalink to this headline">#</a></h2>
-<p>When the mouse is in the chart or on the drag axis, you can use the <strong>mouse wheel</strong> to adjust the temporal position of the waveform</p>
-<p><img alt="pc_wave_ctrl" src="../_images/pc_wave_ctrl.png"/></p>
-<p>You can also drag the joystick below to control the time position of the currently displayed waveform</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When viewing historical data, the waveform graph refresh will be paused in order not to be pushed out of change by new data.
-So when in this mode and the <code class="docutils literal notranslate"><span class="pre">display</span> <span class="pre">waveform</span> <span class="pre">time</span> <span class="pre">position</span> <span class="pre">is</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">far</span> <span class="pre">right</span> <span class="pre">side</span></code> (the latest time), only then will the <code class="docutils literal notranslate"><span class="pre">real-time</span> <span class="pre">refresh</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">currently</span> <span class="pre">captured</span> <span class="pre">data</span></code> be performed.</p>
-</div>
-</section>
-<section id="selecting-a-region-with-zoom-enabled">
-<h2>Selecting a region (with zoom enabled)<a class="headerlink" href="#selecting-a-region-with-zoom-enabled" title="Permalink to this headline">#</a></h2>
-<p>Use the <strong>left mouse button to drag</strong> to select a region of data to view and enter <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">region</span> <span class="pre">data</span></code> mode</p>
-<p>When in <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">area</span> <span class="pre">data</span></code> mode, you can use the <strong>mouse wheel</strong> to adjust the time position of the waveform</p>
-<p>You can also <strong>hold down the CTRL key and scroll the mouse wheel</strong> to zoom in or out of the currently displayed area</p>
-<p><img alt="pc_wave_select" src="../_images/pc_wave_select.png"/></p>
-<p>The pull bar here can also be used to control the range of the selection display</p>
-<ul class="simple">
-<li><p>Mouse drag ①: you can adjust the time position of the waveform</p></li>
-<li><p>Mouse drag ② or ③: you can adjust the start or end point of the waveform display</p></li>
-<li><p>Double click ①: you can switch to view the global data directly</p></li>
-</ul>
-</section>
-<section id="analyze-data">
-<h2>Analyze data<a class="headerlink" href="#analyze-data" title="Permalink to this headline">#</a></h2>
-<p>When in any mode, you can <strong>right-click and drag</strong> the mouse to select a time period to analyze the data</p>
-<p><img alt="pc_wave_data" src="../_images/pc_wave_data.png"/></p>
-<p>When a segment is selected, the <code class="docutils literal notranslate"><span class="pre">analysis</span> <span class="pre">window</span></code> will pop up to show the results of the analysis</p>
-</section>
-</section>
-<section id="control-device-output">
-<h1>Control device output<a class="headerlink" href="#control-device-output" title="Permalink to this headline">#</a></h1>
-<p><img alt="output" src="../_images/client2.png"/></p>
-<ul class="simple">
-<li><p>Control the output and shutdown state of the device with the <code class="docutils literal notranslate"><span class="pre">power</span> <span class="pre">symbol</span></code> button</p></li>
-<li><p>Set the output voltage and current of the device via the <code class="docutils literal notranslate"><span class="pre">device</span> <span class="pre">output</span></code> button</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This function is only available for <code class="docutils literal notranslate"><span class="pre">power</span> <span class="pre">products</span></code> and products with <code class="docutils literal notranslate"><span class="pre">PPS</span> <span class="pre">decoy</span></code> function</p>
-</div>
-</section>
-<section id="importing-and-exporting-data">
-<h1>Importing and Exporting Data<a class="headerlink" href="#importing-and-exporting-data" title="Permalink to this headline">#</a></h1>
-<p><img alt="pc_import" src="../_images/pc_import.png"/>
-<img alt="pc_export" src="../_images/pc_export.png"/></p>
-<section id="importing-data">
-<h2>Importing data<a class="headerlink" href="#importing-data" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Manually select the file to import the IoT Power-specific <code class="docutils literal notranslate"><span class="pre">.iotpl</span></code> file</p></li>
-<li><p>Importing an autosave file means importing from an autosave file. The autosave function usually appears when closing and re-capturing</p></li>
-</ul>
-</section>
-<section id="exporting-data">
-<h2>Exporting data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">#</a></h2>
-<p>Data can be freely exported as <code class="docutils literal notranslate"><span class="pre">.iotpl</span></code> files, <code class="docutils literal notranslate"><span class="pre">.csv</span></code> table files, <code class="docutils literal notranslate"><span class="pre">.exe</span></code> self-executing files<br/>
-The difference is that the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> table file is used for the user to analyze the original data by himself and cannot be re-imported<br/>
-While <code class="docutils literal notranslate"><span class="pre">.iotpl</span></code> files can be re-imported into the software, <code class="docutils literal notranslate"><span class="pre">.exe</span></code> self-executing files can also be exported as <code class="docutils literal notranslate"><span class="pre">.iotpl</span></code> files for import</p>
-</section>
-</section>
-<section id="script-function">
-<h1>Script function<a class="headerlink" href="#script-function" title="Permalink to this headline">#</a></h1>
-<p><img alt="script" src="../_images/client3.png"/></p>
-<p>This function enables automatic control of output voltage and current<br/>
-The script uses the <code class="docutils literal notranslate"><span class="pre">Lua</span> <span class="pre">language</span></code>, adapted to the <code class="docutils literal notranslate"><span class="pre">LuaTask</span></code> framework (<a class="reference external" href="https://openluat.github.io/luatos-wiki-en/luaGuide/luatask.html">tutorial</a>)<br/>
-For the specific interface documentation, you can refer to <a class="reference external" href="https://gitee.com/openLuat/iot-power">this repository’s documentation</a></p>
-</section>
-<section id="forced-firmware-upgrade">
-<h1>Forced firmware upgrade<a class="headerlink" href="#forced-firmware-upgrade" title="Permalink to this headline">#</a></h1>
-<p><img alt="pc_upgrade" src="../_images/pc_upgrade.png"/></p>
-<p>Normally, the device firmware will automatically prompt for an upgrade. However, sometimes when the device is interrupted on the way to upgrade or the firmware is corrupted for other reasons, the firmware can be manually flashed in</p>
-<ul class="simple">
-<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Forced</span> <span class="pre">Firmware</span> <span class="pre">Upgrade</span></code> button to force the firmware that comes with the client to be flashed. Note: If the device has an upgrade mode, please enter the upgrade mode first before brushing.</p></li>
-<li><p>Right-click the <code class="docutils literal notranslate"><span class="pre">Forced</span> <span class="pre">Firmware</span> <span class="pre">Upgrade</span></code> button to force the user to refresh the firmware file manually selected by the user for testing functions and verifying bug fixes.</p></li>
-</ul>
-</section>
-<section id="data-caching-method">
-<h1>Data caching method<a class="headerlink" href="#data-caching-method" title="Permalink to this headline">#</a></h1>
-<p><img alt="pc_cache" src="../_images/pc_cache.png"/></p>
-<p>Because the sampling rate of the device is very high, the amount of data is very large, and storing it in memory may cause the computer memory to be insufficient<br/>
-So the software provides an auto-save function, which automatically saves the data to a file when the time is reached to prevent it from taking up too much memory</p>
-<p>Of course, in order to store the huge amount of data that some users have perverted (such as continuous capture for more than ten hours), the software also provides the function of using the hard disk to cache the data<br/>
-In this mode, some of the smoothness is sacrificed in exchange for a much lower memory footprint, and the auto-save is not triggered to ensure the continuity of the data</p>
-</section>
+<script>
+window.location.href = "https://wiki.luatos.org/iotpower/pc.html";
+</script>
 
         </article>
       </div>
@@ -888,48 +719,8 @@ In this mode, some of the smoothness is sacrificed in exchange for a much lower 
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Download</a></li>
-<li><a class="reference internal" href="#client-introduction">Client Introduction</a></li>
-<li><a class="reference internal" href="#software-interface">Software Interface</a><ul>
-<li><a class="reference internal" href="#current-display">Current display</a></li>
-<li><a class="reference internal" href="#average-data">Average data</a></li>
-<li><a class="reference internal" href="#other-data">Other data</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#chart-area">Chart area</a><ul>
-<li><a class="reference internal" href="#adjusting-the-display">Adjusting the display</a></li>
-<li><a class="reference internal" href="#toggle-data-display">Toggle data display</a></li>
-<li><a class="reference internal" href="#real-time-data-historical-data-no-zoom">Real-time data/historical data (no zoom)</a></li>
-<li><a class="reference internal" href="#selecting-a-region-with-zoom-enabled">Selecting a region (with zoom enabled)</a></li>
-<li><a class="reference internal" href="#analyze-data">Analyze data</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#control-device-output">Control device output</a></li>
-<li><a class="reference internal" href="#importing-and-exporting-data">Importing and Exporting Data</a><ul>
-<li><a class="reference internal" href="#importing-data">Importing data</a></li>
-<li><a class="reference internal" href="#exporting-data">Exporting data</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#script-function">Script function</a></li>
-<li><a class="reference internal" href="#forced-firmware-upgrade">Forced firmware upgrade</a></li>
-<li><a class="reference internal" href="#data-caching-method">Data caching method</a></li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

@@ -138,7 +138,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -149,12 +149,13 @@
       
       <div class="sidebar-sticky">
         <!-- 英文站提示 start -->
-        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="en-site-css" style="display: none;"><a id="en-site-link" style="font-size: 22px;font-weight: bold;background: red;color: white;" href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
         <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
           //在主站，而且是非中文用户
           if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
             document.getElementById('en-site-css').style.cssText = "";
+            document.getElementById('en-site-link').href = location.href.replace("openluat.github.io/luatos-wiki-en","wiki.luatos.org");
           }
           //在英文站
           if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
@@ -681,7 +682,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -689,81 +690,9 @@
         <article role="main">
           <section id="iot-power-cc">
 <h1>⚡ IoT Power - CC<a class="headerlink" href="#iot-power-cc" title="Permalink to this headline">#</a></h1>
-<blockquote>
-<div><p><a class="reference external" href="https://item.taobao.com/item.htm?id=718378448520">Go to Taobao to buy</a></p>
-</div></blockquote>
-<p>The IOT Power CC is a fully functional, stable and reliable small handheld high precision power meter that:</p>
-<ul class="simple">
-<li><p>Measure the voltage and current of low-power devices via USB C power supply</p></li>
-<li><p>Unlike other USB meters, measure the voltage and current at the output to better reflect the actual power consumption of the device</p></li>
-<li><p>Connect <strong>PD fast charging</strong> charger (support PPS) to induce the specified voltage and current output</p></li>
-<li><p>Voltage up to 24V, current up to 5A</p></li>
-<li><p>Current <strong>multi-channel synchronous sampling</strong>, no shift delay, the highest resolution of 0.15μA</p></li>
-<li><p>High accuracy and small error, details are available in <a class="reference external" href="https://openluat.github.io/luatos-wiki-en/iotpower/cc/tech-en.html">technical specifications</a>, verification is welcome</p></li>
-<li><p>Up to <strong>10KHz sampling rate</strong> to meet the power consumption testing needs of cellular modules, Bluetooth, WIFI, etc.</p></li>
-<li><p>Can <strong>connect PC client</strong> to view and analyze the current waveform, can also use the command line version on any device (win/linux/mac) to capture the serial data (such as Raspberry Pi), using the PC client to import to view</p></li>
-<li><p><strong>BOM cost open</strong> (pull down below), conscience and sincerity of the work, sincere recruitment of suppliers with more favorable prices supply</p></li>
-<li><p>Shell information open, <a class="reference external" href="https://cdn.openluat-luatcommunity.openluat.com/attachment/20230515082541036_%E5%A4%96%E5%A3%B3%E8%B5%84%E6%96%99%E6%9B%B4%E6%96%B0.zip">open source shell address</a></p></li>
-</ul>
-<p>IOT Power CC is the ideal test tool for the majority of users to carry around.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-2 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<img alt="card-img-top" class="sd-card-img-top" src="../../_images/font_small.jpg"/>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-repo-forked sd-mr-1" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M12 21a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zm-3.25-1.75a3.25 3.25 0 106.5 0 3.25 3.25 0 00-6.5 0zm-3-12.75a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM2.5 4.75a3.25 3.25 0 106.5 0 3.25 3.25 0 00-6.5 0zM18.25 6.5a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM15 4.75a3.25 3.25 0 106.5 0 3.25 3.25 0 00-6.5 0z" fill-rule="evenodd"></path><path d="M6.5 7.75v1A2.25 2.25 0 008.75 11h6.5a2.25 2.25 0 002.25-2.25v-1H19v1a3.75 3.75 0 01-3.75 3.75h-6.5A3.75 3.75 0 015 8.75v-1h1.5z" fill-rule="evenodd"></path><path d="M11.25 16.25v-5h1.5v5h-1.5z" fill-rule="evenodd"></path></svg> Linking and assembly</div>
-<p class="sd-card-text">Showing how CC is connected to the device under test, instructions for assembling the housing</p>
-</div>
-<div class="sd-card-footer docutils">
-<p class="sd-card-text"><a class="reference internal" href="parts-en.html"><span class="doc std std-doc">learn more »</span></a></p>
-</div>
-<a class="sd-stretched-link reference internal" href="parts.html"><span class="doc"></span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<img alt="card-img-top" class="sd-card-img-top" src="../../_images/usage_small.png"/>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-stopwatch sd-mr-1" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M10.25 0a.75.75 0 000 1.5h1v1.278a9.955 9.955 0 00-5.635 2.276L4.28 3.72a.75.75 0 00-1.06 1.06l1.315 1.316A9.962 9.962 0 002 12.75c0 5.523 4.477 10 10 10s10-4.477 10-10a9.962 9.962 0 00-2.535-6.654L20.78 4.78a.75.75 0 00-1.06-1.06l-1.334 1.334a9.955 9.955 0 00-5.636-2.276V1.5h1a.75.75 0 000-1.5h-3.5zM12 21.25a8.5 8.5 0 100-17 8.5 8.5 0 000 17zm4.03-12.53a.75.75 0 010 1.06l-2.381 2.382a1.75 1.75 0 11-1.06-1.06l2.38-2.382a.75.75 0 011.061 0z" fill-rule="evenodd"></path></svg> operation description</div>
-<p class="sd-card-text">Describe in detail the usage of each function of the device</p>
-</div>
-<div class="sd-card-footer docutils">
-<p class="sd-card-text"><a class="reference internal" href="usage-en.html"><span class="doc std std-doc">learn more »</span></a></p>
-</div>
-<a class="sd-stretched-link reference internal" href="usage.html"><span class="doc"></span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<img alt="card-img-top" class="sd-card-img-top" src="../../_images/comp.png"/>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-law sd-mr-1" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M12.75 2.75a.75.75 0 00-1.5 0V4.5H9.276a1.75 1.75 0 00-.985.303L6.596 5.957A.25.25 0 016.455 6H2.353a.75.75 0 100 1.5H3.93L.563 15.18a.762.762 0 00.21.88c.08.064.161.125.309.221.186.121.452.278.792.433.68.311 1.662.62 2.876.62a6.919 6.919 0 002.876-.62c.34-.155.606-.312.792-.433.15-.097.23-.158.31-.223a.75.75 0 00.209-.878L5.569 7.5h.886c.351 0 .694-.106.984-.303l1.696-1.154A.25.25 0 019.275 6h1.975v14.5H6.763a.75.75 0 000 1.5h10.474a.75.75 0 000-1.5H12.75V6h1.974c.05 0 .1.015.14.043l1.697 1.154c.29.197.633.303.984.303h.886l-3.368 7.68a.75.75 0 00.23.896c.012.009 0 0 .002 0a3.154 3.154 0 00.31.206c.185.112.45.256.79.4a7.343 7.343 0 002.855.568 7.343 7.343 0 002.856-.569c.338-.143.604-.287.79-.399a3.5 3.5 0 00.31-.206.75.75 0 00.23-.896L20.07 7.5h1.578a.75.75 0 000-1.5h-4.102a.25.25 0 01-.14-.043l-1.697-1.154a1.75 1.75 0 00-.984-.303H12.75V2.75zM2.193 15.198a5.418 5.418 0 002.557.635 5.418 5.418 0 002.557-.635L4.75 9.368l-2.557 5.83zm14.51-.024c.082.04.174.083.275.126.53.223 1.305.45 2.272.45a5.846 5.846 0 002.547-.576L19.25 9.367l-2.547 5.807z" fill-rule="evenodd"></path></svg> Technical specifications</div>
-<p class="sd-card-text">List the parameters and performance indicators of the device</p>
-</div>
-<div class="sd-card-footer docutils">
-<p class="sd-card-text"><a class="reference internal" href="tech-en.html"><span class="doc std std-doc">learn more »</span></a></p>
-</div>
-<a class="sd-stretched-link reference internal" href="tech.html"><span class="doc"></span></a></div>
-</div>
-</div>
-</div>
-<section id="accuracy-comparison">
-<h2>Accuracy Comparison<a class="headerlink" href="#accuracy-comparison" title="Permalink to this headline">#</a></h2>
-<p><img alt="vtest" src="../../_images/vtest.png"/></p>
-<p><img alt="ctest" src="../../_images/ctest.png"/></p>
-</section>
-<section id="bom-cost-disclosure">
-<h2>BOM cost disclosure<a class="headerlink" href="#bom-cost-disclosure" title="Permalink to this headline">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All prices here are in bulk with tax, for lower supply prices, offering consistent quality, please contact us!</p>
-</div>
-<p><img alt="cost" src="../../_images/cost.png"/></p>
-<p class="rubric">More information</p>
-<p>CC Egg Mode Open Source Console: <a class="reference external" href="https://github.com/chenxuuu/IoT-Power-Tools">IoT-Power-Tools</a></p>
-</section>
+<script>
+window.location.href = "https://wiki.luatos.org/iotpower/cc/index.html";
+</script>
 </section>
 
         </article>
@@ -792,28 +721,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">⚡ IoT Power - CC</a><ul>
-<li><a class="reference internal" href="#accuracy-comparison">Accuracy Comparison</a></li>
-<li><a class="reference internal" href="#bom-cost-disclosure">BOM cost disclosure</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

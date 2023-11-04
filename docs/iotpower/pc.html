@@ -149,12 +149,13 @@
       
       <div class="sidebar-sticky">
         <!-- 英文站提示 start -->
-        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="en-site-css" style="display: none;"><a id="en-site-link" style="font-size: 22px;font-weight: bold;background: red;color: white;" href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
         <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
           //在主站，而且是非中文用户
           if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
             document.getElementById('en-site-css').style.cssText = "";
+            document.getElementById('en-site-link').href = location.href.replace("openluat.github.io/luatos-wiki-en","wiki.luatos.org");
           }
           //在英文站
           if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
@@ -858,9 +859,6 @@ Therefore, the software provides an automatic save function. When the time is re
 <p>Of course, in order to store some users abnormal level of massive data (such as continuous capture more than ten hours), the software also provides the use of hard disk cache data function<br/>
 In this mode, the fluency of the part is sacrificed in exchange for a greatly reduced memory footprint, and automatic saving is not triggered to ensure data continuity</p>
 <script>
-if (navigator.language.indexOf("CN") < 0 && confirm ("Are you want to switch to English version of this page?")) {
-    window.location.href = "pc-en.html";
-}
 if(navigator.userAgent.indexOf("Windows NT 6") >= 0) {
   alert("Win7 User notice, please read and then close! \nWin7 must manually install the driver to run! \n to install two drivers! Run and upgrade modes are installed separately. \n. net framework 4.6.2 is required to run the client! \n 32-bit computers with x86 architecture are not supported！");
 }

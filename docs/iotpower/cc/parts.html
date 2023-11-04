@@ -149,12 +149,13 @@
       
       <div class="sidebar-sticky">
         <!-- 英文站提示 start -->
-        <div id="en-site-css" style="display: none;"><a href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
+        <div id="en-site-css" style="display: none;"><a id="en-site-link" style="font-size: 22px;font-weight: bold;background: red;color: white;" href="https://wiki.luatos.org/">(NEW) Go to English site</a></div>
         <div id="discord-css" style="display: none;"><a href="https://discord.gg/FFRsvk4D85"><img src="https://img.shields.io/discord/890114586647355402?color=7289da&label=Discord&logo=discord&logoColor=white" alt="Discord"></a></div>
         <script>
           //在主站，而且是非中文用户
           if (navigator.language.indexOf("CN") < 0 && location.href.indexOf("https://wiki.luatos.org") !== 0 ) {
             document.getElementById('en-site-css').style.cssText = "";
+            document.getElementById('en-site-link').href = location.href.replace("openluat.github.io/luatos-wiki-en","wiki.luatos.org");
           }
           //在英文站
           if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
@@ -837,11 +838,6 @@ If you need to use a voltage of more than 20V, you need to set the power supply 
 <p><img alt="cc-shell-done" src="../../_images/cc-shell-done.jpg"/></p>
 <hr class="docutils"/>
 <p>You can continue to view the <code class="docutils literal notranslate"><span class="pre">Operating</span> <span class="pre">Instructions</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">next</span> <span class="pre">page</span></code></p>
-<script>
-if (navigator.language.indexOf("CN") < 0 && confirm ("Are you want to switch to English version of this page?")) {
-    window.location.href = "parts-en.html";
-}
-</script>
 </section>
 </section>
 </section>
