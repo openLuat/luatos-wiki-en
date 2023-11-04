@@ -137,7 +137,7 @@ Find the folder where the Luatools is located. The "Luatools/resource/esp32c3_lu
 :::{tab-item} ESP32C3 Classic Edition
 :sync: c3uart
 
-Find the folder where the Luatools is located. The folder`s `Luatools/resource/esp32c3_lua_lod/Version Number` * * without the words **`USB` is the official version firmware downloaded automatically.
+Find the folder where the Luatools is located. The folder`s `Luatools/resource/esp32c3_lua_lod/Version Number` without the words **`USB`** is the official version firmware downloaded automatically.
 
 ```{important}
 The driver of CH343 must be installed to download the firmware normally. The default CDC driver prints the log without any problem, but the download fails if the speed is too slow. [Drive portal](http://www.wch.cn/downloads/CH343SER_EXE.html)

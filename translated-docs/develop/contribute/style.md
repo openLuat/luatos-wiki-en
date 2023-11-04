@@ -67,7 +67,7 @@ camera.setup(...)
 
 #### Interfaces that require incoming GPIO
 
-- When the port number * * does not exist * *, use` negative number` to represent, try to avoid using a specific positive number or 0 (some MCU exist GPIO_0）
+- When the port number **does not exist**, use` negative number` to represent, try to avoid using a specific positive number or 0 (some MCU exist GPIO_0）
 - Others to be determined
 
 ## Git Submission Specification

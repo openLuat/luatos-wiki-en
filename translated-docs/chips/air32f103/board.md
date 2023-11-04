@@ -14,7 +14,7 @@ Development Board Engineering [portal](https://gitee.com/openLuat/luatos-broads/
 
 ## Instructions for use
 
-The factory default of the development board is daplink firmware (BluePill the development board has no firmware by default). The firmware supports * * external control * * debugging and downloading function, and supports USB flash drive mode burning and virtual serial port
+The factory default of the development board is daplink firmware (BluePill the development board has no firmware by default). The firmware supports **external control** debugging and downloading function, and supports USB flash drive mode burning and virtual serial port
 
 ```{note}
 recommend upgrade to the new version of [DAPLink V2 firmware](https://gitee.com/openLuat/luatos-soc-air32f103/tree/master/AIR_Jlink_Keil), the burning speed can be doubled ([check the upgrade method](https://gitee.com/openLuat/luatos-soc-air32f103/blob/master/AIR_Jlink_Keil/air32_daplink_readme.txt)）

@@ -24,7 +24,7 @@ The solution for using this batch of burners is as follows：
 
 DAPLink It is an official open source debugger scheme of ARM, with the official address of [ARMmbed/DAPLink (github.com)](https://github.com/ARMmbed/DAPLink). It can be used to debug almost all single chip computers of arm cortex kernel. The latest M33 and M85 kernels also support debugging.
 
-Based on ARM's official code, Zeus was transplanted to Air32F103CBT6 and adapted the resources of * * 216M dominant frequency * * and * * 96K large RAM * *, supporting faster download speed ([firmware open source](https://gitee.com/openLuat/daplink)), and designed an ultra-small DAPLink hardware
+Based on ARM's official code, Zeus was transplanted to Air32F103CBT6 and adapted the resources of **216M dominant frequency** and **96K large RAM**, supporting faster download speed ([firmware open source](https://gitee.com/openLuat/daplink)), and designed an ultra-small DAPLink hardware
 
 ![img](img/1685598778508-1.jpg)
 
@@ -32,7 +32,7 @@ Based on ARM's official code, Zeus was transplanted to Air32F103CBT6 and adapted
 
 - **The whole series of **Arm-cortex core chip debugging and burning, ARM official maintenance, follow-up new kernel will still support
 - A **full-featured USB to serial port**(CDC) with hardware DTR and RTS for automatic download
-- With * * U disk drag and drop burn * * function, you can directly drag hex or binfile to U disk to burn (only support burn CBT6）
+- With **U disk drag and drop burn** function, you can directly drag hex or binfile to U disk to burn (only support burn CBT6）
 - Adapt to **DAPLink V2** WINUSB version, the speed is 3 to 10 times higher than HID version, greatly saving download time
 - Support **WEBUSB** function, can burn firmware on web pages, support insertion of pop-up windows, no need to worry about not using it
 - Support Keil,IAR,PyOCD and other debugging environment
@@ -43,7 +43,7 @@ Based on ARM's official code, Zeus was transplanted to Air32F103CBT6 and adapted
 
 - The size is only 2.5*1.3cm, which is smaller than USBA mouth.
 - Use **4-layer gold** PCB design
-- Selection of * * sink TYPEC mouth * * more solid and stable
+- Selection of **sink TYPEC mouth** more solid and stable
 - USB The port uses **TI's ESD chip** protection
 - **High-current LDO **can provide power supply for external equipment while stably supplying power to air32
 

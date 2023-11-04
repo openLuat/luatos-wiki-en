@@ -13,10 +13,10 @@ If it is the first time to power on, please refer to the steps in [this video](h
 
 ## Why have I been circling around since I turned on PD？
 
-First of all, please look at the instructions, * * don't * * lure the air, [like these * * wrong demonstration**](wrong.md)
+First of all, please look at the instructions, **don't** lure the air, [like these **wrong demonstration**](wrong.md)
 
 If the operation is correct, you can try  ：
-In the settings, turn on` power-on and self-start PD`, and only supply power from * * input * * terminal (dial code is changed to input power supply mode), and connect PD charger, there will be only a few phenomena：
+In the settings, turn on` power-on and self-start PD`, and only supply power from **input** terminal (dial code is changed to input power supply mode), and connect PD charger, there will be only a few phenomena：
 
 - If the CC is not lit, then：
   - Charging head or charging line, there must be one that does not support PD
@@ -34,7 +34,7 @@ Even if the mobile phone can be used to trigger fast charging, it cannot prove t
 
 ## Can it trigger the fast charging of the mobile phone? I don't want to use my own decoy function.
 
-Yes, if you need to test, please * * turn off the pd decoy function of the device itself (take effect after restarting and powering on) * *, otherwise it will interfere. In addition, some mobile phone charging heads distinguish between front and back, please arrange and combine the test directions by yourself.
+Yes, if you need to test, please **turn off the pd decoy function of the device itself (take effect after restarting and powering on)**, otherwise it will interfere. In addition, some mobile phone charging heads distinguish between front and back, please arrange and combine the test directions by yourself.
 
 ```{note}
 Some equipment fast charging protocols are non-standard, and fast charging may not be triggered when using input port power supply. At this time, the PC-side power supply test is required to isolate the power supply of the device from the fast charging phase.
@@ -42,7 +42,7 @@ Some equipment fast charging protocols are non-standard, and fast charging may n
 
 ## Why does the voltage turn on and off for a while when my output terminal is connected to a mobile phone/charging treasure/computer?
 
-If your output is connected to a mobile phone/charging treasure/computer that supports fast charging, please * * do not turn on * * `start up and automatically enable PD` (it will take effect after restarting and powering up), otherwise the two devices will cheat together and cause interference.
+If your output is connected to a mobile phone/charging treasure/computer that supports fast charging, please **do not turn on** `start up and automatically enable PD` (it will take effect after restarting and powering up), otherwise the two devices will cheat together and cause interference.
 
 ## Why do I supply power from the input port, CC will always restart/plug in the mobile phone and turn off the screen？
 

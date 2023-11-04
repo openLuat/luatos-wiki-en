@@ -74,7 +74,7 @@ When **standby** is displayed in the upper left corner, it means that it is not 
 
 ### Zeroing
 
-On the premise of ensuring that no external equipment is connected, short press ④ to switch to * * normal * * mode and turn on the output; Long press ① to set the current bottom current, and then zero
+On the premise of ensuring that no external equipment is connected, short press ④ to switch to **normal** mode and turn on the output; Long press ① to set the current bottom current, and then zero
 
 ### Switching between electric quantity and power display
 

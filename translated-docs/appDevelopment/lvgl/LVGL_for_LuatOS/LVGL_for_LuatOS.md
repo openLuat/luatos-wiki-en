@@ -536,7 +536,7 @@ The top/bottom/left/right fill values from the background are used to reserve so
 
 There is a text on each button. To specify them, you need to use an array of descriptor strings called * map. You can set the map using the `lvgl.btnmatrix_ set_map(btnm, my_map). The declaration of the map should be as follows `local map = {"btn1", "btn2", "btn3", ""}`. Note that the **last element must be an empty string**！
 
-`"\n"`Use to wrap lines in the map * *. For example. The width of each row of buttons is calculated automatically. For example: `{"btn1", "btn2", "\n", "btn3", ""}`, the width of each row of buttons is automatically calculated.
+`"\n"`Use to **wrap lines** in the map. For example. The width of each row of buttons is calculated automatically. For example: `{"btn1", "btn2", "\n", "btn3", ""}`, the width of each row of buttons is automatically calculated.
 
 #### Control button
 
@@ -3648,7 +3648,7 @@ return win_demo
 
 ## Font
 
-LVGL Font support is very complete, support * * UTF-8 * * encoded Unicode characters, divided into internal fonts and external fonts, font production tools are also many:[LVGL official font production tools](https://lvgl.io/tools/fontconverter), third-party [LvglFontTool](http://www.lfly.xyz/forum.php?mod=viewthread&tid=24&extra=page=1) and [MCU_Font](https://gitee.com/WuBinCPP/MCU_Font_Release), etc. This article will introduce different font production methods using different tools to make everyone understand it.
+LVGL Font support is very complete, support **UTF-8** encoded Unicode characters, divided into internal fonts and external fonts, font production tools are also many:[LVGL official font production tools](https://lvgl.io/tools/fontconverter), third-party [LvglFontTool](http://www.lfly.xyz/forum.php?mod=viewthread&tid=24&extra=page=1) and [MCU_Font](https://gitee.com/WuBinCPP/MCU_Font_Release), etc. This article will introduce different font production methods using different tools to make everyone understand it.
 
 ### Internal Font
 

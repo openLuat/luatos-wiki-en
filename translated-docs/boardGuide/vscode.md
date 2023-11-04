@@ -10,9 +10,9 @@ Yes, there is. Here recommend use Microsoft's Visual Studio Code (vscode) code e
 
 Open vscode official website：[https://code.visualstudio.com/](https://code.visualstudio.com/)
 
-Click on the big * * Download for xxxxxx * * to download the software
+Click on the big **Download for xxxxxx** to download the software
 
- > Of course, some classmates may find that the download speed is very slow. What should we do? Of course, there is a way. We can copy the file currently being downloaded * * download link * *, replace the domain name (`https://` and the middle of the next`/`) with` vscode.cdn.azure.cn` and download it again, which will be faster.
+ > Of course, some classmates may find that the download speed is very slow. What should we do? Of course, there is a way. We can copy the file currently being downloaded **download link**, replace the domain name (`https://` and the middle of the next`/`) with` vscode.cdn.azure.cn` and download it again, which will be faster.
 
 After opening the installation package, you need to pay attention to checking two of the options (the picture is in English, too）：
 

@@ -12,7 +12,7 @@ Note that since **win7** system does not have a` winusb` driver, and Microsoft h
 
 ```{warning}
 The first batch of ESP32S3 core boards, due to FLASH thermal expansion and cold contraction, will have a small probability of causing virtual welding after hand. (Firmware will be burned before leaving the factory, and will not leave the factory until it is successfully burned. This is the reason  ）
-If the` default flashing light program` on the back board cannot run and * * cannot burn firmware (stuck in the step of FLASH download) * *, try to repair and solder the pad at * * FLASH * (tin added  ）。
+If the` default flashing light program` on the back board cannot run and **cannot burn firmware (stuck in the step of FLASH download)**, try to repair and solder the pad at * * FLASH * (tin added  ）。
 Therefore, please check the usb port with power on after you get it, and then carry out the welding needle arrangement operation after confirming that there is no problem.
 ```
 

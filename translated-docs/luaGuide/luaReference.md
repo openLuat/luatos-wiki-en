@@ -363,7 +363,7 @@ Lua Multiple assignments are allowed. Thus, the syntactic definition of assignme
 
 Expressions are discussed in [§ 3.4](#3.4).
 
-Before the assignment operation, the value list will be adjusted to the number of variables on the left. If there are more values than needed, the extra values are thrown away. If the number of values is not enough, it will be expanded as many **nil** as needed * *. If the expression list ends with a function call, all values returned by the function will be placed in the value list before the adjustment operation (unless the function call is enclosed in parentheses; see [§3.4](#3.4)）。
+Before the assignment operation, the value list will be adjusted to the number of variables on the left. If there are more values than needed, the extra values are thrown away. If the number of values is not enough, it will be expanded as many **nil** as needed. If the expression list ends with a function call, all values returned by the function will be placed in the value list before the adjustment operation (unless the function call is enclosed in parentheses; see [§3.4](#3.4)）。
 
 The assignment statement first allows all expressions to complete the operation, and then the assignment operation. Therefore, the following code
 
@@ -3432,7 +3432,7 @@ A global variable (not a function) that internally stores the global environment
 
 #### `getmetatable (object)`
 
-If `object` does not contain a meta table, **nil** is returned * *. Otherwise, return its associated value if there is a `"__metatable"` field in the object`s meta table, and return the object`s meta table if not.
+If `object` does not contain a meta table, **nil** is returned. Otherwise, return its associated value if there is a `"__metatable"` field in the object`s meta table, and return the object`s meta table if not.
 
 * * *
 
@@ -4419,7 +4419,7 @@ In the case of an error, the function throws an error instead of returning an er
 
 #### `file:read (···)`
 
-Read the file `file`, the specified format determines what to read. For each format, the function returns the string or number corresponding to the read character. **nil** is returned if the data cannot be read in this format * *. (For this last case, the function does not read the subsequent format.) When called without passing the format, it reads the next line using the default format (see description below.）。
+Read the file `file`, the specified format determines what to read. For each format, the function returns the string or number corresponding to the read character. **nil** is returned if the data cannot be read in this format. (For this last case, the function does not read the subsequent format.) When called without passing the format, it reads the next line using the default format (see description below.）。
 
 The formats provided are
 

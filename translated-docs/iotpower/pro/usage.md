@@ -39,7 +39,7 @@ Press the **page key** to turn pages forward and backward
 
 Scroll **wheel** key to switch the selected control, press to operate the selected control
 
-Some controls will enter the control after being pressed. At this time, the * * wheel * * key can change the value of the control, and exit the modification after being pressed again.
+Some controls will enter the control after being pressed. At this time, the **wheel** key can change the value of the control, and exit the modification after being pressed again.
 
 ## Output power supply
 
@@ -63,7 +63,7 @@ On this page, use the **scroll wheel**, select the current value `2.000A` below,
 **The page key **can change the selected number, and the** scroll wheel **key can change the value of this number  ；
 Press the **wheel** button again to exit the change
 
-Select `A` or `mA` on the side of the current value, and press * * roller * * to switch the unit of `A` or `mA`
+Select `A` or `mA` on the side of the current value, and press **roller** to switch the unit of `A` or `mA`
 
 ### Turn the output on and off
 
@@ -91,7 +91,7 @@ Voltage and current waveforms can be viewed on this page
 
 ### Pause Waveform Refresh
 
-Use * * scroll wheel * *, select `Run` below, press * * scroll wheel * * to pause waveform printing, at this time the text becomes  `Stop`；
+Use **scroll wheel**, select `Run` below, press **scroll wheel** to pause waveform printing, at this time the text becomes  `Stop`；
 Press the **scroll wheel** again to turn waveform refresh on again
 
 ### Switching current coordinate range

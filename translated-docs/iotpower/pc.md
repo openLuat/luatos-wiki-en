@@ -53,7 +53,7 @@ The layout of the software homepage is shown in the following figure
 
 The value of this area is the current data after the device is connected, which can be switched to the moving average or instantaneous value.
 
-The * * data floating window * * switch on the top of the software can open the floating window, and the displayed data is exactly the same as the data here. it is always displayed on the top, which is convenient to view real-time data after minimizing the software.
+The **data floating window** switch on the top of the software can open the floating window, and the displayed data is exactly the same as the data here. it is always displayed on the top, which is convenient to view real-time data after minimizing the software.
 
 > If it is in the instantaneous value gear, it may be inconsistent with the display at the device end. This is a normal phenomenon, because the refresh time point cannot be completely consistent.
 

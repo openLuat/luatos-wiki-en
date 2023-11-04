@@ -22,8 +22,8 @@ The basic appearance of the equipment is as follows
 |   **①**   |                            Power supply of the device itself/PC client communication | **⑧** | OK `O`      |
 |   **②**   |                               USB TYPE-C Power supply input | **⑨** | Left shift key `<`      |
 |   **③**   |                               USB TYPE-C Power supply output | **⑩** | right shift key `>`      |
-|   **④**   |                           External power supply positive pole (corresponding to ②) | **(11)** | Cancel button `X`      |
-|   **⑤**   |                           External power supply negative-(corresponding to ②) | **()** | Page turn key/force to enter upgrade mode/clear bottom current to zero |
+|   **④**   |                           External power supply positive pole (corresponding to ②) | **⑾** | Cancel button `X`      |
+|   **⑤**   |                           External power supply negative-(corresponding to ②) | **⑿** | Page turn key/force to enter upgrade mode/clear bottom current to zero |
 | **Small dial code **| Switch the power supply source of CC ([see this for usage](https://openluat.github.io/luatos-wiki-en/iotpower/cc/parts.html#id3)） |              |                        |
 |   **⑥**   |                           External output positive pole (corresponding to ③）                           |              |                        |
 |   **⑦**   |                           External output negative pole-(corresponding to ③）                           |              |                        |
@@ -117,7 +117,7 @@ This page sets the parameters in the device
 
 If the user makes an error on the way to upgrade the device and the device cannot be used normally, you can manually enter the upgrade mode (DFU) to manually upgrade
 
-You can disconnect the power supply of the device first, hold down the` page turning key/force to enter upgrade mode`, and then insert USB power supply. at this time, you can see * * the information of DFU mode displayed on the device screen * *, or you can find the` IotPower DFU` device in the` universal serial bus device` of the` device manager` of the computer.
+You can disconnect the power supply of the device first, hold down the` page turning key/force to enter upgrade mode`, and then insert USB power supply. at this time, you can see **the information of DFU mode displayed on the device screen**, or you can find the` IotPower DFU` device in the` universal serial bus device` of the` device manager` of the computer.
 
 Finally, open the client-`device and software settings`-`force firmware upgrade` and upgrade it.
 
