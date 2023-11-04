@@ -50,6 +50,13 @@ namespace translate_tool
                     var text = File.ReadAllText(file);
                     text = text.Replace("wiki.luatos.com", "openluat.github.io/luatos-wiki-en");
                     text = text.Replace("https://github.com/openluat/luatos-wiki", "https://github.com/openluat/luatos-wiki-en");
+                    text = text.Replace("LuatOS团队", "LuatOS team");
+                    text = text.Replace("评论区仅用于讨论文档内容。如有使用问题或新需求，请进支持群讨论或在官方仓库新建issue", "");
+                    if (Path.GetFileName(file) == "conf.py")
+                    {
+                        text = text.Replace("language = 'zh_CN'", "language = 'en_US'");
+                        text = text.Replace("html_search_language = 'zh'", "html_search_language = 'en'");
+                    }
                     //写入新文件
                     File.WriteAllText(newFile, text);
                 }

@@ -31,7 +31,6 @@ jobs:
           rm -rf docs/
           sphinx-build -b html translated-docs docs -E
           cd docs/
-          echo "this is offline version, please visit wiki.luatos.com for latest version, document update on $(TZ=UTC-8 date +%Y-%m-%d,%H:%m:%S)" > "readme.txt"
           touch .nojekyll
           rm -rf .doctrees/
           rm -rf _sources/
@@ -42,6 +41,7 @@ jobs:
           git config --global user.name "luatos_bot"
           git add .
           git commit -m "ci auto update docs"
+        continue-on-error: true
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
