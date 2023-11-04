@@ -32,6 +32,7 @@ jobs:
           sphinx-build -b html translated-docs docs -E
           cd docs/
           touch .nojekyll
+          echo "wiki.luatos.org" > "CNAME"
           rm -rf .doctrees/
           rm -rf _sources/
       - name: commit changes
