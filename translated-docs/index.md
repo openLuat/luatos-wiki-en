@@ -104,6 +104,11 @@ We are adapting more MCU and wireless chip modules, welcome you to join^_^
 <div class="chatlink">
     <button onclick="window.open('https://chat.openluat.com')">The document was not resolved, the forum sent a post.！</button><p/>
 </div>
+<script>
+if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
+  $(".chatlink").css("display","none");
+}
+</script>
 
 ```{toctree}
 :hidden:
