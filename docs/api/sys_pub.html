@@ -418,6 +418,7 @@
 <li class="toctree-l2"><a class="reference internal" href="codec.html">codec - Multimedia-Codec</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coremark.html">coremark - Running points</a></li>
 <li class="toctree-l2"><a class="reference internal" href="crypto.html">crypto - Encryption and decryption and hash functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctiot.html">ctiot - China Telecom CTIOT Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dac.html">dac - Digital-to-analog conversion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="disp.html">disp - disp Library (Obsolete)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="eink.html">eink - ink screen operation library</a></li>
@@ -452,6 +453,7 @@
 <li class="toctree-l2"><a class="reference internal" href="log.html">log - Logstore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lora.html">lora - lora Drive module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lora2.html">lora2 - lora2 Driver module (supports multi-hanging)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lpmem.html">lpmem - Operation of low-power non-power-down memory blocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html">lvgl - LVGL Image Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="max30102.html">max30102 - Heart Rate Module(MAX30102)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mcu.html">mcu - encapsulation mcu some special operations</a></li>
@@ -986,6 +988,214 @@
 </section>
 </section>
 <hr class="docutils"/>
+<section id="ctiot">
+<h2>ctiot<a class="headerlink" href="#ctiot" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://wiki.luatos.org/api/ctiot.html">ctiot Interface Documentation Page</a></p>
+<section id="ctiot-rx">
+<h3>CTIOT_RX<a class="headerlink" href="#ctiot-rx" title="Permalink to this headline">#</a></h3>
+<p>CTIOT Receive Callback Message</p>
+<p><strong>Additional return parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>data, CTIOT Receive data</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_RX"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_RX"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span><span class="n">toHex</span><span class="p">())</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="ctiot-tx">
+<h3>CTIOT_TX<a class="headerlink" href="#ctiot-tx" title="Permalink to this headline">#</a></h3>
+<p>CTIOT Send callback message</p>
+<p><strong>Additional return parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>error, Success or not</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>error_code, Error Code</p></td>
+</tr>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>param, Data</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_TX"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_TX"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="ctiot-reg">
+<h3>CTIOT_REG<a class="headerlink" href="#ctiot-reg" title="Permalink to this headline">#</a></h3>
+<p>CTIOT REG Callback message</p>
+<p><strong>Additional return parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>error, Success or not</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>error_code, Error Code</p></td>
+</tr>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>param, Data</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_REG"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_REG"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="ctiot-dereg">
+<h3>CTIOT_DEREG<a class="headerlink" href="#ctiot-dereg" title="Permalink to this headline">#</a></h3>
+<p>CTIOT DEREG Callback message</p>
+<p><strong>Additional return parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>error, Success or not</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>error_code, Error Code</p></td>
+</tr>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>param, Data</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_DEREG"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_DEREG"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="ctiot-wakeup">
+<h3>CTIOT_WAKEUP<a class="headerlink" href="#ctiot-wakeup" title="Permalink to this headline">#</a></h3>
+<p>CTIOT Wake-up callback message</p>
+<p><strong>Additional return parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>error, Success or not</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>error_code, Error Code</p></td>
+</tr>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>param, Data</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_WAKEUP"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_WAKEUP"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="ctiot-other">
+<h3>CTIOT_OTHER<a class="headerlink" href="#ctiot-other" title="Permalink to this headline">#</a></h3>
+<p>CTIOT Other Callback Messages</p>
+<p><strong>Additional return parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>error, Success or not</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>error_code, Error Code</p></td>
+</tr>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>param, Data</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_OTHER"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_OTHER"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="ctiot-fota">
+<h3>CTIOT_FOTA<a class="headerlink" href="#ctiot-fota" title="Permalink to this headline">#</a></h3>
+<p>CTIOT FOTA Callback message</p>
+<p><strong>Additional return parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>error, Success or not</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>error_code, Error Code</p></td>
+</tr>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>param, Data</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_FOTA"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_FOTA"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils"/>
 <section id="lora">
 <h2>lora<a class="headerlink" href="#lora" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://wiki.luatos.org/api/lora.html">lora Interface Documentation Page</a></p>
@@ -1190,6 +1400,16 @@
 <li><a class="reference internal" href="#socket">socket</a><ul>
 <li><a class="reference internal" href="#id3">NTP_UPDATE</a></li>
 <li><a class="reference internal" href="#ntp-error">NTP_ERROR</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctiot">ctiot</a><ul>
+<li><a class="reference internal" href="#ctiot-rx">CTIOT_RX</a></li>
+<li><a class="reference internal" href="#ctiot-tx">CTIOT_TX</a></li>
+<li><a class="reference internal" href="#ctiot-reg">CTIOT_REG</a></li>
+<li><a class="reference internal" href="#ctiot-dereg">CTIOT_DEREG</a></li>
+<li><a class="reference internal" href="#ctiot-wakeup">CTIOT_WAKEUP</a></li>
+<li><a class="reference internal" href="#ctiot-other">CTIOT_OTHER</a></li>
+<li><a class="reference internal" href="#ctiot-fota">CTIOT_FOTA</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#lora">lora</a><ul>

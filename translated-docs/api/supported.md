@@ -9,6 +9,7 @@
 |[codec](codec.md)|`Multimedia-Codec`|Y|Y|Y|X|X|Y|
 |[coremark](coremark.md)|`Running points`|Y|Y|Y|Y|Y|Y|
 |[crypto](crypto.md)|`Encryption and decryption and hash functions`|Y|Y|Y|Y|Y|Y|
+|[ctiot](ctiot.md)|`China Telecom CTIOT Integration`|?|?|?|?|?|?|
 |[dac](dac.md)|`Digital-to-analog conversion`|X|X|Y|X|X|X|
 |[disp](disp.md)|`disp Library (Obsolete)`|Y|Y|Y|Y|Y|Y|
 |[eink](eink.md)|`ink screen operation library`|Y|Y|Y|Y|Y|Y|
@@ -43,6 +44,7 @@
 |[log](log.md)|`Logstore`|Y|Y|Y|Y|Y|Y|
 |[lora](lora.md)|`lora Drive module`|Y|Y|Y|Y|Y|Y|
 |[lora2](lora2.md)|`lora2 Driver module (supports multi-hanging)`|X|X|X|Y|Y|Y|
+|[lpmem](lpmem.md)|`Operation of low-power non-power-down memory blocks`|?|?|?|?|?|?|
 |[lvgl](lvgl.md)|`LVGL Image Library`|Y|Y|Y|Y|Y|Y|
 |[max30102](max30102.md)|`Heart Rate Module(MAX30102)`|Y|Y|Y|Y|Y|Y|
 |[mcu](mcu.md)|`encapsulation mcu some special operations`|Y|Y|Y|Y|Y|Y|
