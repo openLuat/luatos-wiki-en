@@ -340,7 +340,7 @@ local crc = crypto.crc16("")
 
 ---
 
-## crypto.crc16_modbus(data)
+## crypto.crc16_modbus(data, start)
 
 
 
@@ -351,6 +351,7 @@ directly calculate the crc16 value of modbus
 |Incoming Value Type | Explanation|
 |-|-|
 |string|Data|
+|int|initialization value, default 0xFFFF|
 
 **Return Value**
 
@@ -363,6 +364,8 @@ directly calculate the crc16 value of modbus
 ```lua
 -- Calculation CRC16 modbus
 local crc = crypto.crc16_modbus(data)
+-- 2023.11.06 New Initial Value Setting
+crc = crypto.crc16_modbus(data, 0xFFFF)
 
 ```
 

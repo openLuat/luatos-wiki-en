@@ -1153,8 +1153,8 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="crypto-crc16-modbus-data">
-<h2>crypto.crc16_modbus(data)<a class="headerlink" href="#crypto-crc16-modbus-data" title="Permalink to this headline">#</a></h2>
+<section id="crypto-crc16-modbus-data-start">
+<h2>crypto.crc16_modbus(data, start)<a class="headerlink" href="#crypto-crc16-modbus-data-start" title="Permalink to this headline">#</a></h2>
 <p>directly calculate the crc16 value of modbus</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1166,6 +1166,9 @@
 <tbody>
 <tr class="row-even"><td><p>string</p></td>
 <td><p>Data</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>initialization value, default 0xFFFF</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1185,6 +1188,8 @@
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Calculation CRC16 modbus</span>
 <span class="kd">local</span> <span class="n">crc</span> <span class="o">=</span> <span class="n">crypto</span><span class="p">.</span><span class="n">crc16_modbus</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="c1">-- 2023.11.06 New Initial Value Setting</span>
+<span class="n">crc</span> <span class="o">=</span> <span class="n">crypto</span><span class="p">.</span><span class="n">crc16_modbus</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mh">0xFFFF</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1847,7 +1852,7 @@
 <li><a class="reference internal" href="#crypto-cipher-encrypt-type-padding-str-key-iv">crypto.cipher_encrypt(type, padding, str, key, iv)</a></li>
 <li><a class="reference internal" href="#crypto-cipher-decrypt-type-padding-str-key-iv">crypto.cipher_decrypt(type, padding, str, key, iv)</a></li>
 <li><a class="reference internal" href="#crypto-crc16-method-data-poly-initial-finally-inreversem-outreverse">crypto.crc16(method, data, poly, initial, finally, inReversem outReverse)</a></li>
-<li><a class="reference internal" href="#crypto-crc16-modbus-data">crypto.crc16_modbus(data)</a></li>
+<li><a class="reference internal" href="#crypto-crc16-modbus-data-start">crypto.crc16_modbus(data, start)</a></li>
 <li><a class="reference internal" href="#crypto-crc32-data">crypto.crc32(data)</a></li>
 <li><a class="reference internal" href="#crypto-crc8-data-poly-start-revert">crypto.crc8(data, poly, start, revert)</a></li>
 <li><a class="reference internal" href="#crypto-crc7-data-poly-start">crypto.crc7(data, poly, start)</a></li>
