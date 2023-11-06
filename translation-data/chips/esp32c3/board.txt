@@ -75,7 +75,7 @@ The core board is a core board designed based on Lexin ESP32-C3, with a size of 
 注：CORE ESP32核心板搭载ESP32-C3是不带内置FLASH版本，默认贴装外置SPI FLASH，如遇到不贴装外置SPI FLASH的核心，需要注意主芯片的具体型号。 使用内置Flash的, `GPIO11/12/13` 不可用
 Note: The CORE ESP32 core board is equipped with a ESP32-C3 without a built-in FLASH version. The external SPI FLASH is mounted by default. If you encounter a core that does not mount an external SPI FLASH, you need to pay attention to the specific model of the main chip. Using built-in Flash, `GPIO11/12/13 `is not available
 注意，由于**win7**系统不自带`winusb`驱动，且该系统早在2020年微软就已停止支持，所以如需使用`简约版开发板`，请升级至**win8以上系统**，或前往[乐鑫原厂手册](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html)安装驱动
-Note that since the **win7** system does not come with` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to use the` simple version development boade`, please upgrade to the system above **win8 * *, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver.
+Note that since the **win7** system does not come with` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to use the` simple version development boade`, please upgrade to the system above **win8**, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver.
 特别注意
 Special attention
 电源接口，与USB的VBUS相连

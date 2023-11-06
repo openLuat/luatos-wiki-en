@@ -71,7 +71,7 @@ Chip 9 pin to place 1nf filter capacitor.
 芯片** **25** **脚** **CAP** **必须外接** **4.7uf** **滤波电容
 Chip** **25** **Foot** **CAP** **Must be externally connected** **4.7uf** **Filter Capacitor
 芯片的供电范围 **3.0V-3.6V**。请勿超过该范围。**超过 3.6V可能会对芯片造成永久性损坏**。低于 3.0V 可能整体性能会下降。
-The power supply range of the chip is **3.0V-3.6V * *. Do not exceed this range. **More than 3.6V may cause permanent damage to the chip * *. Below 3.0V may degrade overall performance.
+The power supply range of the chip is **3.0V-3.6V**. Do not exceed this range. **More than 3.6V may cause permanent damage to the chip**. Below 3.0V may degrade overall performance.
 芯片默认 UART0 为下载口，芯片无固件初始下载时，直接连接 UART0 接口，通过相关下载软件即可实现固件下载。当芯片内有固件，再次进入下载模式，可以通过拉低 PA0，然后上电进入下载模式。下载完成后去掉 PA0 拉低的操作，需要重启，固件才能运行。
 The chip defaults to UART0 as the download port. When the chip has no initial firmware download, it is directly connected to the UART0 interface, and firmware download can be realized through related download software. When there is firmware in the chip, the download mode is entered again, and the download mode can be entered by pulling down PA0 and then powering on. After the download is completed, remove the PA0 pull-down operation and need to restart before the firmware can run.
 芯片上电后 1，2 脚默认为 UART0 端口，该端口提供下载及指令端口以及 log 输出端口。客户使用 时候注意不要随意使用该端口作为 GPIO 使用，防止被占用无法下载及调试。在系统起来后，该端口可以复 用为其它端口使用。确需复用的一定呀留好boot引脚，保证可以进行固件烧录。

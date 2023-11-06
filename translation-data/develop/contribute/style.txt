@@ -39,7 +39,7 @@ published topic description specification
 发送**原始数据**操作使用`send`开头
 Send **raw data** operation starts with `send`
 发送**c代码处理过的信息**操作使用`write`开头（如按寄存器地址写
-Send information processed by **c code * * the operation starts with` write` (e.g. write by register address
+Send information processed by **c code** the operation starts with` write` (e.g. write by register address
 发送与接收接口
 Send and receive interface
 返回成功执行进度的数字（如串口、spi发送成功的数据长度

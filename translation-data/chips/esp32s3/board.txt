@@ -35,7 +35,7 @@ and GND pin supply
 四、功能介绍
 4. function introduction
 如若到手后板子`默认的闪灯程序`无法运行，且**无法烧录固件（卡在FLASH下载那一步）**，可尝试补焊**FLASH处的焊盘**（加锡
-If the` default flashing light program` on the back board cannot run and **cannot burn firmware (stuck in the step of FLASH download)**, try to repair and solder the pad at * * FLASH * (tin added
+If the` default flashing light program` on the back board cannot run and **cannot burn firmware (stuck in the step of FLASH download)**, try to repair and solder the pad at **FLASH** (tin added
 开发板
 Development Board
 开源仓库链接
@@ -65,7 +65,7 @@ The core board supports the following 3 ways of power supply
 核心板是基于乐鑫ESP32-S3进行设计的一款核心板，尺寸仅有21mm*51mm，板边采用邮票孔设计，方便开发者在不同场景下的使用。核心板板载2.4G天线，支持wifi和蓝牙。核心板内置8MB psram，16MB flash豪华配置。板载ch343p USB转串口芯片，方便下载烧录；同时还设计了模拟开关电路，可一键切换到S3内置的USB，进行USB功能的开发调试。核心板支持UART、GPIO、SPI、I2C、ADC、PWM，SDIO，Camera等接口，可根据实际需要连接外设进行调试。
 The core board is a core board designed based on Lexin ESP32-S3, with a size of only 21mm * 51mm. The board edge is designed with stamp holes, which is convenient for developers to use in different scenes. Core board onboard 2.4G antenna, support wifi and bluetooth. Core board built-in 8MB psram,16MB flash luxury configuration. Onboard ch343p USB to serial port chip, easy to download and burn; At the same time, an analog switch circuit is designed, which can be switched to S3 built-in USB with one key to develop and debug USB functions. The core board supports UART, GPIO, SPI, I2C, ADC, PWM,SDIO,Camera and other interfaces, and can be connected to peripherals for debugging according to actual needs.
 注意，由于**win7**系统不自带`winusb`驱动，且该系统早在2020年微软就已停止支持，所以如需使用`USB下载`，请升级至**win8以上系统**，或前往[乐鑫原厂手册](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html)安装驱动
-Note that since **win7** system does not have a` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to` USB download`, please upgrade to **win8 or above system * *, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver
+Note that since **win7** system does not have a` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to` USB download`, please upgrade to **win8 or above system**, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver
 特别注意
 Special attention
 相关资料链接
