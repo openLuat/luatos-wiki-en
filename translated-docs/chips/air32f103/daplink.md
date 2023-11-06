@@ -24,7 +24,7 @@ The solution for using this batch of burners is as follows：
 
 DAPLink It is an official open source debugger scheme of ARM, with the official address of [ARMmbed/DAPLink (github.com)](https://github.com/ARMmbed/DAPLink). It can be used to debug almost all single chip computers of arm cortex kernel. The latest M33 and M85 kernels also support debugging.
 
-Based on ARM's official code, Zeus was transplanted to Air32F103CBT6 and adapted the resources of **216M dominant frequency** and **96K large RAM**, supporting faster download speed ([firmware open source](https://gitee.com/openLuat/daplink)), and designed an ultra-small DAPLink hardware
+Based on ARM's official code, Zeus was transplanted to Air32F103CBT6 and adapted the resources of **216M dominant frequency**and**96K large RAM**, supporting faster download speed ([firmware open source](https://gitee.com/openLuat/daplink)), and designed an ultra-small DAPLink hardware
 
 ![img](img/1685598778508-1.jpg)
 

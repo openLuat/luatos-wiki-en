@@ -66,7 +66,7 @@ Short press ③ several times to keep the cursor at the **set voltage** position
 
 ### Change the maximum current
 
-Short press ③ several times to keep the cursor at the position of **set current**, long press ③ to switch **mA** and **A** units, use ① and ② to move the cursor to the position to be modified, and scroll ③ to adjust the value
+Short press ③ several times to keep the cursor at the position of **set current**, long press ③ to switch **mA**and**A** units, use ① and ② to move the cursor to the position to be modified, and scroll ③ to adjust the value
 
 ### Turn the output on or off
 
@@ -78,7 +78,7 @@ On the premise of ensuring that no external equipment is connected, short press 
 
 ### Switching between electric quantity and power display
 
-Short press ③ several times, let the cursor stay at **power** or **power** position, scroll ③ change mode
+Short press ③ several times, let the cursor stay at **power**or**power** position, scroll ③ change mode
 
 ### Manual gear switching (after 2.0.8 firmware）
 

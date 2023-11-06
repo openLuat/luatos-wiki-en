@@ -54,13 +54,13 @@ The progress bar below the power/power value indicates the current power consump
 ### Modify voltage
 
 On this page, use **scroll wheel**, select the voltage value `4.100 v` below, and press **scroll wheel** to enter editing mode  ；
-**The page key **can change the selected number, and the** scroll wheel **key can change the value of this number  ；
+**The page key **can change the selected number, and the**scroll wheel**key can change the value of this number  ；
 Press the **wheel** button again to exit the change
 
 ### Modify Current
 
 On this page, use the **scroll wheel**, select the current value `2.000A` below, and press the **scroll wheel** to enter the editing mode.  ；
-**The page key **can change the selected number, and the** scroll wheel **key can change the value of this number  ；
+**The page key **can change the selected number, and the**scroll wheel**key can change the value of this number  ；
 Press the **wheel** button again to exit the change
 
 Select `A` or `mA` on the side of the current value, and press **roller** to switch the unit of `A` or `mA`

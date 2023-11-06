@@ -10,7 +10,7 @@ Hezhou Air105 is a QFN88 MCU with a size of 10mm x 10mm. It not only provides ba
 
  **Limit parameter**
 
-| **Parameter **|** Description **|** Range **|** Unit** |
+| **Parameter **|**Description**|**Range**|** Unit** |
 | --------------- | ---------------------------- | ------------------ | -------- |
 | Iddpd           | Shutdown current                     | -                  | nA       |
 | Tamb            | Working temperature                     | -40~+85            | ℃        |
@@ -27,7 +27,7 @@ Hezhou Air105 is a QFN88 MCU with a size of 10mm x 10mm. It not only provides ba
 
  **Electrical characteristics**
 
-| **Parameter **|** Condition (-40°C to 85°C)**|** Value **| |** Unit** |
+| **Parameter **|** Condition (-40°C to 85°C)**|**Value**| |** Unit** |
 | ---------- | ------------------------- | -------- | -------- | -------- |
 |            |                           | **Minimum **|** Maximum** |          |
 | VCC        |                           | 3.6      | 5.5      | V        |
@@ -42,7 +42,7 @@ Hezhou Air105 is a QFN88 MCU with a size of 10mm x 10mm. It not only provides ba
 
 **Safety-related features**
 
-| **Sensor **|** Description **|** Range **|** Unit** |
+| **Sensor **|**Description**|**Range**|** Unit** |
 | -------------- | ---------------------- | -------- | -------- |
 | Voltage Sensor | Main Supply Voltage High Voltage Detection Range | 4.0±0.1  | V        |
 |                | Main power supply voltage low voltage detection range | 2.8±0.1  | V        |
@@ -61,7 +61,7 @@ The following figure shows the pin definition of Air105, which supports up to 54
 
  
 
-| **Number **|** Name **|** Type **|** Reuse Function **|** Pull Up and Down Capability **|** Remarks**                                                     |
+| **Number **|**Name**|**Type**|**Reuse Function**|**Pull Up and Down Capability**|** Remarks**                                                     |
 | -------- | ----------- | -------- | ---------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
 | 1        | CVCC        | P        |                              |                                                              | NC                                                           |
 | 2        | VDD33       | P        |                              |                                                              | Minimum voltage 2.7V, maximum voltage 3.6V                                   |

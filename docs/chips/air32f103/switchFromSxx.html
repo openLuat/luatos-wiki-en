@@ -1040,7 +1040,7 @@
 </pre></div>
 </div>
 <p>SXX32F103：JTAG Off, normal use SW DEBUG</p>
-<p>AIR32F103：Program Reset. Air32 only supports two settings: <strong>Turn off SWD and JTAG functions completely</strong> and <strong>Turn on SWD and JTAG functions at the same time</strong></p>
+<p>AIR32F103：Program Reset. Air32 only supports two settings: <strong>Turn off SWD and JTAG functions completely</strong>and<strong>Turn on SWD and JTAG functions at the same time</strong></p>
 <p>Some problems will be caused, for example, when cubemx is configured as SW debugging, the device cannot be connected after downloading the firmware once. the solution is to add it to the “HAL_MspInit” function of the “sxx32f1xx_hal_msp.c” file.<code class="docutils literal notranslate"><span class="pre">__HAL_AFIO_REMAP_SWJ_ENABLE();</span></code></p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* USER CODE END 0 */</span><span class="w"></span>
 <span class="cm">/**</span>

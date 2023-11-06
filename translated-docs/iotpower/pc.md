@@ -86,7 +86,7 @@ This area is the chart display area where you can preview the waveform
 ![pc_wave_mode1](img/pc_wave_mode1.png)
 ![pc_wave_mode2](img/pc_wave_mode2.png)
 
-Press this button to switch between **Real-time data/historical data** and **Select an area**. The two modes are described below.
+Press this button to switch between **Real-time data/historical data**and**Select an area**. The two modes are described below.
 
 ### Real-time data/historical data (no scaling）
 

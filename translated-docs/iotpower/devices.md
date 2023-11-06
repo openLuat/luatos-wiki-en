@@ -11,7 +11,7 @@ Iot Power Series has a variety of products, can meet a variety of testing needs
 
 ## Detailed comparison
 
-| **Status **|** Device Model **|** Power Supply **|** Series **|** Voltage **|** Current **|** Current Limit **|** Voltage Limit **|** PC **|** Screen **|** Self-powered **|** Deception** |
+| **Status **|**Device Model**|**Power Supply**|**Series**|**Voltage**|**Current**|**Current Limit**|**Voltage Limit**|**PC**|**Screen**|** Self-powered **|** Deception** |
 | :------: | :----------------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :----------: | :------: |
 |    🌐     |  **Iot Power V1**  |    ✅     |    ❌     |   0-5V   |   0-2A   |    ✅     |    ✅     |    ✅     |    ✅     |  TypeC 5V   |    ❌     |
 |    🚩     |  **Iot Power Pro**  |    ✅     |    ❌     |   0-5V   |  0-2A  |    ✅     |    ✅     |    ✅     |    ✅     |  TypeC 5V   |    ❌     |

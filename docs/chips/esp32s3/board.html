@@ -696,12 +696,12 @@
 <p>Through USB download (USB direct connection) can be directly burned, Win8 and above systems do not need to install drivers. Luatools burning can be used normally, but LuatIDE cannot be used. In addition to the need to select the firmware with<code class="docutils literal notranslate"> <span class="pre">USB</span></code> when burning, * GPIO19/20 will be occupied as USB pin *, should be avoided, other functions have no difference.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note that since <strong>win7</strong> system does not have a<code class="docutils literal notranslate"> <span class="pre">winusb</span></code> driver, and Microsoft has stopped supporting the system as early as 2020, if you need to<code class="docutils literal notranslate"> <span class="pre">USB</span> <span class="pre">download</span></code>, please upgrade to **win8 or above system * *, or go to <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html">Lexin Original Factory Manual</a> to install the driver</p>
+<p>Note that since <strong>win7</strong> system does not have a<code class="docutils literal notranslate"> <span class="pre">winusb</span></code> driver, and Microsoft has stopped supporting the system as early as 2020, if you need to<code class="docutils literal notranslate"> <span class="pre">USB</span> <span class="pre">download</span></code>, please upgrade to <strong>win8 or above system</strong>, or go to <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html">Lexin Original Factory Manual</a> to install the driver</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The first batch of ESP32S3 core boards, due to FLASH thermal expansion and cold contraction, will have a small probability of causing virtual welding after hand. (Firmware will be burned before leaving the factory, and will not leave the factory until it is successfully burned. This is the reason  ）
-If the<code class="docutils literal notranslate"> <span class="pre">default</span> <span class="pre">flashing</span> <span class="pre">light</span> <span class="pre">program</span></code> on the back board cannot run and <strong>cannot burn firmware (stuck in the step of FLASH download)</strong>, try to repair and solder the pad at * * FLASH * (tin added  ）。
+If the<code class="docutils literal notranslate"> <span class="pre">default</span> <span class="pre">flashing</span> <span class="pre">light</span> <span class="pre">program</span></code> on the back board cannot run and <strong>cannot burn firmware (stuck in the step of FLASH download)</strong>, try to repair and solder the pad at <strong>FLASH</strong> (tin added  ）。
 Therefore, please check the usb port with power on after you get it, and then carry out the welding needle arrangement operation after confirming that there is no problem.</p>
 </div>
 <p><a class="reference external" href="https://wiki.luatos.org/boardGuide/flash.html">Serial Burning Tutorial</a>,<strong>Log baud rate is 921600</strong></p>
@@ -786,7 +786,7 @@ Therefore, please check the usb port with power on after you get it, and then ca
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>**Key Number **</p></th>
-<th class="head"><p>** Pin Function **</p></th>
+<th class="head"><p><strong>Pin Function</strong></p></th>
 <th class="head"><p>** Description**</p></th>
 </tr>
 </thead>

@@ -330,7 +330,7 @@ GPIO_PinRemapConfig(GPIO_Remap_SWJJTAGDISABLE, ENABLE);
 
 SXX32F103：JTAG Off, normal use SW DEBUG
 
-AIR32F103：Program Reset. Air32 only supports two settings: **Turn off SWD and JTAG functions completely** and **Turn on SWD and JTAG functions at the same time**
+AIR32F103：Program Reset. Air32 only supports two settings: **Turn off SWD and JTAG functions completely**and**Turn on SWD and JTAG functions at the same time**
 
 Some problems will be caused, for example, when cubemx is configured as SW debugging, the device cannot be connected after downloading the firmware once. the solution is to add it to the "HAL_MspInit" function of the "sxx32f1xx_hal_msp.c" file.`__HAL_AFIO_REMAP_SWJ_ENABLE();`
 

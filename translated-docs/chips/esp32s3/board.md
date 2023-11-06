@@ -7,12 +7,12 @@ The driver of CH343 must be installed to download firmware normally when burning
 Through USB download (USB direct connection) can be directly burned, Win8 and above systems do not need to install drivers. Luatools burning can be used normally, but LuatIDE cannot be used. In addition to the need to select the firmware with` USB` when burning, * GPIO19/20 will be occupied as USB pin *, should be avoided, other functions have no difference.
 
 ```{note}
-Note that since **win7** system does not have a` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to` USB download`, please upgrade to **win8 or above system * *, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver
+Note that since **win7** system does not have a` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to` USB download`, please upgrade to **win8 or above system**, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver
 ```
 
 ```{warning}
 The first batch of ESP32S3 core boards, due to FLASH thermal expansion and cold contraction, will have a small probability of causing virtual welding after hand. (Firmware will be burned before leaving the factory, and will not leave the factory until it is successfully burned. This is the reason  ）
-If the` default flashing light program` on the back board cannot run and **cannot burn firmware (stuck in the step of FLASH download)**, try to repair and solder the pad at * * FLASH * (tin added  ）。
+If the` default flashing light program` on the back board cannot run and **cannot burn firmware (stuck in the step of FLASH download)**, try to repair and solder the pad at **FLASH** (tin added  ）。
 Therefore, please check the usb port with power on after you get it, and then carry out the welding needle arrangement operation after confirming that there is no problem.
 ```
 
@@ -82,7 +82,7 @@ The CORE ESP32S3 core board carries two keys, of which BOOT key can realize BOOT
 
 Table 4-2
 
-| **Key Number **|** Pin Function **|** Description**   |
+| **Key Number **|**Pin Function**|** Description**   |
 | ------------ | ---------------------------- | ---------- |
 | BOOT/GPIO0   | When the key is pressed, the chip enters download mode | active low |
 | RST          | When the key is pressed, the chip reset | active low |

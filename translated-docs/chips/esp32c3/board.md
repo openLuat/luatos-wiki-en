@@ -17,7 +17,7 @@ If you are using `Arduino`, please select the development board model`AirM2M COR
 ```
 
 ```{note}
-Note that since the **win7** system does not come with` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to use the` simple version development boade`, please upgrade to the system above **win8 * *, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver.
+Note that since the **win7** system does not come with` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to use the` simple version development boade`, please upgrade to the system above **win8**, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver.
 ```
 
 ## Brush machine burning tutorial
@@ -49,7 +49,7 @@ CORE ESP32 The core board is a core board designed based on Lexin ESP32-C3, with
 
 **Detailed Pin Description**
 
-| **Number **|** Name **|** Default function after reset **|** Multiplexing function **|** Power domain **|** Pull-down capability** |
+| **Number **|**Name**|**Default function after reset**|**Multiplexing function**|**Power domain**|** Pull-down capability** |
 | ------------ | -------- | --------------------------------------- | -----------| ---------- | -------------- |
 | 32           | GND      | Grounding                                    |            |            |                |
 | 31           | 5V       | 5V Power interface, connected to USB VBUS             |             |            |                |
@@ -123,7 +123,7 @@ The CORE ESP32 core board carries two keys, of which BOOT key can realize BOOT d
 
 Table 4-2
 
-| **Key Number **|** Pin Function **|** Description**   |
+| **Key Number **|**Pin Function**|** Description**   |
 | ------------ | ---------------------------- | ---------- |
 | BOOT/GPIO9   | When the key is pressed, the chip enters download mode | active low |
 | RST          | When the key is pressed, the chip reset | active low |
@@ -140,7 +140,7 @@ Pin Control Reference Table 4-3。
 
 Table 4-3
 
-| **flash Pin label **|** corresponds to GPIO **|** Pin function **|** Pull-up capability** |
+| **flash Pin label **|**corresponds to GPIO**|**Pin function**|** Pull-up capability** |
 | ----------------- | ------------ | ----------------------------- | -------------- |
 | SPICS0            | -            | GPIO14 Configuration, FLASH_CS, slice selection    | UP/DOWN        |
 | SPIQ              | -            | GPIO17 Configuration, FLASH_D1, Data Foot 1 | UP/DOWN        |

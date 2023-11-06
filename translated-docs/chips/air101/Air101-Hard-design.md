@@ -12,7 +12,7 @@ The hardware minimum system contains the minimum circuit for the chip to work. F
 
 ### Power
 
-The power supply range of the chip is **3.0V-3.6V * *. Do not exceed this range. **More than 3.6V may cause permanent damage to the chip * *. Below 3.0V may degrade overall performance.
+The power supply range of the chip is **3.0V-3.6V**. Do not exceed this range. **More than 3.6V may cause permanent damage to the chip**. Below 3.0V may degrade overall performance.
 
 See the following requirements for different pin placement capacitors：
 
@@ -28,7 +28,7 @@ The customer is recommend to place a 330uf electrolytic capacitor at the power e
 
 1uf filter capacitor is placed near the pins of chips 17,24 and 31.
 
-**Chip **** 25 **** Foot **** CAP **** Must be externally connected **** 4.7uf **** Filter Capacitor。**
+**Chip** **25** **Foot** **CAP** **Must be externally connected** **4.7uf** **Filter Capacitor。**
 
 In order to prevent ESD from causing damage to the chip, a TVS tube needs to be added at the entrance of the total power supply of the module to improve the anti-static ability. The chip power input pin should be placed with the corresponding filter capacitor to improve product performance. LDO is recommended for external power supply to the entire chip, and the total current is recommended to be 500mA and above. The line width of the total power supply shall not be less than 30mil. You can refer to the power supply of the Air101 development board for design.
 

@@ -29,7 +29,7 @@ LUA_API void* luat_heap_alloc(void *ud, void *ptr, size_t osize, size_t nsize);
     - When both `send`/`recv` and `read`/`write` exist
       - Send **raw data** operation starts with `send`
       - The receive **raw data** operation starts with `recv`
-      - Send information processed by **c code * * the operation starts with` write` (e.g. write by register address i2c）
+      - Send information processed by **c code** the operation starts with` write` (e.g. write by register address i2c）
       - Receive information processed by **c code** operation starts with `read`
     - When only one of `send`/`recv` and `read`/`write` exists
       - Write according to habit (for example, serial port uses `read`/`write`, while socket uses`send`/`recv`）

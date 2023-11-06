@@ -30,7 +30,7 @@ Lua is a_dynamically typed language_. This means that variables have no type; on
 
 Lua All the values in are_first-class citizens_. This means that all values can be stored in variables, passed as arguments to other functions, and returned as values.
 
-Lua There are eight basic types in: _nil_,_boolean_,_number_,_string_,_function_,_userdata_,_thread_, and_table_. _Nil_is the type of value **nil** whose main characteristic is to distinguish it from other values; it is usually used to represent the state when a meaningful value does not exist. _Boolean_is a type of both **false** and **true** values. Both **nil** and **false** cause the condition to be false; any other value is true. _Number_represents integers and real numbers (floating point numbers). _String_represents an immutable sequence of bytes. Lua is 8-bit friendly: a string can hold any 8-bit value, including zeros (`\0`). Lua`s string has nothing to do with encoding; it doesn`t care about the exact contents of the string.
+Lua There are eight basic types in: _nil_,_boolean_,_number_,_string_,_function_,_userdata_,_thread_, and_table_. _Nil_is the type of value **nil** whose main characteristic is to distinguish it from other values; it is usually used to represent the state when a meaningful value does not exist. _Boolean_is a type of both **false**and**true** values. Both **nil**and**false** cause the condition to be false; any other value is true. _Number_represents integers and real numbers (floating point numbers). _String_represents an immutable sequence of bytes. Lua is 8-bit friendly: a string can hold any 8-bit value, including zeros (`\0`). Lua`s string has nothing to do with encoding; it doesn`t care about the exact contents of the string.
 
 _number_ There are two internal representations of types,_integer_and_floating point_. Lua has clear rules for when to use which internal form, but it also makes automatic conversions as needed (see [§ 3.4.3](#3.4.3)). Therefore, in most cases, the programmer can choose to ignore the difference between integers and floating-point numbers or assume complete control over the internal representation of each number. Standard Lua uses 64-bit integers and double-precision (64-bit) floats, but you can also compile Lua to use 32-bit integers and single-precision (32-bit) floats. Representation of numbers in 32 bits is particularly suitable for small machines and embedded systems. (See macros in the `luaconf.h` file `LUA_32BITS` 。）
 
@@ -394,7 +394,7 @@ The assignment to the global variable `x = val` is equivalent to `_ENV.x = val` 
 
 Lua There is also a **for** statement, which has two forms (see [§3.3.5](#3.3.5)）。
 
-A conditional expression in a control structure can return any value. **false** and **nil** are both considered false. All values other than **nil** and **false** are considered true (in particular, the number 0 and the empty string are also considered true.）。
+A conditional expression in a control structure can return any value. **false**and**nil** are both considered false. All values other than **nil**and**false** are considered true (in particular, the number 0 and the empty string are also considered true.）。
 
 In the **repeat**-**until** loop, the end point of the inner statement block is not at the **until** keyword, which also includes the conditional expression that follows it. Therefore, local variables defined in the internal statement block of the loop can be used in conditional expressions.
 
@@ -453,7 +453,7 @@ Note these points below.：
 *   All three control expressions are evaluated only once, before the loop begins. The result of these expressions must be a number.
 *   `_var_`，`_limit_`，and `_step_` are invisible variables. The names given here are only for convenience of explanation.
 *   If the third expression (step) is not given, the step is set 1 。
-*   You can use **break** and **goto** to exit the **for** loop.
+*   You can use **break**and**goto** to exit the **for** loop.
 *   The loop variable `v` is a local variable inside a loop; if you need to use this value at the end of the loop, assign it to another variable before exiting the loop.
 
 The generic form of **for** works through a function called_iterator. With each iteration, the iterator function is called to produce a new value, and when this value is **nil**, the loop stops. The syntax of the generic form of a **for** loop is as follows：
@@ -625,9 +625,9 @@ The size comparison operation is performed in the following manner. If the argum
 
 #### 3.4.5 – logical operator
 
-Lua The logical operators in are **and**, **or**, and **not * *. As with control structures (see [§ 3.3.4](#3.3.4)), all logical operators treat **false** and **nil** as false, and everything else as true.
+Lua The logical operators in are **and**, **or**, and **not * *. As with control structures (see [§ 3.3.4](#3.3.4)), all logical operators treat **false**and**nil** as false, and everything else as true.
 
-The **not** operation always returns one of **false** or **true. with the **and** operator returns the first argument when the first argument is **false** or **nil**; otherwise, **and** returns the second argument. or **or** operator returns the first parameter when the first parameter is neither **nil** nor **false**, otherwise returns the second parameter. **and** and **or** both follow the short-circuit rule; that is, the second operand is evaluated only when needed. Here are some examples：
+The **not** operation always returns one of **false**or**true. with the **and** operator returns the first argument when the first argument is **false**or**nil**; otherwise, **and** returns the second argument. or **or** operator returns the first parameter when the first parameter is neither **nil**nor**false**, otherwise returns the second parameter. **and**and**or** both follow the short-circuit rule; that is, the second operand is evaluated only when needed. Here are some examples：
 
      10 or 20            --> 10
      10 or error()       --> 10
@@ -2167,7 +2167,7 @@ Converts a zero-terminated string `s` to a number, stacks the number, and return
 
 int lua\_toboolean (lua\_State \*L, int index);
 
-Converts the Lua value at a given index to a boolean (0 or 1) in C. As with all tests in Lua, [lua_toboolean](#lua_toboolean) will return any values other than **false** and **nil** as true; otherwise, it will return false. (If you want to receive only real boolean values, you need to use [`lua_isboolean`](#lua_isboolean) to test the type of the value。）
+Converts the Lua value at a given index to a boolean (0 or 1) in C. As with all tests in Lua, [lua_toboolean](#lua_toboolean) will return any values other than **false**and**nil** as true; otherwise, it will return false. (If you want to receive only real boolean values, you need to use [`lua_isboolean`](#lua_isboolean) to test the type of the value。）
 
 * * *
 
@@ -3391,7 +3391,7 @@ The base library provides the Lua core functions. If you don't include this libr
 
 #### `assert (v [, message])`
 
-If the value of its parameter `v` is false (**nil** or **false**), it calls [`error`](#pdf-error); otherwise, it returns all the parameters. In the case of an error, `message` refers to that error object; if this parameter is not supplied, the parameter defaults "`assertion failed!`" 。
+If the value of its parameter `v` is false (**nil**or**false**), it calls [`error`](#pdf-error); otherwise, it returns all the parameters. In the case of an error, `message` refers to that error object; if this parameter is not supplied, the parameter defaults "`assertion failed!`" 。
 
 * * *
 
@@ -3836,7 +3836,7 @@ If `repl` is a function, this function is called every time a match occurs. All 
 
 In any case, no capture set in the template is considered to capture the entire template.
 
-If the query result of the table or the return result of the function is a string or a number, it is used as a replacement string. However, when returning **false** or **nil**, no replacement is made (that is, the original string before matching is retained）。
+If the query result of the table or the return result of the function is a string or a number, it is used as a replacement string. However, when returning **false**or**nil**, no replacement is made (that is, the original string before matching is retained）。
 
 Here are some use cases：
 
