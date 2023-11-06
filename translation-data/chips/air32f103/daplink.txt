@@ -63,7 +63,7 @@ Update MDK to 5.36 or later version
 勾选`删除此设备的驱动程序软件`，点击确定即可卸载
 Check "Delete the driver software of this device" and click OK to uninstall it.
 合宙基于ARM官方代码移植到了Air32F103CBT6，并适配了**216M主频**和**96K大RAM**的资源，支持更快的的下载速度（[固件开源](https://gitee.com/openLuat/daplink)），并设计了一个超小体积的DAPLink硬件
-Based on ARM's official code, Zeus was transplanted to Air32F103CBT6 and adapted the resources of **216M dominant frequency** and **96K large RAM**, supporting faster download speed ([firmware open source](https://gitee.com/openLuat/daplink)), and designed an ultra-small DAPLink hardware
+Based on ARM's official code, Zeus was transplanted to Air32F103CBT6 and adapted the resources of **216M dominant frequency**and**96K large RAM**, supporting faster download speed ([firmware open source](https://gitee.com/openLuat/daplink)), and designed an ultra-small DAPLink hardware
 和MDK之间的常见问题，解决办法可以尝试以下方法
 and MDK, the solution can try the following methods
 很多人会说我用别的DAPLINK没问题,那是因为DAPLINK V1版本速度很慢，对线没要求。

@@ -1,7 +1,7 @@
 安装包
 Installation Package
 按下该按钮，可在**实时数据/历史数据**与**选取某个区域**两种显示模式中切换，下方将介绍两种模式
-Press this button to switch between **Real-time data/historical data** and **Select an area**. The two modes are described below.
+Press this button to switch between **Real-time data/historical data**and**Select an area**. The two modes are described below.
 按最大值设置纵坐标：按此次抓取数据的最大值，固定纵坐标范围
 Set vertical coordinate by maximum value: set the vertical coordinate range by the maximum value of the captured data.
 查看电流波形

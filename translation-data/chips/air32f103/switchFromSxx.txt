@@ -19,7 +19,7 @@ When operating SPI, if the software does not judge the non-BUSY state when turni
 查看程序能否正常运行。
 Check to see if the program works properly.
 程序复位。Air32仅支持**完全关闭SWD与JTAG功能**与**同时开启SWD与JTAG功能**两种设置
-Program Reset. Air32 only supports two settings: **Turn off SWD and JTAG functions completely** and **Turn on SWD and JTAG functions at the same time**
+Program Reset. Air32 only supports two settings: **Turn off SWD and JTAG functions completely**and**Turn on SWD and JTAG functions at the same time**
 程序中使用 FLASH_EraseOptionBytes()接口进行擦除选项字节区时，有概率进 HardFault_Handler 异常中断
 When the FLASH_EraseOptionBytes() interface is used in the program to erase the option byte area, there is a probability of HardFault_Handler abnormal interruption.
 处理电流数据

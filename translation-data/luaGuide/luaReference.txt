@@ -51,7 +51,7 @@ Converts the Lua value at the given index to a C type [lua_Number](#lua_Number) 
 把给定索引处的 Lua 值转换为一个 C 函数。 这个值必须是一个 C 函数； 如果不是就返回
 Converts the Lua value at the given index to a C function. This value must be a C function; if not, it returns
 把给定索引处的 Lua 值转换为一个 C 中的布尔量（ 0 或是 1 ）。 和 Lua 中做的所有测试一样， [`lua_toboolean`](#lua_toboolean) 会把任何不同于 **false** 和 **nil** 的值当作真返回； 否则就返回假。 （如果你想只接收真正的 boolean 值， 就需要使用 [`lua_isboolean`](#lua_isboolean) 来测试值的类型
-Converts the Lua value at a given index to a boolean (0 or 1) in C. As with all tests in Lua, [lua_toboolean](#lua_toboolean) will return any values other than **false** and **nil** as true; otherwise, it will return false. (If you want to receive only real boolean values, you need to use [`lua_isboolean`](#lua_isboolean) to test the type of the value
+Converts the Lua value at a given index to a boolean (0 or 1) in C. As with all tests in Lua, [lua_toboolean](#lua_toboolean) will return any values other than **false**and**nil** as true; otherwise, it will return false. (If you want to receive only real boolean values, you need to use [`lua_isboolean`](#lua_isboolean) to test the type of the value
 把给定索引处的 Lua 值转换为一个 C 字符串。 如果 `len` 不为 `NULL` ， 它还把字符串长度设到 `*len` 中。 这个 Lua 值必须是一个字符串或是一个数字； 否则返回 `NULL` 。 如果值是一个数字， `lua_tolstring` 还会 _把堆栈中的那个值的实际类型转换为一个字符串_。 （当遍历一张表的时候， 若把 `lua_tolstring` 作用在键上， 这个转换有可能导致 [`lua_next`](#lua_next) 弄错
 Converts the Lua value at the given index to a C string. If `len` is not `NULL`, it also sets the string length to `* len. The Lua value must be a string or a number; otherwise, `NULL` is returned `. If the value is a number, lua_tolstring will also convert the actual type of that value on the stack to a string_. (When traversing a table, if the lua_tolstring is applied to the key, this conversion may cause [`lua_next`](#lua_next) to be wrong
 把给定索引处的值转换为一般的 C 指针 (`void*`) 。 这个值可以是一个用户对象，表 ，线程或是一个函数； 否则， `lua_topointer` 返回 `NULL` 。 不同的对象有不同的指针。 不存在把指针再转回原有类型的方法。
@@ -1175,7 +1175,7 @@ spaces) ignore
 控制结构
 control structure
 控制结构中的条件表达式可以返回任何值。 **false** 与 **nil** 两者都被认为是假。 所有不同于 **nil** 与 **false** 的其它值都被认为是真 （特别需要注意的是，数字 0 和空字符串也被认为是真
-A conditional expression in a control structure can return any value. **false** and **nil** are both considered false. All values other than **nil** and **false** are considered true (in particular, the number 0 and the empty string are also considered true.
+A conditional expression in a control structure can return any value. **false**and**nil** are both considered false. All values other than **nil**and**false** are considered true (in particular, the number 0 and the empty string are also considered true.
 控制垃圾收集器。
 Controls the garbage collector.
 库的变更
@@ -1299,7 +1299,7 @@ You can set the meta method for garbage collection for tables, and for full user
 你可以用 [`getmetatable`](#pdf-getmetatable) 函数 来获取任何值的元表。 Lua 使用直接访问的方式从元表中查询元方法（参见[`rawget`](#pdf-rawget)）。 所以，从对象 `o` 中获取事件 `ev` 的元方法等价于下面的代码
 You can use the [`getmetatable`](#pdf-getmetatable) function to get the metatable of any value. Lua uses direct access to query meta methods from the meta table (see [`rawget`](#pdf-rawget)). So, the meta-method for getting event `ev` from object `o` is equivalent to the following code
 你可以用 **break** 和 **goto** 来退出 **for** 循环。
-You can use **break** and **goto** to exit the **for** loop.
+You can use **break**and**goto** to exit the **for** loop.
 你也可以通过 C API 来创建及操作协程： 参见函数 [`lua_newthread`](#lua_newthread)， [`lua_resume`](#lua_resume)， 以及
 You can also use the C API to create and manipulate coroutine: see functions [lua_newthread](#lua_newthread), [lua_resume](#lua_resume), and
 你只能在状态为 [`LUA_OK`](#pdf-LUA_OK) 的线程中调用函数。 你可以延续一个状态为 [`LUA_OK`](#pdf-LUA_OK) 的线程 （用于开始新协程）或是状态为 [`LUA_YIELD`](#pdf-LUA_YIELD) 的线程 （用于延续协程
@@ -1323,7 +1323,7 @@ Which one is the global one
 取得全局变量
 Get global variables
 取反操作 **not** 总是返回 **false** 或 **true** 中的一个。 与操作符 **and** 在第一个参数为 **false** 或 **nil** 时 返回这第一个参数； 否则，**and** 返回第二个参数。 或操作符 **or** 在第一个参数不为 **nil** 也不为 **false** 时， 返回这第一个参数，否则返回第二个参数。 **and** 和 **or** 都遵循短路规则； 也就是说，第二个操作数只在需要的时候去求值。 这里有一些例子
-The **not** operation always returns one of **false** or **true. with the **and** operator returns the first argument when the first argument is **false** or **nil**; otherwise, **and** returns the second argument. or **or** operator returns the first parameter when the first parameter is neither **nil** nor **false**, otherwise returns the second parameter. **and** and **or** both follow the short-circuit rule; that is, the second operand is evaluated only when needed. Here are some examples
+The **not** operation always returns one of **false**or**true. with the **and** operator returns the first argument when the first argument is **false**or**nil**; otherwise, **and** returns the second argument. or **or** operator returns the first parameter when the first parameter is neither **nil**nor**false**, otherwise returns the second parameter. **and**and**or** both follow the short-circuit rule; that is, the second operand is evaluated only when needed. Here are some examples
 取负
 take negative
 取负 (一元
@@ -1417,7 +1417,7 @@ Returns "`integer`" if `x` is an integer, "`float`" if it is a floating point, a
 如果表单中最后一个域的形式是 `exp` ， 而且其表达式是一个函数调用或者是一个可变参数， 那么这个表达式所有的返回值将依次进入列表 （参见
 If the last field in the form is in the form of `exp` and its expression is a function call or a variable parameter, then all the return values of this expression will go into the list in turn (see
 如果表的查询结果或函数的返回结果是一个字符串或是个数字， 都将其作为替换用串； 而在返回 **false** 或 **nil**　时不作替换 （即保留匹配前的原始串
-If the query result of the table or the return result of the function is a string or a number, it is used as a replacement string. However, when returning **false** or **nil**, no replacement is made (that is, the original string before matching is retained
+If the query result of the table or the return result of the function is a string or a number, it is used as a replacement string. However, when returning **false**or**nil**, no replacement is made (that is, the original string before matching is retained
 如果不传参数调用， `date` 返回一个合理的日期时间串， 格式取决于宿主程序以及当前的区域设置 （即，`os.date()` 等价于
 If called without parameters, `date` returns a reasonable date-time string in a format that depends on the host program and the current locale (I. e., `OS. date()` is equivalent
 如果不传入参数， [`debug.sethook`](#pdf-debug.sethook) 关闭钩子。
@@ -1477,7 +1477,7 @@ If you know the length of the result string in advance, you can use the cache li
 如果你在寻找原版手册页面，请[点击这里查看
 If you are looking for the original manual page, please [click here to view
 如果其参数 `v` 的值为假（**nil** 或 **false**）， 它就调用 [`error`](#pdf-error)； 否则，返回所有的参数。 在错误情况时， `message` 指那个错误对象； 如果不提供这个参数，参数默认为
-If the value of its parameter `v` is false (**nil** or **false**), it calls [`error`](#pdf-error); otherwise, it returns all the parameters. In the case of an error, `message` refers to that error object; if this parameter is not supplied, the parameter defaults
+If the value of its parameter `v` is false (**nil**or**false**), it calls [`error`](#pdf-error); otherwise, it returns all the parameters. In the case of an error, `message` refers to that error object; if this parameter is not supplied, the parameter defaults
 如果索引 `index1` 与索引 `index2` 处的值 本身相等（即不调用元方法），返回 1 。 否则返回 0 。 当任何一个索引无效时，也返回
 Returns 1 if index `index1` is equal to the value at index `index2` itself (I. e. no meta method is called). Otherwise it returns 0. Also returns when either index is invalid
 如果提供了 `time` 参数， 格式化这个时间 （这个值的含义参见 [`os.time`](#pdf-os.time) 函数）。 否则，`date` 格式化当前时间。
@@ -2305,7 +2305,7 @@ The syntax for the function call in is as follows
 中的函数若需要传入栈索引，这个索引必须是 _有效索引_ 或是 _可接受索引
 If the function in needs to pass in the stack index, this index must be a valid index or an acceptable index.
 中的逻辑操作符有 **and**， **or**，以及 **not**。 和控制结构（参见 [§3.3.4](#3.3.4)）一样， 所有的逻辑操作符把 **false** 和 **nil** 都作为假， 而其它的一切都当作真。
-The logical operators in are **and**, **or**, and **not * *. As with control structures (see [§ 3.3.4](#3.3.4)), all logical operators treat **false** and **nil** as false, and everything else as true.
+The logical operators in are **and**, **or**, and **not * *. As with control structures (see [§ 3.3.4](#3.3.4)), all logical operators treat **false**and**nil** as false, and everything else as true.
 中的每个值都可以有一个 _元表_。 这个 _元表_ 就是一个普通的 Lua 表， 它用于定义原始值在特定操作下的行为。 如果你想改变一个值在特定操作下的行为，你可以在它的元表中设置对应域。 例如，当你对非数字值做加操作时， Lua 会检查该值的元表中的 "`__add`" 域下的函数。 如果能找到，Lua 则调用这个函数来完成加这个操作。
 Each value in can have a_meta table_. This_meta table_is a normal Lua table that defines the behavior of the original value under a specific operation. If you want to change the behavior of a value under a specific operation, you can set the corresponding field in its meta table. For example, when you add a non-numeric value, Lua checks the function under the `__add` field in the meta table for that value. If it can be found, Lua calls this function to complete the add operation.
 中的匹配模式直接用常规的字符串来描述。 它用于模式匹配函数 [`string.find`](#pdf-string.find), [`string.gmatch`](#pdf-string.gmatch), [`string.gsub`](#pdf-string.gsub), [`string.match`](#pdf-string.match)。 这一节表述了这些字符串的语法及含义（即它能匹配到什么
@@ -2323,7 +2323,7 @@ The type of the number in. The default is double, but you can change it to float
 中所有的值都是 _一等公民_。 这意味着所有的值均可保存在变量中、 当作参数传递给其它函数、以及作为返回值。
 All the values in are_first-class citizens_. This means that all values can be stored in variables, passed as arguments to other functions, and returned as values.
 中有八种基本类型： _nil_、_boolean_、_number_、_string_、_function_、_userdata_、 _thread_ 和 _table_。 _Nil_ 是值 **nil** 的类型， 其主要特征就是和其它值区别开；通常用来表示一个有意义的值不存在时的状态。 _Boolean_ 是 **false** 与 **true** 两个值的类型。 **nil** 和 **false** 都会导致条件判断为假； 而其它任何值都表示为真。 _Number_ 代表了整数和实数（浮点数）。 _String_ 表示一个不可变的字节序列。 Lua 对 8 位是友好的： 字符串可以容纳任意 8 位值， 其中包含零 ('`\0`') 。 Lua 的字符串与编码无关； 它不关心字符串中具体内容。
-There are eight basic types in: _nil_,_boolean_,_number_,_string_,_function_,_userdata_,_thread_, and_table_. _Nil_is the type of value **nil** whose main characteristic is to distinguish it from other values; it is usually used to represent the state when a meaningful value does not exist. _Boolean_is a type of both **false** and **true** values. Both **nil** and **false** cause the condition to be false; any other value is true. _Number_represents integers and real numbers (floating point numbers). _String_represents an immutable sequence of bytes. Lua is 8-bit friendly: a string can hold any 8-bit value, including zeros (`\0`). Lua`s string has nothing to do with encoding; it doesn`t care about the exact contents of the string.
+There are eight basic types in: _nil_,_boolean_,_number_,_string_,_function_,_userdata_,_thread_, and_table_. _Nil_is the type of value **nil** whose main characteristic is to distinguish it from other values; it is usually used to represent the state when a meaningful value does not exist. _Boolean_is a type of both **false**and**true** values. Both **nil**and**false** cause the condition to be false; any other value is true. _Number_represents integers and real numbers (floating point numbers). _String_represents an immutable sequence of bytes. Lua is 8-bit friendly: a string can hold any 8-bit value, including zeros (`\0`). Lua`s string has nothing to do with encoding; it doesn`t care about the exact contents of the string.
 中有这些基本表达式
 There are these basic expressions in
 中止对后面选项的处理

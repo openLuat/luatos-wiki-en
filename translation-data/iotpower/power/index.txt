@@ -37,9 +37,9 @@ Power output positive
 调零
 Zeroing
 短按下③多次，让光标停留在**电量**或**功率**位置，滚动③更改模式
-Short press ③ several times, let the cursor stay at **power** or **power** position, scroll ③ change mode
+Short press ③ several times, let the cursor stay at **power**or**power** position, scroll ③ change mode
 短按下③多次，让光标停留在**设定电流**位置，长按③可切换**mA**与**A**单位，使用①、②移动光标至需要修改的位置，滚动③调节数值
-Short press ③ several times to keep the cursor at the position of **set current**, long press ③ to switch **mA** and **A** units, use ① and ② to move the cursor to the position to be modified, and scroll ③ to adjust the value
+Short press ③ several times to keep the cursor at the position of **set current**, long press ③ to switch **mA**and**A** units, use ① and ② to move the cursor to the position to be modified, and scroll ③ to adjust the value
 短按下③多次，让光标停留在**设定电压**位置，使用①、②移动光标至需要修改的位置，滚动③调节数值。电压在没有负载时因为回路不闭合所以显示是不准的，请连接负载使用，未连接负载时显示的值是不可靠的。
 Short press ③ several times to keep the cursor at the **set voltage** position, use ① and ② to move the cursor to the position to be modified, and scroll ③ to adjust the value. When there is no load, the display is not allowed because the circuit is not closed. Please connect the load for use. The value displayed when the load is not connected is unreliable.
 风险提示：部分品牌快充充电头（如华为、小米等私有协议快充头）可能会误识别快充协议，导致向设备提供超过5.8V的高电压导致瞬间烧毁设备。建议尽量不要使用快充充电头

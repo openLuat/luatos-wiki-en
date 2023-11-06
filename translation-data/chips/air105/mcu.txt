@@ -1,11 +1,11 @@
 安全相关特性
 Safety-related features
 编号** | **名称**    | **类型** | **复用功能**                 | **上下拉能力**                                               | **备注
-Number **|** Name **|** Type **|** Reuse Function **|** Pull Up and Down Capability **|** Remarks
+Number **|**Name**|**Type**|**Reuse Function**|**Pull Up and Down Capability**|** Remarks
 参数**        | **说明**                     | **范围**           | **单位
-Parameter **|** Description **|** Range **|** Unit
+Parameter **|**Description**|**Range**|** Unit
 参数**   | **条件（-40°C to+85°C）** | **值**   |          | **单位
-Parameter **|** Condition (-40°C to 85°C)**|** Value **| |** Unit
+Parameter **|** Condition (-40°C to 85°C)**|**Value**| |** Unit
 参数对照表
 parameter comparison table
 产品概述
@@ -15,7 +15,7 @@ Charging module circuit
 储藏温度
 Storage temperature
 传感器**     | **说明**               | **范围** | **单位
-Sensor **|** Description **|** Range **|** Unit
+Sensor **|**Description**|**Range**|** Unit
 串接100Ω电阻抗浪涌
 Series 100Ω electrical impedance surge
 串口下载                                                     | 固定

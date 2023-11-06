@@ -69,7 +69,7 @@ Chip 7 pin to place 1uf filter capacitor.
 芯片 9 脚需放置 1nf 滤波器电容。
 Chip 9 pin to place 1nf filter capacitor.
 芯片** **25** **脚** **CAP** **必须外接** **4.7uf** **滤波电容
-Chip **** 25 **** Foot **** CAP **** Must be externally connected **** 4.7uf **** Filter Capacitor
+Chip** **25** **Foot** **CAP** **Must be externally connected** **4.7uf** **Filter Capacitor
 芯片的供电范围 **3.0V-3.6V**。请勿超过该范围。**超过 3.6V可能会对芯片造成永久性损坏**。低于 3.0V 可能整体性能会下降。
 The power supply range of the chip is **3.0V-3.6V * *. Do not exceed this range. **More than 3.6V may cause permanent damage to the chip * *. Below 3.0V may degrade overall performance.
 芯片默认 UART0 为下载口，芯片无固件初始下载时，直接连接 UART0 接口，通过相关下载软件即可实现固件下载。当芯片内有固件，再次进入下载模式，可以通过拉低 PA0，然后上电进入下载模式。下载完成后去掉 PA0 拉低的操作，需要重启，固件才能运行。

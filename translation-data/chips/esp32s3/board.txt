@@ -49,7 +49,7 @@ When the key is pressed, the chip reset | active low
 按键按下时，芯片进入下载模式 | 低电平有效
 When the key is pressed, the chip enters download mode | active low
 按键编号** | **管脚功能**                 | **描述
-Key Number **|** Pin Function **|** Description
+Key Number **|**Pin Function**|** Description
 接口（8 位 ~16 位并行 RGB, I8080, MOTO6800）, 支持 RGB565, YUV422, YUV420, YUV411 之间互相转换
 Interface (8-bit ~ 16-bit parallel RGB, I8080, MOTO6800), supports conversion between RGB565, YUV422, YUV420, YUV411
 接口供电（默认

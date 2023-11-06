@@ -25,7 +25,7 @@ Power output interface, it is strictly prohibited to reverse other power supply/
 翻页
 Page turning
 翻页键**可更改选中的数字，**滚轮**键可更改这一位数字的值
-The page key **can change the selected number, and the** scroll wheel **key can change the value of this number
+The page key **can change the selected number, and the**scroll wheel**key can change the value of this number
 风险提示
 Risk Alert
 该部分内容将讲解设备各部分功能的具体含义与按键操作方式

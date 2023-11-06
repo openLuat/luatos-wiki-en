@@ -53,7 +53,7 @@ When the key is pressed, the chip reset | active low
 按键按下时，芯片进入下载模式 | 低电平有效
 When the key is pressed, the chip enters download mode | active low
 按键编号** | **管脚功能**                 | **描述
-Key Number **|** Pin Function **|** Description
+Key Number **|**Pin Function**|** Description
 接口供电（默认
 Interface power supply (default
 接地
@@ -87,13 +87,13 @@ The pin cannot be pulled down before power-on, ESP32 will enter download mode.
 管脚控制参考表
 Pin Control Reference Table
 管脚标号** | **对应GPIO** | **管脚功能**                  | **上下拉能力
-Pin label **|** corresponds to GPIO **|** Pin function **|** Pull-up capability
+Pin label **|**corresponds to GPIO**|**Pin function**|** Pull-up capability
 经典款（带TTL串口转USB的版本）一定要安装CH343的驱动才能正常下载固件，默认的CDC驱动只能打印日志，但是速率太慢会导致下载失败。[驱动传送门
 The classic model (version with TTL serial port to USB) must install the driver of CH343 to download the firmware normally. The default CDC driver can only print logs, but the speed is too slow to cause the download to fail. [Drive portal
 编号 | **对应GPIO** | **管脚功能** | **描述
 Number | **Corresponds to GPIO** | **Pin function** | **Description
 编号** | **名称** | **复位后默认功能**                      | **复用功能**    | **电源域** | **上下拉能力
-Number **|** Name **|** Default function after reset **|** Multiplexing function **|** Power domain **|** Pull-down capability
+Number **|**Name**|**Default function after reset**|**Multiplexing function**|**Power domain**|** Pull-down capability
 芯片3.3V供电控制,高电平有效，不用可悬空
 Chip 3.3V power supply control, high level valid, no need to suspend
 芯片复位

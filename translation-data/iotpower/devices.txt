@@ -33,6 +33,6 @@ Can also take power from the USB input port of the charging head
 支持
 Support
 状态** |    **设备型号**    | **电源** | **串联** | **电压** | **电流** | **限流** | **限压** | **PC端** | **屏幕** | **自身供电** | **诱骗
-Status **|** Device Model **|** Power Supply **|** Series **|** Voltage **|** Current **|** Current Limit **|** Voltage Limit **|** PC **|** Screen **|** Self-powered **|** Deception
+Status **|**Device Model**|**Power Supply**|**Series**|**Voltage**|**Current**|**Current Limit**|**Voltage Limit**|**PC**|**Screen**|** Self-powered **|** Deception
 总览
 Overview
