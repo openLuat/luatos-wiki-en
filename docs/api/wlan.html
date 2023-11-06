@@ -819,8 +819,8 @@
 <p>None</p>
 </section>
 <hr class="docutils"/>
-<section id="wlan-connect-ssid-password">
-<h2>wlan.connect(ssid, password)<a class="headerlink" href="#wlan-connect-ssid-password" title="Permalink to this headline">#</a></h2>
+<section id="wlan-connect-ssid-password-auto-reconnect">
+<h2>wlan.connect(ssid, password, auto_reconnect)<a class="headerlink" href="#wlan-connect-ssid-password-auto-reconnect" title="Permalink to this headline">#</a></h2>
 <p>As a STATION, connect to the specified AP</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -835,6 +835,9 @@
 </tr>
 <tr class="row-odd"><td><p>string</p></td>
 <td><p>AP password of, optional</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>0 Turn off automatic reconnect, 1 turn on automatic reconnect. Auto reconnect is currently forced on</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1367,7 +1370,7 @@
 <li><a class="reference internal" href="#wlan-init">wlan.init()</a></li>
 <li><a class="reference internal" href="#wlan-setmode-mode">wlan.setMode(mode)</a></li>
 <li><a class="reference internal" href="#wlan-ready">wlan.ready()</a></li>
-<li><a class="reference internal" href="#wlan-connect-ssid-password">wlan.connect(ssid, password)</a></li>
+<li><a class="reference internal" href="#wlan-connect-ssid-password-auto-reconnect">wlan.connect(ssid, password, auto_reconnect)</a></li>
 <li><a class="reference internal" href="#wlan-disconnect">wlan.disconnect()</a></li>
 <li><a class="reference internal" href="#wlan-scan">wlan.scan()</a></li>
 <li><a class="reference internal" href="#wlan-scanresult">wlan.scanResult()</a></li>

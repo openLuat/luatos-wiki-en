@@ -110,7 +110,7 @@ None
 
 ---
 
-## wlan.connect(ssid, password)
+## wlan.connect(ssid, password, auto_reconnect)
 
 
 
@@ -122,6 +122,7 @@ As a STATION, connect to the specified AP
 |-|-|
 |string|AP of ssid|
 |string|AP password of, optional|
+|int|0 Turn off automatic reconnect, 1 turn on automatic reconnect. Auto reconnect is currently forced on|
 
 **Return Value**
 
