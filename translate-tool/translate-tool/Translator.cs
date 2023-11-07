@@ -12,6 +12,7 @@ using TencentCloud.Common;
 using TencentCloud.Tmt.V20180321;
 using TencentCloud.Tmt.V20180321.Models;
 using Tea;
+using System.Globalization;
 
 namespace translate_tool
 {
@@ -211,7 +212,9 @@ namespace translate_tool
             foreach (var key in exist.Keys)
                 l.Add($"{key}\r\n{exist[key]}");
             //排序一下
-            l.Sort();
+            l = l
+                .OrderBy(s => s, StringComparer.Create(CultureInfo.CurrentCulture, true))
+                .ToList();
             //保存
             File.WriteAllText(path, string.Join("\r\n", l));
         }
