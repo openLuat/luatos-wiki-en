@@ -46,13 +46,17 @@ Execute positioning request
 
 |return value type | explanation|
 |-|-|
-|string|If successful, return the latitude of the positioning coordinate, which is the WGS84 coordinate system, otherwise it will be returned nil|
-|string|If successful, return the accuracy of the positioning coordinates, which is the WGS84 coordinate system, otherwise it will be returned.nil|
+|string|If successful, return the latitude of the positioning coordinates, otherwise it will be returned.nil|
+|string|If successful, return the accuracy of the positioning coordinates, otherwise it will be returned.nil|
 |table|Server time, East Zone 8 time. When the reqTime is true and the location is successful, it will be returned.|
 
 **Examples**
 
 ```lua
+-- About Coordinate Systems
+-- In some cases, it will return GCJ02 coordinate system, and in some cases, it will return WGS84 coordinates.
+-- Historical data has been unable to distinguish the specific coordinate system
+-- In view of the error between the two coordinate systems is not large, less than the error of the base station positioning itself, the significance
 sys.taskInit(function()
     if mobile.status() == 0 then
         sys.waitUntil("IP_READY", 3000)

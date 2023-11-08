@@ -749,10 +749,10 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>If successful, return the latitude of the positioning coordinate, which is the WGS84 coordinate system, otherwise it will be returned nil</p></td>
+<td><p>If successful, return the latitude of the positioning coordinates, otherwise it will be returned.nil</p></td>
 </tr>
 <tr class="row-odd"><td><p>string</p></td>
-<td><p>If successful, return the accuracy of the positioning coordinates, which is the WGS84 coordinate system, otherwise it will be returned.nil</p></td>
+<td><p>If successful, return the accuracy of the positioning coordinates, otherwise it will be returned.nil</p></td>
 </tr>
 <tr class="row-even"><td><p>table</p></td>
 <td><p>Server time, East Zone 8 time. When the reqTime is true and the location is successful, it will be returned.</p></td>
@@ -760,7 +760,11 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- About Coordinate Systems</span>
+<span class="c1">-- In some cases, it will return GCJ02 coordinate system, and in some cases, it will return WGS84 coordinates.</span>
+<span class="c1">-- Historical data has been unable to distinguish the specific coordinate system</span>
+<span class="c1">-- In view of the error between the two coordinate systems is not large, less than the error of the base station positioning itself, the significance</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
     <span class="kr">if</span> <span class="n">mobile</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="kr">then</span>
         <span class="n">sys</span><span class="p">.</span><span class="n">waitUntil</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
     <span class="kr">end</span>
