@@ -1,45 +1,201 @@
+上右
+Upper Right
+上左
+Upper Left
+下右
+Lower Right
+下左
+Lower Left
+为所有绘图功能分配绘图颜色。
+Assigns a drawing color to all drawing functions.
+为纯英文8号字体,还有font_opposansm10 font_opposansm12 font_opposansm16 font_opposansm18 font_opposansm20 font_opposansm22 font_opposansm24 font_opposansm32 可选 u8g2.font_opposansm12_chinese 为12x12全中文,还有 font_opposansm16_chinese font_opposansm24_chinese font_opposansm32_chinese 可选, u8g2.font_unifont_t_symbols 为符号
+For pure English font 8, there are font_opposansm10 font_opposansm12 font_opposansm16 font_opposansm18 font_opposansm20 font_opposansm22 font_opposansm32 optional u8g2.font_opposansm12_chinese is 12x 12 all Chinese, there are font_opposansm16_chinese font_opposansm24_chinese font_opposansm32_chinese optional, u8g2.font_unifont_t_symbols is symbol
+为颜色值 0没有色 1有色 2与底色
+Color value 0 No color 1 Colored 2 with background color
+二维码的内容
+The content of the two-dimensional code
+从x / y位置（左上边缘）开始绘制一个框（填充的框
+Draw a box (filled box starting from the x / y position (upper left edge)
+从x / y位置（左上边缘）开始绘制一个框（空框
+Draw a box from the x / y position (upper left edge) (empty box)
+传入值类型|解释
+Incoming Value Type | Explanation
+位图宽
+bitmap width
+位图数据,每一位代表一个像素
+Bitmap data, each bit representing a pixel
+位图高
+Bitmap Height
+位置
+Location
+使用gtfont显示gb2312字符串
+Using gtfont to display gb2312 strings
+使用gtfont显示UTF8字符串
+Using gtfont to display UTF8 strings
+例子
+Examples
+全部
+All
+关闭disp,再次使用disp相关API的话,需要重新初始化
+If disp is closed and the disp-related API is used again, it needs to be reinitialized.
+关闭显示屏
+Turn off display
+关闭省电
+Power saving off
+初始化硬件i2c的
+Initialize hardware for i2c
+初始化硬件spi的
+initialize hardware spi
+初始化软件i2c的
+initialization software i2c
+参数
+Parameters
+反转文本
+Reverse Text
+取模使用PCtoLCD2002软件即可
+The mold can be taken using PCtoLCD2002 software.
+可选
+Optional
+启用与否. true 启用, false禁用
+Enabled or not. true enabled, false disabled
+启用阴影，与框架无间隙
+Enable shadows, no gaps from frame
+启用阴影，到帧的1像素间隙
+Enable shadows, 1 pixel gap to frame
+启用阴影，到帧的2像素间隙
+Enable shadows, 2 pixel gap to frame
 啊啊啊
 Ah ah ah
+四个边缘的半径
+Radius of the four edges
+图形处理库
+graphics processing library
+圆半径
+circle radius
+圆心位置
+Position of center of circle
+在(0,0)为左上角,绘制 16x16 "今" 的位图
+In (0,0) for the upper left corner, draw a 16x 16 "today" bitmap
+在x,y位置画一个半径为rad的实心圆
+Draw a solid circle with radius rad at x,y position
+在x,y位置画一个半径为rad的实心椭圆
+Draw a solid ellipse with radius rad at x,y position
+在x,y位置画一个半径为rad的空心圆
+Draw a hollow circle with radius rad at x,y position
+在x,y位置画一个半径为rad的空心椭圆
+Draw a hollow ellipse with radius rad at x,y position
+在两点之间画一条线
+draw a line between two points
+在按钮周围绘制第二个1像素框
+Draw a second 1 pixel box around the button
+在提供的文本周围画一个框。这与 DrawUTF8 类似，但为文本添加了一些装饰。,要调用u8g2.SendBuffer()才会更新到屏幕
+Draw a box around the provided text. This is similar to DrawUTF8, but adds some decoration to the text., To call u8g2.SendBuffer() will update to the screen
+在显示屏上画一段文字，在显示屏上画一段文字,要调用u8g2.SendBuffer()才会更新到屏幕
+Draw a paragraph of text on the display screen, draw a paragraph of text on the display screen, to call u8g2.SendBuffer() will be updated to the screen
+坐标
+Coordinates
+字体大小 (支持16-192号大小字体
+Font size (supports 16-192 size fonts
+字体模式，启用（1）或禁用（0）透明模式
+Font mode, enable (1) or disable (0) transparent mode
+字符串,主控芯片类型, 支持custom(自定义命令) ssd1306(默认
+String, master chip type, support custom (custom command) ssd1306 (default
+字符串,模式,可选i2c_sw:软件i2c i2c_hw:硬件i2c,spi_hw_4pin: 硬件
+String, Pattern, Optional i2c_sw: Software i2c i2c_hw: Hardware i2c,spi_hw_4pin: Hardware
+字符在显示屏上的位置
+Position of characters on the display
+字符的Unicode值
+Unicode value of character
+定义位图函数是否将写入背景色
+Defines whether the bitmap function will write the background color
+实例,空间要大于等于底层buff的大小
+instance, the space should be greater than or equal to the size of the underlying buff
+对比度（取值范围与IC有关，如st7567为
+Contrast ratio (the value range is related to IC, such as st7567
+将数据更新到屏幕，将存储器帧缓冲区的内容发送到显示器
+Update data to the screen, send the contents of the memory frame buffer to the display
+将文本置于框架内的中心，并将参考位置更改为文本的中心
+Place the text in the center of the frame and change the reference position to the center of the text
+左上边缘的X位置
+X position of upper left edge
+左上边缘的Y位置
+Y position of upper left edge
+已适配
+Adapted
+常量
+Constant
+常量|类型|解释
+constant | type | explanation
+开启省电
+Power saving on
+成功返回buff大小,否则返回
+Returns buff size on success, otherwise
 把显示数据更新到屏幕
 Update the display data to the screen
+拷贝底层
+Copy the bottom layer
+数值,X轴偏移量,默认按驱动走, 2023.11.10新增的配置项
+Value, X-axis offset, default drive, 2023.11.10 new configuration item
+数值,方向,可选0 90 180 270 默认
+Value, direction, optional 0 90 180 270 default
+数值,硬件i2c时有效
+Value, valid for hardware i2c
+数值,硬件spi的SPI编号,复位GPIO编号,DC线的GPIO编号, CS线的GPIO编号
+Value, SPI number of hardware spi, reset GPIO number, GPIO number of DC line, GPIO number of CS line
+数值,软件i2c时时钟线的GPIO编号
+Value, GPIO number of clock line at software i2c
+数值软件i2c时数据线的GPIO编号
+GPIO number of data line for numerical software i2c
+文件内容
+Document Content
+文本上下的额外空间
+Extra space above and below text
+文本前后的额外空间
+Extra space before and after text
+文本周围没有边框
+No border around text
+文本周围的边框，1像素边框宽度
+Border around text, 1 pixel border width
+文本周围的边框，2像素边框宽度
+Border around text, 2 pixel border width
+文本周围的边框，3像素边框宽度
+Border around text, 3 pixel border width
+文本的最小宽度。如果为0（或低于文本宽度），则文本宽度将用于框架
+The minimum width of the text. If 0 (or lower than the text width), the text width will be used for the frame
+无
+None
+无返回值
+No return value
+显示大小 (注意:二维码生成大小与要显示内容和纠错等级有关,生成版本为1-40(对应 21x21 - 177x177)的不定大小,如果和设置大小不同会自动在指定的区域中间显示二维码,如二维码未显示请查看日志提示
+Display size (note: the generated size of the two-dimensional code is related to the content to be displayed and the error correction level. the generated version is an indefinite size of 1-40 (corresponding to 21x21-177x177). if the size is different from the set size, the two-dimensional code will be automatically displayed in the middle of the specified area. if the two-dimensional code is not displayed, please check the log prompt.
+显示字符串
+Display String
+显示屏初始化
+Display initialization
+显示屏宽度
+Display Width
+显示屏高度
+Display height
+本API于2023.11.02新增
+This API was added on 2023.11.02
 本函数在u8g2初始化之后才能调用
 This function can only be called after u8g2 is initialized.
 本库有专属demo，[点此链接查看u8g2的demo例子
 This library has its own demo,[click this link to view the demo example of u8g2
 本页文档由[这个文件](https://gitee.com/openLuat/LuatOS/tree/master/luat/../components/u8g2/luat_lib_u8g2.c)自动生成。如有错误，请提交issue或帮忙修改后pr，谢谢
 This page document is automatically generated by [this file](https://gitee.com/openLuat/LuatOS/tree/master/luat/../components/u8g2/luat_lib_u8g2.c). If there is any error, please submit issue or help modify pr, thank you
-本API于2023.11.02新增
-This API was added on 2023.11.02
 标志 多个标志可以与“或”运算符一起使用
 flags Multiple flags can be used with the OR operator
-参数
-Parameters
-常量
-Constant
-常量|类型|解释
-constant | type | explanation
-成功返回buff大小,否则返回
-Returns buff size on success, otherwise
-初始化软件i2c的
-initialization software i2c
-初始化硬件i2c的
-Initialize hardware for i2c
-初始化硬件spi的
-initialize hardware spi
-传入值类型|解释
-Incoming Value Type | Explanation
-从x / y位置（左上边缘）开始绘制一个框（空框
-Draw a box from the x / y position (upper left edge) (empty box)
-从x / y位置（左上边缘）开始绘制一个框（填充的框
-Draw a box (filled box starting from the x / y position (upper left edge)
-第二个点的X位置
-X position of the second point
-第二个点的Y位置
-Y position of second point
-第一个点的X位置
-X position of the first point
-第一个点的Y位置
-Y position of the first point
+椭圆大小
+Ellipse Size
+横坐标
+abscissa
+正常初始化1,已经初始化过2,内存不够3,初始化失败返回
+Normal initialization 1, already initialized 2, insufficient memory 3, initialization failure return
+清屏
+Clear screen
+清屏，清除内存帧缓冲区中的所有像素
+Clear screen, clear all pixels in memory frame buffer
 点0X位置
 Point 0X Position
 点0Y位置
@@ -52,199 +208,63 @@ Point 1Y position
 Point 2X Position
 点2Y位置
 Point 2Y position
-调整屏幕对比度
-Adjust screen contrast
-定义位图函数是否将写入背景色
-Defines whether the bitmap function will write the background color
-对比度（取值范围与IC有关，如st7567为
-Contrast ratio (the value range is related to IC, such as st7567
-二维码的内容
-The content of the two-dimensional code
-反转文本
-Reverse Text
-返回值
-Return Value
-返回值类型|解释
-return value type | explanation
-关闭省电
-Power saving off
-关闭显示屏
-Turn off display
-关闭disp,再次使用disp相关API的话,需要重新初始化
-If disp is closed and the disp-related API is used again, it needs to be reinitialized.
-盒子的高度
-Height of the box
-盒子的宽度
-The width of the box
-横坐标
-abscissa
 画一个点
 draw a dot
-缓冲区绘制
-Buffer Drawing
-绘制位图
-Draw Bitmap
-绘制一个从x / y位置（左上边缘）开始具有圆形边缘的空框/框架
-Draw an empty box/frame with rounded edges starting from the x / y position (top left edge)
-绘制一个从x / y位置（左上边缘）开始具有圆形边缘的填充框/框架
-Draw a filled box/frame with a rounded edge starting from the x / y position (top left edge)
+盒子的宽度
+The width of the box
+盒子的高度
+Height of the box
+竖坐标
+Vertical Coordinates
+第一个点的X位置
+X position of the first point
+第一个点的Y位置
+Y position of the first point
+第二个点的X位置
+X position of the second point
+第二个点的Y位置
+Y position of second point
 绘制一个三角形（实心多边形
 Draw a triangle (solid polygon
+绘制一个从x / y位置（左上边缘）开始具有圆形边缘的填充框/框架
+Draw a filled box/frame with a rounded edge starting from the x / y position (top left edge)
+绘制一个从x / y位置（左上边缘）开始具有圆形边缘的空框/框架
+Draw an empty box/frame with rounded edges starting from the x / y position (top left edge)
 绘制一个图形字符。字符放置在指定的像素位置x和
 Draws a graphic character. The character is placed at the specified pixel position x and
+绘制位图
+Draw Bitmap
+缓冲区绘制
+Buffer Drawing
 获取大小
 Get Size
 获取底层图像缓冲区
 Get the underlying image buffer
-获取显示屏高度
-Get Display Height
 获取显示屏宽度
 Get Display Width
-将数据更新到屏幕，将存储器帧缓冲区的内容发送到显示器
-Update data to the screen, send the contents of the memory frame buffer to the display
-将文本置于框架内的中心，并将参考位置更改为文本的中心
-Place the text in the center of the frame and change the reference position to the center of the text
-开启省电
-Power saving on
-拷贝底层
-Copy the bottom layer
-可选
-Optional
-例子
-Examples
-配置信息 ic:支持 custom(自定义命令) ssd1306(默认) ssd1309 ssd1322 sh1106 sh1107 sh1108 st7567 uc1701 ssd1306_128x32, direction:方向,可选0 90 180 270 默认0 mode:模式,可选i2c_sw:软件i2c i2c_hw:硬件i2c spi_hw_4pin:硬件spi i2c_id:硬件i2c时有效 i2c_scl=1、i2c_sda:软件i2c时有效 spi_id、spi_res、spi_dc、spi_cs:硬件spi时生效
-Configuration information ic: support custom (custom command) ssd1306 (default) ssd1309 ssd1322 sh1106 sh1107 sh1108 st7567 uc1701 ssd1306_128x32, direction: direction, optional 0 90 180 270 default 0 mode: mode, optional i2c_sw: software i2c i2c_hw: hardware i2c spi_hw_4pin: hardware spi i2c_id: valid when hardware i2c i2c_scl = 1, i2c_sda: spi_2c valid when hardware spics, valid when_spi_res
-启用阴影，到帧的1像素间隙
-Enable shadows, 1 pixel gap to frame
-启用阴影，到帧的2像素间隙
-Enable shadows, 2 pixel gap to frame
-启用阴影，与框架无间隙
-Enable shadows, no gaps from frame
-启用与否. true 启用, false禁用
-Enabled or not. true enabled, false disabled
-清屏
-Clear screen
-清屏，清除内存帧缓冲区中的所有像素
-Clear screen, clear all pixels in memory frame buffer
-取模使用PCtoLCD2002软件即可
-The mold can be taken using PCtoLCD2002 software.
-全部
-All
-上右
-Upper Right
-上左
-Upper Left
-设置省电模式
-Set power saving mode
+获取显示屏高度
+Get Display Height
 设置为中文字体,对之后的drawStr有效
 Set to Chinese font, valid for subsequent drawStr
 设置字体
 Set Font
 设置字体模式
 Set font mode
-实例,空间要大于等于底层buff的大小
-instance, the space should be greater than or equal to the size of the underlying buff
-使用gtfont显示gb2312字符串
-Using gtfont to display gb2312 strings
-使用gtfont显示UTF8字符串
-Using gtfont to display UTF8 strings
-竖坐标
-Vertical Coordinates
-四个边缘的半径
-Radius of the four edges
-通过PA1 SCL / PA4 SDA模拟
-Simulation via PA1 SCL / PA4 SDA
-图形处理库
-graphics processing library
-椭圆大小
-Ellipse Size
-为纯英文8号字体,还有font_opposansm10 font_opposansm12 font_opposansm16 font_opposansm18 font_opposansm20 font_opposansm22 font_opposansm24 font_opposansm32 可选 u8g2.font_opposansm12_chinese 为12x12全中文,还有 font_opposansm16_chinese font_opposansm24_chinese font_opposansm32_chinese 可选, u8g2.font_unifont_t_symbols 为符号
-For pure English font 8, there are font_opposansm10 font_opposansm12 font_opposansm16 font_opposansm18 font_opposansm20 font_opposansm22 font_opposansm32 optional u8g2.font_opposansm12_chinese is 12x 12 all Chinese, there are font_opposansm16_chinese font_opposansm24_chinese font_opposansm32_chinese optional, u8g2.font_unifont_t_symbols is symbol
-为所有绘图功能分配绘图颜色。
-Assigns a drawing color to all drawing functions.
-为颜色值 0没有色 1有色 2与底色
-Color value 0 No color 1 Colored 2 with background color
-位图高
-Bitmap Height
-位图宽
-bitmap width
-位图数据,每一位代表一个像素
-Bitmap data, each bit representing a pixel
-位置
-Location
-文本的最小宽度。如果为0（或低于文本宽度），则文本宽度将用于框架
-The minimum width of the text. If 0 (or lower than the text width), the text width will be used for the frame
-文本前后的额外空间
-Extra space before and after text
-文本上下的额外空间
-Extra space above and below text
-文本周围的边框，1像素边框宽度
-Border around text, 1 pixel border width
-文本周围的边框，2像素边框宽度
-Border around text, 2 pixel border width
-文本周围的边框，3像素边框宽度
-Border around text, 3 pixel border width
-文本周围没有边框
-No border around text
-文件内容
-Document Content
-无
-None
-无返回值
-No return value
-下右
-Lower Right
-下左
-Lower Left
-显示大小 (注意:二维码生成大小与要显示内容和纠错等级有关,生成版本为1-40(对应 21x21 - 177x177)的不定大小,如果和设置大小不同会自动在指定的区域中间显示二维码,如二维码未显示请查看日志提示
-Display size (note: the generated size of the two-dimensional code is related to the content to be displayed and the error correction level. the generated version is an indefinite size of 1-40 (corresponding to 21x21-177x177). if the size is different from the set size, the two-dimensional code will be automatically displayed in the middle of the specified area. if the two-dimensional code is not displayed, please check the log prompt.
-显示屏初始化
-Display initialization
-显示屏高度
-Display height
-显示屏宽度
-Display Width
-显示字符串
-Display String
+设置省电模式
+Set power saving mode
+调整屏幕对比度
+Adjust screen contrast
+返回值
+Return Value
+返回值类型|解释
+return value type | explanation
 选择圆的部分或全部. 默认全画 可选
 Select part or all of the circle. Default full drawing optional
-已适配
-Adapted
-圆半径
-circle radius
-圆心位置
-Position of center of circle
-在(0,0)为左上角,绘制 16x16 "今" 的位图
-In (0,0) for the upper left corner, draw a 16x 16 "today" bitmap
-在按钮周围绘制第二个1像素框
-Draw a second 1 pixel box around the button
-在两点之间画一条线
-draw a line between two points
-在提供的文本周围画一个框。这与 DrawUTF8 类似，但为文本添加了一些装饰。,要调用u8g2.SendBuffer()才会更新到屏幕
-Draw a box around the provided text. This is similar to DrawUTF8, but adds some decoration to the text., To call u8g2.SendBuffer() will update to the screen
-在显示屏上画一段文字，在显示屏上画一段文字,要调用u8g2.SendBuffer()才会更新到屏幕
-Draw a paragraph of text on the display screen, draw a paragraph of text on the display screen, to call u8g2.SendBuffer() will be updated to the screen
-在x,y位置画一个半径为rad的空心椭圆
-Draw a hollow ellipse with radius rad at x,y position
-在x,y位置画一个半径为rad的空心圆
-Draw a hollow circle with radius rad at x,y position
-在x,y位置画一个半径为rad的实心椭圆
-Draw a solid ellipse with radius rad at x,y position
-在x,y位置画一个半径为rad的实心圆
-Draw a solid circle with radius rad at x,y position
-正常初始化1,已经初始化过2,内存不够3,初始化失败返回
-Normal initialization 1, already initialized 2, insufficient memory 3, initialization failure return
-字符的Unicode值
-Unicode value of character
-字符在显示屏上的位置
-Position of characters on the display
-字体大小 (支持16-192号大小字体
-Font size (supports 16-192 size fonts
-字体模式，启用（1）或禁用（0）透明模式
-Font mode, enable (1) or disable (0) transparent mode
-左上边缘的X位置
-X position of upper left edge
-左上边缘的Y位置
-Y position of upper left edge
-坐标
-Coordinates
+通过PA1 SCL / PA4 SDA模拟
+Simulation via PA1 SCL / PA4 SDA
+配置信息 ic:支持 custom(自定义命令) ssd1306(默认) ssd1309 ssd1322 sh1106 sh1107 sh1108 st7567 uc1701 ssd1306_128x32, direction:方向,可选0 90 180 270 默认0 mode:模式,可选i2c_sw:软件i2c i2c_hw:硬件i2c spi_hw_4pin:硬件spi i2c_id:硬件i2c时有效 i2c_scl=1、i2c_sda:软件i2c时有效 spi_id、spi_res、spi_dc、spi_cs:硬件spi时生效
+Configuration information ic: support custom (custom command) ssd1306 (default) ssd1309 ssd1322 sh1106 sh1107 sh1108 st7567 uc1701 ssd1306_128x32, direction: direction, optional 0 90 180 270 default 0 mode: mode, optional i2c_sw: software i2c i2c_hw: hardware i2c spi_hw_4pin: hardware spi i2c_id: valid when hardware i2c i2c_scl = 1, i2c_sda: spi_2c valid when hardware spics, valid when_spi_res
+配置信息,详细配置看下面的例子
+Configuration information, detailed configuration see the following example
+配置项说明
+Configuration Item Description

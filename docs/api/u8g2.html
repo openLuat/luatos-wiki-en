@@ -786,7 +786,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>table</p></td>
-<td><p>conf Configuration information ic: support custom (custom command) ssd1306 (default) ssd1309 ssd1322 sh1106 sh1107 sh1108 st7567 uc1701 ssd1306_128x32, direction: direction, optional 0 90 180 270 default 0 mode: mode, optional i2c_sw: software i2c i2c_hw: hardware i2c spi_hw_4pin: hardware spi i2c_id: valid when hardware i2c i2c_scl = 1, i2c_sda: spi_2c valid when hardware spics, valid when_spi_res</p></td>
+<td><p>conf Configuration information, detailed configuration see the following example</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -804,7 +804,17 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Initialize hardware for i2c ssd1306</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- conf Configuration Item Description</span>
+<span class="c1">-- ic String, master chip type, support custom (custom command) ssd1306 (default) ssd1309 ssd1322 sh1106 sh1107 sh1108 st7567 uc1701 ssd1306_128x32</span>
+<span class="c1">-- direction Value, direction, optional 0 90 180 270 default 0</span>
+<span class="c1">-- mode String, Pattern, Optional i2c_sw: Software i2c i2c_hw: Hardware i2c,spi_hw_4pin: Hardware spi</span>
+<span class="c1">-- i2c_id: Value, valid for hardware i2c</span>
+<span class="c1">-- i2c_scl: Value, GPIO number of clock line at software i2c</span>
+<span class="c1">-- i2c_sda: GPIO number of data line for numerical software i2c</span>
+<span class="c1">-- spi_id、spi_res、spi_dc、spi_cs: Value, SPI number of hardware spi, reset GPIO number, GPIO number of DC line, GPIO number of CS line</span>
+<span class="c1">-- x_offset: Value, X-axis offset, default drive, 2023.11.10 new configuration item</span>
+
+<span class="c1">-- Initialize hardware for i2c ssd1306</span>
 <span class="n">u8g2</span><span class="p">.</span><span class="n">begin</span><span class="p">({</span><span class="n">ic</span> <span class="o">=</span> <span class="s2">"ssd1306"</span><span class="p">,</span><span class="n">direction</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s2">"i2c_hw"</span><span class="p">,</span><span class="n">i2c_id</span><span class="o">=</span><span class="mi">0</span><span class="p">})</span> <span class="c1">-- direction Optional 0 90 180 270</span>
 <span class="c1">-- initialize hardware spi ssd1306</span>
 <span class="n">u8g2</span><span class="p">.</span><span class="n">begin</span><span class="p">({</span><span class="n">ic</span> <span class="o">=</span> <span class="s2">"ssd1306"</span><span class="p">,</span><span class="n">direction</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s2">"spi_hw_4pin"</span><span class="p">,</span><span class="n">spi_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">spi_res</span><span class="o">=</span><span class="n">pin</span><span class="p">.</span><span class="n">PB03</span><span class="p">,</span><span class="n">spi_dc</span><span class="o">=</span><span class="n">pin</span><span class="p">.</span><span class="n">PB01</span><span class="p">,</span><span class="n">spi_cs</span><span class="o">=</span><span class="n">pin</span><span class="p">.</span><span class="n">PB04</span><span class="p">})</span> <span class="c1">-- direction Optional 0 90 180 270</span>
