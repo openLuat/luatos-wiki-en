@@ -78,6 +78,8 @@ Digital Audio
 Data processing
 数据库,掉电不丢数据
 Database, power failure does not lose data
+数据库操作
+Database Operations
 数模转换
 Digital-to-analog conversion
 文件系统额外操作

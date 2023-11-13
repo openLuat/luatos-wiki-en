@@ -74,6 +74,7 @@
 |[socket](socket.md)|`Network Interface`|Y|Y|Y|Y|Y|Y|
 |[softkeyboard](softkeyboard.md)|`software keyboard matrix (currently only supported by air105)`|?|?|?|?|?|?|
 |[spi](spi.md)|`spi Operation Library`|Y|Y|Y|Y|Y|Y|
+|[sqlite3](sqlite3.md)|`sqlite3 Database Operations`|X|X|X|X|X|X|
 |[statem](statem.md)|`SM State Machine`|Y|Y|Y|Y|Y|Y|
 |[string](string.md)|`String Manipulation Functions`|Y|Y|Y|Y|Y|Y|
 |[sys](sys.md)|`sys Library`|Y|Y|Y|Y|Y|Y|
