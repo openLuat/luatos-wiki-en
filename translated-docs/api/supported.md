@@ -30,7 +30,7 @@
 |[httpsrv](httpsrv.md)|`http Server`|Y|Y|X|Y|Y|Y|
 |[i2c](i2c.md)|`I2C Operation`|Y|Y|Y|Y|Y|Y|
 |[i2s](i2s.md)|`Digital Audio`|Y|Y|X|X|X|Y|
-|[iconv](iconv.md)|`Character encoding conversion`|Y|Y|Y|Y|Y|Y|
+|[iconv](iconv.md)|`iconv Operation`|Y|Y|Y|Y|Y|Y|
 |[io](io.md)|`io action (extended)`|Y|Y|Y|Y|Y|Y|
 |[ioqueue](ioqueue.md)|`io Sequence operation`|X|X|Y|X|X|X|
 |[iotauth](iotauth.md)|`IoT Authentication library, used to generate parameters for various cloud platforms`|Y|Y|Y|Y|Y|Y|
@@ -89,6 +89,7 @@
 |[wdt](wdt.md)|`watchdog Operation Library`|Y|Y|Y|Y|Y|Y|
 |[websocket](websocket.md)|`websocket Client`|Y|Y|Y|Y|Y|Y|
 |[wlan](wlan.md)|`wifi Operation`|Y|Y|X|Y|Y|Y|
+|[ws2812](ws2812.md)|`Phantom Lights with RGB Controller (WS2812 Series)`|X|X|X|X|X|X|
 |[ymodem](ymodem.md)|`ymodem Agreement`|Y|Y|Y|Y|Y|Y|
 |[zbuff](zbuff.md)|`c Memory Data Manipulation Library`|Y|Y|Y|Y|Y|Y|
 |[zlib](zlib.md)|`zlib Compression/Decompression (Obsolete)`|Y|Y|Y|X|X|X|

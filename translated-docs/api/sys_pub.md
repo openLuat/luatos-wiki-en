@@ -98,71 +98,48 @@ for system messaging inside luatos
 
 ---
 
-## sms
+## w5500
 
 
 
-[sms Interface Documentation Page](https://wiki.luatos.org/api/sms.html)
+[w5500 Interface Documentation Page](https://wiki.luatos.org/api/w5500.html)
 
 
 
-### SMS_INC
+### IP_READY
 
-SMS received
+Networked
 
 **Additional return parameters**
 
-|return parameter type | explanation|
-|-|-|
-|string|Mobile phone number|
-|string|SMS content, UTF8 encoding|
+None
 
 **Examples**
 
 ```lua
---The example of use can be multi-line
--- Receive SMS, support a variety of ways, just choose one
--- 1. Set callback function
---sms.setNewSmsCb( function(phone,sms)
-    log.info("sms",phone,sms)
-end)
--- 2. Subscribe to system messages
---sys.subscribe("SMS_INC", function(phone,sms)
-    log.info("sms",phone,sms)
+-- This message will be sent once after networking.
+sys.subscribe("IP_READY", function(ip, adapter)
+    log.info("w5500", "IP_READY", ip, (adapter or -1) == socket.LWIP_GP)
 end)
 
 ```
 
 ---
 
-## softkeyboard
+### IP_LOSE
 
-
-
-[softkeyboard Interface Documentation Page](https://wiki.luatos.org/api/softkeyboard.html)
-
-
-
-### SOFT_KB_INC
-
-Software Keyboard Matrix Messages
+The network has been broken
 
 **Additional return parameters**
 
-|return parameter type | explanation|
-|-|-|
-|number|port, keyboard id Currently fixed to 0, can be ignored|
-|number|data, keyboard Keys need to be parsed in conjunction with init's map.|
-|number|state, Key state 1 is pressed, 0 is released|
+None
 
 **Examples**
 
 ```lua
-sys.subscribe("SOFT_KB_INC", function(port, data, state)
-    -- port Currently fixed to 0, can be ignored
-    -- data, Need to cooperate with init map for parsing
-    -- state, 1 is pressed, 0 is released
-    log.info("keyboard", port, data, state)
+-- This message will be sent once after the network is cut off.
+sys.subscribe("IP_LOSE", function(adapter)
+    log.info("w5500", "IP_LOSE", (adapter or -1) == socket.ETH0)
 end)
 
 ```
@@ -194,111 +171,6 @@ sys.subscribe("GNSS_STATE", function(event, ticks)
     -- LOSE  LOST POSITIONING
     -- ticks is the time of the event and can generally be ignored
     log.info("gnss", "state", event, ticks)
-end)
-
-```
-
----
-
-## lora
-
-
-
-[lora Interface Documentation Page](https://wiki.luatos.org/api/lora.html)
-
-
-
-### LORA_TX_DONE
-
-LORA Send Complete
-
-**Additional return parameters**
-
-None
-
-**Examples**
-
-```lua
-sys.subscribe("LORA_TX_DONE", function()
-    lora.recive(1000)
-end)
-
-```
-
----
-
-### LORA_RX_DONE
-
-LORA Receive Completed
-
-**Additional return parameters**
-
-None
-
-**Examples**
-
-```lua
-sys.subscribe("LORA_RX_DONE", function(data, size, rssi, snr)
-    -- rssi and snr were added on September 06, 2023
-    log.info("LORA_RX_DONE: ", data, size, rssi, snr)
-    lora.send("PING")
-end)
-
-```
-
----
-
-### LORA_TX_TIMEOUT
-
-LORA Send Timeout
-
-**Additional return parameters**
-
-None
-
-**Examples**
-
-```lua
-sys.subscribe("LORA_TX_TIMEOUT", function()
-    lora.recive(1000)
-end)
-
-```
-
----
-
-### LORA_RX_TIMEOUT
-
-LORA Receive Timeout
-
-**Additional return parameters**
-
-None
-
-**Examples**
-
-```lua
-sys.subscribe("LORA_RX_TIMEOUT", function()
-    lora.recive(1000)
-end)
-
-```
-
----
-
-### LORA_RX_ERROR
-
-LORA Receive Error
-
-**Additional return parameters**
-
-None
-
-**Examples**
-
-```lua
-sys.subscribe("LORA_RX_ERROR", function()
-    lora.recive(1000)
 end)
 
 ```
@@ -418,37 +290,51 @@ end)
 
 ---
 
-## w5500
+## softkeyboard
 
 
 
-[w5500 Interface Documentation Page](https://wiki.luatos.org/api/w5500.html)
+[softkeyboard Interface Documentation Page](https://wiki.luatos.org/api/softkeyboard.html)
 
 
 
-### IP_READY
+### SOFT_KB_INC
 
-Networked
+Software Keyboard Matrix Messages
 
 **Additional return parameters**
 
-None
+|return parameter type | explanation|
+|-|-|
+|number|port, keyboard id Currently fixed to 0, can be ignored|
+|number|data, keyboard Keys need to be parsed in conjunction with init's map.|
+|number|state, Key state 1 is pressed, 0 is released|
 
 **Examples**
 
 ```lua
--- This message will be sent once after networking.
-sys.subscribe("IP_READY", function(ip, adapter)
-    log.info("w5500", "IP_READY", ip, (adapter or -1) == socket.LWIP_GP)
+sys.subscribe("SOFT_KB_INC", function(port, data, state)
+    -- port Currently fixed to 0, can be ignored
+    -- data, Need to cooperate with init map for parsing
+    -- state, 1 is pressed, 0 is released
+    log.info("keyboard", port, data, state)
 end)
 
 ```
 
 ---
 
-### IP_LOSE
+## socket
 
-The network has been broken
+
+
+[socket Interface Documentation Page](https://wiki.luatos.org/api/socket.html)
+
+
+
+### NTP_UPDATE
+
+Time has been synchronized
 
 **Additional return parameters**
 
@@ -457,9 +343,27 @@ None
 **Examples**
 
 ```lua
--- This message will be sent once after the network is cut off.
-sys.subscribe("IP_LOSE", function(adapter)
-    log.info("w5500", "IP_LOSE", (adapter or -1) == socket.ETH0)
+sys.subscribe("NTP_UPDATE", function()
+    log.info("socket", "sntp", os.date())
+end)
+
+```
+
+---
+
+### NTP_ERROR
+
+Time synchronization failed
+
+**Additional return parameters**
+
+None
+
+**Examples**
+
+```lua
+sys.subscribe("NTP_ERROR", function()
+    log.info("socket", "sntp error")
 end)
 
 ```
@@ -633,17 +537,17 @@ end)
 
 ---
 
-## socket
+## lora
 
 
 
-[socket Interface Documentation Page](https://wiki.luatos.org/api/socket.html)
+[lora Interface Documentation Page](https://wiki.luatos.org/api/lora.html)
 
 
 
-### NTP_UPDATE
+### LORA_TX_DONE
 
-Time has been synchronized
+LORA Send Complete
 
 **Additional return parameters**
 
@@ -652,17 +556,17 @@ None
 **Examples**
 
 ```lua
-sys.subscribe("NTP_UPDATE", function()
-    log.info("socket", "sntp", os.date())
+sys.subscribe("LORA_TX_DONE", function()
+    lora.recive(1000)
 end)
 
 ```
 
 ---
 
-### NTP_ERROR
+### LORA_RX_DONE
 
-Time synchronization failed
+LORA Receive Completed
 
 **Additional return parameters**
 
@@ -671,8 +575,104 @@ None
 **Examples**
 
 ```lua
-sys.subscribe("NTP_ERROR", function()
-    log.info("socket", "sntp error")
+sys.subscribe("LORA_RX_DONE", function(data, size, rssi, snr)
+    -- rssi and snr were added on September 06, 2023
+    log.info("LORA_RX_DONE: ", data, size, rssi, snr)
+    lora.send("PING")
+end)
+
+```
+
+---
+
+### LORA_TX_TIMEOUT
+
+LORA Send Timeout
+
+**Additional return parameters**
+
+None
+
+**Examples**
+
+```lua
+sys.subscribe("LORA_TX_TIMEOUT", function()
+    lora.recive(1000)
+end)
+
+```
+
+---
+
+### LORA_RX_TIMEOUT
+
+LORA Receive Timeout
+
+**Additional return parameters**
+
+None
+
+**Examples**
+
+```lua
+sys.subscribe("LORA_RX_TIMEOUT", function()
+    lora.recive(1000)
+end)
+
+```
+
+---
+
+### LORA_RX_ERROR
+
+LORA Receive Error
+
+**Additional return parameters**
+
+None
+
+**Examples**
+
+```lua
+sys.subscribe("LORA_RX_ERROR", function()
+    lora.recive(1000)
+end)
+
+```
+
+---
+
+## sms
+
+
+
+[sms Interface Documentation Page](https://wiki.luatos.org/api/sms.html)
+
+
+
+### SMS_INC
+
+SMS received
+
+**Additional return parameters**
+
+|return parameter type | explanation|
+|-|-|
+|string|Mobile phone number|
+|string|SMS content, UTF8 encoding|
+
+**Examples**
+
+```lua
+--The example of use can be multi-line
+-- Receive SMS, support a variety of ways, just choose one
+-- 1. Set callback function
+--sms.setNewSmsCb( function(phone,sms)
+    log.info("sms",phone,sms)
+end)
+-- 2. Subscribe to system messages
+--sys.subscribe("SMS_INC", function(phone,sms)
+    log.info("sms",phone,sms)
 end)
 
 ```

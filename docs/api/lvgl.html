@@ -445,7 +445,7 @@
 <li class="toctree-l2"><a class="reference internal" href="httpsrv.html">httpsrv - http Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="i2c.html">i2c - I2C Operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="i2s.html">i2s - Digital Audio</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iconv.html">iconv - Character encoding conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iconv.html">iconv - iconv Operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io.html">io - io action (extended)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ioqueue.html">ioqueue - io Sequence operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iotauth.html">iotauth - IoT Authentication library, used to generate parameters for various cloud platforms</a></li>
@@ -504,6 +504,7 @@
 <li class="toctree-l2"><a class="reference internal" href="wdt.html">wdt - watchdog Operation Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="websocket.html">websocket - websocket Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wlan.html">wlan - wifi Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws2812.html">ws2812 - Phantom Lights with RGB Controller (WS2812 Series)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ymodem.html">ymodem - ymodem Agreement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zbuff.html">zbuff - c Memory Data Manipulation Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zlib.html">zlib - zlib Compression/Decompression (Obsolete)</a></li>
@@ -815,6 +816,133 @@
 </div>
 </section>
 <hr class="docutils"/>
+<section id="lvgl-font-get-name">
+<h2>lvgl.font_get(name)<a class="headerlink" href="#lvgl-font-get-name" title="Permalink to this headline">#</a></h2>
+<p>Get Built-in Font</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Font name font size, for example opposans_m_10</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>Font Pointer</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">font</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">font_get</span><span class="p">(</span><span class="s2">"opposans_m_12"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en">
+<h2>lvgl.font_load(path/spi_device,size,bpp,thickness,cache_size,sty_zh,sty_en)<a class="headerlink" href="#lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en" title="Permalink to this headline">#</a></h2>
+<p>Loading fonts from the file system</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string/userdata</p></td>
+<td><p>Font path/spi_device (spi_device to use an external Qualcomm vector font chip)</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>size Optional, font size 16-192 defaults to 16 (use Qualcomm vector font)</p></td>
+</tr>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>bpp Optional Depth Default 4 (Use Qualcomm Vector Font)</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>thickness Optional weight value Default size * bpp (use Qualcomm vector font)</p></td>
+</tr>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>cache_size Optional default 0 (use Qualcomm vector font)</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>sty_zh OPTIONAL SELECT FONT DEFAULT 1 (USING QUALCOMM VECTOR FONT)</p></td>
+</tr>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>sty_en OPTIONAL SELECT FONT DEFAULT 3 (USING QUALCOMM VECTOR FONT)</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>Font Pointer</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">font</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">font_load</span><span class="p">(</span><span class="s2">"/font_32.bin"</span><span class="p">)</span>
+<span class="c1">--local font = lvgl.font_load(spi_device,16)(Qualcomm Vector Font)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-font-free-font">
+<h2>lvgl.font_free(font)<a class="headerlink" href="#lvgl-font-free-font" title="Permalink to this headline">#</a></h2>
+<p>Release the font and use it with caution!!! Only fonts loaded by font_load are allowed to be unloaded, and fonts obtained by font_get are not allowed to be unloaded</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Font Path</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>Font Pointer</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">font</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">font_load</span><span class="p">(</span><span class="s2">"/font_32.bin"</span><span class="p">)</span>
+<span class="c1">-- N N N N Operation</span>
+<span class="c1">-- Make sure the font is not used, not referenced, and the memory is tight and needs to be released.</span>
+<span class="n">lvgl</span><span class="p">.</span><span class="n">font_free</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="lvgl-obj-set-event-cb-obj-func">
 <h2>lvgl.obj_set_event_cb(obj, func)<a class="headerlink" href="#lvgl-obj-set-event-cb-obj-func" title="Permalink to this headline">#</a></h2>
 <p>Set event callbacks for components</p>
@@ -1043,901 +1171,6 @@
 <p>None</p>
 </section>
 <hr class="docutils"/>
-<section id="lvgl-style-t">
-<h2>lvgl.style_t()<a class="headerlink" href="#lvgl-style-t" title="Permalink to this headline">#</a></h2>
-<p>Create a style</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>style Pointer</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_t</span><span class="p">()</span>
-<span class="n">lvgl</span><span class="p">.</span><span class="n">style_init</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-style-create">
-<h2>lvgl.style_create()<a class="headerlink" href="#lvgl-style-create" title="Permalink to this headline">#</a></h2>
-<p>Create a style and initialize</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>style Pointer</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_create</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-style-list-create">
-<h2>lvgl.style_list_create()<a class="headerlink" href="#lvgl-style-list-create" title="Permalink to this headline">#</a></h2>
-<p>Create a style_list</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>style Pointer</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style_list</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_list_create</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-style-list-t">
-<h2>lvgl.style_list_t()<a class="headerlink" href="#lvgl-style-list-t" title="Permalink to this headline">#</a></h2>
-<p>Create a style_list</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>style Pointer</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_list_t</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-style-delete-style">
-<h2>lvgl.style_delete(style)<a class="headerlink" href="#lvgl-style-delete-style" title="Permalink to this headline">#</a></h2>
-<p>Delete style, use caution, usually do not perform delete operation</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>style Pointer</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_create</span><span class="p">()</span>
-<span class="c1">-- ...</span>
-<span class="c1">-- ...</span>
-<span class="c1">-- lvgl.style_delete(style)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-style-list-delete-style">
-<h2>lvgl.style_list_delete(style)<a class="headerlink" href="#lvgl-style-list-delete-style" title="Permalink to this headline">#</a></h2>
-<p>Delete style_list, use caution, usually do not perform delete operation</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>style Pointer</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style_list</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_list_create</span><span class="p">()</span>
-<span class="c1">-- ...</span>
-<span class="c1">-- ...</span>
-<span class="c1">-- lvgl.style_list_delete(style_list)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-indev-drv-register-tp-dtp">
-<h2>lvgl.indev_drv_register(tp, dtp)<a class="headerlink" href="#lvgl-indev-drv-register-tp-dtp" title="Permalink to this headline">#</a></h2>
-<p>Register Input Device Driver</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>string</p></td>
-<td><p>Device type, currently supports “pointer”, pointer class/touch class, “keyboard”, keyboard type</p></td>
-</tr>
-<tr class="row-odd"><td><p>string</p></td>
-<td><p>Device model, currently supports “emulator”, emulator type</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>bool</p></td>
-<td><p>Returns true on success, otherwise false</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">indev_drv_register</span><span class="p">(</span><span class="s2">"pointer"</span><span class="p">,</span> <span class="s2">"emulator"</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-indev-point-emulator-update-x-y-state">
-<h2>lvgl.indev_point_emulator_update(x, y, state)<a class="headerlink" href="#lvgl-indev-point-emulator-update-x-y-state" title="Permalink to this headline">#</a></h2>
-<p>Update coordinate data for analog input devices</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>int</p></td>
-<td><p>x Coordinates, with the upper left corner as 0 and the lower right corner as the maximum value</p></td>
-</tr>
-<tr class="row-odd"><td><p>int</p></td>
-<td><p>y Coordinates, with the upper left corner as 0 and the lower right corner as the maximum value</p></td>
-</tr>
-<tr class="row-even"><td><p>int</p></td>
-<td><p>State, 0 is released, 1 is pressed</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>nil</p></td>
-<td><p>No return value</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Simulate clicks on the screen, simulate long and short presses through the timeout</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-    <span class="n">lvgl</span><span class="p">.</span><span class="n">indev_point_emulator_update</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-    <span class="n">lvgl</span><span class="p">.</span><span class="n">indev_point_emulator_update</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-indev-kb-update-key">
-<h2>lvgl.indev_kb_update(key)<a class="headerlink" href="#lvgl-indev-kb-update-key" title="Permalink to this headline">#</a></h2>
-<p>Update key values for keyboard input devices</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>int</p></td>
-<td><p>Key value, default 0, key up</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>nil</p></td>
-<td><p>No return value</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<p>None</p>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-font-get-name">
-<h2>lvgl.font_get(name)<a class="headerlink" href="#lvgl-font-get-name" title="Permalink to this headline">#</a></h2>
-<p>Get Built-in Font</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>string</p></td>
-<td><p>Font name font size, for example opposans_m_10</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>Font Pointer</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">font</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">font_get</span><span class="p">(</span><span class="s2">"opposans_m_12"</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en">
-<h2>lvgl.font_load(path/spi_device,size,bpp,thickness,cache_size,sty_zh,sty_en)<a class="headerlink" href="#lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en" title="Permalink to this headline">#</a></h2>
-<p>Loading fonts from the file system</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>string/userdata</p></td>
-<td><p>Font path/spi_device (spi_device to use an external Qualcomm vector font chip)</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>size Optional, font size 16-192 defaults to 16 (use Qualcomm vector font)</p></td>
-</tr>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>bpp Optional Depth Default 4 (Use Qualcomm Vector Font)</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>thickness Optional weight value Default size * bpp (use Qualcomm vector font)</p></td>
-</tr>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>cache_size Optional default 0 (use Qualcomm vector font)</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>sty_zh OPTIONAL SELECT FONT DEFAULT 1 (USING QUALCOMM VECTOR FONT)</p></td>
-</tr>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>sty_en OPTIONAL SELECT FONT DEFAULT 3 (USING QUALCOMM VECTOR FONT)</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>Font Pointer</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">font</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">font_load</span><span class="p">(</span><span class="s2">"/font_32.bin"</span><span class="p">)</span>
-<span class="c1">--local font = lvgl.font_load(spi_device,16)(Qualcomm Vector Font)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-font-free-font">
-<h2>lvgl.font_free(font)<a class="headerlink" href="#lvgl-font-free-font" title="Permalink to this headline">#</a></h2>
-<p>Release the font and use it with caution!!! Only fonts loaded by font_load are allowed to be unloaded, and fonts obtained by font_get are not allowed to be unloaded</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>string</p></td>
-<td><p>Font Path</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>Font Pointer</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">font</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">font_load</span><span class="p">(</span><span class="s2">"/font_32.bin"</span><span class="p">)</span>
-<span class="c1">-- N N N N Operation</span>
-<span class="c1">-- Make sure the font is not used, not referenced, and the memory is tight and needs to be released.</span>
-<span class="n">lvgl</span><span class="p">.</span><span class="n">font_free</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-anim-create">
-<h2>lvgl.anim_create()<a class="headerlink" href="#lvgl-anim-create" title="Permalink to this headline">#</a></h2>
-<p>Create and initialize a anim</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>anim Pointer</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">anim</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">anim_create</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-anim-free-anim">
-<h2>lvgl.anim_free(anim)<a class="headerlink" href="#lvgl-anim-free-anim" title="Permalink to this headline">#</a></h2>
-<p>Release one.anim</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">anim_free</span><span class="p">(</span><span class="n">anim</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-anim-path-t">
-<h2>lvgl.anim_path_t()<a class="headerlink" href="#lvgl-anim-path-t" title="Permalink to this headline">#</a></h2>
-<p>Create a lv_anim_path_t</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>lv_anim_path_t Pointer</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">anim_path_t</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">anim_path_t</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-anim-path-t-free-anim-path-t">
-<h2>lvgl.anim_path_t_free(anim_path_t)<a class="headerlink" href="#lvgl-anim-path-t-free-anim-path-t" title="Permalink to this headline">#</a></h2>
-<p>Release one.lv_anim_path_t</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">anim_path_t_free</span><span class="p">(</span><span class="n">anim_path_t</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-anim-set-path-str-anim-tp">
-<h2>lvgl.anim_set_path_str(anim, tp)<a class="headerlink" href="#lvgl-anim-set-path-str-anim-tp" title="Permalink to this headline">#</a></h2>
-<p>Set the animation path method</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>Animated Pointer</p></td>
-</tr>
-<tr class="row-odd"><td><p>string</p></td>
-<td><p>types, support linear/ease_in/ease_out/ease_in_out/overshoot/bounce/step</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>nil</p></td>
-<td><p>No return value</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<p>None</p>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-init-w-h-lcd-buff-size-buff-mode">
-<h2>lvgl.init(w, h, lcd, buff_size, buff_mode)<a class="headerlink" href="#lvgl-init-w-h-lcd-buff-size-buff-mode" title="Permalink to this headline">#</a></h2>
-<p>Initialization LVGL</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>int</p></td>
-<td><p>screen width, optional, taken from LCD by default</p></td>
-</tr>
-<tr class="row-odd"><td><p>int</p></td>
-<td><p>Screen height, optional, default from LCD</p></td>
-</tr>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>lcd pointer, optional, default value after LCD initialization, reserved multi-screen entry</p></td>
-</tr>
-<tr class="row-odd"><td><p>int</p></td>
-<td><p>Buffer size, default width * 10, without color depth.</p></td>
-</tr>
-<tr class="row-even"><td><p>int</p></td>
-<td><p>Buffer mode, default 0, single buff mode, optional 1, double buff mode</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>bool</p></td>
-<td><p>Returns true on success, otherwise false</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<p>None</p>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-demo-benchmark">
-<h2>lvgl.demo_benchmark()<a class="headerlink" href="#lvgl-demo-benchmark" title="Permalink to this headline">#</a></h2>
-<p>lvgl benchmark demo</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>nil</p></td>
-<td><p>No return value</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_benchmark</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-demo-keypad-encoder">
-<h2>lvgl.demo_keypad_encoder()<a class="headerlink" href="#lvgl-demo-keypad-encoder" title="Permalink to this headline">#</a></h2>
-<p>lvgl keypad_encoder demo</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>nil</p></td>
-<td><p>No return value</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_keypad_encoder</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-demo-music">
-<h2>lvgl.demo_music()<a class="headerlink" href="#lvgl-demo-music" title="Permalink to this headline">#</a></h2>
-<p>lvgl music demo</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>nil</p></td>
-<td><p>No return value</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_music</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-demo-printer">
-<h2>lvgl.demo_printer()<a class="headerlink" href="#lvgl-demo-printer" title="Permalink to this headline">#</a></h2>
-<p>lvgl printer demo</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>nil</p></td>
-<td><p>No return value</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_printer</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-demo-stress">
-<h2>lvgl.demo_stress()<a class="headerlink" href="#lvgl-demo-stress" title="Permalink to this headline">#</a></h2>
-<p>lvgl stress demo</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>nil</p></td>
-<td><p>No return value</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_stress</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-demo-widgets">
-<h2>lvgl.demo_widgets()<a class="headerlink" href="#lvgl-demo-widgets" title="Permalink to this headline">#</a></h2>
-<p>lvgl widgets demo</p>
-<p><strong>Parameters</strong></p>
-<p>None</p>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>nil</p></td>
-<td><p>No return value</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_widgets</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-qrcode-create-parent-size-dark-color-light-color">
-<h2>lvgl.qrcode_create(parent, size, dark_color, light_color)<a class="headerlink" href="#lvgl-qrcode-create-parent-size-dark-color-light-color" title="Permalink to this headline">#</a></h2>
-<p>Create the qrcode component</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>Parent Component</p></td>
-</tr>
-<tr class="row-odd"><td><p>int</p></td>
-<td><p>length, because qrcode is square</p></td>
-</tr>
-<tr class="row-even"><td><p>int</p></td>
-<td><p>Color of data points in QR code, RGB color, default 0x3333ff</p></td>
-</tr>
-<tr class="row-odd"><td><p>int</p></td>
-<td><p>The color of the back scenic spot in the two-dimensional code, RGB color, default 0xeeeeff</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>qrcode Components</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Create and display qrcode</span>
-<span class="kd">local</span> <span class="n">qrcode</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">qrcode_create</span><span class="p">(</span><span class="n">scr</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">lvgl</span><span class="p">.</span><span class="n">qrcode_update</span><span class="p">(</span><span class="n">qrcode</span><span class="p">,</span> <span class="s2">"https://luatos.com"</span><span class="p">)</span>
-<span class="n">lvgl</span><span class="p">.</span><span class="n">obj_align</span><span class="p">(</span><span class="n">qrcode</span><span class="p">,</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">scr_act</span><span class="p">(),</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">ALIGN_CENTER</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-qrcode-update-qrcode-cnt">
-<h2>lvgl.qrcode_update(qrcode, cnt)<a class="headerlink" href="#lvgl-qrcode-update-qrcode-cnt" title="Permalink to this headline">#</a></h2>
-<p>set the qrcode component’s qr code content and use it with the qrcode_create</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>qrcode components, created by qrcode_create</p></td>
-</tr>
-<tr class="row-odd"><td><p>string</p></td>
-<td><p>Content data of two-dimensional code</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>bool</p></td>
-<td><p>If the update is successful, it returns true, otherwise it returns false. It is usually returned only if the data is too long to accommodate.false</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<p>None</p>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-qrcode-delete-qrcode">
-<h2>lvgl.qrcode_delete(qrcode)<a class="headerlink" href="#lvgl-qrcode-delete-qrcode" title="Permalink to this headline">#</a></h2>
-<p>Remove qrcode component</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>qrcode components, created by qrcode_create</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>nil</p></td>
-<td><p>No return value</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<p>None</p>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-gif-create-parent-path">
-<h2>lvgl.gif_create(parent, path)<a class="headerlink" href="#lvgl-gif-create-parent-path" title="Permalink to this headline">#</a></h2>
-<p>create gif component</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>The parent component, which can be nil, but typically will not be nil</p></td>
-</tr>
-<tr class="row-odd"><td><p>string</p></td>
-<td><p>File Path</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>The component pointer. If it fails, nil is returned. We recommend that you check</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">gif</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">gif_create</span><span class="p">(</span><span class="n">scr</span><span class="p">,</span> <span class="s2">"S/emtry.gif"</span><span class="p">)</span>
-<span class="kr">if</span> <span class="n">gif</span> <span class="kr">then</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"gif"</span><span class="p">,</span> <span class="s2">"create ok"</span><span class="p">)</span>
-<span class="kr">end</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lvgl-gif-restart-gif">
-<h2>lvgl.gif_restart(gif)<a class="headerlink" href="#lvgl-gif-restart-gif" title="Permalink to this headline">#</a></h2>
-<p>Replay the gif component</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>gif Component support, returned by the gif_create method</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>nil</p></td>
-<td><p>No return value</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">gif</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">gif_create</span><span class="p">(</span><span class="n">scr</span><span class="p">,</span> <span class="s2">"S/emtry.gif"</span><span class="p">)</span>
-<span class="kr">if</span> <span class="n">gif</span> <span class="kr">then</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"gif"</span><span class="p">,</span> <span class="s2">"create ok"</span><span class="p">)</span>
-<span class="kr">end</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
 <section id="lvgl-scr-act">
 <h2>lvgl.scr_act()<a class="headerlink" href="#lvgl-scr-act" title="Permalink to this headline">#</a></h2>
 <p>Get the currently active screen object</p>
@@ -2135,6 +1368,774 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 <span class="n">lvgl</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>		<span class="c1">--Resume refresh, system does not sleep</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-init-w-h-lcd-buff-size-buff-mode">
+<h2>lvgl.init(w, h, lcd, buff_size, buff_mode)<a class="headerlink" href="#lvgl-init-w-h-lcd-buff-size-buff-mode" title="Permalink to this headline">#</a></h2>
+<p>Initialization LVGL</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>screen width, optional, taken from LCD by default</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Screen height, optional, default from LCD</p></td>
+</tr>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>lcd pointer, optional, default value after LCD initialization, reserved multi-screen entry</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Buffer size, default width * 10, without color depth.</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Buffer mode, default 0, single buff mode, optional 1, double buff mode</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>Returns true on success, otherwise false</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<p>None</p>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-anim-create">
+<h2>lvgl.anim_create()<a class="headerlink" href="#lvgl-anim-create" title="Permalink to this headline">#</a></h2>
+<p>Create and initialize a anim</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>anim Pointer</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">anim</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">anim_create</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-anim-free-anim">
+<h2>lvgl.anim_free(anim)<a class="headerlink" href="#lvgl-anim-free-anim" title="Permalink to this headline">#</a></h2>
+<p>Release one.anim</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">anim_free</span><span class="p">(</span><span class="n">anim</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-anim-path-t">
+<h2>lvgl.anim_path_t()<a class="headerlink" href="#lvgl-anim-path-t" title="Permalink to this headline">#</a></h2>
+<p>Create a lv_anim_path_t</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>lv_anim_path_t Pointer</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">anim_path_t</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">anim_path_t</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-anim-path-t-free-anim-path-t">
+<h2>lvgl.anim_path_t_free(anim_path_t)<a class="headerlink" href="#lvgl-anim-path-t-free-anim-path-t" title="Permalink to this headline">#</a></h2>
+<p>Release one.lv_anim_path_t</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">anim_path_t_free</span><span class="p">(</span><span class="n">anim_path_t</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-anim-set-path-str-anim-tp">
+<h2>lvgl.anim_set_path_str(anim, tp)<a class="headerlink" href="#lvgl-anim-set-path-str-anim-tp" title="Permalink to this headline">#</a></h2>
+<p>Set the animation path method</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>Animated Pointer</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>types, support linear/ease_in/ease_out/ease_in_out/overshoot/bounce/step</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<p>None</p>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-qrcode-create-parent-size-dark-color-light-color">
+<h2>lvgl.qrcode_create(parent, size, dark_color, light_color)<a class="headerlink" href="#lvgl-qrcode-create-parent-size-dark-color-light-color" title="Permalink to this headline">#</a></h2>
+<p>Create the qrcode component</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>Parent Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>length, because qrcode is square</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Color of data points in QR code, RGB color, default 0x3333ff</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>The color of the back scenic spot in the two-dimensional code, RGB color, default 0xeeeeff</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>qrcode Components</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Create and display qrcode</span>
+<span class="kd">local</span> <span class="n">qrcode</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">qrcode_create</span><span class="p">(</span><span class="n">scr</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">lvgl</span><span class="p">.</span><span class="n">qrcode_update</span><span class="p">(</span><span class="n">qrcode</span><span class="p">,</span> <span class="s2">"https://luatos.com"</span><span class="p">)</span>
+<span class="n">lvgl</span><span class="p">.</span><span class="n">obj_align</span><span class="p">(</span><span class="n">qrcode</span><span class="p">,</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">scr_act</span><span class="p">(),</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">ALIGN_CENTER</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-qrcode-update-qrcode-cnt">
+<h2>lvgl.qrcode_update(qrcode, cnt)<a class="headerlink" href="#lvgl-qrcode-update-qrcode-cnt" title="Permalink to this headline">#</a></h2>
+<p>set the qrcode component’s qr code content and use it with the qrcode_create</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>qrcode components, created by qrcode_create</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>Content data of two-dimensional code</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>If the update is successful, it returns true, otherwise it returns false. It is usually returned only if the data is too long to accommodate.false</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<p>None</p>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-qrcode-delete-qrcode">
+<h2>lvgl.qrcode_delete(qrcode)<a class="headerlink" href="#lvgl-qrcode-delete-qrcode" title="Permalink to this headline">#</a></h2>
+<p>Remove qrcode component</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>qrcode components, created by qrcode_create</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<p>None</p>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-style-t">
+<h2>lvgl.style_t()<a class="headerlink" href="#lvgl-style-t" title="Permalink to this headline">#</a></h2>
+<p>Create a style</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>style Pointer</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_t</span><span class="p">()</span>
+<span class="n">lvgl</span><span class="p">.</span><span class="n">style_init</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-style-create">
+<h2>lvgl.style_create()<a class="headerlink" href="#lvgl-style-create" title="Permalink to this headline">#</a></h2>
+<p>Create a style and initialize</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>style Pointer</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_create</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-style-list-create">
+<h2>lvgl.style_list_create()<a class="headerlink" href="#lvgl-style-list-create" title="Permalink to this headline">#</a></h2>
+<p>Create a style_list</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>style Pointer</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style_list</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_list_create</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-style-list-t">
+<h2>lvgl.style_list_t()<a class="headerlink" href="#lvgl-style-list-t" title="Permalink to this headline">#</a></h2>
+<p>Create a style_list</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>style Pointer</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_list_t</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-style-delete-style">
+<h2>lvgl.style_delete(style)<a class="headerlink" href="#lvgl-style-delete-style" title="Permalink to this headline">#</a></h2>
+<p>Delete style, use caution, usually do not perform delete operation</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>style Pointer</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_create</span><span class="p">()</span>
+<span class="c1">-- ...</span>
+<span class="c1">-- ...</span>
+<span class="c1">-- lvgl.style_delete(style)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-style-list-delete-style">
+<h2>lvgl.style_list_delete(style)<a class="headerlink" href="#lvgl-style-list-delete-style" title="Permalink to this headline">#</a></h2>
+<p>Delete style_list, use caution, usually do not perform delete operation</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>style Pointer</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">style_list</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">style_list_create</span><span class="p">()</span>
+<span class="c1">-- ...</span>
+<span class="c1">-- ...</span>
+<span class="c1">-- lvgl.style_list_delete(style_list)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-demo-benchmark">
+<h2>lvgl.demo_benchmark()<a class="headerlink" href="#lvgl-demo-benchmark" title="Permalink to this headline">#</a></h2>
+<p>lvgl benchmark demo</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_benchmark</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-demo-keypad-encoder">
+<h2>lvgl.demo_keypad_encoder()<a class="headerlink" href="#lvgl-demo-keypad-encoder" title="Permalink to this headline">#</a></h2>
+<p>lvgl keypad_encoder demo</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_keypad_encoder</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-demo-music">
+<h2>lvgl.demo_music()<a class="headerlink" href="#lvgl-demo-music" title="Permalink to this headline">#</a></h2>
+<p>lvgl music demo</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_music</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-demo-printer">
+<h2>lvgl.demo_printer()<a class="headerlink" href="#lvgl-demo-printer" title="Permalink to this headline">#</a></h2>
+<p>lvgl printer demo</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_printer</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-demo-stress">
+<h2>lvgl.demo_stress()<a class="headerlink" href="#lvgl-demo-stress" title="Permalink to this headline">#</a></h2>
+<p>lvgl stress demo</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_stress</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-demo-widgets">
+<h2>lvgl.demo_widgets()<a class="headerlink" href="#lvgl-demo-widgets" title="Permalink to this headline">#</a></h2>
+<p>lvgl widgets demo</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">lvgl</span><span class="p">.</span><span class="n">demo_widgets</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-indev-drv-register-tp-dtp">
+<h2>lvgl.indev_drv_register(tp, dtp)<a class="headerlink" href="#lvgl-indev-drv-register-tp-dtp" title="Permalink to this headline">#</a></h2>
+<p>Register Input Device Driver</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Device type, currently supports “pointer”, pointer class/touch class, “keyboard”, keyboard type</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>Device model, currently supports “emulator”, emulator type</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>Returns true on success, otherwise false</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">lvgl</span><span class="p">.</span><span class="n">indev_drv_register</span><span class="p">(</span><span class="s2">"pointer"</span><span class="p">,</span> <span class="s2">"emulator"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-indev-point-emulator-update-x-y-state">
+<h2>lvgl.indev_point_emulator_update(x, y, state)<a class="headerlink" href="#lvgl-indev-point-emulator-update-x-y-state" title="Permalink to this headline">#</a></h2>
+<p>Update coordinate data for analog input devices</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>x Coordinates, with the upper left corner as 0 and the lower right corner as the maximum value</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>y Coordinates, with the upper left corner as 0 and the lower right corner as the maximum value</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>State, 0 is released, 1 is pressed</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Simulate clicks on the screen, simulate long and short presses through the timeout</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+    <span class="n">lvgl</span><span class="p">.</span><span class="n">indev_point_emulator_update</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+    <span class="n">lvgl</span><span class="p">.</span><span class="n">indev_point_emulator_update</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-indev-kb-update-key">
+<h2>lvgl.indev_kb_update(key)<a class="headerlink" href="#lvgl-indev-kb-update-key" title="Permalink to this headline">#</a></h2>
+<p>Update key values for keyboard input devices</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Key value, default 0, key up</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<p>None</p>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-gif-create-parent-path">
+<h2>lvgl.gif_create(parent, path)<a class="headerlink" href="#lvgl-gif-create-parent-path" title="Permalink to this headline">#</a></h2>
+<p>create gif component</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>The parent component, which can be nil, but typically will not be nil</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>File Path</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>The component pointer. If it fails, nil is returned. We recommend that you check</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">gif</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">gif_create</span><span class="p">(</span><span class="n">scr</span><span class="p">,</span> <span class="s2">"S/emtry.gif"</span><span class="p">)</span>
+<span class="kr">if</span> <span class="n">gif</span> <span class="kr">then</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"gif"</span><span class="p">,</span> <span class="s2">"create ok"</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lvgl-gif-restart-gif">
+<h2>lvgl.gif_restart(gif)<a class="headerlink" href="#lvgl-gif-restart-gif" title="Permalink to this headline">#</a></h2>
+<p>Replay the gif component</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>gif Component support, returned by the gif_create method</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">gif</span> <span class="o">=</span> <span class="n">lvgl</span><span class="p">.</span><span class="n">gif_create</span><span class="p">(</span><span class="n">scr</span><span class="p">,</span> <span class="s2">"S/emtry.gif"</span><span class="p">)</span>
+<span class="kr">if</span> <span class="n">gif</span> <span class="kr">then</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"gif"</span><span class="p">,</span> <span class="s2">"create ok"</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -2202,41 +2203,15 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 <li><a class="reference internal" href="#lvgl-draw-mask-line-param-t-free-line">lvgl.draw_mask_line_param_t_free(line)</a></li>
 <li><a class="reference internal" href="#lvgl-draw-mask-fade-param-t">lvgl.draw_mask_fade_param_t()</a></li>
 <li><a class="reference internal" href="#lvgl-draw-mask-fade-param-t-free-fade">lvgl.draw_mask_fade_param_t_free(fade)</a></li>
+<li><a class="reference internal" href="#lvgl-font-get-name">lvgl.font_get(name)</a></li>
+<li><a class="reference internal" href="#lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en">lvgl.font_load(path/spi_device,size,bpp,thickness,cache_size,sty_zh,sty_en)</a></li>
+<li><a class="reference internal" href="#lvgl-font-free-font">lvgl.font_free(font)</a></li>
 <li><a class="reference internal" href="#lvgl-obj-set-event-cb-obj-func">lvgl.obj_set_event_cb(obj, func)</a></li>
 <li><a class="reference internal" href="#lvgl-obj-set-signal-cb-obj-func">lvgl.obj_set_signal_cb(obj, func)</a></li>
 <li><a class="reference internal" href="#lvgl-anim-set-exec-cb-anim-func">lvgl.anim_set_exec_cb(anim, func)</a></li>
 <li><a class="reference internal" href="#lvgl-anim-set-ready-cb-anim-func">lvgl.anim_set_ready_cb(anim, func)</a></li>
 <li><a class="reference internal" href="#lvgl-anim-path-set-cb-path-func">lvgl.anim_path_set_cb(path, func)</a></li>
 <li><a class="reference internal" href="#lvgl-event-send-obj-ent">lvgl.event_send(obj, ent)</a></li>
-<li><a class="reference internal" href="#lvgl-style-t">lvgl.style_t()</a></li>
-<li><a class="reference internal" href="#lvgl-style-create">lvgl.style_create()</a></li>
-<li><a class="reference internal" href="#lvgl-style-list-create">lvgl.style_list_create()</a></li>
-<li><a class="reference internal" href="#lvgl-style-list-t">lvgl.style_list_t()</a></li>
-<li><a class="reference internal" href="#lvgl-style-delete-style">lvgl.style_delete(style)</a></li>
-<li><a class="reference internal" href="#lvgl-style-list-delete-style">lvgl.style_list_delete(style)</a></li>
-<li><a class="reference internal" href="#lvgl-indev-drv-register-tp-dtp">lvgl.indev_drv_register(tp, dtp)</a></li>
-<li><a class="reference internal" href="#lvgl-indev-point-emulator-update-x-y-state">lvgl.indev_point_emulator_update(x, y, state)</a></li>
-<li><a class="reference internal" href="#lvgl-indev-kb-update-key">lvgl.indev_kb_update(key)</a></li>
-<li><a class="reference internal" href="#lvgl-font-get-name">lvgl.font_get(name)</a></li>
-<li><a class="reference internal" href="#lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en">lvgl.font_load(path/spi_device,size,bpp,thickness,cache_size,sty_zh,sty_en)</a></li>
-<li><a class="reference internal" href="#lvgl-font-free-font">lvgl.font_free(font)</a></li>
-<li><a class="reference internal" href="#lvgl-anim-create">lvgl.anim_create()</a></li>
-<li><a class="reference internal" href="#lvgl-anim-free-anim">lvgl.anim_free(anim)</a></li>
-<li><a class="reference internal" href="#lvgl-anim-path-t">lvgl.anim_path_t()</a></li>
-<li><a class="reference internal" href="#lvgl-anim-path-t-free-anim-path-t">lvgl.anim_path_t_free(anim_path_t)</a></li>
-<li><a class="reference internal" href="#lvgl-anim-set-path-str-anim-tp">lvgl.anim_set_path_str(anim, tp)</a></li>
-<li><a class="reference internal" href="#lvgl-init-w-h-lcd-buff-size-buff-mode">lvgl.init(w, h, lcd, buff_size, buff_mode)</a></li>
-<li><a class="reference internal" href="#lvgl-demo-benchmark">lvgl.demo_benchmark()</a></li>
-<li><a class="reference internal" href="#lvgl-demo-keypad-encoder">lvgl.demo_keypad_encoder()</a></li>
-<li><a class="reference internal" href="#lvgl-demo-music">lvgl.demo_music()</a></li>
-<li><a class="reference internal" href="#lvgl-demo-printer">lvgl.demo_printer()</a></li>
-<li><a class="reference internal" href="#lvgl-demo-stress">lvgl.demo_stress()</a></li>
-<li><a class="reference internal" href="#lvgl-demo-widgets">lvgl.demo_widgets()</a></li>
-<li><a class="reference internal" href="#lvgl-qrcode-create-parent-size-dark-color-light-color">lvgl.qrcode_create(parent, size, dark_color, light_color)</a></li>
-<li><a class="reference internal" href="#lvgl-qrcode-update-qrcode-cnt">lvgl.qrcode_update(qrcode, cnt)</a></li>
-<li><a class="reference internal" href="#lvgl-qrcode-delete-qrcode">lvgl.qrcode_delete(qrcode)</a></li>
-<li><a class="reference internal" href="#lvgl-gif-create-parent-path">lvgl.gif_create(parent, path)</a></li>
-<li><a class="reference internal" href="#lvgl-gif-restart-gif">lvgl.gif_restart(gif)</a></li>
 <li><a class="reference internal" href="#lvgl-scr-act">lvgl.scr_act()</a></li>
 <li><a class="reference internal" href="#lvgl-layer-top">lvgl.layer_top()</a></li>
 <li><a class="reference internal" href="#lvgl-layer-sys">lvgl.layer_sys()</a></li>
@@ -2244,6 +2219,32 @@ primitive function：lv_scr_load_anim(lv_obj_t * new_scr, lv_scr_load_anim_t ani
 <li><a class="reference internal" href="#lvgl-scr-load-anim-scr">lvgl.scr_load_anim(scr)</a></li>
 <li><a class="reference internal" href="#lvgl-theme-set-act-name">lvgl.theme_set_act(name)</a></li>
 <li><a class="reference internal" href="#lvgl-sleep-enable">lvgl.sleep(enable)</a></li>
+<li><a class="reference internal" href="#lvgl-init-w-h-lcd-buff-size-buff-mode">lvgl.init(w, h, lcd, buff_size, buff_mode)</a></li>
+<li><a class="reference internal" href="#lvgl-anim-create">lvgl.anim_create()</a></li>
+<li><a class="reference internal" href="#lvgl-anim-free-anim">lvgl.anim_free(anim)</a></li>
+<li><a class="reference internal" href="#lvgl-anim-path-t">lvgl.anim_path_t()</a></li>
+<li><a class="reference internal" href="#lvgl-anim-path-t-free-anim-path-t">lvgl.anim_path_t_free(anim_path_t)</a></li>
+<li><a class="reference internal" href="#lvgl-anim-set-path-str-anim-tp">lvgl.anim_set_path_str(anim, tp)</a></li>
+<li><a class="reference internal" href="#lvgl-qrcode-create-parent-size-dark-color-light-color">lvgl.qrcode_create(parent, size, dark_color, light_color)</a></li>
+<li><a class="reference internal" href="#lvgl-qrcode-update-qrcode-cnt">lvgl.qrcode_update(qrcode, cnt)</a></li>
+<li><a class="reference internal" href="#lvgl-qrcode-delete-qrcode">lvgl.qrcode_delete(qrcode)</a></li>
+<li><a class="reference internal" href="#lvgl-style-t">lvgl.style_t()</a></li>
+<li><a class="reference internal" href="#lvgl-style-create">lvgl.style_create()</a></li>
+<li><a class="reference internal" href="#lvgl-style-list-create">lvgl.style_list_create()</a></li>
+<li><a class="reference internal" href="#lvgl-style-list-t">lvgl.style_list_t()</a></li>
+<li><a class="reference internal" href="#lvgl-style-delete-style">lvgl.style_delete(style)</a></li>
+<li><a class="reference internal" href="#lvgl-style-list-delete-style">lvgl.style_list_delete(style)</a></li>
+<li><a class="reference internal" href="#lvgl-demo-benchmark">lvgl.demo_benchmark()</a></li>
+<li><a class="reference internal" href="#lvgl-demo-keypad-encoder">lvgl.demo_keypad_encoder()</a></li>
+<li><a class="reference internal" href="#lvgl-demo-music">lvgl.demo_music()</a></li>
+<li><a class="reference internal" href="#lvgl-demo-printer">lvgl.demo_printer()</a></li>
+<li><a class="reference internal" href="#lvgl-demo-stress">lvgl.demo_stress()</a></li>
+<li><a class="reference internal" href="#lvgl-demo-widgets">lvgl.demo_widgets()</a></li>
+<li><a class="reference internal" href="#lvgl-indev-drv-register-tp-dtp">lvgl.indev_drv_register(tp, dtp)</a></li>
+<li><a class="reference internal" href="#lvgl-indev-point-emulator-update-x-y-state">lvgl.indev_point_emulator_update(x, y, state)</a></li>
+<li><a class="reference internal" href="#lvgl-indev-kb-update-key">lvgl.indev_kb_update(key)</a></li>
+<li><a class="reference internal" href="#lvgl-gif-create-parent-path">lvgl.gif_create(parent, path)</a></li>
+<li><a class="reference internal" href="#lvgl-gif-restart-gif">lvgl.gif_restart(gif)</a></li>
 </ul>
 </li>
 </ul>

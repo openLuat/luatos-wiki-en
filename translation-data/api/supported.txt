@@ -44,6 +44,8 @@ Real Time Clock
 Client
 封装mcu一些特殊操作
 encapsulation mcu some special operations
+幻彩灯带RGB控制器(WS2812系列
+Phantom Lights with RGB Controller (WS2812 Series
 序列操作
 Sequence operation
 库

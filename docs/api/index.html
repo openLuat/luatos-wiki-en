@@ -445,7 +445,7 @@
 <li class="toctree-l2"><a class="reference internal" href="httpsrv.html">httpsrv - http Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="i2c.html">i2c - I2C Operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="i2s.html">i2s - Digital Audio</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iconv.html">iconv - Character encoding conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iconv.html">iconv - iconv Operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io.html">io - io action (extended)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ioqueue.html">ioqueue - io Sequence operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iotauth.html">iotauth - IoT Authentication library, used to generate parameters for various cloud platforms</a></li>
@@ -504,6 +504,7 @@
 <li class="toctree-l2"><a class="reference internal" href="wdt.html">wdt - watchdog Operation Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="websocket.html">websocket - websocket Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wlan.html">wlan - wifi Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws2812.html">ws2812 - Phantom Lights with RGB Controller (WS2812 Series)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ymodem.html">ymodem - ymodem Agreement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zbuff.html">zbuff - c Memory Data Manipulation Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zlib.html">zlib - zlib Compression/Decompression (Obsolete)</a></li>
@@ -978,12 +979,12 @@
 <li class="toctree-l2"><a class="reference internal" href="i2s.html#i2s-txstat-id">i2s.txStat(id)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="iconv.html">iconv - Character encoding conversion</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="iconv.html">iconv - iconv Operation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="iconv.html#iconv-open-tocode-fromcode">iconv.open(tocode, fromcode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iconv.html#iconv-iconv-inbuf">iconv:iconv(inbuf)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iconv.html#id1">iconv.open(tocode, fromcode)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iconv.html#cd-iconv-inbuf">cd:iconv(inbuf)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iconv.html#iconv-close-cd">iconv.close(cd)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iconv.html#id1">iconv.open(tocode, fromcode)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iconv.html#iconv-iconv-inbuf">iconv:iconv(inbuf)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="io.html">io - io action (extended)</a><ul>
@@ -1163,41 +1164,15 @@
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-draw-mask-line-param-t-free-line">lvgl.draw_mask_line_param_t_free(line)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-draw-mask-fade-param-t">lvgl.draw_mask_fade_param_t()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-draw-mask-fade-param-t-free-fade">lvgl.draw_mask_fade_param_t_free(fade)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-font-get-name">lvgl.font_get(name)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en">lvgl.font_load(path/spi_device,size,bpp,thickness,cache_size,sty_zh,sty_en)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-font-free-font">lvgl.font_free(font)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-obj-set-event-cb-obj-func">lvgl.obj_set_event_cb(obj, func)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-obj-set-signal-cb-obj-func">lvgl.obj_set_signal_cb(obj, func)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-set-exec-cb-anim-func">lvgl.anim_set_exec_cb(anim, func)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-set-ready-cb-anim-func">lvgl.anim_set_ready_cb(anim, func)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-path-set-cb-path-func">lvgl.anim_path_set_cb(path, func)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-event-send-obj-ent">lvgl.event_send(obj, ent)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-t">lvgl.style_t()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-create">lvgl.style_create()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-list-create">lvgl.style_list_create()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-list-t">lvgl.style_list_t()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-delete-style">lvgl.style_delete(style)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-list-delete-style">lvgl.style_list_delete(style)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-indev-drv-register-tp-dtp">lvgl.indev_drv_register(tp, dtp)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-indev-point-emulator-update-x-y-state">lvgl.indev_point_emulator_update(x, y, state)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-indev-kb-update-key">lvgl.indev_kb_update(key)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-font-get-name">lvgl.font_get(name)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-font-load-path-spi-device-size-bpp-thickness-cache-size-sty-zh-sty-en">lvgl.font_load(path/spi_device,size,bpp,thickness,cache_size,sty_zh,sty_en)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-font-free-font">lvgl.font_free(font)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-create">lvgl.anim_create()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-free-anim">lvgl.anim_free(anim)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-path-t">lvgl.anim_path_t()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-path-t-free-anim-path-t">lvgl.anim_path_t_free(anim_path_t)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-set-path-str-anim-tp">lvgl.anim_set_path_str(anim, tp)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-init-w-h-lcd-buff-size-buff-mode">lvgl.init(w, h, lcd, buff_size, buff_mode)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-benchmark">lvgl.demo_benchmark()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-keypad-encoder">lvgl.demo_keypad_encoder()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-music">lvgl.demo_music()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-printer">lvgl.demo_printer()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-stress">lvgl.demo_stress()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-widgets">lvgl.demo_widgets()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-qrcode-create-parent-size-dark-color-light-color">lvgl.qrcode_create(parent, size, dark_color, light_color)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-qrcode-update-qrcode-cnt">lvgl.qrcode_update(qrcode, cnt)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-qrcode-delete-qrcode">lvgl.qrcode_delete(qrcode)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-gif-create-parent-path">lvgl.gif_create(parent, path)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-gif-restart-gif">lvgl.gif_restart(gif)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-scr-act">lvgl.scr_act()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-layer-top">lvgl.layer_top()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-layer-sys">lvgl.layer_sys()</a></li>
@@ -1205,6 +1180,32 @@
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-scr-load-anim-scr">lvgl.scr_load_anim(scr)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-theme-set-act-name">lvgl.theme_set_act(name)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-sleep-enable">lvgl.sleep(enable)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-init-w-h-lcd-buff-size-buff-mode">lvgl.init(w, h, lcd, buff_size, buff_mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-create">lvgl.anim_create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-free-anim">lvgl.anim_free(anim)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-path-t">lvgl.anim_path_t()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-path-t-free-anim-path-t">lvgl.anim_path_t_free(anim_path_t)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-anim-set-path-str-anim-tp">lvgl.anim_set_path_str(anim, tp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-qrcode-create-parent-size-dark-color-light-color">lvgl.qrcode_create(parent, size, dark_color, light_color)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-qrcode-update-qrcode-cnt">lvgl.qrcode_update(qrcode, cnt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-qrcode-delete-qrcode">lvgl.qrcode_delete(qrcode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-t">lvgl.style_t()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-create">lvgl.style_create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-list-create">lvgl.style_list_create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-list-t">lvgl.style_list_t()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-delete-style">lvgl.style_delete(style)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-style-list-delete-style">lvgl.style_list_delete(style)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-benchmark">lvgl.demo_benchmark()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-keypad-encoder">lvgl.demo_keypad_encoder()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-music">lvgl.demo_music()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-printer">lvgl.demo_printer()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-stress">lvgl.demo_stress()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-demo-widgets">lvgl.demo_widgets()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-indev-drv-register-tp-dtp">lvgl.indev_drv_register(tp, dtp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-indev-point-emulator-update-x-y-state">lvgl.indev_point_emulator_update(x, y, state)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-indev-kb-update-key">lvgl.indev_kb_update(key)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-gif-create-parent-path">lvgl.gif_create(parent, path)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvgl.html#lvgl-gif-restart-gif">lvgl.gif_restart(gif)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="max30102.html">max30102 - Heart Rate Module(MAX30102)</a><ul>
@@ -1736,6 +1737,13 @@
 <li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-powersave-mode">wlan.powerSave(mode)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-hostname-new-name">wlan.hostname(new_name)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wlan.html#wlan-staip-dhcp-enable-ip-netmask-gateway">wlan.staIp(dhcp_enable, ip, netmask, gateway)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ws2812.html">ws2812 - Phantom Lights with RGB Controller (WS2812 Series)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ws2812.html#ws2812-create-mode-count-id">ws2812.create(mode, count, id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws2812.html#ws2812-set-leds-index-r-g-b">ws2812.set(leds,index, R, G, B)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws2812.html#ws2812-send-leds">ws2812.send(leds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws2812.html#ws2812-send-leds-arg0-arg1-arg2-arg3-arg4">ws2812.send(leds, arg0, arg1, arg2, arg3, arg4)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ymodem.html">ymodem - ymodem Agreement</a><ul>
