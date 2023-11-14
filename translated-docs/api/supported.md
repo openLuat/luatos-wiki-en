@@ -30,7 +30,7 @@
 |[httpsrv](httpsrv.md)|`http Server`|Y|Y|X|Y|Y|Y|
 |[i2c](i2c.md)|`I2C Operation`|Y|Y|Y|Y|Y|Y|
 |[i2s](i2s.md)|`Digital Audio`|Y|Y|X|X|X|Y|
-|[iconv](iconv.md)|`iconv Operation`|Y|Y|Y|Y|Y|Y|
+|[iconv](iconv.md)|`Character encoding conversion`|Y|Y|Y|Y|Y|Y|
 |[io](io.md)|`io action (extended)`|Y|Y|Y|Y|Y|Y|
 |[ioqueue](ioqueue.md)|`io Sequence operation`|X|X|Y|X|X|X|
 |[iotauth](iotauth.md)|`IoT Authentication library, used to generate parameters for various cloud platforms`|Y|Y|Y|Y|Y|Y|
