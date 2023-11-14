@@ -1367,6 +1367,62 @@
 <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"GNSS"</span><span class="p">,</span> <span class="n">libgnss</span><span class="p">.</span><span class="n">getTxt</span><span class="p">())</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="libgnss-casic-aid-dt-loc">
+<h2>libgnss.casic_aid(dt, loc)<a class="headerlink" href="#libgnss-casic-aid-dt-loc" title="Permalink to this headline">#</a></h2>
+<p>Auxiliary positioning data required for synthetic Air530Z</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>table</p></td>
+<td><p>Time information</p></td>
+</tr>
+<tr class="row-odd"><td><p>table</p></td>
+<td><p>Latitude and longitude and altitude</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Auxiliary Positioning Data</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This function is suitable for the synthesis of auxiliary positioning information of GNSS module of CASIC series</span>
+<span class="c1">-- This function 2023.11.14 New</span>
+
+<span class="c1">-- The first is the time information, note the UTC time</span>
+<span class="c1">-- There are many sources of time. It is generally recommended that the system time after socket.sntp() time synchronization</span>
+<span class="kd">local</span> <span class="n">dt</span> <span class="o">=</span> <span class="nb">os.date</span><span class="p">(</span><span class="s2">"!*t"</span><span class="p">)</span>
+
+<span class="c1">-- Then the auxiliary positioning coordinates</span>
+<span class="c1">-- There are many ways to source:</span>
+<span class="c1">-- 1. It is obtained from historical positioning data, for example, it is saved to the local file system after successful positioning.</span>
+<span class="c1">-- 2. obtained through base station positioning or wifi positioning</span>
+<span class="c1">-- 3. Obtain approximate coordinates through IP positioning</span>
+<span class="c1">-- The coordinate system is WGS84, but in view of the auxiliary positioning, accuracy is not the key factor</span>
+<span class="kd">local</span> <span class="n">lla</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="mf">23.12</span><span class="p">,</span>
+    <span class="n">lng</span> <span class="o">=</span> <span class="mf">114.12</span>
+<span class="p">}</span>
+
+<span class="kd">local</span> <span class="n">aid</span> <span class="o">=</span> <span class="n">libgnss</span><span class="p">.</span><span class="n">casic_aid</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">lla</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -1445,6 +1501,7 @@
 <li><a class="reference internal" href="#libgnss-rtcauto-enable">libgnss.rtcAuto(enable)</a></li>
 <li><a class="reference internal" href="#libgnss-on-tp-fn">libgnss.on(tp, fn)</a></li>
 <li><a class="reference internal" href="#libgnss-gettxt">libgnss.getTxt()</a></li>
+<li><a class="reference internal" href="#libgnss-casic-aid-dt-loc">libgnss.casic_aid(dt, loc)</a></li>
 </ul>
 </li>
 </ul>

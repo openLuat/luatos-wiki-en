@@ -637,3 +637,49 @@ log.info("GNSS", libgnss.getTxt())
 
 ---
 
+## libgnss.casic_aid(dt, loc)
+
+
+
+Auxiliary positioning data required for synthetic Air530Z
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|table|Time information|
+|table|Latitude and longitude and altitude|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|string|Auxiliary Positioning Data|
+
+**Examples**
+
+```lua
+-- This function is suitable for the synthesis of auxiliary positioning information of GNSS module of CASIC series
+-- This function 2023.11.14 New
+
+-- The first is the time information, note the UTC time
+-- There are many sources of time. It is generally recommended that the system time after socket.sntp() time synchronization
+local dt = os.date("!*t")
+
+-- Then the auxiliary positioning coordinates
+-- There are many ways to source:
+-- 1. It is obtained from historical positioning data, for example, it is saved to the local file system after successful positioning.
+-- 2. obtained through base station positioning or wifi positioning
+-- 3. Obtain approximate coordinates through IP positioning
+-- The coordinate system is WGS84, but in view of the auxiliary positioning, accuracy is not the key factor
+local lla = {
+    lat = 23.12,
+    lng = 114.12
+}
+
+local aid = libgnss.casic_aid(dt, lla)
+
+```
+
+---
+
