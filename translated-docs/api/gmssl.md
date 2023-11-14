@@ -144,6 +144,7 @@ SM4 encryption algorithm
 |string|Filling method, NONE/ZERO/PKCS5/PKCS7|
 |string|Encrypted String|
 |string|Key|
+|string|Offset|
 
 **Return Value**
 
@@ -190,6 +191,7 @@ SM4 decryption algorithm
 |string|Filling method, NONE/ZERO/PKCS5/PKCS7|
 |string|Encrypted String|
 |string|Key|
+|string|Offset|
 
 **Return Value**
 
