@@ -821,6 +821,8 @@
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This API was added on 2023.11.15</span>
 <span class="c1">-- Note that this function is not valid until socket.sntp() is executed and the NTP time is obtained.</span>
+<span class="c1">-- And it is the more accurate value after 2 sntp</span>
+<span class="c1">-- The smaller the network fluctuation, the more stable the timestamp.</span>
 <span class="kd">local</span> <span class="n">tm</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">ntptm</span><span class="p">()</span>
 
 <span class="c1">-- The corresponding table contains multiple data, all of which are integer values.</span>

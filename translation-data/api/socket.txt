@@ -222,6 +222,10 @@ Average network delay, in milliseconds
 Network Interface
 网络掩码
 Network Mask
+网络波动越小, 该时间戳越稳定
+The smaller the network fluctuation, the more stable the timestamp.
+而且是2次sntp之后才是比较准确的值
+And it is the more accurate value after 2 sntp
 自定义sntp服务器地址
 custom sntp server address
 自定义服务器地址

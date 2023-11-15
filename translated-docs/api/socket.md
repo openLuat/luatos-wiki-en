@@ -80,6 +80,8 @@ None
 ```lua
 -- This API was added on 2023.11.15
 -- Note that this function is not valid until socket.sntp() is executed and the NTP time is obtained.
+-- And it is the more accurate value after 2 sntp
+-- The smaller the network fluctuation, the more stable the timestamp.
 local tm = socket.ntptm()
 
 -- The corresponding table contains multiple data, all of which are integer values.
