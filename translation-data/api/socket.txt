@@ -1,240 +1,274 @@
-被查看的适配器是否IP READY,true表示已经准备好可以联网了,false暂时不可以联网
-Whether the checked adapter is IP READY,true indicates that it is ready for networking, false temporarily cannot be networked
-本次接收到数据长度
-Length of data received this time
-本地端口号，小端格式，如果不写，则自动分配一个，如果用户填了端口号则需要小于60000, 默认不写
-The local port number is in small endian format. If it is not written, one will be automatically assigned. If the user fills in the port number, it needs to be less than 60000. By default, it is not written
-本接口仅支持
-This interface only supports
-本库有专属demo，[点此链接查看socket的demo例子
-This library has its own demo,[click this link to view the demo example of socket
 不打印
 Don't Print
-参数
-Parameters
-查看全部网卡，直到找到一个是IP READY的
-Check all network cards until you find one that is IP READY
-查看外置以太网（比如W5500）是否
-Check if an external Ethernet (such as W5500)
-查看网卡适配器的联网状态
-Viewing the Networking Status of a NIC Adapter
-常见的连接失败的code值, 会在日志中显示
-The code value of the common connection failure will be displayed in the log
-常量
-Constant
-常量|类型|解释
-constant | type | explanation
-超时
-Timeout
-成功返回true，失败返回
-Returns true on success and true on failure
+为消息通知的taskName，function则为回调函数，和socket.create参数一致
+is the taskName of the message notification, and the function is the callback function, which is the same as the socket.create parameter.
+为消息通知的taskName，function则为回调函数，如果固件没有内置sys_wait，则必须是
+is the taskName of the message notification, function it is a callback function, and if the firmware does not have a built-in sys_wait, it must be
+主动释放掉
+Active release
+事件
+Event
 传入值类型|解释
 Incoming Value Type | Explanation
-存放接收的数据，如果缓冲区不够大会自动扩容
-Store the received data, and automatically expand the capacity if the buffer is not enough.
-打开调试信息,默认是关闭状态
-Turn on debugging information, which is turned off by default.
-打开debug开关
-Turn on the debug switch
-打印大部分info日志
-Print most info logs
-大部分
-Mostly
-带硬件协议栈的ETH0，值为
-ETH0 with hardware stack, value is
-得到的
-obtained
-得到的ctrl，这里是服务器端
-Get ctrl, here is the server side
-等待网卡
-Wait for network card
-等待新的socket消息，在连接成功和发送数据成功后，使用一次将network状态转换到接收新数据
-Wait for a new socket message. After the connection is successful and the data is sent successfully, use one time to switch the network state to receiving new data.
-等级
-Grade
-底层内存不足
-Low underlying memory
-端口已经被占用
-Port already occupied
-对端端口号，小端格式，如果是TCP应用则忽略，如果是UDP，如果留空则用connect时候的参数
-The opposite-end slogan and small-end format are ignored if it is TCP application, and if it is UDP, the parameters at connect time are used if it is left blank.
-对端IP，如果是TCP应用则忽略，如果是UDP，如果留空则用connect时候的参数，如果是IPV4，可以是大端格式的int值
-The opposite IP is ignored if it is TCP application, and if it is UDP, the parameter at connect time is used if it is left blank. if it is IPV4, it can be int value in big-end format.
-对端IP，只有UDP模式下才有意义，TCP模式返回nil，注意返回的格式，如果是IPV4，1byte 0x00 + 4byte地址 如果是IPV6，1byte 0x01 + 16byte地址
-The peer IP is meaningful only in UDP mode. TCP mode returns nil. Pay attention to the format of the return. If it is IPV4,1byte 0x 00 4byte address, if it is IPV6,1byte 0x 01 16byte address
-对端port，只有UDP模式下才有意义，TCP模式返回
-The port on the opposite end, which is meaningful only in UDP mode and returned in TCP mode.
-发送参数，目前预留，不起作用
-Send parameter, currently reserved, does not work
-发送数据给对端，UDP单次发送不要超过1460字节，否则很容易失败
-Send data to the opposite end, UDP should not send more than 1460 bytes at a time, otherwise it is easy to fail.
-返回值
-Return Value
-返回值类型|解释
-return value type | explanation
-服务器地址 选填
-Server address optional
-服务器端口号，小端格式
-Server port number, little-end format
-服务器序号，从1开始
-Server sequence number, starting from 1
-服务器主动断开连接
-Server Active Disconnect
-过多的信息可能会造成内存碎片化
-Too much information can cause memory fragmentation
-缓冲区满了，false没有满，如果true，则需要等待一段时间或者等到socket.TX_OK消息后再尝试发送，同时忽略下一个返回值
-The buffer is full, false is not full, if true, you need to wait for a period of time or wait for the socket.TX_ OK message before trying to send, while ignoring the next return value
-或者域名，如果是IPV4，可以是大端格式的int值
-Or domain name, if it is IPV4, it can be int value in big-end format.
-获取本地
-Get Local
-获取对端
-Get peer
-及3以上详细的
-and more than 3 detailed
-级别说明
-Level Description
-接收参数，目前预留，不起作用
-Receiving parameter, currently reserved, does not work
-接收对端发出的数据，注意数据已经缓存在底层，使用本函数只是提取出来，UDP模式下一次只会取出一个数据包
-Receive the data sent by the opposite end, note that the data has been cached at the bottom layer, use this function only to extract, UDP mode will only take out one data packet at a time
-里如果remote_port设置成0，则当DNS完成时就返回socket.ON_LINE消息
-If the remote_port is set to 0, the socket.ON_LINE message will be returned when DNS is completed.
-例子
-Examples
-链接未建立
-Link not established
-没有异常发生，false失败了，如果false则不需要看下一个返回值了
-No exception occurred, false failed, if false, you don't need to look at the next return value
-没有异常发生，false失败了，如果false则不需要看下一个返回值了，如果有异常，后续要
-No exception occurred, false failed, if false, you don't need to look at the next return value, if there is an exception, follow-up
-没有异常发生，false失败了，如果false则不需要看下一个返回值了，如果false，后续要
-No exception occurred, false failed, if false, you don't need to see the next return value, if false, follow-up
-模块主动断开连接
-Module Active Disconnect
-模式下的服务器ca证书数据，UDP模式下的PSK，不需要加密传输写nil，后续参数也全部
-The server ca certificate data in the mode and PSK in the UDP mode do not need to be encrypted and transmitted to write nil, and all subsequent parameters are also required.
-模式下的客户端私钥加密数据
-Client private key encrypts data in mode
-模式下的客户端私钥口令数据
-Client private key password data in the mode
-模式下的客户端ca证书数据，UDP模式下的PSK-ID，TCP模式下如果不需要验证客户端证书时，忽略，一般不需要验证客户端证书
-client ca certificate data in mode, PSK-ID in udp mode, and if you do not need to verify the client certificate in tcp mode, ignore, generally do not need to verify the client certificate
-模式下的探测次数
-Number of probes in mode
-模式下的探测间隔时间（秒
-The probing interval in the mode (seconds
-模式下的idle时间（秒），如果留空则表示不启用，如果是不支持标准posix接口的网卡（比如W5500），则为心跳间隔
-The idle time (in seconds) in the mode. If it is left blank, it means that it is not enabled. If it is a network card that does not support the standard posix interface (such as W5500), it is the heartbeat interval.
-判断一下是否已经联网
-Judge whether it is connected to the Internet.
-配置是否打开debug信息
-Configure whether to open debug information
-配置network一些信息
-Configuration network some information
-强制关闭
-Force Close
-如果是IPV4，可以是大端格式的int值
-If it is IPV4, it can be an int value in big-end format.
-如果为nil，则表示没有
-If nil, it means no
-如果为nil，则表示没有获取到IP地址
-If the value is nil, the IP address is not obtained.
-如果支持1对多，则会返回新的ctrl，自动create，如果不支持则返回
-If 1-to-many is supported, a new ctrl will be returned, automatically create, if not supported, return
-如果isReady为true,则index为IP READY的网卡适配器序号
-If the isReady is true, index is the NIC adapter serial number of IP READY
-设置默认网络适配器的DNS配置
-Set the DNS configuration for the default network adapter
-设置制定网络适配器的DNS配置
-Set up DNS configuration for your network adapter
-设置DNS服务器
-Set up the DNS server
-设置SSL的log登记
-Set log registration for SSL
-时间同步
-Time synchronization
-使用LWIP协议栈的移动蜂窝模块，值为
-Mobile cellular module using the LWIP protocol stack with a value
-使用LWIP协议栈的以太网卡，值为
-An Ethernet card using the LWIP protocol stack, with a value
+作为客户端断开连接
+Disconnect as client
+作为客户端连接服务器
+Connect to the server as a client
+作为服务端开始监听
+Start listening as a server
+作为服务端接收到一个新的客户端，注意，如果是类似W5500的硬件协议栈不支持1对多，则不需要第二个参数
+As the server receives a new client, note that if the hardware protocol stack similar to W5500 does not support 1-to-many, the second parameter is not required.
 使用LWIP协议栈的USB网卡，值为
 USB network card using LWIP protocol stack, value is
 使用LWIP协议栈的WIFI AP，值为
 WIFI AP using LWIP protocol stack, the value is
 使用LWIP协议栈的WIFI STA，值为
 WIFI STA using LWIP protocol stack, the value is
-事件
-Event
-是否是加密传输，默认
-Whether it is encrypted transmission, default
-是否是UDP，默认
-Whether it is UDP, default
-适配器序号， 只能是socket.ETH0，socket.STA，socket.AP，如果不填，会选择最后一个注册的适配器
-The adapter serial number can only be socket.ETH0,socket.STA,socket.AP. If it is not filled in, the last registered adapter will be selected.
-适配器序号， 只能是socket.ETH0（外置以太网），socket.LWIP_ETH（内置以太网），socket.LWIP_STA（内置WIFI的STA），socket.LWIP_AP（内置WIFI的AP），socket.LWIP_GP（内置蜂窝网络的GPRS），socket.USB（外置USB网卡），如果不填，优先选择soc平台自带能上外网的适配器，若仍然没有，选择最后一个注册的适配器
-The serial number of the adapter can only be socket.ETH0 (external Ethernet),socket.LWIP_ETH (internal Ethernet),socket.LWIP_STA (STA with internal WIFI),socket.LWIP_AP (AP with internal WIFI),socket.LWIP_GP (GPRS with internal cellular network),socket.USB (external USB network card). if not filled in, the soc platform is preferred to have its own adapter capable of connecting to the external network. if there is still no adapter, select Last Registered Adapter
-输出示例
-Output example
-通常是内网ip, 也可能是外网ip, 取决于运营商的分配
-It is usually an intranet ip or an extranet ip, depending on the operator's allocation.
-网关
-Gateway
-网络接口
-Network Interface
-网络掩码
-Network Mask
-为消息通知的taskName，function则为回调函数，和socket.create参数一致
-is the taskName of the message notification, and the function is the callback function, which is the same as the socket.create parameter.
-为消息通知的taskName，function则为回调函数，如果固件没有内置sys_wait，则必须是
-is the taskName of the message notification, function it is a callback function, and if the firmware does not have a built-in sys_wait, it must be
-无
-None
-无返回值
-No return value
-需要查看的适配器序号，可以留空会查看全部网卡，直到遇到IP READY的，如果指定网卡，只能是socket.ETH0（外置以太网），socket.LWIP_ETH（内置以太网），socket.LWIP_STA（内置WIFI的STA），socket.LWIP_AP（内置WIFI的AP），socket.LWIP_GP（内置蜂窝网络的GPRS），socket.USB（外置USB网卡
-The serial number of the adapter to be viewed can be left blank and all network cards will be viewed until IP READY is encountered. If the network card is specified, it can only be socket.ETH0 (external Ethernet),socket.LWIP_ETH (internal Ethernet),socket.LWIP_STA (STA with internal WIFI),socket.LWIP_AP (AP with internal WIFI),socket.LWIP_GP (GPRS with internal cellular network),socket.USB (external USB network card
-要发送的数据
-Data to send
-已经断开，false没有断开，之后需要接收socket.CLOSED消息
-Disconnected, false not disconnected, then need to receive socket.CLOSED message
-已经收到应答，false没有收到应答，之后需要接收socket.TX_OK消息， 也可以忽略继续发送，直到
-A reply has been received, false has not received a reply, and then you need to receive the socket.TX_ OK message, or you can ignore and continue sending
+使用LWIP协议栈的以太网卡，值为
+An Ethernet card using the LWIP protocol stack, with a value
+使用LWIP协议栈的移动蜂窝模块，值为
+Mobile cellular module using the LWIP protocol stack with a value
+例子
+Examples
+最后一个被查看的适配器序号
+Last viewed adapter serial number
+最普通的TCP传输
+The most common TCP transport
+最普通的加密TCP传输，证书都不用验证的那种
+The most common encrypted TCP transmission, the kind of certificate without verification
+判断一下是否已经联网
+Judge whether it is connected to the Internet.
+包含时间信息的数据
+Data containing time information
+参数
+Parameters
+及3以上详细的
+and more than 3 detailed
+发送参数，目前预留，不起作用
+Send parameter, currently reserved, does not work
+发送数据给对端，UDP单次发送不要超过1460字节，否则很容易失败
+Send data to the opposite end, UDP should not send more than 1460 bytes at a time, otherwise it is easy to fail.
+只打印错误和警
+Print errors and alarms only
+在某个适配的网卡上申请一个
+Apply for one on an adapted network card.
+域名解析是否要IPV6，true要，false不要，默认false不要，只有支持IPV6的协议栈才有效果
+Does domain name resolution need IPV6,true yes, false no, default false no, only protocol stacks that support IPV6 have effect
+大部分
+Mostly
+如果isReady为true,则index为IP READY的网卡适配器序号
+If the isReady is true, index is the NIC adapter serial number of IP READY
+如果为nil，则表示没有
+If nil, it means no
+如果为nil，则表示没有获取到IP地址
+If the value is nil, the IP address is not obtained.
+如果支持1对多，则会返回新的ctrl，自动create，如果不支持则返回
+If 1-to-many is supported, a new ctrl will be returned, automatically create, if not supported, return
+如果是IPV4，可以是大端格式的int值
+If it is IPV4, it can be an int value in big-end format.
+存放接收的数据，如果缓冲区不够大会自动扩容
+Store the received data, and automatically expand the capacity if the buffer is not enough.
+对应的table包含多个数据, 均为整数值
+The corresponding table contains multiple data, all of which are integer values.
+对端IP，只有UDP模式下才有意义，TCP模式返回nil，注意返回的格式，如果是IPV4，1byte 0x00 + 4byte地址 如果是IPV6，1byte 0x01 + 16byte地址
+The peer IP is meaningful only in UDP mode. TCP mode returns nil. Pay attention to the format of the return. If it is IPV4,1byte 0x 00 4byte address, if it is IPV6,1byte 0x 01 16byte address
+对端IP，如果是TCP应用则忽略，如果是UDP，如果留空则用connect时候的参数，如果是IPV4，可以是大端格式的int值
+The opposite IP is ignored if it is TCP application, and if it is UDP, the parameter at connect time is used if it is left blank. if it is IPV4, it can be int value in big-end format.
+对端port，只有UDP模式下才有意义，TCP模式返回
+The port on the opposite end, which is meaningful only in UDP mode and returned in TCP mode.
+对端端口号，小端格式，如果是TCP应用则忽略，如果是UDP，如果留空则用connect时候的参数
+The opposite-end slogan and small-end format are ignored if it is TCP application, and if it is UDP, the parameters at connect time are used if it is left blank.
 已经connect，false没有connect，之后需要接收socket.ON_LINE消息
 It has been connect,false is not connect, and socket.ON_LINE message needs to be received later.
 已经linkup，false没有linkup，之后需要接收socket.LINK消息
 There is no linkup,false, and then you need to receive socket.LINK messages.
+已经收到应答，false没有收到应答，之后需要接收socket.TX_OK消息， 也可以忽略继续发送，直到
+A reply has been received, false has not received a reply, and then you need to receive the socket.TX_ OK message, or you can ignore and continue sending
+已经断开，false没有断开，之后需要接收socket.CLOSED消息
+Disconnected, false not disconnected, then need to receive socket.CLOSED message
 已适配
 Adapted
+带硬件协议栈的ETH0，值为
+ETH0 with hardware stack, value is
+常见的连接失败的code值, 会在日志中显示
+The code value of the common connection failure will be displayed in the log
+常量
+Constant
+常量|类型|解释
+constant | type | explanation
+底层内存不足
+Low underlying memory
+强制关闭
+Force Close
+当前毫秒数
+Current number of milliseconds
+当前秒数,从1900.1.1 0:0:0 开始算, UTC时间
+Current seconds, starting from 1900.1.1 0:0:0, UTC time
+得到的
+obtained
+得到的ctrl，这里是服务器端
+Get ctrl, here is the server side
+成功返回true，失败返回
+Returns true on success and true on failure
+或者域名，如果是IPV4，可以是大端格式的int值
+Or domain name, if it is IPV4, it can be int value in big-end format.
+打印大部分info日志
+Print most info logs
+打开debug开关
+Turn on the debug switch
+打开调试信息,默认是关闭状态
+Turn on debugging information, which is turned off by default.
+接收参数，目前预留，不起作用
+Receiving parameter, currently reserved, does not work
+接收对端发出的数据，注意数据已经缓存在底层，使用本函数只是提取出来，UDP模式下一次只会取出一个数据包
+Receive the data sent by the opposite end, note that the data has been cached at the bottom layer, use this function only to extract, UDP mode will only take out one data packet at a time
+数据
+Data
+无
+None
+无返回值
+No return value
+时间同步
+Time synchronization
+时间戳
+Timestamp
+是否是UDP，默认
+Whether it is UDP, default
+是否是加密传输，默认
+Whether it is encrypted transmission, default
+是否有效, true 或者
+Valid, true or
 有新的数据需要接收，false没有数据，之后需要接收socket.EVENT消息
 There is new data to receive, false no data, and then the socket.EVENT message needs to be received.
-域名解析是否要IPV6，true要，false不要，默认false不要，只有支持IPV6的协议栈才有效果
-Does domain name resolution need IPV6,true yes, false no, default false no, only protocol stacks that support IPV6 have effect
-在某个适配的网卡上申请一个
-Apply for one on an adapted network card.
-只打印错误和警
-Print errors and alarms only
-主动释放掉
-Active release
+服务器主动断开连接
+Server Active Disconnect
+服务器地址 选填
+Server address optional
+服务器序号，从1开始
+Server sequence number, starting from 1
+服务器端口号，小端格式
+Server port number, little-end format
+本API于 2023.11.15 新增
+This API was added on 2023.11.15
+本地毫秒数计数器,基于
+Local milliseconds counter, based on
+本地秒数计数器,基于
+Local seconds counter, based on
+本地端口号，小端格式，如果不写，则自动分配一个，如果用户填了端口号则需要小于60000, 默认不写
+The local port number is in small endian format. If it is not written, one will be automatically assigned. If the user fills in the port number, it needs to be less than 60000. By default, it is not written
+本库有专属demo，[点此链接查看socket的demo例子
+This library has its own demo,[click this link to view the demo example of socket
+本接口仅支持
+This interface only supports
+本次接收到数据长度
+Length of data received this time
+查看全部网卡，直到找到一个是IP READY的
+Check all network cards until you find one that is IP READY
+查看外置以太网（比如W5500）是否
+Check if an external Ethernet (such as W5500)
+查看网卡适配器的联网状态
+Viewing the Networking Status of a NIC Adapter
+标准数据
+Standard data
+模块主动断开连接
+Module Active Disconnect
+模式下的idle时间（秒），如果留空则表示不启用，如果是不支持标准posix接口的网卡（比如W5500），则为心跳间隔
+The idle time (in seconds) in the mode. If it is left blank, it means that it is not enabled. If it is a network card that does not support the standard posix interface (such as W5500), it is the heartbeat interval.
+模式下的客户端ca证书数据，UDP模式下的PSK-ID，TCP模式下如果不需要验证客户端证书时，忽略，一般不需要验证客户端证书
+client ca certificate data in mode, PSK-ID in udp mode, and if you do not need to verify the client certificate in tcp mode, ignore, generally do not need to verify the client certificate
+模式下的客户端私钥加密数据
+Client private key encrypts data in mode
+模式下的客户端私钥口令数据
+Client private key password data in the mode
+模式下的探测次数
+Number of probes in mode
+模式下的探测间隔时间（秒
+The probing interval in the mode (seconds
+模式下的服务器ca证书数据，UDP模式下的PSK，不需要加密传输写nil，后续参数也全部
+The server ca certificate data in the mode and PSK in the UDP mode do not need to be encrypted and transmitted to write nil, and all subsequent parameters are also required.
+没有异常发生，false失败了，如果false则不需要看下一个返回值了
+No exception occurred, false failed, if false, you don't need to look at the next return value
+没有异常发生，false失败了，如果false则不需要看下一个返回值了，如果false，后续要
+No exception occurred, false failed, if false, you don't need to see the next return value, if false, follow-up
+没有异常发生，false失败了，如果false则不需要看下一个返回值了，如果有异常，后续要
+No exception occurred, false failed, if false, you don't need to look at the next return value, if there is an exception, follow-up
+注意, 本函数在执行socket.sntp()且获取到NTP时间后才有效
+Note that this function is not valid until socket.sntp() is executed and the NTP time is obtained.
 注意: ，必须在接收到socket.ON_LINE消息之后才可能获取到，最多返回4个
 Note: It can only be obtained after receiving the socket.ON_LINE message, returning up to 4
+端口已经被占用
+Port already occupied
+等待新的socket消息，在连接成功和发送数据成功后，使用一次将network状态转换到接收新数据
+Wait for a new socket message. After the connection is successful and the data is sent successfully, use one time to switch the network state to receiving new data.
+等待网卡
+Wait for network card
+等级
+Grade
+系统启动时刻与1900.1.1 0:0:0的毫秒偏移量
+The millisecond offset of the system startup time from 1900.1.1 0:0:0
+系统启动时刻与1900.1.1 0:0:0的秒数偏移量
+The second offset of the system start time and 1900.1.1 0:0:0
+级别说明
+Level Description
+缓冲区满了，false没有满，如果true，则需要等待一段时间或者等到socket.TX_OK消息后再尝试发送，同时忽略下一个返回值
+The buffer is full, false is not full, if true, you need to wait for a period of time or wait for the socket.TX_ OK message before trying to send, while ignoring the next return value
+网关
+Gateway
+网络对时后的时间戳(ms级别
+timestamp after the network pair (ms level
+网络延时平均值,单位毫秒
+Average network delay, in milliseconds
+网络接口
+Network Interface
+网络掩码
+Network Mask
+自定义sntp服务器地址
+custom sntp server address
 自定义服务器地址
 Custom Server Address
 自定义适配器序号
 Custom Adapter Serial Number
-自定义sntp服务器地址
-custom sntp server address
-最后一个被查看的适配器序号
-Last viewed adapter serial number
-最普通的加密TCP传输，证书都不用验证的那种
-The most common encrypted TCP transmission, the kind of certificate without verification
-最普通的TCP传输
-The most common TCP transport
-作为服务端接收到一个新的客户端，注意，如果是类似W5500的硬件协议栈不支持1对多，则不需要第二个参数
-As the server receives a new client, note that if the hardware protocol stack similar to W5500 does not support 1-to-many, the second parameter is not required.
-作为服务端开始监听
-Start listening as a server
-作为客户端断开连接
-Disconnect as client
-作为客户端连接服务器
-Connect to the server as a client
+获取对端
+Get peer
+获取本地
+Get Local
+被查看的适配器是否IP READY,true表示已经准备好可以联网了,false暂时不可以联网
+Whether the checked adapter is IP READY,true indicates that it is ready for networking, false temporarily cannot be networked
+要发送的数据
+Data to send
+设置DNS服务器
+Set up the DNS server
+设置SSL的log登记
+Set log registration for SSL
+设置制定网络适配器的DNS配置
+Set up DNS configuration for your network adapter
+设置默认网络适配器的DNS配置
+Set the DNS configuration for the default network adapter
+调试数据, 调试用,一般用户不用管
+Debugging data, debugging, general users do not have to tube
+超时
+Timeout
+输出示例
+Output example
+过多的信息可能会造成内存碎片化
+Too much information can cause memory fragmentation
+返回值
+Return Value
+返回值类型|解释
+return value type | explanation
+适配器序号， 只能是socket.ETH0，socket.STA，socket.AP，如果不填，会选择最后一个注册的适配器
+The adapter serial number can only be socket.ETH0,socket.STA,socket.AP. If it is not filled in, the last registered adapter will be selected.
+适配器序号， 只能是socket.ETH0（外置以太网），socket.LWIP_ETH（内置以太网），socket.LWIP_STA（内置WIFI的STA），socket.LWIP_AP（内置WIFI的AP），socket.LWIP_GP（内置蜂窝网络的GPRS），socket.USB（外置USB网卡），如果不填，优先选择soc平台自带能上外网的适配器，若仍然没有，选择最后一个注册的适配器
+The serial number of the adapter can only be socket.ETH0 (external Ethernet),socket.LWIP_ETH (internal Ethernet),socket.LWIP_STA (STA with internal WIFI),socket.LWIP_AP (AP with internal WIFI),socket.LWIP_GP (GPRS with internal cellular network),socket.USB (external USB network card). if not filled in, the soc platform is preferred to have its own adapter capable of connecting to the external network. if there is still no adapter, select Last Registered Adapter
+通常是内网ip, 也可能是外网ip, 取决于运营商的分配
+It is usually an intranet ip or an extranet ip, depending on the operator's allocation.
+配置network一些信息
+Configuration network some information
+配置是否打开debug信息
+Configure whether to open debug information
+里如果remote_port设置成0，则当DNS完成时就返回socket.ON_LINE消息
+If the remote_port is set to 0, the socket.ON_LINE message will be returned when DNS is completed.
+链接未建立
+Link not established
+需要查看的适配器序号，可以留空会查看全部网卡，直到遇到IP READY的，如果指定网卡，只能是socket.ETH0（外置以太网），socket.LWIP_ETH（内置以太网），socket.LWIP_STA（内置WIFI的STA），socket.LWIP_AP（内置WIFI的AP），socket.LWIP_GP（内置蜂窝网络的GPRS），socket.USB（外置USB网卡
+The serial number of the adapter to be viewed can be left blank and all network cards will be viewed until IP READY is encountered. If the network card is specified, it can only be socket.ETH0 (external Ethernet),socket.LWIP_ETH (internal Ethernet),socket.LWIP_STA (STA with internal WIFI),socket.LWIP_AP (AP with internal WIFI),socket.LWIP_GP (GPRS with internal cellular network),socket.USB (external USB network card

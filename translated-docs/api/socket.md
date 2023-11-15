@@ -59,6 +59,50 @@ end)
 
 ---
 
+## socket.ntptm()
+
+
+
+timestamp after the network pair (ms level)
+
+**Parameters**
+
+None
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|table|Data containing time information|
+
+**Examples**
+
+```lua
+-- This API was added on 2023.11.15
+-- Note that this function is not valid until socket.sntp() is executed and the NTP time is obtained.
+local tm = socket.ntptm()
+
+-- The corresponding table contains multiple data, all of which are integer values.
+
+-- Standard data
+-- tsec Current seconds, starting from 1900.1.1 0:0:0, UTC time
+-- tms  Current number of milliseconds
+-- vaild Valid, true or nil
+
+-- Debugging data, debugging, general users do not have to tube
+-- ndelay Average network delay, in milliseconds
+-- ssec The second offset of the system start time and 1900.1.1 0:0:0
+-- sms The millisecond offset of the system startup time from 1900.1.1 0:0:0
+-- lsec Local seconds counter, based on mcu.tick64()
+-- lms Local milliseconds counter, based on mcu.tick64()
+
+log.info("tm Data", json.encode(tm))
+log.info("Timestamp", string.format("%u.%03d", tm.tsec, tm.tms))
+
+```
+
+---
+
 ## socket.localIP(adapter)
 
 
