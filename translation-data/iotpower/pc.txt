@@ -1,168 +1,170 @@
-安装包
-Installation Package
-按下该按钮，可在**实时数据/历史数据**与**选取某个区域**两种显示模式中切换，下方将介绍两种模式
-Press this button to switch between **Real-time data/historical data**and**Select an area**. The two modes are described below.
-按最大值设置纵坐标：按此次抓取数据的最大值，固定纵坐标范围
-Set vertical coordinate by maximum value: set the vertical coordinate range by the maximum value of the captured data.
-查看电流波形
-View Current Waveform
-此处的拉杆同样可以用于控制选择显示的范围
-The lever here can also be used to control the range of the selection display.
-此处数据为，**自本次设备连接后的所有数据**的平均值，清空后清零
-The data here is the average value of **all data since this device connection**. Clear and reset
-此处数据为，**自本次设备连接后的所有数据**的相关累计数据，清空后清零
-The data here is the relevant cumulative data of **all data since the current device connection**, cleared and reset
-此区域为图表显示区域，可以预览波形图
-This area is the chart display area where you can preview the waveform
-单击`强制升级固件`按钮，可强制刷入客户端自带的固件。注意：若设备有升级模式，请先进入升级模式后再刷
-Click the `Force Firmware Upgrade` button to force the firmware of the client. Note: If the equipment has upgrade mode, please enter the upgrade mode before brushing.
-当处于`选取区域数据`模式时，可以使用**鼠标滚轮**调整波形的时间位置
-When in `Pick Area Data` mode, you can use the **mouse wheel** to adjust the time position of the waveform
-当处在任意模式下时，都可以**右击鼠标拖动**，选择一个时间段来分析其中的数据
-When in any mode, you can **right-click and drag** to select a time period to analyze the data in it.
-当前显示
-Current Display
-当然，为了存储某些用户变态级地海量数据（比如连续抓取十几个小时），软件也提供了使用硬盘缓存数据的功能
-Of course, in order to store some users abnormal level of massive data (such as continuous capture more than ten hours), the software also provides the use of hard disk cache data function
-当鼠标在图表中或在拖动轴上时，可以使用**鼠标滚轮**，调整波形的时间位置
-When the mouse is in the chart or on the drag axis, you can use the **mouse wheel** to adjust the time position of the waveform
-当选取一段区域后，`分析窗`将弹出显示分析的结果
-When an area is selected, the `Analysis Window` will pop up to display the results of the analysis
-导出数据
-Export data
-导入数据
-Import Data
-导入与导出数据
-Importing and Exporting Data
-导入与导出抓取的数据，支持导出为独立
-Import and export captured data. You can export data independently.
-导入自动保存的文件，表示从自动保存的文件中进行导入。自动保存功能通常出现在关闭与重新抓取时
-Import automatically saved file indicates to import from automatically saved file. Autosave function usually appears when closing and re-grabbing
-调整显示方式
-Adjust the display mode
-独立版exe版本：[IOT Power.exe](https://arduino.luatos.com/iotpower/latest.html)（注意微软/360杀软误报，火绒无问题
-Independent exe version:[IOT Power.exe](https://arduino.luatos.com/iotpower/latest.html)(note Microsoft/360 kill soft false alarm, tinder no problem
-对数坐标：当电流数据绝对值相差极大时，可启用该功能，将以10的倍数来显示纵坐标的值
-Logarithmic coordinate: When the absolute value of current data is greatly different, this function can be enabled, and the value of the ordinate will be displayed in multiples of 10
-而`.iotpl`文件可以再次导入软件，`.exe`自执行文件也可以再导出为`.iotpl`文件用于导入
-The `.iotpl` file can be imported into the software again, and the`.exe `self-executing file can also be exported as a`.iotpl` file for import.
-分析数据
-Analyze data
-分析指定时间段的数据
-Analyze data for a specified time period
-峰值、最小电流
-Peak, minimum current
-峰值、最小电压
-Peak, minimum voltage
-该功能仅适用于`电源产品`与带`PPS诱骗`功能的产品
-This function is only applicable to `Power Products` and products with `PPS decoy` function
-该功能可实现输出电压与电流的自动控制
-This function enables automatic control of output voltage and current
-该教程于`2.0.7.11`版本时编写，若有新增或变更的功能没有提到，请在页面最下方留言提醒更新，谢谢
-This tutorial was written in version 2.0.7.11. If there are any new or changed functions not mentioned, please leave a message at the bottom of the page to remind you to update, thank you.
-该区域数值为设备连接后，当前的数据，可以切换为滑动平均值或瞬时值
-The value of this area is the current data after the device is connected, which can be switched to the moving average or instantaneous value.
-记录历史数据
-Record historical data
-脚本功能
-Script function
-脚本使用`Lua语言`，适配了`LuaTask`框架（[教程
-The script uses the` Lua language` and adapts to` LuaTask` framework ([tutorial
-具体的接口文档，可以参考[此仓库的资料
-For specific interface documents, please refer to [the data of this warehouse.
-客户端
-Client
-客户端简介
-Introduction to the client
-客户端可提供以下功能，可能会继续增加
-The following features are available on the client and may continue to increase
-控制设备输出
-Control device output
-平均电流
-Average current
-平均电压
-average voltage
-平均功率
-average power
-平均数据
-Average data
-其他数据
-Other data
-强制升级固件
-Force firmware upgrade
-切换数据显示方式
-Switch data display mode
-区别在于，`.csv`表格文件用于用户自行分析原始数据，无法再重新导入
-The difference is that the `. csv` table file is used by the user to analyze the original data and cannot be re-imported.
-驱动
-Drive
-全平台**命令行数据记录器、dll/so动态运行库请前往[gitee仓库](https://gitee.com/openLuat/iot-power)查看
-Full platform * * command line data logger, dll/so dynamic runtime please go to [gitee warehouse](https://gitee.com/openLuat/iot-power) to view
-软件界面
-Software Interface
-软件上方的**数据浮窗**开关可以打开浮窗，显示的数据与此处数据完全相同，始终置顶显示，方便最小化软件后查看实时数据
-The **data floating window** switch on the top of the software can open the floating window, and the displayed data is exactly the same as the data here. it is always displayed on the top, which is convenient to view real-time data after minimizing the software.
-软件首页布局如下图所示
-The layout of the software homepage is shown in the following figure
-若在瞬时值档位，可能会与设备端显示不一致，此为正常现象，因为刷新时间点不可能完全一致
-If it is in the instantaneous value gear, it may be inconsistent with the display at the device end. This is a normal phenomenon, because the refresh time point cannot be completely consistent.
-实时数据/历史数据（不缩放
-Real-time data/historical data (no scaling
-使用**鼠标左键拖动**，可以选取查看一个区域的数据，并进入`选取区域数据`模式
-Use the left mouse button to drag **, you can select to view the data of a region, and enter the `select regional data` mode
-手动选择文件，可导入IoT Power专用的`.iotpl`文件
-Manually select files to import `.iotpl` files for IoT Power
-鼠标双击①：可以直接切换为查看全局数据
-Double-click ①: You can directly switch to viewing global data.
-鼠标拖动①：可以调整波形的时间位置
-Mouse drag ①: can adjust the time position of the waveform
-鼠标拖动②或③：可以调整波形显示的开始或结束时间点
-Mouse drag ② or ③: can adjust the waveform display start or end time point
-数据缓存方式
-Data caching method
-数据可自由地导出为`.iotpl`文件、`.csv`表格文件、`.exe`自执行文件
-Data can be freely exported as `.iotpl` file,`.csv `table file,`.exe `self-executing file
-所以当处于该模式下，并且`显示波形时间位置在最右侧`（最新时间）时，才会`实时刷新当前抓取到的数据
-Therefore, when in this mode and the "display waveform time position is at the far right" (the latest time), the current captured data will be refreshed in real time.
-所以软件提供了自动保存功能，当达到时间后，将数据自动保存至文件中，防止占用过多内存
-Therefore, the software provides an automatic save function. When the time is reached, the data is automatically saved to a file to prevent excessive memory usage.
-通常来说，设备固件会自动提示升级。但是有时当设备升级途中中断或因其他原因导致固件损坏时，可手动刷入固件
-Typically, the device firmware will automatically prompt for an upgrade. However, sometimes when the device is interrupted during the upgrade or the firmware is damaged due to other reasons, the firmware can be brushed manually.
-通过`电源符号`按钮，控制设备的输出、关闭状态
-Control the output and off state of the device through the `power symbol` button
-通过`设备输出`按钮，设置设备的输出电压与电流
-Set the output voltage and current of the device via the `device output` button
-图表区域
-Chart Area
-图片
-Picture
-微软商店下载：[微软商店页面
-Microsoft Store Download: [Microsoft Store Page
-为设备升级固件
-Upgrading Firmware for Devices
 下载
 Download
-选取某个区域（启用缩放
-Select an Area (Enables Zoom
+为设备升级固件
+Upgrading Firmware for Devices
 也可以**按住CTRL键并滚动鼠标滚轮**，放大或缩小当前显示的区域
 You can also **hold down the CTRL key and scroll the mouse wheel** to zoom in or out of the currently displayed area
 也可以拖动下方的操纵杆，控制当前显示波形的时间位置
 You can also drag the lower joystick to control the time position of the currently displayed waveform
 以上免驱，无需手动安装驱动
 The above drive-free, no need to manually install the driver
-因为设备采样率很高，所以数据量十分庞大，存储在内存中可能导致电脑内存不足
-Because the device sampling rate is very high, so the amount of data is very large, stored in the memory may lead to insufficient computer memory
-用户可能需要
-Users may need
-用户须知，请阅读完再关！\nWin7必须手动安装驱动才能运行！\n要装两个驱动！运行和升级模式分别装。\n需要.net framework 4.6.2才能运行客户端！\n不支持x86架构32位的电脑
-User notice, please read and then close! \nWin7 must manually install the driver to run! \n to install two drivers! Run and upgrade modes are installed separately. \n. net framework 4.6.2 is required to run the client! \n 32-bit computers with x86 architecture are not supported
+使用**鼠标左键拖动**，可以选取查看一个区域的数据，并进入`选取区域数据`模式
+Use the left mouse button to drag **, you can select to view the data of a region, and enter the `select regional data` mode
+全平台**命令行数据记录器、dll/so动态运行库请前往[gitee仓库](https://gitee.com/openLuat/iot-power)查看
+Full platform * * command line data logger, dll/so dynamic runtime please go to [gitee warehouse](https://gitee.com/openLuat/iot-power) to view
+其他数据
+Other data
+具体的接口文档，可以参考[此仓库的资料
+For specific interface documents, please refer to [the data of this warehouse.
+分析指定时间段的数据
+Analyze data for a specified time period
+分析数据
+Analyze data
+切换数据显示方式
+Switch data display mode
+区别在于，`.csv`表格文件用于用户自行分析原始数据，无法再重新导入
+The difference is that the `. csv` table file is used by the user to analyze the original data and cannot be re-imported.
+单击`强制升级固件`按钮，可强制刷入客户端自带的固件。注意：若设备有升级模式，请先进入升级模式后再刷
+Click the `Force Firmware Upgrade` button to force the firmware of the client. Note: If the equipment has upgrade mode, please enter the upgrade mode before brushing.
 右击`强制升级固件`按钮，可强制刷入用户手动选择的固件文件，用于测试功能、验证BUG修复
 Right-click the "Force Firmware Upgrade" button to force the firmware file manually selected by the user to test the function and verify the BUG repair.
-运行lua脚本控制输出，模拟电池等设备放电曲线
-Run the lua script to control the output and simulate the discharge curve of the battery and other equipment.
+因为设备采样率很高，所以数据量十分庞大，存储在内存中可能导致电脑内存不足
+Because the device sampling rate is very high, so the amount of data is very large, stored in the memory may lead to insufficient computer memory
+图片
+Picture
+图表区域
+Chart Area
 在查看历史数据时，为了不会被新数据推挤变化，将会暂停波形图的刷新。
 When viewing historical data, the refresh of the waveform graph will be suspended so that changes will not be pushed by new data.
 在该模式下，牺牲部分的流畅性，以换来大大降低的内存占用，并且不会触发自动保存，保证数据的连续性
 In this mode, the fluency of the part is sacrificed in exchange for a greatly reduced memory footprint, and automatic saving is not triggered to ensure data continuity
+安装包
+Installation Package
+实时数据/历史数据（不缩放
+Real-time data/historical data (no scaling
+客户端
+Client
+客户端可提供以下功能，可能会继续增加
+The following features are available on the client and may continue to increase
+客户端简介
+Introduction to the client
+对数坐标：当电流数据绝对值相差极大时，可启用该功能，将以10的倍数来显示纵坐标的值
+Logarithmic coordinate: When the absolute value of current data is greatly different, this function can be enabled, and the value of the ordinate will be displayed in multiples of 10
+导入与导出抓取的数据，支持导出为独立
+Import and export captured data. You can export data independently.
+导入与导出数据
+Importing and Exporting Data
+导入数据
+Import Data
+导入自动保存的文件，表示从自动保存的文件中进行导入。自动保存功能通常出现在关闭与重新抓取时
+Import automatically saved file indicates to import from automatically saved file. Autosave function usually appears when closing and re-grabbing
+导出数据
+Export data
+峰值、最小电压
+Peak, minimum voltage
+峰值、最小电流
+Peak, minimum current
+平均功率
+average power
+平均数据
+Average data
+平均电压
+average voltage
+平均电流
+Average current
+强制升级固件
+Force firmware upgrade
+当前显示
+Current Display
+当处于`选取区域数据`模式时，可以使用**鼠标滚轮**调整波形的时间位置
+When in `Pick Area Data` mode, you can use the **mouse wheel** to adjust the time position of the waveform
+当处在任意模式下时，都可以**右击鼠标拖动**，选择一个时间段来分析其中的数据
+When in any mode, you can **right-click and drag** to select a time period to analyze the data in it.
+当然，为了存储某些用户变态级地海量数据（比如连续抓取十几个小时），软件也提供了使用硬盘缓存数据的功能
+Of course, in order to store some users abnormal level of massive data (such as continuous capture more than ten hours), the software also provides the use of hard disk cache data function
+当选取一段区域后，`分析窗`将弹出显示分析的结果
+When an area is selected, the `Analysis Window` will pop up to display the results of the analysis
+当鼠标在图表中或在拖动轴上时，可以使用**鼠标滚轮**，调整波形的时间位置
+When the mouse is in the chart or on the drag axis, you can use the **mouse wheel** to adjust the time position of the waveform
+微软商店下载：[微软商店页面
+Microsoft Store Download: [Microsoft Store Page
+所以当处于该模式下，并且`显示波形时间位置在最右侧`（最新时间）时，才会`实时刷新当前抓取到的数据
+Therefore, when in this mode and the "display waveform time position is at the far right" (the latest time), the current captured data will be refreshed in real time.
+所以软件提供了自动保存功能，当达到时间后，将数据自动保存至文件中，防止占用过多内存
+Therefore, the software provides an automatic save function. When the time is reached, the data is automatically saved to a file to prevent excessive memory usage.
+手动选择文件，可导入IoT Power专用的`.iotpl`文件
+Manually select files to import `.iotpl` files for IoT Power
+按下该按钮，可在**实时数据/历史数据**与**选取某个区域**两种显示模式中切换，下方将介绍两种模式
+Press this button to switch between **Real-time data/historical data**and**Select an area**. The two modes are described below.
+按最大值设置纵坐标：按此次抓取数据的最大值，固定纵坐标范围
+Set vertical coordinate by maximum value: set the vertical coordinate range by the maximum value of the captured data.
+控制设备输出
+Control device output
+数据可自由地导出为`.iotpl`文件、`.csv`表格文件、`.exe`自执行文件
+Data can be freely exported as `.iotpl` file,`.csv `table file,`.exe `self-executing file
+数据缓存方式
+Data caching method
+查看电流波形
+View Current Waveform
+此区域为图表显示区域，可以预览波形图
+This area is the chart display area where you can preview the waveform
+此处数据为，**自本次设备连接后的所有数据**的平均值，清空后清零
+The data here is the average value of **all data since this device connection**. Clear and reset
+此处数据为，**自本次设备连接后的所有数据**的相关累计数据，清空后清零
+The data here is the relevant cumulative data of **all data since the current device connection**, cleared and reset
+此处的拉杆同样可以用于控制选择显示的范围
+The lever here can also be used to control the range of the selection display.
+独立版exe版本：[IOT Power.exe](https://arduino.luatos.com/iotpower/latest.html)（注意微软/360杀软误报，火绒无问题
+Independent exe version:[IOT Power.exe](https://arduino.luatos.com/iotpower/latest.html)(note Microsoft/360 kill soft false alarm, tinder no problem
+用户可能需要
+Users may need
+用户看下面这行！展开
+Users see this line below! Expand
+用户须知，请阅读完再关！\nWin7必须手动安装驱动才能运行！\n要装两个驱动！运行和升级模式分别装。\n需要.net framework 4.6.2才能运行客户端！\n不支持x86架构32位的电脑
+User notice, please read and then close! \nWin7 must manually install the driver to run! \n to install two drivers! Run and upgrade modes are installed separately. \n. net framework 4.6.2 is required to run the client! \n 32-bit computers with x86 architecture are not supported
+而`.iotpl`文件可以再次导入软件，`.exe`自执行文件也可以再导出为`.iotpl`文件用于导入
+The `.iotpl` file can be imported into the software again, and the`.exe `self-executing file can also be exported as a`.iotpl` file for import.
+脚本使用`Lua语言`，适配了`LuaTask`框架（[教程
+The script uses the` Lua language` and adapts to` LuaTask` framework ([tutorial
+脚本功能
+Script function
 自适应坐标：按当前显示区域的最大值，动态地决定纵坐标范围
 Adaptive coordinates: dynamically determine the vertical coordinate range according to the maximum value of the current display area
+若在瞬时值档位，可能会与设备端显示不一致，此为正常现象，因为刷新时间点不可能完全一致
+If it is in the instantaneous value gear, it may be inconsistent with the display at the device end. This is a normal phenomenon, because the refresh time point cannot be completely consistent.
+记录历史数据
+Record historical data
+该功能仅适用于`电源产品`与带`PPS诱骗`功能的产品
+This function is only applicable to `Power Products` and products with `PPS decoy` function
+该功能可实现输出电压与电流的自动控制
+This function enables automatic control of output voltage and current
+该区域数值为设备连接后，当前的数据，可以切换为滑动平均值或瞬时值
+The value of this area is the current data after the device is connected, which can be switched to the moving average or instantaneous value.
+该教程于`2.0.7.11`版本时编写，若有新增或变更的功能没有提到，请在页面最下方留言提醒更新，谢谢
+This tutorial was written in version 2.0.7.11. If there are any new or changed functions not mentioned, please leave a message at the bottom of the page to remind you to update, thank you.
+调整显示方式
+Adjust the display mode
+软件上方的**数据浮窗**开关可以打开浮窗，显示的数据与此处数据完全相同，始终置顶显示，方便最小化软件后查看实时数据
+The **data floating window** switch on the top of the software can open the floating window, and the displayed data is exactly the same as the data here. it is always displayed on the top, which is convenient to view real-time data after minimizing the software.
+软件界面
+Software Interface
+软件首页布局如下图所示
+The layout of the software homepage is shown in the following figure
+运行lua脚本控制输出，模拟电池等设备放电曲线
+Run the lua script to control the output and simulate the discharge curve of the battery and other equipment.
+选取某个区域（启用缩放
+Select an Area (Enables Zoom
+通常来说，设备固件会自动提示升级。但是有时当设备升级途中中断或因其他原因导致固件损坏时，可手动刷入固件
+Typically, the device firmware will automatically prompt for an upgrade. However, sometimes when the device is interrupted during the upgrade or the firmware is damaged due to other reasons, the firmware can be brushed manually.
+通过`电源符号`按钮，控制设备的输出、关闭状态
+Control the output and off state of the device through the `power symbol` button
+通过`设备输出`按钮，设置设备的输出电压与电流
+Set the output voltage and current of the device via the `device output` button
+驱动
+Drive
+鼠标双击①：可以直接切换为查看全局数据
+Double-click ①: You can directly switch to viewing global data.
+鼠标拖动①：可以调整波形的时间位置
+Mouse drag ①: can adjust the time position of the waveform
+鼠标拖动②或③：可以调整波形显示的开始或结束时间点
+Mouse drag ② or ③: can adjust the waveform display start or end time point

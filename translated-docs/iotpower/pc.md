@@ -6,6 +6,8 @@
 - Independent exe version:[IOT Power.exe](https://arduino.luatos.com/iotpower/latest.html)(note Microsoft/360 kill soft false alarm, tinder no problem）
 - **Full platform * * command line data logger, dll/so dynamic runtime please go to [gitee warehouse](https://gitee.com/openLuat/iot-power) to view
 
+<h1 id="win7-notice" style="display: none;">Win7 Users see this line below! Expand！！</h1>
+
 :::{dropdown} win7 Users may need
 （win10 The above drive-free, no need to manually install the driver）
 
@@ -182,5 +184,6 @@ In this mode, the fluency of the part is sacrificed in exchange for a greatly re
 <script>
 if(navigator.userAgent.indexOf("Windows NT 6") >= 0) {
   alert("Win7 User notice, please read and then close! \nWin7 must manually install the driver to run! \n to install two drivers! Run and upgrade modes are installed separately. \n. net framework 4.6.2 is required to run the client! \n 32-bit computers with x86 architecture are not supported！");
+  document.getElementById('win7-notice').style.cssText = "font-weight: bold;color: red;";
 }
 </script>
