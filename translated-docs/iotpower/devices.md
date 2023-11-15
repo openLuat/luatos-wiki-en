@@ -13,17 +13,18 @@ Iot Power Series has a variety of products, can meet a variety of testing needs
 
 | **Status **|**Device Model**|**Power Supply**|**Series**|**Voltage**|**Current**|**Current Limit**|**Voltage Limit**|**PC**|**Screen**|** Self-powered **|** Deception** |
 | :------: | :----------------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :----------: | :------: |
-|    🌐     |  **Iot Power V1**  |    ✅     |    ❌     |   0-5V   |   0-2A   |    ✅     |    ✅     |    ✅     |    ✅     |  TypeC 5V   |    ❌     |
+|    ❄     |  **Iot Power V1**  |    ✅     |    ❌     |   0-5V   |   0-2A   |    ✅     |    ✅     |    ✅     |    ✅     |  TypeC 5V   |    ❌     |
 |    🚩     |  **Iot Power Pro**  |    ✅     |    ❌     |   0-5V   |  0-2A  |    ✅     |    ✅     |    ✅     |    ✅     |  TypeC 5V   |    ❌     |
-|    \*    | **Iot Power Plus** |    ✅     |    ❌     |  0-20V*  |  0-3A*   |    ✅     |    ✅     |    ✅     |    ✅     |   TypeC PD   |    PD    |
+|    🚧    | **Iot Power Plus** |    ✅     |    ❌     |  0-20V*  |  0-3A*   |    ✅     |    ✅     |    ✅     |    ✅     |   DC Mouth   |    PD    |
 |    🌐     |  **Iot Power CC**  |    🍽¹     |    ✅     |  0-24V   |  0-5A   |    🍽¹     |    🍽¹     |    ✅     |    ✅     |  TypeC 5V²   |    PD    |
 
 | Illustration | Meaning        |
 | ---- | ------------------ |
 | *    | Not determined, may change |
 | 🚧    | In R & D             |
-| 🚩    | Production phase, upcoming release |
+| 🚩    | Coming soon |
 | 🌐    | buy it quickly             |
+| ❄    | Discontinued             |
 | ✅    | Support               |
 | 🍽    | Can be disguised to support       |
 | ❌    | Not supported             |
