@@ -55,6 +55,7 @@
 |[nbiot](nbiot.md)|`NB-IOT Operation Library`|?|?|?|?|?|?|
 |[nes](nes.md)|`nes Simulator`|Y|Y|Y|X|X|Y|
 |[nimble](nimble.md)|`Bluetooth BLE library (nimble version)`|Y|Y|X|Y|Y|X|
+|[onewire](onewire.md)|`single bus protocol driver`|X|X|X|X|X|X|
 |[os](os.md)|`os Operation`|?|?|?|?|?|?|
 |[otp](otp.md)|`OTP Operation Library`|Y|Y|Y|X|X|Y|
 |[pack](pack.md)|`Packing and unpacking format string`|Y|Y|Y|Y|Y|Y|
