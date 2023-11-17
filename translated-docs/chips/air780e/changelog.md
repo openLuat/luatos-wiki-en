@@ -1,8 +1,12 @@
 # Ec618 Series Firmware Release Notes
 
+## V1109
+
+Pending
+
 ## V1108
 
-This version is in RC status, pending release
+This version has been released on 2023.11.15, and the corresponding git tag is v1108.ec618.release
 
 Compatibility changes:
 1. Correct the unit of CPU temperature
