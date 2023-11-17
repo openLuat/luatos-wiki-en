@@ -11,7 +11,7 @@ This version has been released on 2023.11.15, and the corresponding git tag is v
 Compatibility changes:
 1. Correct the unit of CPU temperature
    * Impact, the previous version returned CPU temperature is degrees Celsius, other BSP are 1/1000 degrees Celsius
-   * Solution: The new data/1000 will get the original data value.
+   * Solution: The new data' //1000 'will get the original data value
 
 Defect repair:
 * fix: **socket close When the new data flag is not cleared * *, SSL has a probability of continuous reconnection failure.

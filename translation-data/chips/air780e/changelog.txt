@@ -454,6 +454,8 @@ virtual serial host computer
 Pour back the json.null property
 解决办法: 按需调用或定时调用
 Workaround: Call on demand or call regularly
+解决办法: 新数据 `//1000` 即得到原有的数据值
+Solution: The new data' //1000 'will get the original data value
 解决办法: 新数据/1000 即得到原有的数据值
 Solution: The new data/1000 will get the original data value.
 解决办法: 设置音量到100或以上
