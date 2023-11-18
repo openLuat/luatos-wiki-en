@@ -220,12 +220,18 @@ Inform the original patch to fix a crash caused by searching for base stations.
 Starting the background thread should judge whether it is successful or not, and the failure process should be followed if the creation fails.
 固件下audio库播放音频没有结束播放的回调消息
 The callback message that the audio playing in the audio library under the firmware does not end playing.
+固件下载地址
+Firmware download address
 固件未成功挂载SPI FLASH时会死机
 Firmware crashes when SPI FLASH is not successfully mounted
 在进行DNS过程时，调用network_force_close_socket并且不再进行连接时，DNS完成仍然会回调
 When the DNS procedure is in progress, the call network_force_close_socket and the connection is no longer in progress, the DNS completion still calls back
+基于ntp的毫秒级时间戳
+ntp-based millisecond timestamp
 基础循环录音
 Basic loop recording
+备用地址
+Alternate Address
 完善ymodem接收文件的结尾处理
 Improve the end processing of ymodem received files
 就是固件文件, 其余两个是底层源码,无需下载
@@ -264,6 +270,8 @@ Impact: `audio.vol (0,50) `may not be heard clearly when using the Air780E softw
 Impact: If the mobile.reqCellInfo function is not called, mobile.cellInfo() returns an empty array
 待定
 Pending
+心跳包未正常发出
+Heartbeat packet not sent out normally
 心跳定时器计数错误** 导致mqtt心跳可能不会发出
 Heartbeat timer count error **causes mqtt heartbeat may not be emitted
 手动读文件的open参数不对
@@ -390,6 +398,8 @@ Added: Software
 The new auto_phone_fix can disable the automatic release of the corresponding target number to adapt to the complex number rules abroad.
 新增bit64.strtoll函数
 Added bit64.strtoll function
+新增功能
+New Features
 新增多款传感器/外设驱动, ina226/ak8963/mpu9250/st7565等
 Add a variety of sensors/peripheral drivers, ina226/ak8963/mpu9250/st7565, etc.
 更新 ws2812 demo,EC618支持pin直驱
@@ -464,6 +474,8 @@ Solution: Set the volume to 100 or above
 Volume configuration for software DAC audio takes effect
 选择关闭内部分压模式时没有完全关闭掉
 The internal partial pressure mode is not completely turned off when it is selected to turn off the internal partial pressure mode.
+通过云编译,全自动编译最新固件
+Fully automatic compilation of the latest firmware via cloud compilation
 部标jt808对接
 Department standard jt808 docking
 里的容量计算错误
@@ -472,5 +484,7 @@ Capacity calculation error in
 Rewrite the sntp function and support automatic timeout. **In a weak network, sntp may run out of socket connections.
 钉钉机器人
 DingTalk robot
+预期 `2023.12.31` 前
+Expected before '20232.12.31'
 飞书机器人
 Flying book robot

@@ -1,8 +1,18 @@
 # Ec618 Series Firmware Release Notes
 
+* Firmware download address: https://gitee.com/openLuat/LuatOS/releases
+* Alternate Address: https://pan.air32.cn/s/DJTr?path=%2F
+* Fully automatic compilation of the latest firmware via cloud compilation: https://wiki.luatos.org/develop/compile/Cloud_compilation.html
+
 ## V1109
 
-Pending
+Expected before '20232.12.31'.
+
+Defect repair:
+* fix: websocket Heartbeat packet not sent out normally
+
+New Features:
+* add: ntp-based millisecond timestamp socket.ntptm()
 
 ## V1108
 
