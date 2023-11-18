@@ -1,4 +1,4 @@
-# Lua Library File Writing Guide
+# Lua Library File Writing Guide (Pure Lua Writing)
 
 In actual business, all logic is usually not written to `main.lua`, but is divided into multiple lua files according to functions..
 

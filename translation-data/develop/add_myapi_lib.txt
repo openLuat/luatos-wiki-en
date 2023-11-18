@@ -1,0 +1,158 @@
+下面重点介绍
+The following highlights
+与Lua直接交互的代码,必须有
+Code that interacts directly with Lua, there must be
+主代码的库 `https://gitee.com/openLuat/LuatOS`, 后续称为 `LuatOS`代码库
+The main code of the library 'https://gitee.com/openLuat/LuatOS', later called 'LuatOS' code base
+代码库的component目录新增一个目录, 并将库代码分别存放在 `include` `src` 目录里
+Add a new directory to the component directory of the code library and store the library code in the 'include' 'src' directory.
+会压入一个元素到虚拟栈, 所以返回值也是
+will push an element to the virtual stack, so the return value is also
+会有很多库的声明, 形式如下
+There will be many library declarations, in the form
+但我们这里不必这么麻烦, 只需要新增一个元素就行, 不加宏判断也是没任何问题的
+But we don't have to bother here, we just need to add one element, and there is no problem without macro judgment.
+例如 Air101库里的
+For example, in the Air101 library
+例如 Air780E库里的
+For example, in the Air780E library
+修改 `bsp`代码库 的`xmake.lua`(非idf5)或者`CMakefile`(idf5),参考其他库的路径,新增进去
+Modify the 'xmake.lua' (not idf5) or 'CMakefile'(idf5) of the 'bsp' code library, refer to the path of other libraries, and add it
+修改`LuatOS`代码库的 `luat/include/luat_libs.h`, 新增一行
+Modify 'luat/include/luat_libs.h 'in the 'LuatOS' code base to add a new line
+修改新增了 `luaopen_mymath` 的声明
+Modify the statement with the addition of luaopen_mymath
+具体的实现代码,可选
+Specific implementation code, optional
+再次提醒, 请确保已经能编译出一个默认配置下的`标准`固件,再进行自定义库的添加
+Again, please make sure that you have compiled a 'standard' firmware under the default configuration, and then add a custom library.
+最后, 执行编译, 得到所需要的固件
+Finally, compile to get the required firmware
+最后必须加这一行
+This line must be added at the end.
+函数不应长时间阻塞, 因为lua vm本质上是单线程操作, 如需执行耗时操作,请参考 `luat_rtos.h` 新建底层task 来执行
+The function should not be blocked for a long time, because lua vm is essentially a single-threaded operation. if you need to perform a time-consuming operation, please refer to' luat_rtos.h 'to create a new underlying task to execute it.
+函数名称,给lua调用的.   函数指针指向
+Function name, the. function pointer to which lua calls
+初次尝试时, 可以先放到 `LuatOS`代码库的 `lua`目录. `.h`放 `lua/include`, `.c`文件放
+When trying for the first time, you can first put the' lua' directory of the' luatOS' code library. '.h' put the' lua/include', '.c' file
+到 `LuatOS`代码库 的 `components` 目录新增专用的文件夹
+Add a dedicated folder to the 'components' directory of the 'LuatOS' repository
+前置知识
+pre-knowledge
+后续建议
+Follow-up recommendations
+因为
+Because
+在编译通过之后, 再进行下一步操作. 当前只是编译, 还没注册到lua虚拟机
+After the compilation is passed, proceed to the next step. Currently, it is only compiled and has not been registered to the lua virtual machine.
+大部分bsp的Lua主线程的栈大小在8~12k字节,切勿使用过大的具体变量和可变大小数组
+The stack size of most BSP's Lua main thread is 8~12k bytes. Do not use too large specific variables and variable-size arrays.
+如代码里中文函数, 如果有`mymath`库存在于当前固件中, 会打印并执行
+For example, if there is a Chinese function in the code, 'mymath' inventory in the current firmware, it will be printed and executed.
+如果你不需要它们, 那就不添加, 对整体逻辑没影响
+If you don't need them, then don't add them, which has no effect on the overall logic.
+如果提示找不到
+If the prompt cannot be found
+如果是特定BSP的实现,或者没打算兼容其他BSP, 那么放在对应BSP的`port`, `project/luatos` 之类的目录中, 没有统一规定
+If it is an implementation of a specific BSP or is not intended to be compatible with other BSPs, it is placed in directories such as' port', 'project/luatos' of the corresponding BSP, and there is no uniform regulation.
+如果有,按需
+If yes, as required
+对LuatOS 头文件的了解 [核心头文件目录
+Understanding of LuatOS header files [core header file directory
+对Lua的C API的了解 [C API文档
+Understanding of Lua's C API [C API Documentation
+对于`luat_mymath.h`和`luat_mymath.c`的具体代码
+Specific code for 'luat_mymath.h' and 'luat_mymath.c'
+对应代码的头文件,可选
+The header file of the corresponding code, optional
+对应模块的库, 例如Air780E对应的 `https://gitee.com/openLuat/luatos-soc-2022`, 后续称为 `bsp`代码库
+The library corresponding to the module, for example, the https://gitee.com/openLuat/luatos-soc-2022' corresponding to the Air780E, which is subsequently called the 'bsp' code library.
+对应模块的源码编译, 请查阅 [编译说明
+For source code compilation of the corresponding module, please refer to [compilation instructions
+对应正规写法, 会使用宏来控制开启或禁用某个库, 具体的宏定义会在 `bsp`代码库 的 `luat_conf_bsp.h` 文件里
+Corresponding to the normal writing method, macros will be used to control the opening or disabling of a library, and the specific macro definition will be in the 'luat_conf_bsp.h 'file of the 'bsp' code library.
+将字符串压入lua的虚拟栈, 栈深度
+Push the string into lua's virtual stack, stack depth
+就是在 `luat_libs.h` 中新增的名称
+is the name added in 'luat_libs.h'
+库函数注册表
+Library Function Registry
+开头的c文件,修改新增了`loadedlibs`的新元素
+At the beginning of the C file, modify the new element of 'loadedlibs'
+当前版本是v2, 对应
+The current version is v2, corresponding
+必须引入
+must be introduced
+总会包含2个git库, 而且非常建议大家使用git下载和管理相关代码
+There will always be 2 git libraries, and it is highly recommended that you use git to download and manage relevant codes.
+所有BSP都会包含这个头文件路径
+All BSPs will include this header path
+所有BSP都会包含这个源码路径的.c文件
+All BSPs will include the. c file for this source path
+执行mymath.myplus函数
+Execute mymath.myplus function
+找到mymath库
+Find mymath library
+找到如下数组声明
+Find the following array declaration
+新增一个通用库的实例
+Add an instance of a common library
+新增后, 建议再跑一次编译, 通常是不会有报错的. 除非漏了分号
+After adding, it is recommended to run the compilation again, usually there will be no error. Unless the semicolon is missed
+新增的文件放在哪里
+Where to put the new files
+是库名称, 会注册成全局变量
+is the library name and will be registered as a global variable
+栈大小和内存使用问题
+Stack size and memory usage issues
+检查函数名,库名称是否拼写错误
+Check whether the function name and library name are misspelled
+检查是不是下载了新的底层, 执行编译清理, 重新编译和下载, 观察启动日志里的编译时间
+Check whether the new bottom layer has been downloaded, perform compilation and cleaning, recompile and download, and observe the compilation time in the startup log.
+没有找到mymath库
+Mymath library not found
+没有看到新增 -- 如果是ESP32系列的, 请先执行一次
+No new additions are seen-if it is ESP32 series, please execute it first.
+没有看到新增 -- 检查文件名, 尤其是后缀
+I don't see the new addition-check the file name, especially the suffix.
+注册之前, 请再跑一次编译过程, 应该能看到编译上述新增的文件
+Before registering, please run the compilation process again and you should be able to see the new files compiled above.
+注册库函数
+Register Library Functions
+注意不要放在 `{NULL, NULL}` 结束元素之后
+Be careful not to place '{NULL, NULL}' after the ending element
+注意注意,这里是该函数的给 lua 的 返回值 的数量, 不是日常的ERR_OK, ERR_FAIL 等0/1返回值
+Note that this is the number of return values to lua by this function, not the daily ERR_ OK, ERR_FAIL and other 0/1 return values.
+涉及的代码库
+Codebase involved
+添加自定义库和函数(完整版
+Add custom libraries and functions (full version
+现在打开`bsp库`的 `luat_base_` 开头的c文件
+Now open the c file at the beginning of luat_base_'of 'bsp library'
+编写`main.lua`, 然后连同`新的底层固件`, 一起下载到设备中
+Write 'main.lua' and download it to the device along with' new underlying firmware'
+编写了具体的lua c函数, 声明的`mymath`库的函数列表和`luaopen_mymath`函数
+The specific lua c function, the function list of the declared 'mymath' library and the luaopen_mymath function have been written.
+至于熟悉之后的, 有两个去向
+As for the familiar, there are two directions
+至此, 前面步骤的 名称, 函数名, 都会联系起来
+At this point, the names of the previous steps and the function names will be linked.
+跑通流程后, 如果是比较复杂的库, 建议
+After running through the process, if it is a more complicated library, it is recommended
+较大的内存占用, 必须使用`luat_malloc.h`函数提供的`luat_heap_malloc`和`luat_heap_free`, 不要直接使用`malloc`和
+Larger memory footprint, you must use the' luat_heap_malloc 'and' malloc' provided by the' luat_malloc.h' function, do not directly use' malloc' and luat_heap_free
+这是标准写法, 通过rotable2生成不占内存的库指针
+This is the standard way to write, through the rotable2 to generate non-memory library pointers
+这里, 我们新增一个叫  `mymath` 的库, 新增3个文件,分别存放到 `LuatOS`代码库的如下路径
+Here, we add a library called' mymath' and add 3 files, which are stored in the' LuatOS' code library in the following path
+这里不做展开, 它们与普通C函数没有区别
+No expansion here, they are no different from ordinary C functions.
+这里是一个标准的Lua C函数声明
+Here is a standard Lua C function declaration
+这里是库的声明, 后面要用到
+Here is the declaration of the library, which will be used later.
+需要PROJECT和VERSION这两个信息
+Need to PROJECT and VERSION these two information
+验证库函数
+Validation Library Functions
