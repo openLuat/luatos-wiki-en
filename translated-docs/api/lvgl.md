@@ -1,6 +1,6 @@
 # lvgl - LVGL Image Library
 
-{bdg-success}`Adapted` {bdg-primary}`Air101/Air103` {bdg-primary}`Air601` {bdg-primary}`Air105` {bdg-primary}`ESP32C3` {bdg-primary}`ESP32S3` {bdg-primary}`Air780E/Air700E`
+{bdg-success}`Adapted` {bdg-primary}`Air101/Air103` {bdg-primary}`Air601` {bdg-primary}`Air105` {bdg-primary}`ESP32C3` {bdg-primary}`ESP32S3` {bdg-primary}`Air780E/Air700E` {bdg-primary}`Air780EP`
 
 ```{tip}
 This library has its own demo,[click this link to view the demo example of lvgl](https://gitee.com/openLuat/LuatOS/tree/master/demo/lvgl)
