@@ -22,6 +22,8 @@ Successful creation returns the context, otherwise
 Parameters
 发送数据到设备
 Send data to device
+已适配
+Adapted
 幻彩灯带RGB控制器(WS2812系列
 Phantom Lights with RGB Controller (WS2812 Series
 本函数与具体模式有关

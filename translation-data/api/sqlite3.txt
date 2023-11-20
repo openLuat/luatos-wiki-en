@@ -8,6 +8,8 @@ Close the database
 Parameters
 字符串,必须填写
 String, must be filled in
+已适配
+Adapted
 成功返回true,否则返回
 Returns true on success, otherwise
 成功返回查询结果(若有),否则返回报错的字符串

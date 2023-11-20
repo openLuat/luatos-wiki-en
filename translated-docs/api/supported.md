@@ -75,7 +75,7 @@
 |[socket](socket.md)|`Network Interface`|Y|Y|Y|Y|Y|Y|
 |[softkeyboard](softkeyboard.md)|`software keyboard matrix (currently only supported by air105)`|?|?|?|?|?|?|
 |[spi](spi.md)|`spi Operation Library`|Y|Y|Y|Y|Y|Y|
-|[sqlite3](sqlite3.md)|`sqlite3 Database Operations`|X|X|X|X|X|X|
+|[sqlite3](sqlite3.md)|`sqlite3 Database Operations`|Y|Y|X|X|X|X|
 |[statem](statem.md)|`SM State Machine`|Y|Y|Y|Y|Y|Y|
 |[string](string.md)|`String Manipulation Functions`|Y|Y|Y|Y|Y|Y|
 |[sys](sys.md)|`sys Library`|Y|Y|Y|Y|Y|Y|
@@ -90,7 +90,7 @@
 |[wdt](wdt.md)|`watchdog Operation Library`|Y|Y|Y|Y|Y|Y|
 |[websocket](websocket.md)|`websocket Client`|Y|Y|Y|Y|Y|Y|
 |[wlan](wlan.md)|`wifi Operation`|Y|Y|X|Y|Y|Y|
-|[ws2812](ws2812.md)|`Phantom Lights with RGB Controller (WS2812 Series)`|X|X|X|X|X|X|
+|[ws2812](ws2812.md)|`Phantom Lights with RGB Controller (WS2812 Series)`|Y|Y|X|X|X|X|
 |[ymodem](ymodem.md)|`ymodem Agreement`|Y|Y|Y|Y|Y|Y|
 |[zbuff](zbuff.md)|`c Memory Data Manipulation Library`|Y|Y|Y|Y|Y|Y|
 |[zlib](zlib.md)|`zlib Compression/Decompression (Obsolete)`|Y|Y|Y|X|X|X|
