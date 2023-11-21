@@ -5,12 +5,12 @@ IOT Power Series products are fully functional, stable and reliable small hand-h
 ::::{grid} 1 2 2 3
 :gutter: 1 1 1 2
 
-:::{grid-item-card} {octicon}`meter;1.5em;sd-mr-1` V1 Version
-:link: power/index
+:::{grid-item-card} {octicon}`meter;1.5em;sd-mr-1` Source table version
+:link: pro/index
 :link-type: doc
-:img-top: img/classic.png
+:img-top: pro/img/font-cn.png
 
-Iot Power V1：USB Power supply, used as a power supply, maximum output 5V/2A, sampling rate 10K/s
+Iot Power Pro：USB Power supply, used as a power supply, maximum output 5V/2A, sampling rate 10K/s
 
 +++
 [Learn more »](power/index)
@@ -61,6 +61,7 @@ Please select the specific page on the left to view.
 ```{toctree}
 :hidden:
 power/index
+pro/index
 cc/index
 devices
 pc

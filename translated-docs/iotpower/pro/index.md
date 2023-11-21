@@ -1,6 +1,10 @@
 # 🔋 IoT Power Pro
 
-> [Go to Taobao to buy](https://luat.taobao.com/)
+> ~~[Go to Taobao to buy](https://luat.taobao.com/)~ ~ not yet on sale
+
+```{warning}
+This product has not yet been sold, some descriptions may change, and the actual equipment shall prevail.
+```
 
 IOT Power Is a fully functional, stable and reliable small hand-held power meter. It can：
 
@@ -78,9 +82,3 @@ connect
 usage
 question
 ```
-
-<script>
-if (navigator.language.indexOf("CN") < 0 && confirm ("Are you want to switch to English version of this page?")) {
-    window.location.href = "index-en.html";
-}
-</script>

@@ -35,9 +35,3 @@ IOT Power Pro Support power supply through TypeC port
 ## Output mode
 
 After setting the voltage and current (refer to the next page), press the output button to turn on the output.
-
-<script>
-if (navigator.language.indexOf("CN") < 0 && confirm ("Are you want to switch to English version of this page?")) {
-    window.location.href = "tech-en.html";
-}
-</script>

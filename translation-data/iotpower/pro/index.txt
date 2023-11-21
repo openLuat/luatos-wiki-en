@@ -8,6 +8,8 @@ No discharge after closing the output | automatic discharge of energy after clos
 List the parameters and performance indicators of the equipment
 前往淘宝购买
 Go to Taobao to buy
+前往淘宝购买](https://luat.taobao.com/)~~ 还未发售
+Go to Taobao to buy](https://luat.taobao.com/)~ ~ not yet on sale
 单STM8主控        |     Air32+STM8双核
 Single STM8 Master | Air32 STM8 Dual Core
 可**连接PC客户端**查看与分析电流波形，也可使用命令行版本在任意设备(win/linux/mac)上抓取串口数据（如树莓派），使用pc客户端导入查看
@@ -28,6 +30,8 @@ Support current limit output, can set any current limit value
 Is a fully functional, stable and reliable small hand-held power meter. It can
 是广大用户随身携带的理想测试工具。
 Is the majority of users carry the ideal test tool.
+本产品还未发售，部分描述可能会有变动，以实际到手设备为准
+This product has not yet been sold, some descriptions may change, and the actual equipment shall prevail.
 朴素          |       UI花里胡哨
 Simple | UI fancy
 滚轮不灵敏        |   滚轮跟手，十分舒适

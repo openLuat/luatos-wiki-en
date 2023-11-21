@@ -20,9 +20,3 @@
 |  200μA   | 0.1uA-200μA |  ?μA   |    1%    |  <0.5%   | Automatic gear |
 |   20mA   | 200μA-20mA  |  ?μA   |    1%    |  <0.5%   | Automatic gear |
 |    2A    |   20mA-2A   |  ?mA   |    1%    |   <1%    | Automatic gear |
-
-<script>
-if (navigator.language.indexOf("CN") < 0 && confirm ("Are you want to switch to English version of this page?")) {
-    window.location.href = "tech-en.html";
-}
-</script>
