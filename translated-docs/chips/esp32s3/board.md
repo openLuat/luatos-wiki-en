@@ -46,6 +46,7 @@ CORE ESP32S3 The core board is a core board designed based on Lexin ESP32-S3, wi
 ![footprint](https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/PinOut_esp32s3.png)
 
 - Any GPIO can be used as a PWM pin, and the number is the same as that of GPIO, but only 8 PWMs can be turned on at the same time. Attention must be paid
+- The illustrated SPI is SPI 2
 
 ## 4. function introduction
 

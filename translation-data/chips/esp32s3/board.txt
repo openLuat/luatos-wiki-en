@@ -34,6 +34,8 @@ and GND pin supply
 and GND pin supply
 四、功能介绍
 4. function introduction
+图示SPI为
+The illustrated SPI is
 如若到手后板子`默认的闪灯程序`无法运行，且**无法烧录固件（卡在FLASH下载那一步）**，可尝试补焊**FLASH处的焊盘**（加锡
 If the` default flashing light program` on the back board cannot run and **cannot burn firmware (stuck in the step of FLASH download)**, try to repair and solder the pad at **FLASH** (tin added
 开发板
