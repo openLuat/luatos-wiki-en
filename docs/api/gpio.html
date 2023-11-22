@@ -832,6 +832,48 @@
 </div>
 </section>
 <hr class="docutils"/>
+<section id="gpio-caplevel-pin-level-func">
+<h2>gpio.caplevel(pin, level,func)<a class="headerlink" href="#gpio-caplevel-pin-level-func" title="Permalink to this headline">#</a></h2>
+<p>Capture Pin Level Duration, Unit us</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>pin GPIO Number, must be numeric</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>level The level to be captured can be high level gpio.HIGH, low level gpio.LOW, or directly write the value 1 or 0, I .e. the normal time on the pin is opposite to level, capturing the set level duration</p></td>
+</tr>
+<tr class="row-even"><td><p>function</p></td>
+<td><p>func The callback function after the capture is completed. There is only one parameter. The parameter is the number-type value of the captured time length, in units.us</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>any</p></td>
+<td><p>Returns the closure of the acquisition level</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Capture the duration when pin.PA07 is high</span>
+<span class="n">gpio</span><span class="p">.</span><span class="n">caplevel</span><span class="p">(</span><span class="n">pin</span><span class="p">.</span><span class="n">PA07</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="kr">function</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="gpio-set-pin-value">
 <h2>gpio.set(pin, value)<a class="headerlink" href="#gpio-set-pin-value" title="Permalink to this headline">#</a></h2>
 <p>Set Pin Level</p>
@@ -1177,6 +1219,7 @@
 <li><a class="reference internal" href="#">gpio - GPIO Operation</a><ul>
 <li><a class="reference internal" href="#constant">Constant</a></li>
 <li><a class="reference internal" href="#gpio-setup-pin-mode-pull-irq-alt">gpio.setup(pin, mode, pull, irq, alt)</a></li>
+<li><a class="reference internal" href="#gpio-caplevel-pin-level-func">gpio.caplevel(pin, level,func)</a></li>
 <li><a class="reference internal" href="#gpio-set-pin-value">gpio.set(pin, value)</a></li>
 <li><a class="reference internal" href="#gpio-get-pin">gpio.get(pin)</a></li>
 <li><a class="reference internal" href="#gpio-close-pin">gpio.close(pin)</a></li>

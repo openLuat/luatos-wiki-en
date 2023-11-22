@@ -72,6 +72,36 @@ gpio.setup(18, 0, nil, nil, 4)
 
 ---
 
+## gpio.caplevel(pin, level,func)
+
+
+
+Capture Pin Level Duration, Unit us
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|pin GPIO Number, must be numeric|
+|int|level The level to be captured can be high level gpio.HIGH, low level gpio.LOW, or directly write the value 1 or 0, I .e. the normal time on the pin is opposite to level, capturing the set level duration|
+|function|func The callback function after the capture is completed. There is only one parameter. The parameter is the number-type value of the captured time length, in units.us|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|any|Returns the closure of the acquisition level|
+
+**Examples**
+
+```lua
+-- Capture the duration when pin.PA07 is high
+gpio.caplevel(pin.PA07,1,function(val) print(val) end)
+
+```
+
+---
+
 ## gpio.set(pin, value)
 
 

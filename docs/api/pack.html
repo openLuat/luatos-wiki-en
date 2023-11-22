@@ -719,6 +719,30 @@
 <p class="admonition-title">Tip</p>
 <p>There are also video tutorials in this library, <a class="reference external" href="https://www.bilibili.com/video/BV1Sr4y1n7bP">click this link to view</a></p>
 </div>
+<p><strong>Example</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="cm">--[[</span>
+<span class="cm"> '&lt;' Set to Little Ended </span>
+<span class="cm"> '&gt;' Set to Big Endian </span>
+<span class="cm"> '=' Size side follows local settings </span>
+<span class="cm"> 'z' Empty string, 0 bytes</span>
+<span class="cm"> 'a' size_t String, first 4 bytes express length, then N bytes of data</span>
+<span class="cm"> 'A' Specifies the length string, such as A8, which represents 8 bytes of data.</span>
+<span class="cm"> 'f' float, 4 Byte</span>
+<span class="cm"> 'd' double , 8 Byte</span>
+<span class="cm"> 'n' Lua number , 32bit Firmware 4 bytes, 64bit firmware 8 bytes</span>
+<span class="cm"> 'c' char , 1 Byte</span>
+<span class="cm"> 'b' byte = unsigned char  , 1 Byte</span>
+<span class="cm"> 'h' short  , 2 Byte</span>
+<span class="cm"> 'H' unsigned short  , 2 Byte</span>
+<span class="cm"> 'i' int  , 4 Byte</span>
+<span class="cm"> 'I' unsigned int , 4 Byte</span>
+<span class="cm"> 'l' long , 8 Bytes, only 64bit firmware can correctly obtain</span>
+<span class="cm"> 'L' unsigned long , 8 Bytes, only 64bit firmware can correctly obtain</span>
+<span class="cm">]]</span>
+
+<span class="c1">-- Please see the detailed usage demo</span>
+</pre></div>
+</div>
 <section id="pack-unpack-string-format-init">
 <h2>pack.unpack( string, format, init)<a class="headerlink" href="#pack-unpack-string-format-init" title="Permalink to this headline">#</a></h2>
 <p>Unpack String</p>
@@ -734,7 +758,7 @@
 <td><p>String to be unpacked</p></td>
 </tr>
 <tr class="row-odd"><td><p>string</p></td>
-<td><p>Formatting symbol ‘&lt;’: set to little endian encoding ‘&gt;’: set to big endian encoding ‘=’:size end follows local setting ‘z’: empty string ‘p’:byte string ‘p’: word string ‘a’:size_t string ‘A’: specified length string ‘f’:float ‘d’:double ‘n’:Lua number ‘c’:char ‘b’:byte = unsigned char ‘h’:short ‘H’:unsigned short ‘i’:int ‘I’:unsigned int ‘l’:long ‘L’:unsigned long</p></td>
+<td><p>Formatting Symbols</p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>The default value is 1, which marks where unpacking begins</p></td>
@@ -775,7 +799,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>format Formatting symbol ‘&lt;’: set to little endian encoding ‘&gt;’: set to big endian encoding ‘=’:size end follows local setting ‘z’: empty string ‘p’:byte string ‘p’: word string ‘a’:size_t string ‘A’: specified length string ‘f’:float ‘d’:double ‘n’:Lua number ‘c’:char ‘b’:byte = unsigned char ‘h’:short ‘H’:unsigned short ‘i’:int ‘I’:unsigned int ‘l’:long ‘L’:unsigned long</p></td>
+<td><p>format Formatting Symbols</p></td>
 </tr>
 <tr class="row-odd"><td><p>any</p></td>
 <td><p>First value to pack</p></td>
