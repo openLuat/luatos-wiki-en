@@ -728,13 +728,20 @@
 <li><p>Because normal GPIO is used, <code class="docutils literal notranslate"><span class="pre">SLEEP1/LIGHT/SLEEP2/DEEP/HIB</span> <span class="pre">mode</span></code> will power down</p></li>
 <li><p>In lua code, the control power supply API is<code class="docutils literal notranslate"> <span class="pre">pm.power(pm.GPS,</span> <span class="pre">true)</span></code>. although there is pm.GPS_ANT, it is invalid for Air780EG</p></li>
 <li><p>Flight mode is RF-related control and does not affect GPIO power supply, so it does not affect GPS power supply</p></li>
+<li><p>The new Air780EG is powered on and controlled by ‘GPIO23’, which is turned on by default.</p></li>
 </ol>
+</section>
+<section id="special-note-on-new-air780eg">
+<h2>Special note on new Air780EG<a class="headerlink" href="#special-note-on-new-air780eg" title="Permalink to this headline">#</a></h2>
+<p>New shipments of Air780EG have added standby power to support hot starts.</p>
+<p>How to distinguish whether it is a new model or not depends on the factory time. After 2023.8.7, all the products are new.</p>
+<p>Query method: https://erp.openluat.com/imei, enter imei number to query. If not registered, please register first, registration is free of charge.</p>
 </section>
 <section id="positioning-characteristics">
 <h2>Positioning characteristics<a class="headerlink" href="#positioning-characteristics" title="Permalink to this headline">#</a></h2>
 <p>For a detailed description, please refer to the Air780EG hardware design manual, here to pick the focus, but also add some details</p>
 <ol class="arabic simple">
-<li><p>No backup power supply, no RTC hold, only <code class="docutils literal notranslate"><span class="pre">power</span> <span class="pre">on/power</span></code> two states, no low power tracking mode</p></li>
+<li><p>The old model does not have backup power supply, the new model has backup power, and those with backup power can start hot.</p></li>
 <li><p>It is a “read-only version” of GPS chip, which means that all configuration items cannot be saved, and ephemeris/time/reference coordinates cannot be saved.</p></li>
 <li><p>With the blessing of the active antenna, the first positioning time without AGPS is less 30s</p></li>
 <li><p>When the three elements are complete (<code class="docutils literal notranslate"><span class="pre">ephemeral</span></code>/<code class="docutils literal notranslate"><span class="pre">reference</span> <span class="pre">coordinate</span> </code>/<code class="docutils literal notranslate"><span class="pre">UTC</span> <span class="pre">time</span></code>), if the signal is good, the first positioning success can be less than 2 seconds.</p></li>
@@ -745,25 +752,26 @@
 <p>The built-in GPS chip loses all data after power failure, so auxiliary positioning depends on Cat in the Air780EG. 1 Capability of the chip</p>
 <ol class="arabic simple">
 <li><p>ephemeris, download from a co-server via http <code class="docutils literal notranslate"><span class="pre">http://download.openluat.com/9501-xingli/HXXT_GPS_BDS_AGNSS_DATA.dat</span></code></p></li>
-<li><p>Reference coordinates, three methods, base station positioning base<code class="docutils literal notranslate"> <span class="pre">lbsLoc</span></code>, the last successful positioning coordinates storage file system, using the coordinates of China`s National Geographic Center(3432.70,N,10885.25,E)</p></li>
+<li><p>Reference coordinates, two methods, base station positioning library ‘lbsLoc’ or ‘lbsLoc2’, the last successful positioning coordinates are stored in the file system</p></li>
 <li><p>UTC Time, China Mobile/China Telecom, the base station will issue the time (system event<code class="docutils literal notranslate"><span class="pre">NTP_UPDATE</span></code>) after networking, China Unicom, NTP. For example, the API in lua is<code class="docutils literal notranslate"><span class="pre">socket.sntp()</span></code></p></li>
 </ol>
 </section>
 <section id="about-ephemeris">
 <h2>About Ephemeris<a class="headerlink" href="#about-ephemeris" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
-<li><p>The ephemeris provided by the Zhou is GPS Beidou, both constellations have, about 5kb in size, updated about once an hour.</p></li>
+<li><p>The ephemeris provided by the Zhou is GPS Beidou, both constellations have a size of about 5kb, updated every half hour</p></li>
 <li><p>GPS The valid time of the ephemeris is <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">hours</span></code></p></li>
 <li><p>The effective time of the Big Dipper ephemeris is <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">hour</span></code></p></li>
 <li><p>Measurements indicate that the Big Dipper ephemeris is helpful, but the main force is GPS ephemeris.</p></li>
-<li><p>Again, the GPS chip itself cannot save the ephemeris, even if it generates its own ephemeris after long-term operation, it will be lost even if it loses power.`!!</p></li>
+<li><p>Again, the GPS chip itself cannot save the ephemeris, the old model will be lost even if it is powered off, and the new model will be lost if it is powered off.!!</p></li>
 </ol>
 </section>
 <section id="about-power-consumption">
 <h2>About Power Consumption<a class="headerlink" href="#about-power-consumption" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
-<li><p>There is only one positioning mode, continuous positioning, the power consumption before and after successful positioning does not change much, but after a period of stable positioning, some power consumption will be reduced</p></li>
-<li><p>No low-power commands, no low-power modes</p></li>
+<li><p>There are many states: star search state (60 ~ 100ma), continuous tracking state (40 ~ 60ma), standby state (200 ~ 500ua), and power-down state(0)</p></li>
+<li><p>No low power instructions</p></li>
+<li><p>The new model only has the standby power state, and’ GPIO23’ is used to control the on or off of the standby power.</p></li>
 </ol>
 </section>
 <section id="about-packaging-and-software">
@@ -848,6 +856,7 @@
             <ul>
 <li><a class="reference internal" href="#">Air780EG Additional instructions</a><ul>
 <li><a class="reference internal" href="#internal-wiring">Internal wiring</a></li>
+<li><a class="reference internal" href="#special-note-on-new-air780eg">Special note on new Air780EG</a></li>
 <li><a class="reference internal" href="#positioning-characteristics">Positioning characteristics</a></li>
 <li><a class="reference internal" href="#auxiliary-positioning-correlation">Auxiliary Positioning Correlation</a></li>
 <li><a class="reference internal" href="#about-ephemeris">About Ephemeris</a></li>

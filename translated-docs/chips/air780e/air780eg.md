@@ -18,12 +18,21 @@ Power supply part:
 3. Because normal GPIO is used, `SLEEP1/LIGHT/SLEEP2/DEEP/HIB mode` will power down
 4. In lua code, the control power supply API is` pm.power(pm.GPS, true)`. although there is pm.GPS_ANT, it is invalid for Air780EG
 5. Flight mode is RF-related control and does not affect GPIO power supply, so it does not affect GPS power supply
+6. The new Air780EG is powered on and controlled by 'GPIO23', which is turned on by default.
+
+## Special note on new Air780EG
+
+New shipments of Air780EG have added standby power to support hot starts.
+
+How to distinguish whether it is a new model or not depends on the factory time. After 2023.8.7, all the products are new.
+
+Query method: https://erp.openluat.com/imei, enter imei number to query. If not registered, please register first, registration is free of charge.
 
 ## Positioning characteristics
 
 For a detailed description, please refer to the Air780EG hardware design manual, here to pick the focus, but also add some details
 
-1. No backup power supply, no RTC hold, only `power on/power` two states, no low power tracking mode
+1. The old model does not have backup power supply, the new model has backup power, and those with backup power can start hot.
 2. It is a "read-only version" of GPS chip, which means that all configuration items cannot be saved, and ephemeris/time/reference coordinates cannot be saved.
 3. With the blessing of the active antenna, the first positioning time without AGPS is less 30s
 4. When the three elements are complete (`ephemeral`/`reference coordinate `/`UTC time`), if the signal is good, the first positioning success can be less than 2 seconds.
@@ -33,21 +42,22 @@ For a detailed description, please refer to the Air780EG hardware design manual,
 The built-in GPS chip loses all data after power failure, so auxiliary positioning depends on Cat in the Air780EG. 1 Capability of the chip
 
 1. ephemeris, download from a co-server via http `http://download.openluat.com/9501-xingli/HXXT_GPS_BDS_AGNSS_DATA.dat`
-2. Reference coordinates, three methods, base station positioning base` lbsLoc`, the last successful positioning coordinates storage file system, using the coordinates of China`s National Geographic Center(3432.70,N,10885.25,E)
+2. Reference coordinates, two methods, base station positioning library 'lbsLoc' or 'lbsLoc2', the last successful positioning coordinates are stored in the file system
 3. UTC Time, China Mobile/China Telecom, the base station will issue the time (system event` NTP_UPDATE `) after networking, China Unicom, NTP. For example, the API in lua is`socket.sntp()`
 
 ## About Ephemeris
 
-1. The ephemeris provided by the Zhou is GPS Beidou, both constellations have, about 5kb in size, updated about once an hour.
+1. The ephemeris provided by the Zhou is GPS Beidou, both constellations have a size of about 5kb, updated every half hour
 2. GPS The valid time of the ephemeris is `4 hours`
 3. The effective time of the Big Dipper ephemeris is `1 hour`
 4. Measurements indicate that the Big Dipper ephemeris is helpful, but the main force is GPS ephemeris.
-5. Again, the GPS chip itself cannot save the ephemeris, even if it generates its own ephemeris after long-term operation, it will be lost even if it loses power.`!!
+5. Again, the GPS chip itself cannot save the ephemeris, the old model will be lost even if it is powered off, and the new model will be lost if it is powered off.!!
 
 ## About Power Consumption
 
-1. There is only one positioning mode, continuous positioning, the power consumption before and after successful positioning does not change much, but after a period of stable positioning, some power consumption will be reduced
-2. No low-power commands, no low-power modes
+1. There are many states: star search state (60 ~ 100ma), continuous tracking state (40 ~ 60ma), standby state (200 ~ 500ua), and power-down state(0)
+2. No low power instructions
+3. The new model only has the standby power state, and' GPIO23' is used to control the on or off of the standby power.
 
 ## About Packaging and Software
 

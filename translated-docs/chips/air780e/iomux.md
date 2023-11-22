@@ -2,13 +2,13 @@
 
 **This document describes the LuatOS perspective**
 
-1. LuatOS's io reuse is fixed due to the presence of firmware features.
+1. Due to the existence of firmware characteristics, LuatOS's io multiplexing is fixed by default. Starting from V1107, the mapping can be partially modified through mcu.iomux function.
 2. The external pin layout of different modules is different, but the` PAD(paddr)`value is the same, which should correspond to the "PIN/GPIO correspondence table" document, which can be found https://air780e.cn.
 3. Due to the small number of pins in the chip, there are a large number of multiplexing scenarios, and many functions will conflict.
 4. For AT firmware, this document is meaningless, please ignore it.
 5. For CSDK, relevant reuse can be modified, so please ignore this document
 6. Air600E Doomed not suitable for secondary development, some pins in the hardware design manual description will be different, pay attention to distinguish
-7. Cloud compilation and mcu.iomux function can adjust partial reuse relationship.
+7. Cloud compilation and mcu.iomux function can adjust part of the reuse relationship, please refer to the document linked to [mcu library](https://wiki.luatos.org/api/mcu.html)
 
 ## PWM Description
 
@@ -34,7 +34,8 @@ PWM11 cannot be enabled when PWM1 is enabled. when calling the API of pwm librar
 
 PS: 
 1. Software channel 10/11/12/14 requires firmware above V1002, 20221219 later compiled version
-1. Software channels 20/21/22 require firmware above V1016, 20230330 later compiled versions
+2. Software channels 20/21/22 require firmware above V1016, 20230330 later compiled versions
+3. The above mapping is fixed, mcu.iomux has no configuration items, and all available PWM channels have been enumerated..
 
 ## UART Description
 
@@ -42,7 +43,9 @@ physical uart has 3(0/1/2)
 1. uart0 It is a log port (DBG_TX/DBG_RX), which is not recommend to use and has output during startup. LuatOS firmware does not allow users to use it by default uart0
 2. uart1 is the primary serial port (MAIN_TX/MAIN_RX), recommend use
 3. uart2 This is a serial port (AUX_TX/AUX_RX), **the module with GNSS function will be connected to the GNSS chip**, and the PAD is different and cannot be used for other functions
-4. Note that UART2 is different from Air780EG PAD in Air780E, but the software will automatically adapt and does not need attention..
+4. Note that UART2 is different from Air780EG PAD in Air780E, but the software will automatically adapt and does not need attention.
+5. The following mappings are default, configurable via mcu.iomux
+6. [Cloud Compilation](https://wiki.luatos.org/develop/compile/Cloud_compilation.html) supports releasing uart0, although this is not recommend..
 
 |Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks|
 |--------|----------|---------|---------|----|
@@ -55,7 +58,9 @@ physical uart has 3(0/1/2)
 
 ## I2C Description
 
-Physics i2c has 2(0/1)
+1. Physics i2c has 2(0/1)
+2. The following mappings are default, configurable via mcu.iomux
+3. Air780EX Only I2C0, and need to call' mcu.iomux(mcu.I2C, 0,2) 'to switch to PAD 31/32 GPIO 16/17
 
 |Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks|
 |---------|---------|---------|---------|----|
@@ -66,7 +71,8 @@ Physics i2c has 2(0/1)
 
 ## SPI Description
 
-Physical SPI has 2(0/1)
+1. Physical SPI has 2(0/1)
+2. The following mappings are default, configurable via mcu.iomux
 
 |Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks|
 |---------|------------|---------|---------|----|
@@ -92,6 +98,8 @@ Attention:
 5. When ordinary GPIO is configured in input/interrupt mode, the up-down pull cannot be set. If the default up-down pull cannot meet the requirements, it can be set to LUAT_GPIO_DEFAULT to cancel the default up-down pull, and then add a pull-down externally
 6. GPIO20,21,22 When configured to interrupt mode, it is a wakeup function, which can be configured to pull up and down or cancel the use of external pull up and down.
 7. **GPIO23** After power-on, the input pull-down is first, and then it will be set to **output pull-up high level**. It is recommended to avoid using this GPIO
+8. **Note **, only GPIO 20-22 supports 'two-way triggering (rising and falling) ', other GPIOs only support one-way triggering of 'rising edges' or 'falling edges'
+9. GPIO 20-25 The level flip speed of is slower than other GPIO
 
 |Corresponding GPIO | Corresponding PAD | Examples of API used | Remarks|
 |---------|---------|---------|----|
@@ -116,6 +124,7 @@ vbus Description :
 1. In CSDK/LuatOS firmware, vbus and USB functions are decoupled
 2. Different from regular understanding, USB function is still available without vbus
 3. Before entering sleep, set the above `wakeup0/wakeup1/wakeup2` to interrupt state to realize pin wake-up function
+4. Non-wakeup ordinary GPIO does not support sleep wake-up
 
 For example, if `wakup0` is set as the wake-up pin, the interrupt callback can be an empty function.
 ```lua
