@@ -4,7 +4,8 @@
 
 - Microsoft Store Download: [Microsoft Store Page](https://www.microsoft.com/store/apps/9N8S8M8226SH)
 - Independent exe version:[IOT Power.exe](https://arduino.luatos.com/iotpower/latest.html)(note Microsoft/360 kill soft false alarm, tinder no problem）
-- **Full platform * * command line data logger, dll/so dynamic runtime please go to [gitee warehouse](https://gitee.com/openLuat/iot-power) to view
+- **Full platform command line data logger UI：[IoTPower CLI Tool](https://gitee.com/openLuat/iot-power/releases/tag/1.0.0)
+- dll/so Dynamic Runtime Library：[Gitee iot-power dll/so](https://gitee.com/openLuat/iot-power/releases/tag/0.1.0)
 
 <h1 id="win7-notice" style="display: none;">Win7 Users see this line below! Expand！！</h1>
 
@@ -18,6 +19,13 @@ IoT Power Pro Drive：[IoTPowerPro-Driver.7z](https://arduino.luatos.com/iotpowe
 IoT Power CC Drive：[IoTPower_CC_usb_driver.7z](https://arduino.luatos.com/iotpower/IoTPower_CC_usb_driver.7z)
 
 .net framework 4.6.2：[Installation Package](https://dotnet.microsoft.com/zh-cn/download/dotnet-framework/thank-you/net462-offline-installer)
+:::
+
+:::{dropdown} Command Line Data Logger
+
+![IoTPower CLI Tool](img/cli_tool.png)
+
+Download：[IoTPower CLI Tool](https://gitee.com/openLuat/iot-power/releases/tag/1.0.0)
 :::
 
 ## Introduction to the client

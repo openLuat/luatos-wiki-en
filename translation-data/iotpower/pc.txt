@@ -10,6 +10,8 @@ You can also drag the lower joystick to control the time position of the current
 The above drive-free, no need to manually install the driver
 使用**鼠标左键拖动**，可以选取查看一个区域的数据，并进入`选取区域数据`模式
 Use the left mouse button to drag **, you can select to view the data of a region, and enter the `select regional data` mode
+全平台**命令行数据记录器，带
+Full platform command line data logger
 全平台**命令行数据记录器、dll/so动态运行库请前往[gitee仓库](https://gitee.com/openLuat/iot-power)查看
 Full platform * * command line data logger, dll/so dynamic runtime please go to [gitee warehouse](https://gitee.com/openLuat/iot-power) to view
 其他数据
@@ -22,12 +24,16 @@ Analyze data for a specified time period
 Analyze data
 切换数据显示方式
 Switch data display mode
+动态运行库
+Dynamic Runtime Library
 区别在于，`.csv`表格文件用于用户自行分析原始数据，无法再重新导入
 The difference is that the `. csv` table file is used by the user to analyze the original data and cannot be re-imported.
 单击`强制升级固件`按钮，可强制刷入客户端自带的固件。注意：若设备有升级模式，请先进入升级模式后再刷
 Click the `Force Firmware Upgrade` button to force the firmware of the client. Note: If the equipment has upgrade mode, please enter the upgrade mode before brushing.
 右击`强制升级固件`按钮，可强制刷入用户手动选择的固件文件，用于测试功能、验证BUG修复
 Right-click the "Force Firmware Upgrade" button to force the firmware file manually selected by the user to test the function and verify the BUG repair.
+命令行数据记录器
+Command Line Data Logger
 因为设备采样率很高，所以数据量十分庞大，存储在内存中可能导致电脑内存不足
 Because the device sampling rate is very high, so the amount of data is very large, stored in the memory may lead to insufficient computer memory
 图片
