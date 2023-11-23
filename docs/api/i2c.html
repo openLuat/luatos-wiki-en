@@ -1292,8 +1292,8 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="i2c-scan-id">
-<h2>i2c.scan(id)<a class="headerlink" href="#i2c-scan-id" title="Permalink to this headline">#</a></h2>
+<section id="i2c-scan-id-speed">
+<h2>i2c.scan(id,speed)<a class="headerlink" href="#i2c-scan-id-speed" title="Permalink to this headline">#</a></h2>
 <p>Scan for i2c devices</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1305,6 +1305,9 @@
 <tbody>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>The device ID, for example, the ID of i2c1 is 1, and the ID of i2c2 is 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Speed, optional i2c.SLOW i2c.FAST i2c.PLUS i2c.HSMODE defaults to i2c.SLOW. If it cannot be detected, modify this item.</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1402,7 +1405,7 @@
 <li><a class="reference internal" href="#i2c-readsht30-id-addr">i2c.readSHT30(id,addr)</a></li>
 <li><a class="reference internal" href="#i2c-transfer-id-addr-txbuff-rxbuff-rxlen">i2c.transfer(id, addr, txBuff, rxBuff, rxLen)</a></li>
 <li><a class="reference internal" href="#i2c-xfer-id-addr-txbuff-rxbuff-rxlen-transfer-done-topic-timeout">i2c.xfer(id, addr, txBuff, rxBuff, rxLen, transfer_done_topic, timeout)</a></li>
-<li><a class="reference internal" href="#i2c-scan-id">i2c.scan(id)</a></li>
+<li><a class="reference internal" href="#i2c-scan-id-speed">i2c.scan(id,speed)</a></li>
 </ul>
 </li>
 </ul>

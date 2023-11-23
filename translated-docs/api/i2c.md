@@ -409,7 +409,7 @@ local result = i2c.xfer(0, 0x11, txbuff, rxbuff, 1, "I2CDONE") if result then re
 
 ---
 
-## i2c.scan(id)
+## i2c.scan(id,speed)
 
 
 
@@ -420,6 +420,7 @@ Scan for i2c devices
 |Incoming Value Type | Explanation|
 |-|-|
 |int|The device ID, for example, the ID of i2c1 is 1, and the ID of i2c2 is 2|
+|int|Speed, optional i2c.SLOW i2c.FAST i2c.PLUS i2c.HSMODE defaults to i2c.SLOW. If it cannot be detected, modify this item.|
 
 **Return Value**
 
