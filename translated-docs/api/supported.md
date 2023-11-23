@@ -90,7 +90,7 @@
 |[wdt](wdt.md)|`watchdog Operation Library`|Y|Y|Y|Y|Y|Y|Y|
 |[websocket](websocket.md)|`websocket Client`|Y|Y|Y|Y|Y|Y|Y|
 |[wlan](wlan.md)|`wifi Operation`|Y|Y|X|Y|Y|Y|Y|
-|[ws2812](ws2812.md)|`Phantom Lights with RGB Controller (WS2812 Series)`|Y|Y|X|X|X|X|X|
+|[ws2812](ws2812.md)|`Phantom Lights with RGB Controller (WS2812 Series)`|Y|Y|X|X|X|Y|X|
 |[ymodem](ymodem.md)|`ymodem Agreement`|Y|Y|Y|Y|Y|Y|Y|
 |[zbuff](zbuff.md)|`c Memory Data Manipulation Library`|Y|Y|Y|Y|Y|Y|Y|
 |[zlib](zlib.md)|`zlib Compression/Decompression (Obsolete)`|Y|Y|Y|X|X|X|X|
