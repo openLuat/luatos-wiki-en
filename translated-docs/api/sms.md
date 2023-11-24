@@ -14,6 +14,8 @@ This library has its own demo,[click this link to view sms demo examples](https:
 
 ```lua
 -- Note that Air780E/Air600E/Air780EG/Air780EG do not support SMS of telecom card!!
+-- This means that when the above module is matched with a telecom SIM card, it cannot send short messages from the module or receive short messages from the module.
+-- If it is a Unicom card or a mobile card, you can receive short messages, but real-name cards can only send short messages.
 
 ```
 
