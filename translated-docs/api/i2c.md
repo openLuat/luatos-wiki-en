@@ -71,7 +71,7 @@ i2c Initialization
 
 ```lua
 -- Initialization i2c1
-i2c.setup(1, i2c.FAST) -- If the port is correct, it will be successful.
+i2c.setup(1, i2c.FAST) -- id Right is sure to succeed
 -- To determine whether the i2c id is valid, use the i2c.exist function
 
 ```
