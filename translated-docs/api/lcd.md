@@ -28,6 +28,7 @@ This library has its own demo,[click this link to view the demo example of LCD](
 |lcd.font_opposansm8_chinese|font|8 Chinese font|
 |lcd.font_opposansm10_chinese|font|10 Chinese font|
 |lcd.font_opposansm12_chinese|font|12 Chinese font|
+|lcd.font_opposansm14_chinese|font|14 Chinese font|
 |lcd.font_opposansm16_chinese|font|16 Chinese font|
 |lcd.font_opposansm18_chinese|font|18 Chinese font|
 |lcd.font_opposansm20_chinese|font|20 Chinese font|

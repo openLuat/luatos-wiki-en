@@ -65,6 +65,7 @@ This library has its own demo,[click this link to view eink's demo example](http
 |eink.font_opposansm8_chinese|font|8 Chinese font|
 |eink.font_opposansm8_chinese|font|10 Chinese font|
 |eink.font_opposansm12_chinese|font|12 Chinese font|
+|eink.font_opposansm14_chinese|font|14 Chinese font|
 |eink.font_opposansm16_chinese|font|16 Chinese font|
 |eink.font_opposansm18_chinese|font|18 Chinese font|
 |eink.font_opposansm20_chinese|font|20 Chinese font|
