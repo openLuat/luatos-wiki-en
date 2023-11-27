@@ -1,8 +1,10 @@
-开发板
-Development Board
-开发板尺寸图
-Development board size chart
-开发板原理图
-Development Board Schematic
 原理图
 Schematic diagram
+开发板
+Development Board
+开发板PinOut图
+Development board PinOut diagram
+开发板原理图
+Development Board Schematic
+开发板尺寸图
+Development board size chart
