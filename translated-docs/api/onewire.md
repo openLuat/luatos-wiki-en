@@ -27,9 +27,9 @@ Read DS18B20
 
 |Incoming Value Type | Explanation|
 |-|-|
-|int|mode, can only be onewire.GPIO or onewire.HW|
 |int|GPIO The mode corresponds to the GPIO number, and the HW mode is determined according to the actual hardware.|
-|boolean|Whether to check the CRC value of the data|
+|boolean|Whether to check the CRC value of the data, optional|
+|int|Mode, can only be onewire.GPIO or onewire.HW, optional|
 
 **Return Value**
 
@@ -42,7 +42,45 @@ Read DS18B20
 ```lua
 
 -- GPIO mode, connected GPIO 9
-local temp = onewire.ds18b20(onewire.GPIO, 9, true)
+local temp = onewire.ds18b20(9, true, onewire.GPIO)
+if temp then
+    log.info("Read temperature value", temp)
+else
+    log.info("Read Failed")
+end
+
+
+```
+
+---
+
+## onewire.dht1x(mode, pin, check)
+
+
+
+Read DHT11
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|GPIO The mode corresponds to the GPIO number, and the HW mode is determined according to the actual hardware.|
+|boolean|Whether to check the CRC value of the data, optional|
+|int|Mode, can only be onewire.GPIO or onewire.HW, optional|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|number|Returns the temperature value on success, otherwise it returns nil. Unit 0.01 degrees Celsius|
+|number|Returns relative humidity on success, otherwise returns nil. Unit 0.01%|
+
+**Examples**
+
+```lua
+
+-- GPIO mode, connected GPIO 9
+local temp = onewire.dht1x(onewire.GPIO, 9, true)
 if temp then
     log.info("Read temperature value", temp)
 else
