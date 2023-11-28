@@ -71,7 +71,7 @@
 |[sensor](sensor.md)|`Sensor Operation Library`|Y|Y|Y|Y|Y|Y|Y|
 |[sfd](sfd.md)|`SPI FLASH Operation Library`|X|X|Y|X|X|Y|Y|
 |[sfud](sfud.md)|`SPI FLASH sfud Software package`|Y|Y|Y|Y|Y|Y|Y|
-|[sms](sms.md)|`SMS`|X|X|X|X|X|X|X|
+|[sms](sms.md)|`SMS`|X|X|X|X|X|X|Y|
 |[socket](socket.md)|`Network Interface`|Y|Y|Y|Y|Y|Y|Y|
 |[softkeyboard](softkeyboard.md)|`software keyboard matrix (currently only supported by air105)`|?|?|?|?|?|?|?|
 |[spi](spi.md)|`spi Operation Library`|Y|Y|Y|Y|Y|Y|Y|

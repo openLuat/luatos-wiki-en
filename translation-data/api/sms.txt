@@ -12,6 +12,8 @@ Send SMS
 Callback function, 3 parameters
 如果是联通卡或者移动卡, 均可收取短信, 但实名制的卡才能发送短信
 If it is a Unicom card or a mobile card, you can receive short messages, but real-name cards can only send short messages.
+已适配
+Adapted
 意思是, 当上述模块搭配电信SIM卡, 无法从模块发出短信, 也无法在模块接收短信
 This means that when the above module is matched with a telecom SIM card, it cannot send short messages from the module or receive short messages from the module.
 成功返回true,否则返回false或
