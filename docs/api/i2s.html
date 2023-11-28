@@ -752,8 +752,8 @@
 </tbody>
 </table></div>
 </section>
-<section id="i2s-setup-id-mode-sample-bitw-channel-format-mclk">
-<h2>i2s.setup(id, mode, sample, bitw, channel, format, mclk)<a class="headerlink" href="#i2s-setup-id-mode-sample-bitw-channel-format-mclk" title="Permalink to this headline">#</a></h2>
+<section id="i2s-setup-id-mode-sample-bitw-channel-format-framebit-mclk">
+<h2>i2s.setup(id, mode, sample, bitw, channel, format, framebit, mclk)<a class="headerlink" href="#i2s-setup-id-mode-sample-bitw-channel-format-framebit-mclk" title="Permalink to this headline">#</a></h2>
 <p>Initialization i2s</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -782,6 +782,9 @@
 <td><p>format, optional MODE_I2S, MODE_LSB, MODE_MSB</p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
+<td><p>1 BCLK number of channels, optional 16 and 32</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
 <td><p>mclk Frequency, default 8M. Optional</p></td>
 </tr>
 </tbody>
@@ -1076,7 +1079,7 @@
             <ul>
 <li><a class="reference internal" href="#">i2s - Digital Audio</a><ul>
 <li><a class="reference internal" href="#constant">Constant</a></li>
-<li><a class="reference internal" href="#i2s-setup-id-mode-sample-bitw-channel-format-mclk">i2s.setup(id, mode, sample, bitw, channel, format, mclk)</a></li>
+<li><a class="reference internal" href="#i2s-setup-id-mode-sample-bitw-channel-format-framebit-mclk">i2s.setup(id, mode, sample, bitw, channel, format, framebit, mclk)</a></li>
 <li><a class="reference internal" href="#i2s-send-id-data-len">i2s.send(id, data, len)</a></li>
 <li><a class="reference internal" href="#i2s-recv-id-buffer-len">i2s.recv(id, buffer, len)</a></li>
 <li><a class="reference internal" href="#i2s-close-id">i2s.close(id)</a></li>
