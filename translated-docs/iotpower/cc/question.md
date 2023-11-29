@@ -11,6 +11,31 @@ If it is the first time to power on, please refer to the steps in [this video](h
 2. You need to open the client first and click the` Connect` button on the first page to connect to the device.
 3. If the device cannot be recognized, please check whether the device manager has a device, if not, please change the line
 
+## No Windows computer, first use, how to upgrade firmware？
+
+:::{dropdown} upgrade device firmware with your phone or mac
+
+First, you need to prepare any of the following devices：
+
+- Android phones that support OTG, and Android version is above 13 (lower version has not been tried）
+- Mac a computer
+- Linux a computer
+
+Secondly, you need the software, choose one of them.：
+
+- Google Chrome
+- Microsoft Edge
+
+1. Open your browser
+2. Press and hold the page turning key of the device, then insert the USB into the PC port and connect your mobile phone/computer/tablet (do not release the page turning key）
+3. At this time, the words 'IoT Power DFU' will be displayed on the device, indicating that it has entered DFU mode
+4. If your mobile phone/computer/tablet pop-up window has the words' IoTPower DFU detected', please open it, otherwise you need to manually open this website：[https://wiki.luatos.org/_static/dfu-util/index.html](https://wiki.luatos.org/_static/dfu-util/index.html)
+5. Click 'connect' on the page and select your IoT Power device
+6. Please add a technical support group to obtain the latest firmware (or look for the binfile in the group file）
+7. Click Select File to select the firmware file
+8. Click 'download' to swipe in
+:::
+
 ## Why have I been circling around since I turned on PD？
 
 First of all, please look at the instructions, **don't** lure the air, [like these **wrong demonstration**](wrong.md)

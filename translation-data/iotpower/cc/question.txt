@@ -40,6 +40,8 @@ You need to open the client first and click the` Connect` button on the first pa
 Fake PD head (because PD does not trick will not give electricity
 充电头或充电线，铁定有一个不支持
 Charging head or charging line, there must be one that does not support
+其次你需要的软件，任选其一
+Secondly, you need the software, choose one of them.
 即使能使用手机触发快充，也不能证明支持PD，具体信息请见[操作说明](usage.md)--`有关PD功能的注意事项`章节
 Even if the mobile phone can be used to trigger fast charging, it cannot prove that PD is supported. For specific information, please refer to the chapter "Precautions on PD Function" in [Operating Instructions](usage.md)
 参考下隔壁做的科普图
@@ -64,6 +66,8 @@ If the CC is not lit, then
 If it is bright, then it is possible
 如果你是win7，请先安装客户端下载页面提供的驱动，并且需要手动安装驱动（包括升级模式的驱动
 If you are win7, please install the driver provided by the client download page first, and you need to manually install the driver (including the driver in upgrade mode
+如果你的手机/电脑/平板弹窗`IoTPower DFU detected`字样，请打开它，否则你需要手动打开这个网址
+If your mobile phone/computer/tablet pop-up window has the words' IoTPower DFU detected', please open it, otherwise you need to manually open this website
 如果你输出端连接的是支持快充的手机/充电宝/电脑，请**不要开启**`开机自动启用PD`（重启新上电后生效），不然两设备一起诱骗会导致干扰
 If your output is connected to a mobile phone/charging treasure/computer that supports fast charging, please **do not turn on** `start up and automatically enable PD` (it will take effect after restarting and powering up), otherwise the two devices will cheat together and cause interference.
 如果使用了四线模式，CC采样电阻会消耗部分电流。如需电流示数完全一致，请使用双线模式
@@ -84,18 +88,38 @@ I use **Iot Power V1/V2** to supply power and connect it in series
 I have already supplied power separately and have no common ground. Why is the current number still inconsistent?
 我的设备启动不了了，可以重刷固件吗
 My device can't start, can I brush the firmware again?
+打开你的浏览器
+Open your browser
+按住设备的翻页键，再将USB插入PC口，连上你的手机/电脑/平板（不要松开翻页键
+Press and hold the page turning key of the device, then insert the USB into the PC port and connect your mobile phone/computer/tablet (do not release the page turning key
+支持OTG的安卓手机，并且安卓版本在13以上（更低版本没试过
+Android phones that support OTG, and Android version is above 13 (lower version has not been tried
 支持非标PPS吗（MIPPS等
 Do you support non-standard PPS (MIPPS, etc.
 板子上的PD诱骗芯片坏了
 The PD decoy chip on the board is broken
 某些线缆中会有电阻或芯片，他们会导致有小电流出现。
 Some cables will have resistors or chips in them, which will cause a small current to appear.
+此时，设备上会显示`IoT Power DFU`字样，表示进入DFU模式
+At this time, the words 'IoT Power DFU' will be displayed on the device, indicating that it has entered DFU mode
 此设备为低功耗测试仪，并非USB快充检测表，不会添加协议检测相关功能
 This device is a low-power tester, not a USB fast charging test meter, and will not add protocol detection related functions.
 没有cc1和cc2的线，只有usb四根线
 There are no cc1 and cc2 lines, only usb four lines
+没有Windows电脑，初次使用，如何升级固件
+No Windows computer, first use, how to upgrade firmware
 测试时两个设备不可共地，请分别使用不同的电源供电，不然power测的电流是负载电流cc采样分流电流
 During the test, the two devices cannot be on the same ground. Please use different power supplies respectively to supply power. Otherwise, the current measured by power is the load current cc sampling shunt current.
+点击`download`刷入
+Click 'download' to swipe in
+点击选择文件，选中固件文件
+Click Select File to select the firmware file
+点击页面里的`connect`，选上你的IoT Power设备
+Click 'connect' on the page and select your IoT Power device
+用手机或mac升级设备固件
+upgrade device firmware with your phone or mac
+电脑一台
+a computer
 能触发手机的快充吗，我不想使用自带的诱骗功能
 Can it trigger the fast charging of the mobile phone? I don't want to use my own decoy function.
 设备默认会进入PPS模式，某些充电器的PPS支持范围小于PD固定档位范围。可以前往设置关闭PPS功能，只使用固定档位功能
@@ -108,6 +132,8 @@ Please read the chapter [Power Supply Method](https://openluat.github.io/luatos-
 Please read the chapter [Power Supply Method](https://wiki.luatos.com/iotpower/cc/parts.html#id3) carefully.
 请仔细阅读[供电方式](https://wiki.luatos.org/iotpower/cc/parts.html#id3)章节
 Please read the chapter [Power Supply Method](https://wiki.luatos.org/iotpower/cc/parts.html#id3) carefully.
+请加技术支持群，索取最新的固件（或者在群文件里找找bin文件
+Please add a technical support group to obtain the latest firmware (or look for the binfile in the group file
 请参考[操作说明](usage.md)--`手动进入升级模式`章节，强制刷机
 Please refer to [Operating Instructions](usage.md)-Chapter `Manually Entering Upgrade Mode` to force the machine
 这些线缆的连接头如下图
@@ -116,5 +142,7 @@ The connectors of these cables are as follows
 Some equipment fast charging protocols are non-standard, and fast charging may not be triggered when using input port power supply. At this time, the PC-side power supply test is required to isolate the power supply of the device from the fast charging phase.
 非标的充电头（同上，没有使用标准PD协议检测设备
 Non-standard charging head (as above, standard PD protocol detection equipment is not used
+首先，你需要准备以下任一设备
+First, you need to prepare any of the following devices
 首先请看一下说明书，**不要**诱骗空气，[像这些**错误示范
 First of all, please look at the instructions, **don't** lure the air, [like these **wrong demonstration
