@@ -10,7 +10,7 @@ Development Board Engineering [portal](https://gitee.com/openLuat/luatos-broads/
 
 ## Development Board PinOut
 
-![image-20220618160609551](img/image-20220618160609551.png)
+![image-20220618160609551](img/pinout.jpg)
 
 ## Instructions for use
 

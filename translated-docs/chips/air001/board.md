@@ -6,7 +6,7 @@ air001 Development Board Schematic[Air001-Board.pdf](https://cdn.openluat-luatco
 
 ## Development Board PinOut
 
-![Development board PinOut diagram](img/pinout.jpg)
+![Development board PinOut diagram](img/509b7c36-8ca5-47fa-adc5-114375e829fa.png)
 
 ## Development board size chart
 
