@@ -32,7 +32,7 @@ It is recommended not to use this type of charging head to connect the device �
 
 ## Power supply mode
 
-IOT Power CC Support two ways to get electricity
+IoT Power CC Support two ways to get electricity
 
 - When the dial code in the upper left corner of the device is dialed to the right, it is necessary to supply power to the device itself through ①. At this time, the accuracy is the best and the voltage drop is also the smallest.
 - When the dial code in the upper left corner of the equipment is dialed to the left, the equipment will draw electricity from the power supply port of ② or ④ ⑤, which will cause the output voltage of ③ or ⑥ ⑦ to drop, but it is more convenient to use.
@@ -44,13 +44,13 @@ If you still don't understand, you can watch [video tutorial](https://www.bilibi
 ```
 
 ```{note}
-Since the voltage measured by IOT Power CC is the output terminal voltage (③ or  ⑥⑦）
+Since the voltage measured by IoT Power CC is the output terminal voltage (③ or  ⑥⑦）
 Therefore, although there will be a certain voltage drop at the output end compared with the input end, the actual power supply voltage of the device under test is still the real value, and the test result will not be distorted.
 ```
 
 ## Connection mode
 
-IOT Power CC Support two connection modes: four-wire mode and two-wire mode
+IoT Power CC Support two connection modes: four-wire mode and two-wire mode
 
 ```{warning}
 ⚠Risk Warning: Reverse connection of positive and negative poles of measuring port is strictly prohibited, and reverse connection equipment must be burned.  ！

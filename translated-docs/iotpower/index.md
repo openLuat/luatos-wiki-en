@@ -1,11 +1,15 @@
 # ⏳ IoT Power Power consumption test artifact
 
-IOT Power Series products are fully functional, stable and reliable small hand-held power consumption test artifact. It can be powered by USB C, display data on the screen, and is equipped with powerful client software. It is an ideal test tool for users to carry with them.
+IoT Power Series products are fully functional, stable and reliable small hand-held power consumption test artifact. It can be powered by USB C, display data on the screen, and is equipped with powerful client software. It is an ideal test tool for users to carry with them.
+
+```{note}
+[IoT Power Comparison of series product parameters](https://wiki.luatos.org/iotpower/devices.html)
+```
 
 ::::{grid} 1 2 2 3
 :gutter: 1 1 1 2
 
-:::{grid-item-card} {octicon}`meter;1.5em;sd-mr-1` Source table version
+:::{grid-item-card} {octicon}`meter;1.5em;sd-mr-1` Pro Power
 :link: pro/index
 :link-type: doc
 :img-top: pro/img/font-cn.jpg

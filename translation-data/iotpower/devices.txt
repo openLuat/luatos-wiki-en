@@ -1,9 +1,25 @@
+上位机软件：客户端支持win7及以上、命令行工具支持全平台
+PC software: the client supports win7 and above, and the command line tool supports the whole platform.
+上报采样率
+Reporting sample rate
 不支持
 Not supported
+不支持，仅测量（可PD诱骗） | **最小1mV步进**        | 最小10mV步进       | 最小1mV步进
+Not supported, only measure (PD decoy) | **min 1mV step** | min 10mV step | min 1mV step
+不支持，仅测量（可PD诱骗） | 0~5V               | **0~30V，带升压
+Not supported, only measure (PD decoy) | 0~5V | **0~30V, with boost
+不支持，仅测量（可PD诱骗） | 最小1μA步进        | **最小0.1μA步进**      | 最小1μA步进
+Not supported, only measure (PD decoy) | minimum 1μA step | **minimum 0.1μA step** | minimum 1μA step
 也可从充电头USB输入口取电
 Can also take power from the USB input port of the charging head
+二次开发接口：开放动态库，支持全平台
+Secondary development interface: open dynamic library, support the whole platform
+供电方式   | 5V USB 或 电源线取电        | 5V USB             | 9~30V DC口
+Power supply mode | 5V USB or power cord | 5V USB | 9~30V DC port
 停产
 Discontinued
+内部采样率
+Internal sampling rate
 即将发布
 Coming soon
 口
@@ -12,12 +28,20 @@ Mouth
 Can be disguised to support
 图示 |        含义
 Illustration | Meaning
+在售                       | 🚩即将发布          | 🚧研发中            | ⛔已停产
+On sale |Coming soon |In R & D |⛔Discontinued
+型号
+Model
 快买
 buy it quickly
 性价比极高的电源+功耗测试一体设备。
 Cost-effective power consumption test integrated equipment.
 总览
 Overview
+所有系列全部支持
+All series are fully supported
+换挡方式   | 多通道高速自动换档          | 多通道高速自动换档 | 多通道高速自动换档 | 多通道自动换档
+Shift mode | multi-channel high-speed automatic shift | multi-channel high-speed automatic shift | multi-channel high-speed automatic shift | multi-channel automatic shift
 支持
 Support
 未确定，可能会更改
@@ -28,6 +52,10 @@ Version Comparison
 Status **|**Device Model**|**Power Supply**|**Series**|**Voltage**|**Current**|**Current Limit**|**Voltage Limit**|**PC**|**Screen**|** Self-powered **|** Deception
 生产阶段，即将发布
 Production phase, upcoming release
+电压量程
+Voltage range
+电流量程
+Current range
 电源+功耗测试，支持更高电压与更快的采样率，支持PD快充诱骗。
 Power consumption test, support higher voltage and faster sampling rate, support PD fast charge decoy.
 的升级版，双主控芯片，全新UI，更多功能。

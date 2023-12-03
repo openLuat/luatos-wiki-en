@@ -1,104 +1,106 @@
+你也可以使用两根`USB C口转鳄鱼夹`的线缆，均使用红色正极夹子，按上图的电流方向进行测量。
+You can also use two `USB C port to alligator clip` cables, both using red positive clips, and measure according to the current direction shown in the figure above.
+使需使用香蕉座，可以参考这里
+If you need to use a banana seat, please refer to here.
+供电方式
+Power supply mode
+供电输入|**⑨**|左移键
+Power supply input | **⑨** | Left shift key
+供电输出|**⑩**|右移键
+Power supply output | **⑩** | right shift key
+到手零件一览
+At-hand parts list
+双线模式
+Two-wire mode
+可以继续查看下一页的`操作说明
+You can continue to view the `Operating Instructions on the next page
+四线模式
+Four-wire mode
+外壳拼装完成
+Shell assembly completed
+外壳拼装步骤
+Shell assembly steps
+外部供电 正极+ （与②对应）|**⑾**|取消键
+External power supply positive pole (corresponding to ②) | **⑾** | Cancel button
+外部供电 负极- （与②对应）|**⑿**|翻页键/强制进入升级模式
+External power supply negative pole-(corresponding to ②) | **⑿** | Page turn key/force to enter upgrade mode
+如果你输出端连接的是支持快充的手机/充电宝/电脑，请不要开启`开机自动启用PD`，不然两设备一起诱骗会导致干扰
+If your output is connected to a mobile phone/charging treasure/computer that supports fast charging, please do not turn on` start up and automatically enable PD`, otherwise the two devices will cheat together and cause interference.
+如果还是不理解，可以看[视频教程
+If you still don't understand, you can watch [video tutorial
+如需使用超过20V的电压，需要先将供电设备设置为小于10V的低电压，连接到输入端，再调节供电设备到指定电压，否则有概率因为浪涌击穿PD诱骗芯片。
+If you need to use a voltage of more than 20V, you need to set the power supply equipment to a low voltage of less than 10V, connect it to the input terminal, and then adjust the power supply equipment to the specified voltage, otherwise there is a probability that the PD will break down the chip due to surge.
 安装面板
 Mounting the panel
-板子上的④⑤⑥⑦为香蕉座插孔，如有需要可以
-④ ⑤ ⑥ ⑦ on the board is the banana socket, if necessary
+对外输出 正极+ （与③对应
+External output positive pole (corresponding to ③
+对外输出 负极- （与③对应
+External output negative pole-(corresponding to ③
+将上半部分外壳放上去，注意键帽要对齐
+Put the upper part of the shell up, pay attention to the key cap to align
+将座子焊接上即可
+Weld the seat
+将面板贴到外壳屏幕一侧，建议尽量**抵住下面那一边**贴，不然屏幕容易被遮住
+Paste the panel on one side of the shell screen, and it is recommended to stick it against the lower side as much as possible, otherwise the screen will be easily covered.
+小拨码**|切换CC的供电来源（[用法见此
+Small dial code **| Switch the power supply source of CC ([see this for usage
 布局与功能
 Layout and Function
+序号|功能|按键序号|按键功能
+serial number | function | key serial number | key function
+建议尽量不要使用此类充电头连接设备的①PC通讯接口
+It is recommended not to use this type of charging head to connect the device ① PC communication interface
 当拨码拨向←左边时，若充电头为USB C口，则需要提前在设置页将`开机自动启用PD`选项打开，不然无法取电开机
 When the dial code is dialed to the left, if the charging head is USB C port, you need to turn on` PD` option on the setting page in advance, otherwise you cannot take power and start up.
 当设备左上角拨码拨向←左边时，设备将从②或④⑤供电口取电，此时会导致③或⑥⑦输出电压产生压降，但使用更为便捷
 When the dial code in the upper left corner of the equipment is dialed to the left, the equipment will draw electricity from the power supply port of ② or ④ ⑤, which will cause the output voltage of ③ or ⑥ ⑦ to drop, but it is more convenient to use.
 当设备左上角拨码拨向→右边时，需要通过①向设备自身供电，此时精度最佳，压降也最小
 When the dial code in the upper left corner of the device is dialed to the right, it is necessary to supply power to the device itself through ①. At this time, the accuracy is the best and the voltage drop is also the smallest.
-到手零件一览
-At-hand parts list
-对外输出 负极- （与③对应
-External output negative pole-(corresponding to ③
-对外输出 正极+ （与③对应
-External output positive pole (corresponding to ③
-风险提示：部分品牌快充充电头（如华为、小米等私有协议快充头）可能会误识别快充协议，导致向设备提供超过5.8V的高电压导致瞬间烧毁设备。
-Risk Warning: Some brands of fast charging heads (such as Huawei, Xiaomi and other private protocol fast charging heads) may misrecognize the fast charging protocol, resulting in providing high voltage exceeding 5.8V to the device, resulting in instantaneous burning of the device.
-风险提示：测量口的正负极严禁反接，反接设备必烧
-Risk Warning: Reverse connection of positive and negative poles of measuring port is strictly prohibited, and reverse connection equipment must be burned.
-该方式可以在测量电流的同时，测量电源输出端的电压。连接图如下
-In this manner, the voltage at the output end of the power supply can be measured while the current is measured. The connection diagram is as follows
-该方式可以直接将设备串联进入已有电路的回路，该模式缺点为**必须**通过①对设备进行供电，且无法测量电压（此时电压显示值无参考性）。连接图如下
-This method can directly connect the equipment in series into the loop of the existing circuit. The disadvantage of this mode is that * * must supply power to the equipment through ①, and the voltage cannot be measured (the voltage display value has no reference at this time). The connection diagram is as follows
-供电方式
-Power supply mode
-供电输出|**⑩**|右移键
-Power supply output | **⑩** | right shift key
-供电输入|**⑨**|左移键
-Power supply input | **⑨** | Left shift key
-购买香蕉座自行焊接，比如[这一家店卖的](https://item.taobao.com/item.htm?id=680807959486)`￠2*￠4*8+￠3*1.6（20个）`就可以匹配上这些孔
-Buy banana seats for self-welding, for example, [sold by this store](https://item.taobao.com/item.htm?id=680807959486)`￠ 2 * ￠ 4*8 ￠ 3*1.6(20)` can match these holes.
-建议尽量不要使用此类充电头连接设备的①PC通讯接口
-It is recommended not to use this type of charging head to connect the device ① PC communication interface
-将面板贴到外壳屏幕一侧，建议尽量**抵住下面那一边**贴，不然屏幕容易被遮住
-Paste the panel on one side of the shell screen, and it is recommended to stick it against the lower side as much as possible, otherwise the screen will be easily covered.
-将上半部分外壳放上去，注意键帽要对齐
-Put the upper part of the shell up, pay attention to the key cap to align
-将座子焊接上即可
-Weld the seat
-接着将板子放置在外壳底板上，卡住键帽不要掉下去，然后撕去屏幕上的贴膜
-Then place the board on the bottom plate of the shell, clamp the key cap not to fall, and then tear off the film on the screen.
-可以继续查看下一页的`操作说明
-You can continue to view the `Operating Instructions on the next page
-连接方式
-Connection mode
-连接与组装
-Connection and assembly
-你也可以使用两根`USB C口转鳄鱼夹`的线缆，均使用红色正极夹子，按上图的电流方向进行测量。
-You can also use two `USB C port to alligator clip` cables, both using red positive clips, and measure according to the current direction shown in the figure above.
-拧上四个螺丝，固定好，不需要拧太紧以免滑丝
-Screw on four screws and fix them well. You don't need to tighten them too tightly to avoid slipping.
-如果还是不理解，可以看[视频教程
-If you still don't understand, you can watch [video tutorial
-如果你输出端连接的是支持快充的手机/充电宝/电脑，请不要开启`开机自动启用PD`，不然两设备一起诱骗会导致干扰
-If your output is connected to a mobile phone/charging treasure/computer that supports fast charging, please do not turn on` start up and automatically enable PD`, otherwise the two devices will cheat together and cause interference.
-如需使用超过20V的电压，需要先将供电设备设置为小于10V的低电压，连接到输入端，再调节供电设备到指定电压，否则有概率因为浪涌击穿PD诱骗芯片。
-If you need to use a voltage of more than 20V, you need to set the power supply equipment to a low voltage of less than 10V, connect it to the input terminal, and then adjust the power supply equipment to the specified voltage, otherwise there is a probability that the PD will break down the chip due to surge.
-设备基本外观如下
-The basic appearance of the equipment is as follows
-设备图
-Equipment diagram
-设备自身供电/PC客户端通讯|**⑧**|确定键
-Power supply/PC client communication | **⑧** | OK
-使需使用香蕉座，可以参考这里
-If you need to use a banana seat, please refer to here.
-首先装上键帽，注意，键帽的洞上下间距不对称，需要将孔偏下放置，如图
-First, install the key cap. Note that the distance between the holes in the key cap is asymmetrical. The holes need to be placed downward, as shown in the figure.
-双线模式
-Two-wire mode
-撕去面板底部的保护膜与3M胶贴纸
-Remove the protective film and 3M adhesive sticker at the bottom of the panel
-四线模式
-Four-wire mode
 所以虽然输出端相比输入端会有一定压降，但被测设备的实际电源电压依旧是真实值，测试结果不会失真
 Therefore, although there will be a certain voltage drop at the output end compared with the input end, the actual power supply voltage of the device under test is still the real value, and the test result will not be distorted.
-通讯接口，严禁反接或电压大于6V，反接或大于6V必烧
-Communication interface, it is strictly prohibited to reverse connection or voltage greater than 6V, reverse connection or greater than 6V will burn
-外部供电 负极- （与②对应）|**⑿**|翻页键/强制进入升级模式
-External power supply negative pole-(corresponding to ②) | **⑿** | Page turn key/force to enter upgrade mode
-外部供电 正极+ （与②对应）|**⑾**|取消键
-External power supply positive pole (corresponding to ②) | **⑾** | Cancel button
-外壳拼装步骤
-Shell assembly steps
-外壳拼装完成
-Shell assembly completed
-小拨码**|切换CC的供电来源（[用法见此
-Small dial code **| Switch the power supply source of CC ([see this for usage
-序号|功能|按键序号|按键功能
-serial number | function | key serial number | key function
-用户可自由决定输入端与输出端的连接方式，输入端支持PD充电头
-The user can freely determine the connection between the input and the output, and the input supports PD charging head
-由于IOT Power CC测量的电压为输出端电压（③或
-Since the voltage measured by IOT Power CC is the output terminal voltage (③ or
+拧上四个螺丝，固定好，不需要拧太紧以免滑丝
+Screw on four screws and fix them well. You don't need to tighten them too tightly to avoid slipping.
+接着将板子放置在外壳底板上，卡住键帽不要掉下去，然后撕去屏幕上的贴膜
+Then place the board on the bottom plate of the shell, clamp the key cap not to fall, and then tear off the film on the screen.
+撕去面板底部的保护膜与3M胶贴纸
+Remove the protective film and 3M adhesive sticker at the bottom of the panel
 支持两种方式取电
 Support two ways to get electricity
 支持两种连接方式：四线模式与双线模式
 Support two connection modes: four-wire mode and two-wire mode
-重要提醒：一定要记得撕掉屏幕上的膜
-Important reminder: be sure to remember to tear off the film on the screen
+板子上的④⑤⑥⑦为香蕉座插孔，如有需要可以
+④ ⑤ ⑥ ⑦ on the board is the banana socket, if necessary
+用户可自由决定输入端与输出端的连接方式，输入端支持PD充电头
+The user can freely determine the connection between the input and the output, and the input supports PD charging head
+由于IOT Power CC测量的电压为输出端电压（③或
+Since the voltage measured by IOT Power CC is the output terminal voltage (③ or
+由于IoT Power CC测量的电压为输出端电压（③或
+Since the voltage measured by IoT Power CC is the output terminal voltage (③ or
 组装外壳
 Assembling housing
+设备图
+Equipment diagram
+设备基本外观如下
+The basic appearance of the equipment is as follows
+设备自身供电/PC客户端通讯|**⑧**|确定键
+Power supply/PC client communication | **⑧** | OK
+该方式可以在测量电流的同时，测量电源输出端的电压。连接图如下
+In this manner, the voltage at the output end of the power supply can be measured while the current is measured. The connection diagram is as follows
+该方式可以直接将设备串联进入已有电路的回路，该模式缺点为**必须**通过①对设备进行供电，且无法测量电压（此时电压显示值无参考性）。连接图如下
+This method can directly connect the equipment in series into the loop of the existing circuit. The disadvantage of this mode is that * * must supply power to the equipment through ①, and the voltage cannot be measured (the voltage display value has no reference at this time). The connection diagram is as follows
+购买香蕉座自行焊接，比如[这一家店卖的](https://item.taobao.com/item.htm?id=680807959486)`￠2*￠4*8+￠3*1.6（20个）`就可以匹配上这些孔
+Buy banana seats for self-welding, for example, [sold by this store](https://item.taobao.com/item.htm?id=680807959486)`￠ 2 * ￠ 4*8 ￠ 3*1.6(20)` can match these holes.
+连接与组装
+Connection and assembly
+连接方式
+Connection mode
+通讯接口，严禁反接或电压大于6V，反接或大于6V必烧
+Communication interface, it is strictly prohibited to reverse connection or voltage greater than 6V, reverse connection or greater than 6V will burn
+重要提醒：一定要记得撕掉屏幕上的膜
+Important reminder: be sure to remember to tear off the film on the screen
+风险提示：测量口的正负极严禁反接，反接设备必烧
+Risk Warning: Reverse connection of positive and negative poles of measuring port is strictly prohibited, and reverse connection equipment must be burned.
+风险提示：部分品牌快充充电头（如华为、小米等私有协议快充头）可能会误识别快充协议，导致向设备提供超过5.8V的高电压导致瞬间烧毁设备。
+Risk Warning: Some brands of fast charging heads (such as Huawei, Xiaomi and other private protocol fast charging heads) may misrecognize the fast charging protocol, resulting in providing high voltage exceeding 5.8V to the device, resulting in instantaneous burning of the device.
+首先装上键帽，注意，键帽的洞上下间距不对称，需要将孔偏下放置，如图
+First, install the key cap. Note that the distance between the holes in the key cap is asymmetrical. The holes need to be placed downward, as shown in the figure.

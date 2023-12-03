@@ -3,7 +3,7 @@
 > [Go to Taobao to buy](https://item.taobao.com/item.htm?id=718378448520)
 > [WeChat Mall Purchase](https://appc6kjfor22343.h5.xiaoeknow.com/v1/goods/goods_detail/SPU_ENT_1678672270GckvYWaVoUuX4)
 
-IOT Power CC Is a fully functional, stable and reliable small handheld high-precision power meter, it can：
+IoT Power CC Is a fully functional, stable and reliable small handheld high-precision power meter, it can：
 
 - Measure voltage and current of low-power devices via USB C power supply
 - Different from other USB meters, the voltage and current at the output terminal are measured to reflect the actual power consumption of the device.
@@ -16,7 +16,7 @@ IOT Power CC Is a fully functional, stable and reliable small handheld high-prec
 - **BOM Cost disclosure** (pull down to have), conscientious and sincere work, sincerely recruit suppliers with more favorable prices
 - Shell data is open, [open source shell address](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230515082541036_%E5%A4%96%E5%A3%B3%E8%B5%84%E6%96%99%E6%9B%B4%E6%96%B0.zip)
 
-IOT Power CC Is the majority of users carry the ideal test tool.
+IoT Power CC Is the majority of users carry the ideal test tool.
 
 ::::{grid} 1 2 2 3
 :gutter: 1 1 1 2

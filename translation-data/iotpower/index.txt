@@ -16,6 +16,10 @@ More information
 Source table version
 版本
 Version
+电源
+Power
+系列产品参数对比
+Comparison of series product parameters
 系列产品是功能齐全，稳定可靠的小型手持式功耗测试神器。它可以通过USB C供电，通过屏幕显示数据，并配套功能强大的客户端软件，是广大用户随身携带的理想测试工具。
 Series products are fully functional, stable and reliable small hand-held power consumption test artifact. It can be powered by USB C, display data on the screen, and is equipped with powerful client software. It is an ideal test tool for users to carry with them.
 纯测量设备，支持PD输入诱骗，适配更高电压与更大电流

@@ -30,7 +30,7 @@ Power output interface, it is strictly prohibited to reverse other power supply/
 
 ## Power supply mode
 
-IOT Power Pro Support power supply through TypeC port
+IoT Power Pro Support power supply through TypeC port
 
 ## Output mode
 

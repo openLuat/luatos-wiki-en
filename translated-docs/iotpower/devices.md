@@ -11,23 +11,20 @@ Iot Power Series has a variety of products, can meet a variety of testing needs
 
 ## Detailed comparison
 
-| **Status **|**Device Model**|**Power Supply**|**Series**|**Voltage**|**Current**|**Current Limit**|**Voltage Limit**|**PC**|**Screen**|** Self-powered **|** Deception** |
-| :------: | :----------------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :----------: | :------: |
-|    ❄     |  **Iot Power V1**  |    ✅     |    ❌     |   0-5V   |   0-2A   |    ✅     |    ✅     |    ✅     |    ✅     |  TypeC 5V   |    ❌     |
-|    🚩     |  **Iot Power Pro**  |    ✅     |    ❌     |   0-5V   |  0-2A  |    ✅     |    ✅     |    ✅     |    ✅     |  TypeC 5V   |    ❌     |
-|    🚧    | **Iot Power Plus** |    ✅     |    ❌     |  0-20V*  |  0-3A*   |    ✅     |    ✅     |    ✅     |    ✅     |   DC Mouth   |    PD    |
-|    🌐     |  **Iot Power CC**  |    🍽¹     |    ✅     |  0-24V   |  0-5A   |    🍽¹     |    🍽¹     |    ✅     |    ✅     |  TypeC 5V²   |    PD    |
+|    Model    |        IoT Power CC         |   IoT Power Pro    |   IoT Power Plus   |  IoT Power V1  |
+| ---------- | --------------------------- | ------------------ | ------------------ | -------------- |
+| 销售状态   | 🌐On sale |Coming soon |In R & D |⛔Discontinued        |
+| Current range   | 0~5A                        | 0~2A               | **0~5A**               | 0~2A           |
+| 限流输出   | ❌Not supported, only measure (PD decoy) | minimum 1μA step | **minimum 0.1μA step** | minimum 1μA step    |
+| Shift mode | multi-channel high-speed automatic shift | multi-channel high-speed automatic shift | multi-channel high-speed automatic shift | multi-channel automatic shift |
+| Reporting sample rate | 10KHz                       | 10KHz              | 10KHz              | 10KHz          |
+| Internal sampling rate | >80KHz                      | >100KHz            | >100KHz            | 10KHz          |
+| Voltage range   | 0~24V                       | 0~5V               | **0~30V**              | 0~5V           |
+| 限压输出   | ❌Not supported, only measure (PD decoy) | **min 1mV step** | min 10mV step | min 1mV step    |
+| 电源功能   | ❌Not supported, only measure (PD decoy) | 0~5V | **0~30V, with boost**      | 0~5V           |
+| Power supply mode | 5V USB or power cord | 5V USB | 9~30V DC port         | 5V USB         |
 
-| Illustration | Meaning        |
-| ---- | ------------------ |
-| *    | Not determined, may change |
-| 🚧    | In R & D             |
-| 🚩    | Coming soon |
-| 🌐    | buy it quickly             |
-| ❄    | Discontinued             |
-| ✅    | Support               |
-| 🍽    | Can be disguised to support       |
-| ❌    | Not supported             |
+All series are fully supported：
 
-¹ PPS charging head is required to achieve this function  
-² Can also take power from the USB input port of the charging head  
+- PC software: the client supports win7 and above, and the command line tool supports the whole platform.
+- Secondary development interface: open dynamic library, support the whole platform

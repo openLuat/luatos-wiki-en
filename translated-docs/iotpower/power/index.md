@@ -4,7 +4,7 @@
 
 ## Overview
 
-IOT Power Is a fully functional, stable and reliable small hand-held power meter. It can be powered by USB C, the output voltage and maximum current can be adjusted freely, and the independent output is up to 5V2A. It is an ideal test tool for users to carry with them.
+IoT Power Is a fully functional, stable and reliable small hand-held power meter. It can be powered by USB C, the output voltage and maximum current can be adjusted freely, and the independent output is up to 5V2A. It is an ideal test tool for users to carry with them.
 
 ## Technical characteristics
 
@@ -35,8 +35,8 @@ IOT Power Is a fully functional, stable and reliable small hand-held power meter
 ## Precautions
 
 - IoT Power The output maximum voltage and current of is limited by the voltage and current of the USB input terminal. If the input terminal voltage and current are less than 5.5V/2A, the output maximum voltage and current will drop (do not provide high voltage exceeding 5.8V to the USB port）
-- Limited by volume, IOT Power generates a large calorific value when the input and output pressure difference is large and the current is large at the same time, so it is recommended not to use it for a long time exceeding 1.2A current.
-- IOT Power It is mainly used to measure the occasion of power supply for battery equipment. Do not connect the output terminal to power supply equipment above 4.2V battery voltage to avoid unnecessary losses.
+- Limited by volume, IoT Power generates a large calorific value when the input and output pressure difference is large and the current is large, so it is recommended not to use it for a long time exceeding 1.2A current.
+- IoT Power It is mainly used to measure the occasion of power supply for battery equipment. Do not connect the output terminal to power supply equipment above 4.2V battery voltage to avoid unnecessary losses.
 
 ```{warning}
 ⚠Warning: A short circuit at the output, a surge at the input or output, may damage the equipment. Do not short-circuit and other risky operations

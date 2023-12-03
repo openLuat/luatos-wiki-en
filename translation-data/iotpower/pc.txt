@@ -122,6 +122,8 @@ The data here is the relevant cumulative data of **all data since the current de
 The lever here can also be used to control the range of the selection display.
 独立版exe版本：[IOT Power.exe](https://arduino.luatos.com/iotpower/latest.html)（注意微软/360杀软误报，火绒无问题
 Independent exe version:[IOT Power.exe](https://arduino.luatos.com/iotpower/latest.html)(note Microsoft/360 kill soft false alarm, tinder no problem
+独立版exe版本：[IoT Power.exe](https://arduino.luatos.com/iotpower/latest.html)（注意微软/360杀软误报，火绒无问题
+Independent exe version:[IoT Power.exe](https://arduino.luatos.com/iotpower/latest.html)(note Microsoft/360 kill soft false alarm, tinder no problem
 用户可能需要
 Users may need
 用户看下面这行！展开

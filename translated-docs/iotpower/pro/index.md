@@ -6,7 +6,7 @@
 This product has not yet been sold, some descriptions may change, and the actual equipment shall prevail.
 ```
 
-IOT Power Is a fully functional, stable and reliable small hand-held power meter. It can：
+IoT Power Is a fully functional, stable and reliable small hand-held power meter. It can：
 
 - Measure voltage and current of low-power devices via USB C power supply
 - Used as a power supply, supporting output specified voltage
@@ -18,7 +18,7 @@ IOT Power Is a fully functional, stable and reliable small hand-held power meter
 - Up to **10KHz sampling rate** to meet the power consumption test requirements of cellular modules, Bluetooth, WIFI, etc.
 - You can **connect a PC client** to view and analyze the current waveform, or use the command line version to capture serial port data (such as strawberry pie) on any device (win/linux/mac) and use the pc client to import and view
 
-IOT Power Pro Is the majority of users carry the ideal test tool.
+IoT Power Pro Is the majority of users carry the ideal test tool.
 
 ::::{grid} 1 2 2 3
 :gutter: 1 1 1 2
