@@ -4,42 +4,82 @@ Download (right save
 Cloud compilation](https://openluat.github.io/luatos-wiki-en/develop/compile/Cloud_compilation.html) support Air101/Air103/Air105/ESP32 series/Air780E series
 云编译](https://wiki.luatos.com/develop/compile/Cloud_compilation.html) 支持Air101/Air103/Air105/ESP32系列/Air780E系列
 Cloud compilation](https://wiki.luatos.com/develop/compile/Cloud_compilation.html) support Air101/Air103/Air105/ESP32 series/Air780E series
+云编译](https://wiki.luatos.org/develop/compile/Cloud_compilation.html) 全系LuatOS-SoC固件的云编译服务
+Cloud Compilation](https://wiki.luatos.org/develop/compile/Cloud_compilation.html) Cloud Compilation Service for Full System LuatOS-SoC Firmware
 云编译](https://wiki.luatos.org/develop/compile/Cloud_compilation.html) 支持Air101/Air103/Air105/ESP32系列/Air780E系列
 Cloud compilation](https://wiki.luatos.org/develop/compile/Cloud_compilation.html) support Air101/Air103/Air105/ESP32 series/Air780E series
+内网穿透协议
+intranet penetration protocol
+历史固件,包括2G/4G/wifi等模组
+Historical firmware, including 2G/4G/wifi and other modules
+历史固件,常用工具及其历史版本下载
+Historical firmware, common tools and their historical versions
 历史固件下载
 Historical Firmware Downloads
+历史版本的下载
+Download of historical versions
+合宙云盘
+He Zhou Cloud Pan
 合宙服务监控
 Service Monitoring
+固件差分工具开源版本](https://gitee.com/openLuat/web-dtool-service) 用于固件升级包的生成
+Firmware Differential Tool Open Source Version](https://gitee.com/openLuat/web-dtool-service) for the generation of firmware upgrade packages
 坐标系转换工具
 Coordinate System Conversion Tool
+坐标系转换工具](http://old.openluat.com/GPS-Offset.html) GNSS模块输出的坐标是WGS84,需要转国内的坐标系
+Coordinate System Conversion Tool](http://old.openluat.com/GPS-Offset.html) The coordinates output by GNSS module are WGS84 and need to be transferred to the domestic coordinate system
 基站/Wi-Fi定位
 Base station/Wi-Fi positioning
+基站/Wi-Fi定位](https://doc.openluat.com/wiki/21?wiki_page_id=1957) 说明文档
+Base Station/Wi-Fi Positioning](https://doc.openluat.com/wiki/21?wiki_page_id=1957) Documentation
 基站查询网页工具
 Base Station Query Web Tool
 工具大全
 Tools Daquan
+工具类
+Tool Class
+常用工具和驱动的下载
+Download common tools and drivers
 底层固件功能可选编译系统
 The underlying firmware function optional compilation system
 直驱](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html) 适合不带串口芯片的简洁版ESP32C3开发板
 Direct Drive](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html) Suitable for Simplified ESP32C3 Development Board without Serial Chip
 看看电池能用多久](/_static/tools/psmplus/index.html) 合宙PSM+超低功耗
 See how long the battery can last](/_static/tools/psmplus/index.html) combined with PSM ultra-low power consumption
+移芯系列模组的跨平台刷机工具
+Cross-platform brush tool for core-shifting series modules
 管理系统
 Management System
+管理系统](http://dtu.openluat.com) 透传固件的管理界面
+Management System](http://dtu.openluat.com) Transparent Firmware Management Interface
 系列FOTA远程升级工具
 Series FOTA Remote Upgrade Tool
+系列固件的网络服务,例如Air780E系列
+Network services for series firmware, such as Air780E series
 系列差分包生成
 Series differential packet generation
 系列差分包生成工具
 Series of differential package generation tools
+系列模组的差分工具及镜像
+Differential Tools and Mirrors for Series Modules
+系列的网络服务, 例如
+series of network services, such
+网络服务
+Network Services
 网络测试工具
 network testing tool
+网络测试工具](https://netlab.luatos.com) 支持TCP/UDP/TCP-TLS等外网端口的获取
+Network Test Tool](https://netlab.luatos.com) Supports Acquisition of TCP/UDP/TCP-TLS and Other External Network Ports
 网络测试工具国外版支持
 Network Test Tool Foreign Edition Support
 调试驱动](https://doc.openluat.com/wiki/21?wiki_page_id=2070) 适合合宙 4G Cat.1 U系列, 即Air72xUx系列
 Debugging driver](https://doc.openluat.com/wiki/21?wiki_page_id=2070) is suitable for 4G Cat. 1 U series, namely Air72xUx series
+远程Key-Value服务
+Remote Key-Value Service
 远程trace记录工具
 Remote trace logging tool
+通用的
+Generic
 驱动下载](https://www.wch.cn/products/ch340.html) 适合Air101/Air103/Air105开发板
 Driver Download](https://www.wch.cn/products/ch340.html) Suitable for Air101/Air103/Air105 Development Board
 驱动下载](https://www.wch.cn/products/ch343.html) 适合ESP32C3经典款开发板,带串口芯片
