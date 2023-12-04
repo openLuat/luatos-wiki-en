@@ -718,8 +718,8 @@
 <p><strong>Example</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--Note: due to the use of sys.wait() all apis need to be used in the coroutine</span>
 <span class="c1">--Usage Examples</span>
-<span class="c1">--Note: The PRODUCT_KEY here is for demonstration only and is not guaranteed to last.</span>
-<span class="c1">--For mass production projects, be sure to use the project productKey you created in iot.openluat.com. In the project details</span>
+<span class="c1">--Note: The PRODUCT_KEY here is for demonstration purposes only and should not be used in a production environment</span>
+<span class="c1">--In mass production projects, you must use the project productKey created in iot.openluat.com, which can be viewed in the project details.</span>
 <span class="c1">--The coordinate system of base station positioning is WSG84</span>
 <span class="n">PRODUCT_KEY</span> <span class="o">=</span> <span class="s2">"v32xEAKsGTIEQxtqgwCldp5aPlcnPs3K"</span>
 <span class="kd">local</span> <span class="n">lbsLoc</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"lbsLoc"</span><span class="p">)</span>
@@ -744,7 +744,16 @@
         <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Positioning type, base station positioning successfully returned 0"</span><span class="p">,</span> <span class="n">locType</span><span class="p">)</span>
     <span class="kr">end</span>
 <span class="kr">end</span>
-<span class="n">lbsLoc</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">getLocCb</span><span class="p">)</span>
+
+<span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+    <span class="n">sys</span><span class="p">.</span><span class="n">waitUntil</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="mi">30000</span><span class="p">)</span>
+    <span class="kr">while</span> <span class="mi">1</span> <span class="kr">do</span>
+        <span class="n">mobile</span><span class="p">.</span><span class="n">reqCellInfo</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+        <span class="n">sys</span><span class="p">.</span><span class="n">waitUntil</span><span class="p">(</span><span class="s2">"CELL_INFO_UPDATE"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
+        <span class="n">lbsLoc</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">getLocCb</span><span class="p">)</span>
+        <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">60000</span><span class="p">)</span>
+    <span class="kr">end</span>
+<span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
 <section id="lbsloc-request-cbfnc-reqaddr-timeout-productkey-host-port-reqtime-reqwifi">

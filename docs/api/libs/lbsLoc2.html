@@ -725,12 +725,18 @@
 <span class="c1">-- 2. Only single base station positioning is supported, that is, the currently networked base station</span>
 <span class="c1">-- 3. This service is currently in test status</span>
 <span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
-    <span class="kr">if</span> <span class="n">mobile</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="kr">then</span>
-        <span class="n">sys</span><span class="p">.</span><span class="n">waitUntil</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
+    <span class="n">sys</span><span class="p">.</span><span class="n">waitUntil</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="mi">30000</span><span class="p">)</span>
+    <span class="c1">-- mobile.reqCellInfo(60)</span>
+    <span class="c1">-- sys.wait(1000)</span>
+    <span class="kr">while</span> <span class="n">mobile</span> <span class="kr">do</span> <span class="c1">-- No mobile library, no base station location</span>
+        <span class="n">mobile</span><span class="p">.</span><span class="n">reqCellInfo</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+        <span class="n">sys</span><span class="p">.</span><span class="n">waitUntil</span><span class="p">(</span><span class="s2">"CELL_INFO_UPDATE"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
+        <span class="kd">local</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lng</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">lbsLoc2</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+        <span class="c1">-- local lat, lng, t = lbsLoc2.request(5000, "bs.openluat.com")</span>
+        <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"lbsLoc2"</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lng</span><span class="p">,</span> <span class="p">(</span><span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">t</span> <span class="ow">or</span> <span class="p">{})))</span>
+        <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">60000</span><span class="p">)</span>
     <span class="kr">end</span>
-    <span class="kd">local</span> <span class="n">lat</span><span class="p">,</span><span class="n">lng</span><span class="p">,</span><span class="n">t</span> <span class="o">=</span> <span class="n">lbsLoc2</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"lbs"</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lng</span><span class="p">,</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">t</span> <span class="ow">or</span> <span class="p">{}))</span>
-<span class="kr">end</span>
+<span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
 <section id="lbsloc2-request-timeout-host-port-reqtime">
@@ -783,12 +789,18 @@
 <span class="c1">-- Historical data has been unable to distinguish the specific coordinate system</span>
 <span class="c1">-- In view of the error between the two coordinate systems is not large, less than the error of the base station positioning itself, the significance</span>
 <span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
-    <span class="kr">if</span> <span class="n">mobile</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="kr">then</span>
-        <span class="n">sys</span><span class="p">.</span><span class="n">waitUntil</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
+    <span class="n">sys</span><span class="p">.</span><span class="n">waitUntil</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="mi">30000</span><span class="p">)</span>
+    <span class="c1">-- mobile.reqCellInfo(60)</span>
+    <span class="c1">-- sys.wait(1000)</span>
+    <span class="kr">while</span> <span class="n">mobile</span> <span class="kr">do</span> <span class="c1">-- No mobile library, no base station location</span>
+        <span class="n">mobile</span><span class="p">.</span><span class="n">reqCellInfo</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+        <span class="n">sys</span><span class="p">.</span><span class="n">waitUntil</span><span class="p">(</span><span class="s2">"CELL_INFO_UPDATE"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
+        <span class="kd">local</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lng</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">lbsLoc2</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+        <span class="c1">-- local lat, lng, t = lbsLoc2.request(5000, "bs.openluat.com")</span>
+        <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"lbsLoc2"</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lng</span><span class="p">,</span> <span class="p">(</span><span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">t</span> <span class="ow">or</span> <span class="p">{})))</span>
+        <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">60000</span><span class="p">)</span>
     <span class="kr">end</span>
-    <span class="kd">local</span> <span class="n">lat</span><span class="p">,</span><span class="n">lng</span><span class="p">,</span><span class="n">t</span> <span class="o">=</span> <span class="n">lbsLoc2</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"lbs"</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lng</span><span class="p">,</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">t</span> <span class="ow">or</span> <span class="p">{}))</span>
-<span class="kr">end</span>
+<span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils"/>

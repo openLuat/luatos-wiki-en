@@ -18,12 +18,18 @@ This library has its own demo,[click this link to view lbsLoc2 demo examples](ht
 -- 2. Only single base station positioning is supported, that is, the currently networked base station
 -- 3. This service is currently in test status
 sys.taskInit(function()
-    if mobile.status() == 0 then
-        sys.waitUntil("IP_READY", 3000)
+    sys.waitUntil("IP_READY", 30000)
+    -- mobile.reqCellInfo(60)
+    -- sys.wait(1000)
+    while mobile do -- No mobile library, no base station location
+        mobile.reqCellInfo(15)
+        sys.waitUntil("CELL_INFO_UPDATE", 3000)
+        local lat, lng, t = lbsLoc2.request(5000)
+        -- local lat, lng, t = lbsLoc2.request(5000, "bs.openluat.com")
+        log.info("lbsLoc2", lat, lng, (json.encode(t or {})))
+        sys.wait(60000)
     end
-    local lat,lng,t = lbsLoc2.request(3000)
-    log.info("lbs", lat, lng, json.encode(t or {}))
-end
+end)
 
 ```
 
@@ -58,12 +64,18 @@ Execute positioning request
 -- Historical data has been unable to distinguish the specific coordinate system
 -- In view of the error between the two coordinate systems is not large, less than the error of the base station positioning itself, the significance
 sys.taskInit(function()
-    if mobile.status() == 0 then
-        sys.waitUntil("IP_READY", 3000)
+    sys.waitUntil("IP_READY", 30000)
+    -- mobile.reqCellInfo(60)
+    -- sys.wait(1000)
+    while mobile do -- No mobile library, no base station location
+        mobile.reqCellInfo(15)
+        sys.waitUntil("CELL_INFO_UPDATE", 3000)
+        local lat, lng, t = lbsLoc2.request(5000)
+        -- local lat, lng, t = lbsLoc2.request(5000, "bs.openluat.com")
+        log.info("lbsLoc2", lat, lng, (json.encode(t or {})))
+        sys.wait(60000)
     end
-    local lat,lng,t = lbsLoc2.request(3000)
-    log.info("lbs", lat, lng, json.encode(t or {}))
-end
+end)
 
 ```
 
