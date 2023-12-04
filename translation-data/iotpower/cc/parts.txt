@@ -1,3 +1,5 @@
+下图展示了CC内部电气连接的部分信息，方便用户进行理解
+The following figure shows some information about the electrical connections inside the CC, which is convenient for users to understand.
 你也可以使用两根`USB C口转鳄鱼夹`的线缆，均使用红色正极夹子，按上图的电流方向进行测量。
 You can also use two `USB C port to alligator clip` cables, both using red positive clips, and measure according to the current direction shown in the figure above.
 使需使用香蕉座，可以参考这里
@@ -8,6 +10,8 @@ Power supply mode
 Power supply input | **⑨** | Left shift key
 供电输出|**⑩**|右移键
 Power supply output | **⑩** | right shift key
+内部连接拓扑图
+Internal connection topology diagram
 到手零件一览
 At-hand parts list
 双线模式

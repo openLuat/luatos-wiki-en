@@ -18,15 +18,19 @@ IoT Power CC Is a fully functional, stable and reliable small handheld high-prec
 
 IoT Power CC Is the majority of users carry the ideal test tool.
 
+```{note}
+If you are using such equipment for the first time, it is strongly recommended that you check [FAQ List](https://wiki.luatos.org/iotpower/cc/question.html)
+```
+
 ::::{grid} 1 2 2 3
 :gutter: 1 1 1 2
 
-:::{grid-item-card} {octicon}`repo-forked;1.5em;sd-mr-1` Connection and assembly
+:::{grid-item-card} {octicon}`repo-forked;1.5em;sd-mr-1` Connection usage
 :link: parts
 :link-type: doc
 :img-top: img/font_small.jpg
 
-Show the connection mode of CC and the tested equipment and the shell assembly instructions.
+Show the connection mode, internal topology diagram and shell assembly instructions of CC and tested equipment.
 
 +++
 [Learn more »](parts)
@@ -37,7 +41,7 @@ Show the connection mode of CC and the tested equipment and the shell assembly i
 :link-type: doc
 :img-top: img/usage_small.png
 
-Describe the usage of each function of the device in detail
+Describe the usage of each page function of the device in detail
 
 +++
 [Learn more »](usage)

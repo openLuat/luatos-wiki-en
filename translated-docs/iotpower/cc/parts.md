@@ -30,6 +30,12 @@ It is recommended not to use this type of charging head to connect the device �
 ①PC Communication interface, it is strictly prohibited to reverse connection or voltage greater than 6V, reverse connection or greater than 6V will burn！
 ```
 
+## Internal connection topology diagram
+
+The following figure shows some information about the electrical connections inside the CC, which is convenient for users to understand.
+
+![inside](img/inside.png)
+
 ## Power supply mode
 
 IoT Power CC Support two ways to get electricity

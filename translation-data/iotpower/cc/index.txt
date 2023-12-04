@@ -10,6 +10,10 @@ Go to Taobao to buy
 You can **connect a PC client** to view and analyze the current waveform, or use the command line version to capture serial port data (such as strawberry pie) on any device (win/linux/mac) and use the pc client to import and view
 外壳资料开放，[开源外壳地址
 Shell data is open, [open source shell address
+如果您是初次使用此类设备，强烈建议您先查看[常见问题列表
+If you are using such equipment for the first time, it is strongly recommended that you check [FAQ List
+展示CC与被测试设备的连接方式、内部拓扑图、外壳拼装说明
+Show the connection mode, internal topology diagram and shell assembly instructions of CC and tested equipment.
 展示CC与被测试设备的连接方式、外壳拼装说明
 Show the connection mode of CC and the tested equipment and the shell assembly instructions.
 彩蛋模式开源控制端
@@ -46,12 +50,16 @@ High precision, small error, details can be found in [technical indicators](http
 High precision, small error, details can be found in [technical indicators](https://wiki.luatos.org/iotpower/cc/tech.html), welcome to verify
 详细描述设备各个功能的用法
 Describe the usage of each function of the device in detail
+详细描述设备各个页面功能的用法
+Describe the usage of each page function of the device in detail
 请选择左侧的具体页面查看各项资料。
 Please select the specific page on the left to view the information.
 连接**PD快充**充电器（支持PPS），诱骗指定的电压与电流输出
 Connect **PD fast charge** charger (support PPS), decoy the specified voltage and current output
 连接与组装
 Connection and assembly
+连接使用
+Connection usage
 通过USB C供电，测量低功耗设备的电压与电流
 Measure voltage and current of low-power devices via USB C power supply
 高达**10KHz采样速率**，满足蜂窝模组、蓝牙、WIFI等的功耗测试需求
