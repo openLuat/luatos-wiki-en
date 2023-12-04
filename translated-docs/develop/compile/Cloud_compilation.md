@@ -67,7 +67,7 @@ There are many problems with compilation failure, usually these are more common.
 1. Click Ready for Save changes without clicking.
 2. Too many components are selected, or the font selection causes the flash size to be insufficient, resulting in compilation failure
 3. Firmware packages are all compressed packages, and soc is also a compressed package, which does not directly represent the firmware size.
-4. If the failure persists, please [contact us](../../pages/supports.md) or [report issue](https://github.com/openLuat/LuatOS.git)
+4. If the failure persists, please [contact us](../../pages/supports.md) or [report issue](https://github.com/openLuat/LuatOS)
 
 ## How to use custom font
 
