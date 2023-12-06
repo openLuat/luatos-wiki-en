@@ -4,7 +4,11 @@
 
 The basic appearance of the equipment is as follows
 
-<img style="width:300px;" src="img/font.png"/>
+```{image} img/font.png
+:alt: font
+:width: 300px
+:align: center
+```
 
 |     Serial | Function | Bottom Key | Key Function  |     |     |
 | :----------: | :--------------------------------------------------------------------------------: | :------: | :--------: | --- | --- |
