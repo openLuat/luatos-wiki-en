@@ -34,6 +34,8 @@ Only supports input and interrupt | instant power-on key, when normal GPIO is us
 Output from machine
 从机输出| -       |    29   |注意无GPIO功能
 slave output | - | 29 | note no GPIO function
+使用复用功能的GPIO时，需要先将默认GPIO引脚的复用为其他功能，才能正常使用复用的GPIO，如想使用97引脚的GPIO12，需要先将58引脚的GPIO12复用为I2C或者UART功能
+When using GPIO with multiplexing function, the default GPIO pins need to be multiplexed into other functions before the multiplexed GPIO can be used normally. If you want to use 97-pin GPIO12, you need to multiplex 58-pin GPIO12 into I2C or UART function first.
 例如 PWM1和PWM11都使用硬件通道1, **只能选其中一个使用
 For example, PWM1 and PWM11 both use hardware channel 1, **only one of them can be selected to use
 例如将`wakup0`设置为唤醒脚, 中断回调可以是空函数

@@ -100,6 +100,7 @@ Attention:
 7. **GPIO23** After power-on, the input pull-down is first, and then it will be set to **output pull-up high level**. It is recommended to avoid using this GPIO
 8. **Note **, only GPIO 20-22 supports 'two-way triggering (rising and falling) ', other GPIOs only support one-way triggering of 'rising edges' or 'falling edges'
 9. GPIO 20-25 The level flip speed of is slower than other GPIO
+10. When using GPIO with multiplexing function, the default GPIO pins need to be multiplexed into other functions before the multiplexed GPIO can be used normally. If you want to use 97-pin GPIO12, you need to multiplex 58-pin GPIO12 into I2C or UART function first.
 
 |Corresponding GPIO | Corresponding PAD | Examples of API used | Remarks|
 |---------|---------|---------|----|
