@@ -34,6 +34,10 @@ Only supports input and interrupt | instant power-on key, when normal GPIO is us
 Output from machine
 从机输出| -       |    29   |注意无GPIO功能
 slave output | - | 29 | note no GPIO function
+使用97引脚的GPIO12，需要先将58引脚的GPIO12复用为I2C或者UART功能
+Using the 97-pin GPIO12, the 58-pin GPIO12 needs to be multiplexed into I2C or UART function first.
+使用复用功能的GPIO时，需要先将默认GPIO引脚的复用为其他功能，才能正常使用复用的
+When using GPIO with multiplexing function, the default GPIO pin needs to be multiplexed into other functions before multiplexing can be used normally.
 使用复用功能的GPIO时，需要先将默认GPIO引脚的复用为其他功能，才能正常使用复用的GPIO，如想使用97引脚的GPIO12，需要先将58引脚的GPIO12复用为I2C或者UART功能
 When using GPIO with multiplexing function, the default GPIO pins need to be multiplexed into other functions before the multiplexed GPIO can be used normally. If you want to use 97-pin GPIO12, you need to multiplex 58-pin GPIO12 into I2C or UART function first.
 例如 PWM1和PWM11都使用硬件通道1, **只能选其中一个使用
@@ -50,8 +54,12 @@ Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks
 Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks
 只有 I2C0, 而且需要调用 `mcu.iomux(mcu.I2C, 0, 2)` 切换到PAD 31/32 即
 Only I2C0, and need to call' mcu.iomux(mcu.I2C, 0,2) 'to switch to PAD 31/32
+启用
+Enable
 启用PWM1就不能启用PWM11, 调用pwm库的API时,填 `软件通道
 PWM11 cannot be enabled when PWM1 is enabled. when calling the API of pwm library, fill in` software channel
+启用复用为ALT4，97引脚的
+Enable multiplexing for ALT4, pin 97
 固件下的IO复用配置
 IO multiplexing configuration under firmware
 在
@@ -74,6 +82,8 @@ For AT firmware, this document is meaningless, please ignore it.
 For CSDK, relevant reuse can be modified, so please ignore this document
 对应的GPIO|对应的PAD|使用的API示例|备注
 Corresponding GPIO | Corresponding PAD | Examples of API used | Remarks
+将57、58引脚复用为
+Multiplexing pins 57 and 58
 或者 false)|LDO_CTL,在Air600E标的是
 Or false)| LDO_CTL, the Air600E target is
 或者 false)|没有引出,在Air780EG控制GPS的电源

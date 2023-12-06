@@ -100,7 +100,25 @@ Attention:
 7. **GPIO23** After power-on, the input pull-down is first, and then it will be set to **output pull-up high level**. It is recommended to avoid using this GPIO
 8. **Note **, only GPIO 20-22 supports 'two-way triggering (rising and falling) ', other GPIOs only support one-way triggering of 'rising edges' or 'falling edges'
 9. GPIO 20-25 The level flip speed of is slower than other GPIO
-10. When using GPIO with multiplexing function, the default GPIO pins need to be multiplexed into other functions before the multiplexed GPIO can be used normally. If you want to use 97-pin GPIO12, you need to multiplex 58-pin GPIO12 into I2C or UART function first.
+
+10. When using GPIO with multiplexing function, the default GPIO pin needs to be multiplexed into other functions before multiplexing can be used normally.GPIO
+
+    ```lua
+    -- Using the 97-pin GPIO12, the 58-pin GPIO12 needs to be multiplexed into I2C or UART function first.
+    -- Multiplexing pins 57 and 58 I2C0
+    mcu.iomux(mcu.I2C, 0, 1)
+    -- Enable I2C
+    i2c.setup(0, i2c.SLOW)
+    
+    local function gpio12CbFnc()
+    	log.info("gpio", "12")    
+    end
+    
+    -- Enable multiplexing for ALT4, pin 97 GPIO12
+    gpio.setup(12, gpio12CbFnc, gpio.PULLUP, gpio.FALLING, 4)
+    ```
+
+    
 
 |Corresponding GPIO | Corresponding PAD | Examples of API used | Remarks|
 |---------|---------|---------|----|

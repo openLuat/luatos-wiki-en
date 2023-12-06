@@ -988,7 +988,7 @@
 </section>
 <section id="gpio-additional-instructions">
 <h2>GPIO Additional Instructions<a class="headerlink" href="#gpio-additional-instructions" title="Permalink to this headline">#</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>GPIO14/15 There are changes in V1103, correctly mapped <code class="docutils literal notranslate"><span class="pre">PAD</span> <span class="pre">13/14</span></code></p></li>
 <li><p>Ordinary GPIO in deep sleep/SLEEP2, there will be periodic high-level pulses, be sure to pay attention</p></li>
 <li><p>AONGPIO It is a GPIO that can still maintain a high level during sleep, but the driving ability is very weak.</p></li>
@@ -998,7 +998,22 @@
 <li><p><strong>GPIO23</strong> After power-on, the input pull-down is first, and then it will be set to <strong>output pull-up high level</strong>. It is recommended to avoid using this GPIO</p></li>
 <li><p>**Note **, only GPIO 20-22 supports ‘two-way triggering (rising and falling) ‘, other GPIOs only support one-way triggering of ‘rising edges’ or ‘falling edges’</p></li>
 <li><p>GPIO 20-25 The level flip speed of is slower than other GPIO</p></li>
-<li><p>When using GPIO with multiplexing function, the default GPIO pins need to be multiplexed into other functions before the multiplexed GPIO can be used normally. If you want to use 97-pin GPIO12, you need to multiplex 58-pin GPIO12 into I2C or UART function first.</p></li>
+<li><p>When using GPIO with multiplexing function, the default GPIO pin needs to be multiplexed into other functions before multiplexing can be used normally.GPIO</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Using the 97-pin GPIO12, the 58-pin GPIO12 needs to be multiplexed into I2C or UART function first.</span>
+<span class="c1">-- Multiplexing pins 57 and 58 I2C0</span>
+<span class="n">mcu</span><span class="p">.</span><span class="n">iomux</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">I2C</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1">-- Enable I2C</span>
+<span class="n">i2c</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i2c</span><span class="p">.</span><span class="n">SLOW</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">gpio12CbFnc</span><span class="p">()</span>
+	<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"gpio"</span><span class="p">,</span> <span class="s2">"12"</span><span class="p">)</span>    
+<span class="kr">end</span>
+
+<span class="c1">-- Enable multiplexing for ALT4, pin 97 GPIO12</span>
+<span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">gpio12CbFnc</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">FALLING</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
 </ol>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
