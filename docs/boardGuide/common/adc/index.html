@@ -714,36 +714,32 @@
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>An analog-to-digital converter, or ADC for short, usually refers to an electronic component that converts an analog signal into a digital signal.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio"/>
-<label class="sd-tab-label" data-sync-id="air101" for="sd-tab-item-0">
-Air101</label><div class="sd-tab-content docutils">
+<p>::::{tab-set}</p>
+<p>:::{tab-item} Air101
+:sync: air101</p>
 <p>Air101 There are 2 ADC channels, the development board leads out 2 channels, the channels are 0,1 respectively, and the input voltage range is 0~2.4V (refer to <a class="reference external" href="https://cdn.openluat-luatcommunity.openluat.com/attachment/air101_%E8%8A%AF%E7%89%87%E8%A7%84%E6%A0%BC%E4%B9%A6_v1.1.pdf">air101_chip specification _v1.1.pdf</a>)</p>
 <p>Without the use of voltage divider circuit, we can only collect 0~2.4V voltage directly, <code class="docutils literal notranslate"><span class="pre">external</span> <span class="pre">input</span> <span class="pre">must</span> <span class="pre">not</span> <span class="pre">exceed</span> <span class="pre">2.4V,</span> <span class="pre">otherwise</span> <span class="pre">it</span> <span class="pre">will</span> <span class="pre">burn</span> <span class="pre">the</span> <span class="pre">chip.！！</span></code></p>
 <p><img alt="ADC" src="../../../_images/ADC1.png"/></p>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio"/>
-<label class="sd-tab-label" data-sync-id="air103" for="sd-tab-item-1">
-Air103</label><div class="sd-tab-content docutils">
+<p>:::</p>
+<p>:::{tab-item} Air103
+:sync: air103</p>
 <p>Air103 There are 4 ADC channels, the development board leads out 4 channels, the channels are 0,1,2 and 3 respectively, and the input voltage range is 0~2.4V (refer to <a class="reference external" href="https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193606476_Air103_MCU%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8CV1.2.pdf">Air103_MCU Design Manual V1.2.pdf</a>)</p>
 <p>Without the use of voltage divider circuit, we can only collect 0~2.4V voltage directly, <code class="docutils literal notranslate"><span class="pre">external</span> <span class="pre">input</span> <span class="pre">must</span> <span class="pre">not</span> <span class="pre">exceed</span> <span class="pre">2.4V,</span> <span class="pre">otherwise</span> <span class="pre">it</span> <span class="pre">will</span> <span class="pre">burn</span> <span class="pre">the</span> <span class="pre">chip.！！</span></code></p>
 <p><img alt="ADC" src="../../../_images/ADC11.png"/></p>
-</div>
-<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio"/>
-<label class="sd-tab-label" data-sync-id="air105" for="sd-tab-item-2">
-Air105</label><div class="sd-tab-content docutils">
+<p>:::</p>
+<p>:::{tab-item} Air105
+:sync: air105</p>
 <p>Air105 There are 7 ADC channels in total, and the development board leads out 4 channels with 1,2,5 and 6 channels respectively (refer to <a class="reference external" href="https://cdn.openluat-luatcommunity.openluat.com/attachment/20220303111656608_Air105%20%E6%A0%B8%E5%BF%83%E6%9D%BF%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8CV1.1.pdf">Air105 core board user manual V1.1.pdf</a>）</p>
 <p>Referring to <a class="reference external" href="https://cdn.openluat-luatcommunity.openluat.com/attachment/20220114193313925_Air105%E8%8A%AF%E7%89%87%E6%95%B0%E6%8D%AE%E6%89%8B%E5%86%8C_1.1.pdf">Air105 chip data sheet_1.1.pdf</a>, it can be seen that the reference voltage of ADC is 1.8V, and the acquisition voltage range of ADC channels 1 to 6 can be matched. when the internal partial voltage is enabled, the acquisition voltage range is 0 to 3.6V, when the internal partial voltage is not enabled, the acquisition voltage range is 0 to 1.8V, and the internal partial voltage is not enabled in LuatOS, so we can directly use only the acquisition voltage of 0 to 1.8V, the external input must not exceed 1.8V, otherwise the chip will be burned.！！`</p>
 <p><img alt="ADC" src="../../../_images/ADC12.png"/></p>
-</div>
-</div>
+<p>:::</p>
+<p>::::</p>
 </section>
 <section id="hardware-preparation">
 <h2>Hardware preparation<a class="headerlink" href="#hardware-preparation" title="Permalink to this headline">#</a></h2>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio"/>
-<label class="sd-tab-label" data-sync-id="air101" for="sd-tab-item-3">
-Air101</label><div class="sd-tab-content docutils">
+<p>::::{tab-set}
+:::{tab-item} Air101
+:sync: air101</p>
 <p>Air101 One development board and one adjustable power supply. The wiring diagram is as follows</p>
 <blockquote>
 <div><p>Note: Turn on the adjustable power supply first, adjust it to below 2.4V, and then connect the power supply to the development board to prevent the chip from being burned if the power-on voltage is too high.</p>
@@ -754,10 +750,9 @@ Air101                         adjustable power supply
 </pre></div>
 </div>
 <p><img alt="ADC2" src="../../../_images/ADC2.jpg"/></p>
-</div>
-<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio"/>
-<label class="sd-tab-label" data-sync-id="air103" for="sd-tab-item-4">
-Air103</label><div class="sd-tab-content docutils">
+<p>:::</p>
+<p>:::{tab-item} Air103
+:sync: air103</p>
 <p>Air103 One development board and one adjustable power supply. The wiring diagram is as follows</p>
 <blockquote>
 <div><p>Note: Turn on the adjustable power supply first, adjust it to below 2.4V, and then connect the power supply to the development board to prevent the chip from being burned if the power-on voltage is too high.</p>
@@ -768,10 +763,9 @@ Air103                         adjustable power supply
 </pre></div>
 </div>
 <p><img alt="ADC2" src="../../../_images/ADC21.jpg"/></p>
-</div>
-<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio"/>
-<label class="sd-tab-label" data-sync-id="air105" for="sd-tab-item-5">
-Air105</label><div class="sd-tab-content docutils">
+<p>:::</p>
+<p>:::{tab-item} Air105
+:sync: air105</p>
 <p>Air105 One development board and one adjustable power supply. The wiring diagram is as follows</p>
 <blockquote>
 <div><p>Note: Turn on the adjustable power supply first, adjust it to below 1.8V, and then connect the power supply to the development board to prevent the chip from being burned if the power-on voltage is too high.</p>
@@ -782,8 +776,8 @@ Air105                         adjustable power supply
 </pre></div>
 </div>
 <p><img alt="ADC2" src="../../../_images/ADC22.jpg"/></p>
-</div>
-</div>
+<p>:::
+::::</p>
 </section>
 <section id="software-part">
 <h2>Software part<a class="headerlink" href="#software-part" title="Permalink to this headline">#</a></h2>
@@ -822,10 +816,9 @@ Air105                         adjustable power supply
 <blockquote>
 <div><p>Note: <code class="docutils literal notranslate"><span class="pre">adc.read</span></code> has two return values, the first value is the original value, the second value is the conversion value, the unit is mV</p>
 </div></blockquote>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio"/>
-<label class="sd-tab-label" data-sync-id="air101" for="sd-tab-item-6">
-Air101</label><div class="sd-tab-content docutils">
+<p>::::{tab-set}
+:::{tab-item} Air101
+:sync: air101</p>
 <p>After successful download, observe the log output as follows. According to the second value returned by <code class="docutils literal notranslate"><span class="pre">adc.read</span></code>, the measured voltage is about 1712mV</p>
 <div class="highlight-log notranslate"><div class="highlight"><pre><span></span>I/user.ADC START
 I/user.ADC.read 103336 1776
@@ -868,10 +861,9 @@ I/user.ADC DONE
 ...
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio"/>
-<label class="sd-tab-label" data-sync-id="air103" for="sd-tab-item-7">
-Air103</label><div class="sd-tab-content docutils">
+<p>:::</p>
+<p>:::{tab-item} Air103
+:sync: air103</p>
 <p>After successful download, observe the log output as follows. According to the second value returned by <code class="docutils literal notranslate"><span class="pre">adc.read</span></code>, the measured voltage is about 1712mV</p>
 <div class="highlight-log notranslate"><div class="highlight"><pre><span></span>I/user.ADC.read 97672 1600
 I/user.ADC DONE
@@ -914,10 +906,9 @@ I/user.ADC DONE
 ...
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio"/>
-<label class="sd-tab-label" data-sync-id="air105" for="sd-tab-item-8">
-Air105</label><div class="sd-tab-content docutils">
+<p>:::</p>
+<p>:::{tab-item} Air105
+:sync: air105</p>
 <p>After successful download, observe the log output as follows. According to the second value returned by <code class="docutils literal notranslate"><span class="pre">adc.read</span></code>, the measured voltage is about 1712mV</p>
 <div class="highlight-log notranslate"><div class="highlight"><pre><span></span>I/user.ADC START
 I/user.ADC.read 3882 1712
@@ -962,8 +953,8 @@ I/user.ADC DONE
 ...
 </pre></div>
 </div>
-</div>
-</div>
+<p>:::
+::::</p>
 </section>
 </section>
 
