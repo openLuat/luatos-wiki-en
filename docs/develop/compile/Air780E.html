@@ -758,17 +758,23 @@
 <section id="tool-chain-download">
 <h2>Tool chain download<a class="headerlink" href="#tool-chain-download" title="Permalink to this headline">#</a></h2>
 <p>In a networked environment, xmake will download the gcc toolchain itself. If you have a normal internet connection, skip this step</p>
-<p>:::{dropdown} Specific operation method</p>
-<p>If you cannot connect to the Internet, or if the network is limited, you will usually have this prompt.:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Specific operation method<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If you cannot connect to the Internet, or if the network is limited, you will usually have this prompt.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">error</span><span class="p">:</span> <span class="n">fatal</span><span class="p">:</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">git</span> <span class="n">repository</span>
 </pre></div>
 </div>
-<p>Or the prompt of git/http connection failure. Therefore, the offline gcc tool chain download and compilation method is provided here.</p>
+<p class="sd-card-text">Or the prompt of git/http connection failure. Therefore, the offline gcc tool chain download and compilation method is provided here.</p>
 <ol class="arabic simple">
-<li><p>Download <a class="reference external" href="http://cdndownload.openluat.com/xmake/toolchains/gcc-arm/gcc-arm-none-eabi-10.3-2021.10-win32.zip">gcc for arm toolchain</a></p></li>
-<li><p>Decompress, do not select too deep a directory, do not contain Chinese characters and special symbols, it is recommended to decompress to the <code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">disk</span> <span class="pre">root</span> <span class="pre">directory</span></code>, the compression package comes with a layer of directory<code class="docutils literal notranslate"><span class="pre">gcc-arm-none-eabi-10.3-2021.10</span></code></p></li>
-<li><p>Assuming that the decompressed path is<code class="docutils literal notranslate"><span class="pre">D:\gcc-arm-none-eabi-10.3-2021.10</span></code>, check whether <code class="docutils literal notranslate"><span class="pre">D:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g</span> <span class="pre">.exe</span></code> exists. if it does not exist, it must be an additional directory..</p></li>
-<li><p>Use a text editor (such as vscode) to open the <code class="docutils literal notranslate"><span class="pre">build.bat</span></code> of the luatos-soc-2022, and modify the content as follows</p></li>
+<li><p class="sd-card-text">Download <a class="reference external" href="http://cdndownload.openluat.com/xmake/toolchains/gcc-arm/gcc-arm-none-eabi-10.3-2021.10-win32.zip">gcc for arm toolchain</a></p></li>
+<li><p class="sd-card-text">Decompress, do not select too deep a directory, do not contain Chinese characters and special symbols, it is recommended to decompress to the <code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">disk</span> <span class="pre">root</span> <span class="pre">directory</span></code>, the compression package comes with a layer of directory<code class="docutils literal notranslate"><span class="pre">gcc-arm-none-eabi-10.3-2021.10</span></code></p></li>
+<li><p class="sd-card-text">Assuming that the decompressed path is<code class="docutils literal notranslate"><span class="pre">D:\gcc-arm-none-eabi-10.3-2021.10</span></code>, check whether <code class="docutils literal notranslate"><span class="pre">D:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g</span> <span class="pre">.exe</span></code> exists. if it does not exist, it must be an additional directory..</p></li>
+<li><p class="sd-card-text">Use a text editor (such as vscode) to open the <code class="docutils literal notranslate"><span class="pre">build.bat</span></code> of the luatos-soc-2022, and modify the content as follows</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">original</span> <span class="n">content</span><span class="p">:</span>
 <span class="n">rem</span> <span class="nb">set</span> <span class="n">GCC_PATH</span><span class="o">=</span><span class="n">E</span><span class="p">:</span>\<span class="n">gcc_mcu</span>
@@ -776,8 +782,8 @@
 <span class="nb">set</span> <span class="n">GCC_PATH</span><span class="o">=</span><span class="n">D</span><span class="p">:</span>\<span class="n">gcc</span><span class="o">-</span><span class="n">arm</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="n">eabi</span><span class="o">-</span><span class="mf">10.3</span><span class="o">-</span><span class="mf">2021.10</span>
 </pre></div>
 </div>
-<p>:::</p>
-</section>
+</div>
+</details></section>
 <section id="start-compiling">
 <h2>Start Compiling<a class="headerlink" href="#start-compiling" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">

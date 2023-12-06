@@ -4,7 +4,7 @@
 
 The basic appearance of the equipment is as follows
 
-![Equipment diagram](img/font.png){.limit_image w=300px align=center}
+<img style="width:300px;" src="img/font.png"/>
 
 |     Serial | Function | Bottom Key | Key Function  |     |     |
 | :----------: | :--------------------------------------------------------------------------------: | :------: | :--------: | --- | --- |

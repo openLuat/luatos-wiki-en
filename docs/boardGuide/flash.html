@@ -722,37 +722,42 @@
 <h3>Tool Configuration<a class="headerlink" href="#tool-configuration" title="Permalink to this headline">#</a></h3>
 <p>First download the latest version of the Luatools:<a class="reference external" href="https://luatos.com/luatools/download/last">click me to download</a></p>
 <p>It is recommended to create a new Luatools folder, put the exe file into it, and then open the exe file.</p>
-<p>::::{tab-set}</p>
-<p>:::{tab-item} Air101/Air103
-:sync: air101</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" data-sync-id="air101" for="sd-tab-item-0">
+Air101/Air103</label><div class="sd-tab-content docutils">
 <p>Please check <code class="docutils literal notranslate"><span class="pre">Universal</span> <span class="pre">Serial</span> <span class="pre">Print</span></code></p>
 <p><img alt="" src="../_images/20221128132233.png"/></p>
 <p>Modify the universal serial port baud rate and set the baud rate to 921600, which is the log baud rate. The baud rate is automatically set by the tool..</p>
 <p>Connect the device to the computer through the usb cable, you can see a new COM port, select this COM port in the tool and open it</p>
-<p>:::</p>
-<p>:::{tab-item} Air105
-:sync: air105</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" data-sync-id="air105" for="sd-tab-item-1">
+Air105</label><div class="sd-tab-content docutils">
 <p>Please check <code class="docutils literal notranslate"><span class="pre">Universal</span> <span class="pre">Serial</span> <span class="pre">Print</span></code></p>
 <p><img alt="" src="../_images/90162500_1631695006.png"/></p>
 <p>Modify the universal serial port baud rate and set the baud rate to 1500000, which is the log baud rate. The baud rate is automatically set by the tool..</p>
 <p>Connect the device to the computer through the usb cable, you can see a new COM port, select this COM port in the tool and open it</p>
-<p>:::</p>
-<p>:::{tab-item} ESP32C3 Simplified version
-:sync: c3usb</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" data-sync-id="c3usb" for="sd-tab-item-2">
+ESP32C3 Simplified version</label><div class="sd-tab-content docutils">
 <p>Please check <code class="docutils literal notranslate"><span class="pre">Universal</span> <span class="pre">Serial</span> <span class="pre">Print</span></code></p>
 <p><img alt="" src="../_images/20221128132233.png"/></p>
 <p>No need to modify the serial port baud rate, keep the current value can be</p>
 <p>Connect the device to the computer through the usb cable, you can see a new COM port, select this COM port in the tool and open it</p>
-<p>:::</p>
-<p>:::{tab-item} ESP32C3 Classic Edition
-:sync: c3uart</p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" data-sync-id="c3uart" for="sd-tab-item-3">
+ESP32C3 Classic Edition</label><div class="sd-tab-content docutils">
 <p>Please check <code class="docutils literal notranslate"><span class="pre">Universal</span> <span class="pre">Serial</span> <span class="pre">Print</span></code></p>
 <p><img alt="" src="../_images/20221128132233.png"/></p>
 <p>Modify the universal serial port baud rate and set the baud rate to 921600, which is the log baud rate. The baud rate is automatically set by the tool..</p>
 <p>Connect the device to the computer through the usb cable, you can see a new COM port, select this COM port in the tool and open it</p>
-<p>:::</p>
-<p>:::{tab-item} Air780
-:sync: air780</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" data-sync-id="air780" for="sd-tab-item-4">
+Air780</label><div class="sd-tab-content docutils">
 <p>Please check<code class="docutils literal notranslate"> <span class="pre">4G</span> <span class="pre">module</span> <span class="pre">USB</span> <span class="pre">print</span></code>, this series is compatible with EC618 schemes such as Air780E/Air780EG/Air600E/Air700E</p>
 <p><img alt="" src="../_images/20221128132132.png"/></p>
 <p>No need to modify the serial port baud rate, keep the current value can be</p>
@@ -763,44 +768,52 @@
 <li><p>There is no response. Press and hold the PWR key of the board for more than 2 seconds, and the board will be turned on. There are 3 buttons on the development board. If there is no logo, try both on the outside.</p></li>
 </ol>
 <p>Reminder: does not support Win7 brush machine!!</p>
-<p>:::</p>
-<p>:::{tab-item} ESP32S3
-:sync: s3uart</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" data-sync-id="s3uart" for="sd-tab-item-5">
+ESP32S3</label><div class="sd-tab-content docutils">
 <p>Please check <code class="docutils literal notranslate"><span class="pre">Universal</span> <span class="pre">Serial</span> <span class="pre">Print</span></code></p>
 <p><img alt="" src="../_images/20221128132233.png"/></p>
 <p>Modify the universal serial port baud rate and set the baud rate to 921600, which is the log baud rate. The baud rate is automatically set by the tool..</p>
 <p>Connect the device to the computer through the usb cable, you can see a new COM port, select this COM port in the tool and open it</p>
-<p>:::</p>
-<p>::::</p>
+</div>
+</div>
 </section>
 <section id="burn-firmware">
 <h3>Burn Firmware<a class="headerlink" href="#burn-firmware" title="Permalink to this headline">#</a></h3>
 <p>Need to get firmware before burning</p>
-<p>::::::{tab-set}</p>
-<p>:::::{tab-item} The tool automatically downloads the firmware</p>
-<p>::::{tab-set}</p>
-<p>:::{tab-item} Air101/Air103
-:sync: air101</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-1" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-6">
+The tool automatically downloads the firmware</label><div class="sd-tab-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-2" type="radio"/>
+<label class="sd-tab-label" data-sync-id="air101" for="sd-tab-item-9">
+Air101/Air103</label><div class="sd-tab-content docutils">
 <p>Find the folder where the Luatools is located. The official firmware downloaded automatically in the folder<code class="docutils literal notranslate"><span class="pre">s</span> </code>Luatools/resource/101_lua_lod<code class="docutils literal notranslate"> <span class="pre">or</span></code> Luatools/resource/103_lua_lod`</p>
-<p>:::</p>
-<p>:::{tab-item} Air105
-:sync: air105</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio"/>
+<label class="sd-tab-label" data-sync-id="air105" for="sd-tab-item-10">
+Air105</label><div class="sd-tab-content docutils">
 <p>Find the folder where the Luatools is located, and the official firmware downloaded automatically is in the folder<code class="docutils literal notranslate"><span class="pre">s</span> </code>Luatools/resource/105_lua_lod`</p>
-<p>:::</p>
-<p>:::{tab-item} ESP32C3 Simplified version
-:sync: c3usb</p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio"/>
+<label class="sd-tab-label" data-sync-id="c3usb" for="sd-tab-item-11">
+ESP32C3 Simplified version</label><div class="sd-tab-content docutils">
 <p>Find the folder where the Luatools is located. The “Luatools/resource/esp32c3_lua_lod/Version Number” in the folder is the official version firmware downloaded automatically.</p>
-<p>:::</p>
-<p>:::{tab-item} ESP32C3 Classic Edition
-:sync: c3uart</p>
+</div>
+<input id="sd-tab-item-12" name="sd-tab-set-2" type="radio"/>
+<label class="sd-tab-label" data-sync-id="c3uart" for="sd-tab-item-12">
+ESP32C3 Classic Edition</label><div class="sd-tab-content docutils">
 <p>Find the folder where the Luatools is located. The folder<code class="docutils literal notranslate"><span class="pre">s</span> </code>Luatools/resource/esp32c3_lua_lod/Version Number<code class="docutils literal notranslate"> <span class="pre">without</span> <span class="pre">the</span> <span class="pre">words</span> <span class="pre">**</span></code>USB`** is the official version firmware downloaded automatically.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The driver of CH343 must be installed to download the firmware normally. The default CDC driver prints the log without any problem, but the download fails if the speed is too slow. <a class="reference external" href="http://www.wch.cn/downloads/CH343SER_EXE.html">Drive portal</a></p>
 </div>
-<p>:::</p>
-<p>:::{tab-item} Air780
-:sync: air780</p>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-2" type="radio"/>
+<label class="sd-tab-label" data-sync-id="air780" for="sd-tab-item-13">
+Air780</label><div class="sd-tab-content docutils">
 <p>Find the folder where the Luatools is located, and the official version firmware downloaded automatically is in the<code class="docutils literal notranslate"> <span class="pre">Luatools/resource/618_lua_lod/version</span> <span class="pre">number</span></code> of the folder</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -823,28 +836,33 @@
 <li><p>At the beginning of your own main.lua, add <code class="docutils literal notranslate"><span class="pre">pm.power(pm.PWK_MODE,</span> <span class="pre">false)</span></code></p></li>
 </ol>
 </div>
-<p>:::</p>
-<p>:::{tab-item} ESP32S3
-:sync: s3uart</p>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-2" type="radio"/>
+<label class="sd-tab-label" data-sync-id="s3uart" for="sd-tab-item-14">
+ESP32S3</label><div class="sd-tab-content docutils">
 <p>Find the folder where the Luatools is located. The “Luatools/resource/esp32s3_lua_lod/Version Number” in the folder is the official version firmware downloaded automatically.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The driver of CH343 must be installed to download the firmware normally. The default CDC driver prints the log without any problem, but the download fails if the speed is too slow. <a class="reference external" href="http://www.wch.cn/downloads/CH343SER_EXE.html">Drive portal</a></p>
 </div>
-<p>:::</p>
-<p>::::</p>
-<p>:::::</p>
-<p>:::::{tab-item} Go to the official warehouse to download the firmware</p>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-1" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-7">
+Go to the official warehouse to download the firmware</label><div class="sd-tab-content docutils">
 <p>You can also go to the official LuatOS warehouse to download the latest firmware.</p>
 <p>The official version can be downloaded from the release page.：</p>
 <p><a class="reference external" href="https://gitee.com/openLuat/LuatOS/releases">https://gitee.com/openLuat/LuatOS/releases</a></p>
-<p>:::::</p>
-<p>:::::{tab-item} Use cloud compilation</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-8">
+Use cloud compilation</label><div class="sd-tab-content docutils">
 <p>You can also use the official <strong>cloud compilation</strong> function to customize the modules included in the firmware.</p>
 <p><a class="reference external" href="https://wiki.luatos.org/develop/compile/Cloud_compilation.html">Cloud Compilation Tutorial Point I View</a></p>
 <p>After downloading the firmware, decompress it to obtain the corresponding firmware.</p>
-<p>:::::</p>
-<p>::::::</p>
+</div>
+</div>
 <p>Firmware is a file called “soc`. Here, Air101 firmware is used as an example. It looks like this：</p>
 <p><img alt="" src="../_images/24035700_1631695521.png"/></p>
 <p>Then return to the Luatools, click the<code class="docutils literal notranslate"> <span class="pre">Download</span> <span class="pre">Firmware</span></code> button, select the soc file just downloaded, and download it directly：</p>
