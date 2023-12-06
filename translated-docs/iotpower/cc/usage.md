@@ -6,7 +6,7 @@ The device supports bilingual switching between Chinese and English. The screens
 
 ```{warning}
 ⚠Risk Alert  ：
-①PC Communication interface, it is strictly prohibited to reverse connection or voltage greater than 6V, reverse connection or greater than 6V will burn  ！
+**PC Mouth * *, it is strictly prohibited to reverse or voltage greater than 6V, reverse or greater than 6V will burn  ！
 The positive and negative poles of the measuring port are strictly prohibited from being connected in reverse, and the equipment connected in reverse must be burned.  ！
 If you don't listen, burn the equipment and only complain in the group.！
 ```
@@ -15,18 +15,15 @@ If you don't listen, burn the equipment and only complain in the group.！
 
 The basic appearance of the equipment is as follows
 
-![Equipment diagram](img/font.jpg)
+![Equipment diagram](img/font.png)
 
-|       serial number | function | key serial number | key function        |
-| :--------------: | :-----------------------------------------------------------------------------: | :----------: | :---------------------: |
-|   **①**   |                            Power supply of the device itself/PC client communication | **⑧** | OK `O`      |
-|   **②**   |                               USB TYPE-C Power supply input | **⑨** | Left shift key `<`      |
-|   **③**   |                               USB TYPE-C Power supply output | **⑩** | right shift key `>`      |
-|   **④**   |                           External power supply positive pole (corresponding to ②) | **⑾** | Cancel button `X`      |
-|   **⑤**   |                           External power supply negative-(corresponding to ②) | **⑿** | Page turn key/force to enter upgrade mode/clear bottom current to zero |
-| **Small dial code **| Switch the power supply source of CC ([see this for usage](https://wiki.luatos.org/iotpower/cc/parts.html#id3)） |              |                        |
-|   **⑥**   |                           External output positive pole (corresponding to ③）                           |              |                        |
-|   **⑦**   |                           External output negative pole-(corresponding to ③）                           |              |                        |
+|     Serial | Function | Bottom Key | Key Function  |     |     |
+| :----------: | :--------------------------------------------------------------------------------: | :------: | :--------: | --- | --- |
+|   **PC Port **| Power supply of equipment itself/PC client communication |** O key **| OK key `O` |     |     |
+| **Power Input **| USB TYPE-C Power Input |** <Key **| Left Shift Key `<` |     |     |
+| **Power Out **| USB TYPE-C Power Out |**> Key **| Shift Right `>` |     |     |
+|  **Page Flip Key **| Page Flip Key/Force Upgrade Mode |** X Key **| Cancel Key `X` |     |     |
+|  **Small dial code **| Switch the power supply source of CC ([see this for usage](https://wiki.luatos.org/iotpower/cc/parts.html#id3)） |          |            |     |     |
 
 :::{dropdown} If you need to use a banana seat, please refer to here.
 ④ ⑤ ⑥ ⑦ on the board is the banana socket, if necessary：
@@ -37,7 +34,7 @@ The basic appearance of the equipment is as follows
 
 ```{warning}
 ⚠Risk Warning: Some brands of fast charging heads (such as Huawei, Xiaomi and other private protocol fast charging heads) may misrecognize the fast charging protocol, resulting in providing high voltage exceeding 5.8V to the device, resulting in instantaneous burning of the device.
-It is recommended not to use the fast charging head to connect the equipment's own power supply port
+It is recommended not to use the fast charging head to connect the **PC port of the device as much as possible.**
 ```
 
 ## Data Overview Page

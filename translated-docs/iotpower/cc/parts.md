@@ -4,18 +4,15 @@
 
 The basic appearance of the equipment is as follows
 
-![Equipment diagram](img/font.jpg)
+![Equipment diagram](img/font.png)
 
-|serial number | function | key serial number | key function|
-|:-:|:-:|:-:|:-:|
-|**①**|Power supply/PC client communication | **⑧** | OK `O`|
-|**②**|USB TYPE-C Power supply input | **⑨** | Left shift key `<`|
-|**③**|USB TYPE-C Power supply output | **⑩** | right shift key `>`|
-|**④**|External power supply positive pole (corresponding to ②) | **⑾** | Cancel button `X`|
-|**⑤**|External power supply negative pole-(corresponding to ②) | **⑿** | Page turn key/force to enter upgrade mode|
-|**Small dial code **| Switch the power supply source of CC ([see this for usage](https://wiki.luatos.org/iotpower/cc/parts.html#id3)）||
-|**⑥**|External output positive pole (corresponding to ③）||
-|**⑦**|External output negative pole-(corresponding to ③）||
+|     Serial | Function | Bottom Key | Key Function  |     |     |
+| :----------: | :--------------------------------------------------------------------------------: | :------: | :--------: | --- | --- |
+|   **PC Port **| Power supply of equipment itself/PC client communication |** O key **| OK key `O` |     |     |
+| **Power Input **| USB TYPE-C Power Input |** <Key **| Left Shift Key `<` |     |     |
+| **Power Out **| USB TYPE-C Power Out |**> Key **| Shift Right `>` |     |     |
+|  **Page Flip Key **| Page Flip Key/Force Upgrade Mode |** X Key **| Cancel Key `X` |     |     |
+|  **Small dial code **| Switch the power supply source of CC ([see this for usage](https://wiki.luatos.org/iotpower/cc/parts.html#id3)） |          |            |     |     |
 
 :::{dropdown} If you need to use a banana seat, please refer to here.
 ④ ⑤ ⑥ ⑦ on the board is the banana socket, if necessary：
@@ -26,8 +23,8 @@ The basic appearance of the equipment is as follows
 
 ```{warning}
 ⚠Risk Warning: Some brands of fast charging heads (such as Huawei, Xiaomi and other private protocol fast charging heads) may misrecognize the fast charging protocol, resulting in providing high voltage exceeding 5.8V to the device, resulting in instantaneous burning of the device.  
-It is recommended not to use this type of charging head to connect the device ① PC communication interface  
-①PC Communication interface, it is strictly prohibited to reverse connection or voltage greater than 6V, reverse connection or greater than 6V will burn！
+It is recommended not to use this type of charging head to connect the **PC port of the device as much as possible.  **
+**PC Mouth * *, it is strictly prohibited to reverse or voltage greater than 6V, reverse or greater than 6V will burn！
 ```
 
 ## Internal connection topology diagram
@@ -40,8 +37,8 @@ The following figure shows some information about the electrical connections ins
 
 IoT Power CC Support two ways to get electricity
 
-- When the dial code in the upper left corner of the device is dialed to the right, it is necessary to supply power to the device itself through ①. At this time, the accuracy is the best and the voltage drop is also the smallest.
-- When the dial code in the upper left corner of the equipment is dialed to the left, the equipment will draw electricity from the power supply port of ② or ④ ⑤, which will cause the output voltage of ③ or ⑥ ⑦ to drop, but it is more convenient to use.
+- When the dial code in the upper left corner of the device is dialed to the right, power needs to be supplied to the device itself through the **PC port**. At this time, the accuracy is the best and the voltage drop is the smallest.
+- When the dial code in the upper left corner of the device is dialed to the left, the device will take power from the **power input** port, which will cause a voltage drop in the output voltage of the **power output** port, but it is more convenient to use.
 
 ```{warning}
 When the dial code is dialed to the left, if the charging head is USB C port, you need to turn on` PD` option on the setting page in advance, otherwise you cannot take power and start up.  
@@ -50,7 +47,7 @@ If you still don't understand, you can watch [video tutorial](https://www.bilibi
 ```
 
 ```{note}
-Since the voltage measured by IoT Power CC is the output terminal voltage (③ or  ⑥⑦）
+Since the voltage measured by IoT Power CC is the output terminal voltage (* * power output * * port  ）
 Therefore, although there will be a certain voltage drop at the output end compared with the input end, the actual power supply voltage of the device under test is still the real value, and the test result will not be distorted.
 ```
 
@@ -73,7 +70,7 @@ The user can freely determine the connection between the input and the output, a
 
 ### Two-wire mode
 
-This method can directly connect the equipment in series into the loop of the existing circuit. The disadvantage of this mode is that * * must supply power to the equipment through ①, and the voltage cannot be measured (the voltage display value has no reference at this time). The connection diagram is as follows：
+This method can directly connect the equipment in series into the loop of the existing circuit. The disadvantage of this mode is that the equipment must be powered through the **PC port** and the voltage cannot be measured (the voltage display value has no reference at this time). The connection diagram is as follows：
 
 ![2line](img/2line.png)
 
