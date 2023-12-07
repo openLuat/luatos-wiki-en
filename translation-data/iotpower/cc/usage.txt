@@ -20,6 +20,8 @@ Even if you can use your mobile phone to trigger fast charging, you cannot prove
 Port **| Power supply of equipment itself/PC client communication |** O key **| OK key
 口**，严禁反接或电压大于6V，反接或大于6V必烧
 Mouth * *, it is strictly prohibited to reverse or voltage greater than 6V, reverse or greater than 6V will burn
+只连接PC口，其他口留空**，按下 `翻页/DFU`键30秒以上再松开，可清空底电流归零
+Only connect PC port, leave other ports empty * *, press the' page turning/DFU' key for more than 30 seconds and then release it to clear the bottom current and return to zero.
 可以先断开设备的电源连接，按住 `⑿翻页键/强制进入升级模式`，再插入USB供电，这时可以看见**设备屏幕上显示DFU模式的信息**，也可以在电脑的 `设备管理器`的 `通用串行总线设备`中找到名为 `IotPower DFU`的设备
 You can disconnect the power supply of the device first, hold down the` page turning key/force to enter upgrade mode`, and then insert USB power supply. at this time, you can see **the information of DFU mode displayed on the device screen**, or you can find the` IotPower DFU` device in the` universal serial bus device` of the` device manager` of the computer.
 外部供电 正极+ （与②对应）                           | **⑾** |      取消键

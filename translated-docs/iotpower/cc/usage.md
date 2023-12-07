@@ -55,7 +55,7 @@ The values displayed from top to bottom on this page are：
 - Press the `<` key to toggle the display of `Wh`, `Ah` and `W`
 - Press the `>` key to switch the display style
 - Press the` X` key to clear the accumulated data (time, electricity, etc.) and re-count from the beginning.
-- Press the `page turning/DFU` key for more than 5 seconds and then release it to clear the bottom current and return to zero.
+- **Only connect PC port, leave other ports empty * *, press the' page turning/DFU' key for more than 30 seconds and then release it to clear the bottom current and return to zero.
 
 ## Detailed Data Page
 
@@ -64,7 +64,7 @@ The values displayed from top to bottom on this page are：
 This page shows the average current, peak-to-valley current and more detailed electricity statistics (ampere-hour and watt-hour.）
 
 - Press the `X` key to clear all data and re-count from the beginning.
-- Press the `page turning/DFU` key for more than 5 seconds and then release it to clear the bottom current and return to zero.
+- **Only connect PC port, leave other ports empty * *, press the' page turning/DFU' key for more than 30 seconds and then release it to clear the bottom current and return to zero.
 
 ## Waveform Preview Page
 
