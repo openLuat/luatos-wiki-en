@@ -1,0 +1,26 @@
+卡
+Card
+固件下载地址
+Firmware download address
+基础外设
+Basic Peripherals
+备用地址
+Alternate Address
+就是固件文件, 其余两个是底层源码,无需下载
+Is the firmware file, the other two are the underlying source code, no need to download
+工具库
+Tool Library
+支持的功能如下
+The supported functions are as follows
+时钟
+Clock
+深度休眠暂时无法使用
+Deep Sleep temporarily unavailable
+系列固件发行注记
+Series Firmware Release Notes
+系列固件第一版
+Series Firmware First Edition
+网络功能
+Network function
+通过云编译,全自动编译最新固件
+Fully automatic compilation of the latest firmware via cloud compilation
