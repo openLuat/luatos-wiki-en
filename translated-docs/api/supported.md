@@ -47,7 +47,7 @@
 |[lvgl](lvgl.md)|`LVGL Image Library`|Y|Y|Y|Y|Y|Y|Y|
 |[max30102](max30102.md)|`Heart Rate Module(MAX30102)`|Y|Y|Y|Y|Y|Y|Y|
 |[mcu](mcu.md)|`encapsulation mcu some special operations`|Y|Y|Y|Y|Y|Y|Y|
-|[miniz](miniz.md)|`Easy zlib compression`|Y|Y|Y|X|X|Y|Y|
+|[miniz](miniz.md)|`Easy zlib compression`|Y|Y|Y|Y|Y|Y|Y|
 |[mlx90640](mlx90640.md)|`infrared temperature measurement(MLX90640)`|Y|Y|Y|Y|Y|Y|Y|
 |[mobile](mobile.md)|`Cellular Network`|X|X|X|X|X|Y|Y|
 |[mqtt](mqtt.md)|`mqtt Client`|Y|Y|Y|Y|Y|Y|Y|
