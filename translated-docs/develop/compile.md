@@ -13,6 +13,7 @@ Video Tutorial: [[LuatOS] Full Series Firmware Compilation Tutorial [Continuous 
 
 compile/Cloud_compilation
 compile/Air780E
+compile/Air780EP
 compile/Air101
 compile/Air105
 compile/ESP32C3
