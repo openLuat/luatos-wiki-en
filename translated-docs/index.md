@@ -69,6 +69,7 @@ Look at the functions of the chips supported by LuatOS at this stage and choose 
 |Model | Classification | Remarks|
 |--------|--------|-------|
 |[Air780E](chips/air780e/index) |4G-Cat.1 Mobile communication module | Also supported Air780EG/Air600E|
+|[Air780EP](chips/air780ep/index) |4G-Cat.1 Mobile Communication Modules | Support Air780EP Series|
 |[Air101](chips/air101/index) |MCU|Small size, only 4*4mm|
 |[Air103](chips/air103/index) |MCU|io More, support.psram|
 |[Air105](chips/air105/index) |MCU|Large memory, camera, camera USB|

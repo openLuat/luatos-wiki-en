@@ -60,6 +60,8 @@ version of LuatOS | available as an emulator
 Modules and chips that have been adapted so far
 移动通信模块| 也支持
 Mobile communication module | Also supported
+移动通信模块| 支持Air780EP系列
+Mobile Communication Modules | Support Air780EP Series
 站视频教程
 Station video tutorial
 系列| (wifi/bt芯片）|ESP32C3/ESP32S3等
