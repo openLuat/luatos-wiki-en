@@ -810,8 +810,8 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="errdump-config-enable-period-user-flag-custom-id">
-<h2>errDump.config(enable, period, user_flag, custom_id)<a class="headerlink" href="#errdump-config-enable-period-user-flag-custom-id" title="Permalink to this headline">#</a></h2>
+<section id="errdump-config-enable-period-user-flag-custom-id-host-port">
+<h2>errDump.config(enable, period, user_flag, custom_id, host, port)<a class="headerlink" href="#errdump-config-enable-period-user-flag-custom-id-host-port" title="Permalink to this headline">#</a></h2>
 <p>Configure key logs to upload to the IoT platform. The logs here include the logs that cause luavm to exit abnormally and the logs written by users through record, similar to errDump</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -833,6 +833,12 @@
 <tr class="row-odd"><td><p>string</p></td>
 <td><p>Device identification number, the default for 4G devices is imei, and the default for other devices is mcu.unique_id</p></td>
 </tr>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Server domain name, default dev_msg1.openluat.com</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Server port, default</p></td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Return Value</strong></p>
@@ -852,8 +858,12 @@
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">errDump</span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="mi">3600</span><span class="p">,</span> <span class="s2">"12345678"</span><span class="p">)</span>	<span class="c1">--Try the last time in an hour, and it will be attached after imei when uploading.12345678</span>
 <span class="n">errDump</span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>	<span class="c1">--Turn off the recording function and no longer upload it.</span>
 <span class="n">errDump</span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>	<span class="c1">--Records, but will not take the initiative to upload, by the user to achieve the upload function</span>
+
 <span class="c1">-- 2023.09.22 Added custom_id parameters</span>
 <span class="n">errDump</span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="mi">3600</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="s2">"ABC"</span><span class="p">)</span>	<span class="c1">--Try the last time in an hour, use a custom device ID when uploading ABC</span>
+
+<span class="c1">-- 2023.12.8 Add host and port parameters</span>
+<span class="n">errDump</span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="mi">3600</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="s2">"dev_msg1.openluat.com"</span><span class="p">,</span> <span class="mi">12425</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils"/>
@@ -919,7 +929,7 @@
 <li><a class="reference internal" href="#">errDump - Error reporting</a><ul>
 <li><a class="reference internal" href="#errdump-dump-zbuff-type-isdelete">errDump.dump(zbuff, type, isDelete)</a></li>
 <li><a class="reference internal" href="#errdump-record-string">errDump.record(string)</a></li>
-<li><a class="reference internal" href="#errdump-config-enable-period-user-flag-custom-id">errDump.config(enable, period, user_flag, custom_id)</a></li>
+<li><a class="reference internal" href="#errdump-config-enable-period-user-flag-custom-id-host-port">errDump.config(enable, period, user_flag, custom_id, host, port)</a></li>
 </ul>
 </li>
 </ul>

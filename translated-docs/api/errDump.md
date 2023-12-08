@@ -79,7 +79,7 @@ errDump.record("socket long time no connect") --Record"socket long time no conne
 
 ---
 
-## errDump.config(enable, period, user_flag, custom_id)
+## errDump.config(enable, period, user_flag, custom_id, host, port)
 
 
 
@@ -93,6 +93,8 @@ Configure key logs to upload to the IoT platform. The logs here include the logs
 |int|Regular upload period, unit of seconds, default 600 seconds. This is the retry time after automatic upload. After startup or record operation, it will try to upload to the IOT platform once soon. If it is 0, it will not upload, and the user will upload his own platform after dump.|
 |string|User's special identity, can be empty|
 |string|Device identification number, the default for 4G devices is imei, and the default for other devices is mcu.unique_id|
+|string|Server domain name, default dev_msg1.openluat.com|
+|int|Server port, default|
 
 **Return Value**
 
@@ -106,8 +108,12 @@ Configure key logs to upload to the IoT platform. The logs here include the logs
 errDump.config(true, 3600, "12345678")	--Try the last time in an hour, and it will be attached after imei when uploading.12345678
 errDump.config(false)	--Turn off the recording function and no longer upload it.
 errDump.config(true, 0)	--Records, but will not take the initiative to upload, by the user to achieve the upload function
+
 -- 2023.09.22 Added custom_id parameters
 errDump.config(true, 3600, nil, "ABC")	--Try the last time in an hour, use a custom device ID when uploading ABC
+
+-- 2023.12.8 Add host and port parameters
+errDump.config(true, 3600, nil, nil, "dev_msg1.openluat.com", 12425)
 
 ```
 
