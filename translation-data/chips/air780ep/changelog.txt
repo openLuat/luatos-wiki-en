@@ -2,6 +2,8 @@
 Card
 固件下载地址
 Firmware download address
+固件下载备用地址
+Firmware Download Alternate Address
 基础外设
 Basic Peripherals
 备用地址
@@ -22,5 +24,7 @@ Series Firmware Release Notes
 Series Firmware First Edition
 网络功能
 Network function
+通过[云编译](https://wiki.luatos.org/develop/compile/Cloud_compilation.html),全自动编译最新固件
+Fully automatic compilation of the latest firmware through [Cloud Compile](https://wiki.luatos.org/develop/compile/Cloud_compilation.html)
 通过云编译,全自动编译最新固件
 Fully automatic compilation of the latest firmware via cloud compilation

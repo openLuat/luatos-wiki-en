@@ -1,17 +1,19 @@
 # Ec618 Series Firmware Release Notes
 
-* Firmware download address: https://gitee.com/openLuat/LuatOS/releases
-* Alternate Address: https://pan.air32.cn/s/DJTr?path=%2F
-* Fully automatic compilation of the latest firmware via cloud compilation: https://wiki.luatos.org/develop/compile/Cloud_compilation.html
+* [Firmware download address](https://gitee.com/openLuat/LuatOS/releases)
+* [Firmware Download Alternate Address](https://pan.air32.cn/s/DJTr?path=%2F)
+* Fully automatic compilation of the latest firmware through [Cloud Compile](https://wiki.luatos.org/develop/compile/Cloud_compilation.html)
 
 ## V1109
 
 Expected before '20232.12.31'.
 
 Defect repair:
+
 * fix: websocket Heartbeat packet not sent out normally
 
 New Features:
+
 * add: ntp-based millisecond timestamp socket.ntptm()
 
 ## V1108
@@ -19,11 +21,13 @@ New Features:
 This version has been released on 2023.11.15, and the corresponding git tag is v1108.ec618.release
 
 Compatibility changes:
+
 1. Correct the unit of CPU temperature
    * Impact, the previous version returned CPU temperature is degrees Celsius, other BSP are 1/1000 degrees Celsius
    * Solution: The new data' //1000 'will get the original data value
 
 Defect repair:
+
 * fix: **socket close When the new data flag is not cleared * *, SSL has a probability of continuous reconnection failure.
 * fix: **mqtt In some cases of the library, buffer_offset reconnect is not set to zero * *, MQTT has a probability of continuous reconnect failure.
 * fix: **mqtt Heartbeat timer count error **causes mqtt heartbeat may not be emitted
@@ -103,6 +107,7 @@ Features added and updated:
 ## V1107
 
 Compatibility changes:
+
 1. No longer automatically query base station information
    * Impact: If the mobile.reqCellInfo function is not called, mobile.cellInfo() returns an empty array
    * Workaround: Call on demand or call regularly `mobile.reqCellInfo(60)`
@@ -111,6 +116,7 @@ Compatibility changes:
    * Solution: Set the volume to 100 or above
 
 Function added:
+
 * uart.read Support for reading specified length
 * Added mcu.iomux function to support configuring uart/spi/i2c multiplexing
 * Added pm.ioVol function to support configuration of io voltage
@@ -287,4 +293,3 @@ date: 2023-02-06
 
 **core_V1103.zip** Is the firmware file, the other two are the underlying source code, no need to download.
 ** Air780EG Test positioning effect_match public number article. zip **is used to test Air780EG positioning effect
-

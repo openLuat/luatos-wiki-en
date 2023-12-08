@@ -20,7 +20,7 @@ Main features:
 
 ## LuatOS What functions are provided for it
 
-- Available Lua memory: default 200k, highest 300k
+- Available Lua memory: default 256k, up 300k
 - Script space: default 128k, highest 448k
 - Basic Peripherals: GPIO/SPI/I2C/PWM/ADC
 - Network function: Mobile/TCP/UDP/Http/Mqtt/WebSocket/FTP/NTP/SMS
