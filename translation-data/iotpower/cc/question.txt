@@ -2,6 +2,8 @@
 Not supported, only standard PPS/PD is supported. If you find a bug that cannot trigger the standard PPS, please grab the PD protocol package and feed it back to the group owner for repair.
 为什么什么都没连，电压和电流不为
 Why is nothing even, voltage and current are not
+为什么在测量1.5V左右的电压时，电压曲线抖动巨大，导致结果不准确
+Why is the voltage curve jitter huge when measuring the voltage of about 1.5V, resulting in inaccurate results
 为什么我从输入口供电，CC会一直重启/插上手机就灭屏
 Why do I supply power from the input port, CC will always restart/plug in the mobile phone and turn off the screen
 为什么我开启PD后一直在转圈圈
@@ -78,6 +80,8 @@ If the operation is correct, you can try
 If the device cannot be recognized, please check whether the device manager has a device, if not, please change the line
 如果是首次上电，可以参考[这个视频](https://www.bilibili.com/video/BV15m4y1h7CG)里的步骤
 If it is the first time to power on, please refer to the steps in [this video](https://www.bilibili.com/video/BV15m4y1h7CG).
+如遇到该问题，可自行在此处电阻处，并联一颗5-100pF的电容（图中并联为
+In case of this problem, you can parallel a 5-100pF capacitor at the resistor here (in the figure, the parallel connection is
 小知识
 Small knowledge
 常见问题
@@ -120,10 +124,14 @@ Click 'connect' on the page and select your IoT Power device
 upgrade device firmware with your phone or mac
 电脑一台
 a computer
+类似这样
+something like this
 能触发手机的快充吗，我不想使用自带的诱骗功能
 Can it trigger the fast charging of the mobile phone? I don't want to use my own decoy function.
 设备默认会进入PPS模式，某些充电器的PPS支持范围小于PD固定档位范围。可以前往设置关闭PPS功能，只使用固定档位功能
 The device will enter PPS mode by default, and the PPS support range of some chargers is less than the PD fixed gear range. You can go to the setting to turn off the PPS function and only use the fixed gear function.
+该BUG仅概率性发生在1.0.3硬件版本上，后续硬件已修复该问题（2023年12月12日后均为新硬件版本
+The BUG only occurred probabilistically on hardware version 1.0.3, and subsequent hardware has fixed the problem (all new hardware versions will be available after December 12, 2023
 诱骗成功（前往PD页面检查
 Tricking success (go to PD page to check
 请仔细阅读[供电方式](https://openluat.github.io/luatos-wiki-en/iotpower/cc/parts.html#id3)章节

@@ -126,6 +126,16 @@ As shown in the following figure, the same equipment uses different power supply
 
 ![cc-c](img/cc-c.png)
 
+## Why is the voltage curve jitter huge when measuring the voltage of about 1.5V, resulting in inaccurate results？
+
+something like this
+
+![voltage screen](img/cc-voltage-error.png)
+
+The BUG only occurred probabilistically on hardware version 1.0.3, and subsequent hardware has fixed the problem (all new hardware versions will be available after December 12, 2023）
+
+In case of this problem, you can parallel a 5-100pF capacitor at the resistor here (in the figure, the parallel connection is 47pF）
+
 ## I use **Iot Power V1/V2** to supply power and connect it in series**Iot Power CC**
 
 ### Why are the current numbers inconsistent？
