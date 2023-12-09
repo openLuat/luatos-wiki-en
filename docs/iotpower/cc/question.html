@@ -857,12 +857,13 @@ However, among the “ten yuan and ten” wires sold by the United States, TypeC
 <p>As shown in the following figure, the same equipment uses different power supply methods. In the left figure, reverse current occurs due to unstable power supply, which will cause the detection result to be too large.</p>
 <p><img alt="cc-c" src="../../_images/cc-c.png"/></p>
 </section>
-<section id="why-is-the-voltage-curve-jitter-huge-when-measuring-the-voltage-of-about-1-5v-resulting-in-inaccurate-results">
-<h2>Why is the voltage curve jitter huge when measuring the voltage of about 1.5V, resulting in inaccurate results？<a class="headerlink" href="#why-is-the-voltage-curve-jitter-huge-when-measuring-the-voltage-of-about-1-5v-resulting-in-inaccurate-results" title="Permalink to this headline">#</a></h2>
-<p>something like this</p>
-<p><img alt="voltage screen" src="../../_images/cc-voltage-error.png"/></p>
-<p>The BUG only occurred probabilistically on hardware version 1.0.3, and subsequent hardware has fixed the problem (all new hardware versions will be available after December 12, 2023）</p>
-<p>In case of this problem, you can parallel a 5-100pF capacitor at the resistor here (in the figure, the parallel connection is 47pF）</p>
+<section id="why-is-the-voltage-inaccurate-when-measuring-the-voltage-of-a-dry-battery">
+<h2>Why is the voltage inaccurate when measuring the voltage of a dry battery？<a class="headerlink" href="#why-is-the-voltage-inaccurate-when-measuring-the-voltage-of-a-dry-battery" title="Permalink to this headline">#</a></h2>
+<p>Phenomenon: When only measuring the dry battery voltage, the probability of the display result changes rapidly between 0V and 3V.</p>
+<blockquote>
+<div><p>This BUG only * * probabilistic * * occurred on the 1.0.3 hardware version, and the subsequent hardware has no such problem (all new hardware versions after December 12, 2023）</p>
+</div></blockquote>
+<p>If you need to measure dry battery-powered equipment and encounter this problem, you can automatically parallel a 5-100pF capacitor at the resistance here (in the figure, the parallel connection is 47pF）</p>
 </section>
 <section id="i-use-iot-power-v1-v2-to-supply-power-and-connect-it-in-seriesiot-power-cc">
 <h2>I use <strong>Iot Power V1/V2</strong> to supply power and connect it in series<strong>Iot Power CC</strong><a class="headerlink" href="#i-use-iot-power-v1-v2-to-supply-power-and-connect-it-in-seriesiot-power-cc" title="Permalink to this headline">#</a></h2>
@@ -954,7 +955,7 @@ However, among the “ten yuan and ten” wires sold by the United States, TypeC
 <li><a class="reference internal" href="#why-is-the-voltage-directly-changed-after-the-output-terminal-is-connected-to-the-typec-line-5v">Why is the voltage directly changed after the output terminal is connected to the TypeC line 5V</a></li>
 <li><a class="reference internal" href="#why-is-nothing-even-voltage-and-current-are-not-0">Why is nothing even, voltage and current are not 0</a></li>
 <li><a class="reference internal" href="#why-is-there-several-differences-between-current-and-multimeter-a">Why is there several differences between current and multimeter?μA？</a></li>
-<li><a class="reference internal" href="#why-is-the-voltage-curve-jitter-huge-when-measuring-the-voltage-of-about-1-5v-resulting-in-inaccurate-results">Why is the voltage curve jitter huge when measuring the voltage of about 1.5V, resulting in inaccurate results？</a></li>
+<li><a class="reference internal" href="#why-is-the-voltage-inaccurate-when-measuring-the-voltage-of-a-dry-battery">Why is the voltage inaccurate when measuring the voltage of a dry battery？</a></li>
 <li><a class="reference internal" href="#i-use-iot-power-v1-v2-to-supply-power-and-connect-it-in-seriesiot-power-cc">I use <strong>Iot Power V1/V2</strong> to supply power and connect it in series<strong>Iot Power CC</strong></a><ul>
 <li><a class="reference internal" href="#why-are-the-current-numbers-inconsistent">Why are the current numbers inconsistent？</a></li>
 <li><a class="reference internal" href="#i-have-already-supplied-power-separately-and-have-no-common-ground-why-is-the-current-number-still-inconsistent">I have already supplied power separately and have no common ground. Why is the current number still inconsistent?？</a></li>

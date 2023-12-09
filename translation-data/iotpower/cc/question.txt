@@ -4,6 +4,8 @@ Not supported, only standard PPS/PD is supported. If you find a bug that cannot 
 Why is nothing even, voltage and current are not
 为什么在测量1.5V左右的电压时，电压曲线抖动巨大，导致结果不准确
 Why is the voltage curve jitter huge when measuring the voltage of about 1.5V, resulting in inaccurate results
+为什么在测量干电池的电压时，电压不准确
+Why is the voltage inaccurate when measuring the voltage of a dry battery
 为什么我从输入口供电，CC会一直重启/插上手机就灭屏
 Why do I supply power from the input port, CC will always restart/plug in the mobile phone and turn off the screen
 为什么我开启PD后一直在转圈圈
@@ -82,6 +84,8 @@ If the device cannot be recognized, please check whether the device manager has 
 If it is the first time to power on, please refer to the steps in [this video](https://www.bilibili.com/video/BV15m4y1h7CG).
 如遇到该问题，可自行在此处电阻处，并联一颗5-100pF的电容（图中并联为
 In case of this problem, you can parallel a 5-100pF capacitor at the resistor here (in the figure, the parallel connection is
+如需测量干电池供电设备，并且遇到该问题，可自行在此处电阻处，并联一颗5-100pF的电容（图中并联为
+If you need to measure dry battery-powered equipment and encounter this problem, you can automatically parallel a 5-100pF capacitor at the resistance here (in the figure, the parallel connection is
 小知识
 Small knowledge
 常见问题
@@ -120,6 +124,8 @@ Click 'download' to swipe in
 Click Select File to select the firmware file
 点击页面里的`connect`，选上你的IoT Power设备
 Click 'connect' on the page and select your IoT Power device
+现象：仅当测量干电池电压时，显示结果概率性在0V~3V间快速变动
+Phenomenon: When only measuring the dry battery voltage, the probability of the display result changes rapidly between 0V and 3V.
 用手机或mac升级设备固件
 upgrade device firmware with your phone or mac
 电脑一台
@@ -130,6 +136,8 @@ something like this
 Can it trigger the fast charging of the mobile phone? I don't want to use my own decoy function.
 设备默认会进入PPS模式，某些充电器的PPS支持范围小于PD固定档位范围。可以前往设置关闭PPS功能，只使用固定档位功能
 The device will enter PPS mode by default, and the PPS support range of some chargers is less than the PD fixed gear range. You can go to the setting to turn off the PPS function and only use the fixed gear function.
+该BUG仅**概率性**发生在1.0.3硬件版本上，后续硬件已无该问题（2023年12月12日后均为新硬件版本
+This BUG only * * probabilistic * * occurred on the 1.0.3 hardware version, and the subsequent hardware has no such problem (all new hardware versions after December 12, 2023
 该BUG仅概率性发生在1.0.3硬件版本上，后续硬件已修复该问题（2023年12月12日后均为新硬件版本
 The BUG only occurred probabilistically on hardware version 1.0.3, and subsequent hardware has fixed the problem (all new hardware versions will be available after December 12, 2023
 诱骗成功（前往PD页面检查

@@ -126,15 +126,13 @@ As shown in the following figure, the same equipment uses different power supply
 
 ![cc-c](img/cc-c.png)
 
-## Why is the voltage curve jitter huge when measuring the voltage of about 1.5V, resulting in inaccurate results？
+## Why is the voltage inaccurate when measuring the voltage of a dry battery？
 
-something like this
+Phenomenon: When only measuring the dry battery voltage, the probability of the display result changes rapidly between 0V and 3V.
 
-![voltage screen](img/cc-voltage-error.png)
+> This BUG only * * probabilistic * * occurred on the 1.0.3 hardware version, and the subsequent hardware has no such problem (all new hardware versions after December 12, 2023）
 
-The BUG only occurred probabilistically on hardware version 1.0.3, and subsequent hardware has fixed the problem (all new hardware versions will be available after December 12, 2023）
-
-In case of this problem, you can parallel a 5-100pF capacitor at the resistor here (in the figure, the parallel connection is 47pF）
+If you need to measure dry battery-powered equipment and encounter this problem, you can automatically parallel a 5-100pF capacitor at the resistance here (in the figure, the parallel connection is 47pF）
 
 ## I use **Iot Power V1/V2** to supply power and connect it in series**Iot Power CC**
 
