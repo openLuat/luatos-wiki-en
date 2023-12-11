@@ -1,15 +1,27 @@
+也会自动下载
+It will also be downloaded automatically.
+修复nimble库无法断开蓝牙连接
+Fix nimble library unable to disconnect Bluetooth connection
 修复与AT固件的兼容性问题, 正确读写AP和STA的MAC地址
 Fix the compatibility problem with AT firmware, read and write the MAC address of AP and STA correctly
 修正wifi mac地址导致连接手机/电脑热点失败的问题
 Fix the problem that wifi mac address causes the connection to mobile phone/computer hotspot to fail.
 初始版本
 Initial version
+合宙云盘
+Hezhou Cloud Pan
 固件下载地址
 Firmware download address
 固件发行注记
 Firmware Release Notes
+库发布路径
+Library publishing path
+库支持获取毫秒级时间戳
+The library supports obtaining millisecond-level timestamps.
 待发布
 To be published
+搭配的soc_script版本为
+The matching soc_script version is
 支持esptouch和airkiss配网,兼容腾讯连连
 Support esptouch and airkiss distribution network, compatible with Tencent
 支持TLS等加密链接, 默认固件未启用,可自行云编译
