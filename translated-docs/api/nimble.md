@@ -32,10 +32,10 @@ This library has its own demo,[click this link to view nimble's demo example](ht
 |constant | type | explanation|
 |-|-|-|
 |nimble.CHR_F_WRITE|number|chr FLAGS value, writable, and requires a response|
-|nimble.CHR_F_WRITE|number|chr FLAGS value of, readable|
-|nimble.CHR_F_WRITE|number|chr FLAGS value, writable, no response required|
-|nimble.CHR_F_WRITE|number|chr The FLAGS value can be subscribed to and does not require a reply.|
-|nimble.CHR_F_WRITE|number|chr The FLAGS value of can be subscribed to and needs to be replied.|
+|nimble.CHR_F_READ|number|chr FLAGS value of, readable|
+|nimble.CHR_F_WRITE_NO_RSP|number|chr FLAGS value, writable, no response required|
+|nimble.CHR_F_NOTIFY|number|chr The FLAGS value can be subscribed to and does not require a reply.|
+|nimble.CHR_F_INDICATE|number|chr The FLAGS value of can be subscribed to and needs to be replied.|
 |nimble.CFG_ADDR_ORDER|number|UUID The size of the conversion, used in combination with the config function, default 0, optional 0/1|
 
 
