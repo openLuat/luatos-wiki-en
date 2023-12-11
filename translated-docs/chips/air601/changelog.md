@@ -4,9 +4,11 @@ This document describes changes to LuatOS firmware for Air601
 
 Firmware download address: https://pan.air32.cn/s/DJTr?path=%2F
 
-## V1021
+## V1022
 
-To be published
+1. Fix the compatibility problem with AT firmware, read and write the MAC address of AP and STA correctly
+
+## V1021
 
 1. Support esptouch and airkiss distribution network, compatible with Tencent
 2. Fix the problem that wifi mac address causes the connection to mobile phone/computer hotspot to fail.

@@ -1,20 +1,22 @@
-本文件描述Air601的LuatOS固件的变更情况
-This document describes changes to LuatOS firmware for Air601
-初始版本
-Initial version
-待发布
-To be published
-固件发行注记
-Firmware Release Notes
-固件下载地址
-Firmware download address
+修复与AT固件的兼容性问题, 正确读写AP和STA的MAC地址
+Fix the compatibility problem with AT firmware, read and write the MAC address of AP and STA correctly
 修正wifi mac地址导致连接手机/电脑热点失败的问题
 Fix the problem that wifi mac address causes the connection to mobile phone/computer hotspot to fail.
-支持更大Lua内存, 默认
-Support larger Lua memory, default
-支持蓝牙功能,但需要与wifi分开使用, 不能同时启用
-Support Bluetooth function, but need to be used separately from wifi, can not be enabled at the same time
+初始版本
+Initial version
+固件下载地址
+Firmware download address
+固件发行注记
+Firmware Release Notes
+待发布
+To be published
 支持esptouch和airkiss配网,兼容腾讯连连
 Support esptouch and airkiss distribution network, compatible with Tencent
 支持TLS等加密链接, 默认固件未启用,可自行云编译
 Support TLS and other encryption links, the default firmware is not enabled, can be self-cloud compilation
+支持更大Lua内存, 默认
+Support larger Lua memory, default
+支持蓝牙功能,但需要与wifi分开使用, 不能同时启用
+Support Bluetooth function, but need to be used separately from wifi, can not be enabled at the same time
+本文件描述Air601的LuatOS固件的变更情况
+This document describes changes to LuatOS firmware for Air601
