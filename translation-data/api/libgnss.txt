@@ -26,6 +26,10 @@ Points
 Minutes
 分钟, UTC时间为准
 Minutes, UTC time
+千米/小时
+km/hour
+千米/小时, 浮点数
+km/hour, floating point number
 卫星编号
 Satellite Number
 原始GSA数据
@@ -138,6 +142,8 @@ Data in the format
 Data, if it does not exist, it will be returned.
 数据处理
 Data processing
+新增speed_type参数
+Added speed_type parameters
 方向角
 Direction angle
 方案1, 经lua层进行数据中转
@@ -212,6 +218,12 @@ Seconds
 Seconds, UTC time
 端口号
 Port number
+米/小时, 默认值, 整型
+meter/hour, default, integer
+米/秒
+m/s
+米/秒, 浮点数
+m/s, floating point number
 纬度, 正数为北纬, 负数为南纬
 Latitude, positive number is north latitude, negative number is south latitude
 经度, 正数为东经, 负数为西经
@@ -222,6 +234,10 @@ Latitude and longitude and altitude
 bind uart and immediately start parsing GNSS data
 绑定uart端口进行GNSS数据读取
 bind uart port to read GNSS data
+英里/小时
+mile/hour
+英里/小时, 浮点数
+Miles per hour, float
 获取
 Get
 获取GGA数据
@@ -270,7 +286,13 @@ obtained through base station positioning or wifi positioning
 Speed, km/h
 速度, 英里/小时
 Speed, miles per hour
+速度单位,默认是
+Speed unit, default is
+速度单位可选值
+Speed unit selectable value
 配置串口信息, 通常为
 Configure serial port information, typically
 首先是时间信息,注意是UTC时间
 The first is the time information, note the UTC time
+默认 米/小时
+Default meter/hour

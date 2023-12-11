@@ -809,11 +809,22 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="libgnss-getintlocation">
-<h2>libgnss.getIntLocation()<a class="headerlink" href="#libgnss-getintlocation" title="Permalink to this headline">#</a></h2>
+<section id="libgnss-getintlocation-speed-type">
+<h2>libgnss.getIntLocation(speed_type)<a class="headerlink" href="#libgnss-getintlocation-speed-type" title="Permalink to this headline">#</a></h2>
 <p>Get location information</p>
 <p><strong>Parameters</strong></p>
-<p>None</p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Speed unit, default is m/h</p></td>
+</tr>
+</tbody>
+</table></div>
 <p><strong>Return Value</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -836,6 +847,23 @@
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- It is recommended to use libgnss.getRmc(1)</span>
 <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nmea"</span><span class="p">,</span> <span class="s2">"loc"</span><span class="p">,</span> <span class="n">libgnss</span><span class="p">.</span><span class="n">getIntLocation</span><span class="p">())</span>
+
+<span class="c1">-- 2023.12.11 Added speed_type parameters</span>
+<span class="cm">--[[</span>
+<span class="cm">Speed unit selectable value</span>
+<span class="cm">0 - m/h meter/hour, default, integer</span>
+<span class="cm">1 - m/s m/s, floating point number</span>
+<span class="cm">2 - km/h km/hour, floating point number</span>
+<span class="cm">3 - kn/h Miles per hour, float</span>
+<span class="cm">]]</span>
+<span class="c1">-- Default meter/hour</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nmea"</span><span class="p">,</span> <span class="s2">"loc"</span><span class="p">,</span> <span class="n">libgnss</span><span class="p">.</span><span class="n">getIntLocation</span><span class="p">())</span>
+<span class="c1">-- m/s</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nmea"</span><span class="p">,</span> <span class="s2">"loc"</span><span class="p">,</span> <span class="n">libgnss</span><span class="p">.</span><span class="n">getIntLocation</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1">-- km/hour</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nmea"</span><span class="p">,</span> <span class="s2">"loc"</span><span class="p">,</span> <span class="n">libgnss</span><span class="p">.</span><span class="n">getIntLocation</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="c1">-- mile/hour</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nmea"</span><span class="p">,</span> <span class="s2">"loc"</span><span class="p">,</span> <span class="n">libgnss</span><span class="p">.</span><span class="n">getIntLocation</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -1502,7 +1530,7 @@
 <li><a class="reference internal" href="#">libgnss - NMEA Data processing</a><ul>
 <li><a class="reference internal" href="#libgnss-parse-str">libgnss.parse(str)</a></li>
 <li><a class="reference internal" href="#libgnss-isfix">libgnss.isFix()</a></li>
-<li><a class="reference internal" href="#libgnss-getintlocation">libgnss.getIntLocation()</a></li>
+<li><a class="reference internal" href="#libgnss-getintlocation-speed-type">libgnss.getIntLocation(speed_type)</a></li>
 <li><a class="reference internal" href="#libgnss-getrmc-data-mode">libgnss.getRmc(data_mode)</a></li>
 <li><a class="reference internal" href="#libgnss-getgsv">libgnss.getGsv()</a></li>
 <li><a class="reference internal" href="#libgnss-getgsa-data-mode">libgnss.getGsa(data_mode)</a></li>

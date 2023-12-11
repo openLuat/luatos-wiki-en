@@ -99,7 +99,7 @@ log.info("nmea", "isFix", libgnss.isFix())
 
 ---
 
-## libgnss.getIntLocation()
+## libgnss.getIntLocation(speed_type)
 
 
 
@@ -107,7 +107,9 @@ Get location information
 
 **Parameters**
 
-None
+|Incoming Value Type | Explanation|
+|-|-|
+|int|Speed unit, default is m/h|
 
 **Return Value**
 
@@ -122,6 +124,23 @@ None
 ```lua
 -- It is recommended to use libgnss.getRmc(1)
 log.info("nmea", "loc", libgnss.getIntLocation())
+
+-- 2023.12.11 Added speed_type parameters
+--[[
+Speed unit selectable value
+0 - m/h meter/hour, default, integer
+1 - m/s m/s, floating point number
+2 - km/h km/hour, floating point number
+3 - kn/h Miles per hour, float
+]]
+-- Default meter/hour
+log.info("nmea", "loc", libgnss.getIntLocation())
+-- m/s
+log.info("nmea", "loc", libgnss.getIntLocation(1))
+-- km/hour
+log.info("nmea", "loc", libgnss.getIntLocation(2))
+-- mile/hour
+log.info("nmea", "loc", libgnss.getIntLocation(3))
 
 ```
 
