@@ -736,7 +736,7 @@ Writes data to the specified feature value of the specified service.
 
 ---
 
-## nimble.writeChr(svr_uuid, chr_uuid)
+## nimble.readChr(svr_uuid, chr_uuid)
 
 
 
