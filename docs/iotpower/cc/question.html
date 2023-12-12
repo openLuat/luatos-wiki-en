@@ -859,11 +859,15 @@ However, among the “ten yuan and ten” wires sold by the United States, TypeC
 </section>
 <section id="why-is-the-voltage-inaccurate-when-measuring-the-voltage-of-a-dry-battery">
 <h2>Why is the voltage inaccurate when measuring the voltage of a dry battery？<a class="headerlink" href="#why-is-the-voltage-inaccurate-when-measuring-the-voltage-of-a-dry-battery" title="Permalink to this headline">#</a></h2>
-<p>Phenomenon: When only measuring the dry battery voltage, the probability of the display result changes rapidly between 0V and 3V.</p>
+<p>Phenomenon: When and only when measuring the voltage of a dry battery, the probability of the display result changes rapidly between 0V and 3V.</p>
 <blockquote>
 <div><p>This BUG only * * probabilistic * * occurred on the 1.0.3 hardware version, and the subsequent hardware has no such problem (all new hardware versions after December 12, 2023）</p>
 </div></blockquote>
-<p>If you need to measure dry battery-powered equipment and encounter this problem, you can automatically parallel a 5-100pF capacitor at the resistance here (in the figure, the parallel connection is 47pF）</p>
+<p>If you need to measure a dry battery-powered equipment and * * encounter this problem * *, you can use the resistance here by yourself and parallel a 5-100pF capacitor (in the figure, the parallel connection is 47pF）</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not do this if you are not experiencing the problem</p>
+</div>
 </section>
 <section id="i-use-iot-power-v1-v2-to-supply-power-and-connect-it-in-seriesiot-power-cc">
 <h2>I use <strong>Iot Power V1/V2</strong> to supply power and connect it in series<strong>Iot Power CC</strong><a class="headerlink" href="#i-use-iot-power-v1-v2-to-supply-power-and-connect-it-in-seriesiot-power-cc" title="Permalink to this headline">#</a></h2>

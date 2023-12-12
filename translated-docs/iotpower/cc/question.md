@@ -128,11 +128,15 @@ As shown in the following figure, the same equipment uses different power supply
 
 ## Why is the voltage inaccurate when measuring the voltage of a dry battery？
 
-Phenomenon: When only measuring the dry battery voltage, the probability of the display result changes rapidly between 0V and 3V.
+Phenomenon: When and only when measuring the voltage of a dry battery, the probability of the display result changes rapidly between 0V and 3V.
 
 > This BUG only * * probabilistic * * occurred on the 1.0.3 hardware version, and the subsequent hardware has no such problem (all new hardware versions after December 12, 2023）
 
-If you need to measure dry battery-powered equipment and encounter this problem, you can automatically parallel a 5-100pF capacitor at the resistance here (in the figure, the parallel connection is 47pF）
+If you need to measure a dry battery-powered equipment and * * encounter this problem * *, you can use the resistance here by yourself and parallel a 5-100pF capacitor (in the figure, the parallel connection is 47pF）
+
+```{warning}
+Do not do this if you are not experiencing the problem
+```
 
 ## I use **Iot Power V1/V2** to supply power and connect it in series**Iot Power CC**
 
