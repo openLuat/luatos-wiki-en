@@ -44,15 +44,16 @@ PC client software for easy viewing, analysis and sharing of power consumption d
 
 ::::
 
-```{notice}
+```{note}
 Product Feedback Group：807846388
-```
 
 :::{dropdown} Product feedback WeChat group, scan code to join
 
 ![wechat group](img/wechat.png)
 
 :::
+
+```
 
 ```{note}
 Report bugs and requirements: [Click here to create new issue](https://gitee.com/openLuat/iot-power/issues)
