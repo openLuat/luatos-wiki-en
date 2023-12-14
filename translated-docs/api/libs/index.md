@@ -5,6 +5,7 @@ Click the list on the left to view each interface. To search, use F5 to search.
 
 ```{toctree}
 ads1115
+ads1115plus
 adxl34x
 aht10
 air153C_wtd
