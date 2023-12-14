@@ -48,6 +48,8 @@ It is a script running framework for embedded, which can greatly improve develop
 More information
 查看LuatOS现阶段所支持的芯片有哪些功能，选择适合自己的芯片。
 Look at the functions of the chips supported by LuatOS at this stage and choose the chip that suits you.
+案例
+Case
 模拟器
 Simulator
 模组

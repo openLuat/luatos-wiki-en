@@ -60,6 +60,7 @@ Look at the functions of the chips supported by LuatOS at this stage and choose 
 - [Simulator](pages/emulator)
 - [Development Board Purchase](https://luat.taobao.com)
 - [B Station video tutorial](https://space.bilibili.com/532832)
+- [Case turnkey](https://gitee.com/openLuat/luatos-turnkey)
 
 ---
 
