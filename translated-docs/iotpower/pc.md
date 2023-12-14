@@ -44,7 +44,12 @@ The following features are available on the client and may continue to increaseï
 - Upgrading Firmware for Devices
 - Run the lua script to control the output and simulate the discharge curve of the battery and other equipment.
 
-![Picture.png](img/client1.png)
+```{image} img/pc_client.gif
+:alt: pc_client
+:width: 1782px
+:height: 1176px
+:align: center
+```
 
 ```{note}
 This tutorial was written in version 2.0.7.11. If there are any new or changed functions not mentioned, please leave a message at the bottom of the page to remind you to update, thank you.
@@ -58,10 +63,21 @@ The layout of the software homepage is shown in the following figure
 
 ### Current Display
 
-![pc_now1](img/pc_now1.png)
-![pc_now2](img/pc_now2.png)
+```{image} img/pc_now.gif
+:alt: pc_now
+:width: 386px
+:height: 491px
+:align: center
+```
 
 The value of this area is the current data after the device is connected, which can be switched to the moving average or instantaneous value.
+
+```{image} img/pc_float.gif
+:alt: pc_float
+:width: 412px
+:height: 355px
+:align: center
+```
 
 The **data floating window** switch on the top of the software can open the floating window, and the displayed data is exactly the same as the data here. it is always displayed on the top, which is convenient to view real-time data after minimizing the software.
 
@@ -93,17 +109,25 @@ This area is the chart display area where you can preview the waveform
 
 ### Switch data display mode
 
-![pc_wave_mode1](img/pc_wave_mode1.png)
-![pc_wave_mode2](img/pc_wave_mode2.png)
+```{image} img/pc_wave_mode.gif
+:alt: pc_wave_mode
+:width: 1392px
+:height: 1007px
+:align: center
+```
 
 Press this button to switch between **Real-time data/historical data**and**Select an area**. The two modes are described below.
 
 ### Real-time data/historical data (no scalingï¼‰
 
-When the mouse is in the chart or on the drag axis, you can use the **mouse wheel** to adjust the time position of the waveform
+```{image} img/pc_wave_ctrl.gif
+:alt: pc_wave_ctrl
+:width: 1394px
+:height: 1008px
+:align: center
+```
 
-![pc_wave_ctrl](img/pc_wave_ctrl.png)
-
+When the mouse is in the chart or on the drag axis, you can use the **mouse wheel** to adjust the time position of the waveform  
 You can also drag the lower joystick to control the time position of the currently displayed waveform
 
 ```{notice}
@@ -119,7 +143,12 @@ When in `Pick Area Data` mode, you can use the **mouse wheel** to adjust the tim
 
 You can also **hold down the CTRL key and scroll the mouse wheel** to zoom in or out of the currently displayed area
 
-![pc_wave_select](img/pc_wave_select.png)
+```{image} img/pc_wave_select.gif
+:alt: pc_wave_select
+:width: 1396px
+:height: 1005px
+:align: center
+```
 
 The lever here can also be used to control the range of the selection display.
 
@@ -131,7 +160,12 @@ The lever here can also be used to control the range of the selection display.
 
 When in any mode, you can **right-click and drag** to select a time period to analyze the data in it.
 
-![pc_wave_data](img/pc_wave_data.png)
+```{image} img/pc_wave_data.gif
+:alt: pc_wave_data
+:width: 1427px
+:height: 1143px
+:align: center
+```
 
 When an area is selected, the `Analysis Window` will pop up to display the results of the analysis
 
