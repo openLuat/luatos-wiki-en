@@ -47,7 +47,6 @@ The following features are available on the client and may continue to increase�
 ```{image} img/pc_client.gif
 :alt: pc_client
 :width: 1782px
-:height: 1176px
 :align: center
 ```
 
@@ -66,7 +65,6 @@ The layout of the software homepage is shown in the following figure
 ```{image} img/pc_now.gif
 :alt: pc_now
 :width: 386px
-:height: 491px
 :align: center
 ```
 
@@ -75,7 +73,6 @@ The value of this area is the current data after the device is connected, which 
 ```{image} img/pc_float.gif
 :alt: pc_float
 :width: 412px
-:height: 355px
 :align: center
 ```
 
@@ -112,7 +109,6 @@ This area is the chart display area where you can preview the waveform
 ```{image} img/pc_wave_mode.gif
 :alt: pc_wave_mode
 :width: 1392px
-:height: 1007px
 :align: center
 ```
 
@@ -123,7 +119,6 @@ Press this button to switch between **Real-time data/historical data**and**Selec
 ```{image} img/pc_wave_ctrl.gif
 :alt: pc_wave_ctrl
 :width: 1394px
-:height: 1008px
 :align: center
 ```
 
@@ -146,15 +141,14 @@ You can also **hold down the CTRL key and scroll the mouse wheel** to zoom in or
 ```{image} img/pc_wave_select.gif
 :alt: pc_wave_select
 :width: 1396px
-:height: 1005px
 :align: center
 ```
 
-The lever here can also be used to control the range of the selection display.
+The lower lever can also be used to control the range of the selection display.
 
-- Mouse drag ①: can adjust the time position of the waveform
-- Mouse drag ② or ③: can adjust the waveform display start or end time point
-- Double-click ①: You can directly switch to viewing global data.
+- Mouse drag the middle: you can adjust the time position of the waveform
+- Drag the left or right vertical line with the mouse: you can adjust the start or end time point of waveform display
+- Double-click the middle of the mouse: you can directly switch to view global data
 
 ### Analyze data
 
@@ -163,7 +157,6 @@ When in any mode, you can **right-click and drag** to select a time period to an
 ```{image} img/pc_wave_data.gif
 :alt: pc_wave_data
 :width: 1427px
-:height: 1143px
 :align: center
 ```
 
