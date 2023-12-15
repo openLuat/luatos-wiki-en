@@ -58,7 +58,11 @@ This tutorial was written in version 2.0.7.11. If there are any new or changed f
 
 The layout of the software homepage is shown in the following figure
 
-![pc_overview](img/pc_overview.png)
+```{image} img/pc_overview.png
+:alt: pc_overview
+:width: 1782px
+:align: center
+```
 
 ### Current Display
 
@@ -82,19 +86,32 @@ The **data floating window** switch on the top of the software can open the floa
 
 ### Average data
 
-![pc_avg](img/pc_avg.png)
+```{image} img/pc_avg.png
+:alt: pc_avg
+:width: 365px
+:align: center
+```
 
 The data here is the average value of **all data since this device connection**. Clear and reset
 
 ### Other data
 
-![pc_info](img/pc_info.png)
+```{image} img/pc_info.gif
+:alt: pc_info
+:width: 372px
+:align: center
+```
 
-The data here is the relevant cumulative data of **all data since the current device connection**, cleared and reset
+The data here is the relevant cumulative data of **all data since the current device connection**, cleared and reset  
+Click the value area of **Power Consumption Data** to switch between 'Wh' and 'Ah' values.
 
 ## Chart Area
 
-![pc_wave](img/pc_wave.png)
+```{image} img/pc_wave.png
+:alt: pc_wave
+:width: 1401px
+:align: center
+```
 
 This area is the chart display area where you can preview the waveform
 
@@ -164,7 +181,11 @@ When an area is selected, the `Analysis Window` will pop up to display the resul
 
 ## Control device output
 
-![output](img/client2.png)
+```{image} img/client2.png
+:alt: client2
+:width: 1780px
+:align: center
+```
 
 - Control the output and off state of the device through the `power symbol` button
 - Set the output voltage and current of the device via the `device output` button
@@ -175,8 +196,17 @@ This function is only applicable to `Power Products` and products with `PPS deco
 
 ## Importing and Exporting Data
 
-![pc_import](img/pc_import.png)
-![pc_export](img/pc_export.png)
+```{image} img/pc_import.png
+:alt: pc_import
+:width: 470px
+:align: center
+```
+
+```{image} img/pc_export.png
+:alt: pc_export
+:width: 539px
+:align: center
+```
 
 ### Import Data
 
@@ -191,7 +221,11 @@ The `.iotpl` file can be imported into the software again, and the`.exe `self-ex
 
 ## Script function
 
-![script](img/client3.png)
+```{image} img/client3.png
+:alt: client3
+:width: 1780px
+:align: center
+```
 
 This function enables automatic control of output voltage and current  
 The script uses the` Lua language` and adapts to` LuaTask` framework ([tutorial  ](https://wiki.luatos.org/luaGuide/luatask.html)）
@@ -199,7 +233,11 @@ For specific interface documents, please refer to [the data of this warehouse.](
 
 ## Force firmware upgrade
 
-![pc_upgrade](img/pc_upgrade.png)
+```{image} img/pc_upgrade.png
+:alt: pc_upgrade
+:width: 1198px
+:align: center
+```
 
 Typically, the device firmware will automatically prompt for an upgrade. However, sometimes when the device is interrupted during the upgrade or the firmware is damaged due to other reasons, the firmware can be brushed manually.
 
@@ -208,7 +246,11 @@ Typically, the device firmware will automatically prompt for an upgrade. However
 
 ## Data caching method
 
-![pc_cache](img/pc_cache.png)
+```{image} img/pc_cache.png
+:alt: pc_cache
+:width: 1058px
+:align: center
+```
 
 Because the device sampling rate is very high, so the amount of data is very large, stored in the memory may lead to insufficient computer memory  
 Therefore, the software provides an automatic save function. When the time is reached, the data is automatically saved to a file to prevent excessive memory usage.

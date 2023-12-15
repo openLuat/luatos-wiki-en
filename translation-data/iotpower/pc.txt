@@ -30,6 +30,8 @@ Switch data display mode
 Dynamic Runtime Library
 区别在于，`.csv`表格文件用于用户自行分析原始数据，无法再重新导入
 The difference is that the `. csv` table file is used by the user to analyze the original data and cannot be re-imported.
+单击**耗电数据**的数值区域，可以切换`Wh`与`Ah`数值
+Click the value area of **Power Consumption Data** to switch between 'Wh' and 'Ah' values.
 单击`强制升级固件`按钮，可强制刷入客户端自带的固件。注意：若设备有升级模式，请先进入升级模式后再刷
 Click the `Force Firmware Upgrade` button to force the firmware of the client. Note: If the equipment has upgrade mode, please enter the upgrade mode before brushing.
 右击`强制升级固件`按钮，可强制刷入用户手动选择的固件文件，用于测试功能、验证BUG修复
