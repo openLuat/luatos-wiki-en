@@ -74,6 +74,7 @@ Look at the functions of the chips supported by LuatOS at this stage and choose 
 |[Air101](chips/air101/index) |MCU|Small size, only 4*4mm|
 |[Air103](chips/air103/index) |MCU|io More, support.psram|
 |[Air105](chips/air105/index) |MCU|Large memory, camera, camera USB|
+|[Air601](chips/air601/index) |wifi/bt Chip | Support wifi and Bluetooth communication|
 |[ESP32](chips/esp32c3/index) Series | (wifi/bt chip) | ESP32C3/ESP32S3 etc|
 |[PC](https://gitee.com/openLuat/luatos-soc-pc) |PC version of LuatOS | available as an emulator|
 |[win32](chips/win32) |win32 version of LuatOS | available as an emulator|

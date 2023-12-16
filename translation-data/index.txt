@@ -68,6 +68,8 @@ Mobile Communication Modules | Support Air780EP Series
 Station video tutorial
 系列| (wifi/bt芯片）|ESP32C3/ESP32S3等
 Series | (wifi/bt chip) | ESP32C3/ESP32S3 etc
+芯片|支持wifi和蓝牙通信
+Chip | Support wifi and Bluetooth communication
 芯片资料
 Chip Data
 芯片选型
