@@ -36,6 +36,10 @@ This library has its own demo,[click this link to view the demo example of LCD](
 |lcd.font_opposansm24_chinese|font|24 Chinese font|
 |lcd.font_opposansm32_chinese|font|32 Chinese font|
 |lcd.HWID_0|hardware LCD driver id0 | (selected according to chip support)|
+|lcd.WIRE_3_BIT_9_INTERFACE_I|3-wire spi | 9bit mode I|
+|lcd.WIRE_4_BIT_8_INTERFACE_I|four-wire spi | 8bit mode I|
+|lcd.WIRE_3_BIT_9_INTERFACE_II|3-wire spi | 9bit mode II|
+|lcd.WIRE_4_BIT_9_INTERFACE_II|four-wire spi | 9bit mode II|
 
 
 ## lcd.init(tp, args)
@@ -49,7 +53,7 @@ lcd Display initialization
 |Incoming Value Type | Explanation|
 |-|-|
 |string|lcd types, currently supported：<br>st7796<br>st7789<br>st7735<br>st7735v<br>st7735s<br>gc9a01<br>gc9106l<br>gc9306x<br>ili9486<br>custom|
-|table|Additional parameters are related to specific equipment:<br>pin_pwr (backlight) is optional, and <br>port:spi port can not be set, such as 0,1,2... if it is device mode, it is "device"<br>pin_dc: LCD data/command selection pin <br>pin_rst: LCD reset pin <br>pin_pwr: LCD backlight pin is optional, it is not necessary to set <br>direction: LCD screen direction 0:0 ° 1:180 ° 2:270 ° 3:90 °<br>w: LCD horizontal resolution <br>h: LCD vertical resolution <br>xoffset:x offset (there will be differences in different screen directions for different screen ic) <br>yoffset:y offset (different screen ic's will have differences in different screen directions) <br>direction0:0 ° direction command, (different screen ic's will have differences) <br>direction90:90 ° direction command, (different screen ic's will have differences) <br>direction180:180 ° direction command, (different screen ic's will have differences) <br>direction270:270 ° direction command, (different screen ic will have differences) <br>sleepcmd: sleep command, default 0X10<br>wakecmd: wake-up command, default 0X11|
+|table|Additional parameters are related to specific equipment:<br>pin_pwr (backlight) is optional, and <br>port:spi port can not be set, such as 0,1,2... if it is device mode, it is "device"<br>pin_dc: LCD data/command selection pin <br>pin_rst: LCD reset pin <br>pin_pwr: LCD backlight pin is optional, it is not necessary to set <br>direction: LCD screen direction 0:0 ° 1:180 ° 2:270 ° 3:90 °<br>w: LCD horizontal resolution <br>h: LCD vertical resolution <br>xoffset:x offset (there will be differences in different screen directions for different screen ic) <br>yoffset:y offset (there will be differences between different screen directions of different screen ic's) <br>direction0:0 ° direction command, (there will be differences between different screen ic's) <br>direction90:90 ° direction command, (there will be differences between different screen ic's) <br>direction180:180 ° direction command, (there will be differences between different screen ic's) <br>direction270:270 ° direction command, (different screen ic will have differences) <br>sleepcmd: sleep command, default 0X10<br>wakecmd: wake-up command, default 0X11 <br>interface_mode LCD mode, default lcd.WIRE_4_BIT_8_INTERFACE_I|
 |userdata|spi Device, valid when port = "device"|
 
 **Return Value**
