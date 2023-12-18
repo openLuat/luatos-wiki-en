@@ -72,6 +72,8 @@ Whether the client is ready
 Client Status
 密码 可选
 Password optional
+已知状态
+Known Status
 已连接
 Connected
 已连接 mqtt连接中
