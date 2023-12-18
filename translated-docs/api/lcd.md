@@ -35,6 +35,7 @@ This library has its own demo,[click this link to view the demo example of LCD](
 |lcd.font_opposansm22_chinese|font|22 Chinese font|
 |lcd.font_opposansm24_chinese|font|24 Chinese font|
 |lcd.font_opposansm32_chinese|font|32 Chinese font|
+|lcd.HWID_0|hardware LCD driver id0 | (selected according to chip support)|
 
 
 ## lcd.init(tp, args)

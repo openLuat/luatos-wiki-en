@@ -166,6 +166,8 @@ Y position of the point
 draw a dot
 睡眠
 Sleep
+硬件lcd驱动id0|(根据芯片支持选择
+hardware LCD driver id0 | (selected according to chip support
 禁止自动更新后, 需要使用 lcd.flush() 主动刷新数据到屏幕
 After disabling automatic update, you need to use LCD. flush() to actively refresh data to the screen
 竖坐标
