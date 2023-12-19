@@ -37,7 +37,7 @@ Create zbuff
 |-|-|
 |int|Bytes|
 |any|Optional parameter, filled with data for number and filled with string for string|
-|number|Optional parameters, memory type, optional: zbuff.HEAP_AUTO (automatic application, if psram exists, apply in psram; if psram does not exist or fails, apply in sram, default) zbuff.HEAP_SRAM (internal sram) zbuff.HEAP_PSRAM (external psram) Note: This item is related to hardware support|
+|number|Optional parameter, memory type, optional: zbuff.HEAP_SRAM (internal sram, default) zbuff.HEAP_PSRAM (external psram) zbuff.HEAP_AUTO (automatic application, application in psram if there is pram, application in sram if there is no pram or failure) Note: This item is related to hardware support|
 
 **Return Value**
 
@@ -57,7 +57,7 @@ local buff = zbuff.create(1024, "123321456654") -- Create and populate the conte
 -- zbuff.create({width,height,bit},data,type)
 -- table Width, height, color position depth
 @int optional parameters, populating data
-@number Optional parameters, memory type, optional: zbuff.HEAP_AUTO (automatic application, if psram exists, apply in psram; if psram does not exist or fails, apply in sram, default) zbuff.HEAP_SRAM (internal sram) zbuff.HEAP_PSRAM (external psram) Note: This item is related to hardware support
+@number Optional parameter, memory type, optional: zbuff.HEAP_SRAM (internal sram, default) zbuff.HEAP_PSRAM (external psram) zbuff.HEAP_AUTO (automatic application, application in psram if there is pram, application in sram if there is no pram or failure) Note: This item is related to hardware support
 @return object zbuff object, which returns if the creation fails.nil
 @usage
 -- Create zbuff

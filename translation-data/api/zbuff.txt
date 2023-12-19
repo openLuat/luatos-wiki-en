@@ -80,6 +80,8 @@ Optional, the default is 0. value to be set to, does not change the buff pointer
 Optional parameter, filled with data for number and filled with string for string
 可选参数，内存类型，可选：zbuff.HEAP_AUTO(自动申请,如存在psram则在psram进行申请,如不存在或失败则在sram进行申请,默认) zbuff.HEAP_SRAM(内部sram) zbuff.HEAP_PSRAM(外部psram) 注意:此项与硬件支持有关
 Optional parameters, memory type, optional: zbuff.HEAP_AUTO (automatic application, if psram exists, apply in psram; if psram does not exist or fails, apply in sram, default) zbuff.HEAP_SRAM (internal sram) zbuff.HEAP_PSRAM (external psram) Note: This item is related to hardware support
+可选参数，内存类型，可选：zbuff.HEAP_SRAM(内部sram,默认) zbuff.HEAP_PSRAM(外部psram) zbuff.HEAP_AUTO(自动申请,如存在psram则在psram进行申请,如不存在或失败则在sram进行申请) 注意:此项与硬件支持有关
+Optional parameter, memory type, optional: zbuff.HEAP_SRAM (internal sram, default) zbuff.HEAP_PSRAM (external psram) zbuff.HEAP_AUTO (automatic application, application in psram if there is pram, application in sram if there is no pram or failure) Note: This item is related to hardware support
 可选参数，内存类型，可选：zbuff.SRAM(内部sram,默认) zbuff.PSRAM(外部psram) 注意:此项与硬件支持有关
 Optional parameter, memory type, optional: zbuff.SRAM (internal sram, default) zbuff.PSRAM (external psram) Note: This item is related to hardware support
 可选参数，填充数据
