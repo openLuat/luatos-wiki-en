@@ -221,7 +221,7 @@ None
 **Examples**
 
 ```lua
--- Subscribed, the module itself periodically queries base station information, but usually does not contain neighboring cells.
+-- Subscription
 sys.subscribe("CELL_INFO_UPDATE", function()
     log.info("cell", json.encode(mobile.getCellInfo()))
 end)

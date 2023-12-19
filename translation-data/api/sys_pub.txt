@@ -104,6 +104,8 @@ Get the phone number (not necessarily a value), value is
 Touch key messages
 计数器,触摸次数统计
 Counter, touch count
+订阅式
+Subscription
 订阅式, 模块本身会周期性查询基站信息,但通常不包含临近小区
 Subscribed, the module itself periodically queries base station information, but usually does not contain neighboring cells.
 订阅系统消息

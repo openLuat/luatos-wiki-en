@@ -755,8 +755,8 @@
 </tbody>
 </table></div>
 </section>
-<section id="zbuff-create-length-data">
-<h2>zbuff.create(length,data)<a class="headerlink" href="#zbuff-create-length-data" title="Permalink to this headline">#</a></h2>
+<section id="zbuff-create-length-data-tp">
+<h2>zbuff.create(length,data,tp)<a class="headerlink" href="#zbuff-create-length-data-tp" title="Permalink to this headline">#</a></h2>
 <p>Create zbuff</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -795,44 +795,10 @@
 <span class="kd">local</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">zbuff</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span> <span class="c1">-- Blank</span>
 <span class="kd">local</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">zbuff</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mh">0x33</span><span class="p">)</span> <span class="c1">--Create a memory area with all initial values of 0x 33</span>
 <span class="kd">local</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">zbuff</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="s2">"123321456654"</span><span class="p">)</span> <span class="c1">-- Create and populate the contents of an existing string.</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="zbuff-create-width-height-bit-data">
-<h2>zbuff.create({width,height,bit},data)<a class="headerlink" href="#zbuff-create-width-height-bit-data" title="Permalink to this headline">#</a></h2>
-<p>Create framebuff zbuff</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>table</p></td>
-<td><p>Width, height, color position depth</p></td>
-</tr>
-<tr class="row-odd"><td><p>int</p></td>
-<td><p>optional parameters, populating data</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>object</p></td>
-<td><p>zbuff object, which returns if the creation fails.nil</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Create zbuff</span>
+
+<span class="c1">-- Create framebuff zbuff</span>
+<span class="c1">-- zbuff.create({width,height,bit},data)</span>
+<span class="c1">-- table Width, height, color position depth</span>
 <span class="kd">local</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">zbuff</span><span class="p">.</span><span class="n">create</span><span class="p">({</span><span class="mi">128</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">16</span><span class="p">})</span><span class="c1">--Create a 128*160 framebuff</span>
 <span class="kd">local</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">zbuff</span><span class="p">.</span><span class="n">create</span><span class="p">({</span><span class="mi">128</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">16</span><span class="p">},</span><span class="mh">0xf800</span><span class="p">)</span><span class="c1">--Create a 128*160 framebuff with an initial state of red</span>
 </pre></div>
@@ -1795,8 +1761,7 @@
             <ul>
 <li><a class="reference internal" href="#">zbuff - c Memory Data Manipulation Library</a><ul>
 <li><a class="reference internal" href="#constant">Constant</a></li>
-<li><a class="reference internal" href="#zbuff-create-length-data">zbuff.create(length,data)</a></li>
-<li><a class="reference internal" href="#zbuff-create-width-height-bit-data">zbuff.create({width,height,bit},data)</a></li>
+<li><a class="reference internal" href="#zbuff-create-length-data-tp">zbuff.create(length,data,tp)</a></li>
 <li><a class="reference internal" href="#buff-write-para">buff:write(para,…)</a></li>
 <li><a class="reference internal" href="#buff-read-length">buff:read(length)</a></li>
 <li><a class="reference internal" href="#buff-clear-num">buff:clear(num)</a></li>

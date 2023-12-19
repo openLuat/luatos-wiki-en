@@ -22,7 +22,7 @@ There are also video tutorials in this library, [click this link to view](https:
 |zbuff.SEEK_END|number|Base Point at End|
 
 
-## zbuff.create(length,data)
+## zbuff.create(length,data,tp)
 
 
 
@@ -50,33 +50,9 @@ local buff = zbuff.create(1024) -- Blank
 local buff = zbuff.create(1024, 0x33) --Create a memory area with all initial values of 0x 33
 local buff = zbuff.create(1024, "123321456654") -- Create and populate the contents of an existing string.
 
-```
-
----
-
-## zbuff.create({width,height,bit},data)
-
-
-
-Create framebuff zbuff
-
-**Parameters**
-
-|Incoming Value Type | Explanation|
-|-|-|
-|table|Width, height, color position depth|
-|int|optional parameters, populating data|
-
-**Return Value**
-
-|return value type | explanation|
-|-|-|
-|object|zbuff object, which returns if the creation fails.nil|
-
-**Examples**
-
-```lua
--- Create zbuff
+-- Create framebuff zbuff
+-- zbuff.create({width,height,bit},data)
+-- table Width, height, color position depth
 local buff = zbuff.create({128,160,16})--Create a 128*160 framebuff
 local buff = zbuff.create({128,160,16},0xf800)--Create a 128*160 framebuff with an initial state of red
 

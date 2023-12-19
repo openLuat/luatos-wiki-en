@@ -895,7 +895,7 @@
 <p><strong>Additional return parameters</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Subscribed, the module itself periodically queries base station information, but usually does not contain neighboring cells.</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Subscription</span>
 <span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CELL_INFO_UPDATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
     <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"cell"</span><span class="p">,</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">mobile</span><span class="p">.</span><span class="n">getCellInfo</span><span class="p">()))</span>
 <span class="kr">end</span><span class="p">)</span>
