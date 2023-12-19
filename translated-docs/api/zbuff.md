@@ -565,6 +565,29 @@ local data = buff[0]
 
 ---
 
+## buff:free()
+
+
+
+Release the memory applied by zbuff Note: gc will automatically release zbuff and the memory applied by zbuff, so it is usually not necessary to call this function. Please make sure you know the use of this function before calling! Calling this function will not release zbuff, but will only release the memory applied by zbuff. zbuff will automatically release it when gc！！！
+
+**Parameters**
+
+None
+
+**Return Value**
+
+None
+
+**Examples**
+
+```lua
+buff:free()
+
+```
+
+---
+
 ## buff:resize(n)
 
 

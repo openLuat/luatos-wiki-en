@@ -1476,6 +1476,19 @@
 </div>
 </section>
 <hr class="docutils"/>
+<section id="buff-free">
+<h2>buff:free()<a class="headerlink" href="#buff-free" title="Permalink to this headline">#</a></h2>
+<p>Release the memory applied by zbuff Note: gc will automatically release zbuff and the memory applied by zbuff, so it is usually not necessary to call this function. Please make sure you know the use of this function before calling! Calling this function will not release zbuff, but will only release the memory applied by zbuff. zbuff will automatically release it when gc！！！</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">buff</span><span class="p">:</span><span class="n">free</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="buff-resize-n">
 <h2>buff:resize(n)<a class="headerlink" href="#buff-resize-n" title="Permalink to this headline">#</a></h2>
 <p>Adjust the size of zbuff’s actual allocated space, similar to the effect of realloc, new = realloc(old, n), which can be expanded or reduced (if len is less than used after reduction, then used = new len）</p>
@@ -1800,6 +1813,7 @@
 <li><a class="reference internal" href="#buff-drawrect-x1-y1-x2-y2-color-fill">buff:drawRect(x1,y1,x2,y2,color,fill)</a></li>
 <li><a class="reference internal" href="#buff-drawcircle-x-y-r-color-fill">buff:drawCircle(x,y,r,color,fill)</a></li>
 <li><a class="reference internal" href="#buff-n">buff[n]</a></li>
+<li><a class="reference internal" href="#buff-free">buff:free()</a></li>
 <li><a class="reference internal" href="#buff-resize-n">buff:resize(n)</a></li>
 <li><a class="reference internal" href="#buff-copy-start-para">buff:copy(start, para,…)</a></li>
 <li><a class="reference internal" href="#buff-used">buff:used()</a></li>
