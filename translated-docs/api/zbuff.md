@@ -20,9 +20,12 @@ There are also video tutorials in this library, [click this link to view](https:
 |zbuff.SEEK_SET|number|Based on head|
 |zbuff.SEEK_CUR|number|Base on current position|
 |zbuff.SEEK_END|number|Base Point at End|
+|zbuff.HEAP_AUTO|number|automatic application (apply in psram if it exists, apply in sram if it does not exist or fails)|
+|zbuff.HEAP_SRAM|number|Apply at SRAM|
+|zbuff.HEAP_PSRAM|number|Apply in PSRAM|
 
 
-## zbuff.create(length,data,tp)
+## zbuff.create(length,data,type)
 
 
 
@@ -34,7 +37,7 @@ Create zbuff
 |-|-|
 |int|Bytes|
 |any|Optional parameter, filled with data for number and filled with string for string|
-|number|Optional parameter, memory type, optional: zbuff.SRAM (internal sram, default) zbuff.PSRAM (external psram) Note: This item is related to hardware support|
+|number|Optional parameters, memory type, optional: zbuff.HEAP_AUTO (automatic application, if psram exists, apply in psram; if psram does not exist or fails, apply in sram, default) zbuff.HEAP_SRAM (internal sram) zbuff.HEAP_PSRAM (external psram) Note: This item is related to hardware support|
 
 **Return Value**
 
@@ -51,8 +54,13 @@ local buff = zbuff.create(1024, 0x33) --Create a memory area with all initial va
 local buff = zbuff.create(1024, "123321456654") -- Create and populate the contents of an existing string.
 
 -- Create framebuff zbuff
--- zbuff.create({width,height,bit},data)
+-- zbuff.create({width,height,bit},data,type)
 -- table Width, height, color position depth
+@int optional parameters, populating data
+@number Optional parameters, memory type, optional: zbuff.HEAP_AUTO (automatic application, if psram exists, apply in psram; if psram does not exist or fails, apply in sram, default) zbuff.HEAP_SRAM (internal sram) zbuff.HEAP_PSRAM (external psram) Note: This item is related to hardware support
+@return object zbuff object, which returns if the creation fails.nil
+@usage
+-- Create zbuff
 local buff = zbuff.create({128,160,16})--Create a 128*160 framebuff
 local buff = zbuff.create({128,160,16},0xf800)--Create a 128*160 framebuff with an initial state of red
 
