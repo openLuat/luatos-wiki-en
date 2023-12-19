@@ -34,6 +34,7 @@ Create zbuff
 |-|-|
 |int|Bytes|
 |any|Optional parameter, filled with data for number and filled with string for string|
+|number|Optional parameter, memory type, optional: zbuff.SRAM (internal sram, default) zbuff.PSRAM (external psram) Note: This item is related to hardware support|
 
 **Return Value**
 
