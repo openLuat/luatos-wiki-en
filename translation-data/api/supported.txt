@@ -126,6 +126,8 @@ Codec
 Network Interface
 蓝牙BLE库(nimble版
 Bluetooth BLE library (nimble version
+蚂蚁链
+Ant Chain
 蜂窝网络
 Cellular Network
 触摸按键

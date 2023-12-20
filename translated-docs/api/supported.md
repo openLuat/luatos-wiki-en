@@ -3,6 +3,7 @@
 |BSP/Library | Introduction|Air101/Air103|Air601|Air105|ESP32C3|ESP32S3|Air780E/Air700E|Air780EP|
 |---|---|---|---|---|---|---|---|---|
 |[adc](adc.md)|`Digital-to-analog conversion`|Y|Y|Y|Y|Y|Y|Y|
+|[antbot](antbot.md)|`Ant Chain`|X|X|X|X|X|Y|X|
 |[audio](audio.md)|`Multimedia-Audio`|Y|Y|Y|X|X|Y|Y|
 |[bit64](bit64.md)|`32 Basic arithmetic and logical operations on 64-bit data on bit systems`|X|X|Y|Y|Y|Y|Y|
 |[camera](camera.md)|`Camera`|X|X|Y|X|X|X|X|
