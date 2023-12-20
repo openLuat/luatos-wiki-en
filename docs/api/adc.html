@@ -727,6 +727,22 @@
 <p class="admonition-title">Tip</p>
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/adc">click this link to view the demo example of adc</a></p>
 </div>
+<p><strong>Example</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This library can read hardware adc channels, and also supports reading CPU temperature and VBAT power supply (if supported by the module)</span>
+
+<span class="c1">-- Read CPU temperature</span>
+<span class="n">adc</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_CPU</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">adc</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_CPU</span><span class="p">)</span>
+<span class="n">adc</span><span class="p">.</span><span class="n">close</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_CPU</span><span class="p">)</span>
+
+<span class="c1">-- Read VBAT supply voltage</span>
+<span class="n">adc</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_VBAT</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">vbat</span> <span class="o">=</span> <span class="n">adc</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_VBAT</span><span class="p">)</span>
+<span class="n">adc</span><span class="p">.</span><span class="n">close</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_VBAT</span><span class="p">)</span>
+
+<span class="c1">-- For physical ADC channels, please refer to the comments in adc.get or adc.read</span>
+</pre></div>
+</div>
 <section id="constant">
 <h2>Constant<a class="headerlink" href="#constant" title="Permalink to this headline">#</a></h2>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
