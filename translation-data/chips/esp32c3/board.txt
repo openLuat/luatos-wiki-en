@@ -10,8 +10,12 @@ Serial Burning Tutorial](https://wiki.luatos.com/boardGuide/flash.html),**Log ba
 Serial Burning Tutorial](https://wiki.luatos.org/boardGuide/flash.html),**Log baud rate is
 二、硬件资源
 2. hardware resources
+以下是操作流程，注意以下的操作只能执行一次，更改后不能复原（因为是设置熔丝位，不是寄存器，一次性操作
+The following is the operation flow. Note that the following operations can only be performed once and cannot be restored after changes (because fuse bits are set, not registers, one-time operation
 任意GPIO均可作为PWM脚, 编号与GPIO一致, 但`同时只能开启4路PWM`,务必注意
 Any GPIO can be used as a PWM pin, and the number is the same as that of GPIO, but only 4 PWMs can be turned on at the same time. Please pay attention
+使用python的pip安装
+pip installation using python
 使用到IO08管脚进行设计，不建议外部直接下拉，因为在下载烧录时，IO08管脚为低电平，不能使用串口进行下载
 Use the IO08 pin for design, and direct external pull-down is not recommended, because the IO08 pin is low when downloading and burning, and serial port cannot be used for downloading.
 使用注意事项
@@ -40,12 +44,16 @@ The VDD of the external SPI flash has been linked to the 3.3V power supply syste
 15 external pins, reusable
 如果你使用的是`Arduino`，请选择开发板型号为
 If you are using `Arduino`, please select the development board model
+将开发板插入电脑, 在设备管理器中可以看到端口, 记录端口号, 例如
+Insert the development board into the computer, you can see the port in the device manager, record the port number, for example
 尺寸长宽
 Dimension length and width
 开发板
 Development Board
 开源仓库链接
 Open Source Warehouse Link
+打开命令行窗口输入espefuse.py -p 端口
+Open a command line window and enter the espefuse.py -p port
 按键介绍
 Key introduction
 按键按下时，芯片复位         | 低电平有效
@@ -80,8 +88,12 @@ Note that since the **win7** system does not come with` winusb` driver, and Micr
 Special attention
 电源接口，与USB的VBUS相连
 Power interface, connected to USB VBUS
+的GPIO11(VDD_SPI)默认功能是给flash供电，本开发板的Flash的VDD直接接3.3，所以可以将此IO用作
+The default function of GPIO11(VDD_SPI) of is to supply power to flash. VDD of Flash of this development board is directly connected to 3.3, so this IO can be used
 相关资料链接
 Related Information Links
+看提示，输入
+Look at the prompt and enter
 管脚上电前不能下拉，ESP32会进入下载模式
 The pin cannot be pulled down before power-on, ESP32 will enter download mode.
 管脚控制参考表
@@ -102,6 +114,8 @@ Chip Reset
 Chip power supply
 表
 Table
+解锁说明
+Unlock Instructions
 详细管脚描述
 Detailed Pin Description
 调试过程中优先推荐的供电方式：TYPE-C USB接口供电。

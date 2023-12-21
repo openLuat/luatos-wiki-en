@@ -1122,6 +1122,17 @@
 <li><p><strong>GPIO11 The default is the VDD pin of SPI flash and needs to be configured before it can be used as GPIO.。</strong></p></li>
 </ol>
 </section>
+<section id="gpio11-unlock-instructions">
+<h2>GPIO11 Unlock Instructions<a class="headerlink" href="#gpio11-unlock-instructions" title="Permalink to this headline">#</a></h2>
+<p>ESP32C3 The default function of GPIO11(VDD_SPI) of is to supply power to flash. VDD of Flash of this development board is directly connected to 3.3, so this IO can be used GPIO.</p>
+<p>The following is the operation flow. Note that the following operations can only be performed once and cannot be restored after changes (because fuse bits are set, not registers, one-time operation）</p>
+<ol class="arabic simple">
+<li><p>pip installation using python esptool。pip install esptool</p></li>
+<li><p>Insert the development board into the computer, you can see the port in the device manager, record the port number, for example <code class="docutils literal notranslate"><span class="pre">COM20</span></code></p></li>
+<li><p>Open a command line window and enter the espefuse.py -p port burn_efuse VDD_SPI_AS_GPIO 1</p></li>
+<li><p>Look at the prompt and enter’BURN’</p></li>
+</ol>
+</section>
 <section id="related-information-links">
 <h2><strong>Related Information Links</strong><a class="headerlink" href="#related-information-links" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://gitee.com/openLuat/luatos-soc-idf5">Open Source Warehouse Link</a></p>
@@ -1199,6 +1210,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#precautions-for-use">**Precautions for use **</a></li>
+<li><a class="reference internal" href="#gpio11-unlock-instructions">GPIO11 Unlock Instructions</a></li>
 <li><a class="reference internal" href="#related-information-links"><strong>Related Information Links</strong></a></li>
 </ul>
 </li>

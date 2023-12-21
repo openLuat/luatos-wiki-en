@@ -165,7 +165,16 @@ Schedule 4-4
 4.  **The VDD of the external SPI flash has been linked to the 3.3V power supply system. No other power supplies need to be configured during use. The common 2-wire SPI communication mode is adopted. The corresponding pins are shown in the table.4-3。**
 5. **GPIO11 The default is the VDD pin of SPI flash and needs to be configured before it can be used as GPIO.。**
 
+## GPIO11 Unlock Instructions
 
+ESP32C3 The default function of GPIO11(VDD_SPI) of is to supply power to flash. VDD of Flash of this development board is directly connected to 3.3, so this IO can be used GPIO.
+
+The following is the operation flow. Note that the following operations can only be performed once and cannot be restored after changes (because fuse bits are set, not registers, one-time operation）
+
+1. pip installation using python esptool。pip install esptool
+2. Insert the development board into the computer, you can see the port in the device manager, record the port number, for example `COM20`
+3. Open a command line window and enter the espefuse.py -p port burn_efuse VDD_SPI_AS_GPIO 1
+4. Look at the prompt and enter'BURN'
 
 ## **Related Information Links**
 

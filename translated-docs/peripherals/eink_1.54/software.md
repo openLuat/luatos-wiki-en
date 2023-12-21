@@ -4,7 +4,7 @@
 
 Refer to [Eink demo](https://gitee.com/openLuat/LuatOS/tree/master/demo/eink/Air101) of LuatOS main repository, and note that the driver of this screen should use`eink.MODEL_1in54`。
 
-> Note: Since the` BUSY` pin of the ink screen corresponds to the` GPIO11` of the ESP32C3-CORE development board, if the` GPIO11` of the ESP32C3-CORE development board is used, * * [unlock operation](https://gitee.com/openLuat/luatos-soc-idf5/blob/master/doc/VDD_SPI_AS_GPIO.md) is required before the screen can be used normally.**。
+> Note: Since the' BUSY' pin of the ink screen corresponds to the' GPIO11' of the ESP32C3-CORE development board, if the' GPIO11' of the ESP32C3-CORE development board is used, * * [unlock operation](https://wiki.luatos.org/chips/esp32c3/board.html) is required before the screen can be used normally.**。
 
 ## Project Examples
 
