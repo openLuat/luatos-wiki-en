@@ -12,6 +12,8 @@ Key for encryption
 encryption and decryption
 参数
 Parameters
+已适配
+Adapted
 待加密的数据
 Data to be encrypted
 待解密的数据
