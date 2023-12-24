@@ -196,7 +196,7 @@ end
 
 ---
 
-## fdb.kv_iter(iter)
+## fdb.kv_next(iter)
 
 
 
@@ -206,7 +206,7 @@ kv Iterator to get the next key
 
 |Incoming Value Type | Explanation|
 |-|-|
-|userdata|fdb.kv_iter()Pointer returned|
+|userdata|fdb.kv_next()Pointer returned|
 
 **Return Value**
 
