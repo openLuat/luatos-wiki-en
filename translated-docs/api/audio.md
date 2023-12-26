@@ -379,6 +379,7 @@ Configure the hardware output bus of an audio channel, and set the corresponding
 |-|-|
 |int|Audio channels, such 0|
 |int|Bus type, such audio.BUS_SOFT_DAC|
+|int|Hardware id, for example, when the bus type is audio.BUS_I2S, the hardware id is i2c id|
 
 **Return Value**
 
