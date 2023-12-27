@@ -801,7 +801,7 @@
 <td><p>Cloud Platform iotcloud.TENCENT: Tencent Cloud iotcloud.ALIYUN: Alibaba Cloud iotcloud.ONENET: China Mobile Cloud iotcloud.HUAWEI: Huawei Cloud iotcloud.TUYA: Graffiti Cloud</p></td>
 </tr>
 <tr class="row-odd"><td><p>table</p></td>
-<td><p>iot Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.produt_id: product id (ariyun is product key) iot_config.product_secret: product key, if there is this item, it is dynamic registration iot_config.key: device secret key, if there is this item, it is secret key connection userid: user ID,onenet dedicated, dynamic registration userkey: user Accesskey dynamic registration, onet</p></td>
+<td><p>iot Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.product_id: product id (ariyun is product key) iot_config.product_secret: product key, if there is this item, it is dynamic registration iot_config.key: device secret key, if there is this item, it is secret key connection userid: user ID,onenet dedicated, dynamic registration userkey: user Accesskey, onet dynamic registration</p></td>
 </tr>
 <tr class="row-even"><td><p>table</p></td>
 <td><p>mqtt Configuration, host: optional, default is platform default host ip: optional, default is platform default ip tls: encryption, if there is this item is generally product certification keepalive: heartbeat time, unit s is optional, default 240</p></td>
@@ -823,7 +823,7 @@
 </table></div>
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- alibaba cloud dynamic registration</span>
-<span class="n">iotcloudc</span> <span class="o">=</span> <span class="n">iotcloud</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">iotcloud</span><span class="p">.</span><span class="n">ALIYUN</span><span class="p">,{</span><span class="n">produt_id</span> <span class="o">=</span> <span class="s2">"xxx"</span><span class="p">,</span><span class="n">product_secret</span> <span class="o">=</span> <span class="s2">"xxx"</span><span class="p">})</span>
+<span class="n">iotcloudc</span> <span class="o">=</span> <span class="n">iotcloud</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">iotcloud</span><span class="p">.</span><span class="n">ALIYUN</span><span class="p">,{</span><span class="n">product_id</span> <span class="o">=</span> <span class="s2">"xxx"</span><span class="p">,</span><span class="n">product_secret</span> <span class="o">=</span> <span class="s2">"xxx"</span><span class="p">})</span>
 </pre></div>
 </div>
 </section>

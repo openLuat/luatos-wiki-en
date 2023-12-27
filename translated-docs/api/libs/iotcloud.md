@@ -42,7 +42,7 @@ Create a cloud platform object
 |Incoming Value Type | Explanation|
 |-|-|
 |string|Cloud Platform iotcloud.TENCENT: Tencent Cloud iotcloud.ALIYUN: Alibaba Cloud iotcloud.ONENET: China Mobile Cloud iotcloud.HUAWEI: Huawei Cloud iotcloud.TUYA: Graffiti Cloud|
-|table|iot Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.produt_id: product id (ariyun is product key) iot_config.product_secret: product key, if there is this item, it is dynamic registration iot_config.key: device secret key, if there is this item, it is secret key connection userid: user ID,onenet dedicated, dynamic registration userkey: user Accesskey dynamic registration, onet|
+|table|iot Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.product_id: product id (ariyun is product key) iot_config.product_secret: product key, if there is this item, it is dynamic registration iot_config.key: device secret key, if there is this item, it is secret key connection userid: user ID,onenet dedicated, dynamic registration userkey: user Accesskey, onet dynamic registration|
 |table|mqtt Configuration, host: optional, default is platform default host ip: optional, default is platform default ip tls: encryption, if there is this item is generally product certification keepalive: heartbeat time, unit s is optional, default 240|
 
 **Return Value**
@@ -55,7 +55,7 @@ Create a cloud platform object
 
 ```lua
 -- alibaba cloud dynamic registration
-iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",product_secret = "xxx"})
+iotcloudc = iotcloud.new(iotcloud.ALIYUN,{product_id = "xxx",product_secret = "xxx"})
 
 ```
 
