@@ -964,6 +964,55 @@
 </div>
 </section>
 <hr class="docutils"/>
+<section id="sensor-cs1237-pin-date-pin-clk">
+<h2>sensor.cs1237(pin_date,pin_clk)<a class="headerlink" href="#sensor-cs1237-pin-date-pin-clk" title="Permalink to this headline">#</a></h2>
+<p>Get cs1237 sensor data</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>gpio port number of the data</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>gpio port number of the clock</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>cs1237 Read the data</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--  If the device is not present it will get stuck on the read interface</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span>
+    <span class="kr">function</span><span class="p">()</span>
+        <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="kd">local</span> <span class="n">cs1237_data</span> <span class="o">=</span> <span class="n">sensor</span><span class="p">.</span><span class="n">cs1237</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+        <span class="kr">while</span> <span class="kc">true</span> <span class="kr">do</span>
+            <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+            <span class="n">cs1237_data</span> <span class="o">=</span> <span class="n">sensor</span><span class="p">.</span><span class="n">cs1237</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="o">-</span> <span class="n">maopi</span>
+            <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"cs1237_data:"</span><span class="p">,</span> <span class="n">cs1237_data</span><span class="p">)</span><span class="c1">--Get raw data</span>
+        <span class="kr">end</span>
+    <span class="kr">end</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="sensor-ws2812b-pin-data-t0h-t0l-t1h-t1l">
 <h2>sensor.ws2812b(pin,data,T0H,T0L,T1H,T1L)<a class="headerlink" href="#sensor-ws2812b-pin-data-t0h-t0l-t1h-t1l" title="Permalink to this headline">#</a></h2>
 <p>set ws2812b output (gpio drive mode)</p>
@@ -1176,6 +1225,7 @@
 <li><a class="reference internal" href="#sensor-w1-write-pin-data1-data2">sensor.w1_write(pin, data1,data2)</a></li>
 <li><a class="reference internal" href="#sensor-w1-read-pin-len">sensor.w1_read(pin, len)</a></li>
 <li><a class="reference internal" href="#sensor-hx711-pin-date-pin-clk">sensor.hx711(pin_date,pin_clk)</a></li>
+<li><a class="reference internal" href="#sensor-cs1237-pin-date-pin-clk">sensor.cs1237(pin_date,pin_clk)</a></li>
 <li><a class="reference internal" href="#sensor-ws2812b-pin-data-t0h-t0l-t1h-t1l">sensor.ws2812b(pin,data,T0H,T0L,T1H,T1L)</a></li>
 <li><a class="reference internal" href="#sensor-ws2812b-pwm-pin-data">sensor.ws2812b_pwm(pin,data)</a></li>
 <li><a class="reference internal" href="#sensor-ws2812b-spi-pin-data">sensor.ws2812b_spi(pin,data)</a></li>

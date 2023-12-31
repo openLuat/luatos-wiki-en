@@ -182,6 +182,45 @@ sys.taskInit(
 
 ---
 
+## sensor.cs1237(pin_date,pin_clk)
+
+
+
+Get cs1237 sensor data
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|gpio port number of the data|
+|int|gpio port number of the clock|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|int|cs1237 Read the data|
+
+**Examples**
+
+```lua
+--  If the device is not present it will get stuck on the read interface
+sys.taskInit(
+    function()
+        sys.wait(1000)
+        local cs1237_data = sensor.cs1237(0,7)
+        while true do
+            sys.wait(2000)
+            cs1237_data = sensor.cs1237(0,7) - maopi
+            log.info("cs1237_data:", cs1237_data)--Get raw data
+        end
+    end
+)
+
+```
+
+---
+
 ## sensor.ws2812b(pin,data,T0H,T0L,T1H,T1L)
 
 
