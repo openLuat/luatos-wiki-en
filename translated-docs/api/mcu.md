@@ -42,7 +42,13 @@ Set main frequency, unit MHZ
 **Examples**
 
 ```lua
---  Please note that the main frequency is related to the main frequency of peripherals. For example, when the main frequency is 2M, the highest SPI can only 1M
+
+-- Note: Not all modules support frequency adjustment, please refer to the manual
+-- Air101/Air103/Air601 Support setting to 2/40/80/160/240. Special reminder, after setting to 2M, if you want to sleep, you must first set 80M
+-- ESP32 Series support is set to 40/80/160/240, requiring firmware after 2024.1.1
+-- Air780 Series, Air105, does not support setting the main frequency
+-- Air780 Series, automatically reduce the frequency to when entering sleep mode 24M
+
 -- Set 80MHZ
 mcu.setClk(80)
 sys.wait(1000)

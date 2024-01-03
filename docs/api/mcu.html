@@ -801,7 +801,12 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--  Please note that the main frequency is related to the main frequency of peripherals. For example, when the main frequency is 2M, the highest SPI can only 1M</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Note: Not all modules support frequency adjustment, please refer to the manual</span>
+<span class="c1">-- Air101/Air103/Air601 Support setting to 2/40/80/160/240. Special reminder, after setting to 2M, if you want to sleep, you must first set 80M</span>
+<span class="c1">-- ESP32 Series support is set to 40/80/160/240, requiring firmware after 2024.1.1</span>
+<span class="c1">-- Air780 Series, Air105, does not support setting the main frequency</span>
+<span class="c1">-- Air780 Series, automatically reduce the frequency to when entering sleep mode 24M</span>
+
 <span class="c1">-- Set 80MHZ</span>
 <span class="n">mcu</span><span class="p">.</span><span class="n">setClk</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
 <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
