@@ -26,6 +26,8 @@ Send Buffer Status
 Callback Method
 声道, 0 左声道, 1 右声道, 2 双声道. 可选
 Channel, 0 left channel, 1 right channel, 2 dual channels. Optional
+声道, 0 左声道, 1 右声道, 2 立体声. 可选
+Channel, 0 left channel, 1 right channel, 2 stereo. Optional
 已适配
 Adapted
 常量

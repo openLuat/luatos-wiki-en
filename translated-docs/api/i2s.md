@@ -29,7 +29,7 @@ This library has its own demo,[click this link to view the demo example of i2s](
 |i2s.MODE_MSB|number|MSB format, such TM8211|
 
 
-## i2s.setup(id, mode, sample, bitw, channel, format, framebit, mclk)
+## i2s.setup(id, mode, sample, bitw, channel, format, framebit)
 
 
 
@@ -43,10 +43,9 @@ Initialization i2s
 |int|Mode, currently only supports 0, MASTER\| TX\| RX mode, slave is not supported. Optional|
 |int|Sampling rate, default 44100. Optional|
 |int|Number of data bits, default 16, can be a multiple of 8|
-|int|Channel, 0 left channel, 1 right channel, 2 dual channels. Optional|
+|int|Channel, 0 left channel, 1 right channel, 2 stereo. Optional|
 |int|format, optional MODE_I2S, MODE_LSB, MODE_MSB|
 |int|1 BCLK number of channels, optional 16 and 32|
-|int|mclk Frequency, default 8M. Optional|
 
 **Return Value**
 
@@ -61,7 +60,7 @@ Initialization i2s
 -- Initialize with default parameters i2s
 i2s.setup(0)
 -- Initialize i2s with detailed parameters, example with default values
-i2s.setup(0, 0, 44100, 16, 0, 0, 8000000)
+i2s.setup(0, 0, 44100, 16, 0, 0, 16)
 
 ```
 
