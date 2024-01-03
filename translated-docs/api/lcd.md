@@ -39,7 +39,7 @@ This library has its own demo,[click this link to view the demo example of LCD](
 |lcd.WIRE_3_BIT_9_INTERFACE_I|3-wire spi | 9bit mode I|
 |lcd.WIRE_4_BIT_8_INTERFACE_I|four-wire spi | 8bit mode I|
 |lcd.WIRE_3_BIT_9_INTERFACE_II|3-wire spi | 9bit mode II|
-|lcd.WIRE_4_BIT_9_INTERFACE_II|four-wire spi | 8bit mode II|
+|lcd.WIRE_4_BIT_8_INTERFACE_II|four-wire spi | 8bit mode II|
 
 
 ## lcd.init(tp, args)
