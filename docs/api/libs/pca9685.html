@@ -743,11 +743,11 @@
     <span class="kr">function</span><span class="p">()</span>
         <span class="n">i2c</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="n">i2c_id</span><span class="p">,</span><span class="n">i2c</span><span class="p">.</span><span class="n">SLOW</span><span class="p">)</span>
         <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-        <span class="n">pca9685</span><span class="p">.</span><span class="n">Init</span><span class="p">(</span><span class="n">i2c_id</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">pca9685</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">i2c_id</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span>
         <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
         <span class="kd">local</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
         <span class="kr">while</span> <span class="kc">true</span> <span class="kr">do</span>
-            <span class="n">pca9685</span><span class="p">.</span><span class="n">setPWM</span><span class="p">(</span><span class="n">i2c_id</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">pca9685</span><span class="p">.</span><span class="n">setpwm</span><span class="p">(</span><span class="n">i2c_id</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
             <span class="kr">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">100</span> <span class="kr">then</span>
                 <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
             <span class="kr">end</span>
@@ -760,8 +760,8 @@
 <span class="n">sys</span><span class="p">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
-<section id="pca9685-init-i2cid-hz-angle">
-<h2>pca9685.Init(i2cId,hz, angle)<a class="headerlink" href="#pca9685-init-i2cid-hz-angle" title="Permalink to this headline">#</a></h2>
+<section id="pca9685-init-i2cid-hz">
+<h2>pca9685.init(i2cId,hz)<a class="headerlink" href="#pca9685-init-i2cid-hz" title="Permalink to this headline">#</a></h2>
 <p>pca9685 Initialization</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -777,9 +777,6 @@
 <tr class="row-odd"><td><p>int</p></td>
 <td><p>hz pca9685 The output frequency</p></td>
 </tr>
-<tr class="row-even"><td><p>int</p></td>
-<td><p>angle pca9685 Cycle</p></td>
-</tr>
 </tbody>
 </table></div>
 <p><strong>Return Value</strong></p>
@@ -790,8 +787,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Return 1 on success</p></td>
-<td><p>Return on failure 0</p></td>
+<tr class="row-even"><td><p>Return true on success</p></td>
+<td><p>Return true on failure nil</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -800,7 +797,7 @@
 </section>
 <hr class="docutils"/>
 <section id="pca9685-setfreq-i2cid-freq">
-<h2>pca9685.setFreq(i2cId,freq)<a class="headerlink" href="#pca9685-setfreq-i2cid-freq" title="Permalink to this headline">#</a></h2>
+<h2>pca9685.setfreq(i2cId,freq)<a class="headerlink" href="#pca9685-setfreq-i2cid-freq" title="Permalink to this headline">#</a></h2>
 <p>pca9685 Set frequency</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -826,8 +823,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Return 1 on success</p></td>
-<td><p>Return on failure 0</p></td>
+<tr class="row-even"><td><p>Return true on success</p></td>
+<td><p>Return true on failure nil</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -836,7 +833,7 @@
 </section>
 <hr class="docutils"/>
 <section id="pca9685-setpwm-i2cid-num-duty-cycle">
-<h2>pca9685.setPWM(i2cId,num, duty_cycle)<a class="headerlink" href="#pca9685-setpwm-i2cid-num-duty-cycle" title="Permalink to this headline">#</a></h2>
+<h2>pca9685.setpwm(i2cId,num, duty_cycle)<a class="headerlink" href="#pca9685-setpwm-i2cid-num-duty-cycle" title="Permalink to this headline">#</a></h2>
 <p>pca9685 Set PWM Duty Cycle</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -865,8 +862,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Return 1 on success</p></td>
-<td><p>Return on failure 0</p></td>
+<tr class="row-even"><td><p>Return true on success</p></td>
+<td><p>Return true on failure nil</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -933,9 +930,9 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">pca9685 - pca9685 pwm</a><ul>
-<li><a class="reference internal" href="#pca9685-init-i2cid-hz-angle">pca9685.Init(i2cId,hz, angle)</a></li>
-<li><a class="reference internal" href="#pca9685-setfreq-i2cid-freq">pca9685.setFreq(i2cId,freq)</a></li>
-<li><a class="reference internal" href="#pca9685-setpwm-i2cid-num-duty-cycle">pca9685.setPWM(i2cId,num, duty_cycle)</a></li>
+<li><a class="reference internal" href="#pca9685-init-i2cid-hz">pca9685.init(i2cId,hz)</a></li>
+<li><a class="reference internal" href="#pca9685-setfreq-i2cid-freq">pca9685.setfreq(i2cId,freq)</a></li>
+<li><a class="reference internal" href="#pca9685-setpwm-i2cid-num-duty-cycle">pca9685.setpwm(i2cId,num, duty_cycle)</a></li>
 </ul>
 </li>
 </ul>
