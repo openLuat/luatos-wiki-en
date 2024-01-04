@@ -1,0 +1,26 @@
+具体升级流程请查阅
+Please refer to the specific upgrade process
+升级
+Upgrade
+升级包生成
+Upgrade Package Generation
+升级及升级包的生成
+Upgrade and generation of upgrade package
+升级时, 底层差分包不能超过480k, 且脚本区大小一致
+When upgrading, the underlying differential package cannot exceed 480k, and the script area is the same size.
+另提供命令行下生成升级包工具, 位于
+In addition, a command line tool is provided to generate an upgrade package, which is located
+差分升级需要新老固件的soc/binpkg文件, 请妥善保留老版本的soc文件以便将来使用
+Differential upgrade requires the soc/binpkg file of the old and new firmware. Please keep the soc file of the old version properly for future use.
+或联系销售
+or contact sales
+未尽事宜请联系技术支持
+Uncovered matters please contact technical support
+生成量产文件时, 会生成用于脚本生成的.bin文件, 及用于量产的
+When a production file is generated, a. binfile for script generation and a
+系列(典型为Air780E/Air780EG/Air700E)等模块, 支持FOTA升级, 连同底层和脚本一起升级
+Series (typically Air780E/Air780EG/Air700E) and other modules, support FOTA upgrade, along with the underlying and script upgrade
+脚本区大小在编译固件时决定, 与实际脚本大小无关. 脚本区大小不一致的固件,无法差分升级底层
+The size of the script area is determined when the firmware is compiled, regardless of the actual script size. Firmware with inconsistent script area sizes cannot be upgraded differentially
+若需要生成包含底层差分的升级包, 则需要使用LuaTools菜单中的"SoC差分升级包"生成工具
+If you need to generate an upgrade package containing bottom-layer differences, you need to use the "SoC Differential Upgrade Package" generation tool in the LuaTools menu.
