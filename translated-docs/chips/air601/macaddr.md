@@ -27,7 +27,7 @@ LuatOS Firmware:
 
 ## How to Restore/Rewrite MAC
 
-1. Download the latest AT firmware, [click me to download](https://pan.air32.cn/home?path=%2F%E5%90%88%E5%AE%99%E4%BA%91%E7%9B%98%E7%9B%AE%E5%BD%95%2F%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E5%9B%BA%E4%BB%B6%2FAir601%E7%9A%84MAC%E5%9C%B0%E5%9D%80%E4%BF%AE%E6%AD%A3%E5%9B%BA%E4%BB%B6)
+1. Download the latest AT firmware, [click me to download](https://pan.air32.cn/s/DJTr?path=%2F%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E5%9B%BA%E4%BB%B6%2FAir601%E7%9A%84MAC%E5%9C%B0%E5%9D%80%E4%BF%AE%E6%AD%A3%E5%9B%BA%E4%BB%B6)
 2. Use LuaTools brush machine, select universal serial port to print, baud rate regardless
 3. Select the correct COM and click on the "Download Firmware" icon
 4. Select the firmware and click "Start""
