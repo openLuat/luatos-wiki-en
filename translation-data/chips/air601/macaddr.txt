@@ -1,0 +1,58 @@
+下载最新的AT固件, [点我下载
+Download the latest AT firmware, [click me to download
+之后刷入LuatOS固件, 即可使用新的mac地址
+After that, the LuatOS firmware can be brushed in to use the new mac address.
+作为STA时, 且使用2023年12月之前编译的AT/LuatOS固件, STA地址均为默认值, 在同一个路由器下会冲突
+When used as STA and using AT/LuatOS firmware compiled before December 2023, STA addresses are default values and will conflict under the same router.
+使用LuaTools刷机, 选通用串口打印, 波特率不用管
+Use LuaTools brush machine, select universal serial port to print, baud rate regardless
+假设MAC地址要设置成
+Suppose the MAC address is set
+关于mac地址的说明
+About the mac address
+固件
+Firmware
+在出厂是实际只烧录了AP的mac地址, STA和蓝牙地址是没有写入的
+At the factory, only the mac address of AP was actually burned, and STA and Bluetooth addresses were not written.
+导致的问题
+Problems caused
+屏蔽盖上的二维码及MAC地址是AP的mac地址
+The two-dimensional code and MAC address on the shielding cover are the mac address of AP
+已经丢失的MAC地址,是找不回来的, 只能通过 AT固件 重新写入
+The lost MAC address cannot be found and can only be rewritten through AT firmware.
+当前的现状
+The current status quo
+恢复/改写MAC的操作办法
+How to Restore/Rewrite MAC
+更新AT固件到最新(后面有下载地址), STA地址会与AP地址一致
+Update the AT firmware to the latest (with the download address), and the STA address will be consistent with the AP address.
+更新LuatOS固件到最新(后面有下载地址), STA地址会与AP地址一致
+Update the LuatOS firmware to the latest (the download address is later), and the STA address will be consistent with the AP address.
+由于LuatOS固件对默认STA地址有防御机制, 检测到默认STA地址时, 自动切换为设备flash相关的唯一值
+Because the LuatOS firmware has a defense mechanism for the default STA address, when the default STA address is detected, it will automatically switch to the unique value related to the device flash
+等待刷机完成, 刷机完成后, 重启设备
+Wait for the brushing to be completed. After the brushing is completed, restart the equipment.
+芯片的mac均为软件配置的，在芯片上没有mac地址寄存器, 所以都是可变的
+The mac of the chip is configured by software, and there is no mac address register on the chip, so it is variable.
+菜单中选取"简易串口工具", 勾选回车换行. 或者关闭LuaTools, 选一款你喜欢的串口工具, 波特率115200, 8N1, 勾选回车换行
+In the menu, select "simple serial port tool" and check enter and line feed. Or close the LuaTools and select a serial port tool you like, baud rate 115200, 8N1, and check enter and line feed.
+蓝牙地址, 在AT固件下是默认值, 在LuatOS固件下是设备flash相关的唯一值
+The Bluetooth address, which is the default value under AT firmware and the unique value related to the device flash under LuatOS firmware.
+蓝牙地址会根据flash的唯一值生成, 不会冲突
+The Bluetooth address will be generated according to the unique value of flash and will not conflict with each other.
+蓝牙地址依然会是默认地址, 但当前只能配网, 所以暂未影响, 也暂未人力解决
+The Bluetooth address will still be the default address, but it can only be distributed to the network at present, so it has not been affected for the time being and has not been solved by manpower yet.
+解决方案
+Solution
+设置AP的则输入
+To set the AP, enter
+设置STA的则输入
+Set the input for STA
+输入 `AT+CIPAP?` 查看当前mac地址, 如果和设置的相同, 则成功
+Enter 'AT CIPAP?'to check the current mac address. if it is the same as the setting, it will succeed.
+输入 `AT+CIPSTA?` 查看当前mac地址, 如果和设置的相同, 则成功
+Enter 'AT CIPSTA?'to view the current mac address. if it is the same as the setting, it will succeed.
+选取固件, 点击 "开始
+Select the firmware and click "Start"
+选择正确的COM, 然后点 "下载固件" 的图标
+Select the correct COM and click on the "Download Firmware" icon
