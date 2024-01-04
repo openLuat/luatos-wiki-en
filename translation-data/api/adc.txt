@@ -82,8 +82,12 @@ Set the measurement range of ADC. Note that this is related to specific chips. C
 read adc channel
 读取CPU温度
 Read CPU temperature
+读取CPU温度, 单位为0.001摄氏度, 是内部温度, 非环境温度
+Read the CPU temperature, the unit is 0.001 degrees Celsius, it is the internal temperature, not the ambient temperature
 读取VBAT供电电压
 Read VBAT supply voltage
+读取VBAT供电电压, 单位为
+Read the VBAT supply voltage in
 返回值
 Return Value
 返回值有1个, 仅计算值

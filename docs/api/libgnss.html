@@ -737,6 +737,10 @@
 <span class="c1">-- Related Links: https://lbsyun.baidu.com/index.php?title=coordinate</span>
 <span class="c1">-- Related Links: https://www.openluat.com/GPS-Offset.html</span>
 
+<span class="c1">-- Reminder: GPS function, GNSS function, NMEA analysis function, are sub-functions of the current library</span>
+<span class="c1">-- The main function of this library is to parse the NMEA protocol and support both built-in GNSS and external GNSS.GNSS</span>
+
+<span class="c1">-- The following is sample code using this libgnss</span>
 <span class="c1">-- Scheme 1, data transfer through lua layer</span>
 <span class="n">uart</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">115200</span><span class="p">)</span>
 <span class="n">uart</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"recv"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">len</span><span class="p">)</span>

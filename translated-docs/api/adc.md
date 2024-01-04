@@ -16,12 +16,12 @@ This library has its own demo,[click this link to view the demo example of adc](
 
 -- This library can read hardware adc channels, and also supports reading CPU temperature and VBAT power supply (if supported by the module)
 
--- Read CPU temperature
+-- Read the CPU temperature, the unit is 0.001 degrees Celsius, it is the internal temperature, not the ambient temperature
 adc.open(adc.CH_CPU)
 local temp = adc.get(adc.CH_CPU)
 adc.close(adc.CH_CPU)
 
--- Read VBAT supply voltage
+-- Read the VBAT supply voltage in mV
 adc.open(adc.CH_VBAT)
 local vbat = adc.get(adc.CH_VBAT)
 adc.close(adc.CH_VBAT)

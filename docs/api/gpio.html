@@ -828,18 +828,39 @@
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Set gpio17 as input</span>
 <span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+
 <span class="c1">-- Set gpio17 to output, and the initialization level is low, using the hardware default pull-up configuration</span>
 <span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
 <span class="c1">-- Set gpio17 to output, initialize level high, and enable internal pull-up</span>
 <span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">)</span>
-<span class="c1">-- Set gpio27 to interrupt</span>
-<span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"IRQ_27"</span><span class="p">,</span><span class="n">val</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">)</span>
-<span class="c1">-- Set gpio27 to interrupt</span>
-<span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"IRQ_27"</span><span class="p">,</span><span class="n">val</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">)</span>
+
+<span class="c1">-- Set gpio27 to interrupt, default two-way trigger</span>
+<span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"IRQ_27"</span><span class="p">,</span><span class="n">val</span><span class="p">)</span> <span class="c1">-- Reminder, val does not represent the trigger direction, only the level at a certain point in time after the interruption</span>
+<span class="kr">end</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">)</span>
+
+<span class="c1">-- Set gpio27 to interrupt, rising edge only trigger</span>
+<span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"IRQ_27"</span><span class="p">,</span><span class="n">val</span><span class="p">)</span> <span class="c1">-- Reminder, val does not represent the trigger direction, only the level at a certain point in time after the interruption</span>
+<span class="kr">end</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">RISING</span><span class="p">)</span>
 
 <span class="c1">-- alt_func Added in 2023.7.2</span>
-<span class="c1">-- Set the AIR780E PIN33 to be multiplexed into gpio18, the direction output, and the initialization level is low, using the hardware default pull-up configuration</span>
+<span class="c1">-- This function is only valid for some platforms and is only used to adjust GPIO multiplexing. For other multiplexing methods, please use the mu c.iomux function</span>
+<span class="c1">-- The following sample code reuses the I2S_DOUT gpio18</span>
+<span class="c1">-- AIR780E PIN33 (module pin number), corresponding to paddr 38, the default function is I2S_DOUT, multiplexed gpio18</span>
+<span class="c1">-- Direction output, and initialization level is low, using hardware default pull-down configuration</span>
+<span class="c1">-- Air780E(EC618 For GPIO multiplexing of the series, please refer to the hardware data table on the https://air780e.cn homepage.Air780E&amp;Air780EG&amp;Air780EX&amp;Air700E_GPIO_table_20231227.pdf)</span>
+<span class="c1">-- Air780EP(EC718P For GPIO multiplexing of the series, please refer to the hardware data table on the https://air780ep.cn homepage.Air780E&amp;Air780EG&amp;Air780EX&amp;Air700E_GPIO_table_20231227.pdf)</span>
 <span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1">-- Reminder :</span>
+<span class="c1">-- When the pin is in input mode or interrupt, the level can be obtained through gpio.get()</span>
+<span class="c1">-- When the pin is in output mode, the level can be set through gpio.set()</span>
+<span class="c1">-- When the pin is in output mode, you will always get it through gpio.get().0</span>
+<span class="c1">-- The val parameter of the interrupt callback does not represent the trigger direction, but only represents the level at a certain point in time after the interrupt.</span>
+<span class="c1">-- Yeah, Cat. 1 module, usually only AONGPIO can be triggered in both directions, and other GPIO can only be triggered in one direction</span>
+<span class="c1">-- By default, there is no anti-shake time for interruption, and the anti-shake time can be set through gpio.set_debounce(pin, 50)</span>
 </pre></div>
 </div>
 </section>

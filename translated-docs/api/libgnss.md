@@ -18,6 +18,10 @@ This library has its own demo,[click this link to view libgnss demo examples](ht
 -- Related Links: https://lbsyun.baidu.com/index.php?title=coordinate
 -- Related Links: https://www.openluat.com/GPS-Offset.html
 
+-- Reminder: GPS function, GNSS function, NMEA analysis function, are sub-functions of the current library
+-- The main function of this library is to parse the NMEA protocol and support both built-in GNSS and external GNSS.GNSS
+
+-- The following is sample code using this libgnss
 -- Scheme 1, data transfer through lua layer
 uart.setup(2, 115200)
 uart.on(2, "recv", function(id, len)

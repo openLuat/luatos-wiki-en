@@ -8,10 +8,14 @@ The following pull-up mode can be gpio.PULLUP or gpio.PULLDOWN, which needs to b
 Drop-down
 下降沿触发
 Falling edge trigger
+中断回调的val参数不代表触发方向, 仅代表中断后某个时间点的电平
+The val parameter of the interrupt callback does not represent the trigger direction, but only represents the level at a certain point in time after the interrupt.
 中断触发模式,默认gpio.BOTH。中断触发模式<br>上升沿gpio.RISING<br>下降沿gpio.FALLING<br>上升和下降都触发
 Interrupt trigger mode, default gpio.BOTH. interrupt triggering mode <br> rising edge gpio.RISING<br> falling edge gpio.FALLING<br> both rising and falling are triggered
 于2023.7.2新增
 Added in 2023.7.2
+以下示例代码, 将I2S_DOUT复用成
+The following sample code reuses the I2S_DOUT
 传值正确返回true,否则返回
 If the pass value is correct, return true, otherwise return
 传入值类型|解释
@@ -46,6 +50,8 @@ Output a set of pulses at the same GPIO. Note that len's unit is bit, with the h
 Multiplexing option, currently only EC618 platform needs this parameter, some GPIO can be multiplexed to different pins, you can select the multiplexing option (0 or 4) to multiplex to the corresponding pin
 完成捕获后的回调函数，仅一个参数，参数为捕获到的时间长度number型数值，单位
 The callback function after the capture is completed. There is only one parameter. The parameter is the number-type value of the captured time length, in units.
+对Cat.1模块,通常只有AONGPIO才能双向触发, 其他GPIO只能单向触发
+Yeah, Cat. 1 module, usually only AONGPIO can be triggered in both directions, and other GPIO can only be triggered in one direction
 对应的,如果输入的是一个 50hz的方波,那么不会触发任何上报
 Correspondingly, if the input is a 50hz square wave, then no report will be triggered.
 已适配
@@ -62,20 +68,34 @@ Delay, currently no fixed time unit
 Turn on anti-shake, mode 0-cooling, report immediately after interruption, but report only once within 100ms
 开启防抖, 模式1-延时, 中断后等待100ms,期间若保持该电平了,时间到之后上报一次
 Turn on anti-shake, mode 1-delay, wait for 100ms after interruption, if the level is maintained during the period, report once after the time is up
+当管脚为输入模式或中断,才能通过gpio.get()获取到电平
+When the pin is in input mode or interrupt, the level can be obtained through gpio.get()
+当管脚为输出模式,才能通过gpio.set()设置电平
+When the pin is in output mode, the level can be set through gpio.set()
+当管脚为输出模式,通过gpio.get()总会得到
+When the pin is in output mode, you will always get it through gpio.get().
 捕获pin.PA07为高电平的持续时间
 Capture the duration when pin.PA07 is high
 捕获管脚电平持续时长，单位
 Capture Pin Level Duration, Unit
+提醒
+Reminder
+提醒, val并不代表触发方向, 仅代表中断后某个时间点的电平
+Reminder, val does not represent the trigger direction, only the level at a certain point in time after the interruption
 操作
 Operation
 数值或者字符串
 Value or string
+方向输出,且初始化电平为低,使用硬件默认上下拉配置
+Direction output, and initialization level is low, using hardware default pull-down configuration
 无返回值
 No return value
 无返回值,总是执行成功
 No return value, always successful execution
 本API于 2022.05.17 添加
 This API was added on 2022.05.17
+本功能仅对部分平台有效, 且仅用于调整GPIO复用,其他复用方式请使用muc.iomux函数
+This function is only valid for some platforms and is only used to adjust GPIO multiplexing. For other multiplexing methods, please use the mu c.iomux function
 本库有专属demo，[点此链接查看gpio的demo例子
 This library has its own demo,[click this link to view the demo example of gpio
 本库还有视频教程，[点此链接查看
@@ -90,8 +110,14 @@ Shake elimination mode, currently supports 2 types, starting on 2022.12.16
 Level, which can be high level gpio.HIGH, low level gpio.LOW, or directly write the value 1 or
 电平, 高电平gpio.HIGH, 低电平gpio.LOW, 对应数值1和
 Level, high level gpio.HIGH, low level gpio.LOW, corresponding to value 1 and
+的PIN33(模块管脚序号), 对应paddr 38, 默认功能是I2S_DOUT, 复用成
+PIN33 (module pin number), corresponding to paddr 38, the default function is I2S_DOUT, multiplexed
 管脚的GPIO号
 GPIO number of the pin
+系列的GPIO复用请查阅 https://air780e.cn 首页硬件资料表格中的
+For GPIO multiplexing of the series, please refer to the hardware data table on the https://air780e.cn homepage.
+系列的GPIO复用请查阅 https://air780ep.cn 首页硬件资料表格中的
+For GPIO multiplexing of the series, please refer to the hardware data table on the https://air780ep.cn homepage.
 编号,必须是数值
 Number, must be numeric
 若芯片支持pin库, 可用pin.PA7代替数字
@@ -118,6 +144,10 @@ Set gpio17 to output, and the initialization level is low, using the hardware de
 Set gpio17 to output, initialize level high, and enable internal pull-up
 设置gpio27为中断
 Set gpio27 to interrupt
+设置gpio27为中断, 仅上升沿触发
+Set gpio27 to interrupt, rising edge only trigger
+设置gpio27为中断, 默认双向触发
+Set gpio27 to interrupt, default two-way trigger
 设置GPIO脚的默认上拉/下拉设置, 默认是平台自定义(一般为开漏
 Set the default pull-up/pull-down setting of GPIO pin, the default is platform customization (generally open and leak
 设置管脚功能
@@ -148,3 +178,5 @@ The level to be captured can be high level gpio.HIGH, low level gpio.LOW, or dir
 High Level
 高电平触发,部分设备支持
 High level trigger, some devices support
+默认设置下,中断是没有防抖时间的,可以通过gpio.set_debounce(pin, 50)来设置防抖时间
+By default, there is no anti-shake time for interruption, and the anti-shake time can be set through gpio.set_debounce(pin, 50)

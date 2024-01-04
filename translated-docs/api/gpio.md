@@ -53,20 +53,42 @@ Set Pin Function
 **Examples**
 
 ```lua
+
 -- Set gpio17 as input
 gpio.setup(17, nil)
+
 -- Set gpio17 to output, and the initialization level is low, using the hardware default pull-up configuration
 gpio.setup(17, 0)
+
 -- Set gpio17 to output, initialize level high, and enable internal pull-up
 gpio.setup(17, 1, gpio.PULLUP)
--- Set gpio27 to interrupt
-gpio.setup(27, function(val) print("IRQ_27",val) end, gpio.PULLUP)
--- Set gpio27 to interrupt
-gpio.setup(27, function(val) print("IRQ_27",val) end, gpio.PULLUP)
+
+-- Set gpio27 to interrupt, default two-way trigger
+gpio.setup(27, function(val)
+    print("IRQ_27",val) -- Reminder, val does not represent the trigger direction, only the level at a certain point in time after the interruption
+end, gpio.PULLUP)
+
+-- Set gpio27 to interrupt, rising edge only trigger
+gpio.setup(27, function(val)
+    print("IRQ_27",val) -- Reminder, val does not represent the trigger direction, only the level at a certain point in time after the interruption
+end, gpio.PULLUP, gpio.RISING)
 
 -- alt_func Added in 2023.7.2
--- Set the AIR780E PIN33 to be multiplexed into gpio18, the direction output, and the initialization level is low, using the hardware default pull-up configuration
+-- This function is only valid for some platforms and is only used to adjust GPIO multiplexing. For other multiplexing methods, please use the mu c.iomux function
+-- The following sample code reuses the I2S_DOUT gpio18
+-- AIR780E PIN33 (module pin number), corresponding to paddr 38, the default function is I2S_DOUT, multiplexed gpio18
+-- Direction output, and initialization level is low, using hardware default pull-down configuration
+-- Air780E(EC618 For GPIO multiplexing of the series, please refer to the hardware data table on the https://air780e.cn homepage.Air780E&Air780EG&Air780EX&Air700E_GPIO_table_20231227.pdf)
+-- Air780EP(EC718P For GPIO multiplexing of the series, please refer to the hardware data table on the https://air780ep.cn homepage.Air780E&Air780EG&Air780EX&Air700E_GPIO_table_20231227.pdf)
 gpio.setup(18, 0, nil, nil, 4)
+
+-- Reminder :
+-- When the pin is in input mode or interrupt, the level can be obtained through gpio.get()
+-- When the pin is in output mode, the level can be set through gpio.set()
+-- When the pin is in output mode, you will always get it through gpio.get().0
+-- The val parameter of the interrupt callback does not represent the trigger direction, but only represents the level at a certain point in time after the interrupt.
+-- Yeah, Cat. 1 module, usually only AONGPIO can be triggered in both directions, and other GPIO can only be triggered in one direction
+-- By default, there is no anti-shake time for interruption, and the anti-shake time can be set through gpio.set_debounce(pin, 50)
 
 ```
 

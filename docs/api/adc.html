@@ -734,12 +734,12 @@
 <p><strong>Example</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This library can read hardware adc channels, and also supports reading CPU temperature and VBAT power supply (if supported by the module)</span>
 
-<span class="c1">-- Read CPU temperature</span>
+<span class="c1">-- Read the CPU temperature, the unit is 0.001 degrees Celsius, it is the internal temperature, not the ambient temperature</span>
 <span class="n">adc</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_CPU</span><span class="p">)</span>
 <span class="kd">local</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">adc</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_CPU</span><span class="p">)</span>
 <span class="n">adc</span><span class="p">.</span><span class="n">close</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_CPU</span><span class="p">)</span>
 
-<span class="c1">-- Read VBAT supply voltage</span>
+<span class="c1">-- Read the VBAT supply voltage in mV</span>
 <span class="n">adc</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_VBAT</span><span class="p">)</span>
 <span class="kd">local</span> <span class="n">vbat</span> <span class="o">=</span> <span class="n">adc</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_VBAT</span><span class="p">)</span>
 <span class="n">adc</span><span class="p">.</span><span class="n">close</span><span class="p">(</span><span class="n">adc</span><span class="p">.</span><span class="n">CH_VBAT</span><span class="p">)</span>
