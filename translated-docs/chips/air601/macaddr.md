@@ -36,7 +36,7 @@ LuatOS Firmware:
 7. Suppose the MAC address is set 12:34:56:78:90:ab
 8. To set the AP, enter  `AT+CIPAPMAC=12:34:56:78:90:ab`
 9. Set the input for STA `AT+CIPSTAMAC=12:34:56:78:90:ab`
-10. Enter 'AT CIPAP?'to check the current mac address. if it is the same as the setting, it will succeed.
-11. Enter 'AT CIPSTA?'to view the current mac address. if it is the same as the setting, it will succeed.
+10. Enter 'AT CIPAPMAC?'to check the current mac address, if it is the same as the setting, it will succeed.
+11. Enter 'AT CIPSTAMAC?'to check the current mac address, if it is the same as the setting, it will succeed.
 
 After that, the LuatOS firmware can be brushed in to use the new mac address.

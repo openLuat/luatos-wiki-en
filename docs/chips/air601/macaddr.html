@@ -316,7 +316,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../W806.html">🚗 W806</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../win32.html">🖥️ PC End version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../coremark/README.html">Performance testing (based on coremark)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../supported.html">Equipment Support/Supported Devices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../question.html">FAQ List</a></li>
@@ -763,8 +762,8 @@
 <li><p>Suppose the MAC address is set 12:34:56:78:90:ab</p></li>
 <li><p>To set the AP, enter  <code class="docutils literal notranslate"><span class="pre">AT+CIPAPMAC=12:34:56:78:90:ab</span></code></p></li>
 <li><p>Set the input for STA <code class="docutils literal notranslate"><span class="pre">AT+CIPSTAMAC=12:34:56:78:90:ab</span></code></p></li>
-<li><p>Enter ‘AT CIPAP?’to check the current mac address. if it is the same as the setting, it will succeed.</p></li>
-<li><p>Enter ‘AT CIPSTA?’to view the current mac address. if it is the same as the setting, it will succeed.</p></li>
+<li><p>Enter ‘AT CIPAPMAC?’to check the current mac address, if it is the same as the setting, it will succeed.</p></li>
+<li><p>Enter ‘AT CIPSTAMAC?’to check the current mac address, if it is the same as the setting, it will succeed.</p></li>
 </ol>
 <p>After that, the LuatOS firmware can be brushed in to use the new mac address.</p>
 </section>

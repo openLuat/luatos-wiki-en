@@ -50,8 +50,12 @@ To set the AP, enter
 Set the input for STA
 输入 `AT+CIPAP?` 查看当前mac地址, 如果和设置的相同, 则成功
 Enter 'AT CIPAP?'to check the current mac address. if it is the same as the setting, it will succeed.
+输入 `AT+CIPAPMAC?` 查看当前mac地址, 如果和设置的相同, 则成功
+Enter 'AT CIPAPMAC?'to check the current mac address, if it is the same as the setting, it will succeed.
 输入 `AT+CIPSTA?` 查看当前mac地址, 如果和设置的相同, 则成功
 Enter 'AT CIPSTA?'to view the current mac address. if it is the same as the setting, it will succeed.
+输入 `AT+CIPSTAMAC?` 查看当前mac地址, 如果和设置的相同, 则成功
+Enter 'AT CIPSTAMAC?'to check the current mac address, if it is the same as the setting, it will succeed.
 选取固件, 点击 "开始
 Select the firmware and click "Start"
 选择正确的COM, 然后点 "下载固件" 的图标
