@@ -1267,8 +1267,8 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="socket-rx-ctrl-buff-flag">
-<h2>socket.rx(ctrl, buff, flag)<a class="headerlink" href="#socket-rx-ctrl-buff-flag" title="Permalink to this headline">#</a></h2>
+<section id="socket-rx-ctrl-buff-flag-limit">
+<h2>socket.rx(ctrl, buff, flag, limit)<a class="headerlink" href="#socket-rx-ctrl-buff-flag-limit" title="Permalink to this headline">#</a></h2>
 <p>Receive the data sent by the opposite end, note that the data has been cached at the bottom layer, use this function only to extract, UDP mode will only take out one data packet at a time</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1286,6 +1286,9 @@
 </tr>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>Receiving parameter, currently reserved, does not work</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Receive data length limit, if specified, only the first N bytes are taken. 2024.1.5 New</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1312,7 +1315,24 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">succ</span><span class="p">,</span> <span class="n">data_len</span><span class="p">,</span> <span class="n">ip</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">rx</span><span class="p">(</span><span class="n">ctrl</span><span class="p">,</span> <span class="n">buff</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read data from the socket, ctrl is returned by socket.create, please refer demo/socket</span>
+<span class="kd">local</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">zbuff</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">succ</span><span class="p">,</span> <span class="n">data_len</span><span class="p">,</span> <span class="n">remote_ip</span><span class="p">,</span> <span class="n">remote_port</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">rx</span><span class="p">(</span><span class="n">ctrl</span><span class="p">,</span> <span class="n">buff</span><span class="p">)</span>
+
+<span class="c1">-- Limit Read Length, 2024.1.5 New</span>
+<span class="c1">-- Attention</span>
+<span class="c1">-- If it is UDP data, if the limit is less than the length of the UDP packet, only the first limit bytes will be taken and the remaining data will be discarded.</span>
+<span class="c1">-- If it is TCP data, if there is any remaining data, it will not be discarded and can continue to be read..</span>
+<span class="c1">-- New EVENT data is generated only when new data arrives. Data that has not been read will not trigger a new EVENT event.</span>
+<span class="kd">local</span> <span class="n">succ</span><span class="p">,</span> <span class="n">data_len</span><span class="p">,</span> <span class="n">remote_ip</span><span class="p">,</span> <span class="n">remote_port</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">rx</span><span class="p">(</span><span class="n">ctrl</span><span class="p">,</span> <span class="n">buff</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+
+<span class="c1">-- Read buffer size, added in 2024.1.5. Note that the old version of firmware will report an error if it does not pass buff parameters.</span>
+<span class="c1">-- For TCP data, the total length of the data to be read is returned here.</span>
+<span class="c1">-- For UDP data, the length of a single UDP packet is returned here</span>
+<span class="kd">local</span> <span class="n">succ</span><span class="p">,</span> <span class="n">data_len</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">rx</span><span class="p">(</span><span class="n">ctrl</span><span class="p">)</span>
+<span class="kr">if</span> <span class="n">succ</span> <span class="kr">then</span>
+	<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Length of data to be charged"</span><span class="p">,</span> <span class="n">data_len</span><span class="p">)</span>
+<span class="kr">end</span>
 </pre></div>
 </div>
 </section>
@@ -1692,7 +1712,7 @@
 <li><a class="reference internal" href="#socket-discon-ctrl">socket.discon(ctrl)</a></li>
 <li><a class="reference internal" href="#socket-close-ctrl">socket.close(ctrl)</a></li>
 <li><a class="reference internal" href="#socket-tx-ctrl-data-ip-port-flag">socket.tx(ctrl, data, ip, port, flag)</a></li>
-<li><a class="reference internal" href="#socket-rx-ctrl-buff-flag">socket.rx(ctrl, buff, flag)</a></li>
+<li><a class="reference internal" href="#socket-rx-ctrl-buff-flag-limit">socket.rx(ctrl, buff, flag, limit)</a></li>
 <li><a class="reference internal" href="#socket-wait-ctrl">socket.wait(ctrl)</a></li>
 <li><a class="reference internal" href="#socket-listen-ctrl">socket.listen(ctrl)</a></li>
 <li><a class="reference internal" href="#socket-accept-ctrl">socket.accept(ctrl)</a></li>

@@ -390,7 +390,7 @@ local succ, full, result = socket.tx(ctrl, "123456", "xxx.xxx.xxx.xxx", xxxx)
 
 ---
 
-## socket.rx(ctrl, buff, flag)
+## socket.rx(ctrl, buff, flag, limit)
 
 
 
@@ -403,6 +403,7 @@ Receive the data sent by the opposite end, note that the data has been cached at
 |user_data|socket.create obtained ctrl|
 |user_data|zbuff Store the received data, and automatically expand the capacity if the buffer is not enough.|
 |int|Receiving parameter, currently reserved, does not work|
+|int|Receive data length limit, if specified, only the first N bytes are taken. 2024.1.5 New|
 
 **Return Value**
 
@@ -416,7 +417,24 @@ Receive the data sent by the opposite end, note that the data has been cached at
 **Examples**
 
 ```lua
-local succ, data_len, ip, port = socket.rx(ctrl, buff)
+-- Read data from the socket, ctrl is returned by socket.create, please refer demo/socket
+local buff = zbuff.create(2048)
+local succ, data_len, remote_ip, remote_port = socket.rx(ctrl, buff)
+
+-- Limit Read Length, 2024.1.5 New
+-- Attention
+-- If it is UDP data, if the limit is less than the length of the UDP packet, only the first limit bytes will be taken and the remaining data will be discarded.
+-- If it is TCP data, if there is any remaining data, it will not be discarded and can continue to be read..
+-- New EVENT data is generated only when new data arrives. Data that has not been read will not trigger a new EVENT event.
+local succ, data_len, remote_ip, remote_port = socket.rx(ctrl, buff, 1500)
+
+-- Read buffer size, added in 2024.1.5. Note that the old version of firmware will report an error if it does not pass buff parameters.
+-- For TCP data, the total length of the data to be read is returned here.
+-- For UDP data, the length of a single UDP packet is returned here
+local succ, data_len = socket.rx(ctrl)
+if succ then
+	log.info("Length of data to be charged", data_len)
+end
 
 ```
 

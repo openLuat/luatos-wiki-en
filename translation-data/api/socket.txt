@@ -8,6 +8,8 @@ is the taskName of the message notification, function it is a callback function,
 Active release
 事件
 Event
+从socket中读取数据, ctrl是socket.create返回的, 请查阅
+Read data from the socket, ctrl is returned by socket.create, please refer
 传入值类型|解释
 Incoming Value Type | Explanation
 作为客户端断开连接
@@ -66,8 +68,16 @@ If the value is nil, the IP address is not obtained.
 If 1-to-many is supported, a new ctrl will be returned, automatically create, if not supported, return
 如果是IPV4，可以是大端格式的int值
 If it is IPV4, it can be an int value in big-end format.
+如果是TCP数据, 如果有剩余数据, 不会丢弃, 可继续读取
+If it is TCP data, if there is any remaining data, it will not be discarded and can continue to be read.
+如果是UDP数据, 如果limit小于UDP数据包长度, 只会取前limit个字节, 剩余数据会丢弃
+If it is UDP data, if the limit is less than the length of the UDP packet, only the first limit bytes will be taken and the remaining data will be discarded.
 存放接收的数据，如果缓冲区不够大会自动扩容
 Store the received data, and automatically expand the capacity if the buffer is not enough.
+对于TCP数据, 这里返回的是待读取的数据的总长度
+For TCP data, the total length of the data to be read is returned here.
+对于UDP数据, 这里返回的是单个UDP数据包的长度
+For UDP data, the length of a single UDP packet is returned here
 对应的table包含多个数据, 均为整数值
 The corresponding table contains multiple data, all of which are integer values.
 对端IP，只有UDP模式下才有意义，TCP模式返回nil，注意返回的格式，如果是IPV4，1byte 0x00 + 4byte地址 如果是IPV6，1byte 0x01 + 16byte地址
@@ -104,6 +114,8 @@ Force Close
 Current number of milliseconds
 当前秒数,从1900.1.1 0:0:0 开始算, UTC时间
 Current seconds, starting from 1900.1.1 0:0:0, UTC time
+待收取数据长度
+Length of data to be charged
 得到的
 obtained
 得到的ctrl，这里是服务器端
@@ -122,6 +134,8 @@ Turn on debugging information, which is turned off by default.
 Receiving parameter, currently reserved, does not work
 接收对端发出的数据，注意数据已经缓存在底层，使用本函数只是提取出来，UDP模式下一次只会取出一个数据包
 Receive the data sent by the opposite end, note that the data has been cached at the bottom layer, use this function only to extract, UDP mode will only take out one data packet at a time
+接收数据长度限制，如果指定了，则只取前N个字节. 2024.1.5 新增
+Receive data length limit, if specified, only the first N bytes are taken. 2024.1.5 New
 数据
 Data
 无
@@ -138,6 +152,8 @@ Whether it is UDP, default
 Whether it is encrypted transmission, default
 是否有效, true 或者
 Valid, true or
+有新的数据到来才会有新的EVENT数据, 未读取完成的数据不会触发新EVENT事件
+New EVENT data is generated only when new data arrives. Data that has not been read will not trigger a new EVENT event.
 有新的数据需要接收，false没有数据，之后需要接收socket.EVENT消息
 There is new data to receive, false no data, and then the socket.EVENT message needs to be received.
 服务器主动断开连接
@@ -192,6 +208,8 @@ No exception occurred, false failed, if false, you don't need to look at the nex
 No exception occurred, false failed, if false, you don't need to see the next return value, if false, follow-up
 没有异常发生，false失败了，如果false则不需要看下一个返回值了，如果有异常，后续要
 No exception occurred, false failed, if false, you don't need to look at the next return value, if there is an exception, follow-up
+注意
+Attention
 注意, 本函数在执行socket.sntp()且获取到NTP时间后才有效
 Note that this function is not valid until socket.sntp() is executed and the NTP time is obtained.
 注意: ，必须在接收到socket.ON_LINE消息之后才可能获取到，最多返回4个
@@ -248,6 +266,8 @@ Set log registration for SSL
 Set up DNS configuration for your network adapter
 设置默认网络适配器的DNS配置
 Set the DNS configuration for the default network adapter
+读取缓冲区大小, 2024.1.5 新增, 注意,老版本固件不传buff参数会报错的
+Read buffer size, added in 2024.1.5. Note that the old version of firmware will report an error if it does not pass buff parameters.
 调试数据, 调试用,一般用户不用管
 Debugging data, debugging, general users do not have to tube
 超时
@@ -274,5 +294,7 @@ Configure whether to open debug information
 If the remote_port is set to 0, the socket.ON_LINE message will be returned when DNS is completed.
 链接未建立
 Link not established
+限制读取长度, 2024.1.5 新增
+Limit Read Length, 2024.1.5 New
 需要查看的适配器序号，可以留空会查看全部网卡，直到遇到IP READY的，如果指定网卡，只能是socket.ETH0（外置以太网），socket.LWIP_ETH（内置以太网），socket.LWIP_STA（内置WIFI的STA），socket.LWIP_AP（内置WIFI的AP），socket.LWIP_GP（内置蜂窝网络的GPRS），socket.USB（外置USB网卡
 The serial number of the adapter to be viewed can be left blank and all network cards will be viewed until IP READY is encountered. If the network card is specified, it can only be socket.ETH0 (external Ethernet),socket.LWIP_ETH (internal Ethernet),socket.LWIP_STA (STA with internal WIFI),socket.LWIP_AP (AP with internal WIFI),socket.LWIP_GP (GPRS with internal cellular network),socket.USB (external USB network card
