@@ -1,50 +1,56 @@
-标红色的是AON_GPIO, 在休眠模式下也可以使用. 非休眠模式下就是普通
-The one marked in red is AON_GPIO, which can also be used in sleep mode. It is normal in non-sleep mode.
-的驱动能力均很弱
-The driving ability is very weak
-的最高频率是
-The highest frequency is
-该图是LuatOS的视角, csdk是支持调整管脚复用关系的
-This figure is LuatOS's perspective. csdk supports adjusting pin multiplexing
-管脚之间的距离
-Distance between pins
+与SPI0复用 GPIO11/GPIO10,没有标错
+Multiplexing GPIO11/GPIO10 with SPI0, no error
+两排管脚之间的距离
+Distance between two rows of pins
 即UART0, 是底层日志输出口, 强烈建议不要尝试复用它
 UART0 is the underlying log output port. It is strongly recommended not to try to reuse it.
+可用通道共4个, 分别是 0/1/2/4, 但分别由2种映射.后面有小节说明
+There are 4 available channels, 0/1/2/4 respectively, but they are mapped by 2 types respectively. There is a section after that.
+图中的LCD SPI只是约定排序, 其实就是普通SPI,非"专用
+The LCD SPI in the figure is only a convention sort, in fact, it is a common SPI, not "dedicated"
 均不支持"双向触发",只支持单向触发
 Both do not support "two-way trigger", only one-way trigger is supported.
 开发板
 Development Board
-开发板的IO电平为3.3v, 模块本身可配置
-The IO level of the development board is 3.3v, and the module itself is configurable
-开发板扩展板相关资料
-Development Board Expansion Board Related Information
-开发板喇叭扩展板使用手册.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221124161022658_Air780E开发板喇叭扩展板使用说明
-development board speaker expansion board manual. pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221124161022658_Air780E开发板喇叭扩展板使用说明
-开发板喇叭扩展板原理图和PCB(KICAD格式).zip](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221110145812309_Air780E开发板喇叭扩展板V1.0(KICAD格式
-Development board speaker expansion board schematic diagram and PCB(KICAD format).zip](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221110145812309_Air780E开发板喇叭扩展板V1.0(KICAD format
-开发板排针尺寸
-Development board pin size
 开发板上的按键分别是 BOOT(GPIO0), RESET(复位), PWR(开机键) LED灯
 The keys on the development board are BOOT(GPIO0), RESET (reset), PWR (power-on button) LED lights
 开发板使用说明
 Development board instructions
-开发板原理图和PCB(立创
-Development board schematic diagram and PCB (Li Chuang
-开发板原理图和PCB(AD格式).zip](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221104135203881_780X开发板原理图和PCB(AD格式
-Development board schematic and PCB(AD format).zip](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221104135203881_780X开发板原理图和PCB(AD format
 开发板原理图V1.5(pdf版).pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221028114557272_Air780E开发板原理图V1.5(pdf版
 Development Board Schematic V1.5(pdf version ).pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221028114557272_Air780E开发板原理图V1.5(pdf version
-可用通道共4个, 分别是 0/1/2/4, 但分别由2种映射.后面有小节说明
-There are 4 available channels, 0/1/2/4 respectively, but they are mapped by 2 types respectively. There is a section after that.
-两排管脚之间的距离
-Distance between two rows of pins
-是扬声器输出, 需要外接功放, 否则声音很小
-Is the speaker output, need external power amplifier, otherwise the sound is very small
-是主串口, 也支持下载串口, 强烈建议不要复用成
-It is the main serial port and also supports downloading serial ports. It is strongly recommended not to reuse
+开发板原理图和PCB(AD格式).zip](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221104135203881_780X开发板原理图和PCB(AD格式
+Development board schematic and PCB(AD format).zip](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221104135203881_780X开发板原理图和PCB(AD format
+开发板原理图和PCB(立创
+Development board schematic diagram and PCB (Li Chuang
+开发板喇叭扩展板使用手册.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221124161022658_Air780E开发板喇叭扩展板使用说明
+development board speaker expansion board manual. pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221124161022658_Air780E开发板喇叭扩展板使用说明
+开发板喇叭扩展板原理图和PCB(KICAD格式).zip](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221110145812309_Air780E开发板喇叭扩展板V1.0(KICAD格式
+Development board speaker expansion board schematic diagram and PCB(KICAD format).zip](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221110145812309_Air780E开发板喇叭扩展板V1.0(KICAD format
+开发板扩展板相关资料
+Development Board Expansion Board Related Information
+开发板排针尺寸
+Development board pin size
+开发板的IO电平为3.3v, 模块本身可配置
+The IO level of the development board is 3.3v, and the module itself is configurable
 提醒
 Reminder
-图中的LCD SPI只是约定排序, 其实就是普通SPI,非"专用
-The LCD SPI in the figure is only a convention sort, in fact, it is a common SPI, not "dedicated"
-与SPI0复用 GPIO11/GPIO10,没有标错
-Multiplexing GPIO11/GPIO10 with SPI0, no error
+是主串口, 也支持下载串口, 强烈建议不要复用成
+It is the main serial port and also supports downloading serial ports. It is strongly recommended not to reuse
+是扬声器输出, 需要外接功放, 否则声音很小
+Is the speaker output, need external power amplifier, otherwise the sound is very small
+标红色的是AON_GPIO, 在休眠模式下也可以使用. 非休眠模式下就是普通
+The one marked in red is AON_GPIO, which can also be used in sleep mode. It is normal in non-sleep mode.
+电源灯是不受控的, 没有接到任何
+The power lamp is uncontrolled and does not receive any
+电源灯是接上电就亮的, **电源灯亮了不代表开机**, 接电脑且开机了才会有COM设备出现
+The power light is on when the power is connected, * * when the power light is on, it does not mean that the power is on * *, and COM equipment will only appear when the computer is connected and turned on.
+的最高频率是
+The highest frequency is
+的驱动能力均很弱
+The driving ability is very weak
+管脚之间的距离
+Distance between pins
+该图是LuatOS的视角, csdk是支持调整管脚复用关系的
+This figure is LuatOS's perspective. csdk supports adjusting pin multiplexing
+默认不会自动开机, 要**长按pwrkey键2秒才会开机
+The default will not automatically boot, to * * long press pwrkey key for 2 seconds to boot

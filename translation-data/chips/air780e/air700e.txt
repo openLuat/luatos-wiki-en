@@ -1,28 +1,32 @@
-的额外说明
-Additional instructions
-固件要V1120或以上, LuatOS固件要V1106或以上
-Firmware must be V1120 or above, LuatOS firmware must be V1106 or above
-关于封装和软件
-About Packaging and Software
-管脚之间的距离
-Distance between pins
-仅支持TDD, 不支持FDD, 所以只支持中移动的网络
-Only supports TDD, does not support FDD, so only supports mobile networks
-开发板
-Development Board
-开发板排针尺寸
-Development board pin size
-开发板上的按键分别是 BOOT(GPIO0), RESET(复位), PWR(开机键) LED灯
-The keys on the development board are BOOT(GPIO0), RESET (reset), PWR (power-on button) LED lights
-开发板是不带codec的, 也不支持软DAC音频输出
-The development board does not have codec and does not support soft DAC audio output.
+与Air780E/Air780EG的GPIO是不同的, 为
+GPIO with Air780E/Air780EG is different
 两排管脚之间的距离
 Distance between two rows of pins
+仅支持TDD, 不支持FDD, 所以只支持中移动的网络
+Only supports TDD, does not support FDD, so only supports mobile networks
+关于封装和软件
+About Packaging and Software
+固件要V1120或以上, LuatOS固件要V1106或以上
+Firmware must be V1120 or above, LuatOS firmware must be V1106 or above
+外部封装, Air700E是极限小封装
+External package, Air700E is the ultimate small package
+开发板
+Development Board
+开发板上的按键分别是 BOOT(GPIO0), RESET(复位), PWR(开机键) LED灯
+The keys on the development board are BOOT(GPIO0), RESET (reset), PWR (power-on button) LED lights
+开发板排针尺寸
+Development board pin size
+开发板是不带codec的, 也不支持软DAC音频输出
+The development board does not have codec and does not support soft DAC audio output.
 没有I2C0, 只有
 No I2C0, only
 特性说明
 Characteristic Description
-外部封装, Air700E是极限小封装
-External package, Air700E is the ultimate small package
-与Air780E/Air780EG的GPIO是不同的, 为
-GPIO with Air780E/Air780EG is different
+电源灯是接上电就亮的, **电源灯亮了不代表开机**, 接电脑且开机了才会有COM设备出现
+The power light is on when the power is connected, * * when the power light is on, it does not mean that the power is on * *, and COM equipment will only appear when the computer is connected and turned on.
+的额外说明
+Additional instructions
+管脚之间的距离
+Distance between pins
+默认不会自动开机, 要**长按pwrkey键2秒才会开机
+The default will not automatically boot, to * * long press pwrkey key for 2 seconds to boot

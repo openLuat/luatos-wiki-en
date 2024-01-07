@@ -66,6 +66,10 @@ The built-in GPS chip loses all data after power failure, so auxiliary positioni
 
 ## Development Board pinout
 
+The default will not automatically boot, to * * long press pwrkey key for 2 seconds to boot**
+
+The power light is on when the power is connected, * * when the power light is on, it does not mean that the power is on * *, and COM equipment will only appear when the computer is connected and turned on.
+
 Please note the difference with the Air780E development board:
 1. UART2 No more multiplexing of GPIO10/11
 2. UART2_RX Do not connect external input

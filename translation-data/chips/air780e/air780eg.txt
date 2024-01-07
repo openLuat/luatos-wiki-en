@@ -92,6 +92,8 @@ No low-power commands, no low-power modes
 No backup power supply, no RTC hold, only `power on/power` two states, no low power tracking mode
 状态有多种: 搜星状态(60~100ma),持续跟踪状态(40~60ma),备电状态(200~500ua),掉电状态
 There are many states: star search state (60 ~ 100ma), continuous tracking state (40 ~ 60ma), standby state (200 ~ 500ua), and power-down state
+电源灯是接上电就亮的, **电源灯亮了不代表开机**, 接电脑且开机了才会有COM设备出现
+The power light is on when the power is connected, * * when the power light is on, it does not mean that the power is on * *, and COM equipment will only appear when the computer is connected and turned on.
 的GPS的供电是 `GPIO13/PAD12`, 注意是 `PAD12/padaddr 12`, 非
 The GPS power supply is` GPIO13/PAD12`, note is` PAD12/padaddr 12 `, not
 的GPS芯片接在  `UART2/AUX_UART`, 所以这个端口是被占用的
@@ -112,5 +114,7 @@ Auxiliary Positioning Correlation
 Part
 飞行模式是射频相关的控制,不影响GPIO供电,所以不影响GPS供电
 Flight mode is RF-related control and does not affect GPIO power supply, so it does not affect GPS power supply
+默认不会自动开机, 要**长按pwrkey键2秒才会开机
+The default will not automatically boot, to * * long press pwrkey key for 2 seconds to boot
 默认波特率是
 The default baud rate is

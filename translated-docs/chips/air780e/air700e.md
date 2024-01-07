@@ -14,6 +14,10 @@
 
 ## Development Board pinout
 
+The default will not automatically boot, to * * long press pwrkey key for 2 seconds to boot**
+
+The power light is on when the power is connected, * * when the power light is on, it does not mean that the power is on * *, and COM equipment will only appear when the computer is connected and turned on.
+
 Development board pin size:
 1. Distance between pins, 10mil, 2.54mm
 2. Distance between two rows of pins, 700mil, 17.78mm

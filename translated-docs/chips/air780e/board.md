@@ -1,5 +1,9 @@
 # Development Board
 
+The default will not automatically boot, to * * long press pwrkey key for 2 seconds to boot**
+
+The power light is on when the power is connected, * * when the power light is on, it does not mean that the power is on * *, and COM equipment will only appear when the computer is connected and turned on.
+
 [ Air780E Development board instructions V1.0.3.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221214113943532_%E5%BC%80%E5%8F%91%E6%9D%BFCore_Air780E%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8EV1.0.3.pdf)
 
 [Air780E Development Board Schematic V1.5(pdf version ).pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20221028114557272_Air780E开发板原理图V1.5(pdf version).pdf)
@@ -33,6 +37,7 @@ Reminder:
 9. The IO level of the development board is 3.3v, and the module itself is configurable 1.8v/3.3v
 10. SPK Is the speaker output, need external power amplifier, otherwise the sound is very small
 11. PWM There are 4 available channels, 0/1/2/4 respectively, but they are mapped by 2 types respectively. There is a section after that.
+12. The power lamp is uncontrolled and does not receive any GPIO
 
 ## Development Board Expansion Board Related Information
 
