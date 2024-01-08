@@ -17,12 +17,12 @@ Firmware files are suffixed with `.soc`
 ## Explanation of firmware classification
 
 1. The data transmission version does not contain UI class (U8G2/LCD/EINK/DISP/LVGL)/TTS, and only contains a small number of peripheral driver libraries.
-2. TTS version, adding TTS support to the digital distribution version, but TTS resources need to be external to the additional SPI Flash
+2. TTS Version, add TTS support to the digital transmission version, but TTS resources need to be external to additional SPI Flash, and do not support MP3/AMR playback
 3. TTS_ONCHIP Version, add TTS support to the digital version, and TTS resources are built-in, but the script space is small.
 4. The full-featured version will open most libraries, but it should be noted that the built-in TTS resource mode of the TTS library is not included.
 5. Cloud build version, firmware customized by [cloud compilation](../../develop/compile/Cloud_compilation.md)
 
-If the first three models cannot meet the requirements, please use the [cloud compilation](../../develop/compile/Cloud_compilation.md) function to customize the firmware you need.
+If the first four models cannot meet the requirements, please use the [cloud compilation](../../develop/compile/Cloud_compilation.md) function to customize the firmware you need.
 
 V1107 The EC618 series of cloud compilation supports customization according to the source code of the release version, which is already online.
 
