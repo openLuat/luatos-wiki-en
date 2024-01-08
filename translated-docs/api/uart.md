@@ -47,7 +47,7 @@ Configure Serial Port Parameters
 |int|buffer size, default 1024|
 |int|485 Conversion GPIO in mode, default 0xffffffff|
 |int|485 The level of GPIO in the rx direction in the mode, the default value.0|
-|int|485 tx to rx conversion delay time in the mode, the default value of 12bit time, unit us|
+|int|485 The delay time of tx to rx conversion in the mode, the default value is 12bit time, the unit is us, and the baud rate is 9600.20000|
 
 **Return Value**
 
@@ -63,7 +63,7 @@ uart.setup(1, 115200, 8, 1, uart.NONE)
 -- can be abbreviated uart.setup(1)
 
 -- 485 Automatic switching, select GPIO10 as the transceiver conversion pin
-uart.setup(1, 115200, 8, 1, uart.NONE, uart.LSB, 1024, 10, 0, 100)
+uart.setup(1, 115200, 8, 1, uart.NONE, uart.LSB, 1024, 10, 0, 2000)
 
 ```
 
