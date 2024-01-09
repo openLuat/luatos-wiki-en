@@ -21,7 +21,7 @@ Serialize an object to a json string
 |Incoming Value Type | Explanation|
 |-|-|
 |obj|Objects that need to be serialized|
-|string|Floating-point number precision and mode, when this does not exist, the default value is "7g", numbers only support "0~14", mode only support"f/g"|
+|string|Floating-point number precision and mode, when this does not exist, the default value is "7f", numbers only support "0~14", mode only supports"f/g"|
 
 **Return Value**
 
@@ -35,6 +35,9 @@ Serialize an object to a json string
 ```lua
 json.encode(obj)-->Floating-point numbers are converted to strings using%.7g.
 json.encode(obj,"12f")-->Floating point numbers are converted to strings using%.12f
+
+-- 2024.1.9 Since then, 7f is used by default to format floating point numbers.
+-- Previous versions used 7g to format floating numbers
 
 ```
 
