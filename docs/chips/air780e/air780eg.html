@@ -746,9 +746,9 @@
 </section>
 <section id="special-note-on-new-air780eg">
 <h2>Special note on new Air780EG<a class="headerlink" href="#special-note-on-new-air780eg" title="Permalink to this headline">#</a></h2>
-<p>New shipments of Air780EG have added standby power to support hot starts.</p>
-<p>How to distinguish whether it is a new model or not depends on the factory time. After 2023.8.7, all the products are new.</p>
-<p>Query method: https://erp.openluat.com/imei, enter imei number to query. If not registered, please register first, registration is free of charge.</p>
+<p>The newly shipped Air780EG has added standby power to support hot start.</p>
+<p>How to tell whether it is new or not: look at the factory time, the factory after 2023.8.7 is new.</p>
+<p>Query method: <a class="reference external" href="https://erp.openluat.com/imei">IMEI production record query of Hecheng ERP</a>, enter imei number to query. If you do not register, please register first. Registration is free of charge..</p>
 </section>
 <section id="positioning-characteristics">
 <h2>Positioning characteristics<a class="headerlink" href="#positioning-characteristics" title="Permalink to this headline">#</a></h2>
@@ -758,6 +758,8 @@
 <li><p>It is a “read-only version” of GPS chip, which means that all configuration items cannot be saved, and ephemeris/time/reference coordinates cannot be saved.</p></li>
 <li><p>With the blessing of the active antenna, the first positioning time without AGPS is less 30s</p></li>
 <li><p>When the three elements are complete (<code class="docutils literal notranslate"><span class="pre">ephemeral</span></code>/<code class="docutils literal notranslate"><span class="pre">reference</span> <span class="pre">coordinate</span> </code>/<code class="docutils literal notranslate"><span class="pre">UTC</span> <span class="pre">time</span></code>), if the signal is good, the first positioning success can be less than 2 seconds.</p></li>
+<li><p>The output coordinate system is WGS84, that is, GPS coordinate system, which should be converted into GCJ02 or BD09 and other domestic coordinate systems when used in domestic maps..</p></li>
+<li><p><a class="reference external" href="https://www.openluat.com/GPS-Offset.html">GPS Coordinate correction website</a></p></li>
 </ol>
 </section>
 <section id="auxiliary-positioning-correlation">
@@ -783,15 +785,16 @@
 <h2>About Power Consumption<a class="headerlink" href="#about-power-consumption" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>There are many states: star search state (60 ~ 100ma), continuous tracking state (40 ~ 60ma), standby state (200 ~ 500ua), and power-down state(0)</p></li>
-<li><p>No low power instructions</p></li>
-<li><p>The new model only has the standby power state, and’ GPIO23’ is used to control the on or off of the standby power.</p></li>
+<li><p>No low-power instructions, no low-power instructions, no low-power instructions</p></li>
+<li><p>No low power mode, no low power mode, no low power mode</p></li>
+<li><p>The new model only has the standby power state, and’ GPIO23’ is used to control the standby power on or off, and the default is power on.</p></li>
 </ol>
 </section>
 <section id="about-packaging-and-software">
 <h2>About Packaging and Software<a class="headerlink" href="#about-packaging-and-software" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>External package, Air780E and Air780EG are the same, the difference is that UART2 cannot connect other equipment</p></li>
-<li><p>AT Firmware to V1112 or above, LuatOS firmware to V1103 or above, to have Air780EG full support, brush</p></li>
+<li><p>AT Firmware needs V1112 or above, and LuatOS firmware needs V1103 or above to have full support for Air780EG</p></li>
 </ol>
 </section>
 <section id="development-board-pinout">
@@ -802,6 +805,8 @@
 <ol class="arabic simple">
 <li><p>UART2 No more multiplexing of GPIO10/11</p></li>
 <li><p>UART2_RX Do not connect external input</p></li>
+<li><p>To connect the GNSS antenna, the development board is equipped with an active GNSS antenna, and the board is equipped with a 4G antenna, which does not participate in positioning. Positioning cannot be successful without connecting the GNSS antenna..</p></li>
+<li><p>Air780EG Support passive and active antennas, the development board is matched with the active GNSS antenna by default.</p></li>
 </ol>
 <p>Development board pin size:</p>
 <ol class="arabic simple">
@@ -809,7 +814,7 @@
 <li><p>Distance between two rows of pins, 700mil, 17.78mm</p></li>
 </ol>
 <p>The keys on the development board are BOOT(GPIO0), RESET (reset), PWR (power-on button) LED lights(GPIO27)</p>
-<p><img alt="" src="../../_images/pinout_780eg.png"/></p>
+<p><img alt="Development board PinOut diagram" src="../../_images/pinout_780eg.png"/></p>
 </section>
 </section>
 

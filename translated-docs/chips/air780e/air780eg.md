@@ -7,12 +7,14 @@ GPS/GNSS Belonging to a bunch of things, the following, unless otherwise specifi
 ## Internal wiring
 
 UART Part:
+
 1. Air780EG The GPS chip is connected to` UART2/AUX_UART `, so this port is occupied
 2. Because of the characteristics of UART, although it leads to UART2_RX, it is not possible to directly send instructions to GPS chip by external data line, and it is necessary to send the code from inside 780e.
 3. The default baud rate is 115200
 4. The instructions used are the same as the Air510U, [Air510U Materials Website](https://air510u.cn)
 
 Power supply part:
+
 1. Air780EG The GPS power supply is` GPIO13/PAD12`, note is` PAD12/padaddr 12 `, not `PAD28`
 2. The power supply of the chip and the power supply of the active antenna are controlled together, using only one GPIO and one API control.
 3. Because normal GPIO is used, `SLEEP1/LIGHT/SLEEP2/DEEP/HIB mode` will power down
@@ -22,11 +24,11 @@ Power supply part:
 
 ## Special note on new Air780EG
 
-New shipments of Air780EG have added standby power to support hot starts.
+The newly shipped Air780EG has added standby power to support hot start.
 
-How to distinguish whether it is a new model or not depends on the factory time. After 2023.8.7, all the products are new.
+How to tell whether it is new or not: look at the factory time, the factory after 2023.8.7 is new.
 
-Query method: https://erp.openluat.com/imei, enter imei number to query. If not registered, please register first, registration is free of charge.
+Query method: [IMEI production record query of Hecheng ERP](https://erp.openluat.com/imei), enter imei number to query. If you do not register, please register first. Registration is free of charge..
 
 ## Positioning characteristics
 
@@ -36,6 +38,8 @@ For a detailed description, please refer to the Air780EG hardware design manual,
 2. It is a "read-only version" of GPS chip, which means that all configuration items cannot be saved, and ephemeris/time/reference coordinates cannot be saved.
 3. With the blessing of the active antenna, the first positioning time without AGPS is less 30s
 4. When the three elements are complete (`ephemeral`/`reference coordinate `/`UTC time`), if the signal is good, the first positioning success can be less than 2 seconds.
+5. The output coordinate system is WGS84, that is, GPS coordinate system, which should be converted into GCJ02 or BD09 and other domestic coordinate systems when used in domestic maps..
+6. [GPS Coordinate correction website](https://www.openluat.com/GPS-Offset.html)
 
 ## Auxiliary Positioning Correlation
 
@@ -56,13 +60,14 @@ The built-in GPS chip loses all data after power failure, so auxiliary positioni
 ## About Power Consumption
 
 1. There are many states: star search state (60 ~ 100ma), continuous tracking state (40 ~ 60ma), standby state (200 ~ 500ua), and power-down state(0)
-2. No low power instructions
-3. The new model only has the standby power state, and' GPIO23' is used to control the on or off of the standby power.
+2. No low-power instructions, no low-power instructions, no low-power instructions
+3. No low power mode, no low power mode, no low power mode
+4. The new model only has the standby power state, and' GPIO23' is used to control the standby power on or off, and the default is power on.
 
 ## About Packaging and Software
 
 1. External package, Air780E and Air780EG are the same, the difference is that UART2 cannot connect other equipment
-2. AT Firmware to V1112 or above, LuatOS firmware to V1103 or above, to have Air780EG full support, brush
+2. AT Firmware needs V1112 or above, and LuatOS firmware needs V1103 or above to have full support for Air780EG
 
 ## Development Board pinout
 
@@ -71,13 +76,17 @@ The default will not automatically boot, to * * long press pwrkey key for 2 seco
 The power light is on when the power is connected, * * when the power light is on, it does not mean that the power is on * *, and COM equipment will only appear when the computer is connected and turned on.
 
 Please note the difference with the Air780E development board:
+
 1. UART2 No more multiplexing of GPIO10/11
 2. UART2_RX Do not connect external input
+3. To connect the GNSS antenna, the development board is equipped with an active GNSS antenna, and the board is equipped with a 4G antenna, which does not participate in positioning. Positioning cannot be successful without connecting the GNSS antenna..
+4. Air780EG Support passive and active antennas, the development board is matched with the active GNSS antenna by default.
 
 Development board pin size:
+
 1. Distance between pins, 10mil, 2.54mm
 2. Distance between two rows of pins, 700mil, 17.78mm
 
 The keys on the development board are BOOT(GPIO0), RESET (reset), PWR (power-on button) LED lights(GPIO27)
 
-![](pinout_780eg.png)
+![Development board PinOut diagram](pinout_780eg.png)

@@ -40,16 +40,22 @@ The ephemeris provided by the Zhou is GPS Beidou, both constellations have a siz
 Because of the characteristics of UART, although it leads to UART2_RX, it is not possible to directly send instructions to GPS chip by external data line, and it is necessary to send the code from inside 780e.
 因为使用的是普通GPIO,`SLEEP1/LIGHT/SLEEP2/DEEP/HIB模式下会掉电`的
 Because normal GPIO is used, `SLEEP1/LIGHT/SLEEP2/DEEP/HIB mode` will power down
+固件要V1112或以上, LuatOS固件要V1103或以上,才有Air780EG的完整支持
+Firmware needs V1112 or above, and LuatOS firmware needs V1103 or above to have full support for Air780EG
 固件要V1112或以上, LuatOS固件要V1103或以上,才有Air780EG的完整支持,通刷
 Firmware to V1112 or above, LuatOS firmware to V1103 or above, to have Air780EG full support, brush
 在GPS信号良好的室外,有源天线的加持下, 无AGPS的首次定位时间小于
 With the blessing of the active antenna, the first positioning time without AGPS is less
 在lua代码中, 控制供电API是 `pm.power(pm.GPS, true)`, 虽然有pm.GPS_ANT,但对Air780EG无效
 In lua code, the control power supply API is` pm.power(pm.GPS, true)`. although there is pm.GPS_ANT, it is invalid for Air780EG
+坐标纠偏网站
+Coordinate correction website
 外部封装, Air780E和Air780EG是一样的, 区别在于UART2不能接其他设备
 External package, Air780E and Air780EG are the same, the difference is that UART2 cannot connect other equipment
 如何分辨是不是新款, 看出厂时间, 2023.8.7 之后出厂的均为新款
 How to distinguish whether it is a new model or not depends on the factory time. After 2023.8.7, all the products are new.
+如何分辨是不是新款: 看出厂时间, 2023.8.7 之后出厂的均为新款
+How to tell whether it is new or not: look at the factory time, the factory after 2023.8.7 is new.
 如需详细的描述,请查阅Air780EG的硬件设计手册, 这里挑重点, 也补充了一些细节
 For a detailed description, please refer to the Air780EG hardware design manual, here to pick the focus, but also add some details
 定位模式只有一种, 持续定位, 定位成功前后的功耗变化不大,不过稳定定位一段时间后,会降低一些功耗
@@ -62,16 +68,24 @@ Measurements indicate that the Big Dipper ephemeris is helpful, but the main for
 Belonging to a bunch of things, the following, unless otherwise specified, refers to "satellite positioning system."
 开发板
 Development Board
+开发板PinOut图
+Development board PinOut diagram
 开发板上的按键分别是 BOOT(GPIO0), RESET(复位), PWR(开机键) LED灯
 The keys on the development board are BOOT(GPIO0), RESET (reset), PWR (power-on button) LED lights
 开发板排针尺寸
 Development board pin size
+支持无源和有源天线, 开发板默认搭配的是有源GNSS天线
+Support passive and active antennas, the development board is matched with the active GNSS antenna by default
 新出货的Air780EG新增了备电, 从而支持热启动
 New shipments of Air780EG have added standby power to support hot starts.
+新出货的Air780EG新增了备电, 支持热启动
+The newly shipped Air780EG has added standby power to support hot start.
 新款Air780EG带备电, 通过`GPIO23`控制,默认是打开
 The new Air780EG is powered on and controlled by 'GPIO23', which is turned on by default.
 新款才有备电状态, 用`GPIO23`控制备电的开启或关闭
 The new model only has the standby power state, and' GPIO23' is used to control the on or off of the standby power.
+新款才有备电状态, 用`GPIO23`控制备电的开启或关闭, 默认是上电开启
+The new model only has the standby power state, and' GPIO23' is used to control the standby power on or off, and the default is power on.
 时间, 中国移动/中国电信,联网后基站会下发时间(系统事件`NTP_UPDATE`), 中国联通, 走NTP. 例如lua里的API是
 Time, China Mobile/China Telecom, the base station will issue the time (system event` NTP_UPDATE `) after networking, China Unicom, NTP. For example, the API in lua is
 星历, 通过http从合宙服务器下载
@@ -82,12 +96,18 @@ The valid time of the ephemeris is `4 hours
 It is Air780E + GNSS chip 6228, so 95% of the characteristics are the same as Air780E. Here are different places to say
 是`只读版本`的GPS芯片, 意思是所有配置项都不能保存,星历/时间/参考坐标均不能保存
 It is a "read-only version" of GPS chip, which means that all configuration items cannot be saved, and ephemeris/time/reference coordinates cannot be saved.
+查询方法: [合宙ERP的IMEI生产记录查询](https://erp.openluat.com/imei) , 输入imei号即可查询. 若未注册请先注册, 注册是免费的
+Query method: [IMEI production record query of Hecheng ERP](https://erp.openluat.com/imei), enter imei number to query. If you do not register, please register first. Registration is free of charge.
 查询方法: https://erp.openluat.com/imei , 输入imei号即可查询. 若未注册请先注册, 注册是免费的
 Query method: https://erp.openluat.com/imei, enter imei number to query. If not registered, please register first, registration is free of charge
 没有低功耗指令
 No low power instructions
+没有低功耗指令,没有低功耗指令,没有低功耗指令
+No low-power instructions, no low-power instructions, no low-power instructions
 没有低功耗指令,没有低功耗模式
 No low-power commands, no low-power modes
+没有低功耗模式,没有低功耗模式,没有低功耗模式
+No low power mode, no low power mode, no low power mode
 没有备份供电,没有RTC保持, 只有 `上电/掉电` 两种状态,没有低功耗跟踪模式
 No backup power supply, no RTC hold, only `power on/power` two states, no low power tracking mode
 状态有多种: 搜星状态(60~100ma),持续跟踪状态(40~60ma),备电状态(200~500ua),掉电状态
@@ -106,10 +126,14 @@ Distance between pins
 The old model does not have backup power supply, the new model has backup power, and those with backup power can start hot.
 芯片供电和有源天线的供电,是一起控制的, 只用了一个GPIO,一个API控制
 The power supply of the chip and the power supply of the active antenna are controlled together, using only one GPIO and one API control.
+要接GNSS天线, 开发板搭配的是有源GNSS天线, 板载的是4G天线, 不参与定位. 不接GNSS天线是无法定位成功的
+To connect the GNSS antenna, the development board is equipped with an active GNSS antenna, and the board is equipped with a 4G antenna, which does not participate in positioning. Positioning cannot be successful without connecting the GNSS antenna.
 请注意与Air780E开发板的差异点
 Please note the difference with the Air780E development board
 辅助定位相关
 Auxiliary Positioning Correlation
+输出的坐标系是WGS84, 也就是GPS坐标系, 在国内地图使用要转换成 GCJ02 或 BD09 等国内坐标系
+The output coordinate system is WGS84, that is, GPS coordinate system, which should be converted into GCJ02 or BD09 and other domestic coordinate systems when used in domestic maps.
 部分
 Part
 飞行模式是射频相关的控制,不影响GPIO供电,所以不影响GPS供电
