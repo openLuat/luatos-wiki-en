@@ -2,6 +2,10 @@
 The following figure shows some information about the electrical connections inside the CC, which is convenient for users to understand.
 你也可以使用两根`USB C口转鳄鱼夹`的线缆，均使用红色正极夹子，按上图的电流方向进行测量。
 You can also use two `USB C port to alligator clip` cables, both using red positive clips, and measure according to the current direction shown in the figure above.
+你可以使用两根`USB C口转鳄鱼夹`的线缆，均使用红色正极夹子，按上图的电流方向进行测量。
+You can use two 'USB C port to alligator clip' cables, both using red positive clips, and measure according to the current direction shown in the figure above.
+使用香蕉座可以参考这张图
+Use the Banana Seat to refer to this diagram.
 使需使用香蕉座，可以参考这里
 If you need to use a banana seat, please refer to here.
 供电方式

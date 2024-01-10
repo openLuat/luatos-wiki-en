@@ -19,6 +19,8 @@ The basic appearance of the equipment is as follows
 |  **Small dial code **| Switch the power supply source of CC ([see this for usage](https://wiki.luatos.org/iotpower/cc/parts.html#id3)） |          |            |     |     |
 
 :::{dropdown} If you need to use a banana seat, please refer to here.
+![font_old](img/font.jpg)
+
 ④ ⑤ ⑥ ⑦ on the board is the banana socket, if necessary：
 
 1. Buy banana seats for self-welding, for example, [sold by this store](https://item.taobao.com/item.htm?id=680807959486)`￠ 2 * ￠ 4*8 ￠ 3*1.6(20)` can match these holes.
@@ -68,7 +70,13 @@ If you need to use a voltage of more than 20V, you need to set the power supply 
 
 In this manner, the voltage at the output end of the power supply can be measured while the current is measured. The connection diagram is as follows：
 
+![4line](img/4line.jpg)
+
+:::{dropdown} Use the Banana Seat to refer to this diagram.
+
 ![4line](img/4line.png)
+
+:::
 
 The user can freely determine the connection between the input and the output, and the input supports PD charging head
 
@@ -76,9 +84,15 @@ The user can freely determine the connection between the input and the output, a
 
 This method can directly connect the equipment in series into the loop of the existing circuit. The disadvantage of this mode is that the equipment must be powered through the **PC port** and the voltage cannot be measured (the voltage display value has no reference at this time). The connection diagram is as follows：
 
+![2line](img/2line.jpg)
+
+:::{dropdown} Use the Banana Seat to refer to this diagram.
+
 ![2line](img/2line.png)
 
-You can also use two `USB C port to alligator clip` cables, both using red positive clips, and measure according to the current direction shown in the figure above.
+:::
+
+You can use two 'USB C port to alligator clip' cables, both using red positive clips, and measure according to the current direction shown in the figure above.
 
 ## Shell assembly steps
 
