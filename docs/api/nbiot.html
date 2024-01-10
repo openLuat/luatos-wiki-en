@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
     <link rel="icon" href="https://www.luatos.com/favicon.ico" type="image/x-icon">
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="🥢 Extended Library Interface Documentation" href="libs/index.html" /><link rel="prev" title="zlib - zlib Compression/Decompression (Obsolete)" href="zlib.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="nes - nes Simulator" href="nes.html" /><link rel="prev" title="mqtt - mqtt Client" href="mqtt.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>📮 sys System Messages - LuatOS documentation</title>
+        <title>nbiot - NB-IOT Operation Library - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -421,7 +421,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">📖 Reference Manual</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">🍴 LuatOS-SOC Interface Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">🍴 LuatOS-SOC Interface Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="supported.html">Adaptation status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="adc.html">adc - Digital-to-analog conversion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="antbot.html">antbot - Ant Chain</a></li>
@@ -473,6 +473,7 @@
 <li class="toctree-l2"><a class="reference internal" href="mlx90640.html">mlx90640 - infrared temperature measurement(MLX90640)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mobile.html">mobile - Cellular Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mqtt.html">mqtt - mqtt Client</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">nbiot - NB-IOT Operation Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nes.html">nes - nes Simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nimble.html">nimble - Bluetooth BLE library (nimble version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="onewire.html">onewire - single bus protocol driver</a></li>
@@ -517,7 +518,6 @@
 <li class="toctree-l2"><a class="reference internal" href="zlib.html">zlib - zlib Compression/Decompression (Obsolete)</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">📮 sys System Messages</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://wiki.luatos.org/_static/lua53doc/index.html">🌕 Native API Manual</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="libs/index.html">🥢 Extended Library Interface Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="libs/ads1115.html">ads1115 - ads1115 analog-to-digital converter</a></li>
@@ -719,620 +719,1120 @@
           </label>
         </div>
         <article role="main">
-          <section id="sys-system-messages">
-<h1>📮 sys System Messages<a class="headerlink" href="#sys-system-messages" title="Permalink to this headline">#</a></h1>
-<p>Here is a list of system messages that come with the LuatOS framework</p>
-<section id="touchkey">
-<h2>touchkey<a class="headerlink" href="#touchkey" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/touchkey.html">touchkey Interface Documentation Page</a></p>
-<section id="touchkey-inc">
-<h3>TOUCHKEY_INC<a class="headerlink" href="#touchkey-inc" title="Permalink to this headline">#</a></h3>
-<p>Touch key messages</p>
-<p><strong>Additional return parameters</strong></p>
+          <section id="nbiot-nb-iot-operation-library">
+<h1>nbiot - NB-IOT Operation Library<a class="headerlink" href="#nbiot-nb-iot-operation-library" title="Permalink to this headline">#</a></h1>
+<p><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Adaptation status unknown</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page document is automatically generated by <a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/luat/modules/luat_lib_nbiot.c">this file</a>. If there is any error, please submit issue or help modify pr, thank you！</p>
+</div>
+<section id="nbiot-isready">
+<h2>nbiot.isReady()<a class="headerlink" href="#nbiot-isready" title="Permalink to this headline">#</a></h2>
+<p>Is the network ready</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
 <th class="head"><p>explanation</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>port, Sensor id</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>state, Counter, touch count</p></td>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Connected returns true, otherwise false</p></td>
 </tr>
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"TOUCHKEY_INC"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
-    <span class="c1">-- Sensor id</span>
-    <span class="c1">-- Counter, touch count</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"touchkey"</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--  Determine whether it is connected to the Internet</span>
+<span class="kr">if</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">isReady</span><span class="p">()</span> <span class="kr">then</span> 
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"net is ready"</span><span class="p">)</span>
+<span class="kr">end</span>
 </pre></div>
 </div>
 </section>
-</section>
 <hr class="docutils"/>
-<section id="keyboard">
-<h2>keyboard<a class="headerlink" href="#keyboard" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/keyboard.html">keyboard Interface Documentation Page</a></p>
-<section id="kb-inc">
-<h3>KB_INC<a class="headerlink" href="#kb-inc" title="Permalink to this headline">#</a></h3>
-<p>Keyboard Matrix Messages</p>
-<p><strong>Additional return parameters</strong></p>
+<section id="nbiot-imsi">
+<h2>nbiot.imsi()<a class="headerlink" href="#nbiot-imsi" title="Permalink to this headline">#</a></h2>
+<p>Read IMSI</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>port, keyboard id Currently fixed to 0, can be ignored</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>data, keyboard Keys need to be parsed in conjunction with init’s map.</p></td>
-</tr>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>state, Key state 1 is pressed, 0 is released</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"KB_INC"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
-    <span class="c1">-- port Currently fixed to 0, can be ignored</span>
-    <span class="c1">-- data, Need to cooperate with init map for parsing</span>
-    <span class="c1">-- state, 1 is pressed, 0 is released</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"keyboard"</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="sys">
-<h2>sys<a class="headerlink" href="#sys" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/sys.html">sys Interface Documentation Page</a></p>
-<section id="starts-with-0x-01-as-the-first-byte">
-<h3>Starts with 0x 01 as the first byte<a class="headerlink" href="#starts-with-0x-01-as-the-first-byte" title="Permalink to this headline">#</a></h3>
-<p>for system messaging inside luatos</p>
-<p><strong>Additional return parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>args</p></td>
-<td><p>Data returned</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--This is a message for internal use of the system, do not use it externally</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="w5500">
-<h2>w5500<a class="headerlink" href="#w5500" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/w5500.html">w5500 Interface Documentation Page</a></p>
-<section id="ip-ready">
-<h3>IP_READY<a class="headerlink" href="#ip-ready" title="Permalink to this headline">#</a></h3>
-<p>Networked</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after networking.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"w5500"</span><span class="p">,</span> <span class="s2">"IP_READY"</span><span class="p">,</span> <span class="n">ip</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">LWIP_GP</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="ip-lose">
-<h3>IP_LOSE<a class="headerlink" href="#ip-lose" title="Permalink to this headline">#</a></h3>
-<p>The network has been broken</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after the network is cut off.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">adapter</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"w5500"</span><span class="p">,</span> <span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">ETH0</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="libgnss">
-<h2>libgnss<a class="headerlink" href="#libgnss" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/libgnss.html">libgnss Interface Documentation Page</a></p>
-<section id="gnss-state">
-<h3>GNSS_STATE<a class="headerlink" href="#gnss-state" title="Permalink to this headline">#</a></h3>
-<p>GNSS State change</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"GNSS_STATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">ticks</span><span class="p">)</span>
-    <span class="c1">-- event Values are</span>
-    <span class="c1">-- FIXED Positioning success</span>
-    <span class="c1">-- LOSE  LOST POSITIONING</span>
-    <span class="c1">-- ticks is the time of the event and can generally be ignored</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"gnss"</span><span class="p">,</span> <span class="s2">"state"</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">ticks</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="mobile">
-<h2>mobile<a class="headerlink" href="#mobile" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/mobile.html">mobile Interface Documentation Page</a></p>
-<section id="sim-ind">
-<h3>SIM_IND<a class="headerlink" href="#sim-ind" title="Permalink to this headline">#</a></h3>
-<p>sim Card status change</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"SIM_IND"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-    <span class="c1">-- status The value of is:</span>
-    <span class="c1">-- RDY SIM Card is ready, value is nil</span>
-    <span class="c1">-- NORDY No SIM card, value is nil</span>
-    <span class="c1">-- SIM_PIN PIN required, value is nil</span>
-    <span class="c1">-- GET_NUMBER Get the phone number (not necessarily a value), value is nil</span>
-    <span class="c1">-- SIM_WC SIM The number of times the card is written, power failure returns to 0, and value is the statistical value.</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sim status"</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="cell-info-update">
-<h3>CELL_INFO_UPDATE<a class="headerlink" href="#cell-info-update" title="Permalink to this headline">#</a></h3>
-<p>Base station data updated</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Subscription</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CELL_INFO_UPDATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"cell"</span><span class="p">,</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">mobile</span><span class="p">.</span><span class="n">getCellInfo</span><span class="p">()))</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="id1">
-<h3>IP_READY<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p>Networked</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after networking.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"mobile"</span><span class="p">,</span> <span class="s2">"IP_READY"</span><span class="p">,</span> <span class="n">ip</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">LWIP_GP</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="id2">
-<h3>IP_LOSE<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p>The network has been broken</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after the network is cut off.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">adapter</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"mobile"</span><span class="p">,</span> <span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">LWIP_GP</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="ntp-update">
-<h3>NTP_UPDATE<a class="headerlink" href="#ntp-update" title="Permalink to this headline">#</a></h3>
-<p>Time has been synchronized</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- For telecom/mobile cards, the base station will issue the time after networking, but the Unicom card will not, so be sure to pay attention to it.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"NTP_UPDATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"mobile"</span><span class="p">,</span> <span class="s2">"time"</span><span class="p">,</span> <span class="nb">os.date</span><span class="p">())</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="softkeyboard">
-<h2>softkeyboard<a class="headerlink" href="#softkeyboard" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/softkeyboard.html">softkeyboard Interface Documentation Page</a></p>
-<section id="soft-kb-inc">
-<h3>SOFT_KB_INC<a class="headerlink" href="#soft-kb-inc" title="Permalink to this headline">#</a></h3>
-<p>Software Keyboard Matrix Messages</p>
-<p><strong>Additional return parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>port, keyboard id Currently fixed to 0, can be ignored</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>data, keyboard Keys need to be parsed in conjunction with init’s map.</p></td>
-</tr>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>state, Key state 1 is pressed, 0 is released</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"SOFT_KB_INC"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
-    <span class="c1">-- port Currently fixed to 0, can be ignored</span>
-    <span class="c1">-- data, Need to cooperate with init map for parsing</span>
-    <span class="c1">-- state, 1 is pressed, 0 is released</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"keyboard"</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="socket">
-<h2>socket<a class="headerlink" href="#socket" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/socket.html">socket Interface Documentation Page</a></p>
-<section id="id3">
-<h3>NTP_UPDATE<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<p>Time has been synchronized</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"NTP_UPDATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"socket"</span><span class="p">,</span> <span class="s2">"sntp"</span><span class="p">,</span> <span class="nb">os.date</span><span class="p">())</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="ntp-error">
-<h3>NTP_ERROR<a class="headerlink" href="#ntp-error" title="Permalink to this headline">#</a></h3>
-<p>Time synchronization failed</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"NTP_ERROR"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"socket"</span><span class="p">,</span> <span class="s2">"sntp error"</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="ctiot">
-<h2>ctiot<a class="headerlink" href="#ctiot" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/ctiot.html">ctiot Interface Documentation Page</a></p>
-<section id="ctiot-rx">
-<h3>CTIOT_RX<a class="headerlink" href="#ctiot-rx" title="Permalink to this headline">#</a></h3>
-<p>CTIOT Receive Callback Message</p>
-<p><strong>Additional return parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
 <th class="head"><p>explanation</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>data, CTIOT Receive data</p></td>
+<td><p>Returns the IMSI value or if it does not exist nil</p></td>
 </tr>
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_RX"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_RX"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span><span class="n">toHex</span><span class="p">())</span>
-<span class="kr">end</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--Read imsi</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"imsi"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">imsi</span><span class="p">())</span>
 </pre></div>
 </div>
 </section>
 <hr class="docutils"/>
-<section id="ctiot-tx">
-<h3>CTIOT_TX<a class="headerlink" href="#ctiot-tx" title="Permalink to this headline">#</a></h3>
-<p>CTIOT Send callback message</p>
-<p><strong>Additional return parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>bool</p></td>
-<td><p>error, Success or not</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>error_code, Error Code</p></td>
-</tr>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>param, Data</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_TX"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_TX"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="ctiot-reg">
-<h3>CTIOT_REG<a class="headerlink" href="#ctiot-reg" title="Permalink to this headline">#</a></h3>
-<p>CTIOT REG Callback message</p>
-<p><strong>Additional return parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>bool</p></td>
-<td><p>error, Success or not</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>error_code, Error Code</p></td>
-</tr>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>param, Data</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_REG"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_REG"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="ctiot-dereg">
-<h3>CTIOT_DEREG<a class="headerlink" href="#ctiot-dereg" title="Permalink to this headline">#</a></h3>
-<p>CTIOT DEREG Callback message</p>
-<p><strong>Additional return parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>bool</p></td>
-<td><p>error, Success or not</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>error_code, Error Code</p></td>
-</tr>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>param, Data</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_DEREG"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_DEREG"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="ctiot-wakeup">
-<h3>CTIOT_WAKEUP<a class="headerlink" href="#ctiot-wakeup" title="Permalink to this headline">#</a></h3>
-<p>CTIOT Wake-up callback message</p>
-<p><strong>Additional return parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>bool</p></td>
-<td><p>error, Success or not</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>error_code, Error Code</p></td>
-</tr>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>param, Data</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_WAKEUP"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_WAKEUP"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="ctiot-other">
-<h3>CTIOT_OTHER<a class="headerlink" href="#ctiot-other" title="Permalink to this headline">#</a></h3>
-<p>CTIOT Other Callback Messages</p>
-<p><strong>Additional return parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>bool</p></td>
-<td><p>error, Success or not</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>error_code, Error Code</p></td>
-</tr>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>param, Data</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_OTHER"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_OTHER"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="ctiot-fota">
-<h3>CTIOT_FOTA<a class="headerlink" href="#ctiot-fota" title="Permalink to this headline">#</a></h3>
-<p>CTIOT FOTA Callback message</p>
-<p><strong>Additional return parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>bool</p></td>
-<td><p>error, Success or not</p></td>
-</tr>
-<tr class="row-odd"><td><p>number</p></td>
-<td><p>error_code, Error Code</p></td>
-</tr>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>param, Data</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CTIOT_FOTA"</span><span class="p">,</span> <span class="kr">function</span> <span class="p">(</span><span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"CTIOT_FOTA"</span><span class="p">,</span> <span class="nb">error</span><span class="p">,</span> <span class="n">error_code</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="lora">
-<h2>lora<a class="headerlink" href="#lora" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/lora.html">lora Interface Documentation Page</a></p>
-<section id="lora-tx-done">
-<h3>LORA_TX_DONE<a class="headerlink" href="#lora-tx-done" title="Permalink to this headline">#</a></h3>
-<p>LORA Send Complete</p>
-<p><strong>Additional return parameters</strong></p>
+<section id="nbiot-iccid">
+<h2>nbiot.iccid()<a class="headerlink" href="#nbiot-iccid" title="Permalink to this headline">#</a></h2>
+<p>Read ICCID</p>
+<p><strong>Parameters</strong></p>
 <p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_TX_DONE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lora-rx-done">
-<h3>LORA_RX_DONE<a class="headerlink" href="#lora-rx-done" title="Permalink to this headline">#</a></h3>
-<p>LORA Receive Completed</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_RX_DONE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">rssi</span><span class="p">,</span> <span class="n">snr</span><span class="p">)</span>
-    <span class="c1">-- rssi and snr were added on September 06, 2023</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"LORA_RX_DONE: "</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">rssi</span><span class="p">,</span> <span class="n">snr</span><span class="p">)</span>
-    <span class="n">lora</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="s2">"PING"</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lora-tx-timeout">
-<h3>LORA_TX_TIMEOUT<a class="headerlink" href="#lora-tx-timeout" title="Permalink to this headline">#</a></h3>
-<p>LORA Send Timeout</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_TX_TIMEOUT"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lora-rx-timeout">
-<h3>LORA_RX_TIMEOUT<a class="headerlink" href="#lora-rx-timeout" title="Permalink to this headline">#</a></h3>
-<p>LORA Receive Timeout</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_RX_TIMEOUT"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lora-rx-error">
-<h3>LORA_RX_ERROR<a class="headerlink" href="#lora-rx-error" title="Permalink to this headline">#</a></h3>
-<p>LORA Receive Error</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_RX_ERROR"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="sms">
-<h2>sms<a class="headerlink" href="#sms" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/sms.html">sms Interface Documentation Page</a></p>
-<section id="sms-inc">
-<h3>SMS_INC<a class="headerlink" href="#sms-inc" title="Permalink to this headline">#</a></h3>
-<p>SMS received</p>
-<p><strong>Additional return parameters</strong></p>
+<p><strong>Return Value</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
 <th class="head"><p>explanation</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>Mobile phone number</p></td>
-</tr>
-<tr class="row-odd"><td><p>string</p></td>
-<td><p>SMS content, UTF8 encoding</p></td>
+<td><p>Returns the ICCID value or if it does not exist nil</p></td>
 </tr>
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--The example of use can be multi-line</span>
-<span class="c1">-- Receive SMS, support a variety of ways, just choose one</span>
-<span class="c1">-- 1. Set callback function</span>
-<span class="c1">--sms.setNewSmsCb( function(phone,sms)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sms"</span><span class="p">,</span><span class="n">phone</span><span class="p">,</span><span class="n">sms</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-<span class="c1">-- 2. Subscribe to system messages</span>
-<span class="c1">--sys.subscribe("SMS_INC", function(phone,sms)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sms"</span><span class="p">,</span><span class="n">phone</span><span class="p">,</span><span class="n">sms</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read iccid</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"iccid"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">iccid</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-imei-val">
+<h2>nbiot.imei(val)<a class="headerlink" href="#nbiot-imei-val" title="Permalink to this headline">#</a></h2>
+<p>Read or set IMEI</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Pass in the imei value to be set, and read it without passing it.</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Returns the imei value, if it does not exist nil</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span>-- Read imei
+log.info("nbiot", "imei", nbiot.imei())
+@usage 
+-- Setup imei
+log.info("nbiot", "imei", nbiot.imei("898989898989899898"))
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-rssi">
+<h2>nbiot.rssi()<a class="headerlink" href="#nbiot-rssi" title="Permalink to this headline">#</a></h2>
+<p>Read RSSI</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Returns the rssi value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read rssi</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"rssi"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">rssi</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-apn">
+<h2>nbiot.apn()<a class="headerlink" href="#nbiot-apn" title="Permalink to this headline">#</a></h2>
+<p>Read APN</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Returns the apn value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read APN</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"apn"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">apn</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-userapn-apn-auth-user-name-auth-password-pdn-type">
+<h2>nbiot.userApn(apn,Auth_User_Name,Auth_Password,PDN_TYPE)<a class="headerlink" href="#nbiot-userapn-apn-auth-user-name-auth-password-pdn-type" title="Permalink to this headline">#</a></h2>
+<p>Read Settings User APN</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>return</p></td>
+<td><p>Read return PDN_TYPE,Auth_User_Name,Auth_Password, set return bool</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read APN</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"apn"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">userApn</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-tac">
+<h2>nbiot.tac()<a class="headerlink" href="#nbiot-tac" title="Permalink to this headline">#</a></h2>
+<p>Read TAC</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Returns the TAC value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read TAC</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"tac"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">tac</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-tautime">
+<h2>nbiot.tauTime()<a class="headerlink" href="#nbiot-tautime" title="Permalink to this headline">#</a></h2>
+<p>Read Tau Time</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Returns the Tau Time value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read Tau Time</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"tau time"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">tauTime</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-activetime">
+<h2>nbiot.activeTime()<a class="headerlink" href="#nbiot-activetime" title="Permalink to this headline">#</a></h2>
+<p>Read Active Time</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Returns the Active Time value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read Active Time</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"Active Time"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">activeTime</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-cellid">
+<h2>nbiot.cellID()<a class="headerlink" href="#nbiot-cellid" title="Permalink to this headline">#</a></h2>
+<p>Read CellID</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Returns the CellID value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read CellID</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"CellID"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">cellID</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-snr">
+<h2>nbiot.snr()<a class="headerlink" href="#nbiot-snr" title="Permalink to this headline">#</a></h2>
+<p>Read SNR</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Returns the SNR value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read SNR</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"SNR"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">snr</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-csq">
+<h2>nbiot.csq()<a class="headerlink" href="#nbiot-csq" title="Permalink to this headline">#</a></h2>
+<p>reading CSQ, is not exactly equivalent to GSM’s CSQ</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>return csq value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read csq</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"csq"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">csq</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-celevel">
+<h2>nbiot.ceLevel()<a class="headerlink" href="#nbiot-celevel" title="Permalink to this headline">#</a></h2>
+<p>Read CE Level</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Returns the CE Level value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read CE Level</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"CE Level"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">ceLevel</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-sn-val">
+<h2>nbiot.sn(val)<a class="headerlink" href="#nbiot-sn-val" title="Permalink to this headline">#</a></h2>
+<p>Read or set SN, ordinary brush machine (brush bottom layer/brush script) will not clear</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>SN value to be set (only visible characters), read if no value is passed</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Returns the SN value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span>-- Read SN
+log.info("nbiot", "SN", nbiot.sn())
+@usage 
+-- Setup SN
+log.info("nbiot", "SN", nbiot.sn("My Custom SN"))
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-updatecellinfo">
+<h2>nbiot.updateCellInfo()<a class="headerlink" href="#nbiot-updatecellinfo" title="Permalink to this headline">#</a></h2>
+<p>Refresh network information, which can be refreshed through scheduled tasks, with a minimum interval of 5 seconds</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Returns true if the refresh thread is successfully started, otherwise false.</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Refresh Network Information</span>
+<span class="n">nbiot</span><span class="p">.</span><span class="n">updateCellInfo</span><span class="p">()</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">waitUntil</span><span class="p">(</span><span class="s2">"CELL_INFO_IND"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"cell"</span><span class="p">,</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">nbiot</span><span class="p">.</span><span class="n">getCellInfo</span><span class="p">()))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-mcc">
+<h2>nbiot.mcc()<a class="headerlink" href="#nbiot-mcc" title="Permalink to this headline">#</a></h2>
+<p>Read MCC value, available after network registration, refresh through nbiot.updateCellInfo()</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Operator MCC Value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read MCC</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"mcc"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">mcc</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-mnc">
+<h2>nbiot.mnc()<a class="headerlink" href="#nbiot-mnc" title="Permalink to this headline">#</a></h2>
+<p>Read MNC value, available after network registration, refresh through nbiot.updateCellInfo()</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Operator MNC Value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read MNC</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"mnc"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">mnc</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-earfcn">
+<h2>nbiot.earfcn()<a class="headerlink" href="#nbiot-earfcn" title="Permalink to this headline">#</a></h2>
+<p>Read the earfcn value and use it after registering the network. Refresh it through nbiot.updateCellInfo()</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Operator earfcn value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read earfcn</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"earfcn"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">earfcn</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-phycellid">
+<h2>nbiot.phyCellId()<a class="headerlink" href="#nbiot-phycellid" title="Permalink to this headline">#</a></h2>
+<p>Read the phyCellId value, available after registering the network, and refresh it through nbiot.updateCellInfo()</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Operator phyCellId value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read phyCellId</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"phyCellId"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">phyCellId</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-rsrq">
+<h2>nbiot.rsrq()<a class="headerlink" href="#nbiot-rsrq" title="Permalink to this headline">#</a></h2>
+<p>Read rsrq value, available after network registration, refresh through nbiot.updateCellInfo()</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>operator ersrq value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read rsrq</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"rsrq"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">rsrq</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-rsrp">
+<h2>nbiot.rsrp()<a class="headerlink" href="#nbiot-rsrp" title="Permalink to this headline">#</a></h2>
+<p>Read the rsrp value, available after registering the network, and refresh it through nbiot.updateCellInfo()</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>operator rsrp value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read rsrp</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"rsrp"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">rsrp</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-powerlevel">
+<h2>nbiot.powerLevel()<a class="headerlink" href="#nbiot-powerlevel" title="Permalink to this headline">#</a></h2>
+<p>Read the PowerLevel value, available after registering the network, and refresh it through nbiot.updateCellInfo()</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Operator PowerLevel value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read PowerLevel</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"PowerLevel"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">powerLevel</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-getcellinfo">
+<h2>nbiot.getCellInfo()<a class="headerlink" href="#nbiot-getcellinfo" title="Permalink to this headline">#</a></h2>
+<p>Get the details of the network base station, available after registering the network, and refresh through nbio. updateCellInfo()</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>table</p></td>
+<td><p>Network Base Station Details</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Read base station information</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nbiot"</span><span class="p">,</span> <span class="s2">"cell info"</span><span class="p">,</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">nbiot</span><span class="p">.</span><span class="n">getCellInfo</span><span class="p">()))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-setcfun-val">
+<h2>nbiot.setCFUN(val)<a class="headerlink" href="#nbiot-setcfun-val" title="Permalink to this headline">#</a></h2>
+<p>Enter or exit airplane mode</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>0 Flight mode, 1 normal networking mode</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Set success to return true, otherwise return false</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Enter Flight Mode</span>
+<span class="n">nbiot</span><span class="p">.</span><span class="n">setCFUN</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-setbootcfun-val">
+<h2>nbiot.setBootCFUN(val)<a class="headerlink" href="#nbiot-setbootcfun-val" title="Permalink to this headline">#</a></h2>
+<p>Set whether to enter flight mode when the device is powered on</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>0 Flight mode, 1 normal networking mode</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Set success to return true, otherwise return false</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Set to power up to enter flight mode</span>
+<span class="n">nbiot</span><span class="p">.</span><span class="n">setBootCFUN</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-getbootcfun-val">
+<h2>nbiot.getBootCFUN(val)<a class="headerlink" href="#nbiot-getbootcfun-val" title="Permalink to this headline">#</a></h2>
+<p>Obtain whether the device enters flight mode when it is powered on</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Power on to enter the flight mode to return to 0, enter the normal mode to return 1</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Get Power-Up Mode</span>
+<span class="n">nbiot</span><span class="p">.</span><span class="n">getBootCFUN</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-setpsm-psmmode-tautimes-activetimes">
+<h2>nbiot.setPSM(psmMode,tauTimeS,activeTimeS)<a class="headerlink" href="#nbiot-setpsm-psmmode-tautimes-activetimes" title="Permalink to this headline">#</a></h2>
+<p>Setting PSM parameters</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>psm Mode, CMI_MM_DISABLE_PSM(0)/CMI_MM_ENABLE_PSM(1)/CMI_MM_DISCARD_PSM(2)</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>TAU time(unit: S)—related to T3412</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>active time(unit: S)—related to T3324</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Set success to return true, otherwise return false</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Setup PSM</span>
+<span class="n">nbiot</span><span class="p">.</span><span class="n">setPSM</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-setedrx-modeval-acttype-reqedrxvaluems">
+<h2>nbiot.setEDRX(modeVal,actType,reqEdrxValueMs)<a class="headerlink" href="#nbiot-setedrx-modeval-acttype-reqedrxvaluems" title="Permalink to this headline">#</a></h2>
+<p>Setting the EDRX Parameters</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Mode,CMI_MM_DISABLE_EDRX = 0/CMI_MM_ENABLE_EDRX_AND_DISABLE_IND = 1/CMI_MM_ENABLE_EDRX_AND_ENABLE_IND = 2/CMI_MM_DISCARD_EDRX = 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Optional value, 0 or 5. CMI_MM_EDRX_NO_ACT_OR_NOT_USE_EDRX = 0/CMI_MM_EDRX_NB_IOT = 5</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>edrx value, a 4-byte length binary string</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Set success to return true, otherwise return false</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Setup EDRX</span>
+<span class="n">nbiot</span><span class="p">.</span><span class="n">setPSM</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">"0101"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-getpsm">
+<h2>nbiot.getPSM()<a class="headerlink" href="#nbiot-getpsm" title="Permalink to this headline">#</a></h2>
+<p>Get PSM parameters</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>psm Mode, CMI_MM_DISABLE_PSM(0)/CMI_MM_ENABLE_PSM(1)/CMI_MM_DISCARD_PSM(2)</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>TAU time(unit: S)—related to T3412</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>active time(unit: S)—related to T3324</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Get PSM</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"psm"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">getPSM</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-getedrx">
+<h2>nbiot.getEDRX()<a class="headerlink" href="#nbiot-getedrx" title="Permalink to this headline">#</a></h2>
+<p>Get EDRX parameters</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Mode,CMI_MM_DISABLE_EDRX = 0/CMI_MM_ENABLE_EDRX_AND_DISABLE_IND = 1/CMI_MM_ENABLE_EDRX_AND_ENABLE_IND = 2/CMI_MM_DISCARD_EDRX = 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Optional value, 0 or 5. CMI_MM_EDRX_NO_ACT_OR_NOT_USE_EDRX = 0/CMI_MM_EDRX_NB_IOT = 5</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>edrx Value, in milliseconds</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Get EDRX</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"edrx"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">getEDRX</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-settz-tz-auto">
+<h2>nbiot.setTZ(tz, auto)<a class="headerlink" href="#nbiot-settz-tz-auto" title="Permalink to this headline">#</a></h2>
+<p>Setting Time Zone Parameters</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>The time zone parameter, which is optional. The unit is 1/4 time zone. The default value is East Zone 8. The corresponding value is 32</p></td>
+</tr>
+<tr class="row-odd"><td><p>boolean</p></td>
+<td><p>Whether to automatically set the time zone. Optional. The default value is true</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span>-- Set to East Zone 8, disable automatic time zone update
+nbiot.setTZ(32, false)
+@usage 
+-- Enable automatic time zone update
+nbiot.setTZ(nil, true)
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-gettz">
+<h2>nbiot.getTZ()<a class="headerlink" href="#nbiot-gettz" title="Permalink to this headline">#</a></h2>
+<p>Get Time Zone Parameters</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>The time zone parameter, the unit is 1/4 time zone, the default East Zone 8, and the value is 32</p></td>
+</tr>
+<tr class="row-odd"><td><p>boolean</p></td>
+<td><p>Set the time zone automatically, the default is true</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Get Time Zone Parameters</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"timezone"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">getTZ</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-setbands-modes">
+<h2>nbiot.setBands(modes)<a class="headerlink" href="#nbiot-setbands-modes" title="Permalink to this headline">#</a></h2>
+<p>Set Band Mode (Not Available)</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>any</p></td>
+<td><p>The pattern, which needs to be an array in the form of table, must be passed in.</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Set Results</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Search only band 8</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"band"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">setBands</span><span class="p">({</span><span class="mi">8</span><span class="p">}))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-getbands">
+<h2>nbiot.getBands()<a class="headerlink" href="#nbiot-getbands" title="Permalink to this headline">#</a></h2>
+<p>Gets the currently used Band mode (not available)</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>table</p></td>
+<td><p>Array of the set band</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Search only band 8</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"band"</span><span class="p">,</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">nbiot</span><span class="p">.</span><span class="n">getBands</span><span class="p">()))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-setedrxptw-val">
+<h2>nbiot.setEDRXPtw(val)<a class="headerlink" href="#nbiot-setedrxptw-val" title="Permalink to this headline">#</a></h2>
+<p>Setting the EDX PTW parameters</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Value to be set</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Returns true on success, otherwise false</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Set PTW value X</span>
+<span class="n">nbiot</span><span class="p">.</span><span class="n">setEDRXPtw</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="c1">-- Optional Value</span>
+<span class="n">reqPtwValue</span><span class="p">:</span>
+<span class="n">NB</span><span class="o">-</span><span class="n">S1</span> <span class="n">mode</span>
+<span class="n">The</span> <span class="n">field</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">PTW</span> <span class="n">value</span> <span class="kr">in</span> <span class="n">seconds</span> <span class="kr">for</span> <span class="n">NB</span><span class="o">-</span><span class="n">S1</span> <span class="n">mode</span><span class="p">.</span><span class="n">The</span> <span class="n">PTW</span> <span class="n">value</span> <span class="n">is</span> <span class="n">used</span>
+<span class="n">as</span> <span class="n">specified</span> <span class="kr">in</span> <span class="mi">3</span><span class="n">GPP</span> <span class="n">TS</span> <span class="mf">23.682</span> <span class="p">[</span><span class="mi">133</span><span class="n">a</span><span class="p">].</span><span class="n">The</span> <span class="n">PTW</span> <span class="n">value</span> <span class="n">is</span> <span class="n">derived</span> <span class="n">as</span> <span class="n">follows</span><span class="p">:</span>
+<span class="n">bit</span>
+         <span class="n">Paging</span> <span class="n">Time</span> <span class="n">Window</span> <span class="n">length</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>  <span class="mi">2</span><span class="p">,</span><span class="mi">56</span> <span class="n">seconds</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>  <span class="mi">5</span><span class="p">,</span><span class="mi">12</span> <span class="n">seconds</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>  <span class="mi">7</span><span class="p">,</span><span class="mi">68</span> <span class="n">seconds</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span>  <span class="mi">10</span><span class="p">,</span><span class="mi">24</span> <span class="n">seconds</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>  <span class="mi">12</span><span class="p">,</span><span class="mi">8</span> <span class="n">seconds</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span>  <span class="mi">15</span><span class="p">,</span><span class="mi">36</span> <span class="n">seconds</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>  <span class="mi">17</span><span class="p">,</span><span class="mi">92</span> <span class="n">seconds</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>  <span class="mi">20</span><span class="p">,</span><span class="mi">48</span> <span class="n">seconds</span>
+<span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>  <span class="mi">23</span><span class="p">,</span><span class="mi">04</span> <span class="n">seconds</span>
+<span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>  <span class="mi">25</span><span class="p">,</span><span class="mi">6</span> <span class="n">seconds</span>
+<span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>  <span class="mi">28</span><span class="p">,</span><span class="mi">16</span> <span class="n">seconds</span>
+<span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span>  <span class="mi">30</span><span class="p">,</span><span class="mi">72</span> <span class="n">seconds</span>
+<span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>  <span class="mi">33</span><span class="p">,</span><span class="mi">28</span> <span class="n">seconds</span>
+<span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span>  <span class="mi">35</span><span class="p">,</span><span class="mi">84</span> <span class="n">seconds</span>
+<span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>  <span class="mi">38</span><span class="p">,</span><span class="mi">4</span> <span class="n">seconds</span>
+<span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>  <span class="mi">40</span><span class="p">,</span><span class="mi">96</span> <span class="n">seconds</span>
+ 
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-getedrxptw">
+<h2>nbiot.getEDRXPtw()<a class="headerlink" href="#nbiot-getedrxptw" title="Permalink to this headline">#</a></h2>
+<p>Get EDX PTW parameters</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>ptw Value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Print PTW value</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"ptw"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">getEDRXPtw</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="nbiot-ticks">
+<h2>nbiot.ticks()<a class="headerlink" href="#nbiot-ticks" title="Permalink to this headline">#</a></h2>
+<p>Get tick count</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>tick Count</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Print PTW value</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"tick"</span><span class="p">,</span> <span class="n">nbiot</span><span class="p">.</span><span class="n">ticks</span><span class="p">())</span>
 </pre></div>
 </div>
 <hr class="docutils"/>
-</section>
 </section>
 </section>
 
@@ -1341,23 +1841,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="libs/index.html">
+          <a class="next-page" href="nes.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">🥢 Extended Library Interface Documentation</div>
+                <div class="title">nes - nes Simulator</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="zlib.html">
+          <a class="prev-page" href="mqtt.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">zlib - zlib Compression/Decompression (Obsolete)</div>
+                <div class="title">mqtt - mqtt Client</div>
                 
               </div>
             </a>
@@ -1392,67 +1892,45 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">📮 sys System Messages</a><ul>
-<li><a class="reference internal" href="#touchkey">touchkey</a><ul>
-<li><a class="reference internal" href="#touchkey-inc">TOUCHKEY_INC</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#keyboard">keyboard</a><ul>
-<li><a class="reference internal" href="#kb-inc">KB_INC</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#sys">sys</a><ul>
-<li><a class="reference internal" href="#starts-with-0x-01-as-the-first-byte">Starts with 0x 01 as the first byte</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#w5500">w5500</a><ul>
-<li><a class="reference internal" href="#ip-ready">IP_READY</a></li>
-<li><a class="reference internal" href="#ip-lose">IP_LOSE</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#libgnss">libgnss</a><ul>
-<li><a class="reference internal" href="#gnss-state">GNSS_STATE</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#mobile">mobile</a><ul>
-<li><a class="reference internal" href="#sim-ind">SIM_IND</a></li>
-<li><a class="reference internal" href="#cell-info-update">CELL_INFO_UPDATE</a></li>
-<li><a class="reference internal" href="#id1">IP_READY</a></li>
-<li><a class="reference internal" href="#id2">IP_LOSE</a></li>
-<li><a class="reference internal" href="#ntp-update">NTP_UPDATE</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#softkeyboard">softkeyboard</a><ul>
-<li><a class="reference internal" href="#soft-kb-inc">SOFT_KB_INC</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#socket">socket</a><ul>
-<li><a class="reference internal" href="#id3">NTP_UPDATE</a></li>
-<li><a class="reference internal" href="#ntp-error">NTP_ERROR</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#ctiot">ctiot</a><ul>
-<li><a class="reference internal" href="#ctiot-rx">CTIOT_RX</a></li>
-<li><a class="reference internal" href="#ctiot-tx">CTIOT_TX</a></li>
-<li><a class="reference internal" href="#ctiot-reg">CTIOT_REG</a></li>
-<li><a class="reference internal" href="#ctiot-dereg">CTIOT_DEREG</a></li>
-<li><a class="reference internal" href="#ctiot-wakeup">CTIOT_WAKEUP</a></li>
-<li><a class="reference internal" href="#ctiot-other">CTIOT_OTHER</a></li>
-<li><a class="reference internal" href="#ctiot-fota">CTIOT_FOTA</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#lora">lora</a><ul>
-<li><a class="reference internal" href="#lora-tx-done">LORA_TX_DONE</a></li>
-<li><a class="reference internal" href="#lora-rx-done">LORA_RX_DONE</a></li>
-<li><a class="reference internal" href="#lora-tx-timeout">LORA_TX_TIMEOUT</a></li>
-<li><a class="reference internal" href="#lora-rx-timeout">LORA_RX_TIMEOUT</a></li>
-<li><a class="reference internal" href="#lora-rx-error">LORA_RX_ERROR</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#sms">sms</a><ul>
-<li><a class="reference internal" href="#sms-inc">SMS_INC</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">nbiot - NB-IOT Operation Library</a><ul>
+<li><a class="reference internal" href="#nbiot-isready">nbiot.isReady()</a></li>
+<li><a class="reference internal" href="#nbiot-imsi">nbiot.imsi()</a></li>
+<li><a class="reference internal" href="#nbiot-iccid">nbiot.iccid()</a></li>
+<li><a class="reference internal" href="#nbiot-imei-val">nbiot.imei(val)</a></li>
+<li><a class="reference internal" href="#nbiot-rssi">nbiot.rssi()</a></li>
+<li><a class="reference internal" href="#nbiot-apn">nbiot.apn()</a></li>
+<li><a class="reference internal" href="#nbiot-userapn-apn-auth-user-name-auth-password-pdn-type">nbiot.userApn(apn,Auth_User_Name,Auth_Password,PDN_TYPE)</a></li>
+<li><a class="reference internal" href="#nbiot-tac">nbiot.tac()</a></li>
+<li><a class="reference internal" href="#nbiot-tautime">nbiot.tauTime()</a></li>
+<li><a class="reference internal" href="#nbiot-activetime">nbiot.activeTime()</a></li>
+<li><a class="reference internal" href="#nbiot-cellid">nbiot.cellID()</a></li>
+<li><a class="reference internal" href="#nbiot-snr">nbiot.snr()</a></li>
+<li><a class="reference internal" href="#nbiot-csq">nbiot.csq()</a></li>
+<li><a class="reference internal" href="#nbiot-celevel">nbiot.ceLevel()</a></li>
+<li><a class="reference internal" href="#nbiot-sn-val">nbiot.sn(val)</a></li>
+<li><a class="reference internal" href="#nbiot-updatecellinfo">nbiot.updateCellInfo()</a></li>
+<li><a class="reference internal" href="#nbiot-mcc">nbiot.mcc()</a></li>
+<li><a class="reference internal" href="#nbiot-mnc">nbiot.mnc()</a></li>
+<li><a class="reference internal" href="#nbiot-earfcn">nbiot.earfcn()</a></li>
+<li><a class="reference internal" href="#nbiot-phycellid">nbiot.phyCellId()</a></li>
+<li><a class="reference internal" href="#nbiot-rsrq">nbiot.rsrq()</a></li>
+<li><a class="reference internal" href="#nbiot-rsrp">nbiot.rsrp()</a></li>
+<li><a class="reference internal" href="#nbiot-powerlevel">nbiot.powerLevel()</a></li>
+<li><a class="reference internal" href="#nbiot-getcellinfo">nbiot.getCellInfo()</a></li>
+<li><a class="reference internal" href="#nbiot-setcfun-val">nbiot.setCFUN(val)</a></li>
+<li><a class="reference internal" href="#nbiot-setbootcfun-val">nbiot.setBootCFUN(val)</a></li>
+<li><a class="reference internal" href="#nbiot-getbootcfun-val">nbiot.getBootCFUN(val)</a></li>
+<li><a class="reference internal" href="#nbiot-setpsm-psmmode-tautimes-activetimes">nbiot.setPSM(psmMode,tauTimeS,activeTimeS)</a></li>
+<li><a class="reference internal" href="#nbiot-setedrx-modeval-acttype-reqedrxvaluems">nbiot.setEDRX(modeVal,actType,reqEdrxValueMs)</a></li>
+<li><a class="reference internal" href="#nbiot-getpsm">nbiot.getPSM()</a></li>
+<li><a class="reference internal" href="#nbiot-getedrx">nbiot.getEDRX()</a></li>
+<li><a class="reference internal" href="#nbiot-settz-tz-auto">nbiot.setTZ(tz, auto)</a></li>
+<li><a class="reference internal" href="#nbiot-gettz">nbiot.getTZ()</a></li>
+<li><a class="reference internal" href="#nbiot-setbands-modes">nbiot.setBands(modes)</a></li>
+<li><a class="reference internal" href="#nbiot-getbands">nbiot.getBands()</a></li>
+<li><a class="reference internal" href="#nbiot-setedrxptw-val">nbiot.setEDRXPtw(val)</a></li>
+<li><a class="reference internal" href="#nbiot-getedrxptw">nbiot.getEDRXPtw()</a></li>
+<li><a class="reference internal" href="#nbiot-ticks">nbiot.ticks()</a></li>
 </ul>
 </li>
 </ul>

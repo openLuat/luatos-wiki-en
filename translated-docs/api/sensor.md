@@ -353,3 +353,70 @@ end
 
 ---
 
+## sensor.sc12a(sda,scl)
+
+
+
+Get channel data for sc12a touched
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|gpio port number of the data|
+|int|gpio port number of the clock|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|int|If the read is successful, the reshaped data is returned. If the read fails, the error value is returned.|
+
+**Examples**
+
+```lua
+while true do
+  local temp1=sensor.sc12a(4,7)
+  if bit.rshift(bit.band( temp1, 0x8000), 15 )==0x01 then
+    log.info("There is a channel that is pressed.0")
+  end
+  if bit.rshift(bit.band( temp1, 0x4000), 14 )==0x01 then
+    log.info("There is a channel that is pressed.1")
+  end
+  if bit.rshift(bit.band( temp1, 0x2000), 13 )==0x01 then
+    log.info("There is a channel that is pressed.2")
+  end
+  if bit.rshift(bit.band( temp1, 0x1000), 12 )==0x01 then
+    log.info("There is a channel that is pressed.3")
+  end
+  if bit.rshift(bit.band( temp1, 0x800), 11 )==0x01 then
+    log.info("There is a channel that is pressed.4")
+  end
+  if bit.rshift(bit.band( temp1, 0x400), 10 )==0x01 then
+    log.info("There is a channel that is pressed.5")
+  end
+  if bit.rshift(bit.band( temp1, 0x200), 9 )==0x01 then
+    log.info("There is a channel that is pressed.6")
+  end
+  if bit.rshift(bit.band( temp1, 0x100), 8 )==0x01 then
+    log.info("There is a channel that is pressed.7")
+  end
+  if bit.rshift(bit.band( temp1, 0x80), 7 )==0x01 then
+    log.info("There is a channel that is pressed.8")
+  end
+  if bit.rshift(bit.band( temp1, 0x40), 6 )==0x01 then
+    log.info("There is a channel that is pressed.9")
+  end
+  if bit.rshift(bit.band( temp1, 0x20), 5 )==0x01 then
+    log.info("There is a channel that is pressed.10")
+  end
+  if bit.rshift(bit.band( temp1, 0x10), 4 )==0x01 then
+    log.info("There is a channel that is pressed.11")
+  end
+  sys.wait(200)
+end
+
+```
+
+---
+

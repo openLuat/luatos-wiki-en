@@ -76,6 +76,10 @@ Obtain temperature and humidity data of DHT11/DHT12
 Get DS18B20 temperature data
 获取Hx711的压力传感数据
 Obtaining pressure sensing data for the Hx711
+获取sc12a被触摸的通道数据
+Get channel data for sc12a touched
+被按下的有通道
+There is a channel that is pressed.
 设置ws2812b输出(gpio驱动方式
 set ws2812b output (gpio drive mode
 设置ws2812b输出(pwm驱动方式,需要pwm能输出800k频率，否则无法使用此方法
@@ -88,6 +92,8 @@ Please consult
 Read the data
 读取成功
 Read success
+读取成功返回整形数据，读取失败时返回错误值
+If the read is successful, the reshaped data is returned. If the read fails, the error value is returned.
 读取的长度
 Read Length
 返回值

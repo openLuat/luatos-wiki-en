@@ -473,6 +473,7 @@
 <li class="toctree-l2"><a class="reference internal" href="mlx90640.html">mlx90640 - infrared temperature measurement(MLX90640)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mobile.html">mobile - Cellular Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mqtt.html">mqtt - mqtt Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html">nbiot - NB-IOT Operation Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nes.html">nes - nes Simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nimble.html">nimble - Bluetooth BLE library (nimble version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="onewire.html">onewire - single bus protocol driver</a></li>
@@ -517,7 +518,6 @@
 <li class="toctree-l2"><a class="reference internal" href="zlib.html">zlib - zlib Compression/Decompression (Obsolete)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sys_pub.html">📮 sys System Messages</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://wiki.luatos.org/_static/lua53doc/index.html">🌕 Native API Manual</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="libs/index.html">🥢 Extended Library Interface Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="libs/ads1115.html">ads1115 - ads1115 analog-to-digital converter</a></li>
@@ -1335,6 +1335,47 @@
 <li class="toctree-l2"><a class="reference internal" href="mqtt.html#mqttc-will-topic-payload-qos-retain">mqttc:will(topic, payload, qos, retain)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="nbiot.html">nbiot - NB-IOT Operation Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-isready">nbiot.isReady()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-imsi">nbiot.imsi()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-iccid">nbiot.iccid()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-imei-val">nbiot.imei(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-rssi">nbiot.rssi()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-apn">nbiot.apn()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-userapn-apn-auth-user-name-auth-password-pdn-type">nbiot.userApn(apn,Auth_User_Name,Auth_Password,PDN_TYPE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-tac">nbiot.tac()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-tautime">nbiot.tauTime()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-activetime">nbiot.activeTime()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-cellid">nbiot.cellID()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-snr">nbiot.snr()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-csq">nbiot.csq()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-celevel">nbiot.ceLevel()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-sn-val">nbiot.sn(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-updatecellinfo">nbiot.updateCellInfo()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-mcc">nbiot.mcc()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-mnc">nbiot.mnc()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-earfcn">nbiot.earfcn()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-phycellid">nbiot.phyCellId()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-rsrq">nbiot.rsrq()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-rsrp">nbiot.rsrp()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-powerlevel">nbiot.powerLevel()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getcellinfo">nbiot.getCellInfo()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setcfun-val">nbiot.setCFUN(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setbootcfun-val">nbiot.setBootCFUN(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getbootcfun-val">nbiot.getBootCFUN(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setpsm-psmmode-tautimes-activetimes">nbiot.setPSM(psmMode,tauTimeS,activeTimeS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setedrx-modeval-acttype-reqedrxvaluems">nbiot.setEDRX(modeVal,actType,reqEdrxValueMs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getpsm">nbiot.getPSM()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getedrx">nbiot.getEDRX()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-settz-tz-auto">nbiot.setTZ(tz, auto)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-gettz">nbiot.getTZ()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setbands-modes">nbiot.setBands(modes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getbands">nbiot.getBands()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-setedrxptw-val">nbiot.setEDRXPtw(val)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-getedrxptw">nbiot.getEDRXPtw()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbiot.html#nbiot-ticks">nbiot.ticks()</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="nes.html">nes - nes Simulator</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="nes.html#nes-init-file-path">nes.init(file_path)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nes.html#nes-key-key-val">nes.key(key,val)</a></li>
@@ -1485,6 +1526,7 @@
 <li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-ws2812b-pwm-pin-data">sensor.ws2812b_pwm(pin,data)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-ws2812b-spi-pin-data">sensor.ws2812b_spi(pin,data)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-dht1x-pin">sensor.dht1x(pin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor.html#sensor-sc12a-sda-scl">sensor.sc12a(sda,scl)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sfd.html">sfd - SPI FLASH Operation Library</a><ul>
