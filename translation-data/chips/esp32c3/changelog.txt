@@ -1,0 +1,24 @@
+不支持
+Not supported
+修复APSTA模式下STA无法连接到服务器
+Fix STA unable to connect to server in APSTA mode
+修复SPI全双工模式
+Fix SPI Full Duplex Mode
+修复wdt超时后不复位
+Fix wdt not reset after timeout
+发布时间
+Release time
+发行注记
+Issue Notes
+变更内容
+Change content
+库处理较大的整数时会丢失精度
+Library loses precision when handling larger integers
+支持设置mac地址
+Support setting MAC address
+支持设置主频
+Support setting main frequency
+支持限制读取长度
+Support for limiting read length
+添加xxtea库
+Add xxtea library
