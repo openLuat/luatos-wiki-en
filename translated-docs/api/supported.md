@@ -7,6 +7,7 @@
 |[audio](audio.md)|`Multimedia-Audio`|Y|Y|Y|X|X|Y|Y|
 |[bit64](bit64.md)|`32 Basic arithmetic and logical operations on 64-bit data on bit systems`|X|X|Y|Y|Y|Y|Y|
 |[camera](camera.md)|`Camera`|X|X|Y|X|X|X|X|
+|[cc](cc.md)|`Call function`|X|X|X|X|X|Y|Y|
 |[codec](codec.md)|`Multimedia-Codec`|Y|Y|Y|X|X|Y|Y|
 |[coremark](coremark.md)|`Running points`|Y|Y|Y|Y|Y|Y|Y|
 |[crypto](crypto.md)|`Encryption and decryption and hash functions`|Y|Y|Y|Y|Y|Y|Y|
@@ -52,7 +53,6 @@
 |[mlx90640](mlx90640.md)|`infrared temperature measurement(MLX90640)`|Y|Y|Y|Y|Y|Y|Y|
 |[mobile](mobile.md)|`Cellular Network`|X|X|X|X|X|Y|Y|
 |[mqtt](mqtt.md)|`mqtt Client`|Y|Y|Y|Y|Y|Y|Y|
-|[nbiot](nbiot.md)|`NB-IOT Operation Library`|?|?|?|?|?|?|?|
 |[nes](nes.md)|`nes Simulator`|Y|Y|Y|X|X|Y|Y|
 |[nimble](nimble.md)|`Bluetooth BLE library (nimble version)`|Y|Y|X|Y|Y|X|X|
 |[onewire](onewire.md)|`single bus protocol driver`|X|X|X|X|X|X|X|

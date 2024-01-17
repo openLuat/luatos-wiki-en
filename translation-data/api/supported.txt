@@ -144,6 +144,8 @@ Software package
 software keyboard matrix (currently only supported by air105
 适配状态
 Adaptation status
+通话功能
+Call function
 鉴权库, 用于生成各种云平台的参数
 Authentication library, used to generate parameters for various cloud platforms
 错误上报
