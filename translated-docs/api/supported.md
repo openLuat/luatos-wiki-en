@@ -88,7 +88,7 @@
 |[usbapp](usbapp.md)|`USB Functional operation`|X|X|Y|X|X|X|X|
 |[w5500](w5500.md)|`w5500 Ethernet driver`|Y|Y|Y|Y|Y|Y|Y|
 |[wdt](wdt.md)|`watchdog Operation Library`|Y|Y|Y|Y|Y|Y|Y|
-|[websocket](websocket.md)|`websocket Client`|Y|Y|Y|Y|Y|Y|Y|
+|[websocket](websocket.md)|`websocket Client`|X|X|X|X|X|Y|Y|
 |[wlan](wlan.md)|`wifi Operation`|Y|Y|X|Y|Y|Y|Y|
 |[ws2812](ws2812.md)|`Phantom Lights with RGB Controller (WS2812 Series)`|Y|Y|X|X|X|Y|Y|
 |[xxtea](xxtea.md)|`xxtea encryption and decryption `|Y|Y|X|Y|Y|Y|Y|
