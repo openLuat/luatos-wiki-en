@@ -68,7 +68,8 @@ pm.request(pm.IDLE) -- Request to enter different sleep modes by switching diffe
 |pm.GPS|number|GPS Power|
 |pm.GPS_ANT|number|GPS The antenna power supply, active antenna is required.|
 |pm.CAMERA|number|camera Power supply, CAM_VCC output|
-|pm.DAC_EN|number|Air780E And Air600E DAC_EN, note that the default configuration of audio will automatically use this pin to control the enable of CODEC|
+|pm.DAC_EN|number|Air780E And Air600E DAC_EN (LDO_CTL of the new hardware manual, same PIN, naming change), note that the default configuration of audio will automatically use this pin to control CODEC enable|
+|pm.LDO_CTL|number|Air780E And Air600E LDO_CTL (DAC_EN of the old hardware manual, same PIN, naming change),Air780EP LDO_CTL, note that the default configuration of audio will automatically use this pin to control CODEC enable|
 |pm.PWK_MODE|number|Whether to turn on the powerkey filtering mode of ec618, true on, note that reset becomes direct shutdown in filtering mode|
 |pm.WORK_MODE|number|ec618 Energy saving mode, 0~3,0 completely off, 1 performance priority, 2 balance, 3 extreme power consumption|
 |pm.IOVL|number|All GPIO high-level voltage controls, currently available only in the ec618 series|
