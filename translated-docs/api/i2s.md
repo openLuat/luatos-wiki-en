@@ -40,7 +40,7 @@ Initialization i2s
 |Incoming Value Type | Explanation|
 |-|-|
 |int|i2s Channel number, related to specific equipment|
-|int|Mode, currently only supports 0, MASTER\| TX\| RX mode, slave is not supported. Optional|
+|int|Mode, 0 master 1 slave|
 |int|Sampling rate, default 44100. Optional|
 |int|Number of data bits, default 16, can be a multiple of 8|
 |int|Channel, 0 left channel, 1 right channel, 2 stereo. Optional|

@@ -72,6 +72,8 @@ Format
 format, optional
 格式，比如
 format, such
+模式, 0 主机 1 从机
+Mode, 0 master 1 slave
 模式, 当前仅支持0, MASTER\|TX\|RX 模式, 暂不支持slave. 可选
 Mode, currently only supports 0, MASTER\| TX\| RX mode, slave is not supported. Optional
 注册I2S事件回调
