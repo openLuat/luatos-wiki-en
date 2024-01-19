@@ -228,7 +228,7 @@ Get memory information
 
 |Incoming Value Type | Explanation|
 |-|-|
-|type|"sys"System memory, "lua" virtual machine memory, default is lua virtual machine memory|
+|type|"sys"System memory, "lua" virtual machine memory, "psram" psram memory, default is lua virtual machine memory|
 
 **Return Value**
 
