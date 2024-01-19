@@ -224,3 +224,33 @@ log.info("i2s Send Buffer Status", max, remain)
 
 ---
 
+## i2s.getPara(id)
+
+
+
+Obtain the I2S parameter. For more information, see setup
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|Channel id|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|boolean|Is true in working state|
+|int|Mode, 0 master 1 slave|
+|int|Sample Rate|
+|int|Number of data bits|
+|int|vocal tract|
+|int|Format|
+|int|1 BCLK number of channels|
+
+**Examples**
+
+None
+
+---
+

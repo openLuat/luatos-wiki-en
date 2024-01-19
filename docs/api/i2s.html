@@ -1025,6 +1025,57 @@
 <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"i2s Send Buffer Status"</span><span class="p">,</span> <span class="n">max</span><span class="p">,</span> <span class="n">remain</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="i2s-getpara-id">
+<h2>i2s.getPara(id)<a class="headerlink" href="#i2s-getpara-id" title="Permalink to this headline">#</a></h2>
+<p>Obtain the I2S parameter. For more information, see setup</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Channel id</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Is true in working state</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Mode, 0 master 1 slave</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Sample Rate</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Number of data bits</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>vocal tract</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Format</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>1 BCLK number of channels</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<p>None</p>
 <hr class="docutils"/>
 </section>
 </section>
@@ -1093,6 +1144,7 @@
 <li><a class="reference internal" href="#i2s-close-id">i2s.close(id)</a></li>
 <li><a class="reference internal" href="#i2s-on-id-func">i2s.on(id, func)</a></li>
 <li><a class="reference internal" href="#i2s-txstat-id">i2s.txStat(id)</a></li>
+<li><a class="reference internal" href="#i2s-getpara-id">i2s.getPara(id)</a></li>
 </ul>
 </li>
 </ul>

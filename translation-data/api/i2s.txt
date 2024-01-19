@@ -1,3 +1,5 @@
+个声道的BCLK数量
+BCLK number of channels
 个声道的BCLK数量, 可选16和
 BCLK number of channels, optional 16 and
 以详细参数初始化i2s, 示例为默认值
@@ -24,6 +26,8 @@ Send i2s data
 Send Buffer Status
 回调方法
 Callback Method
+声道
+vocal tract
 声道, 0 左声道, 1 右声道, 2 双声道. 可选
 Channel, 0 left channel, 1 right channel, 2 dual channels. Optional
 声道, 0 左声道, 1 右声道, 2 立体声. 可选
@@ -50,6 +54,8 @@ Receive i2s data, note that the data has been stored in zbuff at the time of cal
 Digital Audio
 数据, 可以是字符串或
 Data, which can be a string or
+数据位数
+Number of data bits
 数据位数,默认16, 可以是8的倍数
 Number of data bits, default 16, can be a multiple of 8
 数据缓存区
@@ -60,6 +66,8 @@ Data length, unit byte, string is the full length of the string by default, zbuf
 None
 无返回值
 No return value
+是否在工作状态 true是
+Is true in working state
 本库有专属demo，[点此链接查看i2s的demo例子
 This library has its own demo,[click this link to view the demo example of i2s
 本页文档由[这个文件](https://gitee.com/openLuat/LuatOS/tree/master/luat/modules/luat_lib_i2s.c)自动生成。如有错误，请提交issue或帮忙修改后pr，谢谢
@@ -80,6 +88,8 @@ Mode, currently only supports 0, MASTER\| TX\| RX mode, slave is not supported. 
 Register I2S Event Callback
 示例
 Example
+获取I2S参数，参数具体参考
+Obtain the I2S parameter. For more information, see
 获取i2s的发送缓冲区状态
 Get the send buffer status for i2s
 读取发送缓冲区的状态, 从而判断是否需要继续传入音频数据
@@ -94,6 +104,8 @@ This library belongs to the underlying adaptation library, please refer to the e
 Channel
 通道号,与具体设备有关
 Channel number, related to specific equipment
+采样率
+Sample Rate
 采样率,默认44100. 可选
 Sampling rate, default 44100. Optional
 频率, 默认 8M. 可选

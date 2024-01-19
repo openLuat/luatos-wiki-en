@@ -6,6 +6,8 @@ The uplink data storage area 2 and the uplink data storage area 1 form a double 
 Downlink Data Storage Area
 下行数据保存区2,和下行数据保存区1组成双缓冲区
 Downlink data storage area 2 and downlink data storage area 1 form a double buffer
+为低音质，2为高音质，0没有在通话
+is low quality, 2 is high quality, 0 is not talking
 事件名称 音频录音数据为
 The event name audio recording data is
 传入值类型|解释
@@ -58,6 +60,8 @@ Phone Number
 Example
 获取最后一次通话的号码
 Get the number of the last call
+获取当前通话质量
+Get the current call quality
 返回值
 Return Value
 返回值类型|解释

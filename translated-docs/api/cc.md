@@ -172,6 +172,28 @@ cc.record(true, buff1, buff2, buff3, buff4)
 
 ---
 
+## cc.quality()
+
+
+
+Get the current call quality
+
+**Parameters**
+
+None
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|int|1 is low quality, 2 is high quality, 0 is not talking|
+
+**Examples**
+
+None
+
+---
+
 ## cc.on(event, func)
 
 
