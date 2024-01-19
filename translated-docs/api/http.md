@@ -39,7 +39,7 @@ http Client
 |string|The request method, which supports legitimate HTTP methods such as GET and POST.|
 |string|url Address, support http and https, support domain name, support custom port|
 |tabal|The request header is optional such {["Content-Type"] = "application/x-www-form-urlencoded"}|
-|string|body Optional, valid for POST/PUT requests|
+|string/zbuff|body Optional|
 |table|Additional configuration options include timeout: timeout unit ms is optional, default is 10 minutes, write 0 is permanent wait dst: download path, optional adapter: select to use network card, optional debug: whether to open debug information, optional, ipv6: whether to ipv6 default is not, optional callback: download callback function, parameter content_len: total length body_len: userdata user parameter by download length, optional userdata: callback custom parameter  |
 |string|server ca certificate data, optional, generally not required|
 |string|client ca certificate data, optional, generally not required, two-way https authentication is required|
