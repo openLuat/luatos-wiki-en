@@ -7,7 +7,7 @@
 |[audio](audio.md)|`Multimedia-Audio`|Y|Y|Y|X|X|Y|Y|
 |[bit64](bit64.md)|`32 Basic arithmetic and logical operations on 64-bit data on bit systems`|X|X|Y|Y|Y|Y|Y|
 |[camera](camera.md)|`Camera`|X|X|Y|X|X|X|X|
-|[cc](cc.md)|`Call function`|X|X|X|X|X|Y|Y|
+|[cc](cc.md)|`Call function`|X|X|X|X|X|X|Y|
 |[codec](codec.md)|`Multimedia-Codec`|Y|Y|Y|X|X|Y|Y|
 |[coremark](coremark.md)|`Running points`|Y|Y|Y|Y|Y|Y|Y|
 |[crypto](crypto.md)|`Encryption and decryption and hash functions`|Y|Y|Y|Y|Y|Y|Y|
