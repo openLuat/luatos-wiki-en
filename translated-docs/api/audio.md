@@ -367,6 +367,34 @@ local result = audio.vol(0, 90)	--The volume of channel 0 is adjusted to 90%,res
 
 ---
 
+## audio.micVol(id, value)
+
+
+
+configure mic volume adjustment for an audio channel
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|Audio Channel|
+|int|mic Volume, percentage, 1% ~ 100, default 100, is not adjusted|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|int|Current mic volume|
+
+**Examples**
+
+```lua
+local result = audio.vol(0, 90)	--The volume of channel 0 is adjusted to 90%,result stores the adjusted volume level, which may still be 100
+
+```
+
+---
+
 ## audio.setBus(id, bus_type)
 
 

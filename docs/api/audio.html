@@ -1240,6 +1240,44 @@
 </div>
 </section>
 <hr class="docutils"/>
+<section id="audio-micvol-id-value">
+<h2>audio.micVol(id, value)<a class="headerlink" href="#audio-micvol-id-value" title="Permalink to this headline">#</a></h2>
+<p>configure mic volume adjustment for an audio channel</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Audio Channel</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>mic Volume, percentage, 1% ~ 100, default 100, is not adjusted</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Current mic volume</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">audio</span><span class="p">.</span><span class="n">vol</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>	<span class="c1">--The volume of channel 0 is adjusted to 90%,result stores the adjusted volume level, which may still be 100</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="audio-setbus-id-bus-type">
 <h2>audio.setBus(id, bus_type)<a class="headerlink" href="#audio-setbus-id-bus-type" title="Permalink to this headline">#</a></h2>
 <p>Configure the hardware output bus of an audio channel, and set the corresponding type only if the corresponding SOC software and hardware platform supports it.</p>
@@ -1376,6 +1414,7 @@
 <li><a class="reference internal" href="#audio-geterror-id">audio.getError(id)</a></li>
 <li><a class="reference internal" href="#audio-config-id-papin-onlevel-dacdelay-padelay-dacpin-daclevel-dactimedelay">audio.config(id, paPin, onLevel, dacDelay, paDelay, dacPin, dacLevel, dacTimeDelay)</a></li>
 <li><a class="reference internal" href="#audio-vol-id-value">audio.vol(id, value)</a></li>
+<li><a class="reference internal" href="#audio-micvol-id-value">audio.micVol(id, value)</a></li>
 <li><a class="reference internal" href="#audio-setbus-id-bus-type">audio.setBus(id, bus_type)</a></li>
 <li><a class="reference internal" href="#audio-debug-on-off">audio.debug(on_off)</a></li>
 </ul>

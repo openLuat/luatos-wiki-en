@@ -48,6 +48,8 @@ constant | type | explanation
 On false off
 开始播放某个文件
 Start playing a file
+当前mic音量
+Current mic volume
 当前音量
 Current Volume
 往一个多媒体通道写入音频数据
@@ -122,6 +124,8 @@ The hardware output channel for channel 0 is set
 Hardware output channel for channel 0 is set to software
 通道0的音量调节到90%，result存放了调节后的音量水平，有可能仍然是
 The volume of channel 0 is adjusted to 90%,result stores the adjusted volume level, which may still be
+配置一个音频通道的mic音量调节
+configure mic volume adjustment for an audio channel
 配置一个音频通道的特性，比如实现自动控制PA开关。注意这个不是必须的，一般在调用play的时候才需要自动控制，其他情况比如你手动控制播放时，就可以自己控制PA开关
 Configure the characteristics of an audio channel, such as automatically controlling the PA switch. Note that this is not necessary. Generally, automatic control is only required when play is called. In other cases, for example, when you manually control the play, you can control the PA switch yourself.
 配置一个音频通道的硬件输出总线，只有对应soc软硬件平台支持才设置对应类型
@@ -136,6 +140,8 @@ Number of sampling bits
 Sampling frequency
 需要播放的内容
 Content that needs to be played
+音量，百分比，1%~100%，默认100%，就是不调节
+Volume, percentage, 1% ~ 100, default 100, is not adjusted
 音量，百分比，1%~1000%，默认100%，就是不调节
 Volume, percentage, 1% ~ 1000, default 100, is not adjusted
 音频播放完毕时，PA与DAC关闭的时间间隔，单位1ms，默认
