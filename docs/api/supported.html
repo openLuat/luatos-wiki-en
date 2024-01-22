@@ -507,6 +507,7 @@
 <li class="toctree-l2"><a class="reference internal" href="u8g2.html">u8g2 - u8g2 graphics processing library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uart.html">uart - serial port operation library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ufont.html">ufont - Unified Font Library (under development)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ulwip.html">ulwip - lwip integration in user space (under development)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usbapp.html">usbapp - USB Functional operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="w5500.html">w5500 - w5500 Ethernet driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wdt.html">wdt - watchdog Operation Library</a></li>
@@ -1566,7 +1567,17 @@
 <td><p>?</p></td>
 <td><p>?</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="usbapp.html"><span class="doc std std-doc">usbapp</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="ulwip.html"><span class="doc std std-doc">ulwip</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lwip</span> <span class="pre">integration</span> <span class="pre">in</span> <span class="pre">user</span> <span class="pre">space</span> <span class="pre">(under</span> <span class="pre">development)</span></code></p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="usbapp.html"><span class="doc std std-doc">usbapp</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">USB</span> <span class="pre">Functional</span> <span class="pre">operation</span></code></p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
@@ -1576,7 +1587,7 @@
 <td><p>X</p></td>
 <td><p>X</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="w5500.html"><span class="doc std std-doc">w5500</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="w5500.html"><span class="doc std std-doc">w5500</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">w5500</span> <span class="pre">Ethernet</span> <span class="pre">driver</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Y</p></td>
@@ -1586,7 +1597,7 @@
 <td><p>Y</p></td>
 <td><p>Y</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="wdt.html"><span class="doc std std-doc">wdt</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="wdt.html"><span class="doc std std-doc">wdt</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">watchdog</span> <span class="pre">Operation</span> <span class="pre">Library</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Y</p></td>
@@ -1596,7 +1607,7 @@
 <td><p>Y</p></td>
 <td><p>Y</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="websocket.html"><span class="doc std std-doc">websocket</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="websocket.html"><span class="doc std std-doc">websocket</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">websocket</span> <span class="pre">Client</span></code></p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
@@ -1606,7 +1617,7 @@
 <td><p>Y</p></td>
 <td><p>Y</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="wlan.html"><span class="doc std std-doc">wlan</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="wlan.html"><span class="doc std std-doc">wlan</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">wifi</span> <span class="pre">Operation</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Y</p></td>
@@ -1616,7 +1627,7 @@
 <td><p>Y</p></td>
 <td><p>Y</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ws2812.html"><span class="doc std std-doc">ws2812</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="ws2812.html"><span class="doc std std-doc">ws2812</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Phantom</span> <span class="pre">Lights</span> <span class="pre">with</span> <span class="pre">RGB</span> <span class="pre">Controller</span> <span class="pre">(WS2812</span> <span class="pre">Series)</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Y</p></td>
@@ -1626,7 +1637,7 @@
 <td><p>Y</p></td>
 <td><p>Y</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="xxtea.html"><span class="doc std std-doc">xxtea</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="xxtea.html"><span class="doc std std-doc">xxtea</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">xxtea</span> <span class="pre">encryption</span> <span class="pre">and</span> <span class="pre">decryption</span> </code></p></td>
 <td><p>Y</p></td>
 <td><p>Y</p></td>
@@ -1636,7 +1647,7 @@
 <td><p>Y</p></td>
 <td><p>Y</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ymodem.html"><span class="doc std std-doc">ymodem</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="ymodem.html"><span class="doc std std-doc">ymodem</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">ymodem</span> <span class="pre">Agreement</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Y</p></td>
@@ -1646,7 +1657,7 @@
 <td><p>Y</p></td>
 <td><p>Y</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="zbuff.html"><span class="doc std std-doc">zbuff</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="zbuff.html"><span class="doc std std-doc">zbuff</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">Memory</span> <span class="pre">Data</span> <span class="pre">Manipulation</span> <span class="pre">Library</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Y</p></td>
@@ -1656,7 +1667,7 @@
 <td><p>Y</p></td>
 <td><p>Y</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="zlib.html"><span class="doc std std-doc">zlib</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="zlib.html"><span class="doc std std-doc">zlib</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">zlib</span> <span class="pre">Compression/Decompression</span> <span class="pre">(Obsolete)</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Y</p></td>
