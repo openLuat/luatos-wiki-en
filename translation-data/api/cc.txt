@@ -8,6 +8,8 @@ Downlink Data Storage Area
 Downlink data storage area 2 and downlink data storage area 1 form a double buffer
 为低音质，2为高音质，0没有在通话
 is low quality, 2 is high quality, 0 is not talking
+为低音质(8K)，2为高音质(16k)，0没有在通话
+Low sound quality (8K),2 is high sound quality (16k),0 is not talking
 事件名称 音频录音数据为
 The event name audio recording data is
 传入值类型|解释

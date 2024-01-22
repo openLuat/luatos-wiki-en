@@ -186,7 +186,7 @@ None
 
 |return value type | explanation|
 |-|-|
-|int|1 is low quality, 2 is high quality, 0 is not talking|
+|int|1 Low sound quality (8K),2 is high sound quality (16k),0 is not talking|
 
 **Examples**
 
