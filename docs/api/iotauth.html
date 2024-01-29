@@ -797,22 +797,25 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>produt_id</p></td>
+<td><p>produt_id Products id</p></td>
 </tr>
 <tr class="row-odd"><td><p>string</p></td>
-<td><p>device_name</p></td>
+<td><p>device_name Equipment Name</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>key</p></td>
+<td><p>key  device key or the project’s acess_key</p></td>
 </tr>
 <tr class="row-odd"><td><p>string</p></td>
 <td><p>method Encryption mode, optional “md5” “sha1” “sha256”, default”md5”</p></td>
 </tr>
 <tr class="row-even"><td><p>number</p></td>
-<td><p>cur_timestamp The optional default is 32472115200(2999-01-01 0:0:0)</p></td>
+<td><p>Time stamp, no need to fill in</p></td>
 </tr>
 <tr class="row-odd"><td><p>string</p></td>
 <td><p>version Optional Default”2018-10-31”</p></td>
+</tr>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>When key is access_key, fill in “products/” .. product_id. This parameter is added in 2024.1.29</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -836,8 +839,24 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">client_id</span><span class="p">,</span><span class="n">user_name</span><span class="p">,</span><span class="n">password</span> <span class="o">=</span> <span class="n">iotauth</span><span class="p">.</span><span class="n">onenet</span><span class="p">(</span><span class="s2">"123456789"</span><span class="p">,</span><span class="s2">"test"</span><span class="p">,</span><span class="s2">"KuF3NT/jUBJ62LNBB/A8XZA9CqS3Cu79B/ABmfA1UCw="</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span><span class="n">user_name</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- OneNet Platform official website: https://open.iot.10086.cn/</span>
+<span class="c1">-- OneNet There are many versions. Pay attention to the distinction. Generally speaking, produt_id pure numbers are the old version, otherwise they are the new version.</span>
+
+<span class="c1">-- In the new OneNET platform, the product id is an English letter string.</span>
+<span class="c1">-- Corresponding demo/onenet/studio</span>
+<span class="kd">local</span> <span class="n">produt_id</span> <span class="o">=</span> <span class="s2">"Ck2AF9QD2K"</span>
+<span class="kd">local</span> <span class="n">device_name</span> <span class="o">=</span> <span class="s2">"test"</span>
+<span class="kd">local</span> <span class="n">device_key</span> <span class="o">=</span> <span class="s2">"KuF3NT/jUBJ62LNBB/A8XZA9CqS3Cu79B/ABmfA1UCw="</span>
+<span class="kd">local</span> <span class="n">client_id</span><span class="p">,</span><span class="n">user_name</span><span class="p">,</span><span class="n">password</span> <span class="o">=</span> <span class="n">iotauth</span><span class="p">.</span><span class="n">onenet</span><span class="p">(</span><span class="n">produt_id</span><span class="p">,</span> <span class="n">device_name</span><span class="p">,</span> <span class="n">device_key</span><span class="p">)</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"onenet.new"</span><span class="p">,</span> <span class="n">client_id</span><span class="p">,</span><span class="n">user_name</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
+
+<span class="c1">-- In the old version of OneNET platform, the product id is a numeric string. New in 2024.1.29</span>
+<span class="c1">-- Corresponding demo/onenet/old_mqtt</span>
+<span class="kd">local</span> <span class="n">produt_id</span> <span class="o">=</span> <span class="s2">"12342334"</span>
+<span class="kd">local</span> <span class="n">device_name</span> <span class="o">=</span> <span class="s2">"test"</span>
+<span class="kd">local</span> <span class="n">access_key</span> <span class="o">=</span> <span class="s2">"adfasdfadsfadsf="</span>
+<span class="kd">local</span> <span class="n">client_id</span><span class="p">,</span><span class="n">user_name</span><span class="p">,</span><span class="n">password</span> <span class="o">=</span> <span class="n">iotauth</span><span class="p">.</span><span class="n">onenet</span><span class="p">(</span><span class="n">produt_id</span><span class="p">,</span> <span class="n">device_name</span><span class="p">,</span> <span class="n">access_key</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="s2">"products/"</span> <span class="o">..</span> <span class="n">produt_id</span><span class="p">)</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"onenet.old"</span><span class="p">,</span> <span class="n">client_id</span><span class="p">,</span><span class="n">user_name</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

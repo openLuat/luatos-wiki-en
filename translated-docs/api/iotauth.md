@@ -51,12 +51,13 @@ China Mobile Internet of Things Platform Triple Generation
 
 |Incoming Value Type | Explanation|
 |-|-|
-|string|produt_id|
-|string|device_name|
-|string|key|
+|string|produt_id Products id|
+|string|device_name Equipment Name|
+|string|key  device key or the project's acess_key|
 |string|method Encryption mode, optional "md5" "sha1" "sha256", default"md5"|
-|number|cur_timestamp The optional default is 32472115200(2999-01-01 0:0:0)|
+|number|Time stamp, no need to fill in|
 |string|version Optional Default"2018-10-31"|
+|string|When key is access_key, fill in "products/" .. product_id. This parameter is added in 2024.1.29|
 
 **Return Value**
 
@@ -69,8 +70,25 @@ China Mobile Internet of Things Platform Triple Generation
 **Examples**
 
 ```lua
-local client_id,user_name,password = iotauth.onenet("123456789","test","KuF3NT/jUBJ62LNBB/A8XZA9CqS3Cu79B/ABmfA1UCw=")
-print(client_id,user_name,password)
+-- OneNet Platform official website: https://open.iot.10086.cn/
+-- OneNet There are many versions. Pay attention to the distinction. Generally speaking, produt_id pure numbers are the old version, otherwise they are the new version.
+
+-- In the new OneNET platform, the product id is an English letter string.
+-- Corresponding demo/onenet/studio
+local produt_id = "Ck2AF9QD2K"
+local device_name = "test"
+local device_key = "KuF3NT/jUBJ62LNBB/A8XZA9CqS3Cu79B/ABmfA1UCw="
+local client_id,user_name,password = iotauth.onenet(produt_id, device_name, device_key)
+log.info("onenet.new", client_id,user_name,password)
+
+-- In the old version of OneNET platform, the product id is a numeric string. New in 2024.1.29
+-- Corresponding demo/onenet/old_mqtt
+local produt_id = "12342334"
+local device_name = "test"
+local access_key = "adfasdfadsfadsf="
+local client_id,user_name,password = iotauth.onenet(produt_id, device_name, access_key, nil, nil, nil, "products/" .. produt_id)
+log.info("onenet.old", client_id,user_name,password)
+
 
 ```
 
