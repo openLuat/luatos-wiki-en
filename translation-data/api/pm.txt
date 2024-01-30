@@ -74,6 +74,8 @@ Detailed reasons for reset and start-up: 0-powerkey or power-on start-up 1-charg
 Such as Air101/Air103, there is an independent wakeup pin, no need to configure, can directly control the wake-up
 如Air780E系列, 有多个wakeup可用, 通过gpio.setup(32)配置虚拟GPIO进行唤醒配置
 As in the Air780E series, there are multiple wakeup available. Configure virtual GPIO for wakeup configuration through gpio.setup(32)
+如果运行,运行剩余时间,单位毫秒
+If running, the remaining running time, in milliseconds
 定时器
 Timer
 定时器/网络事件/IO中断均可自动唤醒
