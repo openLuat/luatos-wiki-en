@@ -118,6 +118,8 @@ Software Keyboard Matrix Messages
 return parameter type | explanation
 返回的数据
 Data returned
+通话状态变化
+Call status change
 错误代码
 Error Code
 键盘矩阵消息
