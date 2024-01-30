@@ -76,6 +76,8 @@ Such as Air101/Air103, there is an independent wakeup pin, no need to configure,
 As in the Air780E series, there are multiple wakeup available. Configure virtual GPIO for wakeup configuration through gpio.setup(32)
 如果运行,运行剩余时间,单位毫秒
 If running, the remaining running time, in milliseconds
+如果运行,运行剩余时间,单位毫秒(需bsp支持
+If running, the remaining running time, in milliseconds (bsp support required
 定时器
 Timer
 定时器/网络事件/IO中断均可自动唤醒

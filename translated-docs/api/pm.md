@@ -182,7 +182,7 @@ Check if the underlying timer is running
 |return value type | explanation|
 |-|-|
 |boolean|Processing results, true is still running, false is not running|
-|number|If running, the remaining running time, in milliseconds|
+|number|If running, the remaining running time, in milliseconds (bsp support required)|
 
 **Examples**
 
