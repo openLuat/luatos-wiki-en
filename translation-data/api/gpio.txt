@@ -88,6 +88,8 @@ Operation
 Value or string
 方向输出,且初始化电平为低,使用硬件默认上下拉配置
 Direction output, and initialization level is low, using hardware default pull-down configuration
+无效引脚,一般用于告诉底层某功能引脚不指定
+Invalid pin, generally used to tell the bottom of a function pin is not specified
 无返回值
 No return value
 无返回值,总是执行成功

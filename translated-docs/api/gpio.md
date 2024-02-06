@@ -17,6 +17,7 @@ There are also video tutorials in this library, [click this link to view](https:
 
 |constant | type | explanation|
 |-|-|-|
+|gpio.NONE|number|Invalid pin, generally used to tell the bottom of a function pin is not specified|
 |gpio.LOW|number|Low level|
 |gpio.HIGH|number|High Level|
 |gpio.PULLUP|number|Pull-up|
