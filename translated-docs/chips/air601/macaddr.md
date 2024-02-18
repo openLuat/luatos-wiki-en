@@ -18,14 +18,16 @@ Problems caused:
 AT Firmware:
 
 1. Update the AT firmware to the latest (with the download address), and the STA address will be consistent with the AP address.
-2. The Bluetooth address will still be the default address, but it can only be distributed to the network at present, so it has not been affected for the time being and has not been solved by manpower yet.
+2. The Bluetooth address will still be the default address, but currently it can only be distributed to the network, so there is no impact for the time being and there is no manpower to solve it for the time being.
 
 LuatOS Firmware:
 
-1. Update the LuatOS firmware to the latest (the download address is later), and the STA address will be consistent with the AP address.
+1. Update LuatOS firmware to the latest (download address is followed), STA address is AP address-1
 2. The Bluetooth address will be generated according to the unique value of flash and will not conflict with each other.
 
 ## How to Restore/Rewrite MAC
+
+### AT The firmware way
 
 1. Download the latest AT firmware, [click me to download](https://pan.air32.cn/s/DJTr?path=%2F%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E5%9B%BA%E4%BB%B6%2FAir601%E7%9A%84MAC%E5%9C%B0%E5%9D%80%E4%BF%AE%E6%AD%A3%E5%9B%BA%E4%BB%B6)
 2. Use LuaTools brush machine, select universal serial port to print, baud rate regardless
@@ -39,4 +41,6 @@ LuatOS Firmware:
 10. Enter 'AT CIPAPMAC?'to check the current mac address, if it is the same as the setting, it will succeed.
 11. Enter 'AT CIPSTAMAC?'to check the current mac address, if it is the same as the setting, it will succeed.
 
-After that, the LuatOS firmware can be brushed in to use the new mac address.
+### LuatOS The firmware way
+
+Call the wlan.setMAC function of LuatOS, please use the latest [cloud compilation](https://wiki.luatos.org/develop/compile/Cloud_compilation.html) firmware

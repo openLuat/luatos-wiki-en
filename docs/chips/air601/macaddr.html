@@ -749,16 +749,18 @@
 <p>AT Firmware:</p>
 <ol class="arabic simple">
 <li><p>Update the AT firmware to the latest (with the download address), and the STA address will be consistent with the AP address.</p></li>
-<li><p>The Bluetooth address will still be the default address, but it can only be distributed to the network at present, so it has not been affected for the time being and has not been solved by manpower yet.</p></li>
+<li><p>The Bluetooth address will still be the default address, but currently it can only be distributed to the network, so there is no impact for the time being and there is no manpower to solve it for the time being.</p></li>
 </ol>
 <p>LuatOS Firmware:</p>
 <ol class="arabic simple">
-<li><p>Update the LuatOS firmware to the latest (the download address is later), and the STA address will be consistent with the AP address.</p></li>
+<li><p>Update LuatOS firmware to the latest (download address is followed), STA address is AP address-1</p></li>
 <li><p>The Bluetooth address will be generated according to the unique value of flash and will not conflict with each other.</p></li>
 </ol>
 </section>
 <section id="how-to-restore-rewrite-mac">
 <h2>How to Restore/Rewrite MAC<a class="headerlink" href="#how-to-restore-rewrite-mac" title="Permalink to this headline">#</a></h2>
+<section id="at-the-firmware-way">
+<h3>AT The firmware way<a class="headerlink" href="#at-the-firmware-way" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Download the latest AT firmware, <a class="reference external" href="https://pan.air32.cn/s/DJTr?path=%2F%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E5%9B%BA%E4%BB%B6%2FAir601%E7%9A%84MAC%E5%9C%B0%E5%9D%80%E4%BF%AE%E6%AD%A3%E5%9B%BA%E4%BB%B6">click me to download</a></p></li>
 <li><p>Use LuaTools brush machine, select universal serial port to print, baud rate regardless</p></li>
@@ -772,7 +774,11 @@
 <li><p>Enter ‘AT CIPAPMAC?’to check the current mac address, if it is the same as the setting, it will succeed.</p></li>
 <li><p>Enter ‘AT CIPSTAMAC?’to check the current mac address, if it is the same as the setting, it will succeed.</p></li>
 </ol>
-<p>After that, the LuatOS firmware can be brushed in to use the new mac address.</p>
+</section>
+<section id="luatos-the-firmware-way">
+<h3>LuatOS The firmware way<a class="headerlink" href="#luatos-the-firmware-way" title="Permalink to this headline">#</a></h3>
+<p>Call the wlan.setMAC function of LuatOS, please use the latest <a class="reference external" href="https://wiki.luatos.org/develop/compile/Cloud_compilation.html">cloud compilation</a> firmware</p>
+</section>
 </section>
 </section>
 
@@ -835,7 +841,11 @@
 <li><a class="reference internal" href="#">About the mac address</a><ul>
 <li><a class="reference internal" href="#the-current-status-quo">The current status quo</a></li>
 <li><a class="reference internal" href="#solution">Solution</a></li>
-<li><a class="reference internal" href="#how-to-restore-rewrite-mac">How to Restore/Rewrite MAC</a></li>
+<li><a class="reference internal" href="#how-to-restore-rewrite-mac">How to Restore/Rewrite MAC</a><ul>
+<li><a class="reference internal" href="#at-the-firmware-way">AT The firmware way</a></li>
+<li><a class="reference internal" href="#luatos-the-firmware-way">LuatOS The firmware way</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
