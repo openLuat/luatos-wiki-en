@@ -36,6 +36,7 @@ This library has its own demo,[click this link to view eink's demo example](http
 |eink.MODEL_2in9bc|number|2.9 Inch bc|
 |eink.MODEL_2in9b_V3|number|2.9 Inch b_V3|
 |eink.MODEL_2in9d|number|2.9 Inch d|
+|eink.MODEL_3in52|number|3.52 Inch|
 |eink.MODEL_3in7|number|3.7 Inch|
 |eink.MODEL_4in2|number|4.2 Inch|
 |eink.MODEL_4in2V2|number|4.2 Inch V2(ssd1683)|
