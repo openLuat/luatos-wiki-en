@@ -748,27 +748,39 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>audio.PCM</p></td>
+<tr class="row-even"><td><p>audio.RESUME</p></td>
+<td><p>number</p></td>
+<td><p>PM Mode Working Mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>audio.STANDBY</p></td>
+<td><p>number</p></td>
+<td><p>PM Mode Standby Mode</p></td>
+</tr>
+<tr class="row-even"><td><p>audio.SHUTDOWN</p></td>
+<td><p>number</p></td>
+<td><p>PM MODE OFF MODE</p></td>
+</tr>
+<tr class="row-odd"><td><p>audio.PCM</p></td>
 <td><p>number</p></td>
 <td><p>PCM format, I .e. raw ADC data</p></td>
 </tr>
-<tr class="row-odd"><td><p>audio.MORE_DATA</p></td>
+<tr class="row-even"><td><p>audio.MORE_DATA</p></td>
 <td><p>number</p></td>
 <td><p>audio.on The value of the parameter passed in the callback function, indicating that after a piece of data is played at the bottom layer, more data can be passed in.</p></td>
 </tr>
-<tr class="row-even"><td><p>audio.DONE</p></td>
+<tr class="row-odd"><td><p>audio.DONE</p></td>
 <td><p>number</p></td>
 <td><p>audio.on The value of the parameter passed in by the callback function indicates that the bottom layer has played all the data.</p></td>
 </tr>
-<tr class="row-odd"><td><p>audio.BUS_DAC</p></td>
+<tr class="row-even"><td><p>audio.BUS_DAC</p></td>
 <td><p>number</p></td>
 <td><p>Hardware output bus, DAC type</p></td>
 </tr>
-<tr class="row-even"><td><p>audio.BUS_I2S</p></td>
+<tr class="row-odd"><td><p>audio.BUS_I2S</p></td>
 <td><p>number</p></td>
 <td><p>Hardware output bus, I2S type</p></td>
 </tr>
-<tr class="row-odd"><td><p>audio.BUS_SOFT_DAC</p></td>
+<tr class="row-even"><td><p>audio.BUS_SOFT_DAC</p></td>
 <td><p>number</p></td>
 <td><p>Hardware output bus, software mode DAC type</p></td>
 </tr>
@@ -1347,6 +1359,44 @@
 <p>None</p>
 <p><strong>Examples</strong></p>
 <p>None</p>
+</section>
+<hr class="docutils"/>
+<section id="audio-pm-id-pm-mode">
+<h2>audio.pm(id,pm_mode)<a class="headerlink" href="#audio-pm-id-pm-mode" title="Permalink to this headline">#</a></h2>
+<p>audio Sleep control (usually called automatically without manual execution)</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Audio Channel</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Sleep mode</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>true Success</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">audio</span><span class="p">.</span><span class="n">pm</span><span class="p">(</span><span class="n">multimedia_id</span><span class="p">,</span><span class="n">audio</span><span class="p">.</span><span class="n">RESUME</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -1424,6 +1474,7 @@
 <li><a class="reference internal" href="#audio-micvol-id-value">audio.micVol(id, value)</a></li>
 <li><a class="reference internal" href="#audio-setbus-id-bus-type">audio.setBus(id, bus_type)</a></li>
 <li><a class="reference internal" href="#audio-debug-on-off">audio.debug(on_off)</a></li>
+<li><a class="reference internal" href="#audio-pm-id-pm-mode">audio.pm(id,pm_mode)</a></li>
 </ul>
 </li>
 </ul>

@@ -14,6 +14,9 @@ This library has its own demo,[click this link to view audio's demo example](htt
 
 |constant | type | explanation|
 |-|-|-|
+|audio.RESUME|number|PM Mode Working Mode|
+|audio.STANDBY|number|PM Mode Standby Mode|
+|audio.SHUTDOWN|number|PM MODE OFF MODE|
 |audio.PCM|number|PCM format, I .e. raw ADC data|
 |audio.MORE_DATA|number|audio.on The value of the parameter passed in the callback function, indicating that after a piece of data is played at the bottom layer, more data can be passed in.|
 |audio.DONE|number|audio.on The value of the parameter passed in by the callback function indicates that the bottom layer has played all the data.|
@@ -444,6 +447,34 @@ None
 **Examples**
 
 None
+
+---
+
+## audio.pm(id,pm_mode)
+
+
+
+audio Sleep control (usually called automatically without manual execution)
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|Audio Channel|
+|int|Sleep mode |
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|boolean|true Success|
+
+**Examples**
+
+```lua
+audio.pm(multimedia_id,audio.RESUME)
+
+```
 
 ---
 
