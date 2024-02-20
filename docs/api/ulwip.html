@@ -772,6 +772,9 @@
 <tr class="row-even"><td><p>function</p></td>
 <td><p>output_lua_ref callback function with parameters(adapter_index, data)</p></td>
 </tr>
+<tr class="row-odd"><td><p>table</p></td>
+<td><p>Additional parameters, such {mtu=1500, flags=(ulwip.FLAG_BROADCAST | ulwip.FLAG_ETHARP |)}</p></td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Return Value</strong></p>
@@ -793,6 +796,11 @@
     <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"ulwip"</span><span class="p">,</span> <span class="s2">"output_lua_ref"</span><span class="p">,</span> <span class="n">adapter_index</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span><span class="n">toHex</span><span class="p">())</span>
 <span class="kr">end</span><span class="p">)</span>
 <span class="c1">-- Note that after setup, the state of netif is down, and only after ulwip.updown(adapter_index, true) is called can data be sent and received normally.</span>
+
+<span class="c1">-- Additional Parameters Configuring table Optional Values</span>
+<span class="c1">-- mtu, Default 1460</span>
+<span class="c1">-- flags, Default ulwip.FLAG_BROADCAST | ulwip.FLAG_ETHARP | ulwip.FLAG_ETHERNET | ulwip.FLAG_IGMP | ulwip.FLAG_MLD6</span>
+<span class="c1">-- That is, the following format {mtu=1460, flags=(ulwip.FLAG_BROADCAST | ulwip.FLAG_ETHARP | ulwip.FLAG_ETHERNET | ulwip.FLAG_IGMP | ulwip.FLAG_MLD6)}</span>
 </pre></div>
 </div>
 </section>

@@ -16,6 +16,8 @@ Examples
 Initialization
 初始化一个适配器, 并设置回调函数
 Initialize an adapter and set the callback function
+即如下格式
+That is, the following format
 参数
 Parameters
 参考
@@ -82,3 +84,9 @@ Adapter Number
 Adaptation status unknown
 通过蓝牙模块,集成
 Through the Bluetooth module, integrated
+额外参数, 例如
+Additional parameters, such
+额外参数配置table可选值
+Additional Parameters Configuring table Optional Values
+默认
+Default

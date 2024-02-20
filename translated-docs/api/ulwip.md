@@ -41,6 +41,7 @@ Initialization lwip netif
 |int|adapter_index Adapter Number|
 |string|mac network card mac address|
 |function|output_lua_ref callback function with parameters(adapter_index, data)|
+|table|Additional parameters, such {mtu=1500, flags=(ulwip.FLAG_BROADCAST \| ulwip.FLAG_ETHARP \|)}|
 
 **Return Value**
 
@@ -56,6 +57,11 @@ ulwip.setup(socket.LWIP_STA, string.fromHex("18fe34a27b69"), function(adapter_in
     log.info("ulwip", "output_lua_ref", adapter_index, data:toHex())
 end)
 -- Note that after setup, the state of netif is down, and only after ulwip.updown(adapter_index, true) is called can data be sent and received normally.
+
+-- Additional Parameters Configuring table Optional Values
+-- mtu, Default 1460
+-- flags, Default ulwip.FLAG_BROADCAST | ulwip.FLAG_ETHARP | ulwip.FLAG_ETHERNET | ulwip.FLAG_IGMP | ulwip.FLAG_MLD6
+-- That is, the following format {mtu=1460, flags=(ulwip.FLAG_BROADCAST | ulwip.FLAG_ETHARP | ulwip.FLAG_ETHERNET | ulwip.FLAG_IGMP | ulwip.FLAG_MLD6)}
 
 ```
 
