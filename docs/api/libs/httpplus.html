@@ -793,6 +793,7 @@
     <span class="n">try_ipv6</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">-- Optional. Whether to try the ipv6 address first. The default value is false</span>
     <span class="n">adapter</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>    <span class="c1">-- Optional, network adapter number, default is automatically selected</span>
     <span class="n">timeout</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>     <span class="c1">-- Optional. The timeout period for reading the server response, in seconds. Default value 30</span>
+    <span class="n">bodyfile</span> <span class="o">=</span> <span class="s2">"xxx"</span>  <span class="c1">-- Optional. Upload the file content directly as the body. The priority is higher than that of the body parameter.</span>
 <span class="p">}</span>
 
 <span class="kd">local</span> <span class="n">code</span><span class="p">,</span> <span class="n">resp</span> <span class="o">=</span> <span class="n">httpplus</span><span class="p">.</span><span class="n">request</span><span class="p">({</span><span class="n">url</span><span class="o">=</span><span class="s2">"https://httpbin.air32.cn/get"</span><span class="p">})</span>

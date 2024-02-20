@@ -18,6 +18,8 @@ Optional, open debug log, default
 Optional. File upload. If this parameter exists, the file is forced to be uploaded in the form of multipart/form-data.
 可选,是否优先尝试ipv6地址,默认是
 Optional. Whether to try the ipv6 address first. The default value is
+可选,直接把文件内容作为body上传, 优先级高于body参数
+Optional. Upload the file content directly as the body. The priority is higher than that of the body parameter.
 可选,网络适配器编号, 默认是自动选
 Optional, network adapter number, default is automatically selected
 可选,自定义body参数, 字符串/zbuff/table均可, 但不能与files和forms同时存在

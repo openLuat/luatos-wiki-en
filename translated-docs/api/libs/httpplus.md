@@ -57,6 +57,7 @@ local opts = {
     try_ipv6 = false, -- Optional. Whether to try the ipv6 address first. The default value is false
     adapter = nil,    -- Optional, network adapter number, default is automatically selected
     timeout = 30,     -- Optional. The timeout period for reading the server response, in seconds. Default value 30
+    bodyfile = "xxx"  -- Optional. Upload the file content directly as the body. The priority is higher than that of the body parameter.
 }
 
 local code, resp = httpplus.request({url="https://httpbin.air32.cn/get"})
