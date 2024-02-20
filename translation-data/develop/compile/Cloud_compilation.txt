@@ -1,76 +1,80 @@
-编译成功，点击下载即可
-Compile successfully, click to download
-编译失败的问题有很多，通常有这几种比较常见
-There are many problems with compilation failure, usually these are more common.
+为何我编译失败
+Why did I fail to compile?
+为未点击保存修改就点击准备就绪。
+Click Ready for Save changes without clicking.
+云编译
+Cloud Compilation
+使用合宙[erp账号](http://erp.openluat.com)登录即可. 若没有账号, 可免费注册. 本服务免费使用
+Use the [erp account](http://erp.openluat.com) to log in. If you do not have an account, you can register for free. This service is free to use.
+使用方式
+Mode of use
+勾选想要的组件
+Check the components you want
+原有字库的引用方式
+References to the original font
+原有字库的引用方式, 各自引用
+The reference method of the original font library, each reference
+固件包都是压缩包, soc也是压缩包,并不直接代表固件大小
+Firmware packages are all compressed packages, and soc is also a compressed package, which does not directly represent the firmware size.
+已支持的平台
+Supported Platforms
 常见问题
 FAQ
+截图20211011092353.png](https://cdn.openluat-luatcommunity.openluat.com/images/20211011092608787_QQ截图
+Screenshot 20211011092353.png](https://cdn.openluat-luatcommunity.openluat.com/images/20211011092608787_QQ截图
+提醒
+Reminder
+文件本身也是压缩包(但不需要解压它),**soc文件的大小并不代表底层固件的真实大小
+The file itself is also a compressed package (but you don't need to decompress it),**the size of the soc file does not represent the true size of the underlying firmware.
+文件本身也是压缩包(但不需要解压它),soc文件的大小并不代表底层固件的真实大小
+The file itself is also a compressed package (but it does not need to be decompressed), and the size of the soc file does not represent the true size of the underlying firmware.
+注意：一定要点击保存修改
+Note: Be sure to click Save Changes
+点击右上角保存修改，之后点击准备就绪
+Click the top right corner to save changes, then click Ready
+点击右上角构建
+Click Build in the upper right corner
+点击右上角菜单新构建，自定义构建名称，可以是任意英文字符, 与具体构建类型无关
+Click the new build menu in the upper right corner to customize the build name, which can be any English character, regardless of the specific build type.
+点击登录
+Click Login
 的AT固件
 AT Firmware
 的LuatOS固件
 LuatOS Firmware
 等待编译，过一段时间刷新一下结果
 Wait for compilation and refresh the results after a period of time.
-点击登录
-Click Login
-点击右上角保存修改，之后点击准备就绪
-Click the top right corner to save changes, then click Ready
-点击右上角菜单新构建，自定义构建名称，可以是任意英文字符, 与具体构建类型无关
-Click the new build menu in the upper right corner to customize the build name, which can be any English character, regardless of the specific build type.
-点击右上角构建
-Click Build in the upper right corner
-访问构建网站
-Visit the build site
-勾选想要的组件
-Check the components you want
-固件包都是压缩包, soc也是压缩包,并不直接代表固件大小
-Firmware packages are all compressed packages, and soc is also a compressed package, which does not directly represent the firmware size.
-还在困扰如何搭建编译环境？芯片越来越多，环境也越来越多？电脑好卡呀~ 好，云编译来为你排忧解难
-Are you still puzzling how to build a compilation environment? With more and more chips and more and more environments? A good computer card ~ OK, cloud compilation will help you solve your problems
-截图20211011092353.png](https://cdn.openluat-luatcommunity.openluat.com/images/20211011092608787_QQ截图
-Screenshot 20211011092353.png](https://cdn.openluat-luatcommunity.openluat.com/images/20211011092608787_QQ截图
-若持续失败, 请[联系我们](../../pages/supports.md) 或者[报
-If the failure persists, please [contact us](../../pages/supports.md) or [report
-使用方式
-Mode of use
-使用合宙[erp账号](http://erp.openluat.com)登录即可. 若没有账号, 可免费注册. 本服务免费使用
-Use the [erp account](http://erp.openluat.com) to log in. If you do not have an account, you can register for free. This service is free to use.
-提醒
-Reminder
-为何我编译失败
-Why did I fail to compile?
-为未点击保存修改就点击准备就绪。
-Click Ready for Save changes without clicking.
-文件本身也是压缩包(但不需要解压它),soc文件的大小并不代表底层固件的真实大小
-The file itself is also a compressed package (but it does not need to be decompressed), and the size of the soc file does not represent the true size of the underlying firmware.
 系列(Air780E/Air600E等)的
 Series (Air780E/Air600E, etc.)
 系列(Air780E/Air600E等)的LuatOS固件
 LuatOS firmware for series (Air780E/Air600E, etc.)
-页面显示的flash占用为估算值,若编译成功就是能放得下
-The flash occupancy displayed on the page is an estimated value, which can be put down if the compilation is successful.
-已支持的平台
-Supported Platforms
-原有字库的引用方式
-References to the original font
-原有字库的引用方式, 各自引用
-The reference method of the original font library, each reference
-云编译
-Cloud Compilation
-这里我们以Air101为展示
-Here we show Air101
-注意：一定要点击保存修改
-Note: Be sure to click Save Changes
-自定义字库的名称, 与云编译页面上字库的 "命名" 值相同. 即 字体英文名_字体类型_字号
-The name of the custom font, which is the same as the "naming" value of the font on the cloud compilation page. That is, the English font name_font type_font size
-自定义字库的引用方式
-Customize the reference method of the font library
-自定义字库的引用方式, 统一使用
-Customize the reference method of the word library and use it uniformly.
+系列(Air780EP/Air780EPV)的LuatOS固件
+LuatOS Firmware for Series (Air780EP/Air780EPV)
+组件选择过多，或字体的选择导致flash大小不够,导致编译失败
+Too many components are selected, or the font selection causes the flash size to be insufficient, resulting in compilation failure
+编译失败的问题有很多，通常有这几种比较常见
+There are many problems with compilation failure, usually these are more common.
+编译成功，点击下载即可
+Compile successfully, click to download
 自定义字库与原有字库不冲突
 Custom font does not conflict with original font
 自定义字库与原有字库的引用方式差异
 The difference between the reference method of the custom font library and the original font library
 自定义字库怎么用
 How to use custom font
-组件选择过多，或字体的选择导致flash大小不够,导致编译失败
-Too many components are selected, or the font selection causes the flash size to be insufficient, resulting in compilation failure
+自定义字库的名称, 与云编译页面上字库的 "命名" 值相同. 即 字体英文名_字体类型_字号
+The name of the custom font, which is the same as the "naming" value of the font on the cloud compilation page. That is, the English font name_font type_font size
+自定义字库的引用方式
+Customize the reference method of the font library
+自定义字库的引用方式, 统一使用
+Customize the reference method of the word library and use it uniformly.
+若持续失败, 请[联系我们](../../pages/supports.md) 或者[报
+If the failure persists, please [contact us](../../pages/supports.md) or [report
+访问构建网站
+Visit the build site
+还在困扰如何搭建编译环境？芯片越来越多，环境也越来越多？电脑好卡呀~ 好，云编译来为你排忧解难
+Are you still puzzling how to build a compilation environment? With more and more chips and more and more environments? A good computer card ~ OK, cloud compilation will help you solve your problems
+这里我们以Air101为展示
+Here we show Air101
+页面显示的flash占用为估算值,若编译成功就是能放得下
+The flash occupancy displayed on the page is an estimated value, which can be put down if the compilation is successful.

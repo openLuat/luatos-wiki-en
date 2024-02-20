@@ -3,20 +3,22 @@
 Are you still puzzling how to build a compilation environment? With more and more chips and more and more environments? A good computer card ~ OK, cloud compilation will help you solve your problems~
 
 Supported Platforms:
+
 1. air101       - Air101 LuatOS Firmware
 2. air103       - Air103 LuatOS Firmware
 3. air105       - Air105 LuatOS Firmware
 4. idf5-esp32c3 - ESP32C3 LuatOS Firmware
 5. idf5-esp32s3 - ESP32S3 LuatOS Firmware
 6. ec618-luatos - ec618 LuatOS firmware for series (Air780E/Air600E, etc.)
-6. ec618-csdk   - ec618 Series (Air780E/Air600E, etc.)CSDK
+7. ec618-csdk   - ec618 Series (Air780E/Air600E, etc.)CSDK
 8. air601       - Air601 LuatOS Firmware
-8. air601-at    - Air601 AT Firmware
+9. air601-at    - Air601 AT Firmware
+10. ec718p-luatos - ec718P LuatOS Firmware for Series (Air780EP/Air780EPV)
 
 ## Reminder
 
 1. The flash occupancy displayed on the page is an estimated value, which can be put down if the compilation is successful.
-2. soc The file itself is also a compressed package (but it does not need to be decompressed), and the size of the soc file does not represent the true size of the underlying firmware.
+2. soc The file itself is also a compressed package (but you don't need to decompress it),**the size of the soc file does not represent the true size of the underlying firmware.**
 
 Here we show Air101
 
