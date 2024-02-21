@@ -34,6 +34,8 @@ address, subnet mask, gateway address
 Subnet mask, which can be left blank when only obtaining
 将netif注册到luatos socket中
 register netif to luatos socket
+已适配
+Adapted
 应用示例
 Application example
 当前状态
