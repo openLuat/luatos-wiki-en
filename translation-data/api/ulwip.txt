@@ -34,6 +34,8 @@ address, subnet mask, gateway address
 Subnet mask, which can be left blank when only obtaining
 将netif注册到luatos socket中
 register netif to luatos socket
+将默认网卡设置为
+Set the default network card
 已适配
 Adapted
 应用示例
@@ -74,14 +76,20 @@ Set the state of netif
 set or obtain ip information
 设置新值
 Set New Value
+设置默认netif网卡
+Set the default netif network card
 输入的数据
 Data entered
 返回值
 Return Value
 返回值类型|解释
 return value type | explanation
+还原默认网卡
+Restore Default Network Card
 适配器编号
 Adapter Number
+适配器编号或还原默认网卡
+Adapter number or restore default network card
 适配状态未知
 Adaptation status unknown
 通过蓝牙模块,集成

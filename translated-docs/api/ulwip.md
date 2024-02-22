@@ -239,3 +239,33 @@ register netif to luatos socket
 
 ---
 
+## ulwip.dft(adapter_index)
+
+
+
+Set the default netif network card
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int/boolean|adapter_index Adapter number or restore default network card|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|boolean|Success or not|
+
+**Examples**
+
+```lua
+-- Set the default network card socket.LWIP_ETH
+ulwip.dft(socket.LWIP_ETH)
+-- Restore Default Network Card
+ulwip.dft(true)
+
+```
+
+---
+
