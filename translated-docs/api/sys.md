@@ -207,6 +207,40 @@ end, 1000, "A", "B", "N")
 
 ---
 
+## sys.timerStopAll(fnc)
+
+
+
+Turn off all timers for the same callback function.
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|function|fnc callback function|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|nil|No return value|
+
+**Examples**
+
+```lua
+-- Turn off the callback function for all timers publicTimerCbFnc
+local function publicTimerCbFnc(tag)
+log.info("publicTimerCbFnc",tag)
+end
+sys.timerStart(publicTimerCbFnc,8000,"first")
+sys.timerStart(publicTimerCbFnc,8000,"second")
+sys.timerStart(publicTimerCbFnc,8000,"third")
+sys.timerStopAll(publicTimerCbFnc)
+
+```
+
+---
+
 ## sys.publish(topic, arg1, agr2, argN)
 
 

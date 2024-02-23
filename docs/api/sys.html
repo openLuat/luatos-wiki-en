@@ -1009,6 +1009,48 @@
 </div>
 </section>
 <hr class="docutils"/>
+<section id="sys-timerstopall-fnc">
+<h2>sys.timerStopAll(fnc)<a class="headerlink" href="#sys-timerstopall-fnc" title="Permalink to this headline">#</a></h2>
+<p>Turn off all timers for the same callback function.</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>function</p></td>
+<td><p>fnc callback function</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Turn off the callback function for all timers publicTimerCbFnc</span>
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">publicTimerCbFnc</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"publicTimerCbFnc"</span><span class="p">,</span><span class="n">tag</span><span class="p">)</span>
+<span class="kr">end</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">timerStart</span><span class="p">(</span><span class="n">publicTimerCbFnc</span><span class="p">,</span><span class="mi">8000</span><span class="p">,</span><span class="s2">"first"</span><span class="p">)</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">timerStart</span><span class="p">(</span><span class="n">publicTimerCbFnc</span><span class="p">,</span><span class="mi">8000</span><span class="p">,</span><span class="s2">"second"</span><span class="p">)</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">timerStart</span><span class="p">(</span><span class="n">publicTimerCbFnc</span><span class="p">,</span><span class="mi">8000</span><span class="p">,</span><span class="s2">"third"</span><span class="p">)</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">timerStopAll</span><span class="p">(</span><span class="n">publicTimerCbFnc</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="sys-publish-topic-arg1-agr2-argn">
 <h2>sys.publish(topic, arg1, agr2, argN)<a class="headerlink" href="#sys-publish-topic-arg1-agr2-argn" title="Permalink to this headline">#</a></h2>
 <p>publish a message to a specific topic channel</p>
@@ -1229,6 +1271,7 @@
 <li><a class="reference internal" href="#sys-timerstart-func-timeout-arg1-arg2-argn">sys.timerStart(func, timeout, arg1, arg2, argN)</a></li>
 <li><a class="reference internal" href="#sys-timerloopstart-func-timeout-arg1-arg2-argn">sys.timerLoopStart(func, timeout, arg1, arg2, argN)</a></li>
 <li><a class="reference internal" href="#sys-timerstop-id">sys.timerStop(id)</a></li>
+<li><a class="reference internal" href="#sys-timerstopall-fnc">sys.timerStopAll(fnc)</a></li>
 <li><a class="reference internal" href="#sys-publish-topic-arg1-agr2-argn">sys.publish(topic, arg1, agr2, argN)</a></li>
 <li><a class="reference internal" href="#sys-subscribe-topic-func">sys.subscribe(topic, func)</a></li>
 <li><a class="reference internal" href="#sys-unsubscribe-topic-func">sys.unsubscribe(topic, func)</a></li>
