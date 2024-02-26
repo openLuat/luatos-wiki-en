@@ -152,6 +152,8 @@ Description
 Number | Name | Function | Remarks
 网络状态灯
 Network Status Light
+若使用SIM2, 会占用 4个
+If SIM2 is used, it will take up 4
 虚拟
 Virtual
 说明

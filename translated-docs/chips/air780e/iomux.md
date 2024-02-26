@@ -9,6 +9,7 @@
 5. For CSDK, relevant reuse can be modified, so please ignore this document
 6. Air600E Doomed not suitable for secondary development, some pins in the hardware design manual description will be different, pay attention to distinguish
 7. Cloud compilation and mcu.iomux function can adjust part of the reuse relationship, please refer to the document linked to [mcu library](https://wiki.luatos.org/api/mcu.html)
+8. If SIM2 is used, it will take up 4 IO(gpio4/5/6/23)
 
 ## PWM Description
 
