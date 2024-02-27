@@ -754,33 +754,37 @@
 </tr>
 <tr class="row-odd"><td><p>audio.STANDBY</p></td>
 <td><p>number</p></td>
-<td><p>PM Mode Standby Mode</p></td>
+<td><p>PM Mode standby mode, PA power off, codec standby state, system cannot enter low power consumption state, if PA is not controllable, codec enters silent mode</p></td>
 </tr>
 <tr class="row-even"><td><p>audio.SHUTDOWN</p></td>
 <td><p>number</p></td>
-<td><p>PM MODE OFF MODE</p></td>
+<td><p>PM Mode shutdown mode, PA power off, configurable codec power off state, unconfigurable codec power off, system can enter low power consumption state</p></td>
 </tr>
-<tr class="row-odd"><td><p>audio.PCM</p></td>
+<tr class="row-odd"><td><p>audio.POWEROFF</p></td>
+<td><p>number</p></td>
+<td><p>PM Mode power-off mode, PA power-off, codec power-off, system can enter low power consumption state</p></td>
+</tr>
+<tr class="row-even"><td><p>audio.PCM</p></td>
 <td><p>number</p></td>
 <td><p>PCM format, I .e. raw ADC data</p></td>
 </tr>
-<tr class="row-even"><td><p>audio.MORE_DATA</p></td>
+<tr class="row-odd"><td><p>audio.MORE_DATA</p></td>
 <td><p>number</p></td>
 <td><p>audio.on The value of the parameter passed in the callback function, indicating that after a piece of data is played at the bottom layer, more data can be passed in.</p></td>
 </tr>
-<tr class="row-odd"><td><p>audio.DONE</p></td>
+<tr class="row-even"><td><p>audio.DONE</p></td>
 <td><p>number</p></td>
 <td><p>audio.on The value of the parameter passed in by the callback function indicates that the bottom layer has played all the data.</p></td>
 </tr>
-<tr class="row-even"><td><p>audio.BUS_DAC</p></td>
+<tr class="row-odd"><td><p>audio.BUS_DAC</p></td>
 <td><p>number</p></td>
 <td><p>Hardware output bus, DAC type</p></td>
 </tr>
-<tr class="row-odd"><td><p>audio.BUS_I2S</p></td>
+<tr class="row-even"><td><p>audio.BUS_I2S</p></td>
 <td><p>number</p></td>
 <td><p>Hardware output bus, I2S type</p></td>
 </tr>
-<tr class="row-even"><td><p>audio.BUS_SOFT_DAC</p></td>
+<tr class="row-odd"><td><p>audio.BUS_SOFT_DAC</p></td>
 <td><p>number</p></td>
 <td><p>Hardware output bus, software mode DAC type</p></td>
 </tr>

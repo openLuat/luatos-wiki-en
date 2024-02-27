@@ -108,10 +108,16 @@ format, I .e. raw ADC data
 Check whether the current file has finished playing
 模式 关断模式
 MODE OFF MODE
+模式 关机模式，PA断电，可配置的codec关机状态，不可配置的codec断电，系统能进低功耗状态
+Mode shutdown mode, PA power off, configurable codec power off state, unconfigurable codec power off, system can enter low power consumption state
 模式 工作模式
 Mode Working Mode
 模式 待机模式
 Mode Standby Mode
+模式 待机模式，PA断电，codec待机状态，系统不能进低功耗状态，如果PA不可控，codec进入静音模式
+Mode standby mode, PA power off, codec standby state, system cannot enter low power consumption state, if PA is not controllable, codec enters silent mode
+模式 断电模式，PA断电，codec断电，系统能进低功耗状态
+Mode power-off mode, PA power-off, codec power-off, system can enter low power consumption state
 注册audio播放事件回调
 Register audio playback event callback
 硬件id, 例如 总线类型为audio.BUS_I2S时,硬件id即为i2s codec的

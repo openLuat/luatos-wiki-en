@@ -15,8 +15,9 @@ This library has its own demo,[click this link to view audio's demo example](htt
 |constant | type | explanation|
 |-|-|-|
 |audio.RESUME|number|PM Mode Working Mode|
-|audio.STANDBY|number|PM Mode Standby Mode|
-|audio.SHUTDOWN|number|PM MODE OFF MODE|
+|audio.STANDBY|number|PM Mode standby mode, PA power off, codec standby state, system cannot enter low power consumption state, if PA is not controllable, codec enters silent mode|
+|audio.SHUTDOWN|number|PM Mode shutdown mode, PA power off, configurable codec power off state, unconfigurable codec power off, system can enter low power consumption state|
+|audio.POWEROFF|number|PM Mode power-off mode, PA power-off, codec power-off, system can enter low power consumption state|
 |audio.PCM|number|PCM format, I .e. raw ADC data|
 |audio.MORE_DATA|number|audio.on The value of the parameter passed in the callback function, indicating that after a piece of data is played at the bottom layer, more data can be passed in.|
 |audio.DONE|number|audio.on The value of the parameter passed in by the callback function indicates that the bottom layer has played all the data.|
