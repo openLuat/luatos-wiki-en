@@ -27,6 +27,9 @@ This library has its own demo,[click this link to view the demo example of i2s](
 |i2s.MODE_I2S|number|I2S Standards, such ES7149|
 |i2s.MODE_LSB|number|LSB Format|
 |i2s.MODE_MSB|number|MSB format, such TM8211|
+|i2s.MONO_L|number|Left channel|
+|i2s.MONO_R|number|Right Channel|
+|i2s.STEREO|number|Stereo|
 
 
 ## i2s.setup(id, mode, sample, bitw, channel, format, framebit)

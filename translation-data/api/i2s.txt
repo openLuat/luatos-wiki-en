@@ -24,6 +24,8 @@ Parameters
 Send i2s data
 发送缓冲区状态
 Send Buffer Status
+右声道
+Right Channel
 回调方法
 Callback Method
 声道
@@ -32,6 +34,8 @@ vocal tract
 Channel, 0 left channel, 1 right channel, 2 dual channels. Optional
 声道, 0 左声道, 1 右声道, 2 立体声. 可选
 Channel, 0 left channel, 1 right channel, 2 stereo. Optional
+左声道
+Left channel
 已适配
 Adapted
 常量
@@ -88,6 +92,8 @@ Mode, currently only supports 0, MASTER\| TX\| RX mode, slave is not supported. 
 Register I2S Event Callback
 示例
 Example
+立体声
+Stereo
 获取I2S参数，参数具体参考
 Obtain the I2S parameter. For more information, see
 获取i2s的发送缓冲区状态
