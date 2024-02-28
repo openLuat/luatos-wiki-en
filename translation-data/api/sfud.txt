@@ -14,6 +14,8 @@ Initialization
 Parameters
 向 Flash 写数据
 Write data to Flash
+容量
+Capacity
 已适配
 Adapted
 待写入的数据
@@ -52,6 +54,8 @@ of
 Selected pieces
 的频率
 The frequency
+获取 Flash 容量和page大小
+Get Flash capacity and page size
 获取flash设备信息表
 obtain the flash device information table.
 获取flash设备信息表中的设备总数
@@ -76,3 +80,5 @@ return value type | explanation
 Returns the total number of devices
 通过flash信息表中的索引获取flash设备
 Obtain the flash device through the index in the flash information table.
+页大小
+Page Size

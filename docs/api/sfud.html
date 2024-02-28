@@ -1065,6 +1065,44 @@
 </div>
 </section>
 <hr class="docutils"/>
+<section id="sfud-getinfo-flash">
+<h2>sfud.getInfo(flash)<a class="headerlink" href="#sfud-getinfo-flash" title="Permalink to this headline">#</a></h2>
+<p>Get Flash capacity and page size</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>flash Flash The data structure returned by the device object sfud.get_device_table()</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Flash Capacity</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>page Page Size</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sfud.getInfo"</span><span class="p">,</span><span class="n">sfud</span><span class="p">.</span><span class="n">getInfo</span><span class="p">(</span><span class="n">sfud_device</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="sfud-mount-flash-mount-point-offset-maxsize">
 <h2>sfud.mount(flash, mount_point, offset, maxsize)<a class="headerlink" href="#sfud-mount-flash-mount-point-offset-maxsize" title="Permalink to this headline">#</a></h2>
 <p>mount the sfud lfs file system</p>
@@ -1179,6 +1217,7 @@
 <li><a class="reference internal" href="#sfud-read-flash-addr-size">sfud.read(flash, addr, size)</a></li>
 <li><a class="reference internal" href="#sfud-write-flash-addr-data">sfud.write(flash, addr,data)</a></li>
 <li><a class="reference internal" href="#sfud-erasewrite-flash-addr-data">sfud.eraseWrite(flash, addr,data)</a></li>
+<li><a class="reference internal" href="#sfud-getinfo-flash">sfud.getInfo(flash)</a></li>
 <li><a class="reference internal" href="#sfud-mount-flash-mount-point-offset-maxsize">sfud.mount(flash, mount_point, offset, maxsize)</a></li>
 </ul>
 </li>
