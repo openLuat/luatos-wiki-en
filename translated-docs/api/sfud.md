@@ -151,7 +151,7 @@ sfud.chipErase(flash)
 
 
 
-Erase Flash Specified address Specified size
+Erase the specified size of the specified flash address, and erase according to the size of the flash block.
 
 **Parameters**
 
