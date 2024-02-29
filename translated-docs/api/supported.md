@@ -34,7 +34,7 @@
 |[i2s](i2s.md)|`Digital Audio`|Y|Y|X|X|X|Y|Y|
 |[iconv](iconv.md)|`iconv Operation`|Y|Y|Y|Y|Y|Y|Y|
 |[io](io.md)|`io action (extended)`|Y|Y|Y|Y|Y|Y|Y|
-|[ioqueue](ioqueue.md)|`io Sequence operation`|X|X|Y|X|X|X|X|
+|[ioqueue](ioqueue.md)|`io Sequence operation`|X|X|Y|X|X|X|Y|
 |[iotauth](iotauth.md)|`IoT Authentication library, used to generate parameters for various cloud platforms`|Y|Y|Y|Y|Y|Y|Y|
 |[ir](ir.md)|`infrared remote control`|Y|Y|X|Y|Y|Y|Y|
 |[json](json.md)|`json Generating and parsing libraries`|Y|Y|Y|Y|Y|Y|Y|
