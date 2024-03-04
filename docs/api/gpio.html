@@ -813,7 +813,7 @@
 <td><p>mode Input and output mode:<br/> Number 0/1 represents output mode <br/>nil represents input mode <br/>function represents interrupt mode</p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
-<td><p>pull The following pull-up mode can be gpio.PULLUP or gpio.PULLDOWN, which needs to be selected according to the actual hardware</p></td>
+<td><p>pull Pull up the following modes, which can be gpio.PULLUP or gpio.PULLDOWN, or 0. to be selected according to the actual hardware</p></td>
 </tr>
 <tr class="row-odd"><td><p>int</p></td>
 <td><p>irq Interrupt trigger mode, default gpio.BOTH. interrupt triggering mode <br/> rising edge gpio.RISING<br/> falling edge gpio.FALLING<br/> both rising and falling are triggered gpio.BOTH</p></td>
@@ -872,6 +872,14 @@
 <span class="c1">-- The val parameter of the interrupt callback does not represent the trigger direction, but only represents the level at a certain point in time after the interrupt.</span>
 <span class="c1">-- Yeah, Cat. 1 module, usually only AONGPIO can be triggered in both directions, and other GPIO can only be triggered in one direction</span>
 <span class="c1">-- By default, there is no anti-shake time for interruption, and the anti-shake time can be set through gpio.set_debounce(pin, 50)</span>
+
+<span class="c1">-- pull Additional description of parameters, pull-up/pull-down configuration</span>
+<span class="c1">-- For some BSPs, only gpio.PULLUP or gpio.PULLDOWN is supported, but some BSPs support open-drain mode.</span>
+<span class="c1">-- For bsp that supports open drain, the pull parameter must be passed to 0 to open drain mode, not pass nil</span>
+<span class="c1">-- For example:</span>
+<span class="c1">-- EC618 Series (Air780E/Air780EG/Air780EX/Air700E, etc.)</span>
+<span class="c1">-- EC718 Series (Air780EP/Air780EPV, etc.)</span>
+<span class="c1">-- XT804 Series(Air101/Air103/Air601)</span>
 </pre></div>
 </div>
 </section>

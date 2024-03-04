@@ -41,7 +41,7 @@ Set Pin Function
 |-|-|
 |int|pin gpio Number, must be numeric|
 |any|mode Input and output mode:<br> Number 0/1 represents output mode <br>nil represents input mode <br>function represents interrupt mode|
-|int|pull The following pull-up mode can be gpio.PULLUP or gpio.PULLDOWN, which needs to be selected according to the actual hardware|
+|int|pull Pull up the following modes, which can be gpio.PULLUP or gpio.PULLDOWN, or 0. to be selected according to the actual hardware|
 |int|irq Interrupt trigger mode, default gpio.BOTH. interrupt triggering mode <br> rising edge gpio.RISING<br> falling edge gpio.FALLING<br> both rising and falling are triggered gpio.BOTH |
 |int|alt Multiplexing option, currently only EC618 platform needs this parameter, some GPIO can be multiplexed to different pins, you can select the multiplexing option (0 or 4) to multiplex to the corresponding pin|
 
@@ -90,6 +90,14 @@ gpio.setup(18, 0, nil, nil, 4)
 -- The val parameter of the interrupt callback does not represent the trigger direction, but only represents the level at a certain point in time after the interrupt.
 -- Yeah, Cat. 1 module, usually only AONGPIO can be triggered in both directions, and other GPIO can only be triggered in one direction
 -- By default, there is no anti-shake time for interruption, and the anti-shake time can be set through gpio.set_debounce(pin, 50)
+
+-- pull Additional description of parameters, pull-up/pull-down configuration
+-- For some BSPs, only gpio.PULLUP or gpio.PULLDOWN is supported, but some BSPs support open-drain mode.
+-- For bsp that supports open drain, the pull parameter must be passed to 0 to open drain mode, not pass nil
+-- For example:
+-- EC618 Series (Air780E/Air780EG/Air780EX/Air700E, etc.)
+-- EC718 Series (Air780EP/Air780EPV, etc.)
+-- XT804 Series(Air101/Air103/Air601)
 
 ```
 

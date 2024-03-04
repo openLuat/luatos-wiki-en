@@ -2,6 +2,8 @@
 Rising edge trigger
 上拉
 Pull-up
+上拉下列模式, 可以是gpio.PULLUP 或 gpio.PULLDOWN, 或者 0. 需要根据实际硬件选用
+Pull up the following modes, which can be gpio.PULLUP or gpio.PULLDOWN, or 0. to be selected according to the actual hardware
 上拉下列模式, 可以是gpio.PULLUP 或 gpio.PULLDOWN, 需要根据实际硬件选用
 The following pull-up mode can be gpio.PULLUP or gpio.PULLDOWN, which needs to be selected according to the actual hardware
 下拉
@@ -24,6 +26,8 @@ Incoming Value Type | Explanation
 Low level
 低电平触发,部分设备支持
 Low-level trigger, some devices support
+例如
+For example
 例子
 Examples
 假设GPIO16上有LED, 每500ms切换一次开关
@@ -36,6 +40,8 @@ Turn off the pin function (high impedance input state), turn off the interrupt
 Turn off anti-shake, and turn off when the time is set to 0.
 参数
 Parameters
+参数的额外说明, 上拉/下拉配置
+Additional description of parameters, pull-up/pull-down configuration
 双向触发,部分设备支持
 Two-way trigger, some devices support
 变换GPIO脚输出电平,仅输出模式可用
@@ -52,6 +58,10 @@ Multiplexing option, currently only EC618 platform needs this parameter, some GP
 The callback function after the capture is completed. There is only one parameter. The parameter is the number-type value of the captured time length, in units.
 对Cat.1模块,通常只有AONGPIO才能双向触发, 其他GPIO只能单向触发
 Yeah, Cat. 1 module, usually only AONGPIO can be triggered in both directions, and other GPIO can only be triggered in one direction
+对于支持开漏的bsp, pull参数要传 0 才能开启开漏模式, 不是传
+For bsp that supports open drain, the pull parameter must be passed to 0 to open drain mode, not pass
+对于部分的BSP来说, 只支持 gpio.PULLUP 或 gpio.PULLDOWN, 但有部分BSP支持开漏模式
+For some BSPs, only gpio.PULLUP or gpio.PULLDOWN is supported, but some BSPs support open-drain mode.
 对应的,如果输入的是一个 50hz的方波,那么不会触发任何上报
 Correspondingly, if the input is a 50hz square wave, then no report will be triggered.
 已适配
@@ -116,6 +126,12 @@ Level, high level gpio.HIGH, low level gpio.LOW, corresponding to value 1 and
 PIN33 (module pin number), corresponding to paddr 38, the default function is I2S_DOUT, multiplexed
 管脚的GPIO号
 GPIO number of the pin
+系列
+Series
+系列(Air780E/Air780EG/Air780EX/Air700E等
+Series (Air780E/Air780EG/Air780EX/Air700E, etc.
+系列(Air780EP/Air780EPV等
+Series (Air780EP/Air780EPV, etc.
 系列的GPIO复用请查阅 https://air780e.cn 首页硬件资料表格中的
 For GPIO multiplexing of the series, please refer to the hardware data table on the https://air780e.cn homepage.
 系列的GPIO复用请查阅 https://air780ep.cn 首页硬件资料表格中的
