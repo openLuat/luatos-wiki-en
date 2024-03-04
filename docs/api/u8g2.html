@@ -905,7 +905,7 @@
 <hr class="docutils"/>
 <section id="u8g2-drawutf8-str-x-y">
 <h2>u8g2.DrawUTF8(str, x, y)<a class="headerlink" href="#u8g2-drawutf8-str-x-y" title="Permalink to this headline">#</a></h2>
-<p>Draw a paragraph of text on the display screen, draw a paragraph of text on the display screen, to call u8g2.SendBuffer() will be updated to the screen</p>
+<p>Draw a paragraph of text on the display screen, and draw a paragraph of text on the display screen. Only when u8g2.SendBuffer() is called will it be updated to the screen. Note: Set the coordinates to the coordinates of the lower left corner of the display string.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -935,7 +935,7 @@
 <hr class="docutils"/>
 <section id="u8g2-drawbuttonutf8-str-x-y-flags-w-h-v-str">
 <h2>u8g2.DrawButtonUTF8(str, x, y, flags, w, h, v, str)<a class="headerlink" href="#u8g2-drawbuttonutf8-str-x-y-flags-w-h-v-str" title="Permalink to this headline">#</a></h2>
-<p>Draw a box around the provided text. This is similar to DrawUTF8, but adds some decoration to the text., To call u8g2.SendBuffer() will update to the screen</p>
+<p>Draw a box around the provided text. This is similar to DrawUTF8, but adds some decoration to the text. To call u8g2.SendBuffer() will be updated to the screen Note: Set the coordinates to the lower left corner coordinates of the display string</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>

@@ -90,6 +90,10 @@ draw a line between two points
 Draw a second 1 pixel box around the button
 在提供的文本周围画一个框。这与 DrawUTF8 类似，但为文本添加了一些装饰。,要调用u8g2.SendBuffer()才会更新到屏幕
 Draw a box around the provided text. This is similar to DrawUTF8, but adds some decoration to the text., To call u8g2.SendBuffer() will update to the screen
+在提供的文本周围画一个框。这与 DrawUTF8 类似，但为文本添加了一些装饰。要调用u8g2.SendBuffer()才会更新到屏幕 注意:设置坐标为显示字符串左下角坐标
+Draw a box around the provided text. This is similar to DrawUTF8, but adds some decoration to the text. To call u8g2.SendBuffer() will be updated to the screen Note: Set the coordinates to the lower left corner coordinates of the display string
+在显示屏上画一段文字，在显示屏上画一段文字,要调用u8g2.SendBuffer()才会更新到屏 注意:设置坐标为显示字符串左下角坐标
+Draw a paragraph of text on the display screen, and draw a paragraph of text on the display screen. Only when u8g2.SendBuffer() is called will it be updated to the screen. Note: Set the coordinates to the coordinates of the lower left corner of the display string.
 在显示屏上画一段文字，在显示屏上画一段文字,要调用u8g2.SendBuffer()才会更新到屏幕
 Draw a paragraph of text on the display screen, draw a paragraph of text on the display screen, to call u8g2.SendBuffer() will be updated to the screen
 坐标
