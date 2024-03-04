@@ -146,6 +146,46 @@ end)
 
 ---
 
+### CABLE_INSERT
+
+Network cable inserted
+
+**Additional return parameters**
+
+None
+
+**Examples**
+
+```lua
+-- This message will be sent once the network cable is inserted.
+sys.subscribe("CABLE_INSERT", function()
+    log.info("w5500", "CABLE_INSERT")
+end)
+
+```
+
+---
+
+### CABLE_REMOVE
+
+Network cable unplugged
+
+**Additional return parameters**
+
+None
+
+**Examples**
+
+```lua
+-- This message will be sent once the network cable is unplugged.
+sys.subscribe("CABLE_REMOVE", function()
+    log.info("w5500", "CABLE_REMOVE")
+end)
+
+```
+
+---
+
 ## libgnss
 
 
