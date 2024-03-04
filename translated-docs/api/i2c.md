@@ -48,7 +48,7 @@ end
 
 ---
 
-## i2c.setup(id, speed, slaveAddr)
+## i2c.setup(id, speed, pullup)
 
 
 
@@ -60,6 +60,7 @@ i2c Initialization
 |-|-|
 |int|The device ID, for example, the ID of i2c1 is 1, and the ID of i2c2 is 2|
 |int|I2C Speed, for example i2c.FAST|
+|bool|Whether the software is pulled up, the default is not turned on, and hardware support is required.|
 
 **Return Value**
 

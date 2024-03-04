@@ -102,6 +102,8 @@ Data received
 Create a new software i2c object
 无返回值
 No return value
+是否软件上拉, 默认不开启，需要硬件支持
+Whether the software is pulled up, the default is not turned on, and hardware support is required.
 有些BSP在指定addr无响应时会输出日志,导致输出会被打乱
 Some BSPs output logs when addr is unresponsive, causing the output to be scrambled.
 本函数于2023.07.04添加

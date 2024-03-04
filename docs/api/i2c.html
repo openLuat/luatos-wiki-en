@@ -797,8 +797,8 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="i2c-setup-id-speed-slaveaddr">
-<h2>i2c.setup(id, speed, slaveAddr)<a class="headerlink" href="#i2c-setup-id-speed-slaveaddr" title="Permalink to this headline">#</a></h2>
+<section id="i2c-setup-id-speed-pullup">
+<h2>i2c.setup(id, speed, pullup)<a class="headerlink" href="#i2c-setup-id-speed-pullup" title="Permalink to this headline">#</a></h2>
 <p>i2c Initialization</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -813,6 +813,9 @@
 </tr>
 <tr class="row-odd"><td><p>int</p></td>
 <td><p>I2C Speed, for example i2c.FAST</p></td>
+</tr>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>Whether the software is pulled up, the default is not turned on, and hardware support is required.</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1413,7 +1416,7 @@
 <li><a class="reference internal" href="#">i2c - I2C Operation</a><ul>
 <li><a class="reference internal" href="#constant">Constant</a></li>
 <li><a class="reference internal" href="#i2c-exist-id">i2c.exist(id)</a></li>
-<li><a class="reference internal" href="#i2c-setup-id-speed-slaveaddr">i2c.setup(id, speed, slaveAddr)</a></li>
+<li><a class="reference internal" href="#i2c-setup-id-speed-pullup">i2c.setup(id, speed, pullup)</a></li>
 <li><a class="reference internal" href="#i2c-createsoft-scl-sda-delay">i2c.createSoft(scl,sda,delay)</a></li>
 <li><a class="reference internal" href="#i2c-send-id-addr-data-stop">i2c.send(id, addr, data,stop)</a></li>
 <li><a class="reference internal" href="#i2c-recv-id-addr-len">i2c.recv(id, addr, len)</a></li>
