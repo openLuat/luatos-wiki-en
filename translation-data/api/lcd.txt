@@ -190,6 +190,8 @@ Y position of the first point
 X position of the second point
 第二个点的Y位置
 Y position of second point
+等宽字体ascii右侧缩进0~127个pixel，等宽字体的ascii字符可能在右侧有大片空白，用户可以选择删除部分。留空或者超过127则直接删除右半边, 非等宽字体无效
+the right side of ascii in a constant-width font is indented by 0 to 127 pixels. ascii characters in a constant-width font may have a large blank space on the right side. you can delete some of them. If it is left blank or exceeds 127, the right half will be deleted directly. Non-equal-width fonts are invalid.
 类型，当前支持
 types, currently supported
 红色

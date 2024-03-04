@@ -546,7 +546,7 @@ None
 
 ---
 
-## lcd.setFont(font)
+## lcd.setFont(font, indentation)
 
 
 
@@ -557,6 +557,7 @@ Set Font
 |Incoming Value Type | Explanation|
 |-|-|
 |int|font lcd.font_XXX Please refer to the Constant Table|
+|int|indentation, the right side of ascii in a constant-width font is indented by 0 to 127 pixels. ascii characters in a constant-width font may have a large blank space on the right side. you can delete some of them. If it is left blank or exceeds 127, the right half will be deleted directly. Non-equal-width fonts are invalid.|
 
 **Return Value**
 

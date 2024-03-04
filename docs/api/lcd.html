@@ -1341,8 +1341,8 @@
 <p>None</p>
 </section>
 <hr class="docutils"/>
-<section id="lcd-setfont-font">
-<h2>lcd.setFont(font)<a class="headerlink" href="#lcd-setfont-font" title="Permalink to this headline">#</a></h2>
+<section id="lcd-setfont-font-indentation">
+<h2>lcd.setFont(font, indentation)<a class="headerlink" href="#lcd-setfont-font-indentation" title="Permalink to this headline">#</a></h2>
 <p>Set Font</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1354,6 +1354,9 @@
 <tbody>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>font lcd.font_XXX Please refer to the Constant Table</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>indentation, the right side of ascii in a constant-width font is indented by 0 to 127 pixels. ascii characters in a constant-width font may have a large blank space on the right side. you can delete some of them. If it is left blank or exceeds 127, the right half will be deleted directly. Non-equal-width fonts are invalid.</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1881,7 +1884,7 @@
 <li><a class="reference internal" href="#lcd-drawrectangle-x0-y0-x1-y1-color">lcd.drawRectangle(x0,y0,x1,y1,color)</a></li>
 <li><a class="reference internal" href="#lcd-drawcircle-x0-y0-r-color">lcd.drawCircle(x0,y0,r,color)</a></li>
 <li><a class="reference internal" href="#lcd-drawqrcode-x-y-str-size">lcd.drawQrcode(x, y, str, size)</a></li>
-<li><a class="reference internal" href="#lcd-setfont-font">lcd.setFont(font)</a></li>
+<li><a class="reference internal" href="#lcd-setfont-font-indentation">lcd.setFont(font, indentation)</a></li>
 <li><a class="reference internal" href="#lcd-drawstr-x-y-str-fg-color">lcd.drawStr(x,y,str,fg_color)</a></li>
 <li><a class="reference internal" href="#lcd-drawgtfontgb2312-str-size-x-y">lcd.drawGtfontGb2312(str,size,x,y)</a></li>
 <li><a class="reference internal" href="#lcd-drawgtfontgb2312gray-str-size-gray-x-y">lcd.drawGtfontGb2312Gray(str,size,gray,x,y)</a></li>
