@@ -13,8 +13,8 @@ Development board pin size:
 1. Distance between pins, 10mil, 2.54mm
 2. Distance between two rows of pins, 700mil, 17.78mm
 
-![](https://cdn.openluat-luatcommunity.openluat.com/images/20220329175245675_air101_evb_pinout[1].png)
+![Development Board PinOut](img/pinout.png)
 
 ## Development board size chart
 
-![image-20220315111243670](https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20220315111243670.png)
+![Development board size chart](https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/image-20220315111243670.png)
