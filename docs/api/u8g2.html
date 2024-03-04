@@ -999,8 +999,8 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="u8g2-setfont-font">
-<h2>u8g2.SetFont(font)<a class="headerlink" href="#u8g2-setfont-font" title="Permalink to this headline">#</a></h2>
+<section id="u8g2-setfont-font-indentation">
+<h2>u8g2.SetFont(font, indentation)<a class="headerlink" href="#u8g2-setfont-font-indentation" title="Permalink to this headline">#</a></h2>
 <p>Set Font</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1012,6 +1012,9 @@
 <tbody>
 <tr class="row-even"><td><p>userdata</p></td>
 <td><p>font, u8g2.font_opposansm8 For pure English font 8, there are font_opposansm10 font_opposansm12 font_opposansm16 font_opposansm18 font_opposansm20 font_opposansm22 font_opposansm32 optional u8g2.font_opposansm12_chinese is 12x 12 all Chinese, there are font_opposansm16_chinese font_opposansm24_chinese font_opposansm32_chinese optional, u8g2.font_unifont_t_symbols is symbol.</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>indentation, the right side of ascii in a constant-width font is indented by 0 to 127 pixels. ascii characters in a constant-width font may have a large blank space on the right side. you can delete some of them. If it is left blank or exceeds 127, the right half will be deleted directly. Non-equal-width fonts are invalid.</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1856,7 +1859,7 @@
 <li><a class="reference internal" href="#u8g2-drawutf8-str-x-y">u8g2.DrawUTF8(str, x, y)</a></li>
 <li><a class="reference internal" href="#u8g2-drawbuttonutf8-str-x-y-flags-w-h-v-str">u8g2.DrawButtonUTF8(str, x, y, flags, w, h, v, str)</a></li>
 <li><a class="reference internal" href="#u8g2-setfontmode-mode">u8g2.SetFontMode(mode)</a></li>
-<li><a class="reference internal" href="#u8g2-setfont-font">u8g2.SetFont(font)</a></li>
+<li><a class="reference internal" href="#u8g2-setfont-font-indentation">u8g2.SetFont(font, indentation)</a></li>
 <li><a class="reference internal" href="#u8g2-getdisplayheight">u8g2.GetDisplayHeight()</a></li>
 <li><a class="reference internal" href="#u8g2-getdisplaywidth">u8g2.GetDisplayWidth()</a></li>
 <li><a class="reference internal" href="#u8g2-setdrawcolor-c">u8g2.SetDrawColor(c)</a></li>
