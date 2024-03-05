@@ -100,8 +100,12 @@ System Messages
 Network cable unplugged
 网线已插入
 Network cable inserted
+网线拔出
+Pull out the network cable
 网线拔出后会发一次这个消息
 This message will be sent once the network cable is unplugged.
+网线插入
+Network cable insertion
 网线插入后会发一次这个消息
 This message will be sent once the network cable is inserted.
 联网后会发一次这个消息

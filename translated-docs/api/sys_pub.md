@@ -146,29 +146,9 @@ end)
 
 ---
 
-### CABLE_INSERT
+### W5500_IND
 
-Network cable inserted
-
-**Additional return parameters**
-
-None
-
-**Examples**
-
-```lua
--- This message will be sent once the network cable is inserted.
-sys.subscribe("CABLE_INSERT", function()
-    log.info("w5500", "CABLE_INSERT")
-end)
-
-```
-
----
-
-### CABLE_REMOVE
-
-Network cable unplugged
+w5500 State change
 
 **Additional return parameters**
 
@@ -177,9 +157,11 @@ None
 **Examples**
 
 ```lua
--- This message will be sent once the network cable is unplugged.
-sys.subscribe("CABLE_REMOVE", function()
-    log.info("w5500", "CABLE_REMOVE")
+sys.subscribe("W5500_IND", function(status)
+    -- status The value of is:
+    -- CABLE_INWERT Network cable insertion
+    -- CABLE_REMOVE Pull out the network cable
+    log.info("w5500 status", status)
 end)
 
 ```

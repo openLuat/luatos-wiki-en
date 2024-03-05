@@ -22,6 +22,8 @@ Turn off automatic reconnect, 1 turn on automatic reconnect. Auto reconnect is c
 Typical output
 最多等3分钟
 Wait up to 3 minutes.
+最大客户端数量, 默认
+Maximum number of clients, default
 初始化
 Initialization
 参数
@@ -82,10 +84,14 @@ None
 Whether to enable DHCP, the default is
 是否转HEX字符, 默认是true,即输出hex字符串
 Whether to convert the HEX character, the default is true, that is, the output hex string.
+是否隐藏SSID, 默认false,不隐藏
+Whether to hide the SSID, default false, do not hide
 普通模式,不带密码
 Normal mode, without password
 普通模式,带密码
 Normal mode with password
+更多配置项, 2024.3.5新增
+More configuration items, 2024.3.5 new
 本API于 2023.03.31 新增
 This API was added on March 31, 2023.03.31
 本API于 2023.07.23 新增
@@ -132,6 +138,8 @@ Password for, optional
 The gateway address of the, default
 的网关掩码, 默认
 Gateway mask of, default
+的配置选项, 可选
+Configuration options for, optional
 的默认值是  "LUATOS_" + 设备的MAC值
 The default value is the MAC value of the "LUATOS_" device
 省电模式,可选, 传入就是设置, 例如

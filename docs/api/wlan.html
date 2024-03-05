@@ -1113,8 +1113,8 @@
 <p>None</p>
 </section>
 <hr class="docutils"/>
-<section id="wlan-createap-ssid-passwd-gateway-netmask-channel">
-<h2>wlan.createAP(ssid, passwd, gateway, netmask, channel)<a class="headerlink" href="#wlan-createap-ssid-passwd-gateway-netmask-channel" title="Permalink to this headline">#</a></h2>
+<section id="wlan-createap-ssid-passwd-gateway-netmask-channel-opts">
+<h2>wlan.createAP(ssid, passwd, gateway, netmask, channel, opts)<a class="headerlink" href="#wlan-createap-ssid-passwd-gateway-netmask-channel-opts" title="Permalink to this headline">#</a></h2>
 <p>Start AP</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1139,6 +1139,9 @@
 <tr class="row-even"><td><p>int</p></td>
 <td><p>AP established channel, default 6</p></td>
 </tr>
+<tr class="row-odd"><td><p>table</p></td>
+<td><p>AP Configuration options for, optional</p></td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Return Value</strong></p>
@@ -1159,6 +1162,14 @@
 <span class="n">wlan</span><span class="p">.</span><span class="n">createAP</span><span class="p">(</span><span class="s2">"uiot"</span><span class="p">,</span> <span class="s2">"12345678"</span><span class="p">)</span>
 <span class="c1">-- Set gateway IP, mask, channel, 2023.7.13 new, BSP may not support</span>
 <span class="c1">-- wlan.createAP("uiot", "12345678", "192.168.4.1", "255.255.255.0", 6)</span>
+
+<span class="c1">-- opts More configuration items, 2024.3.5 new</span>
+<span class="cm">--[[</span>
+<span class="cm">{</span>
+<span class="cm">    hidden = false, -- Whether to hide the SSID, default false, do not hide</span>
+<span class="cm">    max_conn = 4 -- Maximum number of clients, default 4</span>
+<span class="cm">}</span>
+<span class="cm">]]</span>
 </pre></div>
 </div>
 </section>
@@ -1417,7 +1428,7 @@
 <li><a class="reference internal" href="#wlan-getmac-tp-hexstr">wlan.getMac(tp, hexstr)</a></li>
 <li><a class="reference internal" href="#wlan-setmac-tp-mac">wlan.setMac(tp, mac)</a></li>
 <li><a class="reference internal" href="#wlan-getip">wlan.getIP()</a></li>
-<li><a class="reference internal" href="#wlan-createap-ssid-passwd-gateway-netmask-channel">wlan.createAP(ssid, passwd, gateway, netmask, channel)</a></li>
+<li><a class="reference internal" href="#wlan-createap-ssid-passwd-gateway-netmask-channel-opts">wlan.createAP(ssid, passwd, gateway, netmask, channel, opts)</a></li>
 <li><a class="reference internal" href="#wlan-stopap">wlan.stopAP()</a></li>
 <li><a class="reference internal" href="#wlan-getinfo">wlan.getInfo()</a></li>
 <li><a class="reference internal" href="#wlan-powersave-mode">wlan.powerSave(mode)</a></li>

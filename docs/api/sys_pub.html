@@ -857,29 +857,17 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="cable-insert">
-<h3>CABLE_INSERT<a class="headerlink" href="#cable-insert" title="Permalink to this headline">#</a></h3>
-<p>Network cable inserted</p>
+<section id="w5500-ind">
+<h3>W5500_IND<a class="headerlink" href="#w5500-ind" title="Permalink to this headline">#</a></h3>
+<p>w5500 State change</p>
 <p><strong>Additional return parameters</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once the network cable is inserted.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CABLE_INSERT"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"w5500"</span><span class="p">,</span> <span class="s2">"CABLE_INSERT"</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="cable-remove">
-<h3>CABLE_REMOVE<a class="headerlink" href="#cable-remove" title="Permalink to this headline">#</a></h3>
-<p>Network cable unplugged</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once the network cable is unplugged.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CABLE_REMOVE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"w5500"</span><span class="p">,</span> <span class="s2">"CABLE_REMOVE"</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"W5500_IND"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+    <span class="c1">-- status The value of is:</span>
+    <span class="c1">-- CABLE_INWERT Network cable insertion</span>
+    <span class="c1">-- CABLE_REMOVE Pull out the network cable</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"w5500 status"</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
 <span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1457,8 +1445,7 @@
 <li><a class="reference internal" href="#w5500">w5500</a><ul>
 <li><a class="reference internal" href="#ip-ready">IP_READY</a></li>
 <li><a class="reference internal" href="#ip-lose">IP_LOSE</a></li>
-<li><a class="reference internal" href="#cable-insert">CABLE_INSERT</a></li>
-<li><a class="reference internal" href="#cable-remove">CABLE_REMOVE</a></li>
+<li><a class="reference internal" href="#w5500-ind">W5500_IND</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#libgnss">libgnss</a><ul>

@@ -345,7 +345,7 @@ None
 
 ---
 
-## wlan.createAP(ssid, passwd, gateway, netmask, channel)
+## wlan.createAP(ssid, passwd, gateway, netmask, channel, opts)
 
 
 
@@ -360,6 +360,7 @@ Start AP
 |string|AP The gateway address of the, default 192.168.4.1|
 |string|AP Gateway mask of, default 255.255.255.0|
 |int|AP established channel, default 6|
+|table|AP Configuration options for, optional|
 
 **Return Value**
 
@@ -374,6 +375,14 @@ Start AP
 wlan.createAP("uiot", "12345678")
 -- Set gateway IP, mask, channel, 2023.7.13 new, BSP may not support
 -- wlan.createAP("uiot", "12345678", "192.168.4.1", "255.255.255.0", 6)
+
+-- opts More configuration items, 2024.3.5 new
+--[[
+{
+    hidden = false, -- Whether to hide the SSID, default false, do not hide
+    max_conn = 4 -- Maximum number of clients, default 4
+}
+]]
 
 ```
 
