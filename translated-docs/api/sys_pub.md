@@ -159,7 +159,7 @@ None
 ```lua
 sys.subscribe("W5500_IND", function(status)
     -- status The value of is:
-    -- CABLE_INWERT Network cable insertion
+    -- CABLE_INSERT Network cable insertion
     -- CABLE_REMOVE Pull out the network cable
     log.info("w5500 status", status)
 end)
