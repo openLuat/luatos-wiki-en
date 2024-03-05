@@ -53,19 +53,15 @@ This library has its own demo,[click this link to view eink's demo example](http
 |eink.MODEL_7in5bc|number|7.5 Inch bc|
 |eink.MODEL_7in5b_HD|number|7.5 Inch b_HD|
 |eink.MODEL_7in5b_V2|number|7.5 Inch b_V2|
-|eink.font_opposansm8|font|8 Font|
+|eink.font_opposansm12|font|12 Font|
 |eink.font_unifont_t_symbols|font|Symbol Font|
 |eink.font_open_iconic_weather_6x_t|font|Weather Font|
-|eink.font_opposansm10|font|10 Font|
-|eink.font_opposansm12|font|12 Font|
 |eink.font_opposansm16|font|16 Font|
 |eink.font_opposansm18|font|18 Font|
 |eink.font_opposansm20|font|20 Font|
 |eink.font_opposansm22|font|22 Font|
 |eink.font_opposansm24|font|24 Font|
 |eink.font_opposansm32|font|32 Font|
-|eink.font_opposansm8_chinese|font|8 Chinese font|
-|eink.font_opposansm8_chinese|font|10 Chinese font|
 |eink.font_opposansm12_chinese|font|12 Chinese font|
 |eink.font_opposansm14_chinese|font|14 Chinese font|
 |eink.font_opposansm16_chinese|font|16 Chinese font|

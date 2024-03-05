@@ -14,19 +14,15 @@ This library has its own demo,[click this link to view the demo example of LCD](
 
 |constant | type | explanation|
 |-|-|-|
-|lcd.font_opposansm8|font|8 Font|
+|lcd.font_opposansm12|font|12 Font|
 |lcd.font_unifont_t_symbols|font|Symbol Font|
 |lcd.font_open_iconic_weather_6x_t|font|Weather Font|
-|lcd.font_opposansm10|font|10 Font|
-|lcd.font_opposansm12|font|12 Font|
 |lcd.font_opposansm16|font|16 Font|
 |lcd.font_opposansm18|font|18 Font|
 |lcd.font_opposansm20|font|20 Font|
 |lcd.font_opposansm22|font|22 Font|
 |lcd.font_opposansm24|font|24 Font|
 |lcd.font_opposansm32|font|32 Font|
-|lcd.font_opposansm8_chinese|font|8 Chinese font|
-|lcd.font_opposansm10_chinese|font|10 Chinese font|
 |lcd.font_opposansm12_chinese|font|12 Chinese font|
 |lcd.font_opposansm14_chinese|font|14 Chinese font|
 |lcd.font_opposansm16_chinese|font|16 Chinese font|
