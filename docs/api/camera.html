@@ -738,8 +738,8 @@
 <p class="admonition-title">Tip</p>
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/camera">click this link to view the demo example of camera</a></p>
 </div>
-<section id="camera-init-initreg">
-<h2>camera.init(InitReg)<a class="headerlink" href="#camera-init-initreg" title="Permalink to this headline">#</a></h2>
+<section id="camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-w-h">
+<h2>camera.init(InitReg_or_cspi_id, cspi_speed, mode, is_msb, rx_bit, seq_type, is_ddr, only_y, w, h)<a class="headerlink" href="#camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-w-h" title="Permalink to this headline">#</a></h2>
 <p>Initialize camera</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -749,8 +749,35 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>table</p></td>
-<td><p>InitReg camera See demo/camera/AIR105 for the initialization command. Note: If the scan code camera is initialized, it needs to be set to grayscale output.</p></td>
+<tr class="row-even"><td><p>table/integer</p></td>
+<td><p>If it is a table, see demo/camera/AIR105 for DVP camera configuration, and ignore subsequent parameters. If it is a number, it is the serial number of the camera spi bus.</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>camera spi Bus speed</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>camera spi Mode,0~3</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Is the bit order of bytes msb,0 no 1 yes</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Number of bits received simultaneously,1,2,4</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>byte Sequence,0~1</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Double edge sampling configuration, 0 is not enabled, other values are determined according to actual SOC</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Only collect Y component, 0 is not enabled, other values are enabled</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Camera width</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Camera height</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -762,8 +789,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>int</p></td>
-<td><p>camera_id</p></td>
+<tr class="row-even"><td><p>int/false</p></td>
+<td><p>Return camera_id on success, return on failure false</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1087,6 +1114,44 @@
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">camera</span><span class="p">.</span><span class="n">getRaw</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="camera-preview-id-onoff">
+<h2>camera.preview(id, onoff)<a class="headerlink" href="#camera-preview-id-onoff" title="Permalink to this headline">#</a></h2>
+<p>Start and stop camera preview function, directly output to LCD, only the SOC supported by hardware can run</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>camera id,For example 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>boolean</p></td>
+<td><p>true On, false to stop</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Returns true on success, otherwise false</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">camera</span><span class="p">.</span><span class="n">preview</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -1148,7 +1213,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">camera - Camera</a><ul>
-<li><a class="reference internal" href="#camera-init-initreg">camera.init(InitReg)</a></li>
+<li><a class="reference internal" href="#camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-w-h">camera.init(InitReg_or_cspi_id, cspi_speed, mode, is_msb, rx_bit, seq_type, is_ddr, only_y, w, h)</a></li>
 <li><a class="reference internal" href="#camera-on-id-event-func">camera.on(id, event, func)</a></li>
 <li><a class="reference internal" href="#camera-start-id">camera.start(id)</a></li>
 <li><a class="reference internal" href="#camera-stop-id">camera.stop(id)</a></li>
@@ -1157,6 +1222,7 @@
 <li><a class="reference internal" href="#camera-video-id-w-h-out-path">camera.video(id, w, h, out_path)</a></li>
 <li><a class="reference internal" href="#camera-startraw-id-w-h-buff">camera.startRaw(id, w, h, buff)</a></li>
 <li><a class="reference internal" href="#camera-getraw-id">camera.getRaw(id)</a></li>
+<li><a class="reference internal" href="#camera-preview-id-onoff">camera.preview(id, onoff)</a></li>
 </ul>
 </li>
 </ul>
