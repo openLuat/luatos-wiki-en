@@ -7,7 +7,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="io - io action (extended)" href="io.html" /><link rel="prev" title="i2s - Digital Audio" href="i2s.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>iconv - iconv Operation - LuatOS documentation</title>
+        <title>iconv - Character encoding conversion - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -459,7 +459,7 @@
 <li class="toctree-l2"><a class="reference internal" href="httpsrv.html">httpsrv - http Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="i2c.html">i2c - I2C Operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="i2s.html">i2s - Digital Audio</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">iconv - iconv Operation</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">iconv - Character encoding conversion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io.html">io - io action (extended)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ioqueue.html">ioqueue - io Sequence operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iotauth.html">iotauth - IoT Authentication library, used to generate parameters for various cloud platforms</a></li>
@@ -727,8 +727,8 @@
           </label>
         </div>
         <article role="main">
-          <section id="iconv-iconv-operation">
-<h1>iconv - iconv Operation<a class="headerlink" href="#iconv-iconv-operation" title="Permalink to this headline">#</a></h1>
+          <section id="iconv-character-encoding-conversion">
+<h1>iconv - Character encoding conversion<a class="headerlink" href="#iconv-character-encoding-conversion" title="Permalink to this headline">#</a></h1>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Adapted</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air101/Air103</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air601</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air105</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32C3</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">ESP32S3</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air780E/Air700E</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air780EP</span></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -736,84 +736,6 @@
 </div>
 <section id="iconv-open-tocode-fromcode">
 <h2>iconv.open(tocode, fromcode)<a class="headerlink" href="#iconv-open-tocode-fromcode" title="Permalink to this headline">#</a></h2>
-<p>Open the corresponding character encoding conversion function</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>string</p></td>
-<td><p>Interpretation: target encoding format <br/> value：gb2312/ucs2/ucs2be/utf8</p></td>
-</tr>
-<tr class="row-odd"><td><p>string</p></td>
-<td><p>Interpretation: source encoding format <br/> value：gb2312/ucs2/ucs2be/utf8</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>userdata</p></td>
-<td><p>The conversion handle of the encoding conversion function, which returns if it does not exist.nil</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--unicode Big Endian Code Converts to utf8 Code</span>
-<span class="kd">local</span> <span class="n">iconv</span> <span class="o">=</span> <span class="n">iconv</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"utf8"</span><span class="p">,</span> <span class="s2">"ucs2be"</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="iconv-iconv-inbuf">
-<h2>iconv:iconv(inbuf)<a class="headerlink" href="#iconv-iconv-inbuf" title="Permalink to this headline">#</a></h2>
-<p>Character encoding conversion</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>string</p></td>
-<td><p>Interpretation: String to be converted</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>number</p></td>
-<td><p>Interpretation: return the result after code conversion <br/> value: 0 success,-1 failure</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--unicode Big Endian Code Converts to utf8 Code</span>
-<span class="kr">function</span> <span class="nf">ucs2beToUtf8</span><span class="p">(</span><span class="n">ucs2s</span><span class="p">)</span>
-    <span class="kd">local</span> <span class="n">iconv</span> <span class="o">=</span> <span class="n">iconv</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"utf8"</span><span class="p">,</span> <span class="s2">"ucs2be"</span><span class="p">)</span>
-    <span class="kr">return</span> <span class="n">iconv</span><span class="p">:</span><span class="n">iconv</span><span class="p">(</span><span class="n">ucs2s</span><span class="p">)</span>
-<span class="kr">end</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="id1">
-<h2>iconv.open(tocode, fromcode)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Open the corresponding character encoding conversion function</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -901,6 +823,84 @@
 <span class="n">iconv</span><span class="p">.</span><span class="n">close</span><span class="p">(</span><span class="n">cd</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="id1">
+<h2>iconv.open(tocode, fromcode)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Open the corresponding character encoding conversion function</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Interpretation: target encoding format <br/> value：gb2312/ucs2/ucs2be/utf8</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>Interpretation: source encoding format <br/> value：gb2312/ucs2/ucs2be/utf8</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>The conversion handle of the encoding conversion function, which returns if it does not exist.nil</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--unicode Big Endian Code Converts to utf8 Code</span>
+<span class="kd">local</span> <span class="n">iconv</span> <span class="o">=</span> <span class="n">iconv</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"utf8"</span><span class="p">,</span> <span class="s2">"ucs2be"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="iconv-iconv-inbuf">
+<h2>iconv:iconv(inbuf)<a class="headerlink" href="#iconv-iconv-inbuf" title="Permalink to this headline">#</a></h2>
+<p>Character encoding conversion</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Interpretation: String to be converted</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>Interpretation: return the result after code conversion <br/> value: 0 success,-1 failure</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--unicode Big Endian Code Converts to utf8 Code</span>
+<span class="kr">function</span> <span class="nf">ucs2beToUtf8</span><span class="p">(</span><span class="n">ucs2s</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">iconv</span> <span class="o">=</span> <span class="n">iconv</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"utf8"</span><span class="p">,</span> <span class="s2">"ucs2be"</span><span class="p">)</span>
+    <span class="kr">return</span> <span class="n">iconv</span><span class="p">:</span><span class="n">iconv</span><span class="p">(</span><span class="n">ucs2s</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -961,12 +961,12 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">iconv - iconv Operation</a><ul>
+<li><a class="reference internal" href="#">iconv - Character encoding conversion</a><ul>
 <li><a class="reference internal" href="#iconv-open-tocode-fromcode">iconv.open(tocode, fromcode)</a></li>
-<li><a class="reference internal" href="#iconv-iconv-inbuf">iconv:iconv(inbuf)</a></li>
-<li><a class="reference internal" href="#id1">iconv.open(tocode, fromcode)</a></li>
 <li><a class="reference internal" href="#cd-iconv-inbuf">cd:iconv(inbuf)</a></li>
 <li><a class="reference internal" href="#iconv-close-cd">iconv.close(cd)</a></li>
+<li><a class="reference internal" href="#id1">iconv.open(tocode, fromcode)</a></li>
+<li><a class="reference internal" href="#iconv-iconv-inbuf">iconv:iconv(inbuf)</a></li>
 </ul>
 </li>
 </ul>

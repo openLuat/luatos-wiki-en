@@ -459,7 +459,7 @@
 <li class="toctree-l2"><a class="reference internal" href="httpsrv.html">httpsrv - http Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="i2c.html">i2c - I2C Operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="i2s.html">i2s - Digital Audio</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iconv.html">iconv - iconv Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iconv.html">iconv - Character encoding conversion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io.html">io - io action (extended)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ioqueue.html">ioqueue - io Sequence operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iotauth.html">iotauth - IoT Authentication library, used to generate parameters for various cloud platforms</a></li>
@@ -826,161 +826,38 @@
 </section>
 </section>
 <hr class="docutils"/>
-<section id="w5500">
-<h2>w5500<a class="headerlink" href="#w5500" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/w5500.html">w5500 Interface Documentation Page</a></p>
-<section id="ip-ready">
-<h3>IP_READY<a class="headerlink" href="#ip-ready" title="Permalink to this headline">#</a></h3>
-<p>Networked</p>
+<section id="sms">
+<h2>sms<a class="headerlink" href="#sms" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://wiki.luatos.org/api/sms.html">sms Interface Documentation Page</a></p>
+<section id="sms-inc">
+<h3>SMS_INC<a class="headerlink" href="#sms-inc" title="Permalink to this headline">#</a></h3>
+<p>SMS received</p>
 <p><strong>Additional return parameters</strong></p>
-<p>None</p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>Mobile phone number</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>SMS content, UTF8 encoding</p></td>
+</tr>
+</tbody>
+</table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after networking.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"w5500"</span><span class="p">,</span> <span class="s2">"IP_READY"</span><span class="p">,</span> <span class="n">ip</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">LWIP_GP</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--The example of use can be multi-line</span>
+<span class="c1">-- Receive SMS, support a variety of ways, just choose one</span>
+<span class="c1">-- 1. Set callback function</span>
+<span class="c1">--sms.setNewSmsCb( function(phone,sms)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sms"</span><span class="p">,</span><span class="n">phone</span><span class="p">,</span><span class="n">sms</span><span class="p">)</span>
 <span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="ip-lose">
-<h3>IP_LOSE<a class="headerlink" href="#ip-lose" title="Permalink to this headline">#</a></h3>
-<p>The network has been broken</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after the network is cut off.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">adapter</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"w5500"</span><span class="p">,</span> <span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">ETH0</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="w5500-ind">
-<h3>W5500_IND<a class="headerlink" href="#w5500-ind" title="Permalink to this headline">#</a></h3>
-<p>w5500 State change</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"W5500_IND"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
-    <span class="c1">-- status The value of is:</span>
-    <span class="c1">-- CABLE_INSERT Network cable insertion</span>
-    <span class="c1">-- CABLE_REMOVE Pull out the network cable</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"w5500 status"</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="libgnss">
-<h2>libgnss<a class="headerlink" href="#libgnss" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/libgnss.html">libgnss Interface Documentation Page</a></p>
-<section id="gnss-state">
-<h3>GNSS_STATE<a class="headerlink" href="#gnss-state" title="Permalink to this headline">#</a></h3>
-<p>GNSS State change</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"GNSS_STATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">ticks</span><span class="p">)</span>
-    <span class="c1">-- event Values are</span>
-    <span class="c1">-- FIXED Positioning success</span>
-    <span class="c1">-- LOSE  LOST POSITIONING</span>
-    <span class="c1">-- ticks is the time of the event and can generally be ignored</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"gnss"</span><span class="p">,</span> <span class="s2">"state"</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">ticks</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="mobile">
-<h2>mobile<a class="headerlink" href="#mobile" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/mobile.html">mobile Interface Documentation Page</a></p>
-<section id="sim-ind">
-<h3>SIM_IND<a class="headerlink" href="#sim-ind" title="Permalink to this headline">#</a></h3>
-<p>sim Card status change</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"SIM_IND"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-    <span class="c1">-- status The value of is:</span>
-    <span class="c1">-- RDY SIM Card is ready, value is nil</span>
-    <span class="c1">-- NORDY No SIM card, value is nil</span>
-    <span class="c1">-- SIM_PIN PIN required, value is nil</span>
-    <span class="c1">-- GET_NUMBER Get the phone number (not necessarily a value), value is nil</span>
-    <span class="c1">-- SIM_WC SIM The number of times the card is written, power failure returns to 0, and value is the statistical value.</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sim status"</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="cell-info-update">
-<h3>CELL_INFO_UPDATE<a class="headerlink" href="#cell-info-update" title="Permalink to this headline">#</a></h3>
-<p>Base station data updated</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Subscription</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CELL_INFO_UPDATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"cell"</span><span class="p">,</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">mobile</span><span class="p">.</span><span class="n">getCellInfo</span><span class="p">()))</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="id1">
-<h3>IP_READY<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p>Networked</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after networking.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"mobile"</span><span class="p">,</span> <span class="s2">"IP_READY"</span><span class="p">,</span> <span class="n">ip</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">LWIP_GP</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="id2">
-<h3>IP_LOSE<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p>The network has been broken</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after the network is cut off.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">adapter</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"mobile"</span><span class="p">,</span> <span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">LWIP_GP</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="ntp-update">
-<h3>NTP_UPDATE<a class="headerlink" href="#ntp-update" title="Permalink to this headline">#</a></h3>
-<p>Time has been synchronized</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- For telecom/mobile cards, the base station will issue the time after networking, but the Unicom card will not, so be sure to pay attention to it.</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"NTP_UPDATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"mobile"</span><span class="p">,</span> <span class="s2">"time"</span><span class="p">,</span> <span class="nb">os.date</span><span class="p">())</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="cc-ind">
-<h3>CC_IND<a class="headerlink" href="#cc-ind" title="Permalink to this headline">#</a></h3>
-<p>Call status change</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CC_IND"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"cc status"</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="c1">-- 2. Subscribe to system messages</span>
+<span class="c1">--sys.subscribe("SMS_INC", function(phone,sms)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sms"</span><span class="p">,</span><span class="n">phone</span><span class="p">,</span><span class="n">sms</span><span class="p">)</span>
 <span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1024,30 +901,232 @@
 </section>
 </section>
 <hr class="docutils"/>
-<section id="socket">
-<h2>socket<a class="headerlink" href="#socket" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/socket.html">socket Interface Documentation Page</a></p>
-<section id="id3">
-<h3>NTP_UPDATE<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<p>Time has been synchronized</p>
+<section id="libgnss">
+<h2>libgnss<a class="headerlink" href="#libgnss" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://wiki.luatos.org/api/libgnss.html">libgnss Interface Documentation Page</a></p>
+<section id="gnss-state">
+<h3>GNSS_STATE<a class="headerlink" href="#gnss-state" title="Permalink to this headline">#</a></h3>
+<p>GNSS State change</p>
 <p><strong>Additional return parameters</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"NTP_UPDATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"socket"</span><span class="p">,</span> <span class="s2">"sntp"</span><span class="p">,</span> <span class="nb">os.date</span><span class="p">())</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"GNSS_STATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">ticks</span><span class="p">)</span>
+    <span class="c1">-- event Values are</span>
+    <span class="c1">-- FIXED Positioning success</span>
+    <span class="c1">-- LOSE  LOST POSITIONING</span>
+    <span class="c1">-- ticks is the time of the event and can generally be ignored</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"gnss"</span><span class="p">,</span> <span class="s2">"state"</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">ticks</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="lora">
+<h2>lora<a class="headerlink" href="#lora" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://wiki.luatos.org/api/lora.html">lora Interface Documentation Page</a></p>
+<section id="lora-tx-done">
+<h3>LORA_TX_DONE<a class="headerlink" href="#lora-tx-done" title="Permalink to this headline">#</a></h3>
+<p>LORA Send Complete</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_TX_DONE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 <span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <hr class="docutils"/>
-<section id="ntp-error">
-<h3>NTP_ERROR<a class="headerlink" href="#ntp-error" title="Permalink to this headline">#</a></h3>
-<p>Time synchronization failed</p>
+<section id="lora-rx-done">
+<h3>LORA_RX_DONE<a class="headerlink" href="#lora-rx-done" title="Permalink to this headline">#</a></h3>
+<p>LORA Receive Completed</p>
 <p><strong>Additional return parameters</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"NTP_ERROR"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"socket"</span><span class="p">,</span> <span class="s2">"sntp error"</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_RX_DONE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">rssi</span><span class="p">,</span> <span class="n">snr</span><span class="p">)</span>
+    <span class="c1">-- rssi and snr were added on September 06, 2023</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"LORA_RX_DONE: "</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">rssi</span><span class="p">,</span> <span class="n">snr</span><span class="p">)</span>
+    <span class="n">lora</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="s2">"PING"</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lora-tx-timeout">
+<h3>LORA_TX_TIMEOUT<a class="headerlink" href="#lora-tx-timeout" title="Permalink to this headline">#</a></h3>
+<p>LORA Send Timeout</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_TX_TIMEOUT"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lora-rx-timeout">
+<h3>LORA_RX_TIMEOUT<a class="headerlink" href="#lora-rx-timeout" title="Permalink to this headline">#</a></h3>
+<p>LORA Receive Timeout</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_RX_TIMEOUT"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="lora-rx-error">
+<h3>LORA_RX_ERROR<a class="headerlink" href="#lora-rx-error" title="Permalink to this headline">#</a></h3>
+<p>LORA Receive Error</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_RX_ERROR"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="mobile">
+<h2>mobile<a class="headerlink" href="#mobile" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://wiki.luatos.org/api/mobile.html">mobile Interface Documentation Page</a></p>
+<section id="sim-ind">
+<h3>SIM_IND<a class="headerlink" href="#sim-ind" title="Permalink to this headline">#</a></h3>
+<p>sim Card status change</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"SIM_IND"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="c1">-- status The value of is:</span>
+    <span class="c1">-- RDY SIM Card is ready, value is nil</span>
+    <span class="c1">-- NORDY No SIM card, value is nil</span>
+    <span class="c1">-- SIM_PIN PIN required, value is nil</span>
+    <span class="c1">-- GET_NUMBER Get the phone number (not necessarily a value), value is nil</span>
+    <span class="c1">-- SIM_WC SIM The number of times the card is written, power failure returns to 0, and value is the statistical value.</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sim status"</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="cell-info-update">
+<h3>CELL_INFO_UPDATE<a class="headerlink" href="#cell-info-update" title="Permalink to this headline">#</a></h3>
+<p>Base station data updated</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Subscription</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CELL_INFO_UPDATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"cell"</span><span class="p">,</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">mobile</span><span class="p">.</span><span class="n">getCellInfo</span><span class="p">()))</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="ip-ready">
+<h3>IP_READY<a class="headerlink" href="#ip-ready" title="Permalink to this headline">#</a></h3>
+<p>Networked</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after networking.</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"mobile"</span><span class="p">,</span> <span class="s2">"IP_READY"</span><span class="p">,</span> <span class="n">ip</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">LWIP_GP</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="ip-lose">
+<h3>IP_LOSE<a class="headerlink" href="#ip-lose" title="Permalink to this headline">#</a></h3>
+<p>The network has been broken</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after the network is cut off.</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">adapter</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"mobile"</span><span class="p">,</span> <span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">LWIP_GP</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="ntp-update">
+<h3>NTP_UPDATE<a class="headerlink" href="#ntp-update" title="Permalink to this headline">#</a></h3>
+<p>Time has been synchronized</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- For telecom/mobile cards, the base station will issue the time after networking, but the Unicom card will not, so be sure to pay attention to it.</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"NTP_UPDATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"mobile"</span><span class="p">,</span> <span class="s2">"time"</span><span class="p">,</span> <span class="nb">os.date</span><span class="p">())</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="cc-ind">
+<h3>CC_IND<a class="headerlink" href="#cc-ind" title="Permalink to this headline">#</a></h3>
+<p>Call status change</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"CC_IND"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"cc status"</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="w5500">
+<h2>w5500<a class="headerlink" href="#w5500" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://wiki.luatos.org/api/w5500.html">w5500 Interface Documentation Page</a></p>
+<section id="id1">
+<h3>IP_READY<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Networked</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after networking.</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_READY"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"w5500"</span><span class="p">,</span> <span class="s2">"IP_READY"</span><span class="p">,</span> <span class="n">ip</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">LWIP_GP</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="id2">
+<h3>IP_LOSE<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>The network has been broken</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This message will be sent once after the network is cut off.</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">adapter</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"w5500"</span><span class="p">,</span> <span class="s2">"IP_LOSE"</span><span class="p">,</span> <span class="p">(</span><span class="n">adapter</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">socket</span><span class="p">.</span><span class="n">ETH0</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="w5500-ind">
+<h3>W5500_IND<a class="headerlink" href="#w5500-ind" title="Permalink to this headline">#</a></h3>
+<p>w5500 State change</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"W5500_IND"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+    <span class="c1">-- status The value of is:</span>
+    <span class="c1">-- CABLE_INSERT Network cable insertion</span>
+    <span class="c1">-- CABLE_REMOVE Pull out the network cable</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"w5500 status"</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
 <span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1262,109 +1341,30 @@
 </section>
 </section>
 <hr class="docutils"/>
-<section id="lora">
-<h2>lora<a class="headerlink" href="#lora" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/lora.html">lora Interface Documentation Page</a></p>
-<section id="lora-tx-done">
-<h3>LORA_TX_DONE<a class="headerlink" href="#lora-tx-done" title="Permalink to this headline">#</a></h3>
-<p>LORA Send Complete</p>
+<section id="socket">
+<h2>socket<a class="headerlink" href="#socket" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://wiki.luatos.org/api/socket.html">socket Interface Documentation Page</a></p>
+<section id="id3">
+<h3>NTP_UPDATE<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>Time has been synchronized</p>
 <p><strong>Additional return parameters</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_TX_DONE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"NTP_UPDATE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"socket"</span><span class="p">,</span> <span class="s2">"sntp"</span><span class="p">,</span> <span class="nb">os.date</span><span class="p">())</span>
 <span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <hr class="docutils"/>
-<section id="lora-rx-done">
-<h3>LORA_RX_DONE<a class="headerlink" href="#lora-rx-done" title="Permalink to this headline">#</a></h3>
-<p>LORA Receive Completed</p>
+<section id="ntp-error">
+<h3>NTP_ERROR<a class="headerlink" href="#ntp-error" title="Permalink to this headline">#</a></h3>
+<p>Time synchronization failed</p>
 <p><strong>Additional return parameters</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_RX_DONE"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">rssi</span><span class="p">,</span> <span class="n">snr</span><span class="p">)</span>
-    <span class="c1">-- rssi and snr were added on September 06, 2023</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"LORA_RX_DONE: "</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">rssi</span><span class="p">,</span> <span class="n">snr</span><span class="p">)</span>
-    <span class="n">lora</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="s2">"PING"</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lora-tx-timeout">
-<h3>LORA_TX_TIMEOUT<a class="headerlink" href="#lora-tx-timeout" title="Permalink to this headline">#</a></h3>
-<p>LORA Send Timeout</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_TX_TIMEOUT"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lora-rx-timeout">
-<h3>LORA_RX_TIMEOUT<a class="headerlink" href="#lora-rx-timeout" title="Permalink to this headline">#</a></h3>
-<p>LORA Receive Timeout</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_RX_TIMEOUT"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils"/>
-<section id="lora-rx-error">
-<h3>LORA_RX_ERROR<a class="headerlink" href="#lora-rx-error" title="Permalink to this headline">#</a></h3>
-<p>LORA Receive Error</p>
-<p><strong>Additional return parameters</strong></p>
-<p>None</p>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"LORA_RX_ERROR"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="n">lora</span><span class="p">.</span><span class="n">recive</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils"/>
-<section id="sms">
-<h2>sms<a class="headerlink" href="#sms" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://wiki.luatos.org/api/sms.html">sms Interface Documentation Page</a></p>
-<section id="sms-inc">
-<h3>SMS_INC<a class="headerlink" href="#sms-inc" title="Permalink to this headline">#</a></h3>
-<p>SMS received</p>
-<p><strong>Additional return parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return parameter type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>string</p></td>
-<td><p>Mobile phone number</p></td>
-</tr>
-<tr class="row-odd"><td><p>string</p></td>
-<td><p>SMS content, UTF8 encoding</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--The example of use can be multi-line</span>
-<span class="c1">-- Receive SMS, support a variety of ways, just choose one</span>
-<span class="c1">-- 1. Set callback function</span>
-<span class="c1">--sms.setNewSmsCb( function(phone,sms)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sms"</span><span class="p">,</span><span class="n">phone</span><span class="p">,</span><span class="n">sms</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
-<span class="c1">-- 2. Subscribe to system messages</span>
-<span class="c1">--sys.subscribe("SMS_INC", function(phone,sms)</span>
-    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sms"</span><span class="p">,</span><span class="n">phone</span><span class="p">,</span><span class="n">sms</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"NTP_ERROR"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"socket"</span><span class="p">,</span> <span class="s2">"sntp error"</span><span class="p">)</span>
 <span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1442,32 +1442,39 @@
 <li><a class="reference internal" href="#starts-with-0x-01-as-the-first-byte">Starts with 0x 01 as the first byte</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#w5500">w5500</a><ul>
-<li><a class="reference internal" href="#ip-ready">IP_READY</a></li>
-<li><a class="reference internal" href="#ip-lose">IP_LOSE</a></li>
-<li><a class="reference internal" href="#w5500-ind">W5500_IND</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#libgnss">libgnss</a><ul>
-<li><a class="reference internal" href="#gnss-state">GNSS_STATE</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#mobile">mobile</a><ul>
-<li><a class="reference internal" href="#sim-ind">SIM_IND</a></li>
-<li><a class="reference internal" href="#cell-info-update">CELL_INFO_UPDATE</a></li>
-<li><a class="reference internal" href="#id1">IP_READY</a></li>
-<li><a class="reference internal" href="#id2">IP_LOSE</a></li>
-<li><a class="reference internal" href="#ntp-update">NTP_UPDATE</a></li>
-<li><a class="reference internal" href="#cc-ind">CC_IND</a></li>
+<li><a class="reference internal" href="#sms">sms</a><ul>
+<li><a class="reference internal" href="#sms-inc">SMS_INC</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#softkeyboard">softkeyboard</a><ul>
 <li><a class="reference internal" href="#soft-kb-inc">SOFT_KB_INC</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#socket">socket</a><ul>
-<li><a class="reference internal" href="#id3">NTP_UPDATE</a></li>
-<li><a class="reference internal" href="#ntp-error">NTP_ERROR</a></li>
+<li><a class="reference internal" href="#libgnss">libgnss</a><ul>
+<li><a class="reference internal" href="#gnss-state">GNSS_STATE</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lora">lora</a><ul>
+<li><a class="reference internal" href="#lora-tx-done">LORA_TX_DONE</a></li>
+<li><a class="reference internal" href="#lora-rx-done">LORA_RX_DONE</a></li>
+<li><a class="reference internal" href="#lora-tx-timeout">LORA_TX_TIMEOUT</a></li>
+<li><a class="reference internal" href="#lora-rx-timeout">LORA_RX_TIMEOUT</a></li>
+<li><a class="reference internal" href="#lora-rx-error">LORA_RX_ERROR</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mobile">mobile</a><ul>
+<li><a class="reference internal" href="#sim-ind">SIM_IND</a></li>
+<li><a class="reference internal" href="#cell-info-update">CELL_INFO_UPDATE</a></li>
+<li><a class="reference internal" href="#ip-ready">IP_READY</a></li>
+<li><a class="reference internal" href="#ip-lose">IP_LOSE</a></li>
+<li><a class="reference internal" href="#ntp-update">NTP_UPDATE</a></li>
+<li><a class="reference internal" href="#cc-ind">CC_IND</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#w5500">w5500</a><ul>
+<li><a class="reference internal" href="#id1">IP_READY</a></li>
+<li><a class="reference internal" href="#id2">IP_LOSE</a></li>
+<li><a class="reference internal" href="#w5500-ind">W5500_IND</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ctiot">ctiot</a><ul>
@@ -1480,16 +1487,9 @@
 <li><a class="reference internal" href="#ctiot-fota">CTIOT_FOTA</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#lora">lora</a><ul>
-<li><a class="reference internal" href="#lora-tx-done">LORA_TX_DONE</a></li>
-<li><a class="reference internal" href="#lora-rx-done">LORA_RX_DONE</a></li>
-<li><a class="reference internal" href="#lora-tx-timeout">LORA_TX_TIMEOUT</a></li>
-<li><a class="reference internal" href="#lora-rx-timeout">LORA_RX_TIMEOUT</a></li>
-<li><a class="reference internal" href="#lora-rx-error">LORA_RX_ERROR</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#sms">sms</a><ul>
-<li><a class="reference internal" href="#sms-inc">SMS_INC</a></li>
+<li><a class="reference internal" href="#socket">socket</a><ul>
+<li><a class="reference internal" href="#id3">NTP_UPDATE</a></li>
+<li><a class="reference internal" href="#ntp-error">NTP_ERROR</a></li>
 </ul>
 </li>
 </ul>
