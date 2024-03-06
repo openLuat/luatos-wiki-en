@@ -110,6 +110,8 @@ Network cable insertion
 This message will be sent once the network cable is inserted.
 联网后会发一次这个消息
 This message will be sent once after networking.
+获取IP超时
+Get IP Timeout
 获取到电话号码(不一定有值), value为
 Get the phone number (not necessarily a value), value is
 触摸按键消息
