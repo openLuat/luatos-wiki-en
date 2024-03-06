@@ -26,6 +26,8 @@ Compression quality, 1 worst, small footprint, 3 highest, largest footprint and 
 Parameters
 双边沿采样配置,0不启用,其他值根据实际SOC决定
 Double edge sampling configuration, 0 is not enabled, other values are determined according to actual SOC
+只接收Y分量,0不启用,1启用,扫码必须启用,不开启时扫码直接失败
+Only Y component is received, 0 is not enabled, 1 is enabled, scanning code must be enabled, scanning code fails directly if not enabled
 只采集Y分量,0不启用,其他值启用
 Only collect Y component, 0 is not enabled, other values are enabled
 同时接收bit数
@@ -46,8 +48,14 @@ Is the bit order of bytes msb,0 no 1 yes
 Width
 屏幕输出rgb图像
 screen output rgb image
+工作模式，目前只有camera.AUTO自动，camera.SCAN连续扫码，默认是
+Working mode. Currently, only camera.AUTO and camera.SCAN scan code continuously. The default is
 已适配
 Adapted
+常量
+Constant
+常量|类型|解释
+constant | type | explanation
 序列
 Sequence
 开启，false停止
@@ -60,16 +68,24 @@ Bus speed
 Return camera_id on success, return on failure
 成功返回true,否则返回
 Returns true on success, otherwise
+成功返回true,否则返回false,真正完成后通过camera.on设置的回调函数回调接收到的长度
+Returns true on success, otherwise returns false, and the received length is called back through the callback function set by camera.on after the actual completion.
 拍照
 Take pictures
 摄像头
 Camera
 摄像头宽度
 Camera width
+摄像头工作在扫码模式，只输出Y分量
+The camera works in scan mode and only outputs Y component
+摄像头工作在自动模式
+Camera works in automatic mode
 摄像头高度
 Camera height
 文件保存路径，空则写在上次路径里，默认是
 File save path, empty is written in the last path, the default is
+文件保存路径，空则写在上次路径里，默认是/capture.jpg，如果是zbuff，则将图片保存在buff内不写入文件系统
+The path to save the file. If it is empty, it is written in the last path. The default is/capture.jpg. If it is zbuff, the picture is saved in buff and not written to the file system.
 无返回值
 No return value
 本库有专属demo，[点此链接查看camera的demo例子

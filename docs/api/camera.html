@@ -738,6 +738,27 @@
 <p class="admonition-title">Tip</p>
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/camera">click this link to view the demo example of camera</a></p>
 </div>
+<section id="constant">
+<h2>Constant<a class="headerlink" href="#constant" title="Permalink to this headline">#</a></h2>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>constant</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>camera.AUTO</p></td>
+<td><p>number</p></td>
+<td><p>Camera works in automatic mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>camera.SCAN</p></td>
+<td><p>number</p></td>
+<td><p>The camera works in scan mode and only outputs Y component</p></td>
+</tr>
+</tbody>
+</table></div>
+</section>
 <section id="camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-w-h">
 <h2>camera.init(InitReg_or_cspi_id, cspi_speed, mode, is_msb, rx_bit, seq_type, is_ddr, only_y, w, h)<a class="headerlink" href="#camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-w-h" title="Permalink to this headline">#</a></h2>
 <p>Initialize camera</p>
@@ -771,7 +792,7 @@
 <td><p>Double edge sampling configuration, 0 is not enabled, other values are determined according to actual SOC</p></td>
 </tr>
 <tr class="row-odd"><td><p>int</p></td>
-<td><p>Only collect Y component, 0 is not enabled, other values are enabled</p></td>
+<td><p>Only Y component is received, 0 is not enabled, 1 is enabled, scanning code must be enabled, scanning code fails directly if not enabled</p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>Camera width</p></td>
@@ -847,8 +868,8 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="camera-start-id">
-<h2>camera.start(id)<a class="headerlink" href="#camera-start-id" title="Permalink to this headline">#</a></h2>
+<section id="camera-start-id-mode">
+<h2>camera.start(id,mode)<a class="headerlink" href="#camera-start-id-mode" title="Permalink to this headline">#</a></h2>
 <p>Start the specified camera</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -860,6 +881,9 @@
 <tbody>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>camera id,For example 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Working mode. Currently, only camera.AUTO and camera.SCAN scan code continuously. The default is 0</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -966,8 +990,8 @@
 <tr class="row-even"><td><p>int</p></td>
 <td><p>camera id,For example 0</p></td>
 </tr>
-<tr class="row-odd"><td><p>string</p></td>
-<td><p>save_path,File save path, empty is written in the last path, the default is/capture.jpg</p></td>
+<tr class="row-odd"><td><p>string/zbuff/nil</p></td>
+<td><p>save_path,The path to save the file. If it is empty, it is written in the last path. The default is/capture.jpg. If it is zbuff, the picture is saved in buff and not written to the file system.</p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>quality, jpeg Compression quality, 1 worst, small footprint, 3 highest, largest footprint and time-consuming, default 1</p></td>
@@ -983,7 +1007,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>boolean</p></td>
-<td><p>Returns true on success, otherwise false</p></td>
+<td><p>Returns true on success, otherwise returns false, and the received length is called back through the callback function set by camera.on after the actual completion.</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1213,9 +1237,10 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">camera - Camera</a><ul>
+<li><a class="reference internal" href="#constant">Constant</a></li>
 <li><a class="reference internal" href="#camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-w-h">camera.init(InitReg_or_cspi_id, cspi_speed, mode, is_msb, rx_bit, seq_type, is_ddr, only_y, w, h)</a></li>
 <li><a class="reference internal" href="#camera-on-id-event-func">camera.on(id, event, func)</a></li>
-<li><a class="reference internal" href="#camera-start-id">camera.start(id)</a></li>
+<li><a class="reference internal" href="#camera-start-id-mode">camera.start(id,mode)</a></li>
 <li><a class="reference internal" href="#camera-stop-id">camera.stop(id)</a></li>
 <li><a class="reference internal" href="#camera-close-id">camera.close(id)</a></li>
 <li><a class="reference internal" href="#camera-capture-id-save-path-quality">camera.capture(id, save_path, quality)</a></li>
