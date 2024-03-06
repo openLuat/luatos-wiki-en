@@ -6,15 +6,50 @@
 
 ## V1109
 
-Expected before '20232.12.31'.
+Compatibility changes:
+
+1：tts_onchip Lower Close YMODEM
+2：tts_onchip Close REPL
+3：Adjust the floating-point number format of json.encode to%.7f, which is more in line with practical use, otherwise it will eat floating-point precision.
 
 Defect repair:
-
-* fix: websocket Heartbeat packet not sent out normally
+* fix: **Join the original patch to repair SWD CP IO will crash when encountering abnormal signals, and repair the vulnerability of pseudo base station protection.**
+* fix: socket.rx When receiving data, if zbuff expansion fails, first try to reduce the receiving length, if there is no space, only an error can be returned.
+* fix: u8g2.CopyBuff Not working properly, the reason is that there is an error in judging the length of zbuff
+* fix: ftp login crash after failure
+* fix: socket.sntp Using a custom domain name will report an error crash.
+* fix:luatos i2s Recording cannot be configured frame size
+* fix:Fix luatos firmware enable tts times luat_sfud cannot link
+* fix:websocket Heartbeat packet not sent out normally
+* fix:When the cloud compiled luatos firmware chooses to disable DTLS, the mbedtls_ssl_conf_handshake_timeout function will be reported as not existing.
+* fix:Unable to validate pin code
 
 New Features:
-
+* add: sfud Support to obtain flash capacity and page information
+* add: adc Partial pressure range Add maximum limit
+* add: pm.dtimerCheck Add Remaining Time
+* add: http Support big data upload
+* add: pseudo base station masking time
+* add: u8g2 Support for configuring x-axis offset
+* add: libgnss.getIntLocation Add Speed Parameter Item
+* add: errdump Support for custom domain names and ports
+* add: crypto.crc16_modbus Support to set the initial value, convenient for multi-segment data continuous calculation
+* add: Added u8g2.SetPowerSave function
+* add: pcf8563t Clock module driver and demo
+* add: luatos Compilation of the xxtea library added to the firmware
+* add: luatos Add Ant Chain integration
+* add: luatos Firmware add ercoap library
 * add: ntp-based millisecond timestamp socket.ntptm()
+
+Update function:
+* update: libgnss.casic_aid Compatible with the string coordinate value returned by base station positioning.
+* update:remove the 4096 limit of mqtt receiving a single packet
+* update: u8g2 Add a driver ssd1309 i2c mode, previously only SPI
+* update:Optimizing the dhcp process for the w5500
+* update:luatos Firmware I2C uses poll mode by default
+* update:luatos Supplemental I2S mono case, left and right channel selection
+* update:luatos uart too many received messages are not allowed to prevent a large number of uart received messages from freezing under abnormal conditions
+* update:adc Maximum limit of partial pressure range
 
 ## V1108
 

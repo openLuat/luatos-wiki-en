@@ -1,3 +1,5 @@
+下关闭
+Lower Close
 不再自动查询基站信息
 No longer automatically query base station information
 且PKCS7, 解密错误数据不能返回
@@ -8,6 +10,8 @@ All large arrays in are changed to heap allocation.
 China Telecom
 云平台对接
 Cloud Platform Docking
+云编译luatos固件选择禁用DTLS时会报mbedtls_ssl_conf_handshake_timeout函数不存在
+When the cloud compiled luatos firmware chooses to disable DTLS, the mbedtls_ssl_conf_handshake_timeout function will be reported as not existing.
 云编译支持启用LVGL的PNG和BMP解码
 Cloud compilation supports LVGL-enabled PNG and BMP decoding
 云编译的sarasa英文字体不生效
@@ -94,12 +98,18 @@ Optimization: Optimized luatos volume adjustment
 Optimize memory allocation for ftp receive files
 优化http回调下载长度值得精确度
 Optimizing http callback download length is worth accuracy
+优化w5500的dhcp过程
+Optimizing the dhcp process for the w5500
 优化了辅助内存回收功能，并提供接口
 Optimized secondary memory reclamation and provides interface
 优化等待数据传输流程
 Optimize the process of waiting for data transmission
+伪基站屏蔽时间
+pseudo base station masking time
 低功耗演示
 Low Power Demo
+使用自定义域名会报错死机
+Using a custom domain name will report an error crash.
 修复: audio_play_stop判断不完整
 Fix: Incomplete audio_play_stop Judgment
 修复: fota只更新脚本且很小时候有概率失败
@@ -176,6 +186,8 @@ Fix: rx callback for virtual UART
 Fix partial characters lost when iconv library converts long data
 修复iotcloud库onenet部分情况数据截断问题
 Fix iotcloud library onenet partial data truncation problem
+修复luatos固件启用tts时报luat_sfud无法链接的问题
+Fix luatos firmware enable tts times luat_sfud cannot link
 修复socket无法连接情况下无法重连问题
 Fix the problem that socket cannot be reconnected when it cannot be connected.
 修复ymodem路径字符串末尾没有0的问题
@@ -186,10 +198,14 @@ Modified: GPIO14/15 maps to ALT 4 of PAD 13/14, thus avoiding conflicts with UAR
 Modification: return value of socket interface specification (incompatible with previous version, important
 修正CPU温度的单位
 Correct the unit of CPU temperature
+关闭
+Close
 兼容
 Compatible
 兼容RTC库的mon属性
 RTC library compatible mon attribute
+兼容基站定位返回的字符串坐标值
+Compatible with the string coordinate value returned by base station positioning.
 兼容性变化
 Compatibility changes
 内存不足时不再简单的提示，而是把使用情况打印出来
@@ -198,6 +214,10 @@ No longer a simple prompt when there is insufficient memory, but print out the u
 Function
 函数有内存泄漏问题
 Function has a memory leak
+分压范围最大限制
+Maximum limit of partial pressure range
+分压范围添加最大限制
+Partial pressure range Add maximum limit
 功能新增
 Function added
 功能新增和更新
@@ -210,14 +230,20 @@ Encryption and decryption add website compatibility mode
 The card may be in arrears as a reminder.
 卡擦写次数统计不对
 The number of times the card is erased is not counted correctly.
+去掉mqtt接收单包4096限制
+remove the 4096 limit of mqtt receiving a single packet
 反复创建style会死机
 Repeated creation of style will crash
 发送大量数据时，需要分批发送
 When sending large amounts of data, you need to send them in batches.
+合入原厂补丁 修复SWD CP IO遇到异常信号时会死机，修复伪基站防护漏洞
+Join the original patch to repair SWD CP IO will crash when encountering abnormal signals, and repair the vulnerability of pseudo base station protection.
 合入原厂补丁，修复一个因搜索基站引起的死机问题
 Inform the original patch to fix a crash caused by searching for base stations.
 启动后台线程应判断是否成功,创建失败要走失败流程
 Starting the background thread should judge whether it is successful or not, and the failure process should be followed if the creation fails.
+固件I2C默认使用poll模式
+Firmware I2C uses poll mode by default
 固件下audio库播放音频没有结束播放的回调消息
 The callback message that the audio playing in the audio library under the firmware does not end playing.
 固件下载地址
@@ -226,6 +252,10 @@ Firmware download address
 Firmware Download Alternate Address
 固件未成功挂载SPI FLASH时会死机
 Firmware crashes when SPI FLASH is not successfully mounted
+固件添加ercoap库
+Firmware add ercoap library
+固件添加xxtea库的编译
+Compilation of the xxtea library added to the firmware
 在进行DNS过程时，调用network_force_close_socket并且不再进行连接时，DNS完成仍然会回调
 When the DNS procedure is in progress, the call network_force_close_socket and the connection is no longer in progress, the DNS completion still calls back
 基于ntp的毫秒级时间戳
@@ -234,6 +264,8 @@ ntp-based millisecond timestamp
 Basic loop recording
 备用地址
 Alternate Address
+失败后死机
+crash after failure
 完善ymodem接收文件的结尾处理
 Improve the end processing of ymodem received files
 就是固件文件, 其余两个是底层源码,无需下载
@@ -262,6 +294,8 @@ library adds streaming hash interface
 library's sm4 encryption mode error
 库的关闭逻辑不完备,并清除编译警告
 The closing logic of the library is incomplete and the compilation warning is cleared.
+录音不能配置
+Recording cannot be configured
 录音功能
 Recording function
 影响, 之前的版本返回的CPU温度是摄氏度, 其他BSP均为1/1000摄氏度
@@ -284,12 +318,26 @@ Automatically turn off wdt before executing the poweroff, otherwise it will cras
 Extend the gpio.setup function, add alt_func parameters, and support configuration reuse
 扩展 http.request 函数, 支持fota和下载过程回调
 Extended http.request function, support for Fota and download process callback
+接收数据时,如果zbuff扩容失败,先尝试缩小接收长度,如果没有空间就只能返回错误了
+When receiving data, if zbuff expansion fails, first try to reduce the receiving length, if there is no space, only an error can be returned.
+接收消息不允许过多，防止异常情况下大量uart接收消息死机
+too many received messages are not allowed to prevent a large number of uart received messages from freezing under abnormal conditions
 播放时无法选择
 Unable to select while playing
+支持大数据上传
+Support big data upload
+支持自定义域名和端口
+Support for custom domain names and ports
+支持获取flash容量和page信息
+Support to obtain flash capacity and page information
 支持获取硬件版本号
 Support to obtain hardware version number
+支持设置初始值,方便进行多段数据连续计算
+Support to set the initial value, convenient for multi-segment data continuous calculation
 支持读取指定长度
 Support for reading specified length
+支持配置x轴偏移量
+Support for configuring x-axis offset
 新增
 New
 新增 adc.set 库支持分压设置
@@ -400,12 +448,22 @@ Added: Software
 The new auto_phone_fix can disable the automatic release of the corresponding target number to adapt to the complex number rules abroad.
 新增bit64.strtoll函数
 Added bit64.strtoll function
+新增ssd1309 i2c方式的驱动,之前只有SPI的
+Add a driver ssd1309 i2c mode, previously only SPI
+新增u8g2.SetPowerSave函数
+Added u8g2.SetPowerSave function
 新增功能
 New Features
 新增多款传感器/外设驱动, ina226/ak8963/mpu9250/st7565等
 Add a variety of sensors/peripheral drivers, ina226/ak8963/mpu9250/st7565, etc.
+无法验证pin码
+Unable to validate pin code
+时钟模块的驱动及
+Clock module driver and
 更新 ws2812 demo,EC618支持pin直驱
 Update ws2812 demo,EC618 support pin direct drive
+更新功能
+Update function
 更详细的更新内容请查阅git的提交日志
 Please refer to git's commit log for more detailed updates.
 本版本处于RC状态, 待发布
@@ -420,6 +478,8 @@ This version also contains [V1104](https://gitee.com/openLuat/LuatOS/releases/ta
 This version is fully supported.
 死机
 crash
+没有正常工作,原因是判断zbuff长度有错误
+Not working properly, the reason is that there is an error in judging the length of zbuff
 注意：因socket接口返回值与之前不兼容，特此版本号由v1002升至v1103以作提醒
 Note: Since the return value of the socket interface is not compatible with the previous one, the version number is hereby raised from v1002 to v1103 as a reminder.
 测试定位效果_搭配公众号文章.zip** 是用于测Air780EG定位效果的
@@ -432,12 +492,18 @@ Add crypto.crc7 function
 Add fastlz compression library
 添加SIM卡写入统计的
 Add SIM card write statistics
+添加剩余时间
+Add Remaining Time
 添加数据端口返回内网ip的兼容
 add data port to return intranet ip compatibility
 添加状态获取接口
 Add Status Acquisition Interface
+添加蚂蚁链的集成
+Add Ant Chain integration
 添加适配器选项
 Add Adapter Options
+添加速度参数项
+Add Speed Parameter Item
 添加错误返回参数
 Add error return parameter
 添加高通字体gbk接口
@@ -462,6 +528,8 @@ Defect repair
 The acquisition tag is not updated, resulting in the acquisition of the adc value may be the last
 虚拟串口上位机
 virtual serial host computer
+补充I2S单声道情况下，左右声道选择
+Supplemental I2S mono case, left and right channel selection
 补回json.null属性
 Pour back the json.null property
 解决办法: 按需调用或定时调用
@@ -472,6 +540,8 @@ Solution: The new data' //1000 'will get the original data value
 Solution: The new data/1000 will get the original data value.
 解决办法: 设置音量到100或以上
 Solution: Set the volume to 100 or above
+调整json.encode的浮点数格式化为 %.7f , 更符合实际用途, 不然以为会吃掉浮点精度
+Adjust the floating-point number format of json.encode to%.7f, which is more in line with practical use, otherwise it will eat floating-point precision.
 软件DAC音频的音量配置生效
 Volume configuration for software DAC audio takes effect
 选择关闭内部分压模式时没有完全关闭掉
