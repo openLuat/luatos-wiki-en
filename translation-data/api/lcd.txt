@@ -34,6 +34,8 @@ Display UTF8 strings with gtfont grayscale
 Use heap memory, false use vm memory, default use vm memory, do not need to actively pass
 例子
 Examples
+允许初始化在lcd service里运行，默认是
+Allow initialization to run in the LCD service, the default is
 关闭
 Close
 关闭lcd显示屏

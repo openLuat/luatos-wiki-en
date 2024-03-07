@@ -839,8 +839,8 @@
 </tbody>
 </table></div>
 </section>
-<section id="lcd-init-tp-args">
-<h2>lcd.init(tp, args)<a class="headerlink" href="#lcd-init-tp-args" title="Permalink to this headline">#</a></h2>
+<section id="lcd-init-tp-args-spi-dev-init-in-service">
+<h2>lcd.init(tp, args, spi_dev, init_in_service)<a class="headerlink" href="#lcd-init-tp-args-spi-dev-init-in-service" title="Permalink to this headline">#</a></h2>
 <p>lcd Display initialization</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -858,6 +858,9 @@
 </tr>
 <tr class="row-even"><td><p>userdata</p></td>
 <td><p>spi Device, valid when port = “device”</p></td>
+</tr>
+<tr class="row-odd"><td><p>boolean</p></td>
+<td><p>Allow initialization to run in the LCD service, the default is false</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1849,7 +1852,7 @@
             <ul>
 <li><a class="reference internal" href="#">lcd - lcd Drive module</a><ul>
 <li><a class="reference internal" href="#constant">Constant</a></li>
-<li><a class="reference internal" href="#lcd-init-tp-args">lcd.init(tp, args)</a></li>
+<li><a class="reference internal" href="#lcd-init-tp-args-spi-dev-init-in-service">lcd.init(tp, args, spi_dev, init_in_service)</a></li>
 <li><a class="reference internal" href="#lcd-close">lcd.close()</a></li>
 <li><a class="reference internal" href="#lcd-on">lcd.on()</a></li>
 <li><a class="reference internal" href="#lcd-off">lcd.off()</a></li>
