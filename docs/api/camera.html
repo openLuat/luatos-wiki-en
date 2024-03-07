@@ -759,8 +759,8 @@
 </tbody>
 </table></div>
 </section>
-<section id="camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-w-h">
-<h2>camera.init(InitReg_or_cspi_id, cspi_speed, mode, is_msb, rx_bit, seq_type, is_ddr, only_y, w, h)<a class="headerlink" href="#camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-w-h" title="Permalink to this headline">#</a></h2>
+<section id="camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-scan-mode-w-h">
+<h2>camera.init(InitReg_or_cspi_id, cspi_speed, mode, is_msb, rx_bit, seq_type, is_ddr, only_y, scan_mode, w, h)<a class="headerlink" href="#camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-scan-mode-w-h" title="Permalink to this headline">#</a></h2>
 <p>Initialize camera</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -792,12 +792,15 @@
 <td><p>Double edge sampling configuration, 0 is not enabled, other values are determined according to actual SOC</p></td>
 </tr>
 <tr class="row-odd"><td><p>int</p></td>
-<td><p>Only Y component is received, 0 is not enabled, 1 is enabled, scanning code must be enabled, scanning code fails directly if not enabled</p></td>
+<td><p>Only receive Y component, 0 is not enabled, 1 is enabled, scan code must be enabled, otherwise it will fail.</p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
-<td><p>Camera width</p></td>
+<td><p>Working mode, camera.AUTO, camera.SCAN scan code</p></td>
 </tr>
 <tr class="row-odd"><td><p>int</p></td>
+<td><p>Camera width</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
 <td><p>Camera height</p></td>
 </tr>
 </tbody>
@@ -868,8 +871,8 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="camera-start-id-mode">
-<h2>camera.start(id,mode)<a class="headerlink" href="#camera-start-id-mode" title="Permalink to this headline">#</a></h2>
+<section id="camera-start-id">
+<h2>camera.start(id)<a class="headerlink" href="#camera-start-id" title="Permalink to this headline">#</a></h2>
 <p>Start the specified camera</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -881,9 +884,6 @@
 <tbody>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>camera id,For example 0</p></td>
-</tr>
-<tr class="row-odd"><td><p>int</p></td>
-<td><p>Working mode. Currently, only camera.AUTO and camera.SCAN scan code continuously. The default is 0</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1238,9 +1238,9 @@
             <ul>
 <li><a class="reference internal" href="#">camera - Camera</a><ul>
 <li><a class="reference internal" href="#constant">Constant</a></li>
-<li><a class="reference internal" href="#camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-w-h">camera.init(InitReg_or_cspi_id, cspi_speed, mode, is_msb, rx_bit, seq_type, is_ddr, only_y, w, h)</a></li>
+<li><a class="reference internal" href="#camera-init-initreg-or-cspi-id-cspi-speed-mode-is-msb-rx-bit-seq-type-is-ddr-only-y-scan-mode-w-h">camera.init(InitReg_or_cspi_id, cspi_speed, mode, is_msb, rx_bit, seq_type, is_ddr, only_y, scan_mode, w, h)</a></li>
 <li><a class="reference internal" href="#camera-on-id-event-func">camera.on(id, event, func)</a></li>
-<li><a class="reference internal" href="#camera-start-id-mode">camera.start(id,mode)</a></li>
+<li><a class="reference internal" href="#camera-start-id">camera.start(id)</a></li>
 <li><a class="reference internal" href="#camera-stop-id">camera.stop(id)</a></li>
 <li><a class="reference internal" href="#camera-close-id">camera.close(id)</a></li>
 <li><a class="reference internal" href="#camera-capture-id-save-path-quality">camera.capture(id, save_path, quality)</a></li>

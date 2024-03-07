@@ -28,6 +28,8 @@ Parameters
 Double edge sampling configuration, 0 is not enabled, other values are determined according to actual SOC
 只接收Y分量,0不启用,1启用,扫码必须启用,不开启时扫码直接失败
 Only Y component is received, 0 is not enabled, 1 is enabled, scanning code must be enabled, scanning code fails directly if not enabled
+只接收Y分量，0不启用，1启用，扫码必须启用，否则会失败
+Only receive Y component, 0 is not enabled, 1 is enabled, scan code must be enabled, otherwise it will fail.
 只采集Y分量,0不启用,其他值启用
 Only collect Y component, 0 is not enabled, other values are enabled
 同时接收bit数
@@ -48,6 +50,8 @@ Is the bit order of bytes msb,0 no 1 yes
 Width
 屏幕输出rgb图像
 screen output rgb image
+工作模式，camera.AUTO自动,camera.SCAN扫码
+Working mode, camera.AUTO, camera.SCAN scan code
 工作模式，目前只有camera.AUTO自动，camera.SCAN连续扫码，默认是
 Working mode. Currently, only camera.AUTO and camera.SCAN scan code continuously. The default is
 已适配

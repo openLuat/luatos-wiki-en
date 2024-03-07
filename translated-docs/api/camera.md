@@ -18,7 +18,7 @@ This library has its own demo,[click this link to view the demo example of camer
 |camera.SCAN|number|The camera works in scan mode and only outputs Y component|
 
 
-## camera.init(InitReg_or_cspi_id, cspi_speed, mode, is_msb, rx_bit, seq_type, is_ddr, only_y, w, h)
+## camera.init(InitReg_or_cspi_id, cspi_speed, mode, is_msb, rx_bit, seq_type, is_ddr, only_y, scan_mode, w, h)
 
 
 
@@ -35,7 +35,8 @@ Initialize camera
 |int|Number of bits received simultaneously,1,2,4|
 |int|byte Sequence,0~1|
 |int|Double edge sampling configuration, 0 is not enabled, other values are determined according to actual SOC|
-|int|Only Y component is received, 0 is not enabled, 1 is enabled, scanning code must be enabled, scanning code fails directly if not enabled|
+|int|Only receive Y component, 0 is not enabled, 1 is enabled, scan code must be enabled, otherwise it will fail.|
+|int|Working mode, camera.AUTO, camera.SCAN scan code|
 |int|Camera width|
 |int|Camera height|
 
@@ -89,7 +90,7 @@ end)
 
 ---
 
-## camera.start(id,mode)
+## camera.start(id)
 
 
 
@@ -100,7 +101,6 @@ Start the specified camera
 |Incoming Value Type | Explanation|
 |-|-|
 |int|camera id,For example 0|
-|int|Working mode. Currently, only camera.AUTO and camera.SCAN scan code continuously. The default is 0|
 
 **Return Value**
 
