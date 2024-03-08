@@ -140,6 +140,7 @@ api/index
 api/sys_pub
 🌕 Native API Manual <https://wiki.luatos.org/_static/lua53doc/index.html>
 api/libs/index
+pages/libs
 ```
 
 ```{toctree}
