@@ -4,6 +4,20 @@
 * [Firmware Download Alternate Address](https://pan.air32.cn/s/DJTr?path=%2F)
 * Fully automatic compilation of the latest firmware through [Cloud Compile](https://wiki.luatos.org/develop/compile/Cloud_compilation.html)
 
+## V1001
+
+Precautions:
+Adequate testing is required for use
+
+
+Defect repair:
+* Fixes found in V1000 version BUG
+
+New Function:
+* add: ioqueue Operation
+* add: camera Function
+
+
 ## V0001
 
 EC718P Series Firmware First Edition
