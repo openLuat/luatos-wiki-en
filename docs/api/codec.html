@@ -767,8 +767,8 @@
 </tbody>
 </table></div>
 </section>
-<section id="codec-create-type-isdecoder">
-<h2>codec.create(type, isDecoder)<a class="headerlink" href="#codec-create-type-isdecoder" title="Permalink to this headline">#</a></h2>
+<section id="codec-create-type-isdecoder-quality">
+<h2>codec.create(type, isDecoder, quality)<a class="headerlink" href="#codec-create-type-isdecoder-quality" title="Permalink to this headline">#</a></h2>
 <p>Create a codec codec</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -783,6 +783,9 @@
 </tr>
 <tr class="row-odd"><td><p>boolean</p></td>
 <td><p>Is it a decoder, true decoder, false encoder, default true, is a decoder</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>encoding level. some bsps have internal encoders. you may need to enter the encoding level in advance, such as the internal amr encoder of a air780ep.</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -804,6 +807,8 @@
 <span class="kd">local</span> <span class="n">decoder</span> <span class="o">=</span> <span class="n">codec</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">codec</span><span class="p">.</span><span class="n">MP3</span><span class="p">)</span><span class="c1">--Create an mp3 decoder</span>
 <span class="c1">-- Create Encoder</span>
 <span class="kd">local</span> <span class="n">encoder</span> <span class="o">=</span> <span class="n">codec</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">codec</span><span class="p">.</span><span class="n">AMR</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span><span class="c1">--Create an AMR encoder</span>
+<span class="c1">-- Create Encoder</span>
+<span class="kd">local</span> <span class="n">encoder</span> <span class="o">=</span> <span class="n">codec</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">codec</span><span class="p">.</span><span class="n">AMR_WB</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span><span class="c1">--Create a amr-wb encoder with the default encoding level 8</span>
 </pre></div>
 </div>
 </section>
@@ -909,7 +914,7 @@
 <hr class="docutils"/>
 <section id="codec-encode-coder-in-buffer-out-buffer-mode">
 <h2>codec.encode(coder, in_buffer, out_buffer, mode)<a class="headerlink" href="#codec-encode-coder-in-buffer-out-buffer-mode" title="Permalink to this headline">#</a></h2>
-<p>encoding audio data, because flash and ram space is generally limited, currently only amr-nb encoding is supported.</p>
+<p>for encoding audio data, flash and ram space are generally limited, except that some bsps have internal amr encoding function, currently only amr-nb encoding is supported.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -928,7 +933,7 @@
 <td><p>The output data, in the form of zbuff, is automatically added to the tail of the buff. If the space is insufficient, it will automatically expand, but it will consume extra time and even fail, so try to give enough space at the beginning.</p></td>
 </tr>
 <tr class="row-odd"><td><p>int</p></td>
-<td><p>amr_nb The larger the encoding level 0 to 7 (that is, MR475 to MR122), the more space is consumed and the higher the sound quality is. The default 0</p></td>
+<td><p>amr_nb The larger the encoding level of 0 to 7 (that is, MR475 to MR122), the more space consumed and the higher the sound quality. The default encoding level of 0 amr_wb is 0 to 8. The larger the value, the more space consumed and the higher the sound quality. The default 0</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1035,7 +1040,7 @@
             <ul>
 <li><a class="reference internal" href="#">codec - Multimedia-Codec</a><ul>
 <li><a class="reference internal" href="#constant">Constant</a></li>
-<li><a class="reference internal" href="#codec-create-type-isdecoder">codec.create(type, isDecoder)</a></li>
+<li><a class="reference internal" href="#codec-create-type-isdecoder-quality">codec.create(type, isDecoder, quality)</a></li>
 <li><a class="reference internal" href="#codec-info-decoder-file-path">codec.info(decoder, file_path)</a></li>
 <li><a class="reference internal" href="#codec-data-decoder-out-buff">codec.data(decoder, out_buff)</a></li>
 <li><a class="reference internal" href="#codec-encode-coder-in-buffer-out-buffer-mode">codec.encode(coder, in_buffer, out_buffer, mode)</a></li>

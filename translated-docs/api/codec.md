@@ -20,7 +20,7 @@ This library has its own demo,[click this link to view the demo example of codec
 |codec.AMR_WB|number|AMR-WB Format|
 
 
-## codec.create(type, isDecoder)
+## codec.create(type, isDecoder, quality)
 
 
 
@@ -32,6 +32,7 @@ Create a codec codec
 |-|-|
 |int|multimedia type, currently supported codec.MP3 codec.AMR|
 |boolean|Is it a decoder, true decoder, false encoder, default true, is a decoder|
+|int|encoding level. some bsps have internal encoders. you may need to enter the encoding level in advance, such as the internal amr encoder of a air780ep.|
 
 **Return Value**
 
@@ -46,6 +47,8 @@ Create a codec codec
 local decoder = codec.create(codec.MP3)--Create an mp3 decoder
 -- Create Encoder
 local encoder = codec.create(codec.AMR, false)--Create an AMR encoder
+-- Create Encoder
+local encoder = codec.create(codec.AMR_WB, false, 8)--Create a amr-wb encoder with the default encoding level 8
 
 ```
 
@@ -122,7 +125,7 @@ local result = codec.data(coder, buff, 4096)
 
 
 
-encoding audio data, because flash and ram space is generally limited, currently only amr-nb encoding is supported.
+for encoding audio data, flash and ram space are generally limited, except that some bsps have internal amr encoding function, currently only amr-nb encoding is supported.
 
 **Parameters**
 
@@ -131,7 +134,7 @@ encoding audio data, because flash and ram space is generally limited, currently
 |userdata|codec.create Used for the created codec coder|
 |zbuff|input data, zbuff form, from 0 used|
 |zbuff|The output data, in the form of zbuff, is automatically added to the tail of the buff. If the space is insufficient, it will automatically expand, but it will consume extra time and even fail, so try to give enough space at the beginning.|
-|int|amr_nb The larger the encoding level 0 to 7 (that is, MR475 to MR122), the more space is consumed and the higher the sound quality is. The default 0|
+|int|amr_nb The larger the encoding level of 0 to 7 (that is, MR475 to MR122), the more space consumed and the higher the sound quality. The default encoding level of 0 amr_wb is 0 to 8. The larger the value, the more space consumed and the higher the sound quality. The default 0|
 
 **Return Value**
 
