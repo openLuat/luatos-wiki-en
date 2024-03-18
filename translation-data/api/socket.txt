@@ -250,6 +250,8 @@ custom sntp server address
 Custom Server Address
 自定义适配器序号
 Custom Adapter Serial Number
+获取socket当前状态
+Get the current state of the socket
 获取对端
 Get peer
 获取本地
@@ -272,6 +274,10 @@ Read buffer size, added in 2024.1.5. Note that the old version of firmware will 
 Debugging data, debugging, general users do not have to tube
 超时
 Timeout
+输入参数正确的情况下，返回状态的中文描述，否则返回
+If the input parameters are correct, return the Chinese description of the status, otherwise return
+输入参数正确的情况下，返回状态的数值，否则返回
+If the input parameter is correct, return the value of the status, otherwise return
 输出示例
 Output example
 过多的信息可能会造成内存碎片化

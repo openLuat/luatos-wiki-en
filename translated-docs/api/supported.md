@@ -20,7 +20,7 @@
 |[fatfs](fatfs.md)|`read/write fatfs format`|Y|Y|Y|Y|Y|Y|Y|
 |[fdb](fdb.md)|`kv Database, power failure does not lose data`|Y|Y|Y|Y|Y|Y|Y|
 |[fonts](fonts.md)|`Font Library`|Y|Y|Y|Y|Y|Y|Y|
-|[fota](fota.md)|`Underlying Firmware Upgrade`|X|X|Y|X|X|Y|Y|
+|[fota](fota.md)|`Underlying Firmware Upgrade`|Y|Y|Y|X|X|Y|Y|
 |[fs](fs.md)|`Additional File System Operations`|Y|Y|Y|Y|Y|Y|Y|
 |[fskv](fskv.md)|`kv Database, power failure does not lose data`|Y|Y|Y|Y|Y|Y|Y|
 |[ftp](ftp.md)|`ftp Client`|Y|Y|Y|Y|Y|Y|Y|

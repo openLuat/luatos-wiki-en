@@ -525,6 +525,35 @@ local succ, new_netc = socket.listen(ctrl, cb)
 
 ---
 
+## socket.state(ctrl)
+
+
+
+Get the current state of the socket
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|user_data|socket.create obtained ctrl|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|int|or nil,If the input parameter is correct, return the value of the status, otherwise return nil|
+|string|or nil,If the input parameters are correct, return the Chinese description of the status, otherwise return nil|
+
+**Examples**
+
+```lua
+local state, str = socket.state(ctrl)
+log.info("state", state, str)
+
+```
+
+---
+
 ## socket.release(ctrl)
 
 
