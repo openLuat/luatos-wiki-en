@@ -55,6 +55,8 @@ log.info("simid", mobile.simid())
 |mobile.CONF_PSM_MODE|number|PSM Mode switch, 0 off, 1 on|
 |mobile.CONF_CE_MODE|number|attach Mode, 0 is EPS ONLY and 2 is mixed. If IMSI detach is out of the network, set it to 0. Note that when it is set to EPS ONLY, the SMS function will be canceled.|
 |mobile.CONF_SIM_WC_MODE|number|SIM Configure and read the number of writes|
+|mobile.CONF_FAKE_CELL_BARTIME|number|The time when the pseudo base station is prohibited from accessing, which is canceled when the value is 0, and 0xffff is permanent.|
+|mobile.CONF_RESET_TO_FACTORY|number|Delete the saved protocol stack parameters and use the default configuration after restart.|
 |mobile.PIN_VERIFY|number|Verify PIN operation|
 |mobile.PIN_CHANGE|number|Change PIN Operation|
 |mobile.PIN_ENABLE|number|enable PIN verification|
