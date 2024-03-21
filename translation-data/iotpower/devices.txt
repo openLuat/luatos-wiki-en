@@ -32,6 +32,8 @@ Illustration | Meaning
 On sale |Coming soon |In R & D |⛔Discontinued
 型号
 Model
+已停产                       | ⛔停止开发          | ⛔停止开发            | ⛔已停产
+Discontinued |⛔Stop development |⛔Stop development |⛔Discontinued
 快买
 buy it quickly
 性价比极高的电源+功耗测试一体设备。

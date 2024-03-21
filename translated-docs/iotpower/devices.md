@@ -13,7 +13,7 @@ Iot Power Series has a variety of products, can meet a variety of testing needs
 
 |    Model    |        IoT Power CC         |   IoT Power Pro    |   IoT Power Plus   |  IoT Power V1  |
 | ---------- | --------------------------- | ------------------ | ------------------ | -------------- |
-| 销售状态   | 🌐On sale |Coming soon |In R & D |⛔Discontinued        |
+| 销售状态   | ⛔Discontinued |⛔Stop development |⛔Stop development |⛔Discontinued        |
 | Current range   | 0~5A                        | 0~2A               | **0~5A**               | 0~2A           |
 | 限流输出   | ❌Not supported, only measure (PD decoy) | minimum 1μA step | **minimum 0.1μA step** | minimum 1μA step    |
 | Shift mode | multi-channel high-speed automatic shift | multi-channel high-speed automatic shift | multi-channel high-speed automatic shift | multi-channel automatic shift |
