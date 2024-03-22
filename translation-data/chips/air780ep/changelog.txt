@@ -20,6 +20,8 @@ Is the firmware file, the other two are the underlying source code, no need to d
 Tool Library
 操作
 Operation
+支持休眠功能
+Support sleep function
 支持的功能如下
 The supported functions are as follows
 新增功能

@@ -16,6 +16,7 @@ Defect repair:
 New Function:
 * add: ioqueue Operation
 * add: camera Function
+* add: Support sleep function
 
 
 ## V0001
