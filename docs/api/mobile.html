@@ -1523,6 +1523,42 @@
 <p>None</p>
 </section>
 <hr class="docutils"/>
+<section id="mobile-synctime-enable">
+<h2>mobile.syncTime(enable)<a class="headerlink" href="#mobile-synctime-enable" title="Permalink to this headline">#</a></h2>
+<p>Configure the base station synchronization time switch and turn it on by default</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>On, true on, false off, nil not set</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>Current switch status</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mobile</span><span class="p">.</span><span class="n">syncTime</span><span class="p">()</span> <span class="c1">--Get the current switch state</span>
+<span class="n">mobile</span><span class="p">.</span><span class="n">syncTime</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span> <span class="c1">--Off Base Station Sync Time</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="mobile-status">
 <h2>mobile.status()<a class="headerlink" href="#mobile-status" title="Permalink to this headline">#</a></h2>
 <p>Get Network Status</p>
@@ -1992,6 +2028,7 @@
 <li><a class="reference internal" href="#mobile-tac">mobile.tac()</a></li>
 <li><a class="reference internal" href="#mobile-enbid">mobile.enbid()</a></li>
 <li><a class="reference internal" href="#mobile-flymode-index-enable">mobile.flymode(index, enable)</a></li>
+<li><a class="reference internal" href="#mobile-synctime-enable">mobile.syncTime(enable)</a></li>
 <li><a class="reference internal" href="#mobile-status">mobile.status()</a></li>
 <li><a class="reference internal" href="#mobile-getcellinfo">mobile.getCellInfo()</a></li>
 <li><a class="reference internal" href="#mobile-reqcellinfo-timeout">mobile.reqCellInfo(timeout)</a></li>

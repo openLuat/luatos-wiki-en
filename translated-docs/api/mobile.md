@@ -594,6 +594,34 @@ None
 
 ---
 
+## mobile.syncTime(enable)
+
+
+
+Configure the base station synchronization time switch and turn it on by default
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|bool|On, true on, false off, nil not set|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|bool|Current switch status|
+
+**Examples**
+
+```lua
+mobile.syncTime() --Get the current switch state
+mobile.syncTime(false) --Off Base Station Sync Time
+
+```
+
+---
+
 ## mobile.status()
 
 
