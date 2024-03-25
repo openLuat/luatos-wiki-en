@@ -61,7 +61,7 @@ Look at the functions of the chips supported by LuatOS at this stage and choose 
 - [Development Board Purchase](https://luat.taobao.com)
 - [B Station video tutorial](https://space.bilibili.com/532832)
 - [Case turnkey](https://gitee.com/openLuat/luatos-turnkey)
-
+- [Community Extension Library](develop/libs)
 ---
 
 ```{rubric} Modules and chips that have been adapted so far
@@ -140,7 +140,7 @@ api/index
 api/sys_pub
 🌕 Native API Manual <https://wiki.luatos.org/_static/lua53doc/index.html>
 api/libs/index
-pages/libs
+develop/libs
 ```
 
 ```{toctree}

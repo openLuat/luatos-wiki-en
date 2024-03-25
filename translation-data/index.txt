@@ -60,6 +60,8 @@ Welcome
 version of LuatOS | available as an emulator
 目前已经适配的模组和芯片
 Modules and chips that have been adapted so far
+社区扩展库
+Community Extension Library
 移动通信模块| 也支持
 Mobile communication module | Also supported
 移动通信模块| 支持Air780EP系列
