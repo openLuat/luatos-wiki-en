@@ -24,7 +24,7 @@
 |[fs](fs.md)|`Additional File System Operations`|Y|Y|Y|Y|Y|Y|Y|
 |[fskv](fskv.md)|`kv Database, power failure does not lose data`|Y|Y|Y|Y|Y|Y|Y|
 |[ftp](ftp.md)|`ftp Client`|Y|Y|Y|Y|Y|Y|Y|
-|[gmssl](gmssl.md)|`national secret algorithm`|Y|Y|Y|X|X|Y|Y|
+|[gmssl](gmssl.md)|`national secret algorithm(SM2/SM3/SM4)`|Y|Y|Y|X|X|Y|Y|
 |[gpio](gpio.md)|`GPIO Operation`|Y|Y|Y|Y|Y|Y|Y|
 |[gtfont](gtfont.md)|`Qualcomm Font Chip`|Y|Y|Y|X|X|Y|Y|
 |[hmeta](hmeta.md)|`Hardware metadata`|X|X|X|X|X|Y|Y|

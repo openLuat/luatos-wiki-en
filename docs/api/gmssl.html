@@ -7,7 +7,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="gpio - GPIO Operation" href="gpio.html" /><link rel="prev" title="ftp - ftp Client" href="ftp.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>gmssl - national secret algorithm - LuatOS documentation</title>
+        <title>gmssl - national secret algorithm(SM2/SM3/SM4) - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -451,7 +451,7 @@
 <li class="toctree-l2"><a class="reference internal" href="fs.html">fs - Additional File System Operations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fskv.html">fskv - kv Database, power failure does not lose data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ftp.html">ftp - ftp Client</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">gmssl - national secret algorithm</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">gmssl - national secret algorithm(SM2/SM3/SM4)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gpio.html">gpio - GPIO Operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gtfont.html">gtfont - Qualcomm Font Chip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hmeta.html">hmeta - Hardware metadata</a></li>
@@ -721,8 +721,8 @@
           </label>
         </div>
         <article role="main">
-          <section id="gmssl-national-secret-algorithm">
-<h1>gmssl - national secret algorithm<a class="headerlink" href="#gmssl-national-secret-algorithm" title="Permalink to this headline">#</a></h1>
+          <section id="gmssl-national-secret-algorithm-sm2-sm3-sm4">
+<h1>gmssl - national secret algorithm(SM2/SM3/SM4)<a class="headerlink" href="#gmssl-national-secret-algorithm-sm2-sm3-sm4" title="Permalink to this headline">#</a></h1>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Adapted</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air101/Air103</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air601</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air105</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air780E/Air700E</span> <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Air780EP</span></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -731,6 +731,12 @@
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/gmssl">click this link to view the demo example of gmssl</a></p>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This library supports SM2 SM3 SM4 three algorithms</span>
+<span class="c1">-- Theoretically can be extended to support the SM9 algorithm</span>
+<span class="c1">-- SM1 is not supported because it is a hardware algorithm and there is no software implementation.</span>
+</pre></div>
 </div>
 <section id="sm-sm2encrypt-pkx-pky-data-mode-mode2">
 <h2>sm.sm2encrypt(pkx,pky,data, mode, mode2)<a class="headerlink" href="#sm-sm2encrypt-pkx-pky-data-mode-mode2" title="Permalink to this headline">#</a></h2>
@@ -1158,7 +1164,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">gmssl - national secret algorithm</a><ul>
+<li><a class="reference internal" href="#">gmssl - national secret algorithm(SM2/SM3/SM4)</a><ul>
 <li><a class="reference internal" href="#sm-sm2encrypt-pkx-pky-data-mode-mode2">sm.sm2encrypt(pkx,pky,data, mode, mode2)</a></li>
 <li><a class="reference internal" href="#sm-sm2decrypt-private-data-mode-mode2">sm.sm2decrypt(private,data,mode,mode2)</a></li>
 <li><a class="reference internal" href="#sm-sm3-data">sm.sm3(data)</a></li>
