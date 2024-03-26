@@ -1,7 +1,15 @@
 上查找
 Find on
+告知我们 https://gitee.com/openLuat/LuatOS 提交一个
+Inform us of https://gitee.com/openLuat/LuatOS提交一个
 如果你也做了luatos的扩展库，欢迎提交到下面列表中，方便大家使用
 If you have also made luatos extension library, please submit it to the following list for your convenience.
+如果你也做了扩展库，非常欢迎你分享出来，让更多的人受益。
+If you have also made an extension library, you are very welcome to share it and benefit more people.
+库的tag加上 luatos 字样
+The tag of the library is added with the word luatos
+期待你的扩展库
+Looking forward to your extension library
 根据tag在gitee/github查找
 Find according to tag in gitee/github
 的单频RTK对接
