@@ -734,9 +734,12 @@
 <p>This library has its own demo,<a class="reference external" href="https://gitee.com/openLuat/LuatOS/tree/master/demo/httpplus">click this link to view httpplus demo examples</a></p>
 </div>
 <p><strong>Example</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Purpose of this library:</span>
-<span class="c1">--   1. Solve problems with large file uploads</span>
-<span class="c1">--   2. Explore extensions to the http library</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- The library supports the following functions:</span>
+<span class="c1">--   1. Large file upload problem, unlimited size</span>
+<span class="c1">--   2. Header settings of arbitrary length</span>
+<span class="c1">--   3. Set the body of any length.</span>
+<span class="c1">--   4. Automatic authentication URL identification</span>
+<span class="c1">--   5. body Use zbuff to return, which can be directly transmitted to libraries such as uart.</span>
 
 <span class="c1">-- Differences from the http library</span>
 <span class="c1">--   1. File download not supported</span>
@@ -755,7 +758,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>table</p></td>
-<td><p>Additional parameters to be uploaded</p></td>
+<td><p>The request parameter is a table, at least with url attribute</p></td>
 </tr>
 </tbody>
 </table></div>

@@ -13,9 +13,12 @@ This library has its own demo,[click this link to view httpplus demo examples](h
 **Example**
 
 ```lua
--- Purpose of this library:
---   1. Solve problems with large file uploads
---   2. Explore extensions to the http library
+-- The library supports the following functions:
+--   1. Large file upload problem, unlimited size
+--   2. Header settings of arbitrary length
+--   3. Set the body of any length.
+--   4. Automatic authentication URL identification
+--   5. body Use zbuff to return, which can be directly transmitted to libraries such as uart.
 
 -- Differences from the http library
 --   1. File download not supported
@@ -33,7 +36,7 @@ Execute HTTP request
 
 |Incoming Value Type | Explanation|
 |-|-|
-|table|Additional parameters to be uploaded|
+|table|The request parameter is a table, at least with url attribute|
 
 **Return Value**
 
