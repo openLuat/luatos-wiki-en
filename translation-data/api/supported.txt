@@ -2,6 +2,8 @@
 China Telecom CTIOT Integration
 串口操作库
 serial port operation library
+从机(开发中
+Slight machine (under development
 以太网驱动
 Ethernet driver
 传感器操作库
