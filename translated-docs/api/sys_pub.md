@@ -98,6 +98,33 @@ for system messaging inside luatos
 
 ---
 
+## pm
+
+
+
+[pm Interface Documentation Page](https://wiki.luatos.org/api/pm.html)
+
+
+
+### DTIMER_WAKEUP
+
+deep sleep timer Timed time to callback
+
+**Additional return parameters**
+
+None
+
+**Examples**
+
+```lua
+sys.subscribe("DTIMER_WAKEUP", function(timer_id)
+    log.info("deep sleep timer", timer_id)
+end)
+
+```
+
+---
+
 ## w5500
 
 

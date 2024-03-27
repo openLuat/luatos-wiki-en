@@ -822,6 +822,23 @@
 </section>
 </section>
 <hr class="docutils"/>
+<section id="pm">
+<h2>pm<a class="headerlink" href="#pm" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://wiki.luatos.org/api/pm.html">pm Interface Documentation Page</a></p>
+<section id="dtimer-wakeup">
+<h3>DTIMER_WAKEUP<a class="headerlink" href="#dtimer-wakeup" title="Permalink to this headline">#</a></h3>
+<p>deep sleep timer Timed time to callback</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"DTIMER_WAKEUP"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">timer_id</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"deep sleep timer"</span><span class="p">,</span> <span class="n">timer_id</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils"/>
 <section id="w5500">
 <h2>w5500<a class="headerlink" href="#w5500" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://wiki.luatos.org/api/w5500.html">w5500 Interface Documentation Page</a></p>
@@ -1437,6 +1454,10 @@
 </li>
 <li><a class="reference internal" href="#sys">sys</a><ul>
 <li><a class="reference internal" href="#starts-with-0x-01-as-the-first-byte">Starts with 0x 01 as the first byte</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pm">pm</a><ul>
+<li><a class="reference internal" href="#dtimer-wakeup">DTIMER_WAKEUP</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#w5500">w5500</a><ul>

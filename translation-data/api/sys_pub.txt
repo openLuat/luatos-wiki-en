@@ -36,6 +36,8 @@ Base station data updated
 LOST POSITIONING
 定位成功
 Positioning success
+定时时间到回调
+Timed time to callback
 对于电信/移动的卡, 联网后,基站会下发时间,但联通卡不会,务必留意
 For telecom/mobile cards, the base station will issue the time after networking, but the Unicom card will not, so be sure to pay attention to it.
 已断网
