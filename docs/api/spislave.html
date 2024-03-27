@@ -780,11 +780,22 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="spislave-ready">
-<h2>spislave.ready()<a class="headerlink" href="#spislave-ready" title="Permalink to this headline">#</a></h2>
+<section id="spislave-ready-id">
+<h2>spislave.ready(id)<a class="headerlink" href="#spislave-ready-id" title="Permalink to this headline">#</a></h2>
 <p>Whether writable</p>
 <p><strong>Parameters</strong></p>
-<p>None</p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Number of Slave SPI</p></td>
+</tr>
+</tbody>
+</table></div>
 <p><strong>Return Value</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -795,6 +806,121 @@
 <tbody>
 <tr class="row-even"><td><p>boolean</p></td>
 <td><p>true Indicates writable, others not writable</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<p>None</p>
+</section>
+<hr class="docutils"/>
+<section id="spislave-on-id-cb">
+<h2>spislave.on(id, cb)<a class="headerlink" href="#spislave-on-id-cb" title="Permalink to this headline">#</a></h2>
+<p>Register event callback function</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Number of Slave SPI</p></td>
+</tr>
+<tr class="row-odd"><td><p>function</p></td>
+<td><p>callback function</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<p>None</p>
+</section>
+<hr class="docutils"/>
+<section id="spislave-read-id-ptr-buff-len">
+<h2>spislave.read(id, ptr, buff, len)<a class="headerlink" href="#spislave-read-id-ptr-buff-len" title="Permalink to this headline">#</a></h2>
+<p>Read data</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Number of Slave SPI</p></td>
+</tr>
+<tr class="row-odd"><td><p>userdata</p></td>
+<td><p>User data pointer, obtained from the callback function</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>zbuff buffer object</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Read length, obtained from the callback function</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>The number of bytes read, usually the same length as the expected read</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Error code, returned only when an error occurs</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<p>None</p>
+</section>
+<hr class="docutils"/>
+<section id="spislave-write-id-ptr-buff-len">
+<h2>spislave.write(id, ptr, buff, len)<a class="headerlink" href="#spislave-write-id-ptr-buff-len" title="Permalink to this headline">#</a></h2>
+<p>Write Data</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Number of Slave SPI</p></td>
+</tr>
+<tr class="row-odd"><td><p>userdata</p></td>
+<td><p>User data pointer, currently passing nil</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>zbuff buffer object</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Write length, note that the hardware limit cannot be exceeded, usually 1500 bytes</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>true Indicates success, other failures</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Error code, returned only when an error occurs</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -862,7 +988,10 @@
             <ul>
 <li><a class="reference internal" href="#">spislave - SPI Slight machine (under development)</a><ul>
 <li><a class="reference internal" href="#spislave-setup-id-opts">spislave.setup(id, opts)</a></li>
-<li><a class="reference internal" href="#spislave-ready">spislave.ready()</a></li>
+<li><a class="reference internal" href="#spislave-ready-id">spislave.ready(id)</a></li>
+<li><a class="reference internal" href="#spislave-on-id-cb">spislave.on(id, cb)</a></li>
+<li><a class="reference internal" href="#spislave-read-id-ptr-buff-len">spislave.read(id, ptr, buff, len)</a></li>
+<li><a class="reference internal" href="#spislave-write-id-ptr-buff-len">spislave.write(id, ptr, buff, len)</a></li>
 </ul>
 </li>
 </ul>

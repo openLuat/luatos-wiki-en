@@ -49,7 +49,7 @@ spislavve.setup(3)
 
 ---
 
-## spislave.ready()
+## spislave.ready(id)
 
 
 
@@ -57,13 +57,94 @@ Whether writable
 
 **Parameters**
 
-None
+|Incoming Value Type | Explanation|
+|-|-|
+|int|Number of Slave SPI|
 
 **Return Value**
 
 |return value type | explanation|
 |-|-|
 |boolean|true Indicates writable, others not writable|
+
+**Examples**
+
+None
+
+---
+
+## spislave.on(id, cb)
+
+
+
+Register event callback function
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|Number of Slave SPI|
+|function|callback function|
+
+**Return Value**
+
+None
+
+**Examples**
+
+None
+
+---
+
+## spislave.read(id, ptr, buff, len)
+
+
+
+Read data
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|Number of Slave SPI|
+|userdata|User data pointer, obtained from the callback function|
+|int|zbuff buffer object|
+|int|Read length, obtained from the callback function|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|int|The number of bytes read, usually the same length as the expected read|
+|int|Error code, returned only when an error occurs|
+
+**Examples**
+
+None
+
+---
+
+## spislave.write(id, ptr, buff, len)
+
+
+
+Write Data
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|Number of Slave SPI|
+|userdata|User data pointer, currently passing nil|
+|int|zbuff buffer object|
+|int|Write length, note that the hardware limit cannot be exceeded, usually 1500 bytes|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|boolean|true Indicates success, other failures|
+|int|Error code, returned only when an error occurs|
 
 **Examples**
 
