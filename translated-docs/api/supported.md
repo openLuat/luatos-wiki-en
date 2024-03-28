@@ -75,7 +75,7 @@
 |[socket](socket.md)|`Network Interface`|Y|Y|Y|Y|Y|Y|Y|
 |[softkeyboard](softkeyboard.md)|`software keyboard matrix (currently only supported by air105)`|?|?|?|?|?|?|?|
 |[spi](spi.md)|`spi Operation Library`|Y|Y|Y|Y|Y|Y|Y|
-|[spislave](spislave.md)|`SPI Slight machine (under development)`|X|X|X|X|X|X|X|
+|[spislave](spislave.md)|`SPI Slight machine (under development)`|X|X|Y|Y|X|X|X|
 |[sqlite3](sqlite3.md)|`sqlite3 Database Operations`|Y|Y|Y|Y|X|X|X|
 |[statem](statem.md)|`SM State Machine`|Y|Y|Y|Y|Y|Y|Y|
 |[string](string.md)|`String Manipulation Functions`|Y|Y|Y|Y|Y|Y|Y|
@@ -89,7 +89,7 @@
 |[usbapp](usbapp.md)|`USB Functional operation`|X|X|X|X|Y|X|X|
 |[w5500](w5500.md)|`w5500 Ethernet driver`|Y|Y|Y|Y|Y|Y|Y|
 |[wdt](wdt.md)|`watchdog Operation Library`|Y|Y|Y|Y|Y|Y|Y|
-|[websocket](websocket.md)|`websocket Client`|Y|Y|X|X|X|X|X|
+|[websocket](websocket.md)|`websocket Client`|Y|Y|Y|Y|X|X|X|
 |[wlan](wlan.md)|`wifi Operation`|Y|Y|Y|Y|X|Y|Y|
 |[ws2812](ws2812.md)|`Phantom Lights with RGB Controller (WS2812 Series)`|Y|Y|Y|Y|X|X|X|
 |[xxtea](xxtea.md)|`xxtea encryption and decryption `|Y|Y|Y|Y|X|Y|Y|

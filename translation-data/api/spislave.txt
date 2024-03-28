@@ -22,6 +22,8 @@ Initialize SPI Slave
 Parameters
 回调函数
 callback function
+已适配
+Adapted
 当前仅XT804系列支持, 例如
 Currently only supported by the XT804 series, such
 扩展配置参数,当前无参数
