@@ -168,7 +168,7 @@ local recv = spi.transfer(0, buff)--Start zbuff data from the pointer, send it a
 
 ---
 
-## spi.recv(id, size)
+## spi.recv(id, size, buff)
 
 
 
@@ -180,19 +180,26 @@ Receives SPI data of a specified length
 |-|-|
 |int|SPI No., for example 0|
 |int|Data length|
+|userdata|zbuff object, optional, 2024.3.29 New|
 
 **Return Value**
 
 |return value type | explanation|
 |-|-|
-|string|Read successfully returns the string, otherwise it returns nil|
+|string/int|The string returned after the read is successful. If zbuff is passed in, the read size is returned. If an error is returned nil|
 
 **Examples**
 
 ```lua
 -- Initialization spi
 spi.setup(0,nil,0,0,8,2000000,spi.MSB,1,1)
+-- Receive data
 local recv = spi.recv(0, 4)--Receive 4 bytes of data
+
+-- When the zbuff parameter is passed in, the return value is different. 2024.3.29 New
+-- After a successful read, the pointer moves back len bytes
+-- The write position starts with the current used() position, make sure there is enough space to write len-length data
+local len = spi.recv(0, 4, buff)
 
 ```
 

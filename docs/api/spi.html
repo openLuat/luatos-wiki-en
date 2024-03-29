@@ -1007,8 +1007,8 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="spi-recv-id-size">
-<h2>spi.recv(id, size)<a class="headerlink" href="#spi-recv-id-size" title="Permalink to this headline">#</a></h2>
+<section id="spi-recv-id-size-buff">
+<h2>spi.recv(id, size, buff)<a class="headerlink" href="#spi-recv-id-size-buff" title="Permalink to this headline">#</a></h2>
 <p>Receives SPI data of a specified length</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -1024,6 +1024,9 @@
 <tr class="row-odd"><td><p>int</p></td>
 <td><p>Data length</p></td>
 </tr>
+<tr class="row-even"><td><p>userdata</p></td>
+<td><p>zbuff object, optional, 2024.3.29 New</p></td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Return Value</strong></p>
@@ -1034,15 +1037,21 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>string</p></td>
-<td><p>Read successfully returns the string, otherwise it returns nil</p></td>
+<tr class="row-even"><td><p>string/int</p></td>
+<td><p>The string returned after the read is successful. If zbuff is passed in, the read size is returned. If an error is returned nil</p></td>
 </tr>
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Initialization spi</span>
 <span class="n">spi</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="kc">nil</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2000000</span><span class="p">,</span><span class="n">spi</span><span class="p">.</span><span class="n">MSB</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">-- Receive data</span>
 <span class="kd">local</span> <span class="n">recv</span> <span class="o">=</span> <span class="n">spi</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="c1">--Receive 4 bytes of data</span>
+
+<span class="c1">-- When the zbuff parameter is passed in, the return value is different. 2024.3.29 New</span>
+<span class="c1">-- After a successful read, the pointer moves back len bytes</span>
+<span class="c1">-- The write position starts with the current used() position, make sure there is enough space to write len-length data</span>
+<span class="kd">local</span> <span class="n">len</span> <span class="o">=</span> <span class="n">spi</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">buff</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1432,7 +1441,7 @@
 <li><a class="reference internal" href="#spi-createsoft-cs-mosi-miso-clk-cpha-cpol-dataw-bitdict-ms-mode">spi.createSoft(cs, mosi, miso, clk, CPHA, CPOL, dataw, bitdict, ms, mode)</a></li>
 <li><a class="reference internal" href="#spi-close-id">spi.close(id)</a></li>
 <li><a class="reference internal" href="#spi-transfer-id-send-data-send-len-recv-len">spi.transfer(id, send_data, send_len, recv_len)</a></li>
-<li><a class="reference internal" href="#spi-recv-id-size">spi.recv(id, size)</a></li>
+<li><a class="reference internal" href="#spi-recv-id-size-buff">spi.recv(id, size, buff)</a></li>
 <li><a class="reference internal" href="#spi-send-id-data-len">spi.send(id, data[, len])</a></li>
 <li><a class="reference internal" href="#spi-devicesetup-id-cs-cpha-cpol-dataw-bandrate-bitdict-ms-mode">spi.deviceSetup(id, cs, CPHA, CPOL, dataw, bandrate, bitdict, ms, mode)</a></li>
 <li><a class="reference internal" href="#spi-device-close">spi_device:close()</a></li>
