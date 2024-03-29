@@ -144,6 +144,8 @@ Read-evaluate-output "loop
 Running points
 软件包
 Software package
+软件键盘矩阵
+Software Keyboard Matrix
 软件键盘矩阵(当前仅air105支持
 software keyboard matrix (currently only supported by air105
 适配状态

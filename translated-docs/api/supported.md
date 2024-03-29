@@ -11,7 +11,6 @@
 |[codec](codec.md)|`Multimedia-Codec`|Y|Y|Y|Y|Y|X|X|
 |[coremark](coremark.md)|`Running points`|Y|Y|Y|Y|Y|Y|Y|
 |[crypto](crypto.md)|`Encryption and decryption and hash functions`|Y|Y|Y|Y|Y|Y|Y|
-|[ctiot](ctiot.md)|`China Telecom CTIOT Integration`|?|?|?|?|?|?|?|
 |[dac](dac.md)|`Digital-to-analog conversion`|X|X|X|X|Y|X|X|
 |[disp](disp.md)|`disp Library (Obsolete)`|Y|Y|Y|Y|Y|Y|Y|
 |[eink](eink.md)|`ink screen operation library`|Y|Y|Y|Y|Y|Y|Y|
@@ -73,7 +72,7 @@
 |[sfud](sfud.md)|`SPI FLASH sfud Software package`|Y|Y|Y|Y|Y|Y|Y|
 |[sms](sms.md)|`SMS`|X|Y|X|X|X|X|X|
 |[socket](socket.md)|`Network Interface`|Y|Y|Y|Y|Y|Y|Y|
-|[softkeyboard](softkeyboard.md)|`software keyboard matrix (currently only supported by air105)`|?|?|?|?|?|?|?|
+|[softkb](softkb.md)|`Software Keyboard Matrix`|X|X|X|X|Y|X|X|
 |[spi](spi.md)|`spi Operation Library`|Y|Y|Y|Y|Y|Y|Y|
 |[spislave](spislave.md)|`SPI Slight machine (under development)`|X|X|Y|Y|X|X|X|
 |[sqlite3](sqlite3.md)|`sqlite3 Database Operations`|Y|Y|Y|Y|X|X|X|
