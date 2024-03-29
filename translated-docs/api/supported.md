@@ -2,7 +2,7 @@
 
 |BSP/Library | Introduction|Air780E/Air700E|Air780EP|Air601|Air101/Air103|Air105|ESP32C3|ESP32S3|
 |---|---|---|---|---|---|---|---|---|
-|[adc](adc.md)|`Digital-to-analog conversion`|Y|Y|Y|Y|Y|Y|Y|
+|[adc](adc.md)|`Analog-to-digital conversion`|Y|Y|Y|Y|Y|Y|Y|
 |[antbot](antbot.md)|`Ant Chain`|Y|X|X|X|X|X|X|
 |[audio](audio.md)|`Multimedia-Audio`|Y|Y|Y|Y|Y|X|X|
 |[bit64](bit64.md)|`32 Basic arithmetic and logical operations on 64-bit data on bit systems`|Y|Y|X|X|Y|Y|Y|

@@ -100,6 +100,8 @@ Server
 Module
 模拟器
 Simulator
+模数转换
+Analog-to-digital conversion
 段式
 Segment
 状态机

@@ -1,4 +1,4 @@
-# adc - Digital-to-analog conversion
+# adc - Analog-to-digital conversion
 
 {bdg-success}`Adapted` {bdg-primary}`Air780E/Air700E` {bdg-primary}`Air780EP` {bdg-primary}`Air601` {bdg-primary}`Air101/Air103` {bdg-primary}`Air105` {bdg-primary}`ESP32C3` {bdg-primary}`ESP32S3`
 
