@@ -725,12 +725,26 @@
           <section id="firmware-release-notes">
 <h1>Firmware Release Notes<a class="headerlink" href="#firmware-release-notes" title="Permalink to this headline">#</a></h1>
 <p>This document describes changes to LuatOS firmware for Air601</p>
-<p>Firmware download address :</p>
+<p>Firmware download address:</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://pan.air32.cn/s/DJTr?path=%2F">Hezhou Cloud Pan</a></p></li>
 <li><p>LuaTools It will also be downloaded automatically.</p></li>
 <li><p><a class="reference external" href="https://gitee.com/openLuat/LuatOS/releases">Gitee Library publishing path</a></p></li>
 </ol>
+<section id="v1023">
+<h2>V1023<a class="headerlink" href="#v1023" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>adapts to the fota function and supports full upgrade of underlying scripts</p></li>
+<li><p>Support dynamic switch ble to achieve ble and wifi coexistence</p></li>
+<li><p>Support spi slave function, maximum rate 50M, corresponding demo/spi_slave</p></li>
+<li><p>Support ulwip library, can be integrated w5100s, corresponding demo/ulwip</p></li>
+<li><p>Support for AP hiding ssid</p></li>
+<li><p>http Library supports arbitrary header</p></li>
+<li><p>optimizes ble memory usage, reducing approx.10k</p></li>
+<li><p>Optimize ble power consumption, when firmware does not contain wifi function, save more than 50% power</p></li>
+<li><p>Font optimization to solve the alignment problem of Chinese display</p></li>
+</ol>
+</section>
 <section id="v1022">
 <h2>V1022<a class="headerlink" href="#v1022" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
@@ -813,6 +827,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Firmware Release Notes</a><ul>
+<li><a class="reference internal" href="#v1023">V1023</a></li>
 <li><a class="reference internal" href="#v1022">V1022</a></li>
 <li><a class="reference internal" href="#v1021">V1021</a></li>
 <li><a class="reference internal" href="#v1020">V1020</a></li>

@@ -2,11 +2,23 @@
 
 This document describes changes to LuatOS firmware for Air601
 
-Firmware download address :
+Firmware download address:
 
 1. [Hezhou Cloud Pan](https://pan.air32.cn/s/DJTr?path=%2F)
 2. LuaTools It will also be downloaded automatically.
 3. [Gitee Library publishing path](https://gitee.com/openLuat/LuatOS/releases)
+
+## V1023
+
+1. adapts to the fota function and supports full upgrade of underlying scripts
+2. Support dynamic switch ble to achieve ble and wifi coexistence
+3. Support spi slave function, maximum rate 50M, corresponding demo/spi_slave
+4. Support ulwip library, can be integrated w5100s, corresponding demo/ulwip
+5. Support for AP hiding ssid
+6. http Library supports arbitrary header
+7. optimizes ble memory usage, reducing approx.10k
+8. Optimize ble power consumption, when firmware does not contain wifi function, save more than 50% power
+9. Font optimization to solve the alignment problem of Chinese display
 
 ## V1022
 
