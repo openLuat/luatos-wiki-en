@@ -55,7 +55,7 @@
 |[nes](nes.md)|`nes Simulator`|Y|Y|Y|Y|Y|X|X|
 |[nimble](nimble.md)|`Bluetooth BLE library (nimble version)`|X|X|Y|Y|X|Y|Y|
 |[onewire](onewire.md)|`single bus protocol driver`|X|X|X|X|X|X|X|
-|[os](os.md)|`os Operation`|?|?|?|?|?|?|?|
+|[os](os.md)|`os Operation`|Y|Y|Y|Y|Y|Y|Y|
 |[otp](otp.md)|`OTP Operation Library`|Y|Y|Y|Y|Y|X|X|
 |[pack](pack.md)|`Packing and unpacking format string`|Y|Y|Y|Y|Y|Y|Y|
 |[pin](pin.md)|`Pin Naming Map`|X|X|Y|Y|Y|X|X|
