@@ -113,7 +113,7 @@ local isDone = fota.wait()
 
 ---
 
-## fota.run(buff)
+## fota.run(buff, offset, len)
 
 
 
@@ -124,6 +124,8 @@ write fota data
 |Incoming Value Type | Explanation|
 |-|-|
 |zbuff/string|fota Data, try to use zbuff|
+|int|Starting offset, valid when zbuff is passed in, default is 0|
+|int|Write length, valid when zbuff is passed in. The default value is zbuff:used()|
 
 **Return Value**
 
@@ -139,6 +141,9 @@ write fota data
 local result, isDone, cache = fota.run(buf) -- write fota process
 
 -- Hint: If zbuff is passed in, please empty the data in zbuff after writing successfully.
+
+-- 2024.4.3 Added offset and len parameters, valid only for zbuff
+fota.run(buff, 0, 1024)
 
 ```
 

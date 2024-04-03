@@ -853,8 +853,8 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="fota-run-buff">
-<h2>fota.run(buff)<a class="headerlink" href="#fota-run-buff" title="Permalink to this headline">#</a></h2>
+<section id="fota-run-buff-offset-len">
+<h2>fota.run(buff, offset, len)<a class="headerlink" href="#fota-run-buff-offset-len" title="Permalink to this headline">#</a></h2>
 <p>write fota data</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -866,6 +866,12 @@
 <tbody>
 <tr class="row-even"><td><p>zbuff/string</p></td>
 <td><p>fota Data, try to use zbuff</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Starting offset, valid when zbuff is passed in, default is 0</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Write length, valid when zbuff is passed in. The default value is zbuff:used()</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -892,6 +898,9 @@
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">result</span><span class="p">,</span> <span class="n">isDone</span><span class="p">,</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">fota</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span> <span class="c1">-- write fota process</span>
 
 <span class="c1">-- Hint: If zbuff is passed in, please empty the data in zbuff after writing successfully.</span>
+
+<span class="c1">-- 2024.4.3 Added offset and len parameters, valid only for zbuff</span>
+<span class="n">fota</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">buff</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1062,7 +1071,7 @@
 <li><a class="reference internal" href="#">fota - Underlying Firmware Upgrade</a><ul>
 <li><a class="reference internal" href="#fota-init-storge-location-len-param1">fota.init(storge_location, len, param1)</a></li>
 <li><a class="reference internal" href="#fota-wait">fota.wait()</a></li>
-<li><a class="reference internal" href="#fota-run-buff">fota.run(buff)</a></li>
+<li><a class="reference internal" href="#fota-run-buff-offset-len">fota.run(buff, offset, len)</a></li>
 <li><a class="reference internal" href="#fota-file-path">fota.file(path)</a></li>
 <li><a class="reference internal" href="#fota-isdone">fota.isDone()</a></li>
 <li><a class="reference internal" href="#fota-finish-is-ok">fota.finish(is_ok)</a></li>
