@@ -156,6 +156,8 @@ obtain ip address, meaningful only in STATION or APSTA mode
 Get wifi scan results
 获取信息,如AP的bssid,信号强度
 Get information such as bssid of AP, signal strength
+获取信息,如AP的bssid,信号强度, STA联网后可获取
+Obtain information, such as the bssid and signal strength of the AP, which can be obtained after the STA is connected to the Internet.
 设置
 Setup
 设置MAC地址, 2023-03-01之后编译的固件可用

@@ -417,7 +417,7 @@ wlan.stopAP()
 
 
 
-Get information such as bssid of AP, signal strength
+Obtain information, such as the bssid and signal strength of the AP, which can be obtained after the STA is connected to the Internet.
 
 **Parameters**
 
