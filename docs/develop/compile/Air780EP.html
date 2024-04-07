@@ -728,6 +728,7 @@
 <ul class="simple">
 <li><p>Air780EP</p></li>
 </ul>
+<p>Note: More detailed compilation instructions can be viewed  https://gitee.com/openLuat/luatos-soc-2024/blob/master/README.md</p>
 <section id="preparations">
 <h2>Preparations<a class="headerlink" href="#preparations" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
@@ -741,18 +742,18 @@
 <p>Note that two libraries are required</p>
 <ul class="simple">
 <li><p>Master Library <code class="docutils literal notranslate"><span class="pre">https://gitee.com/openLuat/LuatOS</span></code></p></li>
-<li><p>bsp Library ‘https://gitee.com/openLuat/luatos-soc-2023’ linux compilation will have more instructions, please refer README.md</p></li>
+<li><p>bsp Library ‘https://gitee.com/openLuat/luatos-soc-2024’ linux compilation will have more instructions, please refer README.md</p></li>
 </ul>
 <p>The code is frequently updated, recommend use ‘git’ for clone download, and do not recommend zip download.</p>
-<p>The downloaded directory <strong>must</strong> conform to the following structure, and the directory name must be ‘LuatOS’ and<code class="docutils literal notranslate"><span class="pre">luatos-soc-2023</span></code>.</p>
+<p>The downloaded directory <strong>must</strong> conform to the following structure, and the directory name must be ‘LuatOS’ and<code class="docutils literal notranslate"><span class="pre">luatos-soc-2024</span></code>.</p>
 <p>assuming that in <code class="docutils literal notranslate"><span class="pre">D:\gitee</span></code></p>
 <div class="highlight-tree notranslate"><div class="highlight"><pre><span></span>D:\gitee\
     - LuatOS
         - lua
         - luat
         - components
-    - luatos-soc-2023
-        - xmake.lua
+    - luatos-soc-2024
+        - csdk.lua
         - project
         - interface
 </pre></div>
@@ -761,48 +762,19 @@
 </section>
 <section id="prepare-tools">
 <h2>Prepare tools<a class="headerlink" href="#prepare-tools" title="Permalink to this headline">#</a></h2>
-<p>To install xmake, you can download it from the official website of xmake. You can download it directly from <a class="reference external" href="https://pan.air32.cn/s/DJTr?path=/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7">this link</a>. Version 2.8.5 or above is required.</p>
+<p>The installation of xmake can be downloaded from the official website of xmake, and can be downloaded directly from <a class="reference external" href="https://pan.air32.cn/s/DJTr?path=/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7">this link</a>. It is recommended to use the latest version..</p>
 <p>During installation, PATH **will be selected by default, and if not, it will be checked.</p>
 <p><strong>Note: Environment variables need to restart the computer to take effect</strong></p>
 </section>
-<section id="tool-chain-download">
-<h2>Tool chain download<a class="headerlink" href="#tool-chain-download" title="Permalink to this headline">#</a></h2>
-<p>In a networked environment, xmake will download the gcc toolchain itself. If you have a normal internet connection, skip this step</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Specific operation method<div class="sd-summary-down docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">If you cannot connect to the Internet, or if the network is limited, you will usually have this prompt.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">error</span><span class="p">:</span> <span class="n">fatal</span><span class="p">:</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">git</span> <span class="n">repository</span>
-</pre></div>
-</div>
-<p class="sd-card-text">Or the prompt of git/http connection failure. Therefore, the offline gcc tool chain download and compilation method is provided here.</p>
-<ol class="arabic simple">
-<li><p class="sd-card-text">Download <a class="reference external" href="http://cdndownload.openluat.com/xmake/toolchains/gcc-arm/gcc-arm-none-eabi-10-2020-q4-major-win32.zip">gcc for arm toolchain</a></p></li>
-<li><p class="sd-card-text">Decompress, do not select too deep a directory, do not contain Chinese characters and special symbols, it is recommended to decompress to the ‘D disk root directory’, the compression package comes with a layer of directory<code class="docutils literal notranslate"><span class="pre">gcc-arm-none-eabi-10-2020-q4</span></code></p></li>
-<li><p class="sd-card-text">Assuming that the decompressed path is’ D:\gcc-arm-none-eabi-10-2020-q4 ‘, check whether ‘D:\gcc-arm-none-eabi-10-2020-q4\bin\arm-none-eabi-g .exe’ exists. if it does not exist, it must be an additional directory..</p></li>
-<li><p class="sd-card-text">Use a text editor (such as vscode) to open the ‘build.bat’ of the luatos-soc-2023, and modify the content as follows</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">original</span> <span class="n">content</span><span class="p">:</span>
-<span class="n">rem</span> <span class="nb">set</span> <span class="n">GCC_PATH</span><span class="o">=</span><span class="n">E</span><span class="p">:</span>\<span class="n">gcc_mcu</span>
-<span class="n">Modify</span> <span class="n">the</span> <span class="n">statement</span> <span class="n">at</span> <span class="n">the</span> <span class="n">beginning</span> <span class="n">of</span> <span class="nb">set</span><span class="o">.</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">rem</span> <span class="ow">is</span> <span class="n">removed</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">modified</span><span class="o">..</span>
-<span class="nb">set</span> <span class="n">GCC_PATH</span><span class="o">=</span><span class="n">D</span><span class="p">:</span>\<span class="n">gcc</span><span class="o">-</span><span class="n">arm</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="n">eabi</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">2020</span><span class="o">-</span><span class="n">q4</span>
-</pre></div>
-</div>
-</div>
-</details></section>
 <section id="start-compiling">
 <h2>Start Compiling<a class="headerlink" href="#start-compiling" title="Permalink to this headline">#</a></h2>
-<ol class="arabic simple">
-<li><p>Double-click ‘cmd.lnk’ under ‘luatos-soc-2023. ‘. <strong>Do not use PowerShell!!</strong></p></li>
-<li><p>In the popup cmd command line, enter the command</p></li>
-</ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>build luatos
-</pre></div>
-</div>
+<p>The sample environment uses windows,linux/macosx is actually a common compilation method.</p>
+<p>Open Terminal under luatos-soc-2024\project\luatos</p>
+<p>First execute the configuration, execute <code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">f</span> <span class="pre">--menu</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">Configuration</span></code> We don’t need to worry about it. It contains the compilation architecture/compiler related configuration. The cross compiler will be automatically configured in the project. Here we ignore it and select’ Project Configuration’ to configure according to our actual use.</p>
+<p>Select Exit to exit after configuration is complete, and ask if you want to save the selection.yes</p>
+<p><strong>Note: The above configuration operation only needs to be configured once and will take effect all the time. You need to perform the configuration operation again only after modifying the configuration.</strong></p>
+<p>Then execute ‘xmake to compile, the generated binpkg/soc/log database (comdb.txt) and other files are located in the’ out’ directory under the project</p>
 <p>The final output is as follows (roughly):</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>D:<span class="se">\g</span>ithub<span class="se">\l</span>uatos-soc-2023<span class="se">\P</span>LAT<span class="se">\d</span>river<span class="se">\c</span>hip<span class="se">\e</span>c718p<span class="se">\a</span>p<span class="se">\i</span>nc_cmsis/Driver_USART.h:345:3: warning: <span class="nb">type</span> qualifiers ignored on <span class="k">function</span> <span class="k">return</span> <span class="nb">type</span> <span class="o">[</span>-Wignored-qualifiers<span class="o">]</span>
 <span class="o">[</span> <span class="m">99</span>%<span class="o">]</span>: archiving.debug libluatos.a
@@ -825,16 +797,22 @@ Everything is Ok
 end
 </pre></div>
 </div>
-<p>That is to say, the compilation was successful. The output’ soc’ file can be found in the’ out\luatos’ directory. You can use the LuaTools to brush the machine.</p>
+<p>That is to say, the compilation is successful, and the generated binpkg/soc/log database (comdb.txt) and other files are all located in the’ out’ directory under the project, and you can use the LuaTools to swipe the machine.</p>
 <p>As an additional note, the soc file is a compressed package and does not represent the actual size of the firmware.!!</p>
+<p>ps：If you do not want to use graphics, you can also use the command line configuration method, for example, ‘xmake f – chip_target = ec718p – lspd_mode = y – denoise_force = n’. for specific supported configuration items and parameters, execute’ xmake f – help ‘to view the specific description under the Command options (Project Configuration)</p>
 </section>
 <section id="common-compilation-issues">
 <h2>Common Compilation Issues<a class="headerlink" href="#common-compilation-issues" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Prompt network failure, git error, please refer to’ tool chain download (offline environment) ‘section</p></li>
-<li><p>Prompt missing ‘luat_msgbus.h ‘files, please consult the ‘download source’, check the directory structure, and ensure that no path does not contain special characters</p></li>
-<li><p>Prompt ‘refer to xxx’ and other ld link errors, please update the code, both code bases need to be updated. If the error is still reported, please report issue</p></li>
-</ul>
+<p>1，xmake The package is installed with disk c by default. I don’t have much space for disk c and don’t want to install it on disk c.</p>
+<p>A: Set the relevant directory to another disk
+<code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">g</span> <span class="pre">--pkg_installdir="xxx"</span></code> Set package installation directory
+<code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">g</span> <span class="pre">--pkg_cachedir="xxx"</span></code> Set Package Cache Directory</p>
+<p>2，My computer cannot be connected to the Internet, how to download the installation package？</p>
+<p>A: You can prepare the package in advance. Here, take the windows environment to install the gcc cross-compilation tool chain of this warehouse as an example.</p>
+<p>First of all, download the gcc-arm-none-eabi-10-2020-q4-major-win32.zip to the root directory of disk d, execute’ xmake g-pkg_searchdirs = “d:” ‘xmake will give priority to searching the set directory to search for the installation package, so there is no need to connect to the network.</p>
+<p>gcc For the download connection, refer to the connection in csdk.lua and select the corresponding platform to download the download.</p>
+<p>3，github Whether the package can be accelerated？</p>
+<p><code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">g</span> <span class="pre">--proxy_pac=github_mirror.lua</span></code>you can set the built-in github accelerated image</p>
 </section>
 </section>
 
@@ -898,7 +876,6 @@ end
 <li><a class="reference internal" href="#preparations">Preparations</a></li>
 <li><a class="reference internal" href="#download-source-code">Download source code</a></li>
 <li><a class="reference internal" href="#prepare-tools">Prepare tools</a></li>
-<li><a class="reference internal" href="#tool-chain-download">Tool chain download</a></li>
 <li><a class="reference internal" href="#start-compiling">Start Compiling</a></li>
 <li><a class="reference internal" href="#common-compilation-issues">Common Compilation Issues</a></li>
 </ul>
