@@ -268,6 +268,8 @@ Set log registration for SSL
 Set up DNS configuration for your network adapter
 设置默认网络适配器的DNS配置
 Set the DNS configuration for the default network adapter
+读取数据(非zbuff版本
+Read data (non-zbuff version
 读取缓冲区大小, 2024.1.5 新增, 注意,老版本固件不传buff参数会报错的
 Read buffer size, added in 2024.1.5. Note that the old version of firmware will report an error if it does not pass buff parameters.
 调试数据, 调试用,一般用户不用管

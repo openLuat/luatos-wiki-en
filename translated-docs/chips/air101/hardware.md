@@ -36,6 +36,13 @@ Only `BOOT` and` UART0_TX/RX` are configured when starting up, other digital pin
 | ----------------- | ------------ |
 | 0                 | Module ADC0-PA1 |
 | 1                 | Module ADC1-PA4 |
-| 10                | CPU Temperature      |
-| 11                | Internal voltage     |
+| adc.CH_CPU        | CPU Temperature      |
+| adc.CH_VBAT       | Internal voltage     |
 
+## RF pin
+
+As a hidden function, the RF pin of the Air101 is: 8
+
+When designing a PCB, this pin must be ESD protected.!!!
+
+Functionally supports BLE 4.2 and wifi 2.4G communication, not supported wifi 5G

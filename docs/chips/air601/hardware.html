@@ -763,6 +763,119 @@
 </tbody>
 </table></div>
 </section>
+<section id="pin-mapping-table">
+<h2>Pin Mapping Table<a class="headerlink" href="#pin-mapping-table" title="Permalink to this headline">#</a></h2>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>GPIO Numbering</p></th>
+<th class="head"><p>Naming</p></th>
+<th class="head"><p>Default Features and Extended Features</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>PA0</p></td>
+<td><p>BOOT</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>PA1</p></td>
+<td><p>I2C_SCL/ADC0</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>PA4</p></td>
+<td><p>I2C_SDA/ADC1</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>PA7</p></td>
+<td><p>GPIO/PWM4</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>PB0</p></td>
+<td><p>GPIO/PWM0/UART3_TX</p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>PB1</p></td>
+<td><p>GPIO/PWM1/UART3_RX</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>PB2</p></td>
+<td><p>SPI_SCK/PWM2/UART2_TX</p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td><p>PB3</p></td>
+<td><p>SPI_MISO/PWM3/UART2_RX</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>PB4</p></td>
+<td><p>SPI_CS/UART4_TX</p></td>
+</tr>
+<tr class="row-odd"><td><p>21</p></td>
+<td><p>PB5</p></td>
+<td><p>SPI_MOSI/UART4_RX</p></td>
+</tr>
+<tr class="row-even"><td><p>22</p></td>
+<td><p>PB6</p></td>
+<td><p>UART1_TX</p></td>
+</tr>
+<tr class="row-odd"><td><p>23</p></td>
+<td><p>PB7</p></td>
+<td><p>UART1_RX</p></td>
+</tr>
+<tr class="row-even"><td><p>24</p></td>
+<td><p>PB8</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>PB9</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>26</p></td>
+<td><p>PB10</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td><p>PB11</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>35</p></td>
+<td><p>PB19</p></td>
+<td><p>UART0_TX</p></td>
+</tr>
+<tr class="row-odd"><td><p>36</p></td>
+<td><p>PB20</p></td>
+<td><p>UART0_RX</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>Only ‘BOOT’ and’ UART0_TX/RX’ are configured when starting up, other digital pins are GPIO pins, and the status is input high resistance.</p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ADC Number (LuatOS)</p></th>
+<th class="head"><p>Features</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Module ADC0-PA1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Module ADC1-PA4</p></td>
+</tr>
+<tr class="row-even"><td><p>adc.CH_CPU</p></td>
+<td><p>CPU Temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>adc.CH_VBAT</p></td>
+<td><p>Internal voltage</p></td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section id="rf-pin">
+<h2>RF pin<a class="headerlink" href="#rf-pin" title="Permalink to this headline">#</a></h2>
+<p>As a hidden function, the RF pin of Air601 is: 8</p>
+<p>When designing a PCB, this pin must be ESD protected.!!!</p>
+<p>Functionally supports BLE 4.2 and wifi 2.4G communication, not supported wifi 5G</p>
+</section>
 </section>
 
         </article>
@@ -824,6 +937,8 @@
 <li><a class="reference internal" href="#">Air601 Hardware Data</a><ul>
 <li><a class="reference internal" href="#module-hardware-data">Module Hardware Data</a></li>
 <li><a class="reference internal" href="#module-profile">Module profile</a></li>
+<li><a class="reference internal" href="#pin-mapping-table">Pin Mapping Table</a></li>
+<li><a class="reference internal" href="#rf-pin">RF pin</a></li>
 </ul>
 </li>
 </ul>

@@ -1,18 +1,40 @@
-规格书      | [Air601-12F_模块产品规格书_V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230726105503590_Air601-12F_模块产品规格书
-Specification | [Air601-12F_Module Product Specification_V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230726105503590_Air601-12F_模块产品规格书
+作为隐藏功能, Air601的RF管脚为
+As a hidden function, the RF pin of Air601 is
+内部电压
+Internal voltage
+功能上支持 BLE 4.2 和 wifi 2.4G通信, 不支持
+Functionally supports BLE 4.2 and wifi 2.4G communication, not supported
+原理图及PCB封装
+Schematic and PCB Package
+射频管脚
+RF pin
 开发板相关资料  | [开发板EVB_Air601-12F使用说明V1.0.0.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230626161923628_开发板EVB_Air601-12F使用说明
 Information on Development Board | [Instructions for Use of Development Board EVB_Air601-12F V1.0.0.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230626161923628_开发板EVB_Air601-12F使用说明
+开机时仅配置了`BOOT`和`UART0_TX/RX`，其他数字脚均为GPIO脚，状态为输入高阻
+Only 'BOOT' and' UART0_TX/RX' are configured when starting up, other digital pins are GPIO pins, and the status is input high resistance
+模块
+Module
 模块外形
 Module profile
 模块硬件资料
 Module Hardware Data
+正面                  |                  反面
+positive | negative
+温度
+Temperature
 硬件设计手册   | [Air601-12F_WIFI模块硬件设计手册_V1.0.1.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230619165631229_Air601-12F_WIFI模块硬件设计手册
 Hardware Design Manual | [Air601-12F_WIFI Module Hardware Design Manual_V1.0.1.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230619165631229_Air601-12F_WIFI模块硬件设计手册
 硬件资料
 Hardware Data
-原理图及PCB封装
-Schematic and PCB Package
-正面                  |                  反面
-positive | negative
+管脚映射表
+Pin Mapping Table
+编号 | 命名 | 默认功能及扩展功能
+Numbering | Naming | Default Features and Extended Features
+编号（LuatOS） | 功能
+Number (LuatOS) | Features
+规格书      | [Air601-12F_模块产品规格书_V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230726105503590_Air601-12F_模块产品规格书
+Specification | [Air601-12F_Module Product Specification_V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20230726105503590_Air601-12F_模块产品规格书
+设计PCB时, 该管脚必须加ESD保护
+When designing a PCB, this pin must be ESD protected.
 资料简介     |                           相关链接
 Profile | Related Links

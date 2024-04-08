@@ -63,8 +63,8 @@ Only `BOOT` and` UART0_TX/RX` are configured when starting up, other digital pin
 | 1                 | Module ADC1-PA4 |
 | 2                 | Module ADC2-PA3 |
 | 3                 | Module ADC3-PA2 |
-| 10                | CPU Temperature      |
-| 11                | Internal voltage     |
+| adc.CH_CPU                | CPU Temperature      |
+| adc.CH_VBAT                | Internal voltage     |
 
 ## Data Link
 
@@ -74,3 +74,11 @@ Only `BOOT` and` UART0_TX/RX` are configured when starting up, other digital pin
 * LDO Manual: [SGM2019-3.3YN5G_TR.PDF](https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193445472_SGM2019-3.3YN5G_TR.PDF)
 * Air103_ Core Board Design Manual: [Air103_Core Board Design Manual V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193519160_Air103_核心板设计手册 V1.2.pdf)
 * Register manual (not recommend): [Register manual and W800 common](https://www.winnermicro.com/upload/1/editor/1607327764402.pdf)
+
+## RF pin
+
+As a hidden function, the RF pin of the Air103 is: 14
+
+When designing a PCB, this pin must be ESD protected.!!!
+
+Functionally supports BLE 4.2 and wifi 2.4G communication, not supported wifi 5G

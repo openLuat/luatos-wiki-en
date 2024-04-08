@@ -932,10 +932,10 @@
 <tr class="row-odd"><td><p>3</p></td>
 <td><p>Module ADC3-PA2</p></td>
 </tr>
-<tr class="row-even"><td><p>10</p></td>
+<tr class="row-even"><td><p>adc.CH_CPU</p></td>
 <td><p>CPU Temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>11</p></td>
+<tr class="row-odd"><td><p>adc.CH_VBAT</p></td>
 <td><p>Internal voltage</p></td>
 </tr>
 </tbody>
@@ -952,6 +952,12 @@
 <li><p>Air103_ Core Board Design Manual: [Air103_Core Board Design Manual V1.2.pdf](https://cdn.openluat-luatcommunity.openluat.com/attachment/20211202193519160_Air103_核心板设计手册 V1.2.pdf)</p></li>
 <li><p>Register manual (not recommend): <a class="reference external" href="https://www.winnermicro.com/upload/1/editor/1607327764402.pdf">Register manual and W800 common</a></p></li>
 </ul>
+</section>
+<section id="rf-pin">
+<h2>RF pin<a class="headerlink" href="#rf-pin" title="Permalink to this headline">#</a></h2>
+<p>As a hidden function, the RF pin of the Air103 is: 14</p>
+<p>When designing a PCB, this pin must be ESD protected.!!!</p>
+<p>Functionally supports BLE 4.2 and wifi 2.4G communication, not supported wifi 5G</p>
 </section>
 </section>
 
@@ -1017,6 +1023,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#data-link">Data Link</a></li>
+<li><a class="reference internal" href="#rf-pin">RF pin</a></li>
 </ul>
 </li>
 </ul>
