@@ -1,0 +1,136 @@
+下列映射是默认值, 当前不支持通过 mcu.iomux 可配置
+The following mappings are default values and are currently not supported to be configurable via mcu.iomux
+下列映射是默认值, 通过 mcu.iomux 可配置
+The following mappings are default, configurable via mcu.iomux
+不同模块的外部管脚布局不一样, 但`PAD(paddr)`值是一致的, 要对应 "PIN/GPIO对应表格" 文档, 该文档可以在 [air780ep.cn](https://air780ep.cn) 找到
+The external pin layout of different modules is different, but the' PAD(paddr)'value is the same. to correspond to the "PIN/GPIO correspondence table" document, the document can be found in [air780ep.cn](https://air780ep.cn)
+与UART2是冲突的, 事实如此
+It is in conflict with UART2, which is the case.
+与USB功能是解耦的
+Decoupled from USB functionality
+与常规认识不同, 在不接vbus的情况下, USB功能依然可用
+Different from conventional understanding, USB function is still available without vbus
+主机输出| GPIO13  |    28   |注意与UART2冲突
+Host output | GPIO13 | 28 | Note conflict with UART2
+主机输出| GPIO9   |    24   |与I2C1冲突
+Host output | GPIO9 | 24 | conflicts with I2C1
+也能刷机,但需要用量产工具刷, LuaTools暂不支持通过UART给Air780EP/Air780EPV刷机
+Can also brush the machine, but need to use the amount of production tool brush, LuaTools temporarily does not support the Air780EP/Air780EPV brush through UART
+云编译和mcu.iomux函数可以调整部分复用关系, 请查阅链接 [mcu库的文档
+Cloud compilation and mcu.iomux function can adjust part of the reuse relationship, please refer to the document linked to [mcu library
+仅支持输入和中断| USB的VBUS, 检测USB是否是插入状态
+Only supports input and interrupt | VBUS of USB, detects whether USB is inserted
+仅支持输入和中断| wakeup0休眠唤醒脚
+Only supports input and interrupt | wakeup0 sleep wake-up pin
+仅支持输入和中断| wakeup2休眠唤醒脚
+Only supports input and interrupt | wakeup2 sleep wake-up pin
+仅支持输入和中断| 即开机键, 开机之后当普通GPIO使用
+Only supports input and interrupt | instant power-on key, when normal GPIO is used after power-on
+从机输出
+Output from machine
+但相同的硬件通道, 例如 PWM1和PWM11都使用硬件通道1, 同一时间**只能选其中一个使用
+However, the same hardware channel, for example, PWM1 and PWM11 both use hardware channel 1, and only one of them can be selected at the same time.
+例如将`wakup0`设置为唤醒脚, 中断回调可以是空函数
+For example, if 'wakup0' is set as the wake-up pin, the interrupt callback can be an empty function.
+全系)支持多个虚拟的GPIO, 将非GPIO管脚通过软件模拟成GPIO来使用
+The whole system) supports multiple virtual GPIO, and non-GPIO pins are used by software simulation into GPIO.
+关于USB的额外说明
+Additional Notes on USB
+功能     |软件含义     |对应的GPIO|对应的PAD|备注
+Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks
+功能     |软件含义  |对应的GPIO|对应的PAD|备注
+Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks
+功能    |软件含义  |对应的GPIO|对应的PAD|备注
+Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks
+启用PWM1就不能启用PWM11, 启用PWM1和启用PWM22就不受限制
+Enabling PWM1 will not enable PWM11, enabling PWM1 and enabling PWM22 will not be restricted
+固件下的IO复用配置
+IO multiplexing configuration under firmware
+在模块未引出
+Not led out in module
+在进入休眠前, 将上述`wakeup0/wakeup1/wakeup2`设置成中断状态, 即可实现管脚唤醒功能
+Before entering sleep, set the above 'wakeup0/wakeup1/wakeup2' to interrupt state to realize pin wake-up function
+复位
+Reset
+实际可用通道就4个(0/1/2/4), 4个通道可单独使用,互不影响. **PWM3/PWM5已经被底层使用
+The actual available channels are 4 (0/1/2/4), and the 4 channels can be used separately without affecting each other. **PWM3/PWM5 has been used by the bottom layer
+对于AT固件来说,本文档没有意义, 请无视
+For AT firmware, this document is meaningless, please ignore it.
+建议避免使用
+It is recommended to avoid using
+当前不支持释放
+Release is not currently supported
+当前固件版本V1001还不支持其他PWM复用通道的使用, 后续版本会支持
+The current firmware version V1001 does not support the use of other PWM multiplexing channels, and subsequent versions will support
+数据
+Data
+数据 | GPIO19  |    14   |看后面描述
+Data | GPIO19 | 14 | See later description
+数据输出
+Data Output
+时钟
+Clock
+时钟     | GPIO34  |    40   |LCD_CLK,注意与UART3冲突
+Clock | GPIO34 | 40 | LCD _CLK, note conflict with UART3
+时钟 | GPIO18  |    13   |看后面描述
+Clock | GPIO18 | 13 | See later description
+是LCD刷屏专用SPI, 不支持通用SPI功能
+It is a special SPI for LCD screen brushing, and does not support the general SPI function
+是主串口(MAIN_TX/MAIN_RX), 推荐使用
+is the primary serial port (MAIN_TX/MAIN_RX), recommended
+是休眠时仍可维持高电平的GPIO,但驱动能力很弱
+It is a GPIO that can still maintain a high level during sleep, but the driving ability is very weak.
+是备用串口,没有默认功能
+Is a standby serial port, no default function
+是总线结构, 可以接多个不同i2c地址的器件
+It is a bus structure and can connect multiple devices with different i2c addresses.
+是日志口(DBG_TX/DBG_RX),不推荐使用,启动时也有输出,LuatOS固件默认不允许用户使用
+It is a log port (DBG_TX/DBG_RX), which is not recommended. It also has output during startup. LuatOS firmware does not allow users to use it by default
+是次串口
+It is a serial port
+普通GPIO在配置成输入/中断模式时，上下拉无法设置，如果默认上下拉不能满足要求，可以设置成`0`来取消默认上下拉，然后外部加上下拉
+When ordinary GPIO is configured in input/interrupt mode, the up-down pull cannot be set. If the default up-down pull cannot meet the requirements, it can be set to'0' to cancel the default up-down pull, and then add the pull-down externally
+有USB通信的情况下, 是无法休眠的, 可以通过`pm.power(pm.USB, false)`关闭USB通信
+When there is USB communication, it is impossible to sleep. USB communication can be turned off by pass' pm.power(pm.USB, false)'
+本文档描述的是LuatOS和CSDK视角
+This document describes the LuatOS and CSDK perspectives
+模式对USB布线要求高**,一定要做差分线和阻抗匹配
+Mode requires high USB wiring * *, must do differential line and impedance matching
+注意
+Attention
+片选     | GPIO35  |    41   |LCD_CS,注意与UART3冲突
+Select | GPIO35 | 41 | LCD _CS, note conflict with UART3
+片选    | GPIO12  |    27   |注意与UART2冲突
+Select | GPIO12 | 27 | Note conflict with UART2
+片选    | GPIO8   |    23   |与I2C1冲突
+Chip Select | GPIO8 | 23 | Conflicts with I2C1
+物理i2c有2个
+Physics i2c has 2
+物理SPI有3个, 其中`0/1`是通用型SPI, `5`是专用型SPI,供LCD刷屏用
+There are 3 physical SPIs, of which '0/1' is a general SPI and '5' is a special SPI for LCD screen brushing.
+物理uart有3个
+physical uart has 3
+编号|名称|功能|备注
+Number | Name | Function | Remarks
+网络状态灯
+Network Status Light
+若使用SIM2, 会占用 4个
+If SIM2 is used, it will take up 4
+虚拟
+Virtual
+虽然I2C0的GPIO号与UART1/MAIN_UART的GPIO号相同,但实际GPIO18/19复用在UART1/MAIN_UART管脚,与I2C0不冲突
+Although the GPIO number of I2C0 is the same as that of UART1/MAIN_UART, the actual GPIO18/19 is multiplexed on UART1/MAIN_UART pin and does not conflict with I2C0
+说明
+Description
+调用pwm库的API时,填 `软件通道id`, 不是填GPIO号,不是填硬件通道号
+When calling the API of pwm library, fill in' software channel id', not GPIO number, not hardware channel number
+软件通道id|实际硬件通道|对应的GPIO|对应的PAD|备注
+software channel id | actual hardware channel | corresponding GPIO | corresponding PAD | remarks
+通过[mcu.iomux函数](https://wiki.luatos.org/api/mcu.html)可以修改部分映射
+[mcu.iomux function](https://wiki.luatos.org/api/mcu.html) can modify part of the mapping
+非wakeup的普通GPIO, 是不支持休眠唤醒的
+Non-wakeup ordinary GPIO does not support sleep wake-up
+额外说明
+Additional Instructions
+驱动能力弱
+weak driving ability

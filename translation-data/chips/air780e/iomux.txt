@@ -4,6 +4,8 @@ After power-on, the input pull-down is first, and then it will be set to **outpu
 The above mapping is fixed, mcu.iomux has no configuration items, and all available PWM channels have been enumerated.
 下列映射是默认值, 通过 mcu.iomux 可配置
 The following mappings are default, configurable via mcu.iomux
+不同模块的外部管脚布局不一样, 但`PAD(paddr)`值是一致的, 要对应 "PIN/GPIO对应表格" 文档, 该文档可以在 [air780e.cn](https://air780e.cn) 找到
+The external pin layout of different modules is different, but the' PAD(paddr)'value is the same. to correspond to the "PIN/GPIO correspondence table" document, the document can be found in [air780e.cn](https://air780e.cn)
 不同模块的外部管脚布局不一样, 但`PAD(paddr)`值是一致的, 要对应 "PIN/GPIO对应表格" 文档, 该文档可以在 https://air780e.cn 找到
 The external pin layout of different modules is different, but the` PAD(paddr)`value is the same, which should correspond to the "PIN/GPIO correspondence table" document, which can be found https://air780e.cn.
 与UART2/I2C1是冲突的, 事实如此
@@ -16,6 +18,8 @@ Host Output
 Host output | GPIO9 | 24 | conflicts with I2C1
 也是复用的
 is also multiplexed
+也能刷机,但需要用量产工具刷, LuaTools暂不支持通过UART给Air780EP/Air780EPV刷机
+Can also brush the machine, but need to use the amount of production tool brush, LuaTools temporarily does not support the Air780EP/Air780EPV brush through UART
 云编译](https://wiki.luatos.org/develop/compile/Cloud_compilation.html)支持释放uart0, 虽然不推荐这样做
 Cloud Compilation](https://wiki.luatos.org/develop/compile/Cloud_compilation.html) supports releasing uart0, although this is not recommend.
 云编译和mcu.iomux函数可以调整部分复用关系
@@ -46,6 +50,8 @@ For example, PWM1 and PWM11 both use hardware channel 1, **only one of them can 
 For example, if `wakup0` is set as the wake-up pin, the interrupt callback can be an empty function.
 全系)支持多个虚拟的GPIO, 将非GPIO管脚通过软件模拟成GPIO来使用
 The whole system) supports multiple virtual GPIO, and non-GPIO pins are used by software simulation into GPIO.
+关于USB的额外说明
+Additional Notes on USB
 功能     |软件含义     |对应的GPIO|对应的PAD|备注
 Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks
 功能     |软件含义  |对应的GPIO|对应的PAD|备注
@@ -76,6 +82,8 @@ Actually AGPIO4, weak driving ability
 Actual is normal
 实际可用通道就4个(0/1/2/4), 但每个都有2种配置, PWM3/PWM5已经被底层使用
 The actual available channels are 4 (0/1/2/4), but each has 2 configurations, PWM3/PWM5 has been used by the bottom layer
+实际可用通道就4个(0/1/2/4), 但每个都有3种配置, PWM3/PWM5已经被底层使用
+The actual available channels are 4 (0/1/2/4), but each has 3 configurations, PWM3/PWM5 has been used by the bottom layer
 对于AT固件来说,本文档没有意义, 请无视
 For AT firmware, this document is meaningless, please ignore it.
 对于CSDK来说, 相关复用都是可以修改的, 所以也请无视本文档
@@ -112,12 +120,18 @@ It is a log port (DBG_TX/DBG_RX), which is not recommend to use and has output d
 This is a serial port (AUX_TX/AUX_RX), **the module with GNSS function will be connected to the GNSS chip**, and the PAD is different and cannot be used for other functions
 普通GPIO在深睡眠/SLEEP2, 会有周期性高电平脉冲, 务必注意
 Ordinary GPIO in deep sleep/SLEEP2, there will be periodic high-level pulses, be sure to pay attention
+普通GPIO在配置成输入/中断模式时，上下拉无法设置，如果默认上下拉不能满足要求，可以设置成`0`来取消默认上下拉，然后外部加上下拉
+When ordinary GPIO is configured in input/interrupt mode, the up-down pull cannot be set. If the default up-down pull cannot meet the requirements, it can be set to'0' to cancel the default up-down pull, and then add the pull-down externally
 普通GPIO在配置成输入/中断模式时，上下拉无法设置，如果默认上下拉不能满足要求，可以设置成LUAT_GPIO_DEFAULT来取消默认上下拉，然后外部加上下拉
 When ordinary GPIO is configured in input/interrupt mode, the up-down pull cannot be set. If the default up-down pull cannot meet the requirements, it can be set to LUAT_GPIO_DEFAULT to cancel the default up-down pull, and then add a pull-down externally
+有USB通信的情况下, 是无法休眠的, 可以通过`pm.power(pm.USB, false)`关闭USB通信
+When there is USB communication, it is impossible to sleep. USB communication can be turned off by pass' pm.power(pm.USB, false)'
 有两种映射, 通过不同的API使用
 There are two types of mapping, using different APIs.
 本文档描述的是LuatOS视角
 This document describes the LuatOS perspective
+模式对USB布线要求高**,一定要做差分线和阻抗匹配
+Mode requires high USB wiring * *, must do differential line and impedance matching
 注定不适合二次开发,有些管脚在硬件设计手册里的描述会有差异,注意区分
 Doomed not suitable for secondary development, some pins in the hardware design manual description will be different, pay attention to distinguish
 注意

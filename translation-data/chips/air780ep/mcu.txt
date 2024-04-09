@@ -8,6 +8,8 @@ SMS sending and receiving of 'telecom' network is not supported
 What functions are provided for it
 主要特点
 Main features
+仅Air780EPV支持
+Air780EPV support only
 刷机烧录教程
 Brush machine burning tutorial
 可用Lua内存: 默认256k,最高
@@ -34,8 +36,12 @@ Support USB 2.0, only CDC function, does not support HID and host mode
 VoLTE support, to be developed
 支持但不推荐使用
 Supported but not recommend use
+支持使用
+Support Use
 支持双卡单待, 仅支持4G网络, 不支持 2G/3G/5G, 也不支持Wifi通信
 Support dual card single standby, only support 4G network, do not support 2G/3G/5G, also do not support Wifi communication
+支持移动和联通的短信收发, 仅Air780EPV支持 `电信`网络 的短信收发
+Support mobile and Unicom SMS sending and receiving, only Air780EPV support 'telecom' network SMS sending and receiving
 显示
 Display
 本系列文档适用于EC718P系列模组

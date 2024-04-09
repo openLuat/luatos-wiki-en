@@ -26,10 +26,10 @@ Main features:
 Note that due to the limitations of the chip platform, the following functions cannot be implemented or have limitations:
 
 1. 2G/3G/5G communication not supported
-2. SMS sending and receiving of 'telecom' network is not supported
+2. Support mobile and Unicom SMS sending and receiving, only Air780EPV support 'telecom' network SMS sending and receiving
 3. 'wifi' communication is not supported, only in specific scenarios wifi scan
-4. VoLTE support, to be developed
-5. Supported but not recommend use LVGL
+4. Air780EPV support only VoLTE
+5. Support Use LVGL
 
 ## Firmware Download
 
@@ -45,5 +45,5 @@ The official version can be downloaded from the release page, and the firmware o
 
 ## Related Information Links
 
-[Open Source Warehouse Link(BSP)](https://gitee.com/openLuat/luatos-soc-2023)
+[Open Source Warehouse Link(BSP)](https://gitee.com/openLuat/luatos-soc-2024)
 [open source repository link (main library)](https://gitee.com/openLuat/LuatOS)

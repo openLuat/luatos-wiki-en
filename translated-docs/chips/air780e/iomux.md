@@ -3,7 +3,7 @@
 **This document describes the LuatOS perspective**
 
 1. Due to the existence of firmware characteristics, LuatOS's io multiplexing is fixed by default. Starting from V1107, the mapping can be partially modified through mcu.iomux function.
-2. The external pin layout of different modules is different, but the` PAD(paddr)`value is the same, which should correspond to the "PIN/GPIO correspondence table" document, which can be found https://air780e.cn.
+2. The external pin layout of different modules is different, but the' PAD(paddr)'value is the same. to correspond to the "PIN/GPIO correspondence table" document, the document can be found in [air780e.cn](https://air780e.cn)
 3. Due to the small number of pins in the chip, there are a large number of multiplexing scenarios, and many functions will conflict.
 4. For AT firmware, this document is meaningless, please ignore it.
 5. For CSDK, relevant reuse can be modified, so please ignore this document
@@ -13,7 +13,7 @@
 
 ## PWM Description
 
-The actual available channels are 4 (0/1/2/4), but each has 2 configurations, PWM3/PWM5 has been used by the bottom layer.
+The actual available channels are 4 (0/1/2/4), but each has 3 configurations, PWM3/PWM5 has been used by the bottom layer.
 
 For example, PWM1 and PWM11 both use hardware channel 1, **only one of them can be selected to use**.
 
@@ -33,7 +33,8 @@ PWM11 cannot be enabled when PWM1 is enabled. when calling the API of pwm librar
 |21        |    1       | GPIO29  |    35   | I2S_BCLK |
 |22        |    2       | GPIO30  |    36   | I2S_LRCK |
 
-PS: 
+PS:
+
 1. Software channel 10/11/12/14 requires firmware above V1002, 20221219 later compiled version
 2. Software channels 20/21/22 require firmware above V1016, 20230330 later compiled versions
 3. The above mapping is fixed, mcu.iomux has no configuration items, and all available PWM channels have been enumerated..
@@ -41,6 +42,7 @@ PS:
 ## UART Description
 
 physical uart has 3(0/1/2)
+
 1. uart0 It is a log port (DBG_TX/DBG_RX), which is not recommend to use and has output during startup. LuatOS firmware does not allow users to use it by default uart0
 2. uart1 is the primary serial port (MAIN_TX/MAIN_RX), recommend use
 3. uart2 This is a serial port (AUX_TX/AUX_RX), **the module with GNSS function will be connected to the GNSS chip**, and the PAD is different and cannot be used for other functions
@@ -87,6 +89,7 @@ physical uart has 3(0/1/2)
 |SPI1_SCL | SPI1 Clock | - | 30 | Note no GPIO capability|
 
 Attention:
+
 1. SPI0 It is in conflict with UART2/I2C1, which is the case.
 2. SPI1 Although MISO and SCL can be reused as GPIO14/15, these GPIO are actually mapped to other pins. see `GPIO additional instructions`
 
@@ -96,7 +99,7 @@ Attention:
 2. Ordinary GPIO in deep sleep/SLEEP2, there will be periodic high-level pulses, be sure to pay attention
 3. AONGPIO It is a GPIO that can still maintain a high level during sleep, but the driving ability is very weak.
 4. GPIO12/GPIO13 There are two types of mapping, using different APIs.
-5. When ordinary GPIO is configured in input/interrupt mode, the up-down pull cannot be set. If the default up-down pull cannot meet the requirements, it can be set to LUAT_GPIO_DEFAULT to cancel the default up-down pull, and then add a pull-down externally
+5. When ordinary GPIO is configured in input/interrupt mode, the up-down pull cannot be set. If the default up-down pull cannot meet the requirements, it can be set to'0' to cancel the default up-down pull, and then add the pull-down externally
 6. GPIO20,21,22 When configured to interrupt mode, it is a wakeup function, which can be configured to pull up and down or cancel the use of external pull up and down.
 7. **GPIO23** After power-on, the input pull-down is first, and then it will be set to **output pull-up high level**. It is recommended to avoid using this GPIO
 8. **Note **, only GPIO 20-22 supports 'two-way triggering (rising and falling) ', other GPIOs only support one-way triggering of 'rising edges' or 'falling edges'
@@ -119,15 +122,12 @@ Attention:
     gpio.setup(12, gpio12CbFnc, gpio.PULLUP, gpio.FALLING, 4)
     ```
 
-    
-
 |Corresponding GPIO | Corresponding PAD | Examples of API used | Remarks|
 |---------|---------|---------|----|
 | GPIO12   |    11   |pm.power(pm.DAC_EN, true Or false)| LDO_CTL, the Air600E target is GPIO12|
 | GPIO13   |    12   |pm.power(pm.GPS, true Or false)| no lead, in the Air780EG to control the power of GPS|
 | GPIO12   |    27   |gpio.setup(12, 0)|I2C0_SDA,is also multiplexed|
 | GPIO13   |    28   |gpio.setup(13, 0)|I2C0_SCL,is also multiplexed|
-
 
 ## Virtual GPIO
 
@@ -140,13 +140,21 @@ Air780E(EC618 The whole system) supports multiple virtual GPIO, and non-GPIO pin
 |34| wakeup2|Only supports input and interrupt | wakeup2 sleep wake-up pin, USIM_DET|
 |35| pwrkey |Only supports input and interrupt | instant power-on key, when normal GPIO is used after power-on|
 
-vbus Description :
+vbus Description:
+
 1. In CSDK/LuatOS firmware, vbus and USB functions are decoupled
 2. Different from regular understanding, USB function is still available without vbus
 3. Before entering sleep, set the above `wakeup0/wakeup1/wakeup2` to interrupt state to realize pin wake-up function
 4. Non-wakeup ordinary GPIO does not support sleep wake-up
 
 For example, if `wakup0` is set as the wake-up pin, the interrupt callback can be an empty function.
+
 ```lua
 gpio.setup(32, function() end, gpio.PULLUP)
 ```
+
+## Additional Notes on USB
+
+1. **BOOT Mode requires high USB wiring * *, must do differential line and impedance matching!!!
+2. When there is USB communication, it is impossible to sleep. USB communication can be turned off by pass' pm.power(pm.USB, false)'
+3. UART1 Can also brush the machine, but need to use the amount of production tool brush, LuaTools temporarily does not support the Air780EP/Air780EPV brush through UART!!!
