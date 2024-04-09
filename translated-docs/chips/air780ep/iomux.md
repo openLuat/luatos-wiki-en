@@ -7,6 +7,7 @@
 3. For AT firmware, this document is meaningless, please ignore it.
 4. Cloud compilation and mcu.iomux function can adjust part of the reuse relationship, please refer to the document linked to [mcu library](https://wiki.luatos.org/api/mcu.html)
 5. If SIM2 is used, it will take up 4 IO(gpio4/5/6/23)
+6. `mcu.altfun` The function needs to be used with GPIO multiplexing table. Find the PDF document of GPIO in the table of hardware data and homepage of [air780ep.cn](https://air780ep.cn)
 
 ## PWM Description
 
@@ -27,13 +28,13 @@ Description:
 
 ## UART Description
 
-physical uart has 3(0/1/2/3)
+physics uart has 4(0/1/2/3)
 
 1. uart0 It is a log port (DBG_TX/DBG_RX), which is not recommended. It also has output during startup. LuatOS firmware does not allow users to use it by default uart0
 2. uart1 is the primary serial port (MAIN_TX/MAIN_RX), recommended
 3. uart2 It is a serial port(AUX_TX/AUX_RX)
 4. uart3 Is a standby serial port, no default function
-5. The following mappings are default values and are currently not supported to be configurable via mcu.iomux
+5. The following mappings are default and supported through 'mcu.altfun' configuration
 6. Release is not currently supported uart0
 
 |Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks|
@@ -50,7 +51,7 @@ physical uart has 3(0/1/2/3)
 ## I2C Description
 
 1. Physics i2c has 2(0/1)
-2. The following mappings are default, configurable via mcu.iomux
+2. The following mappings are default, configurable via 'mcu.altfun'
 
 |Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks|
 |---------|---------|---------|---------|----|
@@ -67,7 +68,7 @@ Attention:
 ## SPI Description
 
 1. There are 3 physical SPIs, of which '0/1' is a general SPI and '5' is a special SPI for LCD screen brushing.
-2. The following mappings are default, configurable via mcu.iomux
+2. The following mappings are default values and other configuration items are not supported.
 
 |Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks|
 |---------|------------|---------|---------|----|

@@ -1,5 +1,11 @@
 下列映射是默认值, 当前不支持通过 mcu.iomux 可配置
 The following mappings are default values and are currently not supported to be configurable via mcu.iomux
+下列映射是默认值, 支持通过 `mcu.altfun` 配置
+The following mappings are default and supported through 'mcu.altfun' configuration
+下列映射是默认值, 暂不支持其他配置项
+The following mappings are default values and other configuration items are not supported.
+下列映射是默认值, 通过 `mcu.altfun` 可配置
+The following mappings are default, configurable via 'mcu.altfun'
 下列映射是默认值, 通过 mcu.iomux 可配置
 The following mappings are default, configurable via mcu.iomux
 不同模块的外部管脚布局不一样, 但`PAD(paddr)`值是一致的, 要对应 "PIN/GPIO对应表格" 文档, 该文档可以在 [air780ep.cn](https://air780ep.cn) 找到
@@ -36,6 +42,8 @@ For example, if 'wakup0' is set as the wake-up pin, the interrupt callback can b
 The whole system) supports multiple virtual GPIO, and non-GPIO pins are used by software simulation into GPIO.
 关于USB的额外说明
 Additional Notes on USB
+函数需要搭配GPIO复用表使用, 在[air780ep.cn](https://air780ep.cn) 首页,硬件资料的表格中 找到GPIO字样的PDF文档
+The function needs to be used with GPIO multiplexing table. Find the PDF document of GPIO in the table of hardware data and homepage of [air780ep.cn](https://air780ep.cn)
 功能     |软件含义     |对应的GPIO|对应的PAD|备注
 Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks
 功能     |软件含义  |对应的GPIO|对应的PAD|备注
@@ -110,6 +118,8 @@ Physics i2c has 2
 There are 3 physical SPIs, of which '0/1' is a general SPI and '5' is a special SPI for LCD screen brushing.
 物理uart有3个
 physical uart has 3
+物理uart有4个
+physics uart has 4
 编号|名称|功能|备注
 Number | Name | Function | Remarks
 网络状态灯

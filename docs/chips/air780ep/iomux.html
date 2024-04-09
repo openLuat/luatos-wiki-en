@@ -732,6 +732,7 @@
 <li><p>For AT firmware, this document is meaningless, please ignore it.</p></li>
 <li><p>Cloud compilation and mcu.iomux function can adjust part of the reuse relationship, please refer to the document linked to <a class="reference external" href="https://wiki.luatos.org/api/mcu.html">mcu library</a></p></li>
 <li><p>If SIM2 is used, it will take up 4 IO(gpio4/5/6/23)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mcu.altfun</span></code> The function needs to be used with GPIO multiplexing table. Find the PDF document of GPIO in the table of hardware data and homepage of <a class="reference external" href="https://air780ep.cn">air780ep.cn</a></p></li>
 </ol>
 <section id="pwm-description">
 <h2>PWM Description<a class="headerlink" href="#pwm-description" title="Permalink to this headline">#</a></h2>
@@ -782,13 +783,13 @@
 </section>
 <section id="uart-description">
 <h2>UART Description<a class="headerlink" href="#uart-description" title="Permalink to this headline">#</a></h2>
-<p>physical uart has 3(0/1/2/3)</p>
+<p>physics uart has 4(0/1/2/3)</p>
 <ol class="arabic simple">
 <li><p>uart0 It is a log port (DBG_TX/DBG_RX), which is not recommended. It also has output during startup. LuatOS firmware does not allow users to use it by default uart0</p></li>
 <li><p>uart1 is the primary serial port (MAIN_TX/MAIN_RX), recommended</p></li>
 <li><p>uart2 It is a serial port(AUX_TX/AUX_RX)</p></li>
 <li><p>uart3 Is a standby serial port, no default function</p></li>
-<li><p>The following mappings are default values and are currently not supported to be configurable via mcu.iomux</p></li>
+<li><p>The following mappings are default and supported through ‘mcu.altfun’ configuration</p></li>
 <li><p>Release is not currently supported uart0</p></li>
 </ol>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -856,7 +857,7 @@
 <h2>I2C Description<a class="headerlink" href="#i2c-description" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Physics i2c has 2(0/1)</p></li>
-<li><p>The following mappings are default, configurable via mcu.iomux</p></li>
+<li><p>The following mappings are default, configurable via ‘mcu.altfun’</p></li>
 </ol>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -904,7 +905,7 @@
 <h2>SPI Description<a class="headerlink" href="#spi-description" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>There are 3 physical SPIs, of which ‘0/1’ is a general SPI and ‘5’ is a special SPI for LCD screen brushing.</p></li>
-<li><p>The following mappings are default, configurable via mcu.iomux</p></li>
+<li><p>The following mappings are default values and other configuration items are not supported.</p></li>
 </ol>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
