@@ -1,0 +1,190 @@
+一个libfota2库的典型日志是这样
+A typical log for a libfota2 library is like this
+一个典型的升级流程是这样的
+A typical upgrade process would look like this
+上传界面里选择该文件之后, 自然无法识别出 "固件名" 和 "版本号", 只能手动填写
+After selecting the file in the upload interface, the "firmware name" and "version number" cannot be identified naturally, and can only be filled in manually.
+上报的`firmware_name`参数, 必须与升级包上传界面的"固件名"一致, 否则就会报 `27 无效的固件
+The "firmware_name" parameter reported must be consistent with the "firmware name" in the upgrade package upload interface, otherwise the "27 invalid firmware" will be reported.
+下面一步一步讲
+Step by step to speak below
+不能看懂? 那还是算了吧
+Can't understand? Forget it
+了解如何处理http参数
+Learn how to handle http parameters
+以IMEI为`861234`的设备 为例, 用户`AAA`注册账号并创建`项目PPP`, 然后使用该项目的`项目key`进行升级请求, 那么
+Take the device with IMEI of' 861234 'as an example, user' AAA' registers the account and create' Project PPP', and then uses the' Project key' of the project to make an upgrade request, then
+使用libfota2库, 4个参数都能自定义配置
+Using the libfota2 library, 4 parameters can be customized configuration
+使用libfota库, 只有`project_key`可以配置, 其他是自动生成和识别
+Using libfota library, only project_key can be configured, others are automatically generated and identified
+使用合宙IOT平台的原因及一些问题
+Reasons for using the IOT platform and some problems
+使用合宙IOT平台进行升级
+Upgrade with the co-IoT platform
+再温习一遍这4个参数
+Reviewing these four parameters again
+写入完成,校验完成, 执行回调,通知用户代码
+Write complete, verify complete, execute callback, notify user code
+升级URL里, 总共4个参数
+Upgrade URL, a total of 4 parameters
+升级包文件名与URL固件名参数的问题
+Problems with Upgrade Package File Name and URL Firmware Name Parameters
+升级文件的文件名可以随便起, 例如 123.bin, 只要是bin后缀的就行, 然后它必须是个真正的升级文件
+The file name of the upgrade file can be started casually, such as 123.bin, as long as it is bin suffix, and then it must be a real upgrade file.
+升级流程是怎样的
+What is the upgrade process?
+升级脚本, 选量产文件夹里的
+Upgrade script, select in the production folder
+升级脚本和底层, 准备新老两个soc文件, 然后在菜单里选择 "SoC差分升级工具", 生成新的`.bin`文件, 然后上传
+Upgrade the script and the bottom layer, prepare the new and old SOC files, then select "SoC differential upgrade tool" in the menu to generate a new '.bin' file, and then upload it
+参数`firmware_name`, "合宙iot平台"上叫"固件名", 在lua中会用一个比较诡异的方式合成
+the parameter "firmware_name", which is called "firmware name" on the "cozhou iot platform", will be synthesized in a rather strange way in lua.
+参数`imei`, 虽然名字叫imei, 实际可以是IMEI/MAC地址等等, 只要能唯一标识一个设备就行
+The parameter' imei', although the name is imei, can actually be IMEI/MAC address, etc., as long as it can uniquely identify a device
+参数`project_key`, 上一步获取的, 用于识别是哪一个"合宙iot平台"的项目
+parameter 'project_key', obtained in the previous step, is used to identify which project of "co-account iot platform"
+参数`version`, 版本号, 三段式, 每段最大
+Parameter 'version', version number, three-segment type, maximum of each segment
+只升级脚本, 选量产文件夹里的 `.bin`, 但要求底层完全一致
+Only upgrade the script, select '.bin' in the production folder, but require the bottom layer to be completely consistent
+可以, 但需要你懂一些技术, 比如
+Yes, but you need to know some skills, such
+合宙IOT平台, 一个IMEI(实际按URL里的imei参数算), 只能属于一个账户的一个项目
+The IOT platform, an IMEI (actually calculated by the imei parameter in the URL), can only belong to one item of one account.
+合宙IOT平台, 一条典型的升级URL是这样的
+With the IOT platform, a typical upgrade URL is like this
+合成升级的
+synthetic upgrade
+图中的 固件名 对应的参数是 `firmware_name`, 可以修改的
+The parameter corresponding to the firmware name in the figure is' firmware_name ', which can be modified
+图中的 版本号 对应的参数是 `version`, 也是可以修改的
+The parameter corresponding to the version number in the figure is' version', which can also be modified.
+在LuaTools生成量产文件时, 勾上 "包含core" 和 "包含脚本
+When LuaTools the production file, check "include core" and "include script"
+在列表的"项目key"一列, 点击"查看/复制key", 就能得到了, 后续都得用到它
+In the "item key" column of the list, click "view/copy key" to get it, which will be used later.
+在前面的登陆操作完成后, 在项目列表里, 找到你需要的项目名称的一行
+After the previous login operation is completed, find the line of the project name you need in the project list.
+在量产文件目录里, 能找到 `.bin` 后缀的文件, 这个就是要在iot平台上传的升级文件
+in the production file directory, you can find files with the '.bin' suffix. this is the upgrade file to be uploaded on the iot platform.
+填入需要的 "固件名" 和 "版本号
+Fill in the required Firmware Name and Version Number
+好麻烦, 那我自己建OTA服务器
+What a trouble, then I will build my own OTA server
+如果>299, 代表无需升级, 直接退出
+If> 299, it means there is no need to upgrade and exit directly.
+如果升级失败提示`27 无效的固件`, 首先检查的就是 `firmware_name` 参数, 然后是 `version` 参数
+If the upgrade fails to prompt '27 invalid firmware', the first thing to check is the' firmware_name 'parameter, then the' version' parameter
+如果底层启用了FOTA功能, 选择 `.fota` 文件, 改后缀之后上传, 记得改 "固件名" 和 "版本号
+If the FOTA function is enabled at the bottom layer, select the '.fota' file, change the suffix and upload it, and remember to change the "firmware name" and "version number".
+如果确需fota功能, 请云编译一份
+if you really need the fota function, please compile a copy
+对升级文件再说几句
+Say a few more words about the upgrade file
+对模块来说, OTA/FOTA的流程就是 请求URL, 是200就继续下载数据然后校验, 不是200就退出
+For the module, the process of OTA/FOTA is to request URL, continue to download data and verify it if it is 200, and exit if it is not 200.
+平台注册一个账号并创建一个项目
+The platform registers an account and creates a project.
+库, 合成升级的
+libraries, synthetic upgraded
+库访问该URL, 下载升级文件, 自动写入到特定的ota/fota区域
+The library accesses the URL, downloads the upgrade file, and automatically writes it to a specific ota/fota area.
+开始下载数据到本地, 写入到指定的ota/fota区域
+Start downloading data to the local and writing data to the specified ota/fota region
+懂点界面编程
+Understand point interface programming
+或者你压根就不喜欢那种规律, 就想自定义
+Or you don't like that rule at all and want to customize it.
+所以, 要是
+So, if
+按最灵活的说法是这样
+In the most flexible terms, this is the case.
+提醒
+Reminder
+方案, 例如
+Programmes, such
+方案的模块, 例如
+module of the scheme, such
+方案的模块,例如
+module of the scheme, such
+是合宙IOT平台固件名, 是 界面上的 "固件名", 跟文件名没有强相关
+It is the firmware name of the IOT platform and the "firmware name" on the interface. it is not strongly related to the file name.
+是合宙IOT平台固件版本号, 是 界面上的 "版本号
+Is the firmware version number of the joint IOT platform, and is the "version number" on the interface.
+是合宙IOT平台项目key, 每个"合宙iot项目"都有唯一的值
+It is the key of the joint IOT platform project, and each "joint IOT project" has a unique value.
+是设备识别号, 可以是4G设备的imei, 也可以是wifi的mac地址, 也可以是其他唯一识别号, 或者你写12345, 唯一就行
+Is the device identification number, can be the imei of 4G equipment, can also be wifi mac address, can also be other unique identification number, or you write 12345, unique
+晓得什么是http和服务器
+What is HTTP and Server?
+注意, 发布的默认固件都是不带FOTA的, 因为很占空间, 能启用的库很少
+Note that the default firmware released is without FOTA, because it takes up a lot of space and there are few libraries that can be enabled.
+点大大的 "IoT" 按钮, 进入登录界面
+Click the big "IoT" button to enter the login interface.
+然后就普通注册/登录流程, 没账户就注册一个账户, 忘记密码就找回密码, 这属于基操, 不展开了
+Then the ordinary registration/login process, no account to register an account, forget the password to retrieve the password, this belongs to the basic operation, not to expand
+用户代码自行决定重启时机, 当然也可以立即重启
+The user code decides the timing of the restart, and of course it can restart immediately.
+用户在合宙IOT平台注册一个账号, 并创建一个项目
+The user registers an account on the IoT platform and creates a project.
+登录后, 点击 "新建项目", 选一个名字, 填入"项目名称"的输入框, 点击"提交", 如无意外就会新增了一个项目
+After logging in, click "New Project", select a name, fill in the input box of "Project Name", and click "Submit". If there is no accident, a new project will be added.
+的主体 `http://iot.openluat.com/api/site/firmware_upgrade` , 可见是http协议, 域名是 `iot.openluat.com`, 路径是
+The main body 'http://iot.openluat.com/api/site/firmware_upgrade', visible is http protocol, domain name is' iot.openluat.com', path is
+看图 ![上传固件界面的截图
+Look at the picture! [Upload screenshots of the firmware interface
+硬是搞不懂libfota库里firmware_name和version参数的生成规律
+I just can't understand the generation law of firmware_name and version parameters in the libfota library.
+而升级包的文件名, 唯一的作用就是在 "我的固件" 界面中"创建固件"对话框的 自动识别出2个参数
+The only function of the file name of the upgrade package is to automatically identify 2 parameters in the "Create Firmware" dialog box in the "My Firmware" interface.
+自动完成升级, 流程结束
+Automatically complete the upgrade, end of process
+获取项目的
+Get the item's
+获取项目的key, lua代码里叫 `PRODUCT_KEY` , URL参数是
+Get the key of the project, called "PRODUCT_KEY" in lua code, and the URL parameter is
+虽然这个文章在Air601目录下, 实际对其他任意模块都适用
+Although this article is in the Air601 directory, it is actually applicable to any other module.
+规则有点复杂, 有点诡异, 之前的文档都没有很好的描述清楚
+The rules are a bit complicated and strange, and the previous documents are not well described.
+设备所有权问题
+Equipment Ownership Issues
+访问前面合成好的URL, 判断服务器的响应码
+Access the previously synthesized URL to determine the server's response code
+访问网址 [合宙IOT平台
+Visit the website [Heszhou IOT Platform
+访问该URL, 下载升级文件, 写入到特定的ota/fota区域
+Access the URL, download the upgrade file, and write it to a specific ota/fota region.
+该IMEI不存在于`任何客户`的`任何项目`下, 该设备第一次发起升级请求, 就会`自动`成为`AAA`客户`PPP`项目下的设备
+The IMEI does not exist under the "any project" of "any customer". the first time the equipment initiates an upgrade request, it will "automatically" become the equipment under the "PPP" project of "AAA" customer.
+该IMEI在用户`AAA`的账户的`ZZZZ`项目下, 服务器返回 "26 无效的项目" -- 项目不符
+The IMEI is under the 'ZZZZZ' item of the user's 'AAA' account, and the server returns "26 invalid items"-the items do not match.
+该IMEI在用户`BBB`的账户的任何项目下, 服务器返回 "25 无权限" -- 账户不符
+The IMEI is under any item in the account of user 'BBB', and the server returns "25 no permission"-account does not match
+边写入边校验, 校验出错的话直接退出
+Check while writing. If the check is wrong, exit directly.
+这一点有点偏技术描述, 如果只是使用libfota/libfota2库, 找到demo, 修改代码里的 `PRODUCT_KEY` 值,然后刷机就行
+This is a bit of a technical description. If you only use the libfota/libfota2 library, find demo, modify the' PRODUCT_KEY 'value in the code, and then swipe the machine
+这个URL分几个部分
+This URL is divided into several parts
+这个也是libfota/libfota2完成的事情, 技术细节是这样的
+This is also done by libfota/libfota2. The technical details are as follows
+这个文章可能比较长, 细节非常多, 请耐心看完
+This article may be relatively long and has many details. Please read it patiently.
+这个是底层代码完成的事情了, 不展开了, 有兴趣的话查阅各模块的源码吧, luat_fota开头的函数
+This is a matter completed by the bottom code. It will not be expanded. If you are interested, please check the source code of each module and luat_fota the function at the beginning.
+那么, 坑在哪里? 坑是哪些
+So, where are the pits? What are the pits
+那么, 用libfota2库, 确保 `firmware_name` 和 `version` 参数都是自定义的, 跟界面上的"固件名"和"版本号"一致, 就没问题了
+Then, use the libfota2 library to ensure that the "firmware_name" and "version" parameters are customized and consistent with the "firmware name" and "version number" on the interface, so there is no problem.
+那模块的参数怎么搞
+What's wrong with the parameters of the module
+重启, 模块进入升级模式
+Restart, module enters upgrade mode
+重启, 进入升级模式
+Restart, enter upgrade mode
+首先, 它当前免费, 稳定性也不错
+First of all, it is currently free and its stability is good.
+默认情况下, 这两个参数是根据文件名自动生成的, 然而由于各种历史问题, LuaTools合成的文件名未必能符合要求
+By default, these two parameters are automatically generated based on the file name. However, due to various historical problems, the LuaTools synthesized file name may not meet the requirements
