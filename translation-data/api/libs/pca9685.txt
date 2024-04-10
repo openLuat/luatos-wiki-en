@@ -34,6 +34,8 @@ Example
 Set PWM Duty Cycle
 设置频率
 Set frequency
+路PWM驱动舵机
+Road PWM drive steering gear
 返回值
 Return Value
 返回值类型|解释
