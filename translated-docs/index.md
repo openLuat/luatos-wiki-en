@@ -86,34 +86,6 @@ Look at the functions of the chips supported by LuatOS at this stage and choose 
 We are adapting more MCU and wireless chip modules, welcome you to join^_^
 ```
 
-
-
-<style type="text/css">
-    .chatlink {
-        position: fixed;
-        z-index: 2147483645;
-        width: auto;
-        font-size: 16px;
-        line-height: 24px;
-        top: 60px;
-        right: 100px;
-        color: #19caa6;
-        text-align: center;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-</style>
-<div class="chatlink" id="chatlink">
-    <button onclick="window.open('https://chat.openluat.com')">The document was not resolved, the forum sent a post.！</button><p/>
-</div>
-<script>
-if (location.href.indexOf("https://wiki.luatos.org") == 0 ) {
-  document.getElementById('chatlink').style.cssText = "display: none";
-}
-</script>
-
 ```{toctree}
 :hidden:
 :caption: 💁 LuatOS Introduction
