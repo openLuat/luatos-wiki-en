@@ -8,6 +8,8 @@ Initialize the RAW layer of the WLAN
 Parameters
 回调函数,形式
 callback function, form
+已适配
+Adapted
 当前仅XT804系列支持, 例如
 Currently only supported by the XT804 series, such
 数据RAW传输
