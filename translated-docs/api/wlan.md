@@ -372,9 +372,9 @@ Start AP
 
 ```lua
 -- Note that when calling this AP, if the wifi mode is STATION, it will automatically switch APSTA
-wlan.createAP("uiot", "12345678")
+wlan.createAP("luatos1234", "12341234")
 -- Set gateway IP, mask, channel, 2023.7.13 new, BSP may not support
--- wlan.createAP("uiot", "12345678", "192.168.4.1", "255.255.255.0", 6)
+-- wlan.createAP("luatos1234", "12341234", "192.168.4.1", "255.255.255.0", 6)
 
 -- opts More configuration items, 2024.3.5 new
 --[[
