@@ -1,5 +1,28 @@
 # ESP32C3-CORE Development Board
 
+```{warning}
+Recently, there have been many pirated LuatOS development boards on Taobao. As the quality cannot be guaranteed and the seller's technical support cannot be obtained, it is recommended that you purchase carefully.  
+If you need to verify whether it is an official product, please refer to the identification method below.
+
+:::{dropdown} Genuine Piracy Distinguish Method
+
+1. Genuine Flash chips are 'purple light' or 'pran', while pirated ones are inferior second-hand chips.
+2. The genuine screen printing is clear and obvious, and the pirated screen printing is very fine and blurred.
+3. There are regular production batches of the board factory on the genuine PCB, but there is no piracy.
+4. genuine back is a complete web site, pirated back web site is not complete.
+5. The Pin foot silk screen on the back of the original uses black characters on a white background, and the pirated version uses white silk screen.
+6. Genuine Shen Jin exquisite, pirated Shen Jin rough.
+
+Refer to the following physical diagram：
+
+![](img/QQ Screenshot 20240412183500(1).png)
+![](img/QQ Screenshot 20240412183507(1).png)
+
+
+:::
+
+```
+
 ## Special attention
 
 The classic model (version with TTL serial port to USB) must install the driver of CH343 to download the firmware normally. The default CDC driver can only print logs, but the speed is too slow to cause the download to fail. [Drive portal](http://www.wch.cn/downloads/CH343SER_EXE.html)
