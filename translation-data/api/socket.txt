@@ -54,6 +54,10 @@ Send data to the opposite end, UDP should not send more than 1460 bytes at a tim
 Print errors and alarms only
 在某个适配的网卡上申请一个
 Apply for one on an adapted network card.
+在监听
+In listening
+在线
+Online
 域名解析是否要IPV6，true要，false不要，默认false不要，只有支持IPV6的协议栈才有效果
 Does domain name resolution need IPV6,true yes, false no, default false no, only protocol stacks that support IPV6 have effect
 大部分
@@ -164,6 +168,8 @@ Server address optional
 Server sequence number, starting from 1
 服务器端口号，小端格式
 Server port number, little-end format
+未知
+Unknown
 本API于 2023.11.15 新增
 This API was added on 2023.11.15
 本地毫秒数计数器,基于
@@ -202,6 +208,12 @@ Number of probes in mode
 The probing interval in the mode (seconds
 模式下的服务器ca证书数据，UDP模式下的PSK，不需要加密传输写nil，后续参数也全部
 The server ca certificate data in the mode and PSK in the UDP mode do not need to be encrypted and transmitted to write nil, and all subsequent parameters are also required.
+正在TLS握手
+TLS handshake in progress
+正在离线
+Offline
+正在连接
+Connecting
 没有异常发生，false失败了，如果false则不需要看下一个返回值了
 No exception occurred, false failed, if false, you don't need to look at the next return value
 没有异常发生，false失败了，如果false则不需要看下一个返回值了，如果false，后续要
@@ -214,8 +226,14 @@ Attention
 Note that this function is not valid until socket.sntp() is executed and the NTP time is obtained.
 注意: ，必须在接收到socket.ON_LINE消息之后才可能获取到，最多返回4个
 Note: It can only be obtained after receiving the socket.ON_LINE message, returning up to 4
+硬件离线
+Hardware Offline
+离线
+Offline
 端口已经被占用
 Port already occupied
+等待
+Wait
 等待新的socket消息，在连接成功和发送数据成功后，使用一次将network状态转换到接收新数据
 Wait for a new socket message. After the connection is successful and the data is sent successfully, use one time to switch the network state to receiving new data.
 等待网卡

@@ -569,6 +569,15 @@ Get the current state of the socket
 ```lua
 local state, str = socket.state(ctrl)
 log.info("state", state, str)
+state	0	"Hardware Offline",
+		1	"Offline",
+		2	"Wait DNS",
+		3	"Connecting",
+		4	"TLS handshake in progress",
+		5	"Online",
+		6	"In listening",
+		7	"Offline",
+		8	"Unknown"
 
 ```
 
