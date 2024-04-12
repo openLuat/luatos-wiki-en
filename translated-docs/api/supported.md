@@ -84,7 +84,7 @@
 |[touchkey](touchkey.md)|`Touch keys`|X|X|Y|Y|X|X|X|
 |[u8g2](u8g2.md)|`u8g2 graphics processing library`|Y|Y|Y|Y|Y|Y|Y|
 |[uart](uart.md)|`serial port operation library`|Y|Y|Y|Y|Y|Y|Y|
-|[ulwip](ulwip.md)|`lwip integration in user space (under development)`|X|X|Y|Y|X|Y|Y|
+|[ulwip](ulwip.md)|`lwip integration in user space (under development)`|Y|X|Y|Y|X|Y|Y|
 |[usbapp](usbapp.md)|`USB Functional operation`|X|X|X|X|Y|X|X|
 |[w5500](w5500.md)|`w5500 Ethernet driver`|Y|Y|Y|Y|Y|Y|Y|
 |[wdt](wdt.md)|`watchdog Operation Library`|Y|Y|Y|Y|Y|Y|Y|
