@@ -100,6 +100,8 @@ Multiplexing pins 57 and 58
 Or false)| LDO_CTL, the Air600E target is
 或者 false)|没有引出,在Air780EG控制GPS的电源
 Or false)| no lead, in the Air780EG to control the power of GPS
+执行关机
+Perform Shutdown
 数据 | GPIO15  |    14   |GPIO功能看后面的说明
 Data | GPIO15 | 14 | GPIO functions see description later
 数据 | GPIO8   |    23   |与SPI0冲突

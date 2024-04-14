@@ -162,9 +162,10 @@ pwrkey Description:
 ```lua
 -- Long press 2 seconds after the shutdown
 gpio.debounce(35, 2000, 1)
-gpio.setup(35, function() end, gpio.PULLUP)
-    rtos.shutdown()
-end
+gpio.setup(35, function()
+    log.info("Perform Shutdown")
+    pm.shutdown()
+end, gpio.PULLUP)
 ```
 
 ## Additional Notes on USB

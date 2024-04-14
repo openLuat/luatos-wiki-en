@@ -1119,9 +1119,10 @@
 </ol>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Long press 2 seconds after the shutdown</span>
 <span class="n">gpio</span><span class="p">.</span><span class="n">debounce</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span> <span class="kr">end</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">)</span>
-    <span class="n">rtos</span><span class="p">.</span><span class="n">shutdown</span><span class="p">()</span>
-<span class="kr">end</span>
+<span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Perform Shutdown"</span><span class="p">)</span>
+    <span class="n">pm</span><span class="p">.</span><span class="n">shutdown</span><span class="p">()</span>
+<span class="kr">end</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
