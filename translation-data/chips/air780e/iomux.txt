@@ -68,6 +68,8 @@ PWM11 cannot be enabled when PWM1 is enabled. when calling the API of pwm librar
 Enable multiplexing for ALT4, pin 97
 固件下的IO复用配置
 IO multiplexing configuration under firmware
+固件是默认开机防抖的, 所以对应的是下拉1.5秒开机
+Firmware is the default boot anti-shake, so the corresponding is to pull down 1.5 seconds boot
 在
 In
 在CSDK/LuatOS固件中, vbus与USB功能是解耦的
@@ -88,6 +90,8 @@ The actual available channels are 4 (0/1/2/4), but each has 3 configurations, PW
 For AT firmware, this document is meaningless, please ignore it.
 对于CSDK来说, 相关复用都是可以修改的, 所以也请无视本文档
 For CSDK, relevant reuse can be modified, so please ignore this document
+对应LuatOS/CSDK固件, 开机后该管脚的功能是自定义的, 再次下拉并不会关机, 可以通过如下代码实现关机
+Corresponding to LuatOS/CSDK firmware, the function of this pin is customized after startup, and it will not shut down after pulling down again. You can shut down through the following code
 对应的GPIO|对应的PAD|使用的API示例|备注
 Corresponding GPIO | Corresponding PAD | Examples of API used | Remarks
 将57、58引脚复用为
@@ -110,6 +114,8 @@ Clock | - | 30 | Note no GPIO capability
 Clock | GPIO14 | 13 | GPIO function see description later
 时钟 | GPIO9   |    24   |与SPI0冲突
 Clock | GPIO9 | 24 | conflicts with SPI0
+是上拉输入, 下拉立即开机或1.5秒开机, 取决于启用了开机防抖
+Is the pull-up input, pull-down immediately boot or 1.5 seconds boot, depending on the boot anti-shake enabled
 是主串口(MAIN_TX/MAIN_RX), 推荐使用
 is the primary serial port (MAIN_TX/MAIN_RX), recommend use
 是休眠时仍可维持高电平的GPIO,但驱动能力很弱
@@ -180,6 +186,8 @@ Software channels 20/21/22 require firmware above V1016, 20230330 later compiled
 software channel id | actual hardware channel | corresponding GPIO | corresponding PAD | remarks
 配置成中断模式时，是wakeup功能，可以配置上下拉，也可以取消使用外部上下拉
 When configured to interrupt mode, it is a wakeup function, which can be configured to pull up and down or cancel the use of external pull up and down.
+长按2秒后关机
+Long press 2 seconds after the shutdown
 非wakeup的普通GPIO, 是不支持休眠唤醒的
 Non-wakeup ordinary GPIO does not support sleep wake-up
 额外说明

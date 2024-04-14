@@ -1111,6 +1111,19 @@
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span> <span class="kr">end</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>pwrkey Description:</p>
+<ol class="arabic simple">
+<li><p>pwrkey Is the pull-up input, pull-down immediately boot or 1.5 seconds boot, depending on the boot anti-shake enabled(<code class="docutils literal notranslate"><span class="pre">pm.power(pm.PWK_MODE,</span> <span class="pre">true)</span></code>)</p></li>
+<li><p>AT Firmware is the default boot anti-shake, so the corresponding is to pull down 1.5 seconds boot</p></li>
+<li><p>Corresponding to LuatOS/CSDK firmware, the function of this pin is customized after startup, and it will not shut down after pulling down again. You can shut down through the following code</p></li>
+</ol>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Long press 2 seconds after the shutdown</span>
+<span class="n">gpio</span><span class="p">.</span><span class="n">debounce</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span> <span class="kr">end</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">)</span>
+    <span class="n">rtos</span><span class="p">.</span><span class="n">shutdown</span><span class="p">()</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
 </section>
 <section id="additional-notes-on-usb">
 <h2>Additional Notes on USB<a class="headerlink" href="#additional-notes-on-usb" title="Permalink to this headline">#</a></h2>

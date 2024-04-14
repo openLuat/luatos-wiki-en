@@ -153,6 +153,20 @@ For example, if `wakup0` is set as the wake-up pin, the interrupt callback can b
 gpio.setup(32, function() end, gpio.PULLUP)
 ```
 
+pwrkey Description:
+
+1. pwrkey Is the pull-up input, pull-down immediately boot or 1.5 seconds boot, depending on the boot anti-shake enabled(`pm.power(pm.PWK_MODE, true)`)
+2. AT Firmware is the default boot anti-shake, so the corresponding is to pull down 1.5 seconds boot
+3. Corresponding to LuatOS/CSDK firmware, the function of this pin is customized after startup, and it will not shut down after pulling down again. You can shut down through the following code
+
+```lua
+-- Long press 2 seconds after the shutdown
+gpio.debounce(35, 2000, 1)
+gpio.setup(35, function() end, gpio.PULLUP)
+    rtos.shutdown()
+end
+```
+
 ## Additional Notes on USB
 
 1. **BOOT Mode requires high USB wiring * *, must do differential line and impedance matching!!!
