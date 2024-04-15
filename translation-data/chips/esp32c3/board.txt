@@ -89,7 +89,7 @@ The core board is a core board designed based on Lexin ESP32-C3, with a size of 
 正版PCB上有板厂的正规生产批次，盗版没有。
 There are regular production batches of the board factory on the genuine PCB, but there is no piracy.
 正版使用的Flash芯片为`紫光`或`普冉`，盗版使用的为劣质二手芯片。
-Genuine Flash chips are 'purple light' or 'pran', while pirated ones are inferior second-hand chips.
+Genuine Flash chips are `Unic` or `Puya`, while pirated ones are inferior second-hand chips.
 正版的丝印清晰明显，盗版的丝印很细且模糊不清。
 The genuine screen printing is clear and obvious, and the pirated screen printing is very fine and blurred.
 正版的沉金精致，盗版的沉金粗糙。
