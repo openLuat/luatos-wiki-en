@@ -106,6 +106,8 @@ Simulator
 Analog-to-digital conversion
 段式
 Segment
+液晶屏驱动
+LCD Driver
 状态机
 State Machine
 生成和解析库

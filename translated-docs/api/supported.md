@@ -27,6 +27,7 @@
 |[gpio](gpio.md)|`GPIO Operation`|Y|Y|Y|Y|Y|Y|Y|
 |[gtfont](gtfont.md)|`Qualcomm Font Chip`|Y|Y|Y|Y|Y|X|X|
 |[hmeta](hmeta.md)|`Hardware metadata`|Y|Y|X|X|X|X|X|
+|[ht1621](ht1621.md)|`LCD Driver(HT1621/HT1621B)`|Y|Y|Y|Y|Y|Y|Y|
 |[http](http.md)|`http Client`|Y|Y|Y|Y|Y|Y|Y|
 |[httpsrv](httpsrv.md)|`http Server`|Y|Y|Y|Y|X|Y|Y|
 |[i2c](i2c.md)|`I2C Operation`|Y|Y|Y|Y|Y|Y|Y|
