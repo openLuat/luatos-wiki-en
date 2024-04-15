@@ -6,7 +6,7 @@ If you need to verify whether it is an official product, please refer to the ide
 
 :::{dropdown} Genuine Piracy Distinguish Method
 
-1. Genuine Flash chips are 'purple light' or 'pran', while pirated ones are inferior second-hand chips.
+1. Genuine Flash chips are `Unic` or `Puya`, while pirated ones are inferior second-hand chips.
 2. The genuine screen printing is clear and obvious, and the pirated screen printing is very fine and blurred.
 3. There are regular production batches of the board factory on the genuine PCB, but there is no piracy.
 4. genuine back is a complete web site, pirated back web site is not complete.
