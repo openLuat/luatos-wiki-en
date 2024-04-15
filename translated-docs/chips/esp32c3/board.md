@@ -15,9 +15,8 @@ If you need to verify whether it is an official product, please refer to the ide
 
 Refer to the following physical diagram：
 
-![](img/QQ Screenshot 20240412183500(1).png)
-![](img/QQ Screenshot 20240412183507(1).png)
-
+![](img/QQ20240412183500(1).png)
+![](img/QQ20240412183507(1).png)
 
 :::
 
