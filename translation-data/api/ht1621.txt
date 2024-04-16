@@ -12,12 +12,16 @@ Assume that the DATA pin is connected to the module
 Assuming that the WR pin is connected to the module
 具体指令请查阅硬件手册
 Please refer to the hardware manual for specific instructions
+内部RC振荡器,默认
+Internal RC oscillator, default
 初始化
 Initialization
 参数
 Parameters
 发送指令
 Send Instruction
+命令模式, 默认是
+Command mode, the default is
 地址, 0-6, 超过6无效
 Address, 0-6, more than 6 invalid
 展示数据
@@ -46,6 +50,8 @@ LCD Driver
 Chip select pin, fill the GPIO code of the module
 示例
 Example
+系统振荡器开,默认
+System Oscillator On, default
 背光亮起
 Backlight on
 返回ht1621对象

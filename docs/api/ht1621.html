@@ -744,8 +744,8 @@
 <span class="n">ht1621</span><span class="p">.</span><span class="n">data</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0xeb</span><span class="p">)</span> <span class="c1">-- Position 0 display number 1</span>
 </pre></div>
 </div>
-<section id="ht1621-setup-pin-cs-pin-data-pin-wr">
-<h2>ht1621.setup(pin_cs, pin_data, pin_wr)<a class="headerlink" href="#ht1621-setup-pin-cs-pin-data-pin-wr" title="Permalink to this headline">#</a></h2>
+<section id="ht1621-setup-pin-cs-pin-data-pin-wr-cmd-com-mode-cmd-rc-cmd-sysen">
+<h2>ht1621.setup(pin_cs, pin_data, pin_wr, cmd_com_mode, cmd_rc, cmd_sysen)<a class="headerlink" href="#ht1621-setup-pin-cs-pin-data-pin-wr-cmd-com-mode-cmd-rc-cmd-sysen" title="Permalink to this headline">#</a></h2>
 <p>Initialization ht1621</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -763,6 +763,15 @@
 </tr>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>WR Pin, fill the GPIO code of the module</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Command mode, the default is 0x52</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Internal RC oscillator, default 0x30</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>System Oscillator On, default 0x02</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -968,7 +977,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">ht1621 - LCD Driver(HT1621/HT1621B)</a><ul>
-<li><a class="reference internal" href="#ht1621-setup-pin-cs-pin-data-pin-wr">ht1621.setup(pin_cs, pin_data, pin_wr)</a></li>
+<li><a class="reference internal" href="#ht1621-setup-pin-cs-pin-data-pin-wr-cmd-com-mode-cmd-rc-cmd-sysen">ht1621.setup(pin_cs, pin_data, pin_wr, cmd_com_mode, cmd_rc, cmd_sysen)</a></li>
 <li><a class="reference internal" href="#ht1621-lcd-seg-onoff">ht1621.lcd(seg, onoff)</a></li>
 <li><a class="reference internal" href="#ht1621-data-seg-addr-sdat">ht1621.data(seg, addr, sdat)</a></li>
 <li><a class="reference internal" href="#ht1621-cmd-seg-cmd">ht1621.cmd(seg, cmd)</a></li>
