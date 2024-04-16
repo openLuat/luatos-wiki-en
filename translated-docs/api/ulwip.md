@@ -28,7 +28,7 @@ Application example:
 
 ```
 
-## ulwip.setup(adapter_index, mac, output_lua_ref)
+## ulwip.setup(adapter_index, mac, output_lua_ref, opts)
 
 
 
@@ -41,7 +41,7 @@ Initialization lwip netif
 |int|adapter_index Adapter Number|
 |string|mac network card mac address|
 |function|output_lua_ref callback function with parameters(adapter_index, data)|
-|table|Additional parameters, such {mtu=1500, flags=(ulwip.FLAG_BROADCAST \| ulwip.FLAG_ETHARP \|)}|
+|table|Additional parameters, such {mtu=1500, flags=(ulwip.FLAG_BROADCAST \| ulwip.FLAG_ETHARP)}|
 
 **Return Value**
 

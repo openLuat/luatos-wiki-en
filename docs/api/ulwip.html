@@ -752,8 +752,8 @@
 <span class="cm">]]</span>
 </pre></div>
 </div>
-<section id="ulwip-setup-adapter-index-mac-output-lua-ref">
-<h2>ulwip.setup(adapter_index, mac, output_lua_ref)<a class="headerlink" href="#ulwip-setup-adapter-index-mac-output-lua-ref" title="Permalink to this headline">#</a></h2>
+<section id="ulwip-setup-adapter-index-mac-output-lua-ref-opts">
+<h2>ulwip.setup(adapter_index, mac, output_lua_ref, opts)<a class="headerlink" href="#ulwip-setup-adapter-index-mac-output-lua-ref-opts" title="Permalink to this headline">#</a></h2>
 <p>Initialization lwip netif</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -773,7 +773,7 @@
 <td><p>output_lua_ref callback function with parameters(adapter_index, data)</p></td>
 </tr>
 <tr class="row-odd"><td><p>table</p></td>
-<td><p>Additional parameters, such {mtu=1500, flags=(ulwip.FLAG_BROADCAST | ulwip.FLAG_ETHARP |)}</p></td>
+<td><p>Additional parameters, such {mtu=1500, flags=(ulwip.FLAG_BROADCAST | ulwip.FLAG_ETHARP)}</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1136,7 +1136,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">ulwip - lwip integration in user space (under development)</a><ul>
-<li><a class="reference internal" href="#ulwip-setup-adapter-index-mac-output-lua-ref">ulwip.setup(adapter_index, mac, output_lua_ref)</a></li>
+<li><a class="reference internal" href="#ulwip-setup-adapter-index-mac-output-lua-ref-opts">ulwip.setup(adapter_index, mac, output_lua_ref, opts)</a></li>
 <li><a class="reference internal" href="#ulwip-updown-adapter-index-up">ulwip.updown(adapter_index, up)</a></li>
 <li><a class="reference internal" href="#ulwip-link-adapter-index-up">ulwip.link(adapter_index, up)</a></li>
 <li><a class="reference internal" href="#ulwip-input-adapter-index-data">ulwip.input(adapter_index, data)</a></li>
