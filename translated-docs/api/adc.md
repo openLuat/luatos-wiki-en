@@ -96,6 +96,8 @@ None
 **Examples**
 
 ```lua
+-- This function should be called before adc.open is called, and then the call is invalid.!!!
+
 -- Turn off the internal partial pressure of air105
 adc.setRange(adc.ADC_RANGE_1_8)
 -- Turn on the internal partial pressure of air105

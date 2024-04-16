@@ -56,6 +56,8 @@ Digital-to-analog conversion
 None
 本API 在 2022.10.01后编译的固件可用
 This API is available in firmware compiled after 2022.10.01
+本函数要在调用adc.open之前就调用, 之后调用无效
+This function should be called before adc.open is called, and then the call is invalid.
 本库可读取硬件adc通道, 也支持读取CPU温度和VBAT供电电源(若模块支持的话
 This library can read hardware adc channels, and also supports reading CPU temperature and VBAT power supply (if supported by the module
 本库有专属demo，[点此链接查看adc的demo例子
