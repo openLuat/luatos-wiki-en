@@ -1,4 +1,4 @@
-# spislave - SPI Slight machine (under development)
+# spislave - SPI From machine
 
 {bdg-success}`Adapted` {bdg-primary}`Air601` {bdg-primary}`Air101/Air103`
 
@@ -14,6 +14,7 @@ This library has its own demo,[click this link to view spislave demo examples](h
 
 ```lua
 -- Please consult demo
+-- Currently only supported by the XT804 series, such Air101/Air103/Air601
 
 ```
 

@@ -75,7 +75,7 @@
 |[socket](socket.md)|`Network Interface`|Y|Y|Y|Y|Y|Y|Y|
 |[softkb](softkb.md)|`Software Keyboard Matrix`|X|X|X|X|Y|X|X|
 |[spi](spi.md)|`spi Operation Library`|Y|Y|Y|Y|Y|Y|Y|
-|[spislave](spislave.md)|`SPI Slight machine (under development)`|X|X|Y|Y|X|X|X|
+|[spislave](spislave.md)|`SPI From machine`|X|X|Y|Y|X|X|X|
 |[sqlite3](sqlite3.md)|`sqlite3 Database Operations`|Y|Y|Y|Y|X|X|X|
 |[statem](statem.md)|`SM State Machine`|Y|Y|Y|Y|Y|Y|Y|
 |[string](string.md)|`String Manipulation Functions`|Y|Y|Y|Y|Y|Y|Y|
