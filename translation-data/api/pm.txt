@@ -120,6 +120,10 @@ Force the specified sleep mode to ignore the effects of certain peripherals, suc
 Currently only EC618 series (Air780E/Air600E/Air700E/Air780EG support
 彻底休眠, CPU停止, RAM掉电, 仅复位/特殊唤醒管脚可唤醒设备
 Complete sleep, CPU stop, RAM power down, only reset/special wake pin can wake up the device
+或者 id = 1 是, 最大休眠时长是2.5小时
+Or id = 1 is, the maximum sleep duration is 2.5 hours
+或者 id = 3 是, 最大休眠时长是3个月
+Or id = 3 is, the maximum sleep duration is 3 months
 所有GPIO高电平电压控制,当前仅ec618系列可用
 All GPIO high-level voltage controls, currently available only in the ec618 series
 所有GPIO高电平输出
@@ -188,6 +192,8 @@ The antenna power supply, active antenna is required.
 Energy saving mode, 0~3,0 completely off, 1 performance priority, 2 balance, 3 extreme power consumption
 示例
 Example
+系列
+Series
 系列PSM+低功耗设置
 Series PSM Low Power Settings
 系列开启pwrkey开机防抖

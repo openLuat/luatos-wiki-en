@@ -134,6 +134,9 @@ Start the bottom timer, which is still in effect in sleep mode. Trigger only onc
 ```lua
 -- Add an underlying timer
 pm.dtimerStart(0, 300 * 1000) -- 5 Wake up after minutes
+-- Air780E/Air780EP Series
+-- id = 0 Or id = 1 is, the maximum sleep duration is 2.5 hours
+-- id = 2 Or id = 3 is, the maximum sleep duration is 3 months
 
 ```
 
