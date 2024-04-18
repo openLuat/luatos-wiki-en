@@ -14,6 +14,7 @@
 |[dac](dac.md)|`Digital-to-analog conversion`|X|X|X|X|Y|X|X|
 |[disp](disp.md)|`disp Library (Obsolete)`|Y|Y|Y|Y|Y|Y|Y|
 |[eink](eink.md)|`ink screen operation library`|Y|Y|Y|Y|Y|Y|Y|
+|[ercoap](ercoap.md)|`New Coap Protocol Parsing Library`|?|?|?|?|?|?|?|
 |[errDump](errDump.md)|`Error reporting`|Y|Y|Y|Y|X|X|X|
 |[fastlz](fastlz.md)|`FastLZ Compression`|Y|Y|Y|Y|X|X|X|
 |[fatfs](fatfs.md)|`read/write fatfs format`|Y|Y|Y|Y|Y|Y|Y|

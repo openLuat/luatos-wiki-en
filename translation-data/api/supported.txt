@@ -96,6 +96,8 @@ Database Operations
 Digital-to-analog conversion
 文件系统额外操作
 Additional File System Operations
+新的Coap协议解析库
+New Coap Protocol Parsing Library
 日志库
 Logstore
 服务端
