@@ -52,7 +52,7 @@ sys.taskInit(function()
             local ota_url = rtkv.get("ota_url")
             if ota_url then
                 -- Execute OTA, take esp32c3 as an example
-                local code = http.request("GET", ota_url, nil, nil, {dst="/update"}).wait()
+                local code = http.request("GET", ota_url, nil, nil, {dst="/update.bin"}).wait()
                 if code and code == 200 then
                     log.info("ota", "ota Package download complete, restart after 5 seconds")
                     sys.wait(5000)
