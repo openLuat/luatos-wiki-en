@@ -948,11 +948,11 @@
 <span class="n">mqttc</span> <span class="o">=</span> <span class="n">mqtt</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span><span class="s2">"120.55.137.106"</span><span class="p">,</span> <span class="mi">8883</span><span class="p">,</span> <span class="p">{</span><span class="n">server_cert</span><span class="o">=</span><span class="n">io</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="s2">"/luadb/ca.crt"</span><span class="p">),</span> <span class="n">verify</span><span class="o">=</span><span class="mi">1</span><span class="p">})</span>
 <span class="c1">-- Encrypted TCPTCP link, two-way certificate verification</span>
 <span class="n">mqttc</span> <span class="o">=</span> <span class="n">mqtt</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span><span class="s2">"120.55.137.106"</span><span class="p">,</span> <span class="mi">8883</span><span class="p">,</span> <span class="p">{</span>
-					<span class="n">server_cert</span><span class="o">=</span><span class="n">io</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="s2">"/luadb/ca.crt"</span><span class="p">),</span>
-					<span class="n">client_cert</span><span class="o">=</span><span class="n">io</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="s2">"/luadb/client.pem"</span><span class="p">),</span>
-					<span class="n">client_key</span><span class="o">=</span><span class="s2">"123456"</span><span class="p">,</span>
-					<span class="n">client_password</span><span class="o">=</span><span class="s2">"123456"</span><span class="p">,</span>
-					<span class="p">})</span>
+                    <span class="n">server_cert</span><span class="o">=</span><span class="n">io</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="s2">"/luadb/ca.crt"</span><span class="p">),</span>
+                    <span class="n">client_cert</span><span class="o">=</span><span class="n">io</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="s2">"/luadb/client.pem"</span><span class="p">),</span>
+                    <span class="n">client_key</span><span class="o">=</span><span class="s2">"123456"</span><span class="p">,</span>
+                    <span class="n">client_password</span><span class="o">=</span><span class="s2">"123456"</span><span class="p">,</span>
+                    <span class="p">})</span>
 </pre></div>
 </div>
 </section>
@@ -1074,17 +1074,17 @@
 </table></div>
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mqttc</span><span class="p">:</span><span class="n">on</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">mqtt_client</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">metas</span><span class="p">)</span>
-	<span class="c1">-- User-defined code</span>
-	<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"mqtt"</span><span class="p">,</span> <span class="s2">"event"</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">mqtt_client</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+    <span class="c1">-- User-defined code</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"mqtt"</span><span class="p">,</span> <span class="s2">"event"</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">mqtt_client</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
 <span class="kr">end</span><span class="p">)</span>
 <span class="cm">--[[</span>
 <span class="cm">event The possible values are</span>
 <span class="cm">  conack -- the server authentication is completed, the mqtt connection has been established, and data can be subscribed and published without additional data.</span>
 <span class="cm">  recv   -- The received data is delivered by the server, data is the topic value (string), payload is the business data (string), metas is metadata (table), generally not processed. .</span>
 <span class="cm">             -- metas Contains the following</span>
-<span class="cm">			 -- qos Value range 0,1,2</span>
-<span class="cm">			 -- retain Value range 0,1</span>
-<span class="cm">			 -- dup Value range 0,1</span>
+<span class="cm">             -- qos Value range 0,1,2</span>
+<span class="cm">             -- retain Value range 0,1</span>
+<span class="cm">             -- dup Value range 0,1</span>
 <span class="cm">  sent   -- After the sending is completed, qos0 will notify immediately, qos1/qos2 will call back in the server response, and data is a message.id</span>
 <span class="cm">  disconnect -- The server is disconnected, network problems or the server kicks the client, such as duplicate clientId, timeout not reporting business data</span>
 <span class="cm">]]</span>

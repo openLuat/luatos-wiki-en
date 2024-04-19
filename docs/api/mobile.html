@@ -1137,7 +1137,7 @@
 </table></div>
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">cpin_is_ready</span> <span class="o">=</span> <span class="n">mobile</span><span class="p">.</span><span class="n">simPin</span><span class="p">()</span> <span class="c1">-- Whether the current sim card is ready or not, generally returning false means no card</span>
-<span class="kd">local</span> <span class="n">succ</span> <span class="o">=</span> <span class="n">mobile</span><span class="p">.</span><span class="n">simPin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mobile</span><span class="p">.</span><span class="n">PIN_VERIFY</span><span class="p">,</span> <span class="s2">"1234"</span><span class="p">)</span>	<span class="c1">-- Enter pin code verification</span>
+<span class="kd">local</span> <span class="n">succ</span> <span class="o">=</span> <span class="n">mobile</span><span class="p">.</span><span class="n">simPin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mobile</span><span class="p">.</span><span class="n">PIN_VERIFY</span><span class="p">,</span> <span class="s2">"1234"</span><span class="p">)</span>    <span class="c1">-- Enter pin code verification</span>
 </pre></div>
 </div>
 </section>
@@ -1913,7 +1913,7 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mobile</span><span class="p">.</span><span class="n">nstOnOff</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="n">uart</span><span class="p">.</span><span class="n">VUART_0</span><span class="p">)</span>	<span class="c1">--Open test mode and send results with virtual serial port</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mobile</span><span class="p">.</span><span class="n">nstOnOff</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="n">uart</span><span class="p">.</span><span class="n">VUART_0</span><span class="p">)</span>    <span class="c1">--Open test mode and send results with virtual serial port</span>
 <span class="n">mobile</span><span class="p">.</span><span class="n">nstOnOff</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span> <span class="c1">--Close Test Mode</span>
 </pre></div>
 </div>

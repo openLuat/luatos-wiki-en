@@ -105,12 +105,12 @@ Configure key logs to upload to the IoT platform. The logs here include the logs
 **Examples**
 
 ```lua
-errDump.config(true, 3600, "12345678")	--Try the last time in an hour, and it will be attached after imei when uploading.12345678
-errDump.config(false)	--Turn off the recording function and no longer upload it.
-errDump.config(true, 0)	--Records, but will not take the initiative to upload, by the user to achieve the upload function
+errDump.config(true, 3600, "12345678")    --Try the last time in an hour, and it will be attached after imei when uploading.12345678
+errDump.config(false)    --Turn off the recording function and no longer upload it.
+errDump.config(true, 0)    --Records, but will not take the initiative to upload, by the user to achieve the upload function
 
 -- 2023.09.22 Added custom_id parameters
-errDump.config(true, 3600, nil, "ABC")	--Try the last time in an hour, use a custom device ID when uploading ABC
+errDump.config(true, 3600, nil, "ABC")    --Try the last time in an hour, use a custom device ID when uploading ABC
 
 -- 2023.12.8 Add host and port parameters
 errDump.config(true, 3600, nil, nil, "dev_msg1.openluat.com", 12425)

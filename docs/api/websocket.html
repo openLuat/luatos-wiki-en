@@ -742,7 +742,7 @@
 <p><strong>Example</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">wsc</span> <span class="o">=</span> <span class="kc">nil</span>
 <span class="kr">if</span> <span class="n">websocket</span> <span class="kr">then</span>
-	<span class="n">wsc</span> <span class="o">=</span> <span class="n">websocket</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="s2">"ws://echo.airtun.air32.cn/ws/echo"</span><span class="p">)</span>
+    <span class="n">wsc</span> <span class="o">=</span> <span class="n">websocket</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="s2">"ws://echo.airtun.air32.cn/ws/echo"</span><span class="p">)</span>
     <span class="n">wsc</span><span class="p">:</span><span class="n">autoreconn</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span> <span class="c1">-- Automatic reconnection mechanism</span>
     <span class="n">wsc</span><span class="p">:</span><span class="n">on</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">wsc</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
         <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"wsc"</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
@@ -756,8 +756,8 @@
     <span class="kr">while</span> <span class="kc">true</span> <span class="kr">do</span>
         <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">45000</span><span class="p">)</span>
         <span class="kr">if</span> <span class="n">wsc</span><span class="p">:</span><span class="n">ready</span><span class="p">()</span> <span class="kr">then</span>
-        	<span class="n">wsc</span><span class="p">:</span><span class="n">send</span><span class="p">((</span><span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">({</span><span class="n">action</span><span class="o">=</span><span class="s2">"echo"</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="nb">os.date</span><span class="p">()})))</span>
-		<span class="kr">end</span>
+            <span class="n">wsc</span><span class="p">:</span><span class="n">send</span><span class="p">((</span><span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">({</span><span class="n">action</span><span class="o">=</span><span class="s2">"echo"</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="nb">os.date</span><span class="p">()})))</span>
+        <span class="kr">end</span>
     <span class="kr">end</span>
     <span class="n">wsc</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
     <span class="n">wsc</span> <span class="o">=</span> <span class="kc">nil</span>
@@ -869,15 +869,15 @@
 </table></div>
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">wsc</span><span class="p">:</span><span class="n">on</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">websocket_client</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
-	<span class="c1">-- Print various events</span>
-	<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"websocket"</span><span class="p">,</span> <span class="s2">"event"</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+    <span class="c1">-- Print various events</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"websocket"</span><span class="p">,</span> <span class="s2">"event"</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
 <span class="kr">end</span><span class="p">)</span>
 <span class="cm">--[[</span>
 <span class="cm">event The value has:</span>
-<span class="cm">	conack The connection to the server was successful, the websocket protocol header information has been received, and communication has been established.</span>
-<span class="cm">	recv   Received information from the server, data, payload not nil</span>
-<span class="cm">	sent   send The server has acknowledged receipt of the message sent by the function at the TCP protocol layer.</span>
-<span class="cm">	disconnect Server connection disconnected</span>
+<span class="cm">    conack The connection to the server was successful, the websocket protocol header information has been received, and communication has been established.</span>
+<span class="cm">    recv   Received information from the server, data, payload not nil</span>
+<span class="cm">    sent   send The server has acknowledged receipt of the message sent by the function at the TCP protocol layer.</span>
+<span class="cm">    disconnect Server connection disconnected</span>
 
 <span class="cm">The sent/disconnect event is added on 2023.04.01</span>
 <span class="cm">]]</span>
@@ -1053,7 +1053,7 @@
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- table Form</span>
 <span class="n">wsc</span><span class="p">:</span><span class="n">headers</span><span class="p">({</span>
-	<span class="n">Auth</span><span class="o">=</span><span class="s2">"Basic ABCDEFGG"</span>
+    <span class="n">Auth</span><span class="o">=</span><span class="s2">"Basic ABCDEFGG"</span>
 <span class="p">})</span>
 <span class="c1">-- string form</span>
 <span class="n">wsc</span><span class="p">:</span><span class="n">headers</span><span class="p">(</span><span class="s2">"Auth: Basic ABCDERG</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">)</span>

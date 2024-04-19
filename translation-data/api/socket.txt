@@ -84,6 +84,10 @@ For TCP data, the total length of the data to be read is returned here.
 For UDP data, the length of a single UDP packet is returned here
 对应的table包含多个数据, 均为整数值
 The corresponding table contains multiple data, all of which are integer values.
+对方IP地址,仅当读取成功且UDP通信时有效
+The IP address of the other party is valid only when the reading is successful and UDP communication is performed.
+对方端口,仅当读取成功且UDP通信时有效
+Opposite port, valid only for read success and UDP traffic
 对端IP，只有UDP模式下才有意义，TCP模式返回nil，注意返回的格式，如果是IPV4，1byte 0x00 + 4byte地址 如果是IPV6，1byte 0x01 + 16byte地址
 The peer IP is meaningful only in UDP mode. TCP mode returns nil. Pay attention to the format of the return. If it is IPV4,1byte 0x 00 4byte address, if it is IPV6,1byte 0x 01 16byte address
 对端IP，如果是TCP应用则忽略，如果是UDP，如果留空则用connect时候的参数，如果是IPV4，可以是大端格式的int值
@@ -172,6 +176,8 @@ Server port number, little-end format
 Unknown
 本API于 2023.11.15 新增
 This API was added on 2023.11.15
+本函数于2024.4.8添加, 用于简易读取不大的数据
+This function was added in 2024.4.8 to easily read small data.
 本地毫秒数计数器,基于
 Local milliseconds counter, based on
 本地秒数计数器,基于
@@ -286,8 +292,16 @@ Set log registration for SSL
 Set up DNS configuration for your network adapter
 设置默认网络适配器的DNS配置
 Set the DNS configuration for the default network adapter
+请优先使用socket.rx函数, 本函数主要用于固件不含zbuff库时的变通调用
+Please give priority to the socket.rx function, which is mainly used for flexible calls when the firmware does not contain the zbuff library.
+读取到的数据
+Read data
+读取成功与否
+Read success or not
 读取数据(非zbuff版本
 Read data (non-zbuff version
+读取的数据,仅当读取成功时有效
+Data read, valid only if read successfully
 读取缓冲区大小, 2024.1.5 新增, 注意,老版本固件不传buff参数会报错的
 Read buffer size, added in 2024.1.5. Note that the old version of firmware will report an error if it does not pass buff parameters.
 调试数据, 调试用,一般用户不用管
@@ -316,10 +330,14 @@ It is usually an intranet ip or an extranet ip, depending on the operator's allo
 Configuration network some information
 配置是否打开debug信息
 Configure whether to open debug information
+释放后就不能再使用了
+It can no longer be used after release.
 里如果remote_port设置成0，则当DNS完成时就返回socket.ON_LINE消息
 If the remote_port is set to 0, the socket.ON_LINE message will be returned when DNS is completed.
 链接未建立
 Link not established
+限制读取数据长度,可选,不传就是读出全部
+Limit the length of read data, optional, not to pass is to read all
 限制读取长度, 2024.1.5 新增
 Limit Read Length, 2024.1.5 New
 需要查看的适配器序号，可以留空会查看全部网卡，直到遇到IP READY的，如果指定网卡，只能是socket.ETH0（外置以太网），socket.LWIP_ETH（内置以太网），socket.LWIP_STA（内置WIFI的STA），socket.LWIP_AP（内置WIFI的AP），socket.LWIP_GP（内置蜂窝网络的GPRS），socket.USB（外置USB网卡

@@ -674,8 +674,8 @@ None
 **Examples**
 
 ```lua
-buff:del(1,4)	--Delete 4 bytes of data from position 1
-buff:del(-1,4)	--Delete 4 bytes of data from position used-1, but this will definitely exceed used, so the del_len will be adjusted to 1, which is actually deleting the last byte.
+buff:del(1,4)    --Delete 4 bytes of data from position 1
+buff:del(-1,4)    --Delete 4 bytes of data from position used-1, but this will definitely exceed used, so the del_len will be adjusted to 1, which is actually deleting the last byte.
 
 ```
 

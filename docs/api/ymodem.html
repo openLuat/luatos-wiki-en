@@ -740,13 +740,13 @@
 <span class="kd">local</span> <span class="n">handler</span> <span class="o">=</span> <span class="n">ymodem</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
 <span class="n">uart</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">115200</span><span class="p">)</span>
 <span class="n">uart</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"receive"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">len</span><span class="p">)</span>
-	<span class="kr">while</span> <span class="mi">1</span> <span class="kr">do</span>
-		<span class="kd">local</span> <span class="n">data</span> <span class="o">=</span> <span class="n">uart</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
-		<span class="kr">if</span> <span class="ow">not</span> <span class="n">data</span> <span class="ow">or</span> <span class="o">#</span><span class="n">data</span> <span class="o">==</span> <span class="mi">0</span> <span class="kr">then</span>
-			<span class="kr">break</span>
-		<span class="kr">end</span>
-		<span class="n">ymodem</span><span class="p">.</span><span class="n">receive</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-	<span class="kr">end</span>
+    <span class="kr">while</span> <span class="mi">1</span> <span class="kr">do</span>
+        <span class="kd">local</span> <span class="n">data</span> <span class="o">=</span> <span class="n">uart</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
+        <span class="kr">if</span> <span class="ow">not</span> <span class="n">data</span> <span class="ow">or</span> <span class="o">#</span><span class="n">data</span> <span class="o">==</span> <span class="mi">0</span> <span class="kr">then</span>
+            <span class="kr">break</span>
+        <span class="kr">end</span>
+        <span class="n">ymodem</span><span class="p">.</span><span class="n">receive</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="kr">end</span>
 <span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>

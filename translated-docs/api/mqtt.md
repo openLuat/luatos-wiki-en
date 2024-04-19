@@ -145,7 +145,7 @@ mqtt Client Creation
 |-|-|
 |int|The adapter serial number can only be socket.ETH0, socket.STA, socket.AP. If it is not filled in, the platform's own method will be selected, and then the last registered adapter will be selected.|
 |string|Server address, which can be a domain name or ip|
-|int|	Port number|
+|int|Port number|
 |bool/table|Whether it is an ssl encrypted connection or not, default is no encryption, true is the simplest encryption without certificate, table is encryption with certificate <br>server_cert server ca certificate data <br>client_cert client certificate data <br>client_key client private key encrypted data <br>client_password client private key password data <br>verify mandatory verification 0 no verification/1 optional verification/2 mandatory verification default 2|
 |bool|ipv6 default is not|
 
@@ -168,11 +168,11 @@ mqttc = mqtt.create(nil,"120.55.137.106", 8883, {server_cert=io.readFile("/luadb
 mqttc = mqtt.create(nil,"120.55.137.106", 8883, {server_cert=io.readFile("/luadb/ca.crt"), verify=1})
 -- Encrypted TCPTCP link, two-way certificate verification
 mqttc = mqtt.create(nil,"120.55.137.106", 8883, {
-					server_cert=io.readFile("/luadb/ca.crt"),
-					client_cert=io.readFile("/luadb/client.pem"),
-					client_key="123456",
-					client_password="123456",
-					})
+                    server_cert=io.readFile("/luadb/ca.crt"),
+                    client_cert=io.readFile("/luadb/client.pem"),
+                    client_key="123456",
+                    client_password="123456",
+                    })
 
 ```
 
@@ -264,17 +264,17 @@ register mqtt callback
 
 ```lua
 mqttc:on(function(mqtt_client, event, data, payload, metas)
-	-- User-defined code
-	log.info("mqtt", "event", event, mqtt_client, data, payload)
+    -- User-defined code
+    log.info("mqtt", "event", event, mqtt_client, data, payload)
 end)
 --[[
 event The possible values are
   conack -- the server authentication is completed, the mqtt connection has been established, and data can be subscribed and published without additional data.
   recv   -- The received data is delivered by the server, data is the topic value (string), payload is the business data (string), metas is metadata (table), generally not processed. .
              -- metas Contains the following
-			 -- qos Value range 0,1,2
-			 -- retain Value range 0,1
-			 -- dup Value range 0,1
+             -- qos Value range 0,1,2
+             -- retain Value range 0,1
+             -- dup Value range 0,1
   sent   -- After the sending is completed, qos0 will notify immediately, qos1/qos2 will call back in the server response, and data is a message.id
   disconnect -- The server is disconnected, network problems or the server kicks the client, such as duplicate clientId, timeout not reporting business data
 ]]

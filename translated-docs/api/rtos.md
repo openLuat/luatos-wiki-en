@@ -342,15 +342,24 @@ automatic memory collection configuration is a supplement to lua's own collectio
 
 **Parameters**
 
-None
+|Incoming Value Type | Explanation|
+|-|-|
+|int|The cycle of automatic collection is equivalent to the number of receive calls, 0~60000. If it is 0, the automatic collection function is turned off, the default is 100|
+|int|The memory uses the warning water level line, which is the percentage of the total luavm memory amount, 50~95, and the memory will not start to judge whether to collect until the memory reaches the (>=) warning line. The default is 80|
+|int|The memory usage forced collection water level line is the percentage of the total luavm memory amount, 50~95. When the memory reaches (>=) the forced collection line, it will be forced to collect. The default is 90, which must be greater than the warning water line.|
 
 **Return Value**
 
-None
+|return value type | explanation|
+|-|-|
+|nil|No return value|
 
 **Examples**
 
-None
+```lua
+rtos.autoCollectMem(100, 80, 90)
+
+```
 
 ---
 

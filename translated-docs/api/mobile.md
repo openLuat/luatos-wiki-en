@@ -266,7 +266,7 @@ Check whether the current SIM card is ready and perform relevant operations on t
 
 ```lua
 local cpin_is_ready = mobile.simPin() -- Whether the current sim card is ready or not, generally returning false means no card
-local succ = mobile.simPin(0, mobile.PIN_VERIFY, "1234")	-- Enter pin code verification
+local succ = mobile.simPin(0, mobile.PIN_VERIFY, "1234")    -- Enter pin code verification
 
 ```
 
@@ -914,7 +914,7 @@ RF Test switches and configurations
 **Examples**
 
 ```lua
-mobile.nstOnOff(true, uart.VUART_0)	--Open test mode and send results with virtual serial port
+mobile.nstOnOff(true, uart.VUART_0)    --Open test mode and send results with virtual serial port
 mobile.nstOnOff(false) --Close Test Mode
 
 ```

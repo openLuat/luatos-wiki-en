@@ -818,8 +818,8 @@
 </table></div>
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Initialize the fota process</span>
-<span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">fota</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0x00300000</span><span class="p">,</span> <span class="n">spi_device</span><span class="p">)</span>	<span class="c1">--Since the 105 flash starts at 0x 01000000, 0 is external spiflash</span>
-<span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">fota</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>	<span class="c1">--ec618 Use a fixed internal address, so no parameters are required.</span>
+<span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">fota</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0x00300000</span><span class="p">,</span> <span class="n">spi_device</span><span class="p">)</span>    <span class="c1">--Since the 105 flash starts at 0x 01000000, 0 is external spiflash</span>
+<span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">fota</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>    <span class="c1">--ec618 Use a fixed internal address, so no parameters are required.</span>
 </pre></div>
 </div>
 </section>

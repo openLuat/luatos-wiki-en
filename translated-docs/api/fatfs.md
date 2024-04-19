@@ -59,7 +59,7 @@ mount fatfs
     local TF_CS = pin.PB3
     gpio.setup(TF_CS, 1)
     --fatfs.debug(1) -- If the mount fails, you can try to open the debugging information to find the reason.
-	-- Reminder, if TF/SD module with level conversion, usually does not support baud rate above 10M!!
+    -- Reminder, if TF/SD module with level conversion, usually does not support baud rate above 10M!!
     fatfs.mount(fatfs.SPI,"SD", spiId, TF_CS, 24000000)
     local data, err = fatfs.getfree("SD")
     if data then
@@ -67,7 +67,7 @@ mount fatfs
     else
         log.info("fatfs", "err", err)
     end
-	-- For the next operation, use io.open("/sd/xxx", "w") and other io library API
+    -- For the next operation, use io.open("/sd/xxx", "w") and other io library API
 
 ```
 

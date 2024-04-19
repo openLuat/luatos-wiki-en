@@ -19,8 +19,8 @@ PRODUCT_KEY = "v32xEAKsGTIEQxtqgwCldp5aPlcnPs3K"
 local lbsLoc = require("lbsLoc")
 -- Function: Obtain the callback function after the longitude and latitude corresponding to the base station
 -- Parameters:-result:number type, 0 indicates success, 1 indicates that the network environment is not ready, 2 indicates that the connection server failed, 3 indicates that the sending data failed, 4 indicates that the receiving server responded with timeout, and 5 indicates that the server returned the query failed; When it is 0, the following 5 parameters are meaningful
-		-- lat：string Type, latitude, integer part 3 digits, decimal part 7 digits, for example 031.2425864
-		-- lng：string Type, longitude, integer part 3 digits, decimal part 7 digits, for example 121.4736522
+        -- lat：string Type, latitude, integer part 3 digits, decimal part 7 digits, for example 031.2425864
+        -- lng：string Type, longitude, integer part 3 digits, decimal part 7 digits, for example 121.4736522
         -- addr：currently meaningless
         -- time：string Type or nil, time returned by the server, 6 bytes, year, month, day, hour, minute, second, need to be converted to hexadecimal read
             -- First byte: year minus 2000, for example, 2017 0x11

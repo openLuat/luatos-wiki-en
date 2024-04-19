@@ -748,7 +748,7 @@
     <span class="kr">end</span>
 
     <span class="c1">--Send Example</span>
-    <span class="c1">-- si24r1.set_mode( si24r1.MODE_TX );		--Send Mode</span>
+    <span class="c1">-- si24r1.set_mode( si24r1.MODE_TX );        --Send Mode    </span>
     <span class="c1">-- while 1 do</span>
     <span class="c1">--     sys.wait(1000)</span>
     <span class="c1">--     local a = si24r1.txpacket("si24r1test")</span>
@@ -756,9 +756,9 @@
     <span class="c1">-- end</span>
 
     <span class="c1">--Receive Example </span>
-    <span class="n">si24r1</span><span class="p">.</span><span class="n">set_mode</span><span class="p">(</span> <span class="n">si24r1</span><span class="p">.</span><span class="n">MODE_RX</span> <span class="p">);</span>		<span class="c1">--Receive Mode</span>
+    <span class="n">si24r1</span><span class="p">.</span><span class="n">set_mode</span><span class="p">(</span> <span class="n">si24r1</span><span class="p">.</span><span class="n">MODE_RX</span> <span class="p">);</span>        <span class="c1">--Receive Mode    </span>
     <span class="kr">while</span> <span class="mi">1</span> <span class="kr">do</span>
-        <span class="kd">local</span> <span class="n">i</span><span class="p">,</span><span class="n">data</span> <span class="o">=</span> <span class="n">si24r1</span><span class="p">.</span><span class="n">rxpacket</span><span class="p">(</span> <span class="p">);</span>		<span class="c1">--Receive Bytes</span>
+        <span class="kd">local</span> <span class="n">i</span><span class="p">,</span><span class="n">data</span> <span class="o">=</span> <span class="n">si24r1</span><span class="p">.</span><span class="n">rxpacket</span><span class="p">(</span> <span class="p">);</span>        <span class="c1">--Receive Bytes</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"rxbuf"</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">data</span><span class="p">)</span>
     <span class="kr">end</span>
 <span class="kr">end</span><span class="p">)</span>
@@ -868,7 +868,7 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">i</span><span class="p">,</span><span class="n">data</span> <span class="o">=</span> <span class="n">si24r1</span><span class="p">.</span><span class="n">rxpacket</span><span class="p">()</span>		<span class="c1">--Receive Bytes</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">i</span><span class="p">,</span><span class="n">data</span> <span class="o">=</span> <span class="n">si24r1</span><span class="p">.</span><span class="n">rxpacket</span><span class="p">()</span>        <span class="c1">--Receive Bytes</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"rxbuf"</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>

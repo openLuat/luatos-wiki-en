@@ -132,8 +132,8 @@ sys.taskInit(function()
     while 1 do
         sys.wait(3000)
         log.info("socket", "ip", socket.localIP())
-		-- Output example
-		-- 62.39.244.10	255.255.255.255	0.0.0.0
+        -- Output example
+        -- 62.39.244.10    255.255.255.255    0.0.0.0
     end
 end)
 
@@ -433,14 +433,14 @@ local succ, data_len, remote_ip, remote_port = socket.rx(ctrl, buff, 1500)
 -- For UDP data, the length of a single UDP packet is returned here
 local succ, data_len = socket.rx(ctrl)
 if succ then
-	log.info("Length of data to be charged", data_len)
+    log.info("Length of data to be charged", data_len)
 end
 
 ```
 
 ---
 
-## socket.read(netc, limit)
+## socket.read(netc, len)
 
 
 
@@ -448,15 +448,31 @@ Read data (non-zbuff version)
 
 **Parameters**
 
-None
+|Incoming Value Type | Explanation|
+|-|-|
+|userdata|socket.create obtained ctrl|
+|int|Limit the length of read data, optional, not to pass is to read all|
 
 **Return Value**
 
-None
+|return value type | explanation|
+|-|-|
+|boolean|Read success or not|
+|string|Data read, valid only if read successfully|
+|string|The IP address of the other party is valid only when the reading is successful and UDP communication is performed.|
+|int|Opposite port, valid only for read success and UDP traffic|
 
 **Examples**
 
-None
+```lua
+-- This function was added in 2024.4.8 to easily read small data.
+-- Please give priority to the socket.rx function, which is mainly used for flexible calls when the firmware does not contain the zbuff library.
+local ok, data = socket.read(netc, 1500)
+if ok and #data > 0 then
+    log.info("Read data", data)
+end
+
+```
 
 ---
 
@@ -569,15 +585,15 @@ Get the current state of the socket
 ```lua
 local state, str = socket.state(ctrl)
 log.info("state", state, str)
-state	0	"Hardware Offline",
-		1	"Offline",
-		2	"Wait DNS",
-		3	"Connecting",
-		4	"TLS handshake in progress",
-		5	"Online",
-		6	"In listening",
-		7	"Offline",
-		8	"Unknown"
+state    0    "Hardware Offline",
+        1    "Offline",
+        2    "Wait DNS",
+        3    "Connecting",
+        4    "TLS handshake in progress",
+        5    "Online",
+        6    "In listening",
+        7    "Offline",
+        8    "Unknown"
 
 ```
 
@@ -591,7 +607,9 @@ Active release network_ctrl
 
 **Parameters**
 
-None
+|Incoming Value Type | Explanation|
+|-|-|
+|user_data|socket.create obtained ctrl|
 
 **Return Value**
 
@@ -599,7 +617,11 @@ None
 
 **Examples**
 
-None
+```lua
+-- It can no longer be used after release.
+socket.release(ctrl)
+
+```
 
 ---
 
@@ -645,7 +667,7 @@ Set log registration for SSL
 
 |Incoming Value Type | Explanation|
 |-|-|
-|int	mbedtls|log Grade|
+|int|mbedtls log Grade|
 
 **Return Value**
 

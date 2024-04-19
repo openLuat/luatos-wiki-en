@@ -810,7 +810,7 @@
     <span class="kd">local</span> <span class="n">TF_CS</span> <span class="o">=</span> <span class="n">pin</span><span class="p">.</span><span class="n">PB3</span>
     <span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="n">TF_CS</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="c1">--fatfs.debug(1) -- If the mount fails, you can try to open the debugging information to find the reason.</span>
-	<span class="c1">-- Reminder, if TF/SD module with level conversion, usually does not support baud rate above 10M!!</span>
+    <span class="c1">-- Reminder, if TF/SD module with level conversion, usually does not support baud rate above 10M!!</span>
     <span class="n">fatfs</span><span class="p">.</span><span class="n">mount</span><span class="p">(</span><span class="n">fatfs</span><span class="p">.</span><span class="n">SPI</span><span class="p">,</span><span class="s2">"SD"</span><span class="p">,</span> <span class="n">spiId</span><span class="p">,</span> <span class="n">TF_CS</span><span class="p">,</span> <span class="mi">24000000</span><span class="p">)</span>
     <span class="kd">local</span> <span class="n">data</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">fatfs</span><span class="p">.</span><span class="n">getfree</span><span class="p">(</span><span class="s2">"SD"</span><span class="p">)</span>
     <span class="kr">if</span> <span class="n">data</span> <span class="kr">then</span>
@@ -818,7 +818,7 @@
     <span class="kr">else</span>
         <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"fatfs"</span><span class="p">,</span> <span class="s2">"err"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
     <span class="kr">end</span>
-	<span class="c1">-- For the next operation, use io.open("/sd/xxx", "w") and other io library API</span>
+    <span class="c1">-- For the next operation, use io.open("/sd/xxx", "w") and other io library API</span>
 </pre></div>
 </div>
 </section>

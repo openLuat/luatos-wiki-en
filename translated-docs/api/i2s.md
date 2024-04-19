@@ -187,11 +187,11 @@ Register I2S Event Callback
 
 ```lua
 i2s.on(0, function(id, buff)
-	if buff then
-		log.info("i2s get data in zbuff")
-	else
-		log.info("i2s tx one block done")
-	end
+    if buff then
+        log.info("i2s get data in zbuff")
+    else
+        log.info("i2s tx one block done")
+    end
 end)
 
 ```

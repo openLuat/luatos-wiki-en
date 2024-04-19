@@ -367,7 +367,7 @@ i2c General transmission includes three functions: sending n bytes, sending n by
 
 ```lua
 local result, _ = i2c.transfer(0, 0x11, txbuff, rxbuff, 1)
-local result, _ = i2c.transfer(0, 0x11, txbuff, nil, 0)	--Only send data in txbuff, not receive data. A typical application is to write registers, where register addresses and values are placed in txbuff
+local result, _ = i2c.transfer(0, 0x11, txbuff, nil, 0)    --Only send data in txbuff, not receive data. A typical application is to write registers, where register addresses and values are placed in txbuff
 local result, _ = i2c.transfer(0, 0x11, "\x01\x02\x03", nil, 1) --Send 0x 01, 0x 02,0x 03, do not receive data, if it is eeprom, write 02 and 03 to the address of 0x 01, or write 03 to the address of 0x 0102, depending on the specific chip.
 local result, rxdata = i2c.transfer(0, 0x11, "\x01\x02", nil, 1) --Send 0x 01, 0x 02, and then receive 1 byte. A typical application is eeprom
 local result, rxdata = i2c.transfer(0, 0x11, 0x00, nil, 1) --Send 0x 00, then receive 1 byte, typical application of various sensors

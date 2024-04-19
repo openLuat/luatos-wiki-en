@@ -146,6 +146,7 @@ Convert the string to url encoding.
 |Incoming Value Type | Explanation|
 |-|-|
 |string|String to be converted|
+|int|mode:url Conversion criteria for encoding,|
 
 **Return Value**
 

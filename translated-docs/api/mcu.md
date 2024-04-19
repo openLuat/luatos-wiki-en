@@ -304,7 +304,7 @@ None
 **Examples**
 
 ```lua
-mcu.setXTAL(true, true, 1248)	--High-speed clock using external clock, low-speed 32K using external crystal, delay1248
+mcu.setXTAL(true, true, 1248)    --High-speed clock using external clock, low-speed 32K using external crystal, delay1248
 
 ```
 
@@ -329,9 +329,9 @@ None
 **Examples**
 
 ```lua
-mcu.hardfault(0)	--Shutdown after crash, generally used for debugging status
-mcu.hardfault(1)	--Restart after crash, generally used for official products
-mcu.hardfault(2)	--After the crash, try to submit the error information to an external tool and restart it, generally used for stress testing or official products.
+mcu.hardfault(0)    --Shutdown after crash, generally used for debugging status
+mcu.hardfault(1)    --Restart after crash, generally used for official products
+mcu.hardfault(2)    --After the crash, try to submit the error information to an external tool and restart it, generally used for stress testing or official products.
 
 ```
 
@@ -358,11 +358,11 @@ None
 **Examples**
 
 ```lua
-mcu.iomux(mcu.UART, 2, 1)	-- Air780E UART2 is multiplexed to gpio12 and gpio13(Air780EG default is this multiplexing, don't move)
-mcu.iomux(mcu.UART, 2, 2)	-- Air780E UART2 is multiplexed to gpio6 and gpio7
-mcu.iomux(mcu.I2C, 0, 1)	-- Air780E of I2C0 multiplexed to gpio12 and gpio13
-mcu.iomux(mcu.I2C, 0, 2)	-- Air780E The I2C0 is multiplexed to gpio16 and gpio17
-mcu.iomux(mcu.I2C, 1, 1)	-- Air780E of I2C1 multiplexing to gpio4 and gpio5
+mcu.iomux(mcu.UART, 2, 1)    -- Air780E UART2 is multiplexed to gpio12 and gpio13(Air780EG default is this multiplexing, don't move)
+mcu.iomux(mcu.UART, 2, 2)    -- Air780E UART2 is multiplexed to gpio6 and gpio7
+mcu.iomux(mcu.I2C, 0, 1)    -- Air780E of I2C0 multiplexed to gpio12 and gpio13
+mcu.iomux(mcu.I2C, 0, 2)    -- Air780E The I2C0 is multiplexed to gpio16 and gpio17
+mcu.iomux(mcu.I2C, 1, 1)    -- Air780E of I2C1 multiplexing to gpio4 and gpio5
 
 ```
 

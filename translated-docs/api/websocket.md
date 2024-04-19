@@ -15,7 +15,7 @@ This library has its own demo,[click this link to view websocket demo examples](
 ```lua
 local wsc = nil
 if websocket then
-	wsc = websocket.create(nil, "ws://echo.airtun.air32.cn/ws/echo")
+    wsc = websocket.create(nil, "ws://echo.airtun.air32.cn/ws/echo")
     wsc:autoreconn(true, 3000) -- Automatic reconnection mechanism
     wsc:on(function(wsc, event, data)
         log.info("wsc", event, data)
@@ -29,8 +29,8 @@ if websocket then
     while true do
         sys.wait(45000)
         if wsc:ready() then
-        	wsc:send((json.encode({action="echo", msg=os.date()})))
-		end
+            wsc:send((json.encode({action="echo", msg=os.date()})))
+        end
     end
     wsc:close()
     wsc = nil
@@ -115,15 +115,15 @@ Register websocket Callback
 
 ```lua
 wsc:on(function(websocket_client, event, data, payload)
-	-- Print various events
-	log.info("websocket", "event", event, data, payload)
+    -- Print various events
+    log.info("websocket", "event", event, data, payload)
 end)
 --[[
 event The value has:
-	conack The connection to the server was successful, the websocket protocol header information has been received, and communication has been established.
-	recv   Received information from the server, data, payload not nil
-	sent   send The server has acknowledged receipt of the message sent by the function at the TCP protocol layer.
-	disconnect Server connection disconnected
+    conack The connection to the server was successful, the websocket protocol header information has been received, and communication has been established.
+    recv   Received information from the server, data, payload not nil
+    sent   send The server has acknowledged receipt of the message sent by the function at the TCP protocol layer.
+    disconnect Server connection disconnected
 
 The sent/disconnect event is added on 2023.04.01
 ]]
@@ -290,7 +290,7 @@ Set additional headers
 ```lua
 -- table Form
 wsc:headers({
-	Auth="Basic ABCDEFGG"
+    Auth="Basic ABCDEFGG"
 })
 -- string form
 wsc:headers("Auth: Basic ABCDERG\r\n")

@@ -745,9 +745,9 @@
 <span class="nb">require</span> <span class="s2">"sysplus"</span>
 
 <span class="n">sys</span><span class="p">.</span><span class="n">taskInit</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
-	<span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-	<span class="kd">local</span> <span class="n">code</span><span class="p">,</span><span class="n">headers</span><span class="p">,</span><span class="n">body</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"http://www.example.com/abc"</span><span class="p">).</span><span class="n">wait</span><span class="p">()</span>
-	<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"http"</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+    <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">code</span><span class="p">,</span><span class="n">headers</span><span class="p">,</span><span class="n">body</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"http://www.example.com/abc"</span><span class="p">).</span><span class="n">wait</span><span class="p">()</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"http"</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
 <span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>

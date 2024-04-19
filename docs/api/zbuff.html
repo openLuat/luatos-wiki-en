@@ -1598,8 +1598,8 @@ local buff = zbuff.create({128,160,16},0xf800)--Create a 128*160 framebuff with 
 <p><strong>Return Value</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">buff</span><span class="p">:</span><span class="n">del</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>	<span class="c1">--Delete 4 bytes of data from position 1</span>
-<span class="n">buff</span><span class="p">:</span><span class="n">del</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>	<span class="c1">--Delete 4 bytes of data from position used-1, but this will definitely exceed used, so the del_len will be adjusted to 1, which is actually deleting the last byte.</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">buff</span><span class="p">:</span><span class="n">del</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>    <span class="c1">--Delete 4 bytes of data from position 1</span>
+<span class="n">buff</span><span class="p">:</span><span class="n">del</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>    <span class="c1">--Delete 4 bytes of data from position used-1, but this will definitely exceed used, so the del_len will be adjusted to 1, which is actually deleting the last byte.</span>
 </pre></div>
 </div>
 </section>

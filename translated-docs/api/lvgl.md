@@ -584,8 +584,8 @@ None
 **Examples**
 
 ```lua
-lvgl.sleep(true)		--Pause refresh, system can sleep
-lvgl.sleep(false)		--Resume refresh, system does not sleep
+lvgl.sleep(true)        --Pause refresh, system can sleep
+lvgl.sleep(false)        --Resume refresh, system does not sleep
 
 ```
 

@@ -1027,8 +1027,8 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">audio</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"xxxxxx"</span><span class="p">)</span>		<span class="c1">--Start playing a file</span>
-<span class="n">audio</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>				<span class="c1">--Stop playing a file</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">audio</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"xxxxxx"</span><span class="p">)</span>        <span class="c1">--Start playing a file</span>
+<span class="n">audio</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                <span class="c1">--Stop playing a file</span>
 </pre></div>
 </div>
 </section>
@@ -1220,8 +1220,8 @@
 <p><strong>Return Value</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">audio</span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pin</span><span class="p">.</span><span class="n">PC0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>	<span class="c1">--PA The control pin is PC0, the high level is turned on, air105 can be used with this configuration</span>
-<span class="n">audio</span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>	<span class="c1">--PA The control pin is GPIO25, the high level is turned on, and the Air780E cloud horn board can be used with this configuration.</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">audio</span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pin</span><span class="p">.</span><span class="n">PC0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>    <span class="c1">--PA The control pin is PC0, the high level is turned on, air105 can be used with this configuration</span>
+<span class="n">audio</span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>    <span class="c1">--PA The control pin is GPIO25, the high level is turned on, and the Air780E cloud horn board can be used with this configuration.</span>
 </pre></div>
 </div>
 </section>
@@ -1259,7 +1259,7 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">audio</span><span class="p">.</span><span class="n">vol</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>	<span class="c1">--The volume of channel 0 is adjusted to 90%,result stores the adjusted volume level, which may still be 100</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">audio</span><span class="p">.</span><span class="n">vol</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>    <span class="c1">--The volume of channel 0 is adjusted to 90%,result stores the adjusted volume level, which may still be 100</span>
 </pre></div>
 </div>
 </section>
@@ -1297,7 +1297,7 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">audio</span><span class="p">.</span><span class="n">vol</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>	<span class="c1">--The volume of channel 0 is adjusted to 90%,result stores the adjusted volume level, which may still be 100</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">audio</span><span class="p">.</span><span class="n">vol</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>    <span class="c1">--The volume of channel 0 is adjusted to 90%,result stores the adjusted volume level, which may still be 100</span>
 </pre></div>
 </div>
 </section>
@@ -1338,8 +1338,8 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">audio</span><span class="p">.</span><span class="n">setBus</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">audio</span><span class="p">.</span><span class="n">BUS_SOFT_DAC</span><span class="p">)</span>	<span class="c1">--Hardware output channel for channel 0 is set to software DAC</span>
-<span class="n">audio</span><span class="p">.</span><span class="n">setBus</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">audio</span><span class="p">.</span><span class="n">BUS_I2S</span><span class="p">)</span>	<span class="c1">--The hardware output channel for channel 0 is set I2S</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">audio</span><span class="p">.</span><span class="n">setBus</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">audio</span><span class="p">.</span><span class="n">BUS_SOFT_DAC</span><span class="p">)</span>    <span class="c1">--Hardware output channel for channel 0 is set to software DAC</span>
+<span class="n">audio</span><span class="p">.</span><span class="n">setBus</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">audio</span><span class="p">.</span><span class="n">BUS_I2S</span><span class="p">)</span>    <span class="c1">--The hardware output channel for channel 0 is set I2S</span>
 </pre></div>
 </div>
 </section>

@@ -1114,7 +1114,7 @@
 <p><strong>Return Value</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mcu</span><span class="p">.</span><span class="n">setXTAL</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">1248</span><span class="p">)</span>	<span class="c1">--High-speed clock using external clock, low-speed 32K using external crystal, delay1248</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mcu</span><span class="p">.</span><span class="n">setXTAL</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">1248</span><span class="p">)</span>    <span class="c1">--High-speed clock using external clock, low-speed 32K using external crystal, delay1248</span>
 </pre></div>
 </div>
 </section>
@@ -1138,9 +1138,9 @@
 <p><strong>Return Value</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mcu</span><span class="p">.</span><span class="n">hardfault</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>	<span class="c1">--Shutdown after crash, generally used for debugging status</span>
-<span class="n">mcu</span><span class="p">.</span><span class="n">hardfault</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>	<span class="c1">--Restart after crash, generally used for official products</span>
-<span class="n">mcu</span><span class="p">.</span><span class="n">hardfault</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>	<span class="c1">--After the crash, try to submit the error information to an external tool and restart it, generally used for stress testing or official products.</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mcu</span><span class="p">.</span><span class="n">hardfault</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>    <span class="c1">--Shutdown after crash, generally used for debugging status</span>
+<span class="n">mcu</span><span class="p">.</span><span class="n">hardfault</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>    <span class="c1">--Restart after crash, generally used for official products</span>
+<span class="n">mcu</span><span class="p">.</span><span class="n">hardfault</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>    <span class="c1">--After the crash, try to submit the error information to an external tool and restart it, generally used for stress testing or official products.</span>
 </pre></div>
 </div>
 </section>
@@ -1170,11 +1170,11 @@
 <p><strong>Return Value</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mcu</span><span class="p">.</span><span class="n">iomux</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">UART</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>	<span class="c1">-- Air780E UART2 is multiplexed to gpio12 and gpio13(Air780EG default is this multiplexing, don't move)</span>
-<span class="n">mcu</span><span class="p">.</span><span class="n">iomux</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">UART</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>	<span class="c1">-- Air780E UART2 is multiplexed to gpio6 and gpio7</span>
-<span class="n">mcu</span><span class="p">.</span><span class="n">iomux</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">I2C</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>	<span class="c1">-- Air780E of I2C0 multiplexed to gpio12 and gpio13</span>
-<span class="n">mcu</span><span class="p">.</span><span class="n">iomux</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">I2C</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>	<span class="c1">-- Air780E The I2C0 is multiplexed to gpio16 and gpio17</span>
-<span class="n">mcu</span><span class="p">.</span><span class="n">iomux</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">I2C</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>	<span class="c1">-- Air780E of I2C1 multiplexing to gpio4 and gpio5</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mcu</span><span class="p">.</span><span class="n">iomux</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">UART</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>    <span class="c1">-- Air780E UART2 is multiplexed to gpio12 and gpio13(Air780EG default is this multiplexing, don't move)</span>
+<span class="n">mcu</span><span class="p">.</span><span class="n">iomux</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">UART</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1">-- Air780E UART2 is multiplexed to gpio6 and gpio7</span>
+<span class="n">mcu</span><span class="p">.</span><span class="n">iomux</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">I2C</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>    <span class="c1">-- Air780E of I2C0 multiplexed to gpio12 and gpio13</span>
+<span class="n">mcu</span><span class="p">.</span><span class="n">iomux</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">I2C</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1">-- Air780E The I2C0 is multiplexed to gpio16 and gpio17</span>
+<span class="n">mcu</span><span class="p">.</span><span class="n">iomux</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">I2C</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>    <span class="c1">-- Air780E of I2C1 multiplexing to gpio4 and gpio5</span>
 </pre></div>
 </div>
 </section>

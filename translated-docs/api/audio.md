@@ -194,8 +194,8 @@ Play or stop playing a file. After the play is completed, an audio.DONE message 
 **Examples**
 
 ```lua
-audio.play(0, "xxxxxx")		--Start playing a file
-audio.play(0)				--Stop playing a file
+audio.play(0, "xxxxxx")        --Start playing a file
+audio.play(0)                --Stop playing a file
 
 ```
 
@@ -336,8 +336,8 @@ None
 **Examples**
 
 ```lua
-audio.config(0, pin.PC0, 1)	--PA The control pin is PC0, the high level is turned on, air105 can be used with this configuration
-audio.config(0, 25, 1, 6, 200)	--PA The control pin is GPIO25, the high level is turned on, and the Air780E cloud horn board can be used with this configuration.
+audio.config(0, pin.PC0, 1)    --PA The control pin is PC0, the high level is turned on, air105 can be used with this configuration
+audio.config(0, 25, 1, 6, 200)    --PA The control pin is GPIO25, the high level is turned on, and the Air780E cloud horn board can be used with this configuration.
 
 ```
 
@@ -365,7 +365,7 @@ Configure the volume adjustment of an audio channel to directly enlarge or reduc
 **Examples**
 
 ```lua
-local result = audio.vol(0, 90)	--The volume of channel 0 is adjusted to 90%,result stores the adjusted volume level, which may still be 100
+local result = audio.vol(0, 90)    --The volume of channel 0 is adjusted to 90%,result stores the adjusted volume level, which may still be 100
 
 ```
 
@@ -393,7 +393,7 @@ configure mic volume adjustment for an audio channel
 **Examples**
 
 ```lua
-local result = audio.vol(0, 90)	--The volume of channel 0 is adjusted to 90%,result stores the adjusted volume level, which may still be 100
+local result = audio.vol(0, 90)    --The volume of channel 0 is adjusted to 90%,result stores the adjusted volume level, which may still be 100
 
 ```
 
@@ -422,8 +422,8 @@ Configure the hardware output bus of an audio channel, and set the corresponding
 **Examples**
 
 ```lua
-audio.setBus(0, audio.BUS_SOFT_DAC)	--Hardware output channel for channel 0 is set to software DAC
-audio.setBus(0, audio.BUS_I2S)	--The hardware output channel for channel 0 is set I2S
+audio.setBus(0, audio.BUS_SOFT_DAC)    --Hardware output channel for channel 0 is set to software DAC
+audio.setBus(0, audio.BUS_I2S)    --The hardware output channel for channel 0 is set I2S
 
 ```
 
