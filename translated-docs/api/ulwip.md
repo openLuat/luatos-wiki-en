@@ -61,7 +61,8 @@ end)
 -- Additional Parameters Configuring table Optional Values
 -- mtu, Default 1460
 -- flags, Default ulwip.FLAG_BROADCAST | ulwip.FLAG_ETHARP | ulwip.FLAG_ETHERNET | ulwip.FLAG_IGMP | ulwip.FLAG_MLD6
--- That is, the following format {mtu=1460, flags=(ulwip.FLAG_BROADCAST | ulwip.FLAG_ETHARP | ulwip.FLAG_ETHERNET | ulwip.FLAG_IGMP | ulwip.FLAG_MLD6)}
+-- zbuff_out The callback function accepts zbuff as an argument, and the default false
+-- reverse Local lwip device, flip call logic, default false, this parameter is designed to intercept the hardware networking data of the current device
 
 ```
 
@@ -234,36 +235,6 @@ register netif to luatos socket
 
 ```lua
 -- Reference ulwip.setup
-
-```
-
----
-
-## ulwip.dft(adapter_index)
-
-
-
-Set the default netif network card
-
-**Parameters**
-
-|Incoming Value Type | Explanation|
-|-|-|
-|int/boolean|adapter_index Adapter number or restore default network card|
-
-**Return Value**
-
-|return value type | explanation|
-|-|-|
-|boolean|Success or not|
-
-**Examples**
-
-```lua
--- Set the default network card socket.LWIP_ETH
-ulwip.dft(socket.LWIP_ETH)
--- Restore Default Network Card
-ulwip.dft(true)
 
 ```
 

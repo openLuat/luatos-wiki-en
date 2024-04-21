@@ -801,7 +801,8 @@
 <span class="c1">-- Additional Parameters Configuring table Optional Values</span>
 <span class="c1">-- mtu, Default 1460</span>
 <span class="c1">-- flags, Default ulwip.FLAG_BROADCAST | ulwip.FLAG_ETHARP | ulwip.FLAG_ETHERNET | ulwip.FLAG_IGMP | ulwip.FLAG_MLD6</span>
-<span class="c1">-- That is, the following format {mtu=1460, flags=(ulwip.FLAG_BROADCAST | ulwip.FLAG_ETHARP | ulwip.FLAG_ETHERNET | ulwip.FLAG_IGMP | ulwip.FLAG_MLD6)}</span>
+<span class="c1">-- zbuff_out The callback function accepts zbuff as an argument, and the default false</span>
+<span class="c1">-- reverse Local lwip device, flip call logic, default false, this parameter is designed to intercept the hardware networking data of the current device</span>
 </pre></div>
 </div>
 </section>
@@ -1038,44 +1039,6 @@
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Reference ulwip.setup</span>
 </pre></div>
 </div>
-</section>
-<hr class="docutils"/>
-<section id="ulwip-dft-adapter-index">
-<h2>ulwip.dft(adapter_index)<a class="headerlink" href="#ulwip-dft-adapter-index" title="Permalink to this headline">#</a></h2>
-<p>Set the default netif network card</p>
-<p><strong>Parameters</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>int/boolean</p></td>
-<td><p>adapter_index Adapter number or restore default network card</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Return Value</strong></p>
-<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>return value type</p></th>
-<th class="head"><p>explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>boolean</p></td>
-<td><p>Success or not</p></td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Set the default network card socket.LWIP_ETH</span>
-<span class="n">ulwip</span><span class="p">.</span><span class="n">dft</span><span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">LWIP_ETH</span><span class="p">)</span>
-<span class="c1">-- Restore Default Network Card</span>
-<span class="n">ulwip</span><span class="p">.</span><span class="n">dft</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-</pre></div>
-</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -1144,7 +1107,6 @@
 <li><a class="reference internal" href="#ulwip-dhcp-adapter-index-up">ulwip.dhcp(adapter_index, up)</a></li>
 <li><a class="reference internal" href="#ulwip-ip-adapter-index-ip-netmask-gw">ulwip.ip(adapter_index, ip, netmask, gw)</a></li>
 <li><a class="reference internal" href="#ulwip-reg-adapter-index">ulwip.reg(adapter_index)</a></li>
-<li><a class="reference internal" href="#ulwip-dft-adapter-index">ulwip.dft(adapter_index)</a></li>
 </ul>
 </li>
 </ul>
