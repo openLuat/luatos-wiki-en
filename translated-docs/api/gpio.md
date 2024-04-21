@@ -41,7 +41,7 @@ Set Pin Function
 |-|-|
 |int|pin gpio Number, must be numeric|
 |any|mode Input and output mode:<br> Number 0/1 represents output mode <br>nil represents input mode <br>function represents interrupt mode|
-|int|pull Pull up the following modes, which can be gpio.PULLUP or gpio.PULLDOWN, or 0. to be selected according to the actual hardware|
+|int|pull pull-up pull-down mode, which can be pull-up mode gpio.PULLUP or pull-down mode gpio.PULLDOWN, or open-leak mode 0. need to be selected according to the actual hardware|
 |int|irq Interrupt trigger mode, default gpio.BOTH. interrupt triggering mode <br> rising edge gpio.RISING<br> falling edge gpio.FALLING<br> both rising and falling are triggered gpio.BOTH |
 |int|alt Multiplexing option, currently only EC618 platform needs this parameter, some GPIO can be multiplexed to different pins, you can select the multiplexing option (0 or 4) to multiplex to the corresponding pin|
 

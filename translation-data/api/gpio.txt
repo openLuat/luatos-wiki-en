@@ -6,6 +6,8 @@ Pull-up
 Pull up the following modes, which can be gpio.PULLUP or gpio.PULLDOWN, or 0. to be selected according to the actual hardware
 上拉下列模式, 可以是gpio.PULLUP 或 gpio.PULLDOWN, 需要根据实际硬件选用
 The following pull-up mode can be gpio.PULLUP or gpio.PULLDOWN, which needs to be selected according to the actual hardware
+上拉下拉模式, 可以是上拉模式 gpio.PULLUP 或下拉模式 gpio.PULLDOWN, 或者开漏模式 0. 需要根据实际硬件选用
+pull-up pull-down mode, which can be pull-up mode gpio.PULLUP or pull-down mode gpio.PULLDOWN, or open-leak mode 0. need to be selected according to the actual hardware
 下拉
 Drop-down
 下降沿触发
