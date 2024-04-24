@@ -2,7 +2,7 @@
 
 ## Chat community (strongly recommend)
 
-Address: chat.openluat.com
+Address: [chat.openluat.com](https://chat.openluat.com)
 
 Strongly recommend, long-term manned, answer every question.
 
@@ -29,11 +29,5 @@ Please add groups as needed. Administrators are all the same and will actively a
 
 ## Purchase route
 
-* Spell a lot   http://mobile.yangkeduo.com/mall_page.html?mall_id=500792601
-
-![](pdd.jpg)
-
-* Tiktok     [aweme://goods/store?sec_shop_id=fwqlTVqO](aweme://goods/store?sec_shop_id=fwqlTVqO)
-![](douyin.png)
-
+* He Zhou Taobao Mall [luat.taobao.com](https://luat.taobao.com)
 * Hizhou Mall ![](luatos_shop.jpg)
