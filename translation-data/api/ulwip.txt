@@ -32,6 +32,10 @@ The callback function accepts zbuff as an argument, and the default
 Address, which can be left blank when obtaining only
 地址, 子网掩码, 网关地址
 address, subnet mask, gateway address
+如果data是zbuff, len默认是zbuff的used, 对string无效
+If data is zbuff, len is used of zbuff by default, which is invalid for string.
+如果data是zbuff, offset为数据起始位置, 默认是0, 对string无效
+If data is zbuff, offset is the starting position of data, the default value is 0, which is invalid for string.
 子网掩码, 仅获取时可以不填
 Subnet mask, which can be left blank when only obtaining
 将netif注册到luatos socket中
@@ -42,6 +46,8 @@ Set the default network card
 Adapted
 应用示例
 Application example
+开发中, 请关注
+In development, please pay attention
 当前状态
 Current Status
 往netif输入数据

@@ -483,6 +483,7 @@
 <li class="toctree-l2"><a class="reference internal" href="mlx90640.html">mlx90640 - infrared temperature measurement(MLX90640)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mobile.html">mobile - Cellular Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mqtt.html">mqtt - mqtt Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="natp.html">natp - Network Address Port Translation (under development)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nes.html">nes - nes Simulator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nimble.html">nimble - Bluetooth BLE library (nimble version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="onewire.html">onewire - single bus protocol driver</a></li>
@@ -750,6 +751,8 @@
 <span class="cm">1. Air601 The wifi module of is used as the controlled terminal to send and receive MAC packets through UART/SPI to realize the function of Air780E/Air780EP integrated wifi module</span>
 <span class="cm">2. Use Ethernet modules such as W5500/CH395/ENC28J60 to control the mac packet sending and receiving in the user's lua code and integrate it into the luatos socket framework</span>
 <span class="cm">3. Through the Bluetooth module, integrated lowpan6</span>
+
+<span class="cm">-- In development, please pay attention https://github.com/wendal/xt804-spinet</span>
 <span class="cm">]]</span>
 </pre></div>
 </div>
@@ -883,8 +886,8 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="ulwip-input-adapter-index-data">
-<h2>ulwip.input(adapter_index, data)<a class="headerlink" href="#ulwip-input-adapter-index-data" title="Permalink to this headline">#</a></h2>
+<section id="ulwip-input-adapter-index-data-len-offset">
+<h2>ulwip.input(adapter_index, data, len, offset)<a class="headerlink" href="#ulwip-input-adapter-index-data-len-offset" title="Permalink to this headline">#</a></h2>
 <p>Enter data to netif</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -897,8 +900,14 @@
 <tr class="row-even"><td><p>int</p></td>
 <td><p>adapter_index Adapter Number</p></td>
 </tr>
-<tr class="row-odd"><td><p>string</p></td>
+<tr class="row-odd"><td><p>string/userdata</p></td>
 <td><p>data Data entered</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>If data is zbuff, len is used of zbuff by default, which is invalid for string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>If data is zbuff, offset is the starting position of data, the default value is 0, which is invalid for string.</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1103,7 +1112,7 @@
 <li><a class="reference internal" href="#ulwip-setup-adapter-index-mac-output-lua-ref-opts">ulwip.setup(adapter_index, mac, output_lua_ref, opts)</a></li>
 <li><a class="reference internal" href="#ulwip-updown-adapter-index-up">ulwip.updown(adapter_index, up)</a></li>
 <li><a class="reference internal" href="#ulwip-link-adapter-index-up">ulwip.link(adapter_index, up)</a></li>
-<li><a class="reference internal" href="#ulwip-input-adapter-index-data">ulwip.input(adapter_index, data)</a></li>
+<li><a class="reference internal" href="#ulwip-input-adapter-index-data-len-offset">ulwip.input(adapter_index, data, len, offset)</a></li>
 <li><a class="reference internal" href="#ulwip-dhcp-adapter-index-up">ulwip.dhcp(adapter_index, up)</a></li>
 <li><a class="reference internal" href="#ulwip-ip-adapter-index-ip-netmask-gw">ulwip.ip(adapter_index, ip, netmask, gw)</a></li>
 <li><a class="reference internal" href="#ulwip-reg-adapter-index">ulwip.reg(adapter_index)</a></li>

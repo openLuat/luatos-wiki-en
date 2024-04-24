@@ -24,6 +24,8 @@ Application example:
 1. Air601 The wifi module of is used as the controlled terminal to send and receive MAC packets through UART/SPI to realize the function of Air780E/Air780EP integrated wifi module
 2. Use Ethernet modules such as W5500/CH395/ENC28J60 to control the mac packet sending and receiving in the user's lua code and integrate it into the luatos socket framework
 3. Through the Bluetooth module, integrated lowpan6
+
+-- In development, please pay attention https://github.com/wendal/xt804-spinet
 ]]
 
 ```
@@ -124,7 +126,7 @@ Set physical link status for netif
 
 ---
 
-## ulwip.input(adapter_index, data)
+## ulwip.input(adapter_index, data, len, offset)
 
 
 
@@ -135,7 +137,9 @@ Enter data to netif
 |Incoming Value Type | Explanation|
 |-|-|
 |int|adapter_index Adapter Number|
-|string|data Data entered|
+|string/userdata|data Data entered|
+|int|If data is zbuff, len is used of zbuff by default, which is invalid for string.|
+|int|If data is zbuff, offset is the starting position of data, the default value is 0, which is invalid for string.|
 
 **Return Value**
 
