@@ -2,6 +2,8 @@
 The following mappings are default values and are currently not supported to be configurable via mcu.iomux
 下列映射是默认值, 支持通过 `mcu.altfun` 配置
 The following mappings are default and supported through 'mcu.altfun' configuration
+下列映射是默认值, 支持通过 `mcu.iomux` 配置
+The following mappings are default and supported through 'mcu.iomux' configuration
 下列映射是默认值, 暂不支持其他配置项
 The following mappings are default values and other configuration items are not supported.
 下列映射是默认值, 通过 `mcu.altfun` 可配置
@@ -22,6 +24,8 @@ Host output | GPIO13 | 28 | Note conflict with UART2
 Host output | GPIO9 | 24 | conflicts with I2C1
 也能刷机,但需要用量产工具刷, LuaTools暂不支持通过UART给Air780EP/Air780EPV刷机
 Can also brush the machine, but need to use the amount of production tool brush, LuaTools temporarily does not support the Air780EP/Air780EPV brush through UART
+云编译和mcu.altfun函数可以调整部分复用关系, 请查阅链接 [mcu库的文档
+Cloud compilation and mcu.altfun function can adjust part of the reuse relationship, please refer to the document linked to [mcu library
 云编译和mcu.iomux函数可以调整部分复用关系, 请查阅链接 [mcu库的文档
 Cloud compilation and mcu.iomux function can adjust part of the reuse relationship, please refer to the document linked to [mcu library
 仅支持输入和中断| USB的VBUS, 检测USB是否是插入状态
@@ -136,6 +140,8 @@ Description
 When calling the API of pwm library, fill in' software channel id', not GPIO number, not hardware channel number
 软件通道id|实际硬件通道|对应的GPIO|对应的PAD|备注
 software channel id | actual hardware channel | corresponding GPIO | corresponding PAD | remarks
+通过[mcu.altfun函数](https://wiki.luatos.org/api/mcu.html)可以修改部分映射
+Part of the mapping can be modified by [mcu.altfun function](https://wiki.luatos.org/api/mcu.html)
 通过[mcu.iomux函数](https://wiki.luatos.org/api/mcu.html)可以修改部分映射
 [mcu.iomux function](https://wiki.luatos.org/api/mcu.html) can modify part of the mapping
 非wakeup的普通GPIO, 是不支持休眠唤醒的

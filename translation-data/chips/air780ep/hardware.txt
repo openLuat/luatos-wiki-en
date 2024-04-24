@@ -1,0 +1,12 @@
+屏幕
+Screen
+开发板配套的硬件型号
+Hardware model of the development board
+摄像头分2种, 看看引脚的标识, V1为bf30a2, V2为
+There are 2 kinds of cameras. Look at the pin identification. V1 is bf30a2 and V2 is
+更多模块硬件资料请前往
+For more module hardware information, please go
+硬件资料
+Hardware Data
+麦克风, 第一批开发板的MIC引脚是错误的, 正负极需要调换
+Microphone, the MIC pin of the first batch of development boards is wrong, and the positive and negative poles need to be replaced.

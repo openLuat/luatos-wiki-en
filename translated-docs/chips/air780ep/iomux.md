@@ -2,12 +2,12 @@
 
 **This document describes the LuatOS and CSDK perspectives**
 
-1. [mcu.iomux function](https://wiki.luatos.org/api/mcu.html) can modify part of the mapping.
+1. Part of the mapping can be modified by [mcu.altfun function](https://wiki.luatos.org/api/mcu.html).
 2. The external pin layout of different modules is different, but the' PAD(paddr)'value is the same. to correspond to the "PIN/GPIO correspondence table" document, the document can be found in [air780ep.cn](https://air780ep.cn)
 3. For AT firmware, this document is meaningless, please ignore it.
-4. Cloud compilation and mcu.iomux function can adjust part of the reuse relationship, please refer to the document linked to [mcu library](https://wiki.luatos.org/api/mcu.html)
+4. Cloud compilation and mcu.altfun function can adjust part of the reuse relationship, please refer to the document linked to [mcu library](https://wiki.luatos.org/api/mcu.html)
 5. If SIM2 is used, it will take up 4 IO(gpio4/5/6/23)
-6. `mcu.altfun` The function needs to be used with GPIO multiplexing table. Find the PDF document of GPIO in the table of hardware data and homepage of [air780ep.cn](https://air780ep.cn)
+6. `mcu.iomux` The function needs to be used with GPIO multiplexing table. Find the PDF document of GPIO in the table of hardware data and homepage of [air780ep.cn](https://air780ep.cn)
 
 ## PWM Description
 
@@ -34,7 +34,7 @@ physics uart has 4(0/1/2/3)
 2. uart1 is the primary serial port (MAIN_TX/MAIN_RX), recommended
 3. uart2 It is a serial port(AUX_TX/AUX_RX)
 4. uart3 Is a standby serial port, no default function
-5. The following mappings are default and supported through 'mcu.altfun' configuration
+5. The following mappings are default and supported through 'mcu.iomux' configuration
 6. Release is not currently supported uart0
 
 |Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks|
