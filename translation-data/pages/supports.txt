@@ -10,6 +10,8 @@ Enterprises please contact sales staff to build a group
 Satellite positioning: 182970020, positioning product line, Air5xx series
 合宙商城
 Hizhou Mall
+合宙商城 ![合宙商城
+He Zhou Mall! [Hizhou Mall
 合宙淘宝商城
 He Zhou Taobao Mall
 地址
@@ -20,12 +22,16 @@ Strongly recommend, long-term manned, answer every question
 Current recommend: LuatOS 10 Group
 技术支持
 Technical Support
+技术杂谈
+Technical Miscellaneous Talks
 抖音
 Tiktok
 拼多多
 Spell a lot
 社区(强烈推荐
 community (strongly recommend
+群
+Group
 群: 1027923658 , 面向iRTU, 透传固件
 Group: 1027923658, for iRTU, transparent firmware
 群: 1061642968 (已满), 面向soc/mcu产品线, LuaTools, 合宙Web服务反馈
@@ -36,6 +42,8 @@ Group: 649926645 (full), for LuatIDE, 2G/4G product line
 Group: 827963649 (full), for soc/mcu product line, LuaTools, full Web service feedback
 群: 877164555  (已满), 主要面向 2G/4G 产品线, 例如
 Group: 877164555 (full), mainly for 2G/4G product lines, for example
+群支持(不推荐, 不区分具体产品线
+Group support (no recommend, no distinction between specific product lines
 群支持(不推荐了
 group support (no recommend
 请按需加群, 管理员都一样, 都会积极解答问题, 不必重复加

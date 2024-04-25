@@ -10,6 +10,8 @@ Cloud Compilation](https://wiki.luatos.org/develop/compile/Cloud_compilation.htm
 Cloud compilation](https://wiki.luatos.org/develop/compile/Cloud_compilation.html) support Air101/Air103/Air105/ESP32 series/Air780E series
 内网穿透协议
 intranet penetration protocol
+最新及历史固件,包括2G/4G/wifi等模组
+Latest and historical firmware, including 2G/4G/wifi and other modules
 历史固件,包括2G/4G/wifi等模组
 Historical firmware, including 2G/4G/wifi and other modules
 历史固件,常用工具及其历史版本下载
@@ -42,6 +44,8 @@ Tool Class
 Download common tools and drivers
 底层固件功能可选编译系统
 The underlying firmware function optional compilation system
+点击访问 [合宙云盘
+Click to visit [Heshou Cloud Disk
 直驱](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html) 适合不带串口芯片的简洁版ESP32C3开发板
 Direct Drive](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html) Suitable for Simplified ESP32C3 Development Board without Serial Chip
 看看电池能用多久](/_static/tools/psmplus/index.html) 合宙PSM+超低功耗

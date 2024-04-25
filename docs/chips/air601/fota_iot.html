@@ -882,8 +882,9 @@
 <section id="xt804-programmes-such-air601-air101-air103">
 <h3>XT804 Programmes, such Air601,Air101,Air103<a class="headerlink" href="#xt804-programmes-such-air601-air101-air103" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
-<li><p>Upgrade script, select in the production folder <code class="docutils literal notranslate"><span class="pre">.bin</span></code></p></li>
-<li><p>If the FOTA function is enabled at the bottom layer, select the ‘.fota’ file, change the suffix and upload it, and remember to change the “firmware name” and “version number”.”</p></li>
+<li><p>For the upgrade script, select ‘.bin’ in the production folder. The firmware enables OTA function and will use the file system to store the upgrade package.</p></li>
+<li><p>If the FOTA function is enabled at the bottom layer, select the ‘.fota’ file, change the suffix and upload it. remember to change the “firmware name” and “version number” and use the exclusive FOTA area to store the upgrade package.</p></li>
+<li><p>if you only upgrade the underlying script and the firmware has the FOTA function enabled, you can select the ‘.sota’ file, change the suffix to. bin and upload it to the iot platform, but it is usually not required.</p></li>
 </ol>
 <p>Note that the default firmware released is without FOTA, because it takes up a lot of space and there are few libraries that can be enabled.</p>
 <p>if you really need the fota function, please compile a copy</p>

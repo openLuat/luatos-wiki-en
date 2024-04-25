@@ -36,6 +36,8 @@ The file name of the upgrade file can be started casually, such as 123.bin, as l
 What is the upgrade process?
 升级脚本, 选量产文件夹里的
 Upgrade script, select in the production folder
+升级脚本, 选量产文件夹里的 `.bin`, 固件启用OTA功能可用, 会使用文件系统存放升级包
+For the upgrade script, select '.bin' in the production folder. The firmware enables OTA function and will use the file system to store the upgrade package.
 升级脚本和底层, 准备新老两个soc文件, 然后在菜单里选择 "SoC差分升级工具", 生成新的`.bin`文件, 然后上传
 Upgrade the script and the bottom layer, prepare the new and old SOC files, then select "SoC differential upgrade tool" in the menu to generate a new '.bin' file, and then upload it
 参数`firmware_name`, "合宙iot平台"上叫"固件名", 在lua中会用一个比较诡异的方式合成
@@ -76,8 +78,12 @@ What a trouble, then I will build my own OTA server
 If> 299, it means there is no need to upgrade and exit directly.
 如果升级失败提示`27 无效的固件`, 首先检查的就是 `firmware_name` 参数, 然后是 `version` 参数
 If the upgrade fails to prompt '27 invalid firmware', the first thing to check is the' firmware_name 'parameter, then the' version' parameter
+如果只升级底层脚本, 固件启用了FOTA功能, 可以选 `.sota` 文件, 后缀改成.bin后上传到iot平台, 但通常不太需要
+if you only upgrade the underlying script and the firmware has the FOTA function enabled, you can select the '.sota' file, change the suffix to. bin and upload it to the iot platform, but it is usually not required.
 如果底层启用了FOTA功能, 选择 `.fota` 文件, 改后缀之后上传, 记得改 "固件名" 和 "版本号
 If the FOTA function is enabled at the bottom layer, select the '.fota' file, change the suffix and upload it, and remember to change the "firmware name" and "version number".
+如果底层启用了FOTA功能, 选择 `.fota` 文件, 改后缀之后上传, 记得改 "固件名" 和 "版本号", 使用独占的FOTA区域存放升级包
+If the FOTA function is enabled at the bottom layer, select the '.fota' file, change the suffix and upload it. remember to change the "firmware name" and "version number" and use the exclusive FOTA area to store the upgrade package.
 如果确需fota功能, 请云编译一份
 if you really need the fota function, please compile a copy
 对升级文件再说几句

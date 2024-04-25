@@ -144,8 +144,9 @@ Reviewing these four parameters again:
 
 ### XT804 Programmes, such Air601,Air101,Air103
 
-1. Upgrade script, select in the production folder `.bin`
-2. If the FOTA function is enabled at the bottom layer, select the '.fota' file, change the suffix and upload it, and remember to change the "firmware name" and "version number"."
+1. For the upgrade script, select '.bin' in the production folder. The firmware enables OTA function and will use the file system to store the upgrade package.
+2. If the FOTA function is enabled at the bottom layer, select the '.fota' file, change the suffix and upload it. remember to change the "firmware name" and "version number" and use the exclusive FOTA area to store the upgrade package.
+3. if you only upgrade the underlying script and the firmware has the FOTA function enabled, you can select the '.sota' file, change the suffix to. bin and upload it to the iot platform, but it is usually not required.
 
 Note that the default firmware released is without FOTA, because it takes up a lot of space and there are few libraries that can be enabled.
 

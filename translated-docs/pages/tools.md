@@ -2,9 +2,9 @@
 
 ## Historical firmware, common tools and their historical versions
 
-[He Zhou Cloud Pan](https://pan.air32.cn/s/DJTr)
+Click to visit [Heshou Cloud Disk](https://pan.air32.cn/s/DJTr)
 
-* Historical firmware, including 2G/4G/wifi and other modules
+* Latest and historical firmware, including 2G/4G/wifi and other modules
 * LuaTools Download of historical versions
 * Download common tools and drivers
 
