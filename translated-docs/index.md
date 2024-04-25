@@ -77,7 +77,6 @@ Look at the functions of the chips supported by LuatOS at this stage and choose 
 |[Air601](chips/air601/index) |wifi/bt Chip | Support wifi and Bluetooth communication|
 |[ESP32](chips/esp32c3/index) Series | (wifi/bt chip) | ESP32C3/ESP32S3 etc|
 |[PC](https://gitee.com/openLuat/luatos-soc-pc) |PC version of LuatOS | available as an emulator|
-|[win32](chips/win32) |win32 version of LuatOS | available as an emulator|
 |[RT-Thread](https://github.com/openLuat/luatos-soc-rtt) |memory needs to meet minimum requirements | merged into rtt main line|
 |[Air302](chips/air302/index) |nbiot Module| EOL|
 |[Air640w](chips/air640w/index) |wifi Module|  EOL|
