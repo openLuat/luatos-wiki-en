@@ -19,8 +19,15 @@ This library has its own demo,[click this link to view audio's demo example](htt
 |audio.SHUTDOWN|number|PM Mode shutdown mode, PA power off, configurable codec power off state, unconfigurable codec power off, system can enter low power consumption state|
 |audio.POWEROFF|number|PM Mode power-off mode, PA power-off, codec power-off, system can enter low power consumption state|
 |audio.PCM|number|PCM format, I .e. raw ADC data|
+|audio.MP3|number|MP3 Format|
+|audio.WAV|number|WAV Format|
+|audio.AMR|number|AMR_NB Format|
+|audio.AMR_NB|number|AMR_NB Format|
+|audio.AMR_WB|number|AMR_WB Format|
 |audio.MORE_DATA|number|audio.on The value of the parameter passed in the callback function, indicating that after a piece of data is played at the bottom layer, more data can be passed in.|
 |audio.DONE|number|audio.on The value of the parameter passed in by the callback function indicates that the bottom layer has played all the data.|
+|audio.RECORD_DATA|number|audio.on The value of the parameter passed in the callback function, which represents the recording data.|
+|audio.RECORD_DONE|number|audio.on The value of the parameter passed in the callback function, indicating that the recording is complete.|
 |audio.BUS_DAC|number|Hardware output bus, DAC type|
 |audio.BUS_I2S|number|Hardware output bus, I2S type|
 |audio.BUS_SOFT_DAC|number|Hardware output bus, software mode DAC type|
@@ -36,7 +43,7 @@ Start a multimedia channel ready to play audio
 
 |Incoming Value Type | Explanation|
 |-|-|
-|int|Multimedia playback channel number, 0 or 1|
+|int|Multimedia playback channel number|
 |int|Audio Format|
 |int|Number of sound channels|
 |int|Sampling frequency|
@@ -53,6 +60,37 @@ Start a multimedia channel ready to play audio
 
 ```lua
 audio.start(0, audio.PCM, 1, 16000, 16)
+
+```
+
+---
+
+## audio.record(id, record_type, record_time, amr_quailty, path)
+
+
+
+Recording
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|id             Multimedia playback channel number|
+|int|record_type    Recording file audio format, support audio.AMR audio.PCM |
+|int|record_time    Recording Duration Unit Seconds|
+|int|amr_quailty    Quality, effective under audio.AMR|
+|string|path        The path of the recording file, which is optional. If it is not specified, it will not be saved. The original PCM data can be processed in the audio.on callback function.|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|boolean|Returns true on success, otherwise false|
+
+**Examples**
+
+```lua
+err,info = audio.record(id, type, record_time, quailty, path)
 
 ```
 
@@ -141,7 +179,7 @@ audio.pause(0, false) --Recovery channel 0
 
 ---
 
-## audio.on(id, event, func)
+## audio.on(audio_id, func)
 
 
 
