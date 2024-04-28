@@ -800,8 +800,8 @@
 <p>None</p>
 </section>
 <hr class="docutils"/>
-<section id="websocket-create-adapter-url">
-<h2>websocket.create(adapter, url)<a class="headerlink" href="#websocket-create-adapter-url" title="Permalink to this headline">#</a></h2>
+<section id="websocket-create-adapter-url-keepalive">
+<h2>websocket.create(adapter, url, keepalive)<a class="headerlink" href="#websocket-create-adapter-url-keepalive" title="Permalink to this headline">#</a></h2>
 <p>websocket Client Creation</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -816,6 +816,9 @@
 </tr>
 <tr class="row-odd"><td><p>string</p></td>
 <td><p>connection strings, reference usage</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Heartbeat interval, default 60 seconds. 2024.4.28 New</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1124,7 +1127,7 @@
             <ul>
 <li><a class="reference internal" href="#">websocket - websocket Client</a><ul>
 <li><a class="reference internal" href="#wsc-debug-onoff">wsc:debug(onoff)</a></li>
-<li><a class="reference internal" href="#websocket-create-adapter-url">websocket.create(adapter, url)</a></li>
+<li><a class="reference internal" href="#websocket-create-adapter-url-keepalive">websocket.create(adapter, url, keepalive)</a></li>
 <li><a class="reference internal" href="#wsc-on-cb">wsc:on(cb)</a></li>
 <li><a class="reference internal" href="#wsc-connect">wsc:connect()</a></li>
 <li><a class="reference internal" href="#wsc-autoreconn-reconnect-reconnect-time">wsc:autoreconn(reconnect, reconnect_time)</a></li>

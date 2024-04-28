@@ -62,7 +62,7 @@ None
 
 ---
 
-## websocket.create(adapter, url)
+## websocket.create(adapter, url, keepalive)
 
 
 
@@ -74,6 +74,7 @@ websocket Client Creation
 |-|-|
 |int|The adapter serial number can only be socket.ETH0, socket.STA, socket.AP. If it is not filled in, the platform's own method will be selected, and then the last registered adapter will be selected.|
 |string|connection strings, reference usage|
+|int|Heartbeat interval, default 60 seconds. 2024.4.28 New|
 
 **Return Value**
 
