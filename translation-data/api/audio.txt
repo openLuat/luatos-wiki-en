@@ -66,6 +66,8 @@ Current Volume
 Recording Duration Unit Seconds
 录音
 Recording
+录音停止
+Recording Stop
 录音文件路径,可选,不指定则不保存,可在audio.on回调函数中处理原始PCM数据
 The path of the recording file, which is optional. If it is not specified, it will not be saved. The original PCM data can be processed in the audio.on callback function.
 录音文件音频格式,支持

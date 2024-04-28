@@ -920,6 +920,41 @@
 </div>
 </section>
 <hr class="docutils"/>
+<section id="audio-recordstop-id">
+<h2>audio.recordStop(id)<a class="headerlink" href="#audio-recordstop-id" title="Permalink to this headline">#</a></h2>
+<p>Recording Stop</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>id         Multimedia playback channel number</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Returns true on success, otherwise false</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">audio</span><span class="p">.</span><span class="n">recordStop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="audio-write-id-data">
 <h2>audio.write(id, data)<a class="headerlink" href="#audio-write-id-data" title="Permalink to this headline">#</a></h2>
 <p>Write audio data to a multimedia channel</p>
@@ -1544,6 +1579,7 @@
 <li><a class="reference internal" href="#constant">Constant</a></li>
 <li><a class="reference internal" href="#audio-start-id-audio-format-num-channels-sample-rate-bits-per-sample-is-signed">audio.start(id, audio_format, num_channels, sample_rate, bits_per_sample, is_signed)</a></li>
 <li><a class="reference internal" href="#audio-record-id-record-type-record-time-amr-quailty-path">audio.record(id, record_type, record_time, amr_quailty, path)</a></li>
+<li><a class="reference internal" href="#audio-recordstop-id">audio.recordStop(id)</a></li>
 <li><a class="reference internal" href="#audio-write-id-data">audio.write(id, data)</a></li>
 <li><a class="reference internal" href="#audio-stop-id">audio.stop(id)</a></li>
 <li><a class="reference internal" href="#audio-pause-id-pause">audio.pause(id, pause)</a></li>

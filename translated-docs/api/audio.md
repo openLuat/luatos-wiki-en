@@ -96,6 +96,33 @@ err,info = audio.record(id, type, record_time, quailty, path)
 
 ---
 
+## audio.recordStop(id)
+
+
+
+Recording Stop
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|id         Multimedia playback channel number|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|boolean|Returns true on success, otherwise false|
+
+**Examples**
+
+```lua
+audio.recordStop(0)
+
+```
+
+---
+
 ## audio.write(id, data)
 
 
