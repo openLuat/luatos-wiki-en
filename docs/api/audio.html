@@ -888,7 +888,7 @@
 <td><p>id             Multimedia playback channel number</p></td>
 </tr>
 <tr class="row-odd"><td><p>int</p></td>
-<td><p>record_type    Recording file audio format, support audio.AMR audio.PCM</p></td>
+<td><p>record_type    Recording audio format, supporting audio.AMR audio.PCM (some platforms support audio.AMR_WB)</p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>record_time    Recording Duration Unit Seconds</p></td>
@@ -898,6 +898,9 @@
 </tr>
 <tr class="row-even"><td><p>string</p></td>
 <td><p>path        The path of the recording file, which is optional. If it is not specified, it will not be saved. The original PCM data can be processed in the audio.on callback function.</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>record_callback_time    If the recording file path is not specified, the callback duration of a single recording is 100ms. Default 1, both 100ms</p></td>
 </tr>
 </tbody>
 </table></div>

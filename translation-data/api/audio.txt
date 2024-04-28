@@ -1,3 +1,5 @@
+不指定录音文件路径时，单次录音回调时长，单位是100ms。默认1，既
+If the recording file path is not specified, the callback duration of a single recording is 100ms. Default 1, both
 休眠控制(一般会自动调用不需要手动执行
 Sleep control (usually called automatically without manual execution
 休眠模式
@@ -72,6 +74,8 @@ Recording Stop
 The path of the recording file, which is optional. If it is not specified, it will not be saved. The original PCM data can be processed in the audio.on callback function.
 录音文件音频格式,支持
 Recording file audio format, support
+录音音频格式,支持 audio.AMR audio.PCM (部分平台支持
+Recording audio format, supporting audio.AMR audio.PCM (some platforms support
 往一个多媒体通道写入音频数据
 Write audio data to a multimedia channel
 总线类型, 例如

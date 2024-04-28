@@ -76,10 +76,11 @@ Recording
 |Incoming Value Type | Explanation|
 |-|-|
 |int|id             Multimedia playback channel number|
-|int|record_type    Recording file audio format, support audio.AMR audio.PCM |
+|int|record_type    Recording audio format, supporting audio.AMR audio.PCM (some platforms support audio.AMR_WB)|
 |int|record_time    Recording Duration Unit Seconds|
 |int|amr_quailty    Quality, effective under audio.AMR|
 |string|path        The path of the recording file, which is optional. If it is not specified, it will not be saved. The original PCM data can be processed in the audio.on callback function.|
+|int|record_callback_time    If the recording file path is not specified, the callback duration of a single recording is 100ms. Default 1, both 100ms|
 
 **Return Value**
 
