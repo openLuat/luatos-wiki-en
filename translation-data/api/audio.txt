@@ -66,6 +66,8 @@ Current mic volume
 Current Volume
 录制时长 单位秒
 Recording Duration Unit Seconds
+录制时长 单位秒,可选，默认0即表示一直录制
+Recording duration in seconds. Optional. The default value is 0.
 录音
 Recording
 录音停止
