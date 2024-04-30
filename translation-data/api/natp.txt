@@ -1,3 +1,5 @@
+两次check之间没有数据包的映射记录,会被清理
+There is no data packet mapping record between the two check, it will be cleaned up
 传入值类型|解释
 Incoming Value Type | Explanation
 例子

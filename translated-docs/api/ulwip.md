@@ -244,3 +244,37 @@ register netif to luatos socket
 
 ---
 
+## ulwip.xt804_xfer(spi_id, cs_pin, addr, zbuff, len, offset, auto_seek, auto_len)
+
+
+
+Operation XT804 for SPI fast transceiver
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|spi_id SPI The ID number|
+|int|cs_pin CS GPIO number of the foot|
+|int|addr register address|
+|zbuff|zbuff Object|
+|int|len Length|
+|int|offset offset, default buff:used()|
+|boolean|auto_seek Whether to move offset automatically, default false|
+|int|auto_len Automatic slice length, automatically selected by register by default|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|nil|No return value|
+
+**Examples**
+
+```lua
+-- This function is an auxiliary function
+
+```
+
+---
+

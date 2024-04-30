@@ -1050,6 +1050,62 @@
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Reference ulwip.setup</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="ulwip-xt804-xfer-spi-id-cs-pin-addr-zbuff-len-offset-auto-seek-auto-len">
+<h2>ulwip.xt804_xfer(spi_id, cs_pin, addr, zbuff, len, offset, auto_seek, auto_len)<a class="headerlink" href="#ulwip-xt804-xfer-spi-id-cs-pin-addr-zbuff-len-offset-auto-seek-auto-len" title="Permalink to this headline">#</a></h2>
+<p>Operation XT804 for SPI fast transceiver</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>spi_id SPI The ID number</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>cs_pin CS GPIO number of the foot</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>addr register address</p></td>
+</tr>
+<tr class="row-odd"><td><p>zbuff</p></td>
+<td><p>zbuff Object</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>len Length</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>offset offset, default buff:used()</p></td>
+</tr>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>auto_seek Whether to move offset automatically, default false</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>auto_len Automatic slice length, automatically selected by register by default</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This function is an auxiliary function</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -1118,6 +1174,7 @@
 <li><a class="reference internal" href="#ulwip-dhcp-adapter-index-up">ulwip.dhcp(adapter_index, up)</a></li>
 <li><a class="reference internal" href="#ulwip-ip-adapter-index-ip-netmask-gw">ulwip.ip(adapter_index, ip, netmask, gw)</a></li>
 <li><a class="reference internal" href="#ulwip-reg-adapter-index">ulwip.reg(adapter_index)</a></li>
+<li><a class="reference internal" href="#ulwip-xt804-xfer-spi-id-cs-pin-addr-zbuff-len-offset-auto-seek-auto-len">ulwip.xt804_xfer(spi_id, cs_pin, addr, zbuff, len, offset, auto_seek, auto_len)</a></li>
 </ul>
 </li>
 </ul>

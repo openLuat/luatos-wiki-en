@@ -83,7 +83,7 @@ None
 **Examples**
 
 ```lua
--- Need to be called periodically, once every 30 seconds
+-- There is no data packet mapping record between the two check, it will be cleaned up
 
 ```
 
