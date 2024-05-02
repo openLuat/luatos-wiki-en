@@ -162,4 +162,4 @@ Yes, but you need to know some skills, such:
 
 For the module, the process of OTA/FOTA is to request URL, continue to download data and verify it if it is 200, and exit if it is not 200..
 
-Can't understand? Forget it
+Can't read it? Then you need money ability.

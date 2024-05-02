@@ -14,12 +14,18 @@ Hizhou Mall
 He Zhou Mall! [Hizhou Mall
 合宙淘宝商城
 He Zhou Taobao Mall
+回复周期在1-2个工作日, 不保证回复
+The response cycle is 1-2 working days, and no response is guaranteed.
 地址
 Address
+开发板及模块购买途径
+Development board and module purchase path
 强烈推荐, 长期有人值守, 有问必答
 Strongly recommend, long-term manned, answer every question
 当前推荐: LuatOS 10群
 Current recommend: LuatOS 10 Group
+或联系销售 [合宙官网
+Or contact sales [Hizhou official website
 技术支持
 Technical Support
 技术杂谈
@@ -28,6 +34,12 @@ Technical Miscellaneous Talks
 Tiktok
 拼多多
 Spell a lot
+提交
+Submission
+提交前请先搜索是否已有相同问题, 避免重复提交
+Please search for the same problem before submitting to avoid repeated submission.
+点击访问
+Click to visit
 社区(强烈推荐
 community (strongly recommend
 群
@@ -46,7 +58,15 @@ Group: 877164555 (full), mainly for 2G/4G product lines, for example
 Group support (no recommend, no distinction between specific product lines
 群支持(不推荐了
 group support (no recommend
+请按需加群, 不必重复加
+Please add groups as required, no need to add them repeatedly.
 请按需加群, 管理员都一样, 都会积极解答问题, 不必重复加
 Please add groups as needed. Administrators are all the same and will actively answer questions. There is no need to add them repeatedly.
 购买途径
 Purchase route
+邮件地址
+Email Address
+邮件技术支持
+Mail Technical Support
+邮件标题请简明说明问题, 邮件内容请尽量详细, 包括但不限于: 模块类型,板子照片, 代码片段, 完整日志, 固件文件, 硬件原理图等
+Please briefly explain the problem in the mail title, and please try to be as detailed as possible, including but not limited to: module type, board photo, code snippet, complete log, firmware file, hardware schematic diagram, etc.

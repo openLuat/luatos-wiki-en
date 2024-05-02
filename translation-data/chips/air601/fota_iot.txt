@@ -8,6 +8,8 @@ After selecting the file in the upload interface, the "firmware name" and "versi
 The "firmware_name" parameter reported must be consistent with the "firmware name" in the upgrade package upload interface, otherwise the "27 invalid firmware" will be reported.
 下面一步一步讲
 Step by step to speak below
+不能看懂? 那你需要钞能力了
+Can't read it? Then you need money ability.
 不能看懂? 那还是算了吧
 Can't understand? Forget it
 了解如何处理http参数
