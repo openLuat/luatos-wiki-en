@@ -98,4 +98,4 @@
 |[xxtea](xxtea.md)|`xxtea encryption and decryption `|Y|Y|Y|Y|X|Y|Y|
 |[ymodem](ymodem.md)|`ymodem Agreement`|Y|Y|Y|Y|Y|Y|Y|
 |[zbuff](zbuff.md)|`c Memory Data Manipulation Library`|Y|Y|Y|Y|Y|Y|Y|
-|[zlib](zlib.md)|`zlib Compression/Decompression (Obsolete)`|X|X|Y|Y|Y|X|X|
+|[zlib](zlib.md)|`zlib Compression/Decompression (Obsolete)`|X|X|X|X|Y|X|X|
