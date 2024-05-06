@@ -28,6 +28,8 @@ Multimedia
 Adapted
 开启关闭通话录音功能，false或者nil关闭，其他开启
 Turn on and turn off the call recording function, false or nil turn off, others turn on
+当前仅Air780EPV支持VoLTE通话功能
+Currently only Air780EPV support for VoLTE calls
 录音通话
 Recorded call
 成功与否
