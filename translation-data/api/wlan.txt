@@ -122,12 +122,16 @@ Note that the premise is that ssid and or password have been transmitted after t
 Note that when calling this AP, if the wifi mode is STATION, it will automatically switch
 混合模式, 做AP又做
 Mixed mode, do AP and do again
+特殊模式, 使用ssid和密码,本次连接指定bssid, 2024.5.7新增
+Special mode, use ssid and password, this connection specifies bssid, 2024.5.7 new
 特殊模式, 重用之前的ssid和密码,本次直接连接
 Special mode, reuse the previous ssid and password, this direct connection
 用法请查阅 wlan.scan() 函数
 Please refer to wlan.scan() function for usage
 的
 of
+的bssid,可选,必须是6字节
+bssid, optional, must be 6 bytes
 的password,可选
 password of, optional
 的SSID,必填

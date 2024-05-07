@@ -862,8 +862,8 @@
 <p>None</p>
 </section>
 <hr class="docutils"/>
-<section id="wlan-connect-ssid-password-auto-reconnect">
-<h2>wlan.connect(ssid, password, auto_reconnect)<a class="headerlink" href="#wlan-connect-ssid-password-auto-reconnect" title="Permalink to this headline">#</a></h2>
+<section id="wlan-connect-ssid-password-auto-reconnect-bssid">
+<h2>wlan.connect(ssid, password, auto_reconnect, bssid)<a class="headerlink" href="#wlan-connect-ssid-password-auto-reconnect-bssid" title="Permalink to this headline">#</a></h2>
 <p>As a STATION, connect to the specified AP</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -881,6 +881,9 @@
 </tr>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>0 Turn off automatic reconnect, 1 turn on automatic reconnect. Auto reconnect is currently forced on</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>AP bssid, optional, must be 6 bytes</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -905,6 +908,10 @@
 <span class="c1">-- Special mode, reuse the previous ssid and password, this direct connection</span>
 <span class="c1">-- Note that the premise is that ssid and or password have been transmitted after this power-on, otherwise it will fail.</span>
 <span class="n">wlan</span><span class="p">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="c1">-- Special mode, use ssid and password, this connection specifies bssid, 2024.5.7 new</span>
+<span class="kd">local</span> <span class="n">bssid</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">fromHex</span><span class="p">(</span><span class="s2">"00182946365f"</span><span class="p">)</span>
+<span class="n">wlan</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"myap"</span><span class="p">,</span> <span class="s2">"12345678"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bssid</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1424,7 +1431,7 @@
 <li><a class="reference internal" href="#wlan-init">wlan.init()</a></li>
 <li><a class="reference internal" href="#wlan-setmode-mode">wlan.setMode(mode)</a></li>
 <li><a class="reference internal" href="#wlan-ready">wlan.ready()</a></li>
-<li><a class="reference internal" href="#wlan-connect-ssid-password-auto-reconnect">wlan.connect(ssid, password, auto_reconnect)</a></li>
+<li><a class="reference internal" href="#wlan-connect-ssid-password-auto-reconnect-bssid">wlan.connect(ssid, password, auto_reconnect, bssid)</a></li>
 <li><a class="reference internal" href="#wlan-disconnect">wlan.disconnect()</a></li>
 <li><a class="reference internal" href="#wlan-scan">wlan.scan()</a></li>
 <li><a class="reference internal" href="#wlan-scanresult">wlan.scanResult()</a></li>

@@ -110,7 +110,7 @@ None
 
 ---
 
-## wlan.connect(ssid, password, auto_reconnect)
+## wlan.connect(ssid, password, auto_reconnect, bssid)
 
 
 
@@ -123,6 +123,7 @@ As a STATION, connect to the specified AP
 |string|AP of ssid|
 |string|AP password of, optional|
 |int|0 Turn off automatic reconnect, 1 turn on automatic reconnect. Auto reconnect is currently forced on|
+|string|AP bssid, optional, must be 6 bytes|
 
 **Return Value**
 
@@ -141,6 +142,10 @@ wlan.connect("myap")
 -- Special mode, reuse the previous ssid and password, this direct connection
 -- Note that the premise is that ssid and or password have been transmitted after this power-on, otherwise it will fail.
 wlan.connect()
+
+-- Special mode, use ssid and password, this connection specifies bssid, 2024.5.7 new
+local bssid = string.fromHex("00182946365f")
+wlan.connect("myap", "12345678", 1, bssid)
 
 ```
 
