@@ -903,6 +903,7 @@
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">tick</span> <span class="o">=</span> <span class="n">mcu</span><span class="p">.</span><span class="n">ticks</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"ticks"</span><span class="p">,</span> <span class="n">tick</span><span class="p">)</span>
+<span class="c1">-- If you need a value that will not overflow, you can use mcu.ticks32(), which was added in 2024.5.7.</span>
 </pre></div>
 </div>
 </section>
@@ -1217,6 +1218,55 @@
 <span class="n">mcu</span><span class="p">.</span><span class="n">altfun</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">GPIO</span><span class="p">,</span> <span class="mi">46</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="mcu-ticks2-mode">
+<h2>mcu.ticks2(mode)<a class="headerlink" href="#mcu-ticks2-mode" title="Permalink to this headline">#</a></h2>
+<p>Get high-precision counts</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>mode, see the following instructions</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>The return value has different meanings depending on the mode</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This function was added in 2024.5.7</span>
+<span class="c1">-- The difference with mcu.ticks() is that the underlying counter is 64bit and will not overflow in the foreseeable future</span>
+<span class="c1">-- Therefore, the value returned by this function is always incremented, and the 32bit firmware can also handle it.</span>
+
+<span class="c1">-- Mode optional values and corresponding return values</span>
+<span class="c1">-- 0: Returns the number of microseconds, divided by seconds, for example 1234567890us returns 2 values: 1234, 567890</span>
+<span class="c1">-- 1: Returns the number of milliseconds, divided by thousands of seconds, for example, 1234567890ms returns two values: 1234, 567890</span>
+<span class="c1">-- 2: Returns the number of seconds, divided into millions of seconds, for example 1234567890s returns 2 values: 1234, 567890</span>
+
+<span class="kd">local</span> <span class="n">us_h</span><span class="p">,</span> <span class="n">us_l</span> <span class="o">=</span> <span class="n">mcu</span><span class="p">.</span><span class="n">ticks2</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">ms_h</span><span class="p">,</span> <span class="n">ms_l</span> <span class="o">=</span> <span class="n">mcu</span><span class="p">.</span><span class="n">ticks2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">sec_h</span><span class="p">,</span> <span class="n">sec_l</span> <span class="o">=</span> <span class="n">mcu</span><span class="p">.</span><span class="n">ticks2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"us_h"</span><span class="p">,</span> <span class="n">us_h</span><span class="p">,</span> <span class="s2">"us_l"</span><span class="p">,</span> <span class="n">us_l</span><span class="p">)</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"ms_h"</span><span class="p">,</span> <span class="n">ms_h</span><span class="p">,</span> <span class="s2">"ms_l"</span><span class="p">,</span> <span class="n">ms_l</span><span class="p">)</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sec_h"</span><span class="p">,</span> <span class="n">sec_h</span><span class="p">,</span> <span class="s2">"sec_l"</span><span class="p">,</span> <span class="n">sec_l</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -1292,6 +1342,7 @@
 <li><a class="reference internal" href="#mcu-hardfault-mode">mcu.hardfault(mode)</a></li>
 <li><a class="reference internal" href="#mcu-iomux-type-channel-value">mcu.iomux(type, channel, value)</a></li>
 <li><a class="reference internal" href="#mcu-altfun-type-sn-pad-index-alt-fun-is-input">mcu.altfun(type, sn, pad_index, alt_fun, is_input)</a></li>
+<li><a class="reference internal" href="#mcu-ticks2-mode">mcu.ticks2(mode)</a></li>
 </ul>
 </li>
 </ul>

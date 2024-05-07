@@ -136,6 +136,7 @@ None
 ```lua
 local tick = mcu.ticks()
 print("ticks", tick)
+-- If you need a value that will not overflow, you can use mcu.ticks32(), which was added in 2024.5.7.
 
 ```
 
@@ -393,6 +394,47 @@ None
 ```lua
 mcu.altfun(mcu.GPIO, 46, 32, 1, 0)
 mcu.altfun(mcu.GPIO, 46)
+
+```
+
+---
+
+## mcu.ticks2(mode)
+
+
+
+Get high-precision counts
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|mode, see the following instructions|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|int|The return value has different meanings depending on the mode|
+
+**Examples**
+
+```lua
+-- This function was added in 2024.5.7
+-- The difference with mcu.ticks() is that the underlying counter is 64bit and will not overflow in the foreseeable future
+-- Therefore, the value returned by this function is always incremented, and the 32bit firmware can also handle it.
+
+-- Mode optional values and corresponding return values
+-- 0: Returns the number of microseconds, divided by seconds, for example 1234567890us returns 2 values: 1234, 567890
+-- 1: Returns the number of milliseconds, divided by thousands of seconds, for example, 1234567890ms returns two values: 1234, 567890
+-- 2: Returns the number of seconds, divided into millions of seconds, for example 1234567890s returns 2 values: 1234, 567890
+
+local us_h, us_l = mcu.ticks2(0)
+local ms_h, ms_l = mcu.ticks2(1)
+local sec_h, sec_l = mcu.ticks2(2)
+log.info("us_h", us_h, "us_l", us_l)
+log.info("ms_h", ms_h, "ms_l", ms_l)
+log.info("sec_h", sec_h, "sec_l", sec_l)
 
 ```
 
