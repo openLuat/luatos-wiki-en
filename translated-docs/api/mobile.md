@@ -636,11 +636,25 @@ None
 
 |return value type | explanation|
 |-|-|
-|int|Current network status, 0: the network is not registered; 1: the network is registered; 2: searching the network; 3: network registration rejected|
+|int|Current Network Status|
 
 **Examples**
 
-None
+```lua
+-- Status Description
+-- 0:Network not registered
+-- 1:Network Registered
+-- 2:searching the net
+-- 3:Network registration denied
+-- 4:Network status unknown
+-- 5:Roaming and Registered
+-- 6:Only SMS available
+-- 7:Only SMS available and roaming status
+-- 8:Emergency calls only. Note that this state is not supported domestically and the module does not support emergency calls
+
+-- It is not recommend to use this API to judge the networking status. It is recommended to use socket.localIP() to judge
+
+```
 
 ---
 
@@ -648,7 +662,7 @@ None
 
 
 
-Obtain mechanism information
+Obtain base station information
 
 **Parameters**
 
@@ -665,7 +679,7 @@ None
 ```lua
 -- Note: Starting from 2023.06.20, you need to actively request a reqCellInfo to have base station data..
 
---Sample output
+--Example output (the original data is table, and the following is the json formatted content)
 --[[
 [
     {"rsrq":-10,"rssi":-55,"cid":124045360,"mnc":17,"pci":115,"earfcn":1850,"snr":15,"rsrp":-85,"mcc":1120,"tdd":0},
@@ -733,7 +747,9 @@ None
 
 **Return Value**
 
-None
+|return value type | explanation|
+|-|-|
+|nil|No return value|
 
 **Examples**
 
@@ -778,6 +794,8 @@ local uplinkGB, uplinkB, downlinkGB, downlinkB = mobile.dataTraffic()
 -- Clear the cumulative value of uplink and downlink traffic
 mobile.dataTraffic(true, true)
 
+-- Only record the traffic after startup, reset/restart will return to zero
+
 ```
 
 ---
@@ -786,14 +804,14 @@ mobile.dataTraffic(true, true)
 
 
 
-Special network configuration, different configurations for different platforms, careful use, currently only EC618
+Network Special Configuration
 
 **Parameters**
 
 |Incoming Value Type | Explanation|
 |-|-|
 |int|configuration project, see mobile.CONF_XXX|
-|int|Configuration Value|
+|int|configuration value, determined according to the specific configured item|
 
 **Return Value**
 
@@ -804,6 +822,8 @@ Special network configuration, different configurations for different platforms,
 **Examples**
 
 ```lua
+--There are different configurations for different platforms and use them with caution. Currently, only EC618/EC718 series
+
 -- EC618 Configure the cell reselection signal difference threshold, which cannot be greater than 15dbm and can only be used in flight mode.
 mobile.flymode(0,true)
 mobile.config(mobile.CONF_RESELTOWEAKNCELL, 15)
