@@ -40,7 +40,7 @@ Set Pin Function
 |Incoming Value Type | Explanation|
 |-|-|
 |int|pin gpio Number, must be numeric|
-|any|mode Input and output mode:<br> Number 0/1 represents output mode <br>nil represents input mode <br>function represents interrupt mode|
+|any|mode Input and output mode:<br> number 0/1 represents output mode <br>nil represents input mode <br>function represents interrupt mode. if gpio.count is filled in, it is interrupt counting function, and there is no callback when interrupting|
 |int|pull pull-up pull-down mode, which can be pull-up mode gpio.PULLUP or pull-down mode gpio.PULLDOWN, or open-leak mode 0. need to be selected according to the actual hardware|
 |int|irq Interrupt trigger mode, default gpio.BOTH. interrupt triggering mode <br> rising edge gpio.RISING<br> falling edge gpio.FALLING<br> both rising and falling are triggered gpio.BOTH |
 |int|alt Multiplexing option, currently only EC618 platform needs this parameter, some GPIO can be multiplexed to different pins, you can select the multiplexing option (0 or 4) to multiplex to the corresponding pin|
@@ -74,6 +74,10 @@ gpio.setup(27, function(val)
     print("IRQ_27",val) -- Reminder, val does not represent the trigger direction, only the level at a certain point in time after the interruption
 end, gpio.PULLUP, gpio.RISING)
 
+-- Interrupt count added in 2024.5.8
+-- Set gpio7 to interrupt count. For detailed demo, see gpio/gpio_irq_count
+gpio.setup(7, gpio.count)
+
 -- alt_func Added in 2023.7.2
 -- This function is only valid for some platforms and is only used to adjust GPIO multiplexing. For other multiplexing methods, please use the mu c.iomux function
 -- The following sample code reuses the I2S_DOUT gpio18
@@ -88,7 +92,7 @@ gpio.setup(18, 0, nil, nil, 4)
 -- When the pin is in output mode, the level can be set through gpio.set()
 -- When the pin is in output mode, you will always get it through gpio.get().0
 -- The val parameter of the interrupt callback does not represent the trigger direction, but only represents the level at a certain point in time after the interrupt.
--- Yeah, Cat. 1 module, usually only AONGPIO can be triggered in both directions, and other GPIO can only be triggered in one direction
+-- Yeah, Cat. 1 module, EC618 series can only be triggered in both directions by AONGPIO, and all GPIO in other series can be triggered in both directions. Please refer to the hardware manual for details.
 -- By default, there is no anti-shake time for interruption, and the anti-shake time can be set through gpio.set_debounce(pin, 50)
 
 -- pull Additional description of parameters, pull-up/pull-down configuration
@@ -344,6 +348,33 @@ gpio.debounce(7, 100, 1)
 
 -- Turn off anti-shake, and turn off when the time is set to 0.
 gpio.debounce(7, 0)
+
+```
+
+---
+
+## gpio.count(pin)
+
+
+
+Obtain the number of gpio interrupts and clear the cumulative value, similar to the pulse count of air724.
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|gpio Number, 0~127, related to hardware|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|int|Returns the count of interrupts from the last time the number of interrupts was obtained to the current|
+
+**Examples**
+
+```lua
+log.info("irq cnt", gpio.count(10))
 
 ```
 

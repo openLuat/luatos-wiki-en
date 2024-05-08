@@ -16,6 +16,8 @@ Falling edge trigger
 The val parameter of the interrupt callback does not represent the trigger direction, but only represents the level at a certain point in time after the interrupt.
 中断触发模式,默认gpio.BOTH。中断触发模式<br>上升沿gpio.RISING<br>下降沿gpio.FALLING<br>上升和下降都触发
 Interrupt trigger mode, default gpio.BOTH. interrupt triggering mode <br> rising edge gpio.RISING<br> falling edge gpio.FALLING<br> both rising and falling are triggered
+中断计数 于2024.5.8新增
+Interrupt count added in 2024.5.8
 于2023.7.2新增
 Added in 2023.7.2
 以下示例代码, 将I2S_DOUT复用成
@@ -58,6 +60,8 @@ Output a set of pulses at the same GPIO. Note that len's unit is bit, with the h
 Multiplexing option, currently only EC618 platform needs this parameter, some GPIO can be multiplexed to different pins, you can select the multiplexing option (0 or 4) to multiplex to the corresponding pin
 完成捕获后的回调函数，仅一个参数，参数为捕获到的时间长度number型数值，单位
 The callback function after the capture is completed. There is only one parameter. The parameter is the number-type value of the captured time length, in units.
+对Cat.1模块,EC618系列只有AONGPIO才能双向触发，其他系列所有GPIO都能双向触发，具体看硬件手册
+Yeah, Cat. 1 module, EC618 series can only be triggered in both directions by AONGPIO, and all GPIO in other series can be triggered in both directions. Please refer to the hardware manual for details.
 对Cat.1模块,通常只有AONGPIO才能双向触发, 其他GPIO只能单向触发
 Yeah, Cat. 1 module, usually only AONGPIO can be triggered in both directions, and other GPIO can only be triggered in one direction
 对于支持开漏的bsp, pull参数要传 0 才能开启开漏模式, 不是传
@@ -144,6 +148,8 @@ Number, must be numeric
 If the chip supports pin library, pin.PA7 can be used instead of numbers.
 获取gpio17的当前电平
 Get the current level of gpio17.
+获取gpio中断数量，并清空累计值，类似air724的脉冲计数
+Obtain the number of gpio interrupts and clear the cumulative value, similar to the pulse count of air724.
 获取管脚电平
 Get Pin Level
 触发中断后,延迟N个毫秒,期间没有新中断且电平没有变化,上报一次
@@ -168,6 +174,8 @@ Set gpio27 to interrupt
 Set gpio27 to interrupt, rising edge only trigger
 设置gpio27为中断, 默认双向触发
 Set gpio27 to interrupt, default two-way trigger
+设置gpio7为中断计数，详细demo见
+Set gpio7 to interrupt count. For detailed demo, see
 设置GPIO脚的默认上拉/下拉设置, 默认是平台自定义(一般为开漏
 Set the default pull-up/pull-down setting of GPIO pin, the default is platform customization (generally open and leak
 设置管脚功能
@@ -176,8 +184,12 @@ Set Pin Function
 Set Pin Level
 输入输出模式：<br>数字0/1代表输出模式<br>nil代表输入模式<br>function代表中断模式
 Input and output mode:<br> Number 0/1 represents output mode <br>nil represents input mode <br>function represents interrupt mode
+输入输出模式：<br>数字0/1代表输出模式<br>nil代表输入模式<br>function代表中断模式，如果填gpio.count，则为中断计数功能，中断时不回调
+Input and output mode:<br> number 0/1 represents output mode <br>nil represents input mode <br>function represents interrupt mode. if gpio.count is filled in, it is interrupt counting function, and there is no callback when interrupting
 输出模式返回设置电平的闭包, 输入模式和中断模式返回获取电平的闭包
 Output mode returns the closure of the set level, input mode and interrupt mode returns the closure of the acquired level
+返回从上次获取中断数量后到当前的中断计数
+Returns the count of interrupts from the last time the number of interrupts was obtained to the current
 返回值
 Return Value
 返回值类型|解释
