@@ -236,7 +236,7 @@ None
 
 |return value type | explanation|
 |-|-|
-|int|0-Power On/Reset Boot, 1-RTC Boot, 2-WakeupIn/Pad/IO Boot, 3-Wakeup/RTC Boot|
+|int|0-Power-on/reset boot, 1-RTC boot, 2-WakeupIn/Pad/IO boot, 3-unknown reason (Wakeup/RTC is possible) boot, currently only air101,air103 will have this return value|
 |int|0-Normal boot (power on/reset),3-deep sleep boot, 4-sleep boot|
 |int|Detailed reasons for reset and start-up: 0-powerkey or power-on start-up 1-charging or start-up after AT command download is completed 2-alarm clock start-up 3-software restart 4-unknown reason 5-RESET key 6-abnormal restart 7-tool control restart 8-internal watchdog restart 9-external restart 10-charging start-up|
 
