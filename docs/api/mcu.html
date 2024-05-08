@@ -884,7 +884,7 @@
 <hr class="docutils"/>
 <section id="mcu-ticks">
 <h2>mcu.ticks()<a class="headerlink" href="#mcu-ticks" title="Permalink to this headline">#</a></h2>
-<p>Get the tick number after startup, note that there will be overflow and negative numbers.</p>
+<p>Gets the number of ticks after startup. It is an unsigned value in the range of 0 to 0xffffffff. Lua is a signed calculation. If the value exceeds 0x7fffffff, the value becomes negative.</p>
 <p><strong>Parameters</strong></p>
 <p>None</p>
 <p><strong>Return Value</strong></p>

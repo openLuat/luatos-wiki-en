@@ -122,6 +122,8 @@ Series support is set to 40/80/160/240, requiring firmware after 2024.1.1
 If it fails, return -1, otherwise return the main frequency value. If it is equal to 0, it may be in the power saving mode of 32k crystal oscillator.
 获取主频,单位
 Obtain the main frequency, unit
+获取启动后的tick数,本身是无符号值,范围0~0xffffffff,lua是有符号计算,计算时超过0x7fffffff会变负数
+Gets the number of ticks after startup. It is an unsigned value in the range of 0 to 0xffffffff. Lua is a signed calculation. If the value exceeds 0x7fffffff, the value becomes negative.
 获取启动后的tick数,注意会出现溢出会出现负数
 Get the tick number after startup, note that there will be overflow and negative numbers.
 获取启动后的高精度tick，如果支持bit64库，可以直接输出转换好的bit64结构

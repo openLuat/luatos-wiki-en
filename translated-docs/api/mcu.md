@@ -119,7 +119,7 @@ print("unique_id", unique_id)
 
 
 
-Get the tick number after startup, note that there will be overflow and negative numbers.
+Gets the number of ticks after startup. It is an unsigned value in the range of 0 to 0xffffffff. Lua is a signed calculation. If the value exceeds 0x7fffffff, the value becomes negative.
 
 **Parameters**
 
