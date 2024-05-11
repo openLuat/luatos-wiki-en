@@ -44,6 +44,7 @@
 |[lcdseg](lcdseg.md)|`Segment lcd`|X|X|Y|Y|X|X|X|
 |[libcoap](libcoap.md)|`coap Data processing`|X|X|X|X|X|X|X|
 |[libgnss](libgnss.md)|`NMEA Data processing`|Y|Y|Y|Y|Y|Y|Y|
+|[little_flash](little_flash.md)|`LITTLE FLASH Software package`|X|X|X|X|X|X|X|
 |[log](log.md)|`Logstore`|Y|Y|Y|Y|Y|Y|Y|
 |[lora](lora.md)|`lora Drive module`|Y|Y|Y|Y|Y|Y|Y|
 |[lora2](lora2.md)|`lora2 Driver module (supports multi-hanging)`|Y|Y|X|X|Y|Y|Y|
