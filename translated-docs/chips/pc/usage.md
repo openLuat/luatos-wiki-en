@@ -9,10 +9,14 @@
 
 ### Interactive
 
+This method is to enter lua statements and execute them line by line.
+
 * windows Platform, directly double-click 'luatos-pc.exe' to run
 * linux platform, run directly `./luatos-pc`
 
 ### Script Run
+
+This way is to execute a lua file, or a batch of lua files
 
 This method executes "single script" and "multi-directory execution" in two ways, which need to be operated under the command line.
 
@@ -21,12 +25,24 @@ Take the windows platform as an example, first enter the console and switch to t
 Single script run:
 
 ```cmd
+chcp 65001
 luatos-pc.exe main.lua
 luatos-pc.exe test\001.helloworld\main.lua
 ```
 
 Multi-Directory Run:
 
+Note that the folder needs to end with '\', otherwise it will be regarded as a file.
+
 ```cmd
+chcp 65001
 luatos-pc.exe test\001.helloworld\  ..\LuatOS\scrips\libs\
 ```
+
+Wherein 'chcp 65001' means to switch the console code to UCS-2, otherwise Chinese will appear garbled
+
+The operation effect is as follows:
+
+![Operation effect 1](img/pc-usage.png)
+
+![Operation effect 2](img/pc-usage2.png)

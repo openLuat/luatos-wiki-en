@@ -223,6 +223,7 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">📡 PC Simulator</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Method of use</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repo.html">Code base for simulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmds.html">Detailed Command Line Manual</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../air001/index.html">🛴 Air001</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -745,6 +746,7 @@
 <h2>Operation mode<a class="headerlink" href="#operation-mode" title="Permalink to this headline">#</a></h2>
 <section id="interactive">
 <h3>Interactive<a class="headerlink" href="#interactive" title="Permalink to this headline">#</a></h3>
+<p>This method is to enter lua statements and execute them line by line.</p>
 <ul class="simple">
 <li><p>windows Platform, directly double-click ‘luatos-pc.exe’ to run</p></li>
 <li><p>linux platform, run directly <code class="docutils literal notranslate"><span class="pre">./luatos-pc</span></code></p></li>
@@ -752,17 +754,25 @@
 </section>
 <section id="script-run">
 <h3>Script Run<a class="headerlink" href="#script-run" title="Permalink to this headline">#</a></h3>
+<p>This way is to execute a lua file, or a batch of lua files</p>
 <p>This method executes “single script” and “multi-directory execution” in two ways, which need to be operated under the command line.</p>
 <p>Take the windows platform as an example, first enter the console and switch to the current directory.</p>
 <p>Single script run:</p>
-<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>luatos-pc.exe main.lua
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>chcp 65001
+luatos-pc.exe main.lua
 luatos-pc.exe test\001.helloworld\main.lua
 </pre></div>
 </div>
 <p>Multi-Directory Run:</p>
-<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>luatos-pc.exe test\001.helloworld\  ..\LuatOS\scrips\libs\
+<p>Note that the folder needs to end with ‘’, otherwise it will be regarded as a file.</p>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>chcp 65001
+luatos-pc.exe test\001.helloworld\  ..\LuatOS\scrips\libs\
 </pre></div>
 </div>
+<p>Wherein ‘chcp 65001’ means to switch the console code to UCS-2, otherwise Chinese will appear garbled</p>
+<p>The operation effect is as follows:</p>
+<p><img alt="Operation effect 1" src="../../_images/pc-usage.png"/></p>
+<p><img alt="Operation effect 2" src="../../_images/pc-usage2.png"/></p>
 </section>
 </section>
 </section>
