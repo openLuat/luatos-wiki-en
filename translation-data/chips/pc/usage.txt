@@ -24,6 +24,8 @@ Self-compiled, [source code address](https://gitee.com/openLuat/luatos-soc-pc) n
 Acquisition method
 运行效果
 Operation effect
+运行效果3,交互式
+Running effect 3, interactive
 运行效果如下
 The operation effect is as follows
 运行方式

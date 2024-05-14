@@ -7,13 +7,6 @@
 
 ## Operation mode
 
-### Interactive
-
-This method is to enter lua statements and execute them line by line.
-
-* windows Platform, directly double-click 'luatos-pc.exe' to run
-* linux platform, run directly `./luatos-pc`
-
 ### Script Run
 
 This way is to execute a lua file, or a batch of lua files
@@ -46,3 +39,13 @@ The operation effect is as follows:
 ![Operation effect 1](img/pc-usage.png)
 
 ![Operation effect 2](img/pc-usage2.png)
+
+
+### Interactive
+
+This method is to enter lua statements and execute them line by line.
+
+* windows Platform, directly double-click 'luatos-pc.exe' to run
+* linux platform, run directly `./luatos-pc`
+
+![Running effect 3, interactive](img/pc-usage3.png)
