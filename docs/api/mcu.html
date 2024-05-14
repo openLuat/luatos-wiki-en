@@ -1216,8 +1216,14 @@
 <p><strong>Return Value</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mcu</span><span class="p">.</span><span class="n">altfun</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">GPIO</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">mcu</span><span class="p">.</span><span class="n">altfun</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">GPIO</span><span class="p">,</span> <span class="mi">46</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Take Air780EP for example</span>
+<span class="c1">-- Map GPIO46 paddr 32 alt 1</span>
+<span class="n">mcu</span><span class="p">.</span><span class="n">altfun</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">GPIO</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">-- mcu.altfun(mcu.GPIO, 46) -- Restore to default configuration</span>
+
+<span class="c1">-- UART2 Reuse paddr 25/26 alt 3</span>
+<span class="n">mcu</span><span class="p">.</span><span class="n">altfun</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">UART</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">25</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mcu</span><span class="p">.</span><span class="n">altfun</span><span class="p">(</span><span class="n">mcu</span><span class="p">.</span><span class="n">UART</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">26</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

@@ -4,6 +4,8 @@ The difference with mcu.ticks() is that the underlying counter is 64bit and will
 Compared with the reference value, if greater than or equal to true, otherwise.
 主频,根据设备的不同有不同的有效值,请查阅手册
 The main frequency has different effective values according to different equipment, please refer to the manual
+以 Air780EP 为例
+Take Air780EP for example
 传入值类型|解释
 Incoming Value Type | Explanation
 位掩码,可以对特定几个位置的bit做修改, 默认0xffffffff,修改全部
@@ -24,6 +26,8 @@ No., if left blank, it means to clear the configuration and use the default conf
 Before the peripheral is opened, the peripheral IO is multiplexed to the non-default configuration. Currently, only some Air780E peripherals are supported to be multiplexed to other configurations. This is a temporary interface. If there is a more suitable api in the future, this interface will not be updated.
 处理模式，0死机停机，1死机后重启，2死机后尽量将错误信息提交给外部工具后重启
 Processing mode: 0 crash and stop, 1 crash and restart, 2 crash and try to submit error information to external tools and restart
+复用到
+Reuse
 复用功能序号，0~N。具体看平台的IOMUX复用表
 Serial number of multiplexing function, 0 ~ N. Specifically look at the platform's IOMUX multiplexing table.
 外设功能复用选择，注意普通MCU是以GPIO号为序号，但是专用SOC，比如CAT1的，是以PAD号为序号。本函数不是所有平台适用
@@ -44,6 +48,8 @@ register or ram address
 For the value at the 0x2009FFFC address, modify bit0
 封装mcu一些特殊操作
 encapsulation mcu some special operations
+将GPIO46映射到
+Map GPIO46
 差值tick1 - tick2,如果超过了0x7fffffff,结果可能是错的
 The difference tick1-tick2, if it exceeds 0 x7fffffff, the result may be wrong.
 已适配
@@ -162,6 +168,8 @@ Returns the number of microseconds, divided by seconds, for example 1234567890us
 Returns the number of milliseconds, divided by thousands of seconds, for example, 1234567890ms returns two values
 返回秒数,   以百万秒为分割, 例如 1234567890s  返回2个值
 Returns the number of seconds, divided into millions of seconds, for example 1234567890s returns 2 values
+还原成默认配置
+Restore to default configuration
 进制字符串
 Hex String
 选择时钟源,当前仅air105支持

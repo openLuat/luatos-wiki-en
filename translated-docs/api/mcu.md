@@ -392,8 +392,14 @@ None
 **Examples**
 
 ```lua
+-- Take Air780EP for example
+-- Map GPIO46 paddr 32 alt 1
 mcu.altfun(mcu.GPIO, 46, 32, 1, 0)
-mcu.altfun(mcu.GPIO, 46)
+-- mcu.altfun(mcu.GPIO, 46) -- Restore to default configuration
+
+-- UART2 Reuse paddr 25/26 alt 3
+mcu.altfun(mcu.UART,2,  25, 3, 1)
+mcu.altfun(mcu.UART,2,  26, 3, 0)
 
 ```
 
