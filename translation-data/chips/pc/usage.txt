@@ -2,6 +2,8 @@
 Interactive
 以windows平台为例, 先进入控制台,并切换到当前目录
 Take the windows platform as an example, first enter the console and switch to the current directory.
+以下是演示PC模拟器的核心工具, 执行lua脚本
+The following is the core tool to demonstrate the PC simulator, executing the lua script
 使用方法
 Method of use
 其中 `chcp 65001`的意思是切换控制台编码为UCS-2, 否则中文会出现乱码

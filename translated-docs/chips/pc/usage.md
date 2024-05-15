@@ -5,6 +5,9 @@
 1. Through [co-disk](https://pan.air32.cn/s/DJTr?path=/LuatOS模拟器(win32)), select' PC simulator' to download
 2. Self-compiled, [source code address](https://gitee.com/openLuat/luatos-soc-pc) need to be compiled with LuatOS main library
 
+
+The following is the core tool to demonstrate the PC simulator, executing the lua script
+
 ## Operation mode
 
 ### Script Run

@@ -1,0 +1,18 @@
+不执行脚本,导出后就退出
+Do not execute script, exit after export
+从文件夹加载脚本并生成luadb文件
+Load script from folder and generate luadb file
+参数解释
+Parameter Interpretation
+指定生成的文件名
+Specify the file name of the build
+指定脚本所在文件夹, 所有的lua文件都会被加载, 注意需要`\`结尾
+Specify the folder where the script is located. All lua files will be loaded. Note that the end of '\' is required.
+是LuatOS使用的核心文件系统之一, 用于存放线刷的脚本和资源文件
+It is one of the core file systems used by LuatOS and is used to store scripts and resource files for line brushes.
+是否去除调试信息, 0不去掉注释, 1去除注释,但保留main.lua的调试信息,2去除所有调试信息
+Whether to remove debugging information, 0 does not remove comments, 1 removes comments, but retains debugging information of main.lua, 2 removes all debugging information
+生成和管理luadb文件
+Generate and manage luadb files
+详细的文件系统描述, 请查阅 [LuaDB文件系统
+For a detailed description of the file system, see [LuaDB File System
