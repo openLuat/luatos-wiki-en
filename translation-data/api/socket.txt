@@ -62,6 +62,8 @@ Online
 Does domain name resolution need IPV6,true yes, false no, default false no, only protocol stacks that support IPV6 have effect
 大部分
 Mostly
+大部分情况下不需要设置NTP服务器的端口号,默认123即可
+In most cases, you do not need to set the port number of the NTP server, and the default 123 is sufficient.
 如果isReady为true,则index为IP READY的网卡适配器序号
 If the isReady is true, index is the NIC adapter serial number of IP READY
 如果为nil，则表示没有
@@ -178,6 +180,8 @@ Unknown
 This API was added on 2023.11.15
 本函数于2024.4.8添加, 用于简易读取不大的数据
 This function was added in 2024.4.8 to easily read small data.
+本函数于2024.5.17新增
+This function was added in 2024.5.17
 本地毫秒数计数器,基于
 Local milliseconds counter, based on
 本地秒数计数器,基于
@@ -236,6 +240,8 @@ Note: It can only be obtained after receiving the socket.ON_LINE message, return
 Hardware Offline
 离线
 Offline
+端口号, 默认
+port number, default
 端口已经被占用
 Port already occupied
 等待
@@ -286,6 +292,8 @@ Whether the checked adapter is IP READY,true indicates that it is ready for netw
 Data to send
 设置DNS服务器
 Set up the DNS server
+设置SNTP服务器的端口号
+Set the port number of the SNTP server
 设置SSL的log登记
 Set log registration for SSL
 设置制定网络适配器的DNS配置
@@ -320,6 +328,8 @@ Too much information can cause memory fragmentation
 Return Value
 返回值类型|解释
 return value type | explanation
+返回当前的端口号
+Returns the current port number
 适配器序号， 只能是socket.ETH0，socket.STA，socket.AP，如果不填，会选择最后一个注册的适配器
 The adapter serial number can only be socket.ETH0,socket.STA,socket.AP. If it is not filled in, the last registered adapter will be selected.
 适配器序号， 只能是socket.ETH0（外置以太网），socket.LWIP_ETH（内置以太网），socket.LWIP_STA（内置WIFI的STA），socket.LWIP_AP（内置WIFI的AP），socket.LWIP_GP（内置蜂窝网络的GPRS），socket.USB（外置USB网卡），如果不填，优先选择soc平台自带能上外网的适配器，若仍然没有，选择最后一个注册的适配器

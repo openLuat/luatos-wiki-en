@@ -880,6 +880,42 @@
 </div>
 </section>
 <hr class="docutils"/>
+<section id="socket-sntp-port-port">
+<h2>socket.sntp_port(port)<a class="headerlink" href="#socket-sntp-port-port" title="Permalink to this headline">#</a></h2>
+<p>Set the port number of the SNTP server</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>port port number, default 123</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Returns the current port number</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This function was added in 2024.5.17</span>
+<span class="c1">-- In most cases, you do not need to set the port number of the NTP server, and the default 123 is sufficient.</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="socket-localip-adapter">
 <h2>socket.localIP(adapter)<a class="headerlink" href="#socket-localip-adapter" title="Permalink to this headline">#</a></h2>
 <p>Get Local ip</p>
@@ -1830,6 +1866,7 @@
 <li><a class="reference internal" href="#constant">Constant</a></li>
 <li><a class="reference internal" href="#socket-sntp-sntp-server">socket.sntp(sntp_server)</a></li>
 <li><a class="reference internal" href="#socket-ntptm">socket.ntptm()</a></li>
+<li><a class="reference internal" href="#socket-sntp-port-port">socket.sntp_port(port)</a></li>
 <li><a class="reference internal" href="#socket-localip-adapter">socket.localIP(adapter)</a></li>
 <li><a class="reference internal" href="#socket-create-adapter-cb">socket.create(adapter, cb)</a></li>
 <li><a class="reference internal" href="#socket-debug-ctrl-onoff">socket.debug(ctrl, onoff)</a></li>

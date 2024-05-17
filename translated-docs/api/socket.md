@@ -105,6 +105,34 @@ log.info("Timestamp", string.format("%u.%03d", tm.tsec, tm.tms))
 
 ---
 
+## socket.sntp_port(port)
+
+
+
+Set the port number of the SNTP server
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|port port number, default 123|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|int|Returns the current port number|
+
+**Examples**
+
+```lua
+-- This function was added in 2024.5.17
+-- In most cases, you do not need to set the port number of the NTP server, and the default 123 is sufficient.
+
+```
+
+---
+
 ## socket.localIP(adapter)
 
 
