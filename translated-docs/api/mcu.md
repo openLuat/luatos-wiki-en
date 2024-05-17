@@ -446,3 +446,29 @@ log.info("sec_h", sec_h, "sec_l", sec_l)
 
 ---
 
+## mcu.XTALRefOutput(source_main, source_32k)
+
+
+
+Crystal reference clock output
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|boolean|Whether the reference clock of high-speed crystal oscillator is output|
+|boolean|Does the low-speed 32K crystal reference clock output|
+
+**Return Value**
+
+None
+
+**Examples**
+
+```lua
+mcu.XTALRefOutput(true, false)    --High-speed crystal reference clock output, low-speed 32K does not output
+
+```
+
+---
+

@@ -1275,6 +1275,33 @@
 <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"sec_h"</span><span class="p">,</span> <span class="n">sec_h</span><span class="p">,</span> <span class="s2">"sec_l"</span><span class="p">,</span> <span class="n">sec_l</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="mcu-xtalrefoutput-source-main-source-32k">
+<h2>mcu.XTALRefOutput(source_main, source_32k)<a class="headerlink" href="#mcu-xtalrefoutput-source-main-source-32k" title="Permalink to this headline">#</a></h2>
+<p>Crystal reference clock output</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Whether the reference clock of high-speed crystal oscillator is output</p></td>
+</tr>
+<tr class="row-odd"><td><p>boolean</p></td>
+<td><p>Does the low-speed 32K crystal reference clock output</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mcu</span><span class="p">.</span><span class="n">XTALRefOutput</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>    <span class="c1">--High-speed crystal reference clock output, low-speed 32K does not output</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -1351,6 +1378,7 @@
 <li><a class="reference internal" href="#mcu-iomux-type-channel-value">mcu.iomux(type, channel, value)</a></li>
 <li><a class="reference internal" href="#mcu-altfun-type-sn-pad-index-alt-fun-is-input">mcu.altfun(type, sn, pad_index, alt_fun, is_input)</a></li>
 <li><a class="reference internal" href="#mcu-ticks2-mode">mcu.ticks2(mode)</a></li>
+<li><a class="reference internal" href="#mcu-xtalrefoutput-source-main-source-32k">mcu.XTALRefOutput(source_main, source_32k)</a></li>
 </ul>
 </li>
 </ul>

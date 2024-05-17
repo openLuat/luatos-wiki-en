@@ -12,6 +12,8 @@ Incoming Value Type | Explanation
 Bit mask, you can modify the bit in specific locations, the default is 0xffffffff, modify all
 低速32K是否使用外部时钟源,如果为空则不改变
 Whether the low-speed 32K uses an external clock source, if it is empty, it will not change
+低速32K晶振参考时钟是否输出
+Does the low-speed 32K crystal reference clock output
 例子
 Examples
 写入的值,如果没有,则直接返回当前值
@@ -80,6 +82,8 @@ None
 Whether it is an input function, true is, and blank is
 是否输出bit64结构,true是,其他都是false,留空也是false,用于兼容旧的
 Whether to output bit64 structure, true is, others are false, blank is also false, for compatibility with the old
+晶振参考时钟输出
+Crystal reference clock output
 有几个tick,0表示未知
 There are several ticks, 0 means unknown
 本函数于2024.5.7新增
@@ -180,3 +184,7 @@ Values that need to be converted
 High-speed clock using external clock, low-speed 32K using external crystal
 高速时钟是否使用外部时钟源,如果为空则不改变
 Whether the high-speed clock uses an external clock source, and does not change if it is empty
+高速晶振参考时钟是否输出
+Whether the reference clock of high-speed crystal oscillator is output
+高速晶振参考时钟输出,低速32K不输出
+High-speed crystal reference clock output, low-speed 32K does not output
