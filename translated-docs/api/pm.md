@@ -114,7 +114,7 @@ pm.request(pm.HIB)
 
 
 
-Start the bottom timer, which is still in effect in sleep mode. Trigger only once
+Start the bottom timer, it still takes effect in sleep mode. It is triggered only once, and is invalid in shutdown state.
 
 **Parameters**
 

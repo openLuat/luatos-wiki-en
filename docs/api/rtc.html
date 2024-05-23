@@ -841,7 +841,8 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- It is recommended to set rtc.set to the correct time before use</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- At present, this interface is not applicable to the 780E/700E/780EP series of core-shifting modules, and can be used when regular wake-up is required.pm.dtimerStart()</span>
+<span class="c1">-- It is recommended to set rtc.set to the correct time before use</span>
 <span class="n">rtc</span><span class="p">.</span><span class="n">timerStart</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">{</span><span class="n">year</span><span class="o">=</span><span class="mi">2021</span><span class="p">,</span><span class="n">mon</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span><span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">hour</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span><span class="n">min</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">sec</span><span class="o">=</span><span class="mi">43</span><span class="p">})</span>
 </pre></div>
 </div>

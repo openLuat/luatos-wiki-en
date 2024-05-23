@@ -40,6 +40,8 @@ Wake up after minutes
 Parameters
 启动底层定时器,在休眠模式下依然生效. 只触发一次
 Start the bottom timer, which is still in effect in sleep mode. Trigger only once
+启动底层定时器,在休眠模式下依然生效. 只触发一次，关机状态下无效
+Start the bottom timer, it still takes effect in sleep mode. It is triggered only once, and is invalid in shutdown state.
 和Air600E的DAC_EN，注意audio的默认配置会自动使用这个脚来控制CODEC的使能
 And Air600E DAC_EN, note that the default configuration of audio will automatically use this pin to control the enable of CODEC
 和Air600E的DAC_EN(新版硬件手册的LDO_CTL，同一个PIN，命名变更)，注意audio的默认配置会自动使用这个脚来控制CODEC的使能

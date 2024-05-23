@@ -88,6 +88,7 @@ Set RTC wake-up time
 **Examples**
 
 ```lua
+-- At present, this interface is not applicable to the 780E/700E/780EP series of core-shifting modules, and can be used when regular wake-up is required.pm.dtimerStart()
 -- It is recommended to set rtc.set to the correct time before use
 rtc.timerStart(0, {year=2021,mon=9,day=1,hour=17,min=8,sec=43})
 
