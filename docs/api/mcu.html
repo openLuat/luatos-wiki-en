@@ -1300,7 +1300,9 @@
 <p><strong>Return Value</strong></p>
 <p>None</p>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mcu</span><span class="p">.</span><span class="n">XTALRefOutput</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>    <span class="c1">--High-speed crystal reference clock output, low-speed 32K does not output</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This function was added in 2024.5.17</span>
+<span class="c1">-- Currently only Air780EP series support</span>
+<span class="n">mcu</span><span class="p">.</span><span class="n">XTALRefOutput</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>    <span class="c1">--High-speed crystal reference clock output, low-speed 32K does not output</span>
 </pre></div>
 </div>
 <hr class="docutils"/>

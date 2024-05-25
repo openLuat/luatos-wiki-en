@@ -466,6 +466,8 @@ None
 **Examples**
 
 ```lua
+-- This function was added in 2024.5.17
+-- Currently only Air780EP series support
 mcu.XTALRefOutput(true, false)    --High-speed crystal reference clock output, low-speed 32K does not output
 
 ```

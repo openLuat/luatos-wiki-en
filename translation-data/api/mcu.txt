@@ -64,6 +64,8 @@ constant | type | explanation
 Current tick value
 当前tick值,8个字节的uint64,如果支持64bit库,同时要求输出64bit结构的话,会输出9字节的
 The current tick value, uint64 with 8 bytes, will output 9 bytes if the 64-bit library is supported and the 64-bit structure is required to be output at the same time
+当前仅Air780EP系列支持
+Currently only Air780EP series support
 总线序号
 Bus serial number
 总线序号，0~N，如果是mcu.GPIO，则是GPIO号。具体看平台的IOMUX复用表
@@ -86,6 +88,8 @@ Whether to output bit64 structure, true is, others are false, blank is also fals
 Crystal reference clock output
 有几个tick,0表示未知
 There are several ticks, 0 means unknown
+本函数于2024.5.17新增
+This function was added in 2024.5.17
 本函数于2024.5.7新增
 This function was added in 2024.5.7
 本页文档由[这个文件](https://gitee.com/openLuat/LuatOS/tree/master/luat/modules/luat_lib_mcu.c)自动生成。如有错误，请提交issue或帮忙修改后pr，谢谢
