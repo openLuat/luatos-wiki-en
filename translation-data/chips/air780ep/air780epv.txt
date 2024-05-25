@@ -1,0 +1,14 @@
+功能需要占用大量的Flash空间, 所以LuatOS固件会裁剪掉一部分库
+The function takes up a lot of Flash space, so LuatOS firmware will clip out a part of the library.
+基于EC718EPV的Air780EPV, 与基于EC718P的Air780EP的区别, 就是多了VoLTE功能
+The difference between EC718EPV-based Air780EPV and EC718P-based Air780EP is that it has more VoLTE functions.
+的固件也刷进Air780EP, 但无法正常运行
+The firmware of is also brushed into the Air780EP, but it does not work properly.
+的固件可以刷进Air780EPV, 并正常运行
+The firmware can be brushed into the Air780EPV and run normally
+的额外说明
+Additional instructions
+资料
+Information
+资料链接
+Data Link

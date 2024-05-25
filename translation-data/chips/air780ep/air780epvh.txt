@@ -1,0 +1,28 @@
+使用的GNSS芯片为
+The GNSS chip used is
+供电控制是GPIO17, 备电供电脚是
+The power supply control is GPIO17, and the standby power supply pin is
+内置的音频codec 8311, 支持MIC/SPK输入输出
+Built-in audio codec 8311, support MIC/SPK input and output
+切换波特率到115200的GPS指令, 通过UART发送给GNSS芯片
+GPS command to switch baud rate to 115200, sent to GNSS chip via UART
+功能介绍
+Function introduction
+打开26M输出的方法
+Method to Open 26M Output
+打开26M输出的方法, 需要2024.5.25之后编译的固件
+The method of opening 26M output requires firmware compiled after 2024.5.25
+支持GNSS/GPS,即卫星导航功能
+Support GNSS/GPS, namely satellite navigation function
+是Air780EPV的变体，在Air780EPV的基础上增加了gnss/gps和
+is a variant of Air780EPV, adding gnss/gps and
+的额外说明
+Additional instructions
+芯片接在UART2上, 截止到2024.5.25, 默认波特率是9600, 后续可能会改正为
+The chip is connected to UART2, and as of 2024.5.25, the default baud rate is 9600, which may be corrected later.
+资料
+Information
+资料链接
+Data Link
+需要打开26M输出
+26M output needs to be turned on
