@@ -1006,7 +1006,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>int</p></td>
-<td><p>Format of coordinate data, 0-DDMM.MMM format, 1-DDDDDDD format, 2-DD.DDDDD format</p></td>
+<td><p>Mode</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1026,7 +1026,7 @@
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Get</span>
 <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"nmea"</span><span class="p">,</span> <span class="s2">"gsa"</span><span class="p">,</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">libgnss</span><span class="p">.</span><span class="n">getGsa</span><span class="p">(),</span> <span class="s2">"11g"</span><span class="p">))</span>
-<span class="c1">-- Sample data</span>
+<span class="c1">-- Sample data (mode 0, which is the default mode)</span>
 <span class="cm">--[[</span>
 <span class="cm">{</span>
 <span class="cm">    "sats":[ // Satellite number in use</span>
@@ -1051,6 +1051,12 @@
 <span class="cm">    "hdop":0.0335      // Position accuracy factor, 0.00 - 99.99, with a value 99.99</span>
 <span class="cm">}</span>
 <span class="cm">]]</span>
+
+<span class="c1">-- Sample data (Mode 1), 2024.5.26 New</span>
+<span class="p">[</span>
+    <span class="p">{</span><span class="s2">"pdop"</span><span class="p">:</span><span class="mf">7.8299999</span><span class="p">,</span><span class="s2">"sats"</span><span class="p">:[</span><span class="mi">13</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">23</span><span class="p">],</span><span class="s2">"vdop"</span><span class="p">:</span><span class="mf">3.2400000</span><span class="p">,</span><span class="s2">"hdop"</span><span class="p">:</span><span class="mf">7.1300001</span><span class="p">,</span><span class="s2">"fix_type"</span><span class="p">:</span><span class="mi">3</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"pdop"</span><span class="p">:</span><span class="mf">7.8299999</span><span class="p">,</span><span class="s2">"sats"</span><span class="p">:[</span><span class="mi">20</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">],</span><span class="s2">"vdop"</span><span class="p">:</span><span class="mf">3.2400000</span><span class="p">,</span><span class="s2">"hdop"</span><span class="p">:</span><span class="mf">7.1300001</span><span class="p">,</span><span class="s2">"fix_type"</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -1095,6 +1101,7 @@
 <span class="cm">    "magnetic_track_degrees":0, // Magnetic north direction angle</span>
 <span class="cm">    "speed_kph":0           // Speed, km/h</span>
 <span class="cm">}</span>
+<span class="cm">-- Reminder: Air780EG and Air510U will not return to the direction angle when the speed is &lt;5 km/h</span>
 <span class="cm">]]</span>
 </pre></div>
 </div>

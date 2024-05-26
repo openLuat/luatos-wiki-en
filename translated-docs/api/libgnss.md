@@ -253,7 +253,7 @@ Get Raw GSA Information
 
 |Incoming Value Type | Explanation|
 |-|-|
-|int|Format of coordinate data, 0-DDMM.MMM format, 1-DDDDDDD format, 2-DD.DDDDD format|
+|int|Mode|
 
 **Return Value**
 
@@ -266,7 +266,7 @@ Get Raw GSA Information
 ```lua
 -- Get
 log.info("nmea", "gsa", json.encode(libgnss.getGsa(), "11g"))
--- Sample data
+-- Sample data (mode 0, which is the default mode)
 --[[
 {
     "sats":[ // Satellite number in use
@@ -291,6 +291,12 @@ log.info("nmea", "gsa", json.encode(libgnss.getGsa(), "11g"))
     "hdop":0.0335      // Position accuracy factor, 0.00 - 99.99, with a value 99.99
 }
 ]]
+
+-- Sample data (Mode 1), 2024.5.26 New
+[
+    {"pdop":7.8299999,"sats":[13,15,18,23],"vdop":3.2400000,"hdop":7.1300001,"fix_type":3},
+    {"pdop":7.8299999,"sats":[20,35,8,13],"vdop":3.2400000,"hdop":7.1300001,"fix_type":3}
+]
 
 ```
 
@@ -327,6 +333,7 @@ log.info("nmea", "vtg", json.encode(libgnss.getVtg()))
     "magnetic_track_degrees":0, // Magnetic north direction angle
     "speed_kph":0           // Speed, km/h
 }
+-- Reminder: Air780EG and Air510U will not return to the direction angle when the speed is <5 km/h
 ]]
 
 ```
