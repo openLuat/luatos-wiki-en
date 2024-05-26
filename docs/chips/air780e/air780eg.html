@@ -796,14 +796,30 @@
 <li><p>Again, the GPS chip itself cannot save the ephemeris, the old model will be lost even if it is powered off, and the new model will be lost if it is powered off.!!</p></li>
 </ol>
 </section>
-<section id="about-power-consumption">
-<h2>About Power Consumption<a class="headerlink" href="#about-power-consumption" title="Permalink to this headline">#</a></h2>
+<section id="about-the-power-consumption-of-gnss">
+<h2>About the power consumption of GNSS<a class="headerlink" href="#about-the-power-consumption-of-gnss" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>There are many states: star search state (60 ~ 100ma), continuous tracking state (40 ~ 60ma), standby state (200 ~ 500ua), and power-down state(0)</p></li>
-<li><p>No low-power instructions, no low-power instructions, no low-power instructions</p></li>
-<li><p>No low power mode, no low power mode, no low power mode</p></li>
+<li><p>GNSS The function has no low-power instructions, no low-power instructions, no low-power instructions.</p></li>
+<li><p>GNSS Features No Low Power Mode, No Low Power Mode, No Low Power Mode</p></li>
 <li><p>The new model only has the standby power state, and’ GPIO23’ is used to control the standby power on or off, and the default is power on.</p></li>
+<li><p>Ultra-low power consumption is the same as Air780E when the GNSS function is turned off, 2uA</p></li>
 </ol>
+</section>
+<section id="switching-satellite-systems-especially-single-beidou-mode">
+<h2>Switching satellite systems, especially single Beidou mode<a class="headerlink" href="#switching-satellite-systems-especially-single-beidou-mode" title="Permalink to this headline">#</a></h2>
+<p>The following are demonstration instructions that can be switched to different combinations of satellite systems to meet regulatory requirements</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Mode 01, GPS L1 SBAS QZSS Joint Positioning</span>
+<span class="c1">-- uart.write(gps_uart_id, "$CFGSYS,H01\r\n") </span>
+<span class="c1">-- sys.wait(20)</span>
+<span class="c1">-- Mode 10, single Beidou BDS B1</span>
+<span class="n">uart</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">gps_uart_id</span><span class="p">,</span> <span class="s2">"$CFGSYS,H10</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">)</span> 
+<span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="c1">-- Mode 11, GPS L1 BDS B1 QZSS joint positioning, the default is this</span>
+<span class="c1">-- uart.write(gps_uart_id, "$CFGSYS,H01\r\n") </span>
+<span class="c1">-- sys.wait(20)</span>
+</pre></div>
+</div>
 </section>
 <section id="about-packaging-and-software">
 <h2>About Packaging and Software<a class="headerlink" href="#about-packaging-and-software" title="Permalink to this headline">#</a></h2>
@@ -895,7 +911,8 @@
 <li><a class="reference internal" href="#positioning-characteristics">Positioning characteristics</a></li>
 <li><a class="reference internal" href="#auxiliary-positioning-correlation">Auxiliary Positioning Correlation</a></li>
 <li><a class="reference internal" href="#about-ephemeris">About Ephemeris</a></li>
-<li><a class="reference internal" href="#about-power-consumption">About Power Consumption</a></li>
+<li><a class="reference internal" href="#about-the-power-consumption-of-gnss">About the power consumption of GNSS</a></li>
+<li><a class="reference internal" href="#switching-satellite-systems-especially-single-beidou-mode">Switching satellite systems, especially single Beidou mode</a></li>
 <li><a class="reference internal" href="#about-packaging-and-software">About Packaging and Software</a></li>
 <li><a class="reference internal" href="#development-board-pinout">Development Board pinout</a></li>
 </ul>

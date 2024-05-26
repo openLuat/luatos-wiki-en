@@ -224,7 +224,7 @@ log.info("nmea", "gsv", json.encode(libgnss.getGsv()))
             "snr":27,     // signal-to-noise ratio
             "azimuth":278, // Direction angle
             "elevation":59, // elevation angle
-            "tp":0,        // 0 - GPS/SASS/QSZZ, 1 - BD
+            "tp":0,        // 0 - GPS, 1 - BD
             "nr":4         // Satellite Number
         },
         // Information from 22 satellites is ignored here

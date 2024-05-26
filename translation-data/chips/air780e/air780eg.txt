@@ -6,10 +6,14 @@ No more multiplexing of GPIO10/11
 Do not connect external input
 两排管脚之间的距离
 Distance between two rows of pins
+以下是演示指令, 可切换到不同的卫星系统组合,满足监管要求
+The following are demonstration instructions that can be switched to different combinations of satellite systems to meet regulatory requirements
 使用的指令与Air510U是一样的, [Air510U资料网站
 The instructions used are the same as the Air510U, [Air510U Materials Website
 供电部分
 Power supply part
+关于GNSS的功耗
+About the power consumption of GNSS
 关于功耗
 About Power Consumption
 关于封装和软件
@@ -18,6 +22,8 @@ About Packaging and Software
 Special note on new Air780EG
 关于星历
 About Ephemeris
+关闭GNSS功能后, 超低功耗与Air780E是一样的
+Ultra-low power consumption is the same as Air780E when the GNSS function is turned off
 内置的GPS芯片是掉电后数据全丢,所以辅助定位均依赖Air780EG中Cat.1芯片的能力
 The built-in GPS chip loses all data after power failure, so auxiliary positioning depends on Cat in the Air780EG. 1 Capability of the chip
 内部接线
@@ -26,6 +32,12 @@ Internal wiring
 Again, the GPS chip itself cannot save the ephemeris, even if it generates its own ephemeris after long-term operation, it will be lost even if it loses power.
 再次强调, GPS芯片本身不能保存星历,老款`掉电一样会丢`,新款关闭备电也会丢
 Again, the GPS chip itself cannot save the ephemeris, the old model will be lost even if it is powered off, and the new model will be lost if it is powered off.
+切换卫星系统,特别是单北斗模式
+Switching satellite systems, especially single Beidou mode
+功能没有低功耗指令,没有低功耗指令,没有低功耗指令
+The function has no low-power instructions, no low-power instructions, no low-power instructions.
+功能没有低功耗模式,没有低功耗模式,没有低功耗模式
+Features No Low Power Mode, No Low Power Mode, No Low Power Mode
 北斗星历的有效时间是 `1小时
 The effective time of the Big Dipper ephemeris is `1 hour
 参考坐标, 三种方式, 基站定位库`lbsLoc`, 上次定位成功的坐标存文件系统, 使用中国国家地理中心坐标
@@ -100,6 +112,12 @@ It is a "read-only version" of GPS chip, which means that all configuration item
 Query method: [IMEI production record query of Hecheng ERP](https://erp.openluat.com/imei), enter imei number to query. If you do not register, please register first. Registration is free of charge.
 查询方法: https://erp.openluat.com/imei , 输入imei号即可查询. 若未注册请先注册, 注册是免费的
 Query method: https://erp.openluat.com/imei, enter imei number to query. If not registered, please register first, registration is free of charge
+模式01, GPS L1+SBAS+QZSS 联合定位
+Mode 01, GPS L1 SBAS QZSS Joint Positioning
+模式10, 单北斗
+Mode 10, single Beidou
+模式11, GPS L1+BDS B1+QZSS 联合定位,默认是这种
+Mode 11, GPS L1 BDS B1 QZSS joint positioning, the default is this
 没有低功耗指令
 No low power instructions
 没有低功耗指令,没有低功耗指令,没有低功耗指令

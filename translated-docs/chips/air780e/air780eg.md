@@ -57,12 +57,29 @@ The built-in GPS chip loses all data after power failure, so auxiliary positioni
 4. Measurements indicate that the Big Dipper ephemeris is helpful, but the main force is GPS ephemeris.
 5. Again, the GPS chip itself cannot save the ephemeris, the old model will be lost even if it is powered off, and the new model will be lost if it is powered off.!!
 
-## About Power Consumption
+## About the power consumption of GNSS
 
 1. There are many states: star search state (60 ~ 100ma), continuous tracking state (40 ~ 60ma), standby state (200 ~ 500ua), and power-down state(0)
-2. No low-power instructions, no low-power instructions, no low-power instructions
-3. No low power mode, no low power mode, no low power mode
+2. GNSS The function has no low-power instructions, no low-power instructions, no low-power instructions.
+3. GNSS Features No Low Power Mode, No Low Power Mode, No Low Power Mode
 4. The new model only has the standby power state, and' GPIO23' is used to control the standby power on or off, and the default is power on.
+5. Ultra-low power consumption is the same as Air780E when the GNSS function is turned off, 2uA
+
+## Switching satellite systems, especially single Beidou mode
+
+The following are demonstration instructions that can be switched to different combinations of satellite systems to meet regulatory requirements
+
+```lua
+-- Mode 01, GPS L1 SBAS QZSS Joint Positioning
+-- uart.write(gps_uart_id, "$CFGSYS,H01\r\n") 
+-- sys.wait(20)
+-- Mode 10, single Beidou BDS B1
+uart.write(gps_uart_id, "$CFGSYS,H10\r\n") 
+sys.wait(20)
+-- Mode 11, GPS L1 BDS B1 QZSS joint positioning, the default is this
+-- uart.write(gps_uart_id, "$CFGSYS,H01\r\n") 
+-- sys.wait(20)
+```
 
 ## About Packaging and Software
 
