@@ -128,6 +128,14 @@ physics uart has 4
 Number | Name | Function | Remarks
 网络状态灯
 Network Status Light
+脚, 即GPIO0, 开机后可作为普通GPIO使用
+Foot, namely GPIO0, can be used as a normal GPIO after boot
+脚(io_sel脚), 于Air780E(EC618方案)不同, Air780EP(EC718方案)的iosel脚实际为普通GPIO脚
+The foot (io_sel foot) is different from the Air780E(EC618 scheme), and the iosel foot of the Air780EP(EC718 scheme) is actually a common GPIO foot
+脚和usbboot脚
+Feet and usbboot feet
+脚在开机后可作为普通GPIO使用, 复用关系是
+The pin can be used as an ordinary GPIO after startup, and the multiplexing relationship is
 若使用SIM2, 会占用 4个
 If SIM2 is used, it will take up 4
 虚拟

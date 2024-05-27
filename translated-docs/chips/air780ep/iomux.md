@@ -121,6 +121,16 @@ For example, if 'wakup0' is set as the wake-up pin, the interrupt callback can b
 gpio.setup(32, function() end, gpio.PULLUP)
 ```
 
+## iosel Feet and usbboot feet
+
+* BOOT Foot, namely GPIO0, can be used as a normal GPIO after boot
+* iosel The foot (io_sel foot) is different from the Air780E(EC618 scheme), and the iosel foot of the Air780EP(EC718 scheme) is actually a common GPIO foot
+* iosel The pin can be used as an ordinary GPIO after startup, and the multiplexing relationship is GPIO12 ALT4
+
+```lua
+gpio.setup(12, 1, gpio.PULLUP, nil, 4)
+```
+
 ## Additional Notes on USB
 
 1. **BOOT Mode requires high USB wiring * *, must do differential line and impedance matching!!!

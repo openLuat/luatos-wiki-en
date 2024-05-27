@@ -1070,6 +1070,17 @@
 </pre></div>
 </div>
 </section>
+<section id="iosel-feet-and-usbboot-feet">
+<h2>iosel Feet and usbboot feet<a class="headerlink" href="#iosel-feet-and-usbboot-feet" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>BOOT Foot, namely GPIO0, can be used as a normal GPIO after boot</p></li>
+<li><p>iosel The foot (io_sel foot) is different from the Air780E(EC618 scheme), and the iosel foot of the Air780EP(EC718 scheme) is actually a common GPIO foot</p></li>
+<li><p>iosel The pin can be used as an ordinary GPIO after startup, and the multiplexing relationship is GPIO12 ALT4</p></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 <section id="additional-notes-on-usb">
 <h2>Additional Notes on USB<a class="headerlink" href="#additional-notes-on-usb" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
@@ -1143,6 +1154,7 @@
 <li><a class="reference internal" href="#spi-description">SPI Description</a></li>
 <li><a class="reference internal" href="#gpio-additional-instructions">GPIO Additional Instructions</a></li>
 <li><a class="reference internal" href="#virtual-gpio">Virtual GPIO</a></li>
+<li><a class="reference internal" href="#iosel-feet-and-usbboot-feet">iosel Feet and usbboot feet</a></li>
 <li><a class="reference internal" href="#additional-notes-on-usb">Additional Notes on USB</a></li>
 </ul>
 </li>
