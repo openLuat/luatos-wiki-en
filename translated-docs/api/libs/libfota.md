@@ -76,6 +76,7 @@ fota Upgrade
 |string|client_cert optional, client ca certificate data|
 |string|client_key Optional, the client private key encrypts data|
 |string|client_password Optional, client private key password data|
+|boolean|show_otaurl Optional, whether to output the URL path of the OTA upgrade package from the log, which is printed by default.|
 
 **Return Value**
 

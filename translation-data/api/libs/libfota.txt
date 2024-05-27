@@ -24,6 +24,8 @@ Optional, the client private key encrypts data
 Optional, client private key password data
 可选,数据存储的最大空间
 Optional, maximum space for data storage
+可选,是否从日志中输出打印OTA升级包的URL路径，默认会打印
+Optional, whether to output the URL path of the OTA upgrade package from the log, which is printed by default.
 可选,服务器ca证书数据
 optional, server ca certificate data
 可选,请求端口,默认
