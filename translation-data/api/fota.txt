@@ -78,6 +78,8 @@ Example
 Wait for the underlying fota process to be ready
 等待底层fota流程完成
 Wait for the underlying fota process to complete
+系列/EC718系列使用固定内部地址，所以不需要参数了
+Series/EC718 series use fixed internal addresses, so no parameters are required
 结束fota流程
 End the fota process
 起始偏移量,传入zbuff时有效,默认是

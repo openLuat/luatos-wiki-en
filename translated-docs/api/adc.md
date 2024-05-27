@@ -104,7 +104,7 @@ adc.setRange(adc.ADC_RANGE_1_8)
 adc.setRange(adc.ADC_RANGE_3_6)
 
 
--- EC618 Series (Air780E, etc.) support 2 kinds
+-- EC618 Series (Air780E, etc.)/EC718E Series (Air780EP, Air780EPV, etc.) supports the following 2 types
 adc.setRange(adc.ADC_RANGE_1_2) -- Turn off partial pressure
 adc.setRange(adc.ADC_RANGE_3_8) -- Enable Divider Voltage
 

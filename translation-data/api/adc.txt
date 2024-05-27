@@ -74,6 +74,8 @@ The ADC voltage divider resistor is turned off, and the range
 The ADC voltage divider resistor is turned on, and the range
 示例
 Example
+系列(Air780E等)/EC718E系列(Air780EP/Air780EPV等)支持以下2种
+Series (Air780E, etc.)/EC718E Series (Air780EP, Air780EPV, etc.) supports the following 2 types
 系列(Air780E等)支持2种
 Series (Air780E, etc.) support 2 kinds
 若需要持续读取, 则不需要close, 功耗会高一点

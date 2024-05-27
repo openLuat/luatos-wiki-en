@@ -80,7 +80,7 @@ Initialize the fota process
 ```lua
 -- Initialize the fota process
 local result = fota.init(0, 0x00300000, spi_device)    --Since the 105 flash starts at 0x 01000000, 0 is external spiflash
-local result = fota.init()    --ec618 Use a fixed internal address, so no parameters are required.
+local result = fota.init()    --ec618 Series/EC718 series use fixed internal addresses, so no parameters are required
 
 ```
 
