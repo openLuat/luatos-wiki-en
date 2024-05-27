@@ -1,6 +1,6 @@
 # Adaptation status
 
-|BSP/Library | Introduction|Air780E/Air700E|Air780EP|Air601|Air101/Air103|Air105|ESP32C3|ESP32S3|
+|BSP/Library | Introduction|Air780E/Air700E|Air780EP/Air780EPV|Air601|Air101/Air103|Air105|ESP32C3|ESP32S3|
 |---|---|---|---|---|---|---|---|---|
 |[adc](adc.md)|`Analog-to-digital conversion`|Y|Y|Y|Y|Y|Y|Y|
 |[antbot](antbot.md)|`Ant Chain`|Y|X|X|X|X|X|X|
