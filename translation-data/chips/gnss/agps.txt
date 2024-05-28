@@ -1,0 +1,34 @@
+三要素指的是
+The three elements refer
+包含的内容有
+Included content is
+北斗
+Beidou
+卫星星历
+Satellite Ephemeris
+卫星轨道参数, 可推算出卫星位置
+Satellite orbit parameters, which can be used to calculate the satellite position
+和Air780EG [GPS+北斗
+and Air780EG [GPS Beidou
+定点UTC修正信息
+Fixed-point UTC correction information
+星历下载地址
+Ephemeris download address
+更新周期均为10分钟一次, 星历有效期: GPS一般为4小时, 北斗为1小时
+Update cycle is 10 minutes once, ephemeris validity: GPS is generally 4 hours, Beidou is 1 hour
+电离层修正参数
+ionospheric correction parameters
+粗略当前位置
+Rough Current Position
+精确UTC时间
+Precise UTC time
+系列 [GPS+北斗
+Series [GPS Beidou
+系列 [单北斗
+Series [Single Beidou
+辅助定位
+auxiliary positioning
+辅助定位 是指 通过向GPS/GNSS模组注入三要素数据，加速定位, 减少首次定位成功的耗时
+Assisted positioning refers to the injection of three-factor data into the GPS/GNSS module to accelerate positioning and reduce the time-consuming success of the first positioning.
+这个一般从NTP获取, 建议更新周期为4小时
+This is generally obtained from NTP, and the recommended update period is 4 hours.
