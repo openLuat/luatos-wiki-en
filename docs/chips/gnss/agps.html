@@ -751,6 +751,9 @@
 <li><p>Precise UTC time</p></li>
 <li><p>Rough Current Position</p></li>
 </ul>
+<p>Just like its name “auxiliary positioning”, these data are * * auxiliary *, not necessary, or can not be used, just to speed up positioning.</p>
+<p>If the signal in the environment is not good, or the antenna performance is too poor, the auxiliary positioning cannot be saved..</p>
+<p>After assisted positioning, the position will still drift statically, which is the characteristic of GNSS and cannot be completely avoided. RTK positioning equipment can be bought with higher precision, which is more than 10 times more expensive..</p>
 <section id="satellite-ephemeris">
 <h2>Satellite Ephemeris<a class="headerlink" href="#satellite-ephemeris" title="Permalink to this headline">#</a></h2>
 <p>Included content is:</p>
@@ -771,6 +774,38 @@
 <section id="precise-utc-time">
 <h2>Precise UTC time<a class="headerlink" href="#precise-utc-time" title="Permalink to this headline">#</a></h2>
 <p>This is generally obtained from NTP, and the recommended update period is 4 hours.</p>
+</section>
+<section id="rough-current-position">
+<h2>Rough Current Position<a class="headerlink" href="#rough-current-position" title="Permalink to this headline">#</a></h2>
+<p>The accuracy of the position does not need to be very high, but it should be within 15km as much as possible.</p>
+<ol class="arabic simple">
+<li><p>Base station positioning/wifi positioning</p></li>
+<li><p>Old known location</p></li>
+</ol>
+<section id="base-station-positioning">
+<h3>base station positioning<a class="headerlink" href="#base-station-positioning" title="Permalink to this headline">#</a></h3>
+<p>Base station positioning, AT/CSDK/LuatOS development have corresponding commands and functions, specific reference to the corresponding development documents</p>
+</section>
+<section id="old-known-location">
+<h3>Old known location<a class="headerlink" href="#old-known-location" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>It is recommended to save the current location immediately after the first successful positioning</p></li>
+<li><p>Save the current position every 10 minutes by time period</p></li>
+<li><p>If the network can be continuously connected or the base station can be successfully located, it is also possible not to save the location locally.</p></li>
+</ul>
+</section>
+</section>
+<section id="about-indoor-positioning">
+<h2>About Indoor Positioning<a class="headerlink" href="#about-indoor-positioning" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>There are GNSS signals by the window, but they are not strong, and there is no guarantee that they can be located. There are many kinds of “windows” and there are many that cannot see the sky. It is normal that the positioning is not successful..</p></li>
+<li><p>All * * nominal * * XXX seconds positioning success, are according to the outdoor, open, sunny environment test, is the theoretical best value</p></li>
+<li><p>The mobile phone can be positioned indoors because there are additional means such as base station/wifi/Bluetooth, and the antenna is debugged well, GNSS chip is also expensive (usually integrated in SoC)!!!</p></li>
+</ul>
+</section>
+<section id="ephemeris-analysis-not-required-research-use">
+<h2>Ephemeris analysis (not required, research use)<a class="headerlink" href="#ephemeris-analysis-not-required-research-use" title="Permalink to this headline">#</a></h2>
+<p>for study and research <a class="reference external" href="https://gitee.com/openLuat/luatos-ext-gnss">https://gitee.com/openLuat/luatos-ext-gnss</a></p>
 </section>
 </section>
 
@@ -833,6 +868,13 @@
 <li><a class="reference internal" href="#">auxiliary positioning AGPS</a><ul>
 <li><a class="reference internal" href="#satellite-ephemeris">Satellite Ephemeris</a></li>
 <li><a class="reference internal" href="#precise-utc-time">Precise UTC time</a></li>
+<li><a class="reference internal" href="#rough-current-position">Rough Current Position</a><ul>
+<li><a class="reference internal" href="#base-station-positioning">base station positioning</a></li>
+<li><a class="reference internal" href="#old-known-location">Old known location</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#about-indoor-positioning">About Indoor Positioning</a></li>
+<li><a class="reference internal" href="#ephemeris-analysis-not-required-research-use">Ephemeris analysis (not required, research use)</a></li>
 </ul>
 </li>
 </ul>

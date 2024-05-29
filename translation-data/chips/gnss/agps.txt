@@ -1,5 +1,9 @@
 三要素指的是
 The three elements refer
+位置的精度不需要很高, 但应尽量在15km范围内
+The accuracy of the position does not need to be very high, but it should be within 15km as much as possible.
+关于室内定位
+About Indoor Positioning
 包含的内容有
 Included content is
 北斗
@@ -10,14 +14,38 @@ Satellite Ephemeris
 Satellite orbit parameters, which can be used to calculate the satellite position
 和Air780EG [GPS+北斗
 and Air780EG [GPS Beidou
+基站定位
+base station positioning
+基站定位, AT/CSDK/LuatOS开发均有对应的命令和函数, 具体参考对应的开发文档
+Base station positioning, AT/CSDK/LuatOS development have corresponding commands and functions, specific reference to the corresponding development documents
+基站定位/wifi定位
+Base station positioning/wifi positioning
+学习研究用
+for study and research
 定点UTC修正信息
 Fixed-point UTC correction information
+建议在首次定位成功后, 立即保存当前位置
+It is recommended to save the current location immediately after the first successful positioning
+所有**标称**的XXX秒定位成功,都是按室外,空旷,晴朗环境测试的, 都是理论最佳值
+All * * nominal * * XXX seconds positioning success, are according to the outdoor, open, sunny environment test, is the theoretical best value
+手机能在室内定位是因为有基站/wifi/蓝牙等额外手段, 而且天线调试好,GNSS芯片也贵(通常集成在SoC里
+The mobile phone can be positioned indoors because there are additional means such as base station/wifi/Bluetooth, and the antenna is debugged well, GNSS chip is also expensive (usually integrated in SoC
+按时间周期, 每隔10分钟保存一次当前位置
+Save the current position every 10 minutes by time period
+旧的已知位置
+Old known location
 星历下载地址
 Ephemeris download address
+星历分析(非必须, 研究用途
+Ephemeris analysis (not required, research use
 更新周期均为10分钟一次, 星历有效期: GPS一般为4小时, 北斗为1小时
 Update cycle is 10 minutes once, ephemeris validity: GPS is generally 4 hours, Beidou is 1 hour
+正如其名称"辅助定位", 这些数据都是**辅助**的, 并不是必须的, 也可以不使用, 只是为了加速定位
+Just like its name "auxiliary positioning", these data are * * auxiliary *, not necessary, or can not be used, just to speed up positioning
 电离层修正参数
 ionospheric correction parameters
+窗边是有GNSS信号的, 但不强, 也不保证能定位到, "窗"有很多种, 看不到天空的也很多, 定位不成功是很正常的
+There are GNSS signals by the window, but they are not strong, and there is no guarantee that they can be located. There are many kinds of "windows" and there are many that cannot see the sky. It is normal that the positioning is not successful.
 粗略当前位置
 Rough Current Position
 精确UTC时间
@@ -26,9 +54,15 @@ Precise UTC time
 Series [GPS Beidou
 系列 [单北斗
 Series [Single Beidou
+若所在环境信号不佳,或者天线性能太差,辅助定位也救不了
+If the signal in the environment is not good, or the antenna performance is too poor, the auxiliary positioning cannot be saved.
+若能持续联网或保证基站定位成功, 不本地保存位置也是可以的
+If the network can be continuously connected or the base station can be successfully located, it is also possible not to save the location locally.
 辅助定位
 auxiliary positioning
 辅助定位 是指 通过向GPS/GNSS模组注入三要素数据，加速定位, 减少首次定位成功的耗时
 Assisted positioning refers to the injection of three-factor data into the GPS/GNSS module to accelerate positioning and reduce the time-consuming success of the first positioning.
+辅助定位后, 位置依旧会静态漂移的, 这是GNSS的特性, 无法完全避免, 需要更高精度可以买RTK定位设备, 贵10倍以上
+After assisted positioning, the position will still drift statically, which is the characteristic of GNSS and cannot be completely avoided. RTK positioning equipment can be bought with higher precision, which is more than 10 times more expensive.
 这个一般从NTP获取, 建议更新周期为4小时
 This is generally obtained from NTP, and the recommended update period is 4 hours.
