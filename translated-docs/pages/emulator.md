@@ -2,6 +2,8 @@
 
 LuatOS Provides an online simulator to quickly experience the development process, familiarize yourself with the development interface, and experiment with novel ideas online.
 
+Reminder: This simulator does not support peripherals and network functions. For a more complete simulation, please use [PC-side simulator](../pc/index.md)
+
 | [![_](../_static/emulator/lua.svg)](https://wiki.luatos.org/_static/luatos-emulator/lua.html)  | [![_](../_static/emulator/log.svg)](https://wiki.luatos.org/_static/luatos-emulator/log.html) | [![_](../_static/emulator/task.svg)](https://wiki.luatos.org/_static/luatos-emulator/task.html) | [![_](../_static/emulator/led.svg)](https://wiki.luatos.org/_static/luatos-emulator/led.html) | [![_](../_static/emulator/key.svg)](https://wiki.luatos.org/_static/luatos-emulator/key.html) |
 |-|-|-|-|-|
 | Lua Test | Log Output | Multitasking | LED Control | Key Input |

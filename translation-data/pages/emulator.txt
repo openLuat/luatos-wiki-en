@@ -12,6 +12,8 @@ Gadgets
 We also provide online interactive debugging tools for common Lua development.
 提供了在线模拟器，可快速体验开发流程、熟悉开发接口、在线实验新奇的想法。
 Provides an online simulator to quickly experience the development process, familiarize yourself with the development interface, and experiment with novel ideas online.
+提醒: 本模拟器不支持外设和网络功能, 如需更完整的模拟, 请使用[PC端模拟器
+Reminder: This simulator does not support peripherals and network functions. For a more complete simulation, please use [PC-side simulator
 检测  | PWM输出
 Detection | PWM Output
 正则匹配测试工具
