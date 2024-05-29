@@ -336,7 +336,8 @@ None
 **Examples**
 
 ```lua
--- Currently only EC618 series (Air780E/Air600E/Air700E/Air780EG support)
+-- Currently supports EC618 series (Air780E/Air600E/Air700E/Air780EG support)
+-- Currently supports EC718 series (Air780EP/Air780EPU and other derivative models support)
 -- Requires firmware compiled after 2022-12-22
 pm.shutdown()
 
@@ -394,12 +395,12 @@ pm.power(pm.USB, false)
 -- Air780EG,Power up the built-in GPS chip. Note that the Air780EG GPS and GPS_ANT are controlled together, so.
 pm.power(pm.GPS, true)
 
--- EC618 Series open pwrkey boot anti-shake
+-- EC618/EC718 Series open pwrkey boot anti-shake
 -- Note: After opening, the reset key will turn off!!! Pwrkey to long press 2 seconds to boot
 -- pm.power(pm.PWK_MODE, true)
 
--- EC618 Series PSM Low Power Settings
--- ec618 Energy saving mode, 0~3,0 completely off, 1 performance priority, 2 balance, 3 extreme power consumption
+-- EC618/EC718 Series PSM Low Power Settings
+-- ec618/ec718 Energy saving mode, 0~3,0 completely off, 1 performance priority, 2 balance, 3 extreme power consumption
 -- Detailed Access: https://airpsm.cn
 -- pm.power(pm.WORK_MODE, 1)
 
@@ -411,7 +412,7 @@ pm.power(pm.GPS, true)
 
 
 
-IO High-level voltage control, currently only available in the EC618 series
+IO High level voltage control
 
 **Parameters**
 
@@ -429,8 +430,8 @@ IO High-level voltage control, currently only available in the EC618 series
 **Examples**
 
 ```lua
--- EC618 Series setting IO level, range 1650~2000,2650~3400, unit millivolt, step 50mv
--- For example Air780E/Air600E/Air700E/Air780EG
+-- EC618/EC718 Series setting IO level, range 1650~2000,2650~3400, unit millivolt, step 50mv
+-- Such as Air780E/Air600E/Air700E/Air780EG/Air780EP/Air780EPV
 -- Note that the settings here take precedence over the configuration of the hardware IOSEL pin
 -- However, the hardware configuration is still used when starting up until the API is called for configuration, so the io level will change.
 -- pm.ioVol(pm.IOVOL_ALL_GPIO, 3300)    -- All GPIO high level outputs 3.3V

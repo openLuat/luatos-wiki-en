@@ -1163,7 +1163,8 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Currently only EC618 series (Air780E/Air600E/Air700E/Air780EG support)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Currently supports EC618 series (Air780E/Air600E/Air700E/Air780EG support)</span>
+<span class="c1">-- Currently supports EC718 series (Air780EP/Air780EPU and other derivative models support)</span>
 <span class="c1">-- Requires firmware compiled after 2022-12-22</span>
 <span class="n">pm</span><span class="p">.</span><span class="n">shutdown</span><span class="p">()</span>
 </pre></div>
@@ -1231,12 +1232,12 @@
 <span class="c1">-- Air780EG,Power up the built-in GPS chip. Note that the Air780EG GPS and GPS_ANT are controlled together, so.</span>
 <span class="n">pm</span><span class="p">.</span><span class="n">power</span><span class="p">(</span><span class="n">pm</span><span class="p">.</span><span class="n">GPS</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
 
-<span class="c1">-- EC618 Series open pwrkey boot anti-shake</span>
+<span class="c1">-- EC618/EC718 Series open pwrkey boot anti-shake</span>
 <span class="c1">-- Note: After opening, the reset key will turn off!!! Pwrkey to long press 2 seconds to boot</span>
 <span class="c1">-- pm.power(pm.PWK_MODE, true)</span>
 
-<span class="c1">-- EC618 Series PSM Low Power Settings</span>
-<span class="c1">-- ec618 Energy saving mode, 0~3,0 completely off, 1 performance priority, 2 balance, 3 extreme power consumption</span>
+<span class="c1">-- EC618/EC718 Series PSM Low Power Settings</span>
+<span class="c1">-- ec618/ec718 Energy saving mode, 0~3,0 completely off, 1 performance priority, 2 balance, 3 extreme power consumption</span>
 <span class="c1">-- Detailed Access: https://airpsm.cn</span>
 <span class="c1">-- pm.power(pm.WORK_MODE, 1)</span>
 </pre></div>
@@ -1245,7 +1246,7 @@
 <hr class="docutils"/>
 <section id="pm-iovol-id-val">
 <h2>pm.ioVol(id, val)<a class="headerlink" href="#pm-iovol-id-val" title="Permalink to this headline">#</a></h2>
-<p>IO High-level voltage control, currently only available in the EC618 series</p>
+<p>IO High level voltage control</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -1276,8 +1277,8 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- EC618 Series setting IO level, range 1650~2000,2650~3400, unit millivolt, step 50mv</span>
-<span class="c1">-- For example Air780E/Air600E/Air700E/Air780EG</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- EC618/EC718 Series setting IO level, range 1650~2000,2650~3400, unit millivolt, step 50mv</span>
+<span class="c1">-- Such as Air780E/Air600E/Air700E/Air780EG/Air780EP/Air780EPV</span>
 <span class="c1">-- Note that the settings here take precedence over the configuration of the hardware IOSEL pin</span>
 <span class="c1">-- However, the hardware configuration is still used when starting up until the API is called for configuration, so the io level will change.</span>
 <span class="c1">-- pm.ioVol(pm.IOVOL_ALL_GPIO, 3300)    -- All GPIO high level outputs 3.3V</span>

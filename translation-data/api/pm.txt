@@ -18,6 +18,8 @@ Incoming Value Type | Explanation
 However, the hardware configuration is still used when starting up until the API is called for configuration, so the io level will change.
 例如
 For example
+例如Air780E/Air600E/Air700E/Air780EG/Air780EP/Air780EPV等
+Such as Air780E/Air600E/Air700E/Air780EG/Air780EP/Air780EPV
 例子
 Examples
 保持休眠前的电平
@@ -122,6 +124,10 @@ Forced Hibernation
 Force the specified sleep mode to ignore the effects of certain peripherals, such
 当前仅EC618系列(Air780E/Air600E/Air700E/Air780EG支持
 Currently only EC618 series (Air780E/Air600E/Air700E/Air780EG support
+当前支持EC618系列(Air780E/Air600E/Air700E/Air780EG支持
+Currently supports EC618 series (Air780E/Air600E/Air700E/Air780EG support
+当前支持EC718系列(Air780EP/Air780EPU等衍生型号支持
+Currently supports EC718 series (Air780EP/Air780EPU and other derivative models support
 彻底休眠, CPU停止, RAM掉电, 仅复位/特殊唤醒管脚可唤醒设备
 Complete sleep, CPU stop, RAM power down, only reset/special wake pin can wake up the device
 或者 id = 1 是, 最大休眠时长是2.5小时
@@ -232,5 +238,7 @@ Restart
 RTC is always running except pm.shutdown(), unless power is lost
 需要2022-12-22之后编译的固件
 Requires firmware compiled after 2022-12-22
+高电平电压控制
+High level voltage control
 高电平电压控制,当前仅EC618系列可用
 High-level voltage control, currently only available in the EC618 series
