@@ -118,7 +118,7 @@ Description:
 For example, if 'wakup0' is set as the wake-up pin, the interrupt callback can be an empty function.
 
 ```lua
-gpio.setup(32, function() end, gpio.PULLUP)
+gpio.setup(39, function() end, gpio.PULLUP)
 ```
 
 ## iosel Feet and usbboot feet
