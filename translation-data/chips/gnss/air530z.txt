@@ -2,6 +2,8 @@
 Examples
 保持备电不掉可保持星历, 备电也掉电后, 星历是会丢失的, 需要重新注入
 Keeping the standby power supply without dropping can keep the ephemeris. After the standby power supply is also powered off, the ephemeris will be lost and needs to be injected again.
+内置的GNSS芯片是 中科微AT6558R, 单北斗版本有认证证书
+The built-in GNSS chip is a Zhongke Micro AT6558R, and the single Beidou version has a certification certificate.
 写入方式
 Write Method
 切换到115200波特率的命令: `$PCAS01,5*19\r\n` 注意后面的`\r\n`是必须的, 实际发送的是`0x0D 0x0A` 2个字节
@@ -16,16 +18,26 @@ Switch to single Beidou
 Switch Navigation Constellation
 切换波特率后, 后续数据会立即以新波特率发送
 After switching the baud rate, subsequent data will be sent at the new baud rate immediately
+北斗星历
+The Big Dipper Calendar
+单北斗星历
+Single Big Dipper Ephemeris
 单北斗星历会比GPS+北斗星历小, 这是正常的, 北斗星历是GPS+北斗的子集
 The single Big Dipper ephemeris will be smaller than the GPS Big Dipper ephemeris, which is normal. The Big Dipper ephemeris is a subset of GPS Beidou
 单北斗版: 北斗二代/三代
 Single Beidou Edition: Beidou II/III
+单北斗的版本(`Air530Z-BD`)不支持切换导航星座, 以上指令会全部忽略
+The single Beidou version ('Air530Z-BD') does not support switching navigation constellations, and all the above instructions will be ignored.
 参数
 Parameters
+固件自带驱动
+Firmware comes with driver
 在设备运行中, 也会持续从卫星接收星历, 从而自动延长星历有效期
 The ephemeris is also continuously received from the satellite while the device is in operation, thereby automatically extending the ephemeris validity period
 地址
 Address
+库
+Library
 提醒
 Reminder
 提醒: 单北斗的版本(`Air530Z-BD`)不支持切换导航星座, 以上指令会全部忽略
@@ -40,6 +52,8 @@ Data bit 8, stop bit 1, no check
 Ephemeris information
 星历本身是二进制文件, 往模块的UART RXD口写入即可, 可分段(不小于256字节)写入, 也可一次性写入
 Ephemeris itself is a binary file, which can be written to the UART RXD port of the module. It can be written in segments (not less than 256 bytes) or once.
+星历本身是二进制文件, 直接往模块的UART RXD口写入即可, 可分段(不小于256字节)写入, 也可一次性写入
+Ephemeris itself is a binary file, which can be written directly to the UART RXD port of the module. It can be written in segments (not less than 256 bytes) or once.
 星历本身自带校验, 但写入无返回值
 The ephemeris itself comes with verification, but there is no return value for writing.
 星座之间可以组合, 如GPS+北斗=3, 北斗+GLONASS=6, 全部
@@ -50,6 +64,8 @@ Constellation number: GPS = 1, Beidou
 Ordinary version: GPS, Beidou second generation/third generation
 更新周期均为10分钟一次, 星历有效期: GPS为4小时, 北斗为1小时
 Update cycle is 10 minutes once, ephemeris validity: GPS is 4 hours, Beidou is 1 hour
+注意后面的`\r\n`是必须的, 实际发送的是`0x0D 0x0A` 2个字节
+Note that the following '\r\n' is required, the actual sending is' 0x0D 0x0A' 2 bytes
 电平是3.3V的
 The level is 3.3V
 硬件分两个版本, 普通版`Air530Z`和单北斗版`Air530Z-BD`, 硬件封装完全一致, 区别在于软件支持的星座不同
@@ -62,9 +78,15 @@ Series [GPS Beidou
 Series [Single Beidou
 详细通信协议请查阅 [Air530Z协议文档
 For detailed communication protocol, please refer to [Air530Z protocol document
+请参考
+Please refer
 资料网站
 Information website
+资料链接
+Data Link
 软件信息
 Software Information
+适配情况
+Adaptation
 默认波特率根据批次和封装的不同, 可能是9600 或者
 Depending on the batch and package, the default baud rate may be 9600 or
