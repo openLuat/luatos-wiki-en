@@ -753,10 +753,82 @@
 <ul class="simple">
 <li><p>Information website: <a class="reference external" href="https://air510u.cn">air510u.cn</a></p></li>
 </ul>
+<p>The built-in GNSS chip is the core and object UC6228CI</p>
 </section>
 <section id="software-information">
 <h2>Software Information<a class="headerlink" href="#software-information" title="Permalink to this headline">#</a></h2>
-<p>TODO</p>
+<p>Data Link: <a class="reference external" href="https://www.unicorecomm.com/products/detail/41">UC6228CI</a></p>
+<section id="uart-parameters">
+<h3>UART Parameters<a class="headerlink" href="#uart-parameters" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>The default baud rate is 115200</p></li>
+<li><p>Data bit 8, stop bit 1, no check</p></li>
+<li><p>UART The level is 3.3V</p></li>
+<li><p>The highest baud rate supported is 115200, the lowest 9600</p></li>
+</ul>
+</section>
+<section id="supported-navigation-constellations">
+<h3>Supported navigation constellations<a class="headerlink" href="#supported-navigation-constellations" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Default firmware: GPS, Beidou II, QZSS</p></li>
+<li><p>Loading firmware: GPS, Beidou II, Beidou III, QZSS, GLONASS, GALILEO</p></li>
+</ul>
+<p>Switch Navigation Constellation:</p>
+<ol class="arabic simple">
+<li><p>Constellation number: GPS = 1, Beidou=10</p></li>
+<li><p>Constellations can be combined, such as GPS Beidou = 11, single Beidou is 10</p></li>
+</ol>
+<p>Examples:</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>// Switch to GPS Beidou
+$CFGSYS,H11\r\n
+// Switch to Single GPS
+$CFGSYS,H01\r\n
+// Switch to single Beidou
+$CFGSYS,H10\r\n
+</pre></div>
+</div>
+<p>Reminder:</p>
+<ul class="simple">
+<li><p>Switching the navigation constellation will soft restart the module, the NMEA configuration will restore the default value, and the non-mode NMEA statement needs to be opened again.</p></li>
+</ul>
+</section>
+<section id="ephemeris-information">
+<h3>Ephemeris information<a class="headerlink" href="#ephemeris-information" title="Permalink to this headline">#</a></h3>
+<p>Address:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://download.openluat.com/9501-xingli/HXXT_GPS_BDS_AGNSS_DATA.dat">GPS+The Big Dipper Calendar http://download.openluat.com/9501-xingli/HXXT_GPS_BDS_AGNSS_DATA.dat</a></p></li>
+<li><p><a class="reference external" href="http://download.openluat.com/9501-xingli/HXXT_BDS_AGNSS_DATA.dat">Single Big Dipper Ephemeris http://download.openluat.com/9501-xingli/HXXT_BDS_AGNSS_DATA.dat</a></p></li>
+</ul>
+<p>Update cycle is 10 minutes once, ephemeris validity: GPS is 4 hours, Beidou is 1 hour</p>
+<p>The single Big Dipper ephemeris will be smaller than the GPS Big Dipper ephemeris, which is normal. The Big Dipper ephemeris is a subset of GPS Beidou</p>
+<p>Write Method:</p>
+<ol class="arabic simple">
+<li><p>Ephemeris itself is a binary file (RTCM format), which can be written directly to the UART RXD port of the module. It can be written in segments (not less than 256 bytes) or once.</p></li>
+<li><p>The ephemeris itself comes with verification, but there is no return value for writing.</p></li>
+</ol>
+<p>Reminder:</p>
+<ol class="arabic simple">
+<li><p>The ephemeris is also continuously received from the satellite while the device is in operation, thereby automatically extending the ephemeris validity period</p></li>
+<li><p>Keeping the standby power supply without dropping can keep the ephemeris. After the standby power supply is also powered off, the ephemeris will be lost and needs to be injected again.</p></li>
+</ol>
+</section>
+</section>
+<section id="adaptation">
+<h2>Adaptation<a class="headerlink" href="#adaptation" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>lua Library: <a class="reference external" href="https://github.com/wendal/luatos-lib-uc6228">uc6228 for LuatOS</a></p></li>
+<li><p>AT Firmware comes with driver</p></li>
+<li><p>CSDK Please refer example_gnss</p></li>
+</ol>
+</section>
+<section id="known-issues">
+<h2>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>In the first version of the Air510U development board, the PPS resistance is too large, resulting in the PPS lamp still not bright after successful positioning.</p></li>
+<li><p>Built-in firmware is ROM version, configuration information cannot be saved</p></li>
+<li><p>The built-in firmware only supports GPS Beidou QZSS, and does not support other navigation constellations</p></li>
+<li><p>The built-in firmware only supports satellites with Beidou number 37 and below</p></li>
+</ol>
 </section>
 </section>
 
@@ -818,7 +890,14 @@
             <ul>
 <li><a class="reference internal" href="#">Air510U</a><ul>
 <li><a class="reference internal" href="#hardware-data">Hardware Data</a></li>
-<li><a class="reference internal" href="#software-information">Software Information</a></li>
+<li><a class="reference internal" href="#software-information">Software Information</a><ul>
+<li><a class="reference internal" href="#uart-parameters">UART Parameters</a></li>
+<li><a class="reference internal" href="#supported-navigation-constellations">Supported navigation constellations</a></li>
+<li><a class="reference internal" href="#ephemeris-information">Ephemeris information</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adaptation">Adaptation</a></li>
+<li><a class="reference internal" href="#known-issues">Known issues</a></li>
 </ul>
 </li>
 </ul>

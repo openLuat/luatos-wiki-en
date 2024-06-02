@@ -36,8 +36,12 @@ Firmware comes with driver
 The ephemeris is also continuously received from the satellite while the device is in operation, thereby automatically extending the ephemeris validity period
 地址
 Address
+已知问题
+Known issues
 库
 Library
+截止到2024.6.2, 模块软件是支持编号37以上的北斗卫星的, 但北斗星历未包含编号37以上的卫星, 在特定场景下, 单北斗模块注入星历后, 首次定位时间会延长
+As of 2024.6.2, the module software supports Beidou satellites with numbers above 37, but the Beidou ephemeris does not include satellites with numbers above 37. Under certain scenarios, the first positioning time will be extended after the single Beidou module is injected with ephemeris.
 提醒
 Reminder
 提醒: 单北斗的版本(`Air530Z-BD`)不支持切换导航星座, 以上指令会全部忽略

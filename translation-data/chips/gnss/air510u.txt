@@ -1,6 +1,84 @@
+例子
+Examples
+保持备电不掉可保持星历, 备电也掉电后, 星历是会丢失的, 需要重新注入
+Keeping the standby power supply without dropping can keep the ephemeris. After the standby power supply is also powered off, the ephemeris will be lost and needs to be injected again.
+内置固件仅支持GPS+北斗+QZSS, 不支持其他导航星座
+The built-in firmware only supports GPS Beidou QZSS, and does not support other navigation constellations
+内置固件仅支持北斗编号37及以下的卫星
+The built-in firmware only supports satellites with Beidou number 37 and below
+内置固件是ROM版, 配置信息无法存盘
+Built-in firmware is ROM version, configuration information cannot be saved
+内置的GNSS芯片是 芯与物
+The built-in GNSS chip is the core and object
+写入方式
+Write Method
+切换到GPS+北斗
+Switch to GPS Beidou
+切换到单
+Switch to Single
+切换到单北斗
+Switch to single Beidou
+切换导航星座
+Switch Navigation Constellation
+切换导航星座会软重启模块, NMEA配置会恢复默认值, 非模式NMEA语句需要再次开启
+Switching the navigation constellation will soft restart the module, the NMEA configuration will restore the default value, and the non-mode NMEA statement needs to be opened again.
+初版Air510U开发板, PPS电阻过大, 导致定位成功后PPS灯依然不亮
+In the first version of the Air510U development board, the PPS resistance is too large, resulting in the PPS lamp still not bright after successful positioning.
+加载固件: GPS, 北斗二号, 北斗三号
+Loading firmware: GPS, Beidou II, Beidou III
+北斗星历
+The Big Dipper Calendar
+单北斗星历
+Single Big Dipper Ephemeris
+单北斗星历会比GPS+北斗星历小, 这是正常的, 北斗星历是GPS+北斗的子集
+The single Big Dipper ephemeris will be smaller than the GPS Big Dipper ephemeris, which is normal. The Big Dipper ephemeris is a subset of GPS Beidou
+参数
+Parameters
+固件自带驱动
+Firmware comes with driver
+在设备运行中, 也会持续从卫星接收星历, 从而自动延长星历有效期
+The ephemeris is also continuously received from the satellite while the device is in operation, thereby automatically extending the ephemeris validity period
+地址
+Address
+已知问题
+Known issues
+库
+Library
+提醒
+Reminder
+支持的最高波特率是115200, 最低
+The highest baud rate supported is 115200, the lowest
+支持的导航星座
+Supported navigation constellations
+数据位8, 停止位1, 无校验
+Data bit 8, stop bit 1, no check
+星历信息
+Ephemeris information
+星历本身是二进制文件(RTCM格式), 直接往模块的UART RXD口写入即可, 可分段(不小于256字节)写入, 也可一次性写入
+Ephemeris itself is a binary file (RTCM format), which can be written directly to the UART RXD port of the module. It can be written in segments (not less than 256 bytes) or once.
+星历本身自带校验, 但写入无返回值
+The ephemeris itself comes with verification, but there is no return value for writing.
+星座之间可以组合, 如GPS+北斗=11, 单北斗是
+Constellations can be combined, such as GPS Beidou = 11, single Beidou is
+星座编号: GPS=1, 北斗
+Constellation number: GPS = 1, Beidou
+更新周期均为10分钟一次, 星历有效期: GPS为4小时, 北斗为1小时
+Update cycle is 10 minutes once, ephemeris validity: GPS is 4 hours, Beidou is 1 hour
+电平是3.3V的
+The level is 3.3V
 硬件资料
 Hardware Data
+请参考
+Please refer
 资料网站
 Information website
+资料链接
+Data Link
 软件信息
 Software Information
+适配情况
+Adaptation
+默认固件: GPS, 北斗二号
+Default firmware: GPS, Beidou II
+默认波特率是
+The default baud rate is

@@ -41,7 +41,7 @@ $PCAS04,3*1A\r\n
 // Switch to Single GPS
 $PCAS04,1*18\r\n
 // Switch to single Beidou
-$PCAS04,2*1B
+$PCAS04,2*1B\r\n
 ```
 
 Reminder:
@@ -75,3 +75,7 @@ Reminder:
 1. lua Library: [at6558r for LuatOS](https://github.com/wendal/luatos-lib-at6558r)
 2. AT Firmware comes with driver
 3. CSDK Please refer example_gnss
+
+## Known issues
+
+1. As of 2024.6.2, the module software supports Beidou satellites with numbers above 37, but the Beidou ephemeris does not include satellites with numbers above 37. Under certain scenarios, the first positioning time will be extended after the single Beidou module is injected with ephemeris.
