@@ -160,7 +160,7 @@ Get Raw RMC Location Information
 
 |Incoming Value Type | Explanation|
 |-|-|
-|int|Format of coordinate data, 0-DDMM.MMM format, 1-DDDDDDD format, 2-DD.DDDDD format|
+|int|Format of coordinate data, 0-DDMM.MMM format, 1-DDDDDDD format, 2-DD.DDDDD format, 3-raw RMC string|
 
 **Return Value**
 
