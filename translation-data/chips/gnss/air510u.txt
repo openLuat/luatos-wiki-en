@@ -44,6 +44,8 @@ Address
 Known issues
 库
 Library
+开发板的天线引脚不带馈电, 如需使用有源天线, 需要从VDD_REF引脚接电容引到天线脚
+The antenna pin of the development board does not have feed. If you need to use an active antenna, you need to connect the capacitor from the VDD_REF pin to the antenna pin.
 提醒
 Reminder
 支持的最高波特率是115200, 最低

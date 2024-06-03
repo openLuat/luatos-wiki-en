@@ -75,3 +75,4 @@ Reminder:
 2. Built-in firmware is ROM version, configuration information cannot be saved
 3. The built-in firmware only supports GPS Beidou QZSS, and does not support other navigation constellations
 4. The built-in firmware only supports satellites with Beidou number 37 and below
+5. Air510U The antenna pin of the development board does not have feed. If you need to use an active antenna, you need to connect the capacitor from the VDD_REF pin to the antenna pin.

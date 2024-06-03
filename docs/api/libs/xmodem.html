@@ -807,6 +807,31 @@
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">xmodem</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">115200</span><span class="p">,</span><span class="s2">"/luadb/test.bin"</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="xmodem-close-uart-id">
+<h2>xmodem.close(uart_id)<a class="headerlink" href="#xmodem-close-uart-id" title="Permalink to this headline">#</a></h2>
+<p>Close xmodem</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>uart_id uart Port number</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- After the xmodem transmission is executed, it is recommended to close the xmodem context regardless of whether the transmission is successful or not.uart</span>
+<span class="n">xmodem</span><span class="p">.</span><span class="n">close</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -869,6 +894,7 @@
             <ul>
 <li><a class="reference internal" href="#">xmodem - xmodem Drive</a><ul>
 <li><a class="reference internal" href="#xmodem-send-uart-id-uart-br-file-path-type">xmodem.send(uart_id, uart_br, file_path,type)</a></li>
+<li><a class="reference internal" href="#xmodem-close-uart-id">xmodem.close(uart_id)</a></li>
 </ul>
 </li>
 </ul>

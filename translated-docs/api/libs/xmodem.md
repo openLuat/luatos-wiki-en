@@ -52,3 +52,29 @@ xmodem.send(2,115200,"/luadb/test.bin")
 
 ---
 
+## xmodem.close(uart_id)
+
+
+
+Close xmodem
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|number|uart_id uart Port number|
+
+**Return Value**
+
+None
+
+**Examples**
+
+```lua
+-- After the xmodem transmission is executed, it is recommended to close the xmodem context regardless of whether the transmission is successful or not.uart
+xmodem.close(2)
+
+```
+
+---
+
