@@ -14,6 +14,8 @@ Satellite Ephemeris
 Satellite orbit parameters, which can be used to calculate the satellite position
 和Air780EG [GPS+北斗
 and Air780EG [GPS Beidou
+和Air780EG [单北斗
+and Air780EG [single dipper
 基站定位
 base station positioning
 基站定位, AT/CSDK/LuatOS开发均有对应的命令和函数, 具体参考对应的开发文档

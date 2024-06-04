@@ -25,6 +25,7 @@ Included content is:
 Ephemeris download address:
 
 * Air510U and Air780EG [GPS Beidou](http://download.openluat.com/9501-xingli/HXXT_GPS_BDS_AGNSS_DATA.dat)
+* Air510U and Air780EG [single dipper](http://download.openluat.com/9501-xingli/HXXT_BDS_AGNSS_DATA.dat)
 * Air530Z Series [GPS Beidou](http://download.openluat.com/9501-xingli/CASIC_data.dat)
 * Air530Z Series [Single Beidou](http://download.openluat.com/9501-xingli/CASIC_data_bds.dat)
 * Air780EPVH [GPS+Beidou](http://download.openluat.com/9501-xingli/HXXT_GPS_BDS_AGNSS_DATA.dat)
