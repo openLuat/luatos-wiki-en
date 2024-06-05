@@ -1023,11 +1023,22 @@
 </div>
 </section>
 <hr class="docutils"/>
-<section id="nimble-mac">
-<h2>nimble.mac()<a class="headerlink" href="#nimble-mac" title="Permalink to this headline">#</a></h2>
+<section id="nimble-mac-mac">
+<h2>nimble.mac(mac)<a class="headerlink" href="#nimble-mac-mac" title="Permalink to this headline">#</a></h2>
 <p>Get Bluetooth MAC</p>
 <p><strong>Parameters</strong></p>
-<p>None</p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>The MAC address to be set, 6 bytes, is obtained only if it is not transmitted.</p></td>
+</tr>
+</tbody>
+</table></div>
 <p><strong>Return Value</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -1046,6 +1057,9 @@
 <span class="c1">-- This function works for all modes</span>
 <span class="kd">local</span> <span class="n">mac</span> <span class="o">=</span> <span class="n">nimble</span><span class="p">.</span><span class="n">mac</span><span class="p">()</span>
 <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"ble"</span><span class="p">,</span> <span class="s2">"mac"</span><span class="p">,</span> <span class="n">mac</span> <span class="ow">and</span> <span class="n">mac</span><span class="p">:</span><span class="n">toHex</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">"Unknwn"</span><span class="p">)</span>
+
+<span class="c1">-- Modify MAC address, 2024.06.05 new, currently only Air601 supports, restart after modification takes effect</span>
+<span class="n">nimble</span><span class="p">.</span><span class="n">mac</span><span class="p">(</span><span class="n">string</span><span class="p">.</span><span class="n">fromHex</span><span class="p">(</span><span class="s2">"1234567890AB"</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -1864,7 +1878,7 @@
 <li><a class="reference internal" href="#nimble-connok">nimble.connok()</a></li>
 <li><a class="reference internal" href="#nimble-send-msg-conn-handle-data">nimble.send_msg(conn, handle, data)</a></li>
 <li><a class="reference internal" href="#nimble-setuuid-tp-addr">nimble.setUUID(tp, addr)</a></li>
-<li><a class="reference internal" href="#nimble-mac">nimble.mac()</a></li>
+<li><a class="reference internal" href="#nimble-mac-mac">nimble.mac(mac)</a></li>
 <li><a class="reference internal" href="#nimble-sendnotify-srv-uuid-chr-uuid-data">nimble.sendNotify(srv_uuid, chr_uuid, data)</a></li>
 <li><a class="reference internal" href="#nimble-sendindicate-srv-uuid-chr-uuid-data">nimble.sendIndicate(srv_uuid, chr_uuid, data)</a></li>
 <li><a class="reference internal" href="#nimble-advparams-conn-mode-disc-mode-itvl-min-itvl-max-channel-map-filter-policy-high-duty-cycle">nimble.advParams(conn_mode, disc_mode, itvl_min, itvl_max, channel_map, filter_policy, high_duty_cycle)</a></li>

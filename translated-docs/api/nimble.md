@@ -218,7 +218,7 @@ nimble.setUUID("indicate", string.fromHex("FF32")) -- The UUID of the data subsc
 
 ---
 
-## nimble.mac()
+## nimble.mac(mac)
 
 
 
@@ -226,7 +226,9 @@ Get Bluetooth MAC
 
 **Parameters**
 
-None
+|Incoming Value Type | Explanation|
+|-|-|
+|string|The MAC address to be set, 6 bytes, is obtained only if it is not transmitted.|
 
 **Return Value**
 
@@ -241,6 +243,9 @@ None
 -- This function works for all modes
 local mac = nimble.mac()
 log.info("ble", "mac", mac and mac:toHex() or "Unknwn")
+
+-- Modify MAC address, 2024.06.05 new, currently only Air601 supports, restart after modification takes effect
+nimble.mac(string.fromHex("1234567890AB"))
 
 ```
 
