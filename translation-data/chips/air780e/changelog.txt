@@ -1,5 +1,7 @@
 下关闭
 Lower Close
+下关闭websocket和ftp客户端的支持
+Turn off support for websocket and ftp clients under
 不再自动查询基站信息
 No longer automatically query base station information
 且PKCS7, 解密错误数据不能返回
@@ -8,6 +10,8 @@ And PKCS7, decryption error data cannot be returned
 All large arrays in are changed to heap allocation.
 中国电信
 China Telecom
+主动关闭时，回调消息错误
+Callback message error on active shutdown
 云平台对接
 Cloud Platform Docking
 云编译luatos固件选择禁用DTLS时会报mbedtls_ssl_conf_handshake_timeout函数不存在
@@ -16,6 +20,8 @@ When the cloud compiled luatos firmware chooses to disable DTLS, the mbedtls_ssl
 Cloud compilation supports LVGL-enabled PNG and BMP decoding
 云编译的sarasa英文字体不生效
 The sarasa English font compiled by the cloud does not take effect.
+互斥锁保护
+mutex protection
 优化: 485等待发送完成
 Optimization: 485 waiting for sending to complete
 优化: adc的id兼容一下老的10/11配置
@@ -218,6 +224,8 @@ Function has a memory leak
 Maximum limit of partial pressure range
 分压范围添加最大限制
 Partial pressure range Add maximum limit
+刷固件读取的luadb分区大小不对
+The size of the luadb partition read by the firmware is incorrect.
 功能新增
 Function added
 功能新增和更新
@@ -236,12 +244,18 @@ remove the 4096 limit of mqtt receiving a single packet
 Repeated creation of style will crash
 发送大量数据时，需要分批发送
 When sending large amounts of data, you need to send them in batches.
+发送时，一次性将数据发出去，避免被打断
+When sending, the data is sent out at one time to avoid being interrupted.
+合入原厂补丁
+Mold into the original patch
 合入原厂补丁 修复SWD CP IO遇到异常信号时会死机，修复伪基站防护漏洞
 Join the original patch to repair SWD CP IO will crash when encountering abnormal signals, and repair the vulnerability of pseudo base station protection.
 合入原厂补丁，修复一个因搜索基站引起的死机问题
 Inform the original patch to fix a crash caused by searching for base stations.
 启动后台线程应判断是否成功,创建失败要走失败流程
 Starting the background thread should judge whether it is successful or not, and the failure process should be followed if the creation fails.
+因空间不足，后续需要tts_onchip的版本可自行云编译或本地编译，本版本不再更新
+Due to insufficient space, subsequent versions to be tts_onchip can be compiled on the cloud or locally. This version will not be updated.
 固件I2C默认使用poll模式
 Firmware I2C uses poll mode by default
 固件下audio库播放音频没有结束播放的回调消息
@@ -262,6 +276,8 @@ When the DNS procedure is in progress, the call network_force_close_socket and t
 ntp-based millisecond timestamp
 基础循环录音
 Basic loop recording
+基站同步时间开关
+Base station synchronous time switch
 备用地址
 Alternate Address
 失败后死机
@@ -294,6 +310,14 @@ library adds streaming hash interface
 library's sm4 encryption mode error
 库的关闭逻辑不完备,并清除编译警告
 The closing logic of the library is incomplete and the compilation warning is cleared.
+底层数据写入完成，但脚本数据没完成时，不允许升级
+When the underlying data is written but the script data is not completed, the upgrade is not allowed.
+异常死机
+abnormal crash
+当pwm未close，既改周期又改占空比时，可能死机
+When pwm is not closed and the cycle and duty cycle are changed, it may crash.
+当遇到无法解析的NMEA语句时，屏蔽打印
+When an unparsed NMEA statement is encountered, the mask prints
 录音不能配置
 Recording cannot be configured
 录音功能
@@ -318,6 +342,10 @@ Automatically turn off wdt before executing the poweroff, otherwise it will cras
 Extend the gpio.setup function, add alt_func parameters, and support configuration reuse
 扩展 http.request 函数, 支持fota和下载过程回调
 Extended http.request function, support for Fota and download process callback
+报文长度超过256时，无法连接服务器
+Unable to connect to server when message length exceeds 256
+换向脚用不了
+I can't use the reversing foot.
 接收数据时,如果zbuff扩容失败,先尝试缩小接收长度,如果没有空间就只能返回错误了
 When receiving data, if zbuff expansion fails, first try to reduce the receiving length, if there is no space, only an error can be returned.
 接收消息不允许过多，防止异常情况下大量uart接收消息死机
@@ -456,8 +484,12 @@ Added u8g2.SetPowerSave function
 New Features
 新增多款传感器/外设驱动, ina226/ak8963/mpu9250/st7565等
 Add a variety of sensors/peripheral drivers, ina226/ak8963/mpu9250/st7565, etc.
+无法使用ALT4的GPIO18和
+Unable to use ALT4 GPIO18 and
 无法验证pin码
 Unable to validate pin code
+时，485转向io控制timer没有停止，导致数据接收出问题
+When, the 485 turned to io control timer did not stop, resulting in data reception problems.
 时钟模块的驱动及
 Clock module driver and
 更新 ws2812 demo,EC618支持pin直驱
@@ -470,6 +502,8 @@ Please refer to git's commit log for more detailed updates.
 This version is in RC status, pending release
 本版本已发布, 日期 2023.11.15, 对应的git tag为
 This version has been released on 2023.11.15, and the corresponding git tag is
+查询当前连接状态
+Query the current connection status
 模式1下，去除掉一看就是不合理的中断
 In mode 1, removing it is an unreasonable interruption.
 此版本同样包含[V1104](https://gitee.com/openLuat/LuatOS/releases/tag/v0007.ec618.v1104)修改所有更新
@@ -484,10 +518,16 @@ Not working properly, the reason is that there is an error in judging the length
 Note: Since the return value of the socket interface is not compatible with the previous one, the version number is hereby raised from v1002 to v1103 as a reminder.
 测试定位效果_搭配公众号文章.zip** 是用于测Air780EG定位效果的
 Test positioning effect_match public number article. zip **is used to test Air780EG positioning effect
+深度休眠唤醒时保持休眠前设置的电平
+Retains the level set before sleep during deep sleep wake-up
+深度休眠定时器回调消息
+Deep Sleep Timer Callback Message
 添加
 Add
 添加crypto.crc7函数
 Add crypto.crc7 function
+添加DHCP超时消息
+Add DHCP Timeout Message
 添加fastlz压缩库
 Add fastlz compression library
 添加SIM卡写入统计的
@@ -506,6 +546,8 @@ Add Adapter Options
 Add Speed Parameter Item
 添加错误返回参数
 Add error return parameter
+添加防护，防止已释放的资源再次使用
+Add protection to prevent freed resources from being used again
 添加高通字体gbk接口
 Add Qualcomm font gbk interface
 温度的单位应该是1/1000摄氏度, 实现错了
@@ -524,6 +566,8 @@ In the Air780E V1107 firmware will report an error, just fill in the delay value
 Series Firmware Release Notes
 缺陷修复
 Defect repair
+自定义header支持自定义大小
+Custom header supports custom size
 获取标记未更新，导致获取adc值有可能是上一次的
 The acquisition tag is not updated, resulting in the acquisition of the adc value may be the last
 虚拟串口上位机
@@ -544,6 +588,8 @@ Solution: Set the volume to 100 or above
 Adjust the floating-point number format of json.encode to%.7f, which is more in line with practical use, otherwise it will eat floating-point precision.
 软件DAC音频的音量配置生效
 Volume configuration for software DAC audio takes effect
+软件串口无法使用timer1和
+The software serial port cannot use timer1 and
 选择关闭内部分压模式时没有完全关闭掉
 The internal partial pressure mode is not completely turned off when it is selected to turn off the internal partial pressure mode.
 通过[云编译](https://wiki.luatos.org/develop/compile/Cloud_compilation.html),全自动编译最新固件
@@ -556,8 +602,14 @@ Department standard jt808 docking
 Capacity calculation error in
 重写sntp函数,并支持自动超时** 弱网情况下,sntp可能会耗尽socket连接数
 Rewrite the sntp function and support automatic timeout. **In a weak network, sntp may run out of socket connections.
+重置协议栈参数到默认
+Reset stack parameters to default
+重试次数增加，应对运行速度慢的路由器
+Increased retries for slow routers
 钉钉机器人
 DingTalk robot
+防止可能的时间设置错误
+Prevent possible time setting errors
 预期 `2023.12.31` 前
 Expected before '20232.12.31'
 飞书机器人

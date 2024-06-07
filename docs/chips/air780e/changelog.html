@@ -753,6 +753,40 @@
 <li><p><a class="reference external" href="https://pan.air32.cn/s/DJTr?path=%2F">Firmware Download Alternate Address</a></p></li>
 <li><p>Fully automatic compilation of the latest firmware through <a class="reference external" href="https://wiki.luatos.org/develop/compile/Cloud_compilation.html">Cloud Compile</a></p></li>
 </ul>
+<section id="v1110">
+<h2>v1110<a class="headerlink" href="#v1110" title="Permalink to this headline">#</a></h2>
+<p>Compatibility changes:
+1：tts_onchip Turn off support for websocket and ftp clients under
+2：tts_onchip Lower Close ftp
+3：Due to insufficient space, subsequent versions to be tts_onchip can be compiled on the cloud or locally. This version will not be updated.</p>
+<p>Defect repair
+1：Prevent possible time setting errors
+2：luaot The size of the luadb partition read by the firmware is incorrect.
+3：wait485 When, the 485 turned to io control timer did not stop, resulting in data reception problems.
+4：When pwm is not closed and the cycle and duty cycle are changed, it may crash.
+5：485 I can’t use the reversing foot.GPIO14、GPIO15
+6：The software serial port cannot use timer1 and timer4
+7：OTA When the underlying data is written but the script data is not completed, the upgrade is not allowed.
+8：uart485 Unable to use ALT4 GPIO18 and GPIO19
+9：socket Callback message error on active shutdown
+10：Mold into the original patch
+11：mqtt When sending, the data is sent out at one time to avoid being interrupted.
+12：mqttconnect Unable to connect to server when message length exceeds 256
+13：ftp abnormal crash
+14：socket Add protection to prevent freed resources from being used again</p>
+<p>New Features
+add：Reset stack parameters to default
+add：Base station synchronous time switch
+add：Deep Sleep Timer Callback Message
+add：Retains the level set before sleep during deep sleep wake-up
+add：w5500 Add DHCP Timeout Message
+add：DHCP Increased retries for slow routers
+add：socket Query the current connection status
+add：http Custom header supports custom size
+add：sfud mutex protection</p>
+<p>Update function
+update：When an unparsed NMEA statement is encountered, the mask prints</p>
+</section>
 <section id="v1109">
 <h2>V1109<a class="headerlink" href="#v1109" title="Permalink to this headline">#</a></h2>
 <p>Compatibility changes:</p>
@@ -1153,6 +1187,7 @@ date: 2023-02-06</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Ec618 Series Firmware Release Notes</a><ul>
+<li><a class="reference internal" href="#v1110">v1110</a></li>
 <li><a class="reference internal" href="#v1109">V1109</a></li>
 <li><a class="reference internal" href="#v1108">V1108</a></li>
 <li><a class="reference internal" href="#v1107">V1107</a></li>
