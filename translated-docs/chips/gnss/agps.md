@@ -28,7 +28,7 @@ Ephemeris download address:
 * Air510U and Air780EG [single dipper](http://download.openluat.com/9501-xingli/HXXT_BDS_AGNSS_DATA.dat)
 * Air530Z Series [GPS Beidou](http://download.openluat.com/9501-xingli/CASIC_data.dat)
 * Air530Z Series [Single Beidou](http://download.openluat.com/9501-xingli/CASIC_data_bds.dat)
-* Air780EPVH [GPS+Beidou](http://download.openluat.com/9501-xingli/HXXT_GPS_BDS_AGNSS_DATA.dat)
+* Air780EPVH [GPS+Beidou](http://download.openluat.com/9501-xingli/HD_GPS_BDS.hdb)
 
 Update cycle is 10 minutes once, ephemeris validity: GPS is generally 4 hours, Beidou is 1 hour
 
