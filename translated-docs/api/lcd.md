@@ -31,11 +31,16 @@ This library has its own demo,[click this link to view the demo example of LCD](
 |lcd.font_opposansm22_chinese|font|22 Chinese font|
 |lcd.font_opposansm24_chinese|font|24 Chinese font|
 |lcd.font_opposansm32_chinese|font|32 Chinese font|
+|lcd.direction_0|int|0°Direction command|
+|lcd.direction_90|int|90°Direction command|
+|lcd.direction_180|int|180°Direction command|
+|lcd.direction_270|int|270°Direction command|
 |lcd.HWID_0|hardware LCD driver id0 | (selected according to chip support)|
 |lcd.WIRE_3_BIT_9_INTERFACE_I|3-wire spi | 9bit mode I|
 |lcd.WIRE_4_BIT_8_INTERFACE_I|four-wire spi | 8bit mode I|
 |lcd.WIRE_3_BIT_9_INTERFACE_II|3-wire spi | 9bit mode II|
 |lcd.WIRE_4_BIT_8_INTERFACE_II|four-wire spi | 8bit mode II|
+|lcd.DATA_2_LANE|int|Dual Channel Mode|
 
 
 ## lcd.init(tp, args, spi_dev, init_in_service)
@@ -833,7 +838,11 @@ None
 
 **Examples**
 
-None
+```lua
+-- This API works with LCD. setupBuff LCD. autoFlush
+lcd.flush()
+
+```
 
 ---
 

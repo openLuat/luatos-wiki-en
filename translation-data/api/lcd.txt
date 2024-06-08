@@ -56,6 +56,8 @@ Radius
 Single parameter form, 24bit RGB value, swap = true, recommend
 参数
 Parameters
+双通道模式
+Dual Channel Mode
 反显
 anti-apparent
 反显关闭
@@ -130,6 +132,8 @@ Data
 Document Content
 文件路径
 File Path
+方向命令
+Direction command
 无
 None
 无返回值
@@ -150,6 +154,8 @@ Display size (note: the generated size of the two-dimensional code is related to
 Display String
 显示屏初始化
 Display initialization
+本API与 lcd.setupBuff lcd.autoFlush 配合使用
+This API works with LCD. setupBuff LCD. autoFlush
 本API支持多种模式, 参数数量分别是
 This API supports multiple modes, and the number of parameters is
 本库有专属demo，[点此链接查看lcd的demo例子

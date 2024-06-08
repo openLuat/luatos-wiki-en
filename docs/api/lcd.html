@@ -835,6 +835,22 @@
 <td><p>font</p></td>
 <td><p>32 Chinese font</p></td>
 </tr>
+<tr class="row-odd"><td><p>lcd.direction_0</p></td>
+<td><p>int</p></td>
+<td><p>0°Direction command</p></td>
+</tr>
+<tr class="row-even"><td><p>lcd.direction_90</p></td>
+<td><p>int</p></td>
+<td><p>90°Direction command</p></td>
+</tr>
+<tr class="row-odd"><td><p>lcd.direction_180</p></td>
+<td><p>int</p></td>
+<td><p>180°Direction command</p></td>
+</tr>
+<tr class="row-even"><td><p>lcd.direction_270</p></td>
+<td><p>int</p></td>
+<td><p>270°Direction command</p></td>
+</tr>
 <tr class="row-odd"><td><p>lcd.HWID_0</p></td>
 <td><p>hardware LCD driver id0</p></td>
 <td><p>(selected according to chip support)</p></td>
@@ -854,6 +870,10 @@
 <tr class="row-odd"><td><p>lcd.WIRE_4_BIT_8_INTERFACE_II</p></td>
 <td><p>four-wire spi</p></td>
 <td><p>8bit mode II</p></td>
+</tr>
+<tr class="row-even"><td><p>lcd.DATA_2_LANE</p></td>
+<td><p>int</p></td>
+<td><p>Dual Channel Mode</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1679,7 +1699,10 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<p>None</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This API works with LCD. setupBuff LCD. autoFlush</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">flush</span><span class="p">()</span>
+</pre></div>
+</div>
 </section>
 <hr class="docutils"/>
 <section id="lcd-setupbuff-conf-onheap">
