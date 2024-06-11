@@ -799,8 +799,8 @@
 <span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="fota-init-storge-location-len-param1">
-<h2>fota.init(storge_location, len, param1)<a class="headerlink" href="#fota-init-storge-location-len-param1" title="Permalink to this headline">#</a></h2>
+<section id="fota-init-storge-location-len-param1-param2">
+<h2>fota.init(storge_location, len, param1, param2)<a class="headerlink" href="#fota-init-storge-location-len-param1-param2" title="Permalink to this headline">#</a></h2>
 <p>Initialize the fota process</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -818,6 +818,9 @@
 </tr>
 <tr class="row-even"><td><p>userdata</p></td>
 <td><p>param1，If the data is stored in the spiflash spi_device</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>param2，Currently only used for external flash updates when spiflash power control pins</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -838,6 +841,7 @@
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Initialize the fota process</span>
 <span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">fota</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0x00300000</span><span class="p">,</span> <span class="n">spi_device</span><span class="p">)</span>    <span class="c1">--Since the 105 flash starts at 0x 01000000, 0 is external spiflash</span>
 <span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">fota</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>    <span class="c1">--ec618 Series/EC718 series use fixed internal addresses, so no parameters are required</span>
+<span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">fota</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="mh">0xe0000000</span><span class="p">,</span> <span class="n">spi_device</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>    <span class="c1">--EC718 The series allows external flash updates, but the address must be offset by 0xe0000000</span>
 </pre></div>
 </div>
 </section>
@@ -1093,7 +1097,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">fota - Underlying Firmware Upgrade</a><ul>
-<li><a class="reference internal" href="#fota-init-storge-location-len-param1">fota.init(storge_location, len, param1)</a></li>
+<li><a class="reference internal" href="#fota-init-storge-location-len-param1-param2">fota.init(storge_location, len, param1, param2)</a></li>
 <li><a class="reference internal" href="#fota-wait">fota.wait()</a></li>
 <li><a class="reference internal" href="#fota-run-buff-offset-len">fota.run(buff, offset, len)</a></li>
 <li><a class="reference internal" href="#fota-file-path">fota.file(path)</a></li>

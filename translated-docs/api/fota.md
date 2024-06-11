@@ -55,7 +55,7 @@ end)
 
 ```
 
-## fota.init(storge_location, len, param1)
+## fota.init(storge_location, len, param1, param2)
 
 
 
@@ -68,6 +68,7 @@ Initialize the fota process
 |int/string|fota the starting position of data storage <br> if it is int, it is specifically judged by the chip platform <br> if it is string, it is stored in the file system <br> if it is nil, the storage position is decided by the bottom layer|
 |int|Maximum space for data storage|
 |userdata|param1，If the data is stored in the spiflash spi_device|
+|int|param2，Currently only used for external flash updates when spiflash power control pins|
 
 **Return Value**
 
@@ -81,6 +82,7 @@ Initialize the fota process
 -- Initialize the fota process
 local result = fota.init(0, 0x00300000, spi_device)    --Since the 105 flash starts at 0x 01000000, 0 is external spiflash
 local result = fota.init()    --ec618 Series/EC718 series use fixed internal addresses, so no parameters are required
+local result = fota.init(nil, 0xe0000000, spi_device, 27)    --EC718 The series allows external flash updates, but the address must be offset by 0xe0000000
 
 ```
 
