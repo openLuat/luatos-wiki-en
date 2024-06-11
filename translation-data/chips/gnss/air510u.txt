@@ -1,7 +1,15 @@
+下列操作所需要的文件, 请到 [uc6228 for LuatOS](https://github.com/wendal/luatos-lib-uc6228) 的pkg目录下载
+The files required for the following operations are downloaded from the pkg directory of [uc6228 for LuatOS](https://github.com/wendal/luatos-lib-uc6228)
+以10ms的频率, 连续往模块的RX脚发送 `M!T` 指令, 3个字节, 持续发送
+At a frequency of 10ms, continuously send 'M! to the RX pin of the module! T' instruction, 3 bytes, send continuously
+使用 `xmodem` 协议, 发送 固件文件
+Send firmware file using 'xmodem' protocol
 例子
 Examples
 保持备电不掉可保持星历, 备电也掉电后, 星历是会丢失的, 需要重新注入
 Keeping the standby power supply without dropping can keep the ephemeris. After the standby power supply is also powered off, the ephemeris will be lost and needs to be injected again.
+停止发送 `M!T`, 使用 `xmodem` 协议, 发送 bootloader文件
+Stop sending 'M! T', use 'xmodem' protocol, send bootloader file
 内置固件仅支持GPS+北斗+QZSS, 不支持其他导航星座
 The built-in firmware only supports GPS Beidou QZSS, and does not support other navigation constellations
 内置固件仅支持北斗编号37及以下的卫星
@@ -10,6 +18,8 @@ The built-in firmware only supports satellites with Beidou number 37 and below
 Built-in firmware is ROM version, configuration information cannot be saved
 内置的GNSS芯片是 芯与物
 The built-in GNSS chip is the core and object
+内置的固件是ROM版, 无法存盘配置信息, 也无法更新固件, 但支持"加载固件"功能
+The built-in firmware is ROM version, which cannot save configuration information or update firmware, but supports "load firmware" function
 写入方式
 Write Method
 切换到GPS+北斗
@@ -34,18 +44,26 @@ Single Big Dipper Ephemeris
 The single Big Dipper ephemeris will be smaller than the GPS Big Dipper ephemeris, which is normal. The Big Dipper ephemeris is a subset of GPS Beidou
 参数
 Parameters
+固件加载(高级话题
+Firmware Loading (Advanced Topics
+固件加载操作流程
+Firmware Loading Operation Flow
 固件自带驱动
 Firmware comes with driver
 在设备运行中, 也会持续从卫星接收星历, 从而自动延长星历有效期
 The ephemeris is also continuously received from the satellite while the device is in operation, thereby automatically extending the ephemeris validity period
 地址
 Address
+将模块彻底断电后重新上电, 模块回复 `YC`, 然后每2秒输出一次 `C`, 代表进入加载模式成功, 否则请断电再上电
+After the module is completely powered off, the module will be powered on again, and the module will return to 'YC', and then output 'C' every 2 seconds, which means that the loading mode is successfully entered. Otherwise, please power off and power on again.
 已知问题
 Known issues
 库
 Library
 开发板的天线引脚不带馈电, 如需使用有源天线, 需要从VDD_REF引脚接电容引到天线脚
 The antenna pin of the development board does not have feed. If you need to use an active antenna, you need to connect the capacitor from the VDD_REF pin to the antenna pin.
+待发送完成后, 模块会重启, 进入固件运行模式, 根据固件文件的不同, 切换到正确的波特率, 通常是
+After the sending is completed, the module will restart and enter the firmware operation mode. According to the different firmware files, switch to the correct baud rate, usually
 提醒
 Reminder
 支持的最高波特率是115200, 最低
@@ -66,6 +84,10 @@ Constellations can be combined, such as GPS Beidou = 11, single Beidou is
 Constellation number: GPS = 1, Beidou
 更新周期均为10分钟一次, 星历有效期: GPS为4小时, 北斗为1小时
 Update cycle is 10 minutes once, ephemeris validity: GPS is 4 hours, Beidou is 1 hour
+根据选取的bootloader文件, 例如 bl921600 代表波特率 921600, 切换串口波特率
+Switch the serial port baud rate according to the selected bootloader file, for example, the bl921600 represents baud rate 921600
+此时, 模块应该会输出NMEA语句, 代表模块正确运行了
+At this point, the module should output an NMEA statement, representing that the module is running correctly.
 电平是3.3V的
 The level is 3.3V
 硬件资料
@@ -78,6 +100,8 @@ Information website
 Data Link
 软件信息
 Software Information
+这时候应该能连续收到 `C` 字符, 代表bootloader启动完成, 准备接收固件
+At this time, the' C' character should be continuously received, which means that the bootloader startup is complete and the firmware is ready to be received.
 适配情况
 Adaptation
 默认固件: GPS, 北斗二号

@@ -1,0 +1,34 @@
+一体化模块: 体积小, 更紧凑, 节省布线空间, 备电由主芯片控制, 主电源掉电时, GNSS芯片的备电也会掉电
+Integrated module: small size, more compact, saving wiring space, standby power is controlled by the main chip, when the main power supply is powered off, the standby power of the GNSS chip will also be powered off
+一体化的模块
+Integrated module
+与通信模块一起使用(例如4G模块
+Used with communication modules (such as 4G modules
+使用一体化的通信+GNSS模块, 例如
+Use an integrated communication GNSS module, e.g.
+已知的一体化模块有
+Known integrated modules are
+常见的方式有
+Common ways are
+并无决定的好坏, 请根据自身业务选型
+There is no decision, please select according to your own business.
+提醒:当前尚无Air510H的模块
+Reminder: There are currently no Air510H modules
+搭配模块: 体积大, 需要占用更多空间, 但备电可自行控制, 生产时也可以做成选贴, 例如A型号带GNSS功能, B型号不带就不贴GNSS模组
+Matching module: it is large in size and needs to take up more space, but the standby power can be controlled by itself, and it can also be made into optional pasting during production, for example, model a has GNSS function, and model B does not have GNSS module pasting without it.
+搭配的方式
+collocation way
+方式之间的优缺点
+The advantages and disadvantages between the way
+本质上就是 把 GNSS芯片, 放入模块内
+Essentially, you put the GNSS chip into the module.
+近期有各种单北斗特性的模块, 所以以上组合也会衍生出单北斗的版本
+Recently, there are various modules with single Beidou characteristics, so the above combination will also give rise to a single Beidou version.
+通过GPIO,把GNSS芯片的电源控制起来
+Control the power supply of GNSS chip through GPIO
+通过UART,把GNSS芯片和4G芯片的数据通信连接起来
+Through UART, the GNSS chip and 4G chip data communication connection
+通过输出26MHz的时钟, 驱动GNSS芯片, 这个仅少数模块会采用
+By outputting a 26MHz clock to drive the GNSS chip, only a few modules will be used.
+通过长供电GPIO, 为GNSS芯片提供备电
+Provide standby power for GNSS chips through long-powered GPIO

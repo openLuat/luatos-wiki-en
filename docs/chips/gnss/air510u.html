@@ -232,6 +232,8 @@
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Air510U</a></li>
 <li class="toctree-l3"><a class="reference internal" href="air530z.html">Air530Z</a></li>
 <li class="toctree-l3"><a class="reference internal" href="agps.html">auxiliary positioning AGPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="with4g.html">Used with communication modules (such as 4G modules)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="others.html">Introduction to Other Positioning Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../luatools/index.html">Core Software LuaTools</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -831,6 +833,24 @@ $CFGSYS,H10\r\n
 <li><p>Air510U The antenna pin of the development board does not have feed. If you need to use an active antenna, you need to connect the capacitor from the VDD_REF pin to the antenna pin.</p></li>
 </ol>
 </section>
+<section id="firmware-loading-advanced-topics">
+<h2>Firmware Loading (Advanced Topics)<a class="headerlink" href="#firmware-loading-advanced-topics" title="Permalink to this headline">#</a></h2>
+<p>Air510U The built-in firmware is ROM version, which cannot save configuration information or update firmware, but supports “load firmware” function</p>
+<p>The files required for the following operations are downloaded from the pkg directory of <a class="reference external" href="https://github.com/wendal/luatos-lib-uc6228">uc6228 for LuatOS</a></p>
+<section id="firmware-loading-operation-flow">
+<h3>Firmware Loading Operation Flow<a class="headerlink" href="#firmware-loading-operation-flow" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>At a frequency of 10ms, continuously send ‘M! to the RX pin of the module! T’ instruction, 3 bytes, send continuously</p></li>
+<li><p>After the module is completely powered off, the module will be powered on again, and the module will return to ‘YC’, and then output ‘C’ every 2 seconds, which means that the loading mode is successfully entered. Otherwise, please power off and power on again.</p></li>
+<li><p>Stop sending ‘M! T’, use ‘xmodem’ protocol, send bootloader file</p></li>
+<li><p>Switch the serial port baud rate according to the selected bootloader file, for example, the bl921600 represents baud rate 921600</p></li>
+<li><p>At this time, the’ C’ character should be continuously received, which means that the bootloader startup is complete and the firmware is ready to be received.</p></li>
+<li><p>Send firmware file using ‘xmodem’ protocol</p></li>
+<li><p>After the sending is completed, the module will restart and enter the firmware operation mode. According to the different firmware files, switch to the correct baud rate, usually 115200</p></li>
+<li><p>At this point, the module should output an NMEA statement, representing that the module is running correctly.</p></li>
+</ol>
+</section>
+</section>
 </section>
 
         </article>
@@ -899,6 +919,10 @@ $CFGSYS,H10\r\n
 </li>
 <li><a class="reference internal" href="#adaptation">Adaptation</a></li>
 <li><a class="reference internal" href="#known-issues">Known issues</a></li>
+<li><a class="reference internal" href="#firmware-loading-advanced-topics">Firmware Loading (Advanced Topics)</a><ul>
+<li><a class="reference internal" href="#firmware-loading-operation-flow">Firmware Loading Operation Flow</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
