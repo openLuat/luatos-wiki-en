@@ -82,6 +82,8 @@ Wait for the underlying fota process to be ready
 Wait for the underlying fota process to complete
 系列/EC718系列使用固定内部地址，所以不需要参数了
 Series/EC718 series use fixed internal addresses, so no parameters are required
+系列/EC7XX系列使用固定内部地址，所以不需要参数了
+The series/EC7XX series uses a fixed internal address, so no parameters are required
 系列允许使用外部flash更新，但是地址必须加上0xe0000000的偏移
 The series allows external flash updates, but the address must be offset by 0xe0000000
 结束fota流程
