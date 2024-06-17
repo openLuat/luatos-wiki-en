@@ -17,43 +17,6 @@ This library has its own demo,[click this link to view the demo example of aliyu
 
 ```
 
-## aliyun.setup(tPara)
-
-
-
-Configure product information and device information for Alibaba Cloud IoT Suite
-
-**Parameters**
-
-|Incoming Value Type | Explanation|
-|-|-|
-|table|Product information and device information of Alibaba Cloud IoT Suite|
-|return|nil|
-
-**Return Value**
-
-None
-
-**Examples**
-
-```lua
-aliyun.setup(tPara)
--- Parameter Description
-When the one-machine-one-secret authentication scheme is used, the ProductSecret parameter is passed in.nil
-When a type-one-secret authentication scheme is used, the ProductSecret parameter is passed into the real product key.
-Registration Whether pre-registration is pre-registered is false, not pre-registered is true
-DeviceName Equipment Name
-ProductKey Products key
-ProductSecret Product secret, according to this information to determine whether it is one machine, one secret or one type, one secret
-DeviceSecret Equipment secret
-InstanceId if you do not need to fill in the instance id, on the instance details page
-mqtt_port mqtt Port
-mqtt_isssl whether to use ssl to encrypt the connection. true indicates the simplest encryption without a certificate.
-
-```
-
----
-
 ## aliyun.subscribe(topic,qos)
 
 
@@ -65,7 +28,7 @@ Subscribe to a topic
 |Incoming Value Type | Explanation|
 |-|-|
 |string|Subject content is UTF8 encoded|
-|number|qos Number type (0/1, default 0)|
+|number|qos Number type (0/1, default 1)|
 |return|nil|
 
 **Return Value**
@@ -75,7 +38,7 @@ None
 **Examples**
 
 ```lua
-aliyun.subscribe("/b0FMK1Ga5cp/862991234567890/get", 0)
+aliyun.subscribe("/b0FMK1Ga5cp/862991234567890/get", 1)
 
 ```
 
@@ -131,6 +94,101 @@ None
 **Examples**
 
 None
+
+---
+
+## aliyun.setup(tPara)
+
+
+
+Configure product information and device information for Alibaba Cloud IoT Suite
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|table|Product information and device information of Alibaba Cloud IoT Suite|
+|return|nil|
+
+**Return Value**
+
+None
+
+**Examples**
+
+```lua
+aliyun.setup(tPara)
+-- Parameter Description
+When the one-machine-one-secret authentication scheme is used, the ProductSecret parameter is passed in.nil
+When a type-one-secret authentication scheme is used, the ProductSecret parameter is passed into the real product key.
+Registration Whether pre-registration is pre-registered is false, not pre-registered is true
+DeviceName Equipment Name
+ProductKey Products key
+ProductSecret Product secret, according to this information to determine whether it is one machine, one secret or one type, one secret
+DeviceSecret Equipment secret
+InstanceId if you do not need to fill in the instance id, on the instance details page
+mqtt_port mqtt Port
+mqtt_isssl whether to use ssl to encrypt the connection. true indicates the simplest encryption without a certificate.
+
+```
+
+---
+
+## aliyun.ready()
+
+
+
+Determine whether Alibaba Cloud IoT Suite is connected
+
+**Parameters**
+
+None
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|boolean|Is the Alibaba Cloud IoT Suite connected|
+
+**Examples**
+
+```lua
+-- This function was added in 2024.6.17
+if aliyun.ready() then
+    log.info("aliyun", "Connected")
+end
+
+```
+
+---
+
+## aliyun.store(result)
+
+
+
+Get or store registration information
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|table|result The registration result. If nil, the registration information is obtained.|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|table|Registration information. If nil, the acquisition failed.|
+
+**Examples**
+
+```lua
+-- Get registration information
+local store = aliyun.store()
+-- Store registration information
+aliyun.store(result)
+
+```
 
 ---
 
