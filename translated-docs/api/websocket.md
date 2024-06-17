@@ -62,7 +62,7 @@ None
 
 ---
 
-## websocket.create(adapter, url, keepalive)
+## websocket.create(adapter, url, keepalive, use_ipv6)
 
 
 
@@ -72,9 +72,10 @@ websocket Client Creation
 
 |Incoming Value Type | Explanation|
 |-|-|
-|int|The adapter serial number can only be socket.ETH0, socket.STA, socket.AP. If it is not filled in, the platform's own method will be selected, and then the last registered adapter will be selected.|
+|int|The serial number of the adapter. Refer to the constant of the socket library. The default value is nil. The method provided by the platform is selected.|
 |string|connection strings, reference usage|
 |int|Heartbeat interval, default 60 seconds. 2024.4.28 New|
+|boolean|Whether to use ipv6, false. 2024.6.17 is added by default|
 
 **Return Value**
 

@@ -54,6 +54,8 @@ None
 No return value
 是否为最后一帧,默认1,即马上设置为最后一帧, 也就是单帧发送
 Whether it is the last frame, the default is 1, that is, it is immediately set to the last frame, that is, single frame transmission
+是否使用ipv6,默认false. 2024.6.17新增
+Whether to use ipv6, false. 2024.6.17 is added by default
 是否打开debug开关
 Whether to turn on debug switch
 是否自动重连
@@ -96,6 +98,8 @@ connection strings, reference
 Connection Server
 连接服务器成功,已经收到websocket协议头部信息,通信已建立
 The connection to the server was successful, the websocket protocol header information has been received, and communication has been established.
+适配器序号, 参考socket库的常量,默认为nil,会选择平台自带的方式
+The serial number of the adapter. Refer to the constant of the socket library. The default value is nil. The method provided by the platform is selected.
 适配器序号, 只能是socket.ETH0, socket.STA, socket.AP,如果不填,会选择平台自带的方式,然后是最后一个注册的适配器
 The adapter serial number can only be socket.ETH0, socket.STA, socket.AP. If it is not filled in, the platform's own method will be selected, and then the last registered adapter will be selected.
 配置是否打开debug信息

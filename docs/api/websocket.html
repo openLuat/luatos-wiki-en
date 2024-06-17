@@ -817,8 +817,8 @@
 <p>None</p>
 </section>
 <hr class="docutils"/>
-<section id="websocket-create-adapter-url-keepalive">
-<h2>websocket.create(adapter, url, keepalive)<a class="headerlink" href="#websocket-create-adapter-url-keepalive" title="Permalink to this headline">#</a></h2>
+<section id="websocket-create-adapter-url-keepalive-use-ipv6">
+<h2>websocket.create(adapter, url, keepalive, use_ipv6)<a class="headerlink" href="#websocket-create-adapter-url-keepalive-use-ipv6" title="Permalink to this headline">#</a></h2>
 <p>websocket Client Creation</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -829,13 +829,16 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>int</p></td>
-<td><p>The adapter serial number can only be socket.ETH0, socket.STA, socket.AP. If it is not filled in, the platform’s own method will be selected, and then the last registered adapter will be selected.</p></td>
+<td><p>The serial number of the adapter. Refer to the constant of the socket library. The default value is nil. The method provided by the platform is selected.</p></td>
 </tr>
 <tr class="row-odd"><td><p>string</p></td>
 <td><p>connection strings, reference usage</p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
 <td><p>Heartbeat interval, default 60 seconds. 2024.4.28 New</p></td>
+</tr>
+<tr class="row-odd"><td><p>boolean</p></td>
+<td><p>Whether to use ipv6, false. 2024.6.17 is added by default</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1144,7 +1147,7 @@
             <ul>
 <li><a class="reference internal" href="#">websocket - websocket Client</a><ul>
 <li><a class="reference internal" href="#wsc-debug-onoff">wsc:debug(onoff)</a></li>
-<li><a class="reference internal" href="#websocket-create-adapter-url-keepalive">websocket.create(adapter, url, keepalive)</a></li>
+<li><a class="reference internal" href="#websocket-create-adapter-url-keepalive-use-ipv6">websocket.create(adapter, url, keepalive, use_ipv6)</a></li>
 <li><a class="reference internal" href="#wsc-on-cb">wsc:on(cb)</a></li>
 <li><a class="reference internal" href="#wsc-connect">wsc:connect()</a></li>
 <li><a class="reference internal" href="#wsc-autoreconn-reconnect-reconnect-time">wsc:autoreconn(reconnect, reconnect_time)</a></li>
