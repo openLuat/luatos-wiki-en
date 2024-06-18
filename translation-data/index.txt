@@ -26,6 +26,8 @@ More, support.
 actual combat reference
 尺寸小,仅
 Small size, only
+开发手册
+Development Manual
 开发板购买
 Development Board Purchase
 快速上手

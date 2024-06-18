@@ -110,6 +110,7 @@ Firmware Download <https://gitee.com/openLuat/LuatOS/releases>
 api/index
 api/sys_pub
 🌕 Native API Manual <https://wiki.luatos.org/_static/lua53doc/index.html>
+👓 CSDK Development Manual <https://wiki.luatos.org/_static/csdk_doc/index.html>
 api/libs/index
 develop/libs
 ```
