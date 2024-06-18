@@ -20,6 +20,8 @@ Stop playing a file
 Write 0, write audio 1
 参数
 Parameters
+可配置的codec工作电压
+Configurable codec operating voltage
 启动一个多媒体通道准备播放音频
 Start a multimedia channel ready to play audio
 回调函数传入参数的值，表示底层播放完一段数据，可以传入更多数据

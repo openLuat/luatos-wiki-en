@@ -31,6 +31,8 @@ This library has its own demo,[click this link to view audio's demo example](htt
 |audio.BUS_DAC|number|Hardware output bus, DAC type|
 |audio.BUS_I2S|number|Hardware output bus, I2S type|
 |audio.BUS_SOFT_DAC|number|Hardware output bus, software mode DAC type|
+|audio.VOLTAGE_1800|number|Configurable codec operating voltage，1.8V|
+|audio.VOLTAGE_3300|number|Configurable codec operating voltage，3.3V|
 
 
 ## audio.start(id, audio_format, num_channels, sample_rate, bits_per_sample, is_signed)
