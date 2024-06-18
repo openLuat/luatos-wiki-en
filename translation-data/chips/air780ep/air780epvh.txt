@@ -8,12 +8,18 @@ Built-in audio codec 8311, support MIC/SPK input and output
 GPS command to switch baud rate to 115200, sent to GNSS chip via UART
 功能介绍
 Function introduction
+北斗
+Beidou
+实测演示图
+Actual measurement demonstration diagram
 打开26M输出的方法
 Method to Open 26M Output
 打开26M输出的方法, 需要2024.5.25之后编译的固件
 The method of opening 26M output requires firmware compiled after 2024.5.25
 支持GNSS/GPS,即卫星导航功能
 Support GNSS/GPS, namely satellite navigation function
+支持的导航星座
+Supported navigation constellations
 是Air780EPV的变体，在Air780EPV的基础上增加了gnss/gps和
 is a variant of Air780EPV, adding gnss/gps and
 的额外说明

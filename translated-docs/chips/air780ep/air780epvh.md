@@ -30,6 +30,16 @@ GPS command to switch baud rate to 115200, sent to GNSS chip via UART
 $PCAS01,5*19\r\n
 ```
 
+## Supported navigation constellations
+
+* GPS L1I
+* QZSS L1I
+* Beidou B1I/B1Q//B2I/B2b/B2Q
+
+## Actual measurement demonstration diagram
+
+![Air780EPVH Actual measurement demonstration diagram](./image/air780epvh_gnss.jpg)
+
 ## Data Link
 
 1. [Air780EPVH Information](https://air780epvh.cn)
