@@ -63,14 +63,25 @@ FTP Command
 **Examples**
 
 ```lua
+    // Empty operation to prevent connection breakage
     print(ftp.command("NOOP").wait())
+    // Reports the operating system type of a remote system
     print(ftp.command("SYST").wait())
+    // Specify file type
     print(ftp.command("TYPE I").wait())
+    // Displays the current working directory name
     print(ftp.command("PWD").wait())
+    // Create Directory
     print(ftp.command("MKD QWER").wait())
+    // Change current working directory
     print(ftp.command("CWD /QWER").wait())
+    // Return to the previous directory
     print(ftp.command("CDUP").wait())
+    // Delete Directory
     print(ftp.command("RMD QWER").wait())
+    // Get the list of file names in the current working directory.
+    print(ftp.command("LIST").wait())
+    // Delete File
     print(ftp.command("DELE /1/12222.txt").wait())
 
 ```

@@ -840,14 +840,25 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span>    <span class="nb">print</span><span class="p">(</span><span class="n">ftp</span><span class="p">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"NOOP"</span><span class="p">).</span><span class="n">wait</span><span class="p">())</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span>    <span class="o">//</span> <span class="n">Empty</span> <span class="n">operation</span> <span class="n">to</span> <span class="n">prevent</span> <span class="n">connection</span> <span class="n">breakage</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ftp</span><span class="p">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"NOOP"</span><span class="p">).</span><span class="n">wait</span><span class="p">())</span>
+    <span class="o">//</span> <span class="n">Reports</span> <span class="n">the</span> <span class="n">operating</span> <span class="n">system</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">a</span> <span class="n">remote</span> <span class="n">system</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ftp</span><span class="p">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"SYST"</span><span class="p">).</span><span class="n">wait</span><span class="p">())</span>
+    <span class="o">//</span> <span class="n">Specify</span> <span class="n">file</span> <span class="nb">type</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ftp</span><span class="p">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"TYPE I"</span><span class="p">).</span><span class="n">wait</span><span class="p">())</span>
+    <span class="o">//</span> <span class="n">Displays</span> <span class="n">the</span> <span class="n">current</span> <span class="n">working</span> <span class="n">directory</span> <span class="n">name</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ftp</span><span class="p">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"PWD"</span><span class="p">).</span><span class="n">wait</span><span class="p">())</span>
+    <span class="o">//</span> <span class="n">Create</span> <span class="n">Directory</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ftp</span><span class="p">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"MKD QWER"</span><span class="p">).</span><span class="n">wait</span><span class="p">())</span>
+    <span class="o">//</span> <span class="n">Change</span> <span class="n">current</span> <span class="n">working</span> <span class="n">directory</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ftp</span><span class="p">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"CWD /QWER"</span><span class="p">).</span><span class="n">wait</span><span class="p">())</span>
+    <span class="o">//</span> <span class="n">Return</span> <span class="n">to</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">directory</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ftp</span><span class="p">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"CDUP"</span><span class="p">).</span><span class="n">wait</span><span class="p">())</span>
+    <span class="o">//</span> <span class="n">Delete</span> <span class="n">Directory</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ftp</span><span class="p">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"RMD QWER"</span><span class="p">).</span><span class="n">wait</span><span class="p">())</span>
+    <span class="o">//</span> <span class="n">Get</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">file</span> <span class="n">names</span> <span class="kr">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">working</span> <span class="n">directory</span><span class="p">.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ftp</span><span class="p">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"LIST"</span><span class="p">).</span><span class="n">wait</span><span class="p">())</span>
+    <span class="o">//</span> <span class="n">Delete</span> <span class="n">File</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ftp</span><span class="p">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"DELE /1/12222.txt"</span><span class="p">).</span><span class="n">wait</span><span class="p">())</span>
 </pre></div>
 </div>
