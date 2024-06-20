@@ -114,6 +114,8 @@ Login without account password, only
 No return value
 是否为ipv6 默认不是
 ipv6 default is not
+是否为ipv6，默认不是  table mqtt扩展参数, ipv6 是否为ipv6, rxSize 接收缓冲区大小
+Whether ipv6 is ipv6, the default value is not the table mqtt extension parameter, whether ipv6 is ipv6, rxSize receive buffer size
 是否为ssl加密连接,默认不加密,true为无证书最简单的加密，table为有证书的加密 <br>server_cert 服务器ca证书数据 <br>client_cert 客户端证书数据 <br>client_key 客户端私钥加密数据 <br>client_password 客户端私钥口令数据 <br>verify 是否强制校验 0不校验/1可选校验/2强制校验 默认
 Whether it is an ssl encrypted connection or not, default is no encryption, true is the simplest encryption without certificate, table is encryption with certificate <br>server_cert server ca certificate data <br>client_cert client certificate data <br>client_key client private key encrypted data <br>client_password client private key password data <br>verify mandatory verification 0 no verification/1 optional verification/2 mandatory verification default
 是否存档, 0/1,默认
@@ -124,6 +126,8 @@ Whether to turn on debug switch
 Auto reconnect
 普通TCP链接
 Common TCP Link
+普通TCP链接,mqtt接收缓冲区
+Normal TCP link, mqtt receive buffer
 服务器地址,可以是域名, 也可以是
 Server address, which can be a domain name or
 服务器断开连接,网络问题或服务器踢了客户端,例如clientId重复,超时未上报业务数据

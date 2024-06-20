@@ -147,7 +147,7 @@ mqtt Client Creation
 |string|Server address, which can be a domain name or ip|
 |int|Port number|
 |bool/table|Whether it is an ssl encrypted connection or not, default is no encryption, true is the simplest encryption without certificate, table is encryption with certificate <br>server_cert server ca certificate data <br>client_cert client certificate data <br>client_key client private key encrypted data <br>client_password client private key password data <br>verify mandatory verification 0 no verification/1 optional verification/2 mandatory verification default 2|
-|bool|ipv6 default is not|
+|bool/table|bool Whether ipv6 is ipv6, the default value is not the table mqtt extension parameter, whether ipv6 is ipv6, rxSize receive buffer size|
 
 **Return Value**
 
@@ -160,6 +160,8 @@ mqtt Client Creation
 ```lua
 -- Common TCP Link
 mqttc = mqtt.create(nil,"120.55.137.106", 1884)
+-- Normal TCP link, mqtt receive buffer 4096
+mqttc = mqtt.create(nil,"120.55.137.106", 1884, nil, {rxSize = 4096})
 -- Encrypt TCP link without validating server certificate
 mqttc = mqtt.create(nil,"120.55.137.106", 8883, true)
 -- Encrypted TCPTCP link, single server certificate validation
