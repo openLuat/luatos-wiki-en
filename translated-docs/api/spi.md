@@ -330,6 +330,7 @@ Transfer SPI Data (Object Way)
 -- Initialization spi
 local spi_device = spi.device_setup(0,17,0,0,8,2000000,spi.MSB,1,1)
 local recv = spi_device:transfer("123")--Send 123 and read data
+local result = spi_device:transfer({0x00,0x01})--Send 0x 00,0x 01, and read data
 
 local buff = zbuff.create(1024, 0x33) --Create a memory area with all initial values of 0x 33
 local recv = spi_device:transfer(buff)--Start zbuff data from the pointer, send it all out, and read the data
@@ -363,6 +364,7 @@ Send SPI Data (Object Way)
 -- Initialization spi
 local spi_device = spi.device_setup(0,17,0,0,8,2000000,spi.MSB,1,1)
 local result = spi_device:send("123")--Send 123
+local result = spi_device:send({0x00,0x01})--Send 0x00,0x01
 
 local buff = zbuff.create(1024, 0x33) --Create a memory area with all initial values of 0x 33
 local result = spi_device:send(buff)--Start the zbuff data from the pointer and send it all out.

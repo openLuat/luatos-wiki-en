@@ -38,6 +38,8 @@ half duplex
 Parameters
 发送
 Send
+发送0x00,0x01,并读取数据
+Send 0x 00,0x 01, and read data
 发送123,并读取数据
 Send 123 and read data
 发送SPI数据
