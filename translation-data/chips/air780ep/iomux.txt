@@ -76,16 +76,24 @@ Release is not currently supported
 The current firmware version V1001 does not support the use of other PWM multiplexing channels, and subsequent versions will support
 数据
 Data
+数据 | GPIO19  |    14   |GPIO功能看后面描述
+Data | GPIO19 | 14 | GPIO function see later description
 数据 | GPIO19  |    14   |看后面描述
 Data | GPIO19 | 14 | See later description
+数据 | GPIO8   |    23   |与SPI0冲突
+Data | GPIO8 | 23 | Conflicts with SPI0
 数据输出
 Data Output
 时钟
 Clock
 时钟     | GPIO34  |    40   |LCD_CLK,注意与UART3冲突
 Clock | GPIO34 | 40 | LCD _CLK, note conflict with UART3
+时钟 | GPIO18  |    13   |GPIO功能看后面描述
+Clock | GPIO18 | 13 | GPIO function see later description
 时钟 | GPIO18  |    13   |看后面描述
 Clock | GPIO18 | 13 | See later description
+时钟 | GPIO9   |    24   |与SPI0冲突
+Clock | GPIO9 | 24 | conflicts with SPI0
 是LCD刷屏专用SPI, 不支持通用SPI功能
 It is a special SPI for LCD screen brushing, and does not support the general SPI function
 是主串口(MAIN_TX/MAIN_RX), 推荐使用

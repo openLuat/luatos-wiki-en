@@ -55,10 +55,10 @@ physics uart has 4(0/1/2/3)
 
 |Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks|
 |---------|---------|---------|---------|----|
-|I2C0_SCL | I2C0 Clock | GPIO18 | 13 | See later description|
-|I2C0_SDA | I2C0 Data | GPIO19 | 14 | See later description|
-|I2C1_SCL | I2C1 Clock | GPIO29  |    29   ||
-|I2C1_SDA | I2C1 Data | GPIO30  |    30   ||
+|I2C0_SCL | I2C0 Clock | GPIO18 | 13 | GPIO function see later description|
+|I2C0_SDA | I2C0 Data | GPIO19 | 14 | GPIO function see later description|
+|I2C1_SCL | I2C1 Clock | GPIO9 | 24 | conflicts with SPI0|
+|I2C1_SDA | I2C1 Data | GPIO8 | 23 | Conflicts with SPI0|
 
 Attention:
 
