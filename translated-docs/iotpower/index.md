@@ -45,7 +45,6 @@ PC client software for easy viewing, analysis and sharing of power consumption d
 ::::
 
 ```{note}
-Product Feedback Group：807846388
 
 :::{dropdown} Product feedback WeChat group, scan code to join
 
