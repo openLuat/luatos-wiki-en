@@ -764,6 +764,8 @@
 <th class="head"><p>Air640W</p></th>
 <th class="head"><p>Air106</p></th>
 <th class="head"><p>ESP32C3</p></th>
+<th class="head"><p>Air780E/Air700E</p></th>
+<th class="head"><p>Air780EP/Air780EPV</p></th>
 </tr>
 </thead>
 <tbody>
@@ -775,6 +777,8 @@
 <td><p>qfn32</p></td>
 <td><p>LQFP100</p></td>
 <td><p>qfn32</p></td>
+<td><p>LGA 109PIN</p></td>
+<td><p>LGA 109PIN</p></td>
 </tr>
 <tr class="row-odd"><td><p>Total Flash</p></td>
 <td><p>2M</p></td>
@@ -784,6 +788,8 @@
 <td><p>1M/2M</p></td>
 <td><p>512k External Flash</p></td>
 <td><p>External Flash</p></td>
+<td><p>4M</p></td>
+<td><p>4M</p></td>
 </tr>
 <tr class="row-even"><td><p>Total Ram</p></td>
 <td><p>288k</p></td>
@@ -793,6 +799,8 @@
 <td><p>288k</p></td>
 <td><p>64k+8M</p></td>
 <td><p>400k</p></td>
+<td><p>1.25M</p></td>
+<td><p>2M+2M</p></td>
 </tr>
 <tr class="row-odd"><td><p>Kernel</p></td>
 <td><p>xt804</p></td>
@@ -802,6 +810,8 @@
 <td><p>m3</p></td>
 <td><p>m33</p></td>
 <td><p>risc-v</p></td>
+<td><p>M3</p></td>
+<td><p>M3</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://wiki.luatos.org/api/uart.html">uart</a></p></td>
 <td><p>5(4)</p></td>
@@ -811,6 +821,8 @@
 <td><p>3(2)</p></td>
 <td><p>4(3)</p></td>
 <td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://wiki.luatos.org/api/gpio.html">gpio</a></p></td>
 <td><p>18</p></td>
@@ -820,6 +832,8 @@
 <td><p>16</p></td>
 <td><p>74</p></td>
 <td><p>15</p></td>
+<td><p>32</p></td>
+<td><p>39</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://wiki.luatos.org/api/i2c.html">i2c</a></p></td>
 <td><p>1</p></td>
@@ -829,6 +843,8 @@
 <td><p>1</p></td>
 <td><p>2</p></td>
 <td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://wiki.luatos.org/api/spi.html">spi</a></p></td>
 <td><p>1</p></td>
@@ -838,6 +854,8 @@
 <td><p>1</p></td>
 <td><p>2</p></td>
 <td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://wiki.luatos.org/api/adc.html">adc</a></p></td>
 <td><p>2</p></td>
@@ -847,6 +865,8 @@
 <td><p>2</p></td>
 <td><p>19</p></td>
 <td><p>6</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://wiki.luatos.org/api/dac.html">dac</a></p></td>
 <td><p>✖</p></td>
@@ -856,6 +876,8 @@
 <td><p>✖</p></td>
 <td><p>1</p></td>
 <td><p>✖</p></td>
+<td><p>✖</p></td>
+<td><p>✖</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://wiki.luatos.org/api/usb.html">usb</a></p></td>
 <td><p>✖</p></td>
@@ -863,6 +885,8 @@
 <td><p>1</p></td>
 <td><p>✖</p></td>
 <td><p>✖</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
 <td><p>1</p></td>
 <td><p>1</p></td>
 </tr>
@@ -874,10 +898,14 @@
 <td><p>✖</p></td>
 <td><p>✖</p></td>
 <td><p>✖</p></td>
+<td><p>5*5</p></td>
+<td><p>5*5</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://wiki.luatos.org/api/lcdseg.html">lcdseg</a></p></td>
 <td><p>✖</p></td>
 <td><p>4*31</p></td>
+<td><p>✖</p></td>
+<td><p>✖</p></td>
 <td><p>✖</p></td>
 <td><p>✖</p></td>
 <td><p>✖</p></td>
@@ -892,8 +920,12 @@
 <td><p>✖</p></td>
 <td><p>✖</p></td>
 <td><p>✖</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://wiki.luatos.org/api/rtc.html">rtc</a></p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
 <td><p>1</p></td>
 <td><p>1</p></td>
 <td><p>1</p></td>
@@ -910,6 +942,8 @@
 <td><p>5</p></td>
 <td><p>20(18)</p></td>
 <td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://wiki.luatos.org/api/sdio.html">sdio</a></p></td>
 <td><p>1</p></td>
@@ -919,12 +953,16 @@
 <td><p>✖</p></td>
 <td><p>1</p></td>
 <td><p>✖</p></td>
+<td><p>✖</p></td>
+<td><p>✖</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://wiki.luatos.org/api/wdt.html">硬狗</a></p></td>
 <td><p>1</p></td>
 <td><p>1</p></td>
 <td><p>1</p></td>
 <td><p>✖</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
 <td><p>1</p></td>
 <td><p>1</p></td>
 <td><p>1</p></td>
@@ -937,6 +975,8 @@
 <td><p>md5/sha1</p></td>
 <td><p>jpeg</p></td>
 <td><p>md5/sha1</p></td>
+<td><p>md5/des/crc7/sha Series, etc.</p></td>
+<td><p>md5/des/crc7/sha series, etc</p></td>
 </tr>
 <tr class="row-odd"><td><p>Hardware Timer</p></td>
 <td><p>5</p></td>
@@ -946,6 +986,8 @@
 <td><p>5</p></td>
 <td><p>15(13)</p></td>
 <td><p>4</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
 </tr>
 <tr class="row-even"><td><p>2d加速</p></td>
 <td><p>✖</p></td>
@@ -954,6 +996,8 @@
 <td><p>✖</p></td>
 <td><p>✖</p></td>
 <td><p>1</p></td>
+<td><p>✖</p></td>
+<td><p>✖</p></td>
 <td><p>✖</p></td>
 </tr>
 <tr class="row-odd"><td><p>摄像头</p></td>
@@ -964,6 +1008,8 @@
 <td><p>✖</p></td>
 <td><p>✖</p></td>
 <td><p>✖</p></td>
+<td><p>✖</p></td>
+<td><p>1</p></td>
 </tr>
 <tr class="row-even"><td><p>psram</p></td>
 <td><p>✖</p></td>
@@ -973,6 +1019,8 @@
 <td><p>✖</p></td>
 <td><p>Inline</p></td>
 <td><p>✖</p></td>
+<td><p>✖</p></td>
+<td><p>Inline</p></td>
 </tr>
 <tr class="row-odd"><td><p>wifi</p></td>
 <td><p>✖</p></td>
@@ -982,6 +1030,8 @@
 <td><p>1</p></td>
 <td><p>✖</p></td>
 <td><p>1</p></td>
+<td><p>✖</p></td>
+<td><p>✖</p></td>
 </tr>
 <tr class="row-even"><td><p>ble</p></td>
 <td><p>1</p></td>
@@ -991,12 +1041,16 @@
 <td><p>✖</p></td>
 <td><p>✖</p></td>
 <td><p>1</p></td>
+<td><p>✖</p></td>
+<td><p>✖</p></td>
 </tr>
 <tr class="row-odd"><td><p>nbiot</p></td>
 <td><p>✖</p></td>
 <td><p>✖</p></td>
 <td><p>✖</p></td>
 <td><p>1</p></td>
+<td><p>✖</p></td>
+<td><p>✖</p></td>
 <td><p>✖</p></td>
 <td><p>✖</p></td>
 <td><p>✖</p></td>
@@ -1009,6 +1063,8 @@
 <td><p><code class="docutils literal notranslate"><span class="pre">128*160</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1024*768</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">320*240</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">320*240</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">480*320</span></code></p></td>
 </tr>
 </tbody>
 </table></div>

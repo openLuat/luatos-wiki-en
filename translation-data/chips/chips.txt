@@ -1,46 +1,50 @@
-
-
 不支持
 Not supported
-的BLE属于赠送, 功耗高, 不适合低功耗场景
-BLE is a gift, high power consumption, not suitable for low power consumption scenarios
-封装
-Encapsulation
-进行中/部分支持
-In progress/partial support
-可外挂 | ✖     |  ✖     | ✖      | 内嵌
-Can be external |✖|✖|✖| Inline
-联盛德w800/w801/w805/806与air101/air103类似,属于封装与flash大小的排列组合
-Lianshengde w800/w801/w805/806 is similar to air101/air103 and belongs to the arrangement and combination of package and flash size.
 内核
 Kernel
-如有出入, 以硬件设计手册为准
-In case of discrepancy, the hardware design manual shall prevail.
-尚不明确/保密状态
-Not clear/confidential status
-数量 全部可复用为GPIO的数量, 其中包含bootmode和uart0等启动后可用的但不推荐复用的
-The quantity can be reused as the quantity of GPIO, including bootmode and uart0, which are available after startup but do not recommend multiplexing.
-数量 总uart数量, 括号内的是用户通常可用的uart数量. 一般情况下,需要占用一个uart用于日志和刷机
-Quantity The total number of uarts. The number of uarts commonly available to the user is shown in parentheses. In general, one uart is required for logging and brushing.
+可外挂    | ✖         | ✖         | ✖         | 内嵌           | ✖         | ✖                      | 内嵌
+Can be external |✖|✖|✖| Inline |✖|✖| Inline
+可外挂 | ✖     |  ✖     | ✖      | 内嵌
+Can be external |✖|✖|✖| Inline
 图示 | 含义
 Illustration | Meaning
 图示含义
 Meaning of Illustration
-推荐分辨率
-recommend resolution
 外设
 Peripherals
+如有出入, 以硬件设计手册为准
+In case of discrepancy, the hardware design manual shall prevail.
+封装
+Encapsulation
+尚不明确/保密状态
+Not clear/confidential status
+已支持
+Supported
+总
+Total
+总Flash                                               | 2M        | 1M        | 4M        | 4M        | 1M/2M     | 512k+外接Flash | 外接
+Total Flash | 2M | 1M | 4M | 4M | 1M/2M | 512k External Flash | External
+总Flash                                               | 2M      | 1M     | 4M    | 4M     | 1M/2M   | 512k+外接Flash|外接
+Total Flash | 2M | 1M | 4M | 4M | 1M/2M | 512k External Flash | External
+推荐分辨率
+recommend resolution
+数量 全部可复用为GPIO的数量, 其中包含bootmode和uart0等启动后可用的但不推荐复用的
+The quantity can be reused as the quantity of GPIO, including bootmode and uart0, which are available after startup but do not recommend multiplexing.
+数量 总uart数量, 括号内的是用户通常可用的uart数量. 一般情况下,需要占用一个uart用于日志和刷机
+Quantity The total number of uarts. The number of uarts commonly available to the user is shown in parentheses. In general, one uart is required for logging and brushing.
+有1个高速SPI,最高96M, 3个低速SPI, 最高
+There are 1 high-speed SPI, the highest 96M, 3 low-speed SPI, the highest
+的BLE属于赠送, 功耗高, 不适合低功耗场景
+BLE is a gift, high power consumption, not suitable for low power consumption scenarios
+硬件定时器
+Hardware Timer
+系列等 | md5/des/crc7/sha系列等
+Series, etc. | md5/des/crc7/sha series, etc
+联盛德w800/w801/w805/806与air101/air103类似,属于封装与flash大小的排列组合
+Lianshengde w800/w801/w805/806 is similar to air101/air103 and belongs to the arrangement and combination of package and flash size.
 芯片对比
 Chip contrast
 芯片对照选型表
 Chip comparison and selection table
-已支持
-Supported
-硬件定时器
-Hardware Timer
-有1个高速SPI,最高96M, 3个低速SPI, 最高
-There are 1 high-speed SPI, the highest 96M, 3 low-speed SPI, the highest
-总
-Total
-总Flash                                               | 2M      | 1M     | 4M    | 4M     | 1M/2M   | 512k+外接Flash|外接
-Total Flash | 2M | 1M | 4M | 4M | 1M/2M | 512k External Flash | External
+进行中/部分支持
+In progress/partial support
