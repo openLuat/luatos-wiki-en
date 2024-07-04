@@ -14,10 +14,14 @@ Single bus protocol, reset device
 Single bus protocol, write data to the bus
 单总线协议,连接设备
 Single bus protocol, connecting devices
+单总线命令读写
+Single-bus command read and write
 参数
 Parameters
 如果设备不存在会卡在读取接口
 If the device is not present it will get stuck on the read interface
+寄存器地址
+register address
 已适配
 Adapted
 待发送的数据（如果为zbuff数据，则会无视指针位置始终从0偏移开始
@@ -68,6 +72,8 @@ Port number
 The first data
 第二个数据, 可以写N个数据
 The second data, can write n data
+芯片
+Chip
 获取cs1237传感数据
 Get cs1237 sensor data
 获取DHT11/DHT12的温湿度数据
@@ -80,6 +86,8 @@ Obtaining pressure sensing data for the Hx711
 Get channel data for sc12a touched
 被按下的有通道
 There is a channel that is pressed.
+要写入的数据，如果没填，则表示从寄存器读取数据
+The data to be written, if not filled, it means to read data from the register.
 设置ws2812b输出(gpio驱动方式
 set ws2812b output (gpio drive mode
 设置ws2812b输出(pwm驱动方式,需要pwm能输出800k频率，否则无法使用此方法
@@ -92,6 +100,8 @@ Please consult
 Read the data
 读取成功
 Read success
+读取成功返回寄存器值，写入成功无返回
+Return register value after successful reading, no return after successful writing
 读取成功返回整形数据，读取失败时返回错误值
 If the read is successful, the reshaped data is returned. If the read fails, the error value is returned.
 读取的长度

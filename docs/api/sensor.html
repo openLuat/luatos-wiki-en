@@ -1275,6 +1275,57 @@
 <span class="kr">end</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="sensor-yhm27xxx-pin-chip-id-reg-data">
+<h2>sensor.yhm27xxx(pin, chip_id, reg, data)<a class="headerlink" href="#sensor-yhm27xxx-pin-chip-id-reg-data" title="Permalink to this headline">#</a></h2>
+<p>Single-bus command read and write YHM27XX</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>gpio Port number</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Chip ID</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>register address</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>The data to be written, if not filled, it means to read data from the register.</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Returns true on success and true on failure false</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Return register value after successful reading, no return after successful writing</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">while</span> <span class="mi">1</span> <span class="kr">do</span>
+    <span class="n">sys</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">result</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sensor</span><span class="p">.</span><span class="n">yhm27xxx</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x05</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"yhm27xxx"</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -1348,6 +1399,7 @@
 <li><a class="reference internal" href="#sensor-ws2812b-spi-pin-data">sensor.ws2812b_spi(pin,data)</a></li>
 <li><a class="reference internal" href="#sensor-dht1x-pin">sensor.dht1x(pin)</a></li>
 <li><a class="reference internal" href="#sensor-sc12a-sda-scl">sensor.sc12a(sda,scl)</a></li>
+<li><a class="reference internal" href="#sensor-yhm27xxx-pin-chip-id-reg-data">sensor.yhm27xxx(pin, chip_id, reg, data)</a></li>
 </ul>
 </li>
 </ul>

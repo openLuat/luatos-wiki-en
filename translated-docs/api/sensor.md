@@ -420,3 +420,38 @@ end
 
 ---
 
+## sensor.yhm27xxx(pin, chip_id, reg, data)
+
+
+
+Single-bus command read and write YHM27XX
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|int|gpio Port number|
+|int|Chip ID|
+|int|register address|
+|int|The data to be written, if not filled, it means to read data from the register.|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|boolean|Returns true on success and true on failure false|
+|int|Return register value after successful reading, no return after successful writing|
+
+**Examples**
+
+```lua
+while 1 do
+    sys.wait(1000)
+    local result, data = sensor.yhm27xxx(15, 0x04, 0x05)
+    log.info("yhm27xxx", result, data)
+end
+
+```
+
+---
+
