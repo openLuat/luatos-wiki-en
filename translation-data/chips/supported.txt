@@ -18,6 +18,8 @@ Supported
 W5500 with networking function
 支持与否,与封装有关, qfn56封装的xt804支持, qfn32的不支持
 Support or not, related to the package, qfn56 package xt804 support, qfn32 does not support
+支持情况
+Support
 联网/射频支持
 Networking/RF support
 补充说明
@@ -26,5 +28,7 @@ Supplementary Notes
 Equipment Support
 进行中/部分支持
 In progress/partial support
+适配状态 - LuatOS 文档
+Adaptation Status-LuatOS Documentation
 需要云编译开启wifi功能才能联网, 开发板未引出天线
 Cloud compilation is required to turn on wifi function to connect to the Internet, and the development board does not lead out the antenna.

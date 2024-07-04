@@ -1,6 +1,10 @@
 
 # Equipment Support/Supported Devices
 
+## bsp Support
+
+[Adaptation Status-LuatOS Documentation](https://wiki.luatos.org/api/supported.html)
+
 ## Basic Peripheral Support
 
 | Libs                                                  | Air101 | Air103 | Air105 | Air780E | ESP32C2 | ESP32C3 | Air780E/Air700E | Air780EP/Air780EPV |
