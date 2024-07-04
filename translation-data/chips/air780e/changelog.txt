@@ -270,6 +270,8 @@ Firmware crashes when SPI FLASH is not successfully mounted
 Firmware add ercoap library
 固件添加xxtea库的编译
 Compilation of the xxtea library added to the firmware
+固件读取的luadb分区大小不对
+The size of the luadb partition read by the firmware is incorrect.
 在进行DNS过程时，调用network_force_close_socket并且不再进行连接时，DNS完成仍然会回调
 When the DNS procedure is in progress, the call network_force_close_socket and the connection is no longer in progress, the DNS completion still calls back
 基于ntp的毫秒级时间戳

@@ -13,7 +13,7 @@ Compatibility changes:
 
 Defect repair
 1：Prevent possible time setting errors
-2：luaot The size of the luadb partition read by the firmware is incorrect.
+2：luatos The size of the luadb partition read by the firmware is incorrect.
 3：wait485 When, the 485 turned to io control timer did not stop, resulting in data reception problems.
 4：When pwm is not closed and the cycle and duty cycle are changed, it may crash.
 5：485 I can't use the reversing foot.GPIO14、GPIO15

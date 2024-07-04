@@ -1,37 +1,93 @@
+为正式发行的最后一版EPV固件，后续需要EPV固件请使用云编译或本地自行编译
+is the last version of EPV firmware officially released. If you need EPV firmware in the future, use cloud compilation or compile it locally.
+主动关闭时，回调消息错误
+Callback message error on active shutdown
+互斥锁保护
+mutex protection
 使用时需要进行充分的测试
 Adequate testing is required for use
 修复V1000版本发现的
 Fixes found in V1000 version
+兼容性变化
+Compatibility changes
 功能
 Function
+功能异常
+Abnormal function
 卡
 Card
+发送时，一次性将数据发出去，避免被打断
+When sending, the data is sent out at one time to avoid being interrupted.
+因功能变化较多，FLASH空间不足
+Due to more functional changes, FLASH space is insufficient
+固件，无法进入休眠
+Firmware, unable to enter hibernation
 固件下载地址
 Firmware download address
 固件下载备用地址
 Firmware Download Alternate Address
+在使用uart485时，无法设置转向pin为GPIO16和GPIO17的问题
+When using the uart485, the steering pin cannot be set to GPIO16 and GPIO17
+在没有先close的情况下，既改周期，又改占空比，有可能死机的问题
+In the absence of first close, both the cycle and the duty cycle are changed, which may lead to a crash.
+在深度休眠唤醒后，依然可以保持休眠前电平的能力
+Ability to maintain pre-sleep level after deep sleep wake-up
 基础外设
 Basic Peripherals
+基站同步时间开关
+Base station synchronous time switch
 备用地址
 Alternate Address
 就是固件文件, 其余两个是底层源码,无需下载
 Is the firmware file, the other two are the underlying source code, no need to download
 工具库
 Tool Library
+库添加录音功能
+Library to add recording function
+异常死机
+abnormal crash
+当遇到无法解析的NMEA语句时，屏蔽打印
+When an unparsed NMEA statement is encountered, the mask prints
+报文长度超过256时，无法连接服务器
+Unable to connect to server when message length exceeds 256
+拍照的时候无法选择jpeg编码质量
+Unable to select jpeg encoding quality when taking pictures
 操作
 Operation
 支持休眠功能
 Support sleep function
+支持外部flash全量升级
+Support external flash full upgrade
 支持的功能如下
 The supported functions are as follows
+支持配置codec的工作电压
+Support to configure the working voltage of codec
 新增功能
 New Function
+方式发送异常
+Method sending exception
+无法远程升级到
+Cannot remotely upgrade
+时，在ota完成的最后一刻死机，会导致底层OTA成功，而脚本ota失败
+At the last minute of ota completion, the underlying OTA will succeed, while the script ota will fail.
 时钟
 Clock
+更新功能
+Update function
+查询当前连接状态
+Query the current connection status
 注意事项
 Precautions
+深度休眠定时器回调消息
+Deep Sleep Timer Callback Message
 深度休眠暂时无法使用
 Deep Sleep temporarily unavailable
+添加DHCP超时消息
+Add DHCP Timeout Message
+添加设置缓冲区大小的功能
+Add the ability to set the buffer size
+添加防护，防止已释放的资源再次使用
+Add protection to prevent freed resources from being used again
 系列固件发行注记
 Series Firmware Release Notes
 系列固件第一版
@@ -40,7 +96,15 @@ Series Firmware First Edition
 Defect repair
 网络功能
 Network function
+自定义header支持自定义大小
+Custom header supports custom size
 通过[云编译](https://wiki.luatos.org/develop/compile/Cloud_compilation.html),全自动编译最新固件
 Fully automatic compilation of the latest firmware through [Cloud Compile](https://wiki.luatos.org/develop/compile/Cloud_compilation.html)
 通过云编译,全自动编译最新固件
 Fully automatic compilation of the latest firmware via cloud compilation
+重置协议栈参数到默认
+Reset stack parameters to default
+重试次数增加，应对运行速度慢的路由器
+Increased retries for slow routers
+防止可能的时间设置错误
+Prevent possible time setting errors
