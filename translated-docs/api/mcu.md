@@ -321,7 +321,7 @@ mcu Processing mode in case of crash, currently only applicable to EC618 platfor
 
 |Incoming Value Type | Explanation|
 |-|-|
-|int|Processing mode: 0 crash and stop, 1 crash and restart, 2 crash and try to submit error information to external tools and restart|
+|int|processing mode: 0 crash and stop, 1 restart after crash, 2 try to submit error information to external tools and restart after crash 3. write key information to flash when crash and restart immediately|
 
 **Return Value**
 

@@ -28,6 +28,8 @@ No., if left blank, it means to clear the configuration and use the default conf
 Before the peripheral is opened, the peripheral IO is multiplexed to the non-default configuration. Currently, only some Air780E peripherals are supported to be multiplexed to other configurations. This is a temporary interface. If there is a more suitable api in the future, this interface will not be updated.
 处理模式，0死机停机，1死机后重启，2死机后尽量将错误信息提交给外部工具后重启
 Processing mode: 0 crash and stop, 1 crash and restart, 2 crash and try to submit error information to external tools and restart
+处理模式，0死机停机，1死机后重启，2死机后尽量将错误信息提交给外部工具后重启 3.死机时写入关键信息到flash后立刻重启
+processing mode: 0 crash and stop, 1 restart after crash, 2 try to submit error information to external tools and restart after crash 3. write key information to flash when crash and restart immediately
 复用到
 Reuse
 复用功能序号，0~N。具体看平台的IOMUX复用表
