@@ -845,6 +845,41 @@
 </div>
 </section>
 <hr class="docutils"/>
+<section id="fatfs-unmount-mount-point">
+<h2>fatfs.unmount(mount_point)<a class="headerlink" href="#fatfs-unmount-mount-point" title="Permalink to this headline">#</a></h2>
+<p>Unmount fatfs</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>The mount point of the virtual file system. The default value is fatfs and must be consistent with fatfs.mount.</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Return 0 on success, otherwise return failure code</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">fatfs</span><span class="p">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"SD"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="fatfs-getfree-mount-point">
 <h2>fatfs.getfree(mount_point)<a class="headerlink" href="#fatfs-getfree-mount-point" title="Permalink to this headline">#</a></h2>
 <p>Get free space information</p>
@@ -988,6 +1023,7 @@
             <ul>
 <li><a class="reference internal" href="#">fatfs - read/write fatfs format</a><ul>
 <li><a class="reference internal" href="#fatfs-mount-mode-mount-point-spiid-or-spidevice-spi-cs-spi-speed-power-pin-power-on-delay-auto-format">fatfs.mount(mode,mount_point, spiid_or_spidevice, spi_cs, spi_speed, power_pin, power_on_delay, auto_format)</a></li>
+<li><a class="reference internal" href="#fatfs-unmount-mount-point">fatfs.unmount(mount_point)</a></li>
 <li><a class="reference internal" href="#fatfs-getfree-mount-point">fatfs.getfree(mount_point)</a></li>
 <li><a class="reference internal" href="#fatfs-debug-value">fatfs.debug(value)</a></li>
 </ul>

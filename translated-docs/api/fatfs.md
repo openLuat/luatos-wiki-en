@@ -73,6 +73,33 @@ mount fatfs
 
 ---
 
+## fatfs.unmount(mount_point)
+
+
+
+Unmount fatfs
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|string|The mount point of the virtual file system. The default value is fatfs and must be consistent with fatfs.mount.|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|int|Return 0 on success, otherwise return failure code|
+
+**Examples**
+
+```lua
+fatfs.mount("SD")
+
+```
+
+---
+
 ## fatfs.getfree(mount_point)
 
 
