@@ -759,37 +759,45 @@
 </ul>
 <section id="v1110">
 <h2>v1110<a class="headerlink" href="#v1110" title="Permalink to this headline">#</a></h2>
-<p>Compatibility changes:
-1：tts_onchip Turn off support for websocket and ftp clients under
-2：tts_onchip Lower Close ftp
-3：Due to insufficient space, subsequent versions to be tts_onchip can be compiled on the cloud or locally. This version will not be updated.</p>
-<p>Defect repair
-1：Prevent possible time setting errors
-2：luatos The size of the luadb partition read by the firmware is incorrect.
-3：wait485 When, the 485 turned to io control timer did not stop, resulting in data reception problems.
-4：When pwm is not closed and the cycle and duty cycle are changed, it may crash.
-5：485 I can’t use the reversing foot.GPIO14、GPIO15
-6：The software serial port cannot use timer1 and timer4
-7：OTA When the underlying data is written but the script data is not completed, the upgrade is not allowed.
-8：uart485 Unable to use ALT4 GPIO18 and GPIO19
-9：socket Callback message error on active shutdown
-10：Mold into the original patch
-11：mqtt When sending, the data is sent out at one time to avoid being interrupted.
-12：mqttconnect Unable to connect to server when message length exceeds 256
-13：ftp abnormal crash
-14：socket Add protection to prevent freed resources from being used again</p>
-<p>New Features
-add：Reset stack parameters to default
-add：Base station synchronous time switch
-add：Deep Sleep Timer Callback Message
-add：Retains the level set before sleep during deep sleep wake-up
-add：w5500 Add DHCP Timeout Message
-add：DHCP Increased retries for slow routers
-add：socket Query the current connection status
-add：http Custom header supports custom size
-add：sfud mutex protection</p>
-<p>Update function
-update：When an unparsed NMEA statement is encountered, the mask prints</p>
+<p>Compatibility changes:</p>
+<ul class="simple">
+<li><p>1：tts_onchip Turn off support for websocket and ftp clients under</p></li>
+<li><p>2：tts_onchip Lower Close ftp</p></li>
+<li><p>3：Due to insufficient space, subsequent versions to be tts_onchip can be compiled on the cloud or locally. This version will not be updated.</p></li>
+</ul>
+<p>Defect repair</p>
+<ul class="simple">
+<li><p>1：Prevent possible time setting errors</p></li>
+<li><p>2：luatos The size of the luadb partition read by the firmware is incorrect.</p></li>
+<li><p>3：wait485 When, the 485 turned to io control timer did not stop, resulting in data reception problems.</p></li>
+<li><p>4：When pwm is not closed and the cycle and duty cycle are changed, it may crash.</p></li>
+<li><p>5：485 I can’t use the reversing foot.GPIO14、GPIO15</p></li>
+<li><p>6：The software serial port cannot use timer1 and timer4</p></li>
+<li><p>7：OTA When the underlying data is written but the script data is not completed, the upgrade is not allowed.</p></li>
+<li><p>8：uart485 Unable to use ALT4 GPIO18 and GPIO19</p></li>
+<li><p>9：socket Callback message error on active shutdown</p></li>
+<li><p>10：Mold into the original patch</p></li>
+<li><p>11：mqtt When sending, the data is sent out at one time to avoid being interrupted.</p></li>
+<li><p>12：mqttconnect Unable to connect to server when message length exceeds 256</p></li>
+<li><p>13：ftp abnormal crash</p></li>
+<li><p>14：socket Add protection to prevent freed resources from being used again</p></li>
+</ul>
+<p>New Features</p>
+<ul class="simple">
+<li><p>add：Reset stack parameters to default</p></li>
+<li><p>add：Base station synchronous time switch</p></li>
+<li><p>add：Deep Sleep Timer Callback Message</p></li>
+<li><p>add：Retains the level set before sleep during deep sleep wake-up</p></li>
+<li><p>add：w5500 Add DHCP Timeout Message</p></li>
+<li><p>add：DHCP Increased retries for slow routers</p></li>
+<li><p>add：socket Query the current connection status</p></li>
+<li><p>add：http Custom header supports custom size</p></li>
+<li><p>add：sfud mutex protection</p></li>
+</ul>
+<p>Update function</p>
+<ul class="simple">
+<li><p>update：When an unparsed NMEA statement is encountered, the mask prints</p></li>
+</ul>
 </section>
 <section id="v1109">
 <h2>V1109<a class="headerlink" href="#v1109" title="Permalink to this headline">#</a></h2>

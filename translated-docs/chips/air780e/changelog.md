@@ -7,40 +7,40 @@
 ## v1110
 
 Compatibility changes:
-1：tts_onchip Turn off support for websocket and ftp clients under
-2：tts_onchip Lower Close ftp
-3：Due to insufficient space, subsequent versions to be tts_onchip can be compiled on the cloud or locally. This version will not be updated.
+* 1：tts_onchip Turn off support for websocket and ftp clients under
+* 2：tts_onchip Lower Close ftp
+* 3：Due to insufficient space, subsequent versions to be tts_onchip can be compiled on the cloud or locally. This version will not be updated.
 
 Defect repair
-1：Prevent possible time setting errors
-2：luatos The size of the luadb partition read by the firmware is incorrect.
-3：wait485 When, the 485 turned to io control timer did not stop, resulting in data reception problems.
-4：When pwm is not closed and the cycle and duty cycle are changed, it may crash.
-5：485 I can't use the reversing foot.GPIO14、GPIO15
-6：The software serial port cannot use timer1 and timer4
-7：OTA When the underlying data is written but the script data is not completed, the upgrade is not allowed.
-8：uart485 Unable to use ALT4 GPIO18 and GPIO19
-9：socket Callback message error on active shutdown
-10：Mold into the original patch
-11：mqtt When sending, the data is sent out at one time to avoid being interrupted.
-12：mqttconnect Unable to connect to server when message length exceeds 256
-13：ftp abnormal crash
-14：socket Add protection to prevent freed resources from being used again
+* 1：Prevent possible time setting errors
+* 2：luatos The size of the luadb partition read by the firmware is incorrect.
+* 3：wait485 When, the 485 turned to io control timer did not stop, resulting in data reception problems.
+* 4：When pwm is not closed and the cycle and duty cycle are changed, it may crash.
+* 5：485 I can't use the reversing foot.GPIO14、GPIO15
+* 6：The software serial port cannot use timer1 and timer4
+* 7：OTA When the underlying data is written but the script data is not completed, the upgrade is not allowed.
+* 8：uart485 Unable to use ALT4 GPIO18 and GPIO19
+* 9：socket Callback message error on active shutdown
+* 10：Mold into the original patch
+* 11：mqtt When sending, the data is sent out at one time to avoid being interrupted.
+* 12：mqttconnect Unable to connect to server when message length exceeds 256
+* 13：ftp abnormal crash
+* 14：socket Add protection to prevent freed resources from being used again
 
 
 New Features
-add：Reset stack parameters to default
-add：Base station synchronous time switch
-add：Deep Sleep Timer Callback Message
-add：Retains the level set before sleep during deep sleep wake-up
-add：w5500 Add DHCP Timeout Message
-add：DHCP Increased retries for slow routers
-add：socket Query the current connection status
-add：http Custom header supports custom size
-add：sfud mutex protection
+* add：Reset stack parameters to default
+* add：Base station synchronous time switch
+* add：Deep Sleep Timer Callback Message
+* add：Retains the level set before sleep during deep sleep wake-up
+* add：w5500 Add DHCP Timeout Message
+* add：DHCP Increased retries for slow routers
+* add：socket Query the current connection status
+* add：http Custom header supports custom size
+* add：sfud mutex protection
 
 Update function
-update：When an unparsed NMEA statement is encountered, the mask prints
+* update：When an unparsed NMEA statement is encountered, the mask prints
 
 
 ## V1109
