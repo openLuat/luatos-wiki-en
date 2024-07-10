@@ -7,7 +7,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="l3g4200d - l3g4200d Three-Axis Digital Gyroscope Sensor" href="l3g4200d.html" /><link rel="prev" title="ina226 - ina226 Drive" href="ina226.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>iotcloud - iotcloud Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud others will also support, useful issue will accelerate support ) - LuatOS documentation</title>
+        <title>iotcloud - iotcloud Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud tlink cloud others will also support, and the useful issue will accelerate support ) - LuatOS documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -572,7 +572,7 @@
 <li class="toctree-l2"><a class="reference internal" href="httpdns.html">httpdns - Domain name resolution using Http</a></li>
 <li class="toctree-l2"><a class="reference internal" href="httpplus.html">httpplus - http Supplement to the library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ina226.html">ina226 - ina226 Drive</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">iotcloud - iotcloud Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud others will also support, useful issue will accelerate support  )</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">iotcloud - iotcloud Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud tlink cloud others will also support, and the useful issue will accelerate support  )</a></li>
 <li class="toctree-l2"><a class="reference internal" href="l3g4200d.html">l3g4200d - l3g4200d Three-Axis Digital Gyroscope Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lbsLoc.html">lbsLoc - lbsLoc Sending Base Station Location Request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lbsLoc2.html">lbsLoc2 - base station positioning v2</a></li>
@@ -750,8 +750,8 @@
           </label>
         </div>
         <article role="main">
-          <section id="iotcloud-iotcloud-cloud-platform-library-supported-tengxun-cloud-ariyun-onenet-huawei-cloud-graffiti-cloud-baidu-cloud-others-will-also-support-useful-issue-will-accelerate-support">
-<h1>iotcloud - iotcloud Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud others will also support, useful issue will accelerate support  )<a class="headerlink" href="#iotcloud-iotcloud-cloud-platform-library-supported-tengxun-cloud-ariyun-onenet-huawei-cloud-graffiti-cloud-baidu-cloud-others-will-also-support-useful-issue-will-accelerate-support" title="Permalink to this headline">#</a></h1>
+          <section id="iotcloud-iotcloud-cloud-platform-library-supported-tengxun-cloud-ariyun-onenet-huawei-cloud-graffiti-cloud-baidu-cloud-tlink-cloud-others-will-also-support-and-the-useful-issue-will-accelerate-support">
+<h1>iotcloud - iotcloud Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud tlink cloud others will also support, and the useful issue will accelerate support  )<a class="headerlink" href="#iotcloud-iotcloud-cloud-platform-library-supported-tengxun-cloud-ariyun-onenet-huawei-cloud-graffiti-cloud-baidu-cloud-tlink-cloud-others-will-also-support-and-the-useful-issue-will-accelerate-support" title="Permalink to this headline">#</a></h1>
 <p><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Adaptation status unknown</span></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -759,6 +759,50 @@
 </div>
 <p><strong>Example</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--Note: due to the use of sys.wait() all apis need to be used in the coroutine</span>
+
+    <span class="c1">-- Tencent Cloud </span>
+    <span class="c1">-- dynamic registration</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx" ,product_secret = "xxx"})</span>
+
+    <span class="c1">-- Key verification</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789",key = "xxx=="})</span>
+    <span class="c1">-- Certificate verification</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
+
+
+    <span class="c1">-- Alibaba Cloud  </span>
+    <span class="c1">-- Dynamic registration (no pre-registration) (one type one secret.)</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",product_secret = "xxx"})</span>
+
+    <span class="c1">-- Key verification (pre-registration) (one machine, one secret)</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",device_name = "xxx",key = "xxx"})</span>
+    <span class="c1">-- Certificate verification (pre-registration)</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "xxx"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
+
+    <span class="c1">-- ONENET Cloud</span>
+    <span class="c1">-- dynamic registration</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ONENET,{produt_id = "xxx",userid = "xxx",userkey = "xxx"})</span>
+    <span class="c1">-- One type, one density</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ONENET,{produt_id = "xxx",product_secret = "xxx"})</span>
+    <span class="c1">-- One machine, one secret</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ONENET,{produt_id = "xxx",device_name = "xxx",key = "xxx"})</span>
+
+    <span class="c1">-- HUAWEI CLOUD</span>
+    <span class="c1">-- Dynamic registration (no pre-registration)</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.HUAWEI,{produt_id = "xxx",project_id = "xxx",endpoint = "xxx",</span>
+    <span class="c1">--                         iam_username="xxx",iam_password="xxx",iam_domain="xxx"})</span>
+    <span class="c1">-- Key verification (pre-registration)</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.HUAWEI,{produt_id = "xxx",endpoint = "xxx",device_name = "xxx",device_secret = "xxx"})</span>
+
+    <span class="c1">-- -- graffiti cloud </span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TUYA,{device_name = "xxx",device_secret = "xxx"})</span>
+
+    <span class="c1">-- Baiduyun </span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.BAIDU,{produt_id = "xxx",device_name = "xxx",device_secret = "xxx"})</span>
+
+    <span class="c1">-- Tlink Cloud  </span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TLINK,{produt_id = "xxx",product_secret = "xxx",device_name = "xxx"})</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TLINK,{produt_id = "xxx",product_secret = "xxx",device_name = "xxx"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
 </pre></div>
 </div>
 <section id="constant">
@@ -781,7 +825,7 @@
 </tr>
 <tr class="row-even"><td><p>iotcloud.ONENET</p></td>
 <td><p>string</p></td>
-<td><p>China Mobile Cloud</p></td>
+<td><p>ONENET Cloud</p></td>
 </tr>
 <tr class="row-odd"><td><p>iotcloud.HUAWEI</p></td>
 <td><p>string</p></td>
@@ -795,23 +839,27 @@
 <td><p>string</p></td>
 <td><p>Baiduyun</p></td>
 </tr>
-<tr class="row-even"><td><p>iotcloud.CONNECT</p></td>
+<tr class="row-even"><td><p>iotcloud.TLINK</p></td>
+<td><p>string</p></td>
+<td><p>Tlink Cloud</p></td>
+</tr>
+<tr class="row-odd"><td><p>iotcloud.CONNECT</p></td>
 <td><p>string</p></td>
 <td><p>Connect to the server</p></td>
 </tr>
-<tr class="row-odd"><td><p>iotcloud.SEND</p></td>
+<tr class="row-even"><td><p>iotcloud.SEND</p></td>
 <td><p>string</p></td>
 <td><p>Send Message</p></td>
 </tr>
-<tr class="row-even"><td><p>iotcloud.RECEIVE</p></td>
+<tr class="row-odd"><td><p>iotcloud.RECEIVE</p></td>
 <td><p>string</p></td>
 <td><p>Message received</p></td>
 </tr>
-<tr class="row-odd"><td><p>iotcloud.DISCONNECT</p></td>
+<tr class="row-even"><td><p>iotcloud.DISCONNECT</p></td>
 <td><p>string</p></td>
 <td><p>Server Disconnected</p></td>
 </tr>
-<tr class="row-even"><td><p>iotcloud.OTA</p></td>
+<tr class="row-odd"><td><p>iotcloud.OTA</p></td>
 <td><p>string</p></td>
 <td><p>ota Message</p></td>
 </tr>
@@ -854,8 +902,49 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- alibaba cloud dynamic registration</span>
-<span class="n">iotcloudc</span> <span class="o">=</span> <span class="n">iotcloud</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">iotcloud</span><span class="p">.</span><span class="n">ALIYUN</span><span class="p">,{</span><span class="n">product_id</span> <span class="o">=</span> <span class="s2">"xxx"</span><span class="p">,</span><span class="n">product_secret</span> <span class="o">=</span> <span class="s2">"xxx"</span><span class="p">})</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span>    <span class="c1">-- Tencent Cloud </span>
+    <span class="c1">-- dynamic registration</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx" ,product_secret = "xxx"})</span>
+
+    <span class="c1">-- Key verification</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789",key = "xxx=="})</span>
+    <span class="c1">-- Certificate verification</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
+
+
+    <span class="c1">-- Alibaba Cloud  </span>
+    <span class="c1">-- Dynamic registration (no pre-registration) (one type one secret.)</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",product_secret = "xxx"})</span>
+
+    <span class="c1">-- Key verification (pre-registration) (one machine, one secret)</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",device_name = "xxx",key = "xxx"})</span>
+    <span class="c1">-- Certificate verification (pre-registration)</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "xxx"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
+
+    <span class="c1">-- ONENET Cloud</span>
+    <span class="c1">-- dynamic registration</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ONENET,{produt_id = "xxx",userid = "xxx",userkey = "xxx"})</span>
+    <span class="c1">-- One type, one density</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ONENET,{produt_id = "xxx",product_secret = "xxx"})</span>
+    <span class="c1">-- One machine, one secret</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ONENET,{produt_id = "xxx",device_name = "xxx",key = "xxx"})</span>
+
+    <span class="c1">-- HUAWEI CLOUD</span>
+    <span class="c1">-- Dynamic registration (no pre-registration)</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.HUAWEI,{produt_id = "xxx",project_id = "xxx",endpoint = "xxx",</span>
+    <span class="c1">--                         iam_username="xxx",iam_password="xxx",iam_domain="xxx"})</span>
+    <span class="c1">-- Key verification (pre-registration)</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.HUAWEI,{produt_id = "xxx",endpoint = "xxx",device_name = "xxx",device_secret = "xxx"})</span>
+
+    <span class="c1">-- -- graffiti cloud </span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TUYA,{device_name = "xxx",device_secret = "xxx"})</span>
+
+    <span class="c1">-- Baiduyun </span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.BAIDU,{produt_id = "xxx",device_name = "xxx",device_secret = "xxx"})</span>
+
+    <span class="c1">-- Tlink Cloud  </span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TLINK,{produt_id = "xxx",product_secret = "xxx",device_name = "xxx"})</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TLINK,{produt_id = "xxx",product_secret = "xxx",device_name = "xxx"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
 </pre></div>
 </div>
 </section>
@@ -1035,7 +1124,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">iotcloud - iotcloud Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud others will also support, useful issue will accelerate support  )</a><ul>
+<li><a class="reference internal" href="#">iotcloud - iotcloud Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud tlink cloud others will also support, and the useful issue will accelerate support  )</a><ul>
 <li><a class="reference internal" href="#constant">Constant</a></li>
 <li><a class="reference internal" href="#iotcloud-new-cloud-iot-config-connect-config">iotcloud.new(cloud,iot_config,connect_config)</a></li>
 <li><a class="reference internal" href="#cloudc-connect">cloudc:connect()</a></li>

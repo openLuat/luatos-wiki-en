@@ -1,9 +1,15 @@
+一型一密
+One type, one density
+一机一密
+One machine, one secret
 中国移动云
 China Mobile Cloud
 为string时生效 0/1/2 默认
 0/1/2 Default
 主题
 Theme
+云
+Cloud
 云平台 iotcloud.TENCENT:腾讯云 iotcloud.ALIYUN:阿里云 iotcloud.ONENET:中国移动云 iotcloud.HUAWEI:华为云 iotcloud.TUYA:涂鸦云
 Cloud Platform iotcloud.TENCENT: Tencent Cloud iotcloud.ALIYUN: Alibaba Cloud iotcloud.ONENET: China Mobile Cloud iotcloud.HUAWEI: Huawei Cloud iotcloud.TUYA: Graffiti Cloud
 云平台关闭
@@ -14,6 +20,8 @@ Cloud platform release
 Cloud platform unsubscribe
 云平台对象
 Cloud Platform Objects
+云平台库 (已支持: 腾讯云 阿里云 onenet 华为云 涂鸦云 百度云 Tlink云 其他也会支持,有用到的提issue会加速支持
+Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud tlink cloud others will also support, and the useful issue will accelerate support
 云平台库 (已支持: 腾讯云 阿里云 onenet 华为云 涂鸦云 百度云 其他也会支持,有用到的提issue会加速支持
 Cloud platform library (supported: tengxun cloud ariyun onenet huawei cloud graffiti cloud baidu cloud others will also support, useful issue will accelerate support
 云平台断开
@@ -32,12 +40,24 @@ Incoming Value Type | Explanation
 Examples
 创建云平台对象
 Create a cloud platform object
+动态注册
+dynamic registration
+动态注册(免预注册
+Dynamic registration (no pre-registration
+动态注册(免预注册)(一型一密
+Dynamic registration (no pre-registration) (one type one secret.
 华为云
 HUAWEI CLOUD
 参数
 Parameters
 发送消息
 Send Message
+密钥校验
+Key verification
+密钥校验 (预注册
+Key verification (pre-registration
+密钥校验 (预注册)(一机一密
+Key verification (pre-registration) (one machine, one secret
 常量
 Constant
 常量|类型|解释
@@ -68,6 +88,10 @@ Baiduyun
 Example
 腾讯云
 Tencent Cloud
+证书校验
+Certificate verification
+证书校验(预注册
+Certificate verification (pre-registration
 返回值
 Return Value
 返回值类型|解释
