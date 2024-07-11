@@ -811,11 +811,19 @@
 <td><p>number</p></td>
 <td><p>Virtual Serial Port 0</p></td>
 </tr>
+<tr class="row-odd"><td><p>uart.ERROR_DROP</p></td>
+<td><p>number</p></td>
+<td><p>Discard cached data when error is encountered</p></td>
+</tr>
+<tr class="row-even"><td><p>uart.DEBUG</p></td>
+<td><p>number</p></td>
+<td><p>Enable debugging function</p></td>
+</tr>
 </tbody>
 </table></div>
 </section>
-<section id="uart-setup-id-baud-rate-data-bits-stop-bits-partiy-bit-order-buff-size-rs485-gpio-rs485-level-rs485-delay">
-<h2>uart.setup(id, baud_rate, data_bits, stop_bits, partiy, bit_order, buff_size, rs485_gpio, rs485_level, rs485_delay)<a class="headerlink" href="#uart-setup-id-baud-rate-data-bits-stop-bits-partiy-bit-order-buff-size-rs485-gpio-rs485-level-rs485-delay" title="Permalink to this headline">#</a></h2>
+<section id="uart-setup-id-baud-rate-data-bits-stop-bits-partiy-bit-order-buff-size-rs485-gpio-rs485-level-rs485-delay-debug-enable-error-drop">
+<h2>uart.setup(id, baud_rate, data_bits, stop_bits, partiy, bit_order, buff_size, rs485_gpio, rs485_level, rs485_delay, debug_enable, error_drop)<a class="headerlink" href="#uart-setup-id-baud-rate-data-bits-stop-bits-partiy-bit-order-buff-size-rs485-gpio-rs485-level-rs485-delay-debug-enable-error-drop" title="Permalink to this headline">#</a></h2>
 <p>Configure Serial Port Parameters</p>
 <p><strong>Parameters</strong></p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -855,6 +863,12 @@
 <tr class="row-odd"><td><p>int</p></td>
 <td><p>485 The delay time of tx to rx conversion in the mode, the default value is 12bit time, the unit is us, and the baud rate is 9600.20000</p></td>
 </tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Turn on the debugging function, enable by default, fill in uart.DEBUG or non-digital enable, other values are turned off, currently only supported by the core shift platform</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>Whether to abandon cached data in case of receiving error, enable by default, fill in uart.ERROR_DROP or non-digital enable, other values are closed, currently only supported by the core transfer platform</p></td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Return Value</strong></p>
@@ -877,6 +891,8 @@
 
 <span class="c1">-- 485 Automatic switching, select GPIO10 as the transceiver conversion pin</span>
 <span class="n">uart</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">115200</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">uart</span><span class="p">.</span><span class="n">NONE</span><span class="p">,</span> <span class="n">uart</span><span class="p">.</span><span class="n">LSB</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+<span class="c1">-- Receive error not discarded cached data</span>
+<span class="n">uart</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">115200</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">uart</span><span class="p">.</span><span class="n">NONE</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1396,7 +1412,7 @@
             <ul>
 <li><a class="reference internal" href="#">uart - serial port operation library</a><ul>
 <li><a class="reference internal" href="#constant">Constant</a></li>
-<li><a class="reference internal" href="#uart-setup-id-baud-rate-data-bits-stop-bits-partiy-bit-order-buff-size-rs485-gpio-rs485-level-rs485-delay">uart.setup(id, baud_rate, data_bits, stop_bits, partiy, bit_order, buff_size, rs485_gpio, rs485_level, rs485_delay)</a></li>
+<li><a class="reference internal" href="#uart-setup-id-baud-rate-data-bits-stop-bits-partiy-bit-order-buff-size-rs485-gpio-rs485-level-rs485-delay-debug-enable-error-drop">uart.setup(id, baud_rate, data_bits, stop_bits, partiy, bit_order, buff_size, rs485_gpio, rs485_level, rs485_delay, debug_enable, error_drop)</a></li>
 <li><a class="reference internal" href="#uart-write-id-data">uart.write(id, data)</a></li>
 <li><a class="reference internal" href="#uart-read-id-len">uart.read(id, len)</a></li>
 <li><a class="reference internal" href="#uart-close-id">uart.close(id)</a></li>

@@ -26,9 +26,11 @@ There are also video tutorials in this library, [click this link to view](https:
 |uart.LSB|number|Little Endian Mode|
 |uart.MSB|number|Big Endian Mode|
 |uart.VUART_0|number|Virtual Serial Port 0|
+|uart.ERROR_DROP|number|Discard cached data when error is encountered|
+|uart.DEBUG|number|Enable debugging function|
 
 
-## uart.setup(id, baud_rate, data_bits, stop_bits, partiy, bit_order, buff_size, rs485_gpio, rs485_level, rs485_delay)
+## uart.setup(id, baud_rate, data_bits, stop_bits, partiy, bit_order, buff_size, rs485_gpio, rs485_level, rs485_delay, debug_enable, error_drop)
 
 
 
@@ -48,6 +50,8 @@ Configure Serial Port Parameters
 |int|485 Conversion GPIO in mode, default 0xffffffff|
 |int|485 The level of GPIO in the rx direction in the mode, the default value.0|
 |int|485 The delay time of tx to rx conversion in the mode, the default value is 12bit time, the unit is us, and the baud rate is 9600.20000|
+|int|Turn on the debugging function, enable by default, fill in uart.DEBUG or non-digital enable, other values are turned off, currently only supported by the core shift platform|
+|int|Whether to abandon cached data in case of receiving error, enable by default, fill in uart.ERROR_DROP or non-digital enable, other values are closed, currently only supported by the core transfer platform|
 
 **Return Value**
 
@@ -64,6 +68,8 @@ uart.setup(1, 115200, 8, 1, uart.NONE)
 
 -- 485 Automatic switching, select GPIO10 as the transceiver conversion pin
 uart.setup(1, 115200, 8, 1, uart.NONE, uart.LSB, 1024, 10, 0, 2000)
+-- Receive error not discarded cached data
+uart.setup(1, 115200, 8, 1, uart.NONE, nil, 1024, nil, nil, nil, nil, 0)
 
 ```
 

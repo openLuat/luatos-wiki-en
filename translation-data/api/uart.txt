@@ -74,6 +74,10 @@ Constant
 constant | type | explanation
 建议用定时器0和2，tx_pin最好用AGPIO，防止休眠时误触发对端
 It is recommended to use timers 0 and 2. tx_pin is preferably AGPIO to prevent the opposite end from being triggered by mistake during sleep.
+开启调试功能
+Enable debugging function
+开启调试功能，默认使能，填写uart.DEBUG或者非数字使能，其他值都是关闭，目前只有移芯平台支持
+Turn on the debugging function, enable by default, fill in uart.DEBUG or non-digital enable, other values are turned off, currently only supported by the core shift platform
 形式写串口,等同于c语言
 Form to write serial port, equivalent to c language
 形式读串口，一次读出全部数据存入buff中，如果buff空间不够会自动扩展，目前air105,air780e支持这个操作
@@ -158,5 +162,11 @@ return value type | explanation
 Returns the length of the read
 返回读到的长度，并把zbuff指针后移
 Returns the length of the read and moves the zbuff pointer backward
+遇到接收错误不抛弃缓存数据
+Receive error not discarded cached data
+遇到接收错误是否放弃缓存数据，默认使能，填写uart.ERROR_DROP或者非数字使能，其他值都是关闭，目前只有移芯平台支持
+Whether to abandon cached data in case of receiving error, enable by default, fill in uart.ERROR_DROP or non-digital enable, other values are closed, currently only supported by the core transfer platform
+遇到错误时抛弃缓存的数据
+Discard cached data when error is encountered
 配置串口参数
 Configure Serial Port Parameters
