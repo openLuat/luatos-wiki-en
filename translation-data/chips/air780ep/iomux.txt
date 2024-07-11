@@ -34,6 +34,12 @@ Only supports input and interrupt | VBUS of USB, detects whether USB is inserted
 Only supports input and interrupt | wakeup0 sleep wake-up pin
 仅支持输入和中断| wakeup2休眠唤醒脚
 Only supports input and interrupt | wakeup2 sleep wake-up pin
+仅支持输入和中断| wakeup3休眠唤醒脚
+Only supports input and interrupt | wakeup3 sleep wake-up pin
+仅支持输入和中断| wakeup4休眠唤醒脚
+Only supports input and interrupt | wakeup4 sleep wake-up pin
+仅支持输入和中断| wakeup5休眠唤醒脚
+Only supports input and interrupt | wakeup5 sleep wake-up pin
 仅支持输入和中断| 即开机键, 开机之后当普通GPIO使用
 Only supports input and interrupt | instant power-on key, when normal GPIO is used after power-on
 从机输出
@@ -60,6 +66,8 @@ Enabling PWM1 will not enable PWM11, enabling PWM1 and enabling PWM22 will not b
 IO multiplexing configuration under firmware
 在模块未引出
 Not led out in module
+在进入休眠前, 将上述`wakeup0/wakeup1/wakeup2/wakeup3/wakeup4/wakeup5`设置成中断状态, 即可实现管脚唤醒功能
+Before entering sleep, set the above 'wakeup0/wakeup1/wakeup2/wakeup3/wakeup4/wakeup5' to the interrupt state to realize the pin wake-up function
 在进入休眠前, 将上述`wakeup0/wakeup1/wakeup2`设置成中断状态, 即可实现管脚唤醒功能
 Before entering sleep, set the above 'wakeup0/wakeup1/wakeup2' to interrupt state to realize pin wake-up function
 复位

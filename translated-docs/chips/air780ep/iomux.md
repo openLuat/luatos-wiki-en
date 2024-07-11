@@ -105,15 +105,17 @@ Air780EP(EC718P/EC718PV The whole system) supports multiple virtual GPIO, and no
 |39| wakeup0|Only supports input and interrupt | wakeup0 sleep wake-up pin|
 |40| wakeup1/vbus|Only supports input and interrupt | VBUS of USB, detects whether USB is inserted|
 |41| wakeup2|Only supports input and interrupt | wakeup2 sleep wake-up pin, USIM_DET|
+|42| wakeup3|Only supports input and interrupt | wakeup3 sleep wake-up pin, AGPIOWU0|
+|43| wakeup4|Only supports input and interrupt | wakeup4 sleep wake-up pin, AGPIOWU1|
+|44| wakeup5|Only supports input and interrupt | wakeup5 sleep wake-up pin, MAIN_DTR|
 |46| pwrkey |Only supports input and interrupt | instant power-on key, when normal GPIO is used after power-on|
 
 Description:
 
 1. vbus Decoupled from USB functionality
 2. Different from conventional understanding, USB function is still available without vbus
-3. Before entering sleep, set the above 'wakeup0/wakeup1/wakeup2' to interrupt state to realize pin wake-up function
+3. Before entering sleep, set the above 'wakeup0/wakeup1/wakeup2/wakeup3/wakeup4/wakeup5' to the interrupt state to realize the pin wake-up function
 4. Non-wakeup ordinary GPIO does not support sleep wake-up
-5. wakeup3/wakeup4/wakeup5 Not led out in module
 
 For example, if 'wakup0' is set as the wake-up pin, the interrupt callback can be an empty function.
 

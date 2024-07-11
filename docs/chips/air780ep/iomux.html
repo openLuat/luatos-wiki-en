@@ -1064,7 +1064,22 @@
 <td><p>Only supports input and interrupt</p></td>
 <td><p>wakeup2 sleep wake-up pin, USIM_DET</p></td>
 </tr>
-<tr class="row-odd"><td><p>46</p></td>
+<tr class="row-odd"><td><p>42</p></td>
+<td><p>wakeup3</p></td>
+<td><p>Only supports input and interrupt</p></td>
+<td><p>wakeup3 sleep wake-up pin, AGPIOWU0</p></td>
+</tr>
+<tr class="row-even"><td><p>43</p></td>
+<td><p>wakeup4</p></td>
+<td><p>Only supports input and interrupt</p></td>
+<td><p>wakeup4 sleep wake-up pin, AGPIOWU1</p></td>
+</tr>
+<tr class="row-odd"><td><p>44</p></td>
+<td><p>wakeup5</p></td>
+<td><p>Only supports input and interrupt</p></td>
+<td><p>wakeup5 sleep wake-up pin, MAIN_DTR</p></td>
+</tr>
+<tr class="row-even"><td><p>46</p></td>
 <td><p>pwrkey</p></td>
 <td><p>Only supports input and interrupt</p></td>
 <td><p>instant power-on key, when normal GPIO is used after power-on</p></td>
@@ -1075,9 +1090,8 @@
 <ol class="arabic simple">
 <li><p>vbus Decoupled from USB functionality</p></li>
 <li><p>Different from conventional understanding, USB function is still available without vbus</p></li>
-<li><p>Before entering sleep, set the above ‘wakeup0/wakeup1/wakeup2’ to interrupt state to realize pin wake-up function</p></li>
+<li><p>Before entering sleep, set the above ‘wakeup0/wakeup1/wakeup2/wakeup3/wakeup4/wakeup5’ to the interrupt state to realize the pin wake-up function</p></li>
 <li><p>Non-wakeup ordinary GPIO does not support sleep wake-up</p></li>
-<li><p>wakeup3/wakeup4/wakeup5 Not led out in module</p></li>
 </ol>
 <p>For example, if ‘wakup0’ is set as the wake-up pin, the interrupt callback can be an empty function.</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">gpio</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">39</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span> <span class="kr">end</span><span class="p">,</span> <span class="n">gpio</span><span class="p">.</span><span class="n">PULLUP</span><span class="p">)</span>
