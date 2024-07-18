@@ -56,6 +56,8 @@ Key Number **|**Pin Function**|** Description
 Interface (8-bit ~ 16-bit parallel RGB, I8080, MOTO6800), supports conversion between RGB565, YUV422, YUV420, YUV411
 接口供电（默认
 Interface power supply (default
+接地
+Grounding
 控制
 Control
 控制器
@@ -70,18 +72,34 @@ The core board is a core board designed based on Lexin ESP32-S3, with a size of 
 Note that since **win7** system does not have a` winusb` driver, and Microsoft has stopped supporting the system as early as 2020, if you need to` USB download`, please upgrade to **win8 or above system**, or go to [Lexin Original Factory Manual](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html) to install the driver
 特别注意
 Special attention
+电源接口，与USB的VBUS相连
+Power interface, connected to USB VBUS
 相关资料链接
 Related Information Links
 第一批ESP32S3核心板，由于FLASH热胀冷缩，会有小概率导致到手后虚焊。（出厂前均会烧录固件，烧录成功后才会出厂，猜测是这个原因
 The first batch of ESP32S3 core boards, due to FLASH thermal expansion and cold contraction, will have a small probability of causing virtual welding after hand. (Firmware will be burned before leaving the factory, and will not leave the factory until it is successfully burned. This is the reason
 编号 | **对应GPIO** | **管脚功能** | **描述
 Number | **Corresponds to GPIO** | **Pin function** | **Description
+编号** | **名称** | **复位后默认功能**                      | **复用功能**    | **电源域** | **上下拉能力
+Number **|** Name **|** Default function after reset **|** Multiplexing function **|** Power domain **|** Pull-down capability
 脉冲计数器 – LED PWM 控制器，多达 8 个通道
 Pulse Counter-LED PWM Controller, Up to 8 Channels
+芯片3.3V供电控制,高电平有效，不用可悬空
+Chip 3.3V power supply control, high level effective, no need to be suspended
+芯片复位
+Chip Reset
+芯片电源
+Chip power supply
 表
 Table
+详细管脚描述
+Detailed Pin Description
 调试过程中优先推荐的供电方式：TYPE-C USB接口供电。
 Power supply mode to be recommend preferentially during debugging: power supply TYPE-C USB interface.
+输入
+Input
+输入，输出，高阻
+input, output, high resistance
 通用 DMA 控制器 (简称 GDMA)，5 个接收通 道和 5 个发送通道
 General purpose DMA controller (GDMA),5 receive channels and 5 transmit channels
 通过USB下载（USB直连）可以直接烧录，Win8及以上系统无需安装驱动。可以正常使用Luatools烧录，但是无法使用LuatIDE。除烧录时需要选择带`USB`字样的固件，*GPIO19/20会被占用为USB脚*, 应避免使用, 其他功能没有任何区别。

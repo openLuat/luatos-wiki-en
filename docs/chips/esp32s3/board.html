@@ -796,6 +796,244 @@ Therefore, please check the usb port with power on after you get it, and then ca
 <section id="pin-definition">
 <h2>3. Pin Definition<a class="headerlink" href="#pin-definition" title="Permalink to this headline">#</a></h2>
 <p><img alt="footprint" src="https://openluat-luatcommunity.oss-cn-hangzhou.aliyuncs.com/images/PinOut_esp32s3.png"/></p>
+<p><strong>Detailed Pin Description</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>**Number **</p></th>
+<th class="head"><p>** Name **</p></th>
+<th class="head"><p>** Default function after reset **</p></th>
+<th class="head"><p>** Multiplexing function **</p></th>
+<th class="head"><p>** Power domain **</p></th>
+<th class="head"><p>** Pull-down capability**</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>32</p></td>
+<td><p>GND</p></td>
+<td><p>Grounding</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>31</p></td>
+<td><p>5V</p></td>
+<td><p>5V Power interface, connected to USB VBUS</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>IO00</p></td>
+<td><p>GPIO00,Input</p></td>
+<td><p></p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td><p>IO10</p></td>
+<td><p>GPIO10,input, output, high resistance</p></td>
+<td><p></p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td><p>IO11</p></td>
+<td><p>GPIO11,input, output, high resistance</p></td>
+<td><p>I2C_SDA</p></td>
+<td><p>VDD3P3_RTC</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td><p>IO12</p></td>
+<td><p>GPIO12,input, output, high resistance</p></td>
+<td><p>I2C_SCL</p></td>
+<td><p>VDD3P3_RTC</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-even"><td><p>26</p></td>
+<td><p>3.3V</p></td>
+<td><p>Chip power supply，3.3V</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>GND</p></td>
+<td><p>Grounding</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>24</p></td>
+<td><p>IO13</p></td>
+<td><p>GPIO13,input, output, high resistance</p></td>
+<td><p></p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-odd"><td><p>23</p></td>
+<td><p>IO14</p></td>
+<td><p>GPIO14,input, output, high resistance</p></td>
+<td><p>SPI2_CS</p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-even"><td><p>22</p></td>
+<td><p>IO15</p></td>
+<td><p>GPIO15,input, output, high resistance</p></td>
+<td><p></p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-odd"><td><p>21</p></td>
+<td><p>IO16</p></td>
+<td><p>GPIO16,input, output, high resistance</p></td>
+<td><p>SPI2_MISO</p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>IO17</p></td>
+<td><p>GPIO17,input, output, high resistance</p></td>
+<td><p>SPI2_MOSI</p></td>
+<td><p>VDD3P3_RTC</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td><p>IO18</p></td>
+<td><p>GPIO18,input, output, high resistance</p></td>
+<td><p>SPI2_CK</p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>3.3V</p></td>
+<td><p>Chip power supply，3.3V</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>GND</p></td>
+<td><p>Grounding</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>5V</p></td>
+<td><p>5V Power interface, connected to USB VBUS</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>PWB</p></td>
+<td><p>Chip 3.3V power supply control, high level effective, no need to be suspended</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>GND</p></td>
+<td><p>Grounding</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>3.3V</p></td>
+<td><p>Chip power supply，3.3V</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>RESET</p></td>
+<td><p>Chip Reset</p></td>
+<td><p></p></td>
+<td><p>VDD3P3_RTC</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>IO09</p></td>
+<td><p>GPIO09,input, output, high resistance</p></td>
+<td><p></p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>IO08</p></td>
+<td><p>GPIO08,input, output, high resistance</p></td>
+<td><p>SDIO_D3</p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-odd"><td><p>09</p></td>
+<td><p>IO07</p></td>
+<td><p>GPIO07,input, output, high resistance</p></td>
+<td><p>UART2_RX</p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-even"><td><p>08</p></td>
+<td><p>IO06</p></td>
+<td><p>GPIO06,input, output, high resistance</p></td>
+<td><p>UART2_TX</p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-odd"><td><p>07</p></td>
+<td><p>GND</p></td>
+<td><p>Grounding</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>06</p></td>
+<td><p>IO05</p></td>
+<td><p>GPIO05,input, output, high resistance</p></td>
+<td><p>SDIO_D2</p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-odd"><td><p>05</p></td>
+<td><p>IO04</p></td>
+<td><p>GPIO04,input, output, high resistance</p></td>
+<td><p>SDIO_D1</p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-even"><td><p>04</p></td>
+<td><p>IO03</p></td>
+<td><p>GPIO03,input, output, high resistance</p></td>
+<td><p>SDIO_D0</p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-odd"><td><p>03</p></td>
+<td><p>IO02</p></td>
+<td><p>GPIO2,input, output, high resistance</p></td>
+<td><p>UART1_RX/SDIO_CMD</p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-even"><td><p>02</p></td>
+<td><p>IO01</p></td>
+<td><p>GPIO1,input, output, high resistance</p></td>
+<td><p>UART1_TX/SDIO_CLK</p></td>
+<td><p>VDD3P3_CPU</p></td>
+<td><p>UP/DOWN</p></td>
+</tr>
+<tr class="row-odd"><td><p>01</p></td>
+<td><p>GND</p></td>
+<td><p>Grounding</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table></div>
 <ul class="simple">
 <li><p>Any GPIO can be used as a PWM pin, and the number is the same as that of GPIO, but only 8 PWMs can be turned on at the same time. Attention must be paid</p></li>
 <li><p>The illustrated SPI is SPI 2</p></li>
