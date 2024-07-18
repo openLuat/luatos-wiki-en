@@ -38,8 +38,12 @@ and GND pin supply
 The illustrated SPI is
 如若到手后板子`默认的闪灯程序`无法运行，且**无法烧录固件（卡在FLASH下载那一步）**，可尝试补焊**FLASH处的焊盘**（加锡
 If the` default flashing light program` on the back board cannot run and **cannot burn firmware (stuck in the step of FLASH download)**, try to repair and solder the pad at **FLASH** (tin added
+对应
+Corresponding
 开发板
 Development Board
+开发板图示SPI为
+The SPI of the development board is
 开源仓库链接
 Open Source Warehouse Link
 所以到手后请先usb口上电检查一遍，确认无问题后再进行焊接排针操作。

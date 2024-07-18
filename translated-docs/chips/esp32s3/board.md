@@ -83,7 +83,8 @@ CORE ESP32S3 The core board is a core board designed based on Lexin ESP32-S3, wi
 | 01           | GND      | Grounding                                   |                    |            |                |
 
 - Any GPIO can be used as a PWM pin, and the number is the same as that of GPIO, but only 8 PWMs can be turned on at the same time. Attention must be paid
-- The illustrated SPI is SPI 2
+- The SPI of the development board is SPI 2
+- SPI 3 Corresponding IO：SPI3_MISO -> GPIO33、SPI3_MOSI -> GPIO47、SPI3_SCLK -> GPIO48
 
 ## 4. function introduction
 
