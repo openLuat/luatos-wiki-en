@@ -38,8 +38,12 @@ File Upload
 File Download
 无
 None
+无返回值
+No return value
 是否为ssl加密连接,默认不加密,true为无证书最简单的加密，table为有证书的加密 <br>server_cert 服务器ca证书数据 <br>client_cert 客户端ca证书数据 <br>client_key 客户端私钥加密数据 <br>client_password 客户端私钥口令数据
 whether it is an ssl encrypted connection, default is no encryption, true is the simplest encryption without certificate, table is encrypted with certificate <br>server_cert server ca certificate data <br>client_cert client ca certificate data <br>client_key client private key encrypted data <br>client_password client private key password data
+是否打开debug开关
+Whether to turn on debug switch
 显示当前工作目录名
 Displays the current working directory name
 服务器文件
@@ -66,3 +70,5 @@ Return Value
 return value type | explanation
 适配器序号, 只能是socket.ETH0, socket.STA, socket.AP,如果不填,会选择平台自带的方式,然后是最后一个注册的适配器
 The adapter serial number can only be socket.ETH0, socket.STA, socket.AP. If it is not filled in, the platform's own method will be selected, and then the last registered adapter will be selected.
+配置是否打开debug信息
+Configure whether to open debug information

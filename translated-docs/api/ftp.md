@@ -169,3 +169,27 @@ ftp.close().wait()
 
 ---
 
+## ftp.debug(onoff)
+
+
+
+Configure whether to open debug information
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|boolean|Whether to turn on debug switch|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|nil|No return value|
+
+**Examples**
+
+None
+
+---
+
