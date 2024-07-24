@@ -832,6 +832,86 @@
 <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"adxl34x_data"</span><span class="p">,</span> <span class="s2">"adxl34x_data.x"</span><span class="o">..</span><span class="p">(</span><span class="n">adxl34x_data</span><span class="p">.</span><span class="n">x</span><span class="p">),</span><span class="s2">"adxl34x_data.y"</span><span class="o">..</span><span class="p">(</span><span class="n">adxl34x_data</span><span class="p">.</span><span class="n">y</span><span class="p">),</span><span class="s2">"adxl34x_data.z"</span><span class="o">..</span><span class="p">(</span><span class="n">adxl34x_data</span><span class="p">.</span><span class="n">z</span><span class="p">))</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="adxl34x-get-int-source">
+<h2>adxl34x.get_int_source()<a class="headerlink" href="#adxl34x-get-int-source" title="Permalink to this headline">#</a></h2>
+<p>Get adxl34x interrupt source</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">adxl34x</span><span class="p">.</span><span class="n">get_int_source</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="adxl34x-set-thresh-i2cid-activity-inactivity-time-inactivity">
+<h2>adxl34x.set_thresh(i2cid, activity, inactivity, time_inactivity)<a class="headerlink" href="#adxl34x-set-thresh-i2cid-activity-inactivity-time-inactivity" title="Permalink to this headline">#</a></h2>
+<p>Set adxl34x activity and static stop thresholds</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>The i2c bus id</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>Activity threshold</p></td>
+</tr>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>Static threshold</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>Static time</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">adxl34x</span><span class="p">.</span><span class="n">set_thresh</span><span class="p">(</span><span class="n">i2cid</span><span class="p">,</span> <span class="nb">string.char</span><span class="p">(</span><span class="mh">0x05</span><span class="p">),</span> <span class="nb">string.char</span><span class="p">(</span><span class="mh">0x02</span><span class="p">),</span> <span class="nb">string.char</span><span class="p">(</span><span class="mh">0x05</span><span class="p">))</span> 
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"adxl34x_data"</span><span class="p">,</span> <span class="s2">"adxl34x_data.x"</span><span class="o">..</span><span class="p">(</span><span class="n">adxl34x_data</span><span class="p">.</span><span class="n">x</span><span class="p">),</span><span class="s2">"adxl34x_data.y"</span><span class="o">..</span><span class="p">(</span><span class="n">adxl34x_data</span><span class="p">.</span><span class="n">y</span><span class="p">),</span><span class="s2">"adxl34x_data.z"</span><span class="o">..</span><span class="p">(</span><span class="n">adxl34x_data</span><span class="p">.</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="adxl34x-set-irqf-i2cid-irqf-map-irqf-act-ctl-irqf-enable">
+<h2>adxl34x.set_irqf(i2cid, irqf_map, irqf_act_ctl, irqf_enable)<a class="headerlink" href="#adxl34x-set-irqf-i2cid-irqf-map-irqf-act-ctl-irqf-enable" title="Permalink to this headline">#</a></h2>
+<p>adxl34x Interrupt Settings</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>The i2c bus id</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>interrupt mapping</p></td>
+</tr>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>Interrupt Activity Control</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>Interrupt enable</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">adxl34x</span><span class="p">.</span><span class="n">set_irqf</span><span class="p">(</span><span class="n">i2cid</span><span class="p">,</span> <span class="nb">string.char</span><span class="p">(</span><span class="mh">0x10</span><span class="p">),</span> <span class="nb">string.char</span><span class="p">(</span><span class="mh">0xff</span><span class="p">),</span> <span class="nb">string.char</span><span class="p">(</span><span class="mh">0x10</span><span class="p">))</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -895,6 +975,9 @@
 <li><a class="reference internal" href="#">adxl34x - adxl34x 3 Axis accelerometer currently supports adxl345 adxl346</a><ul>
 <li><a class="reference internal" href="#adxl34x-init-i2c-id">adxl34x.init(i2c_id)</a></li>
 <li><a class="reference internal" href="#adxl34x-get-data">adxl34x.get_data()</a></li>
+<li><a class="reference internal" href="#adxl34x-get-int-source">adxl34x.get_int_source()</a></li>
+<li><a class="reference internal" href="#adxl34x-set-thresh-i2cid-activity-inactivity-time-inactivity">adxl34x.set_thresh(i2cid, activity, inactivity, time_inactivity)</a></li>
+<li><a class="reference internal" href="#adxl34x-set-irqf-i2cid-irqf-map-irqf-act-ctl-irqf-enable">adxl34x.set_irqf(i2cid, irqf_map, irqf_act_ctl, irqf_enable)</a></li>
 </ul>
 </li>
 </ul>

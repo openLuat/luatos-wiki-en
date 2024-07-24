@@ -80,3 +80,83 @@ log.info("adxl34x_data", "adxl34x_data.x"..(adxl34x_data.x),"adxl34x_data.y"..(a
 
 ---
 
+## adxl34x.get_int_source()
+
+
+
+Get adxl34x interrupt source
+
+**Parameters**
+
+None
+
+**Return Value**
+
+None
+
+**Examples**
+
+```lua
+adxl34x.get_int_source()
+
+```
+
+---
+
+## adxl34x.set_thresh(i2cid, activity, inactivity, time_inactivity)
+
+
+
+Set adxl34x activity and static stop thresholds
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|number|The i2c bus id|
+|number|Activity threshold|
+|number|Static threshold|
+|number|Static time|
+
+**Return Value**
+
+None
+
+**Examples**
+
+```lua
+adxl34x.set_thresh(i2cid, string.char(0x05), string.char(0x02), string.char(0x05)) 
+log.info("adxl34x_data", "adxl34x_data.x"..(adxl34x_data.x),"adxl34x_data.y"..(adxl34x_data.y),"adxl34x_data.z"..(adxl34x_data.z))
+
+```
+
+---
+
+## adxl34x.set_irqf(i2cid, irqf_map, irqf_act_ctl, irqf_enable)
+
+
+
+adxl34x Interrupt Settings
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|number|The i2c bus id|
+|number|interrupt mapping|
+|number|Interrupt Activity Control|
+|number|Interrupt enable|
+
+**Return Value**
+
+None
+
+**Examples**
+
+```lua
+adxl34x.set_irqf(i2cid, string.char(0x10), string.char(0xff), string.char(0x10))
+
+```
+
+---
+
