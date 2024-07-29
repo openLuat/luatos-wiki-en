@@ -144,6 +144,8 @@ Power down, keep RAM also power down
 None
 无返回值
 No return value
+是, 最大休眠时长是740小时
+Yes, the maximum sleep duration is 740 hours
 是否开启ec618的powerkey滤波模式，true开，注意滤波模式下reset变成直接关机
 Whether to turn on the powerkey filtering mode of ec618, true on, note that reset becomes direct shutdown in filtering mode
 是哪种方式开机呢

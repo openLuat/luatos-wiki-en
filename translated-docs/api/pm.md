@@ -120,7 +120,7 @@ Start the bottom timer, it still takes effect in sleep mode. It is triggered onl
 
 |Incoming Value Type | Explanation|
 |-|-|
-|int|Timer id, usually 0-3|
+|int|Timer id, usually 0-5|
 |int|Timing duration, in milliseconds|
 
 **Return Value**
@@ -136,7 +136,7 @@ Start the bottom timer, it still takes effect in sleep mode. It is triggered onl
 pm.dtimerStart(0, 300 * 1000) -- 5 Wake up after minutes
 -- Air780E/Air780EP Series
 -- id = 0 Or id = 1 is, the maximum sleep duration is 2.5 hours
--- id = 2 Or id = 3 is, the maximum sleep duration is 3 months
+-- id >= 2 Yes, the maximum sleep duration is 740 hours
 
 ```
 
