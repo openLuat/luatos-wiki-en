@@ -12,6 +12,8 @@ If you have also made an extension library, you are very welcome to share it and
 Client
 库的tag加上 luatos 字样
 The tag of the library is added with the word luatos
+接入ThingsCloud平台
+Access ThingsCloud Platform
 期待你的扩展库
 Looking forward to your extension library
 根据tag在gitee/github查找

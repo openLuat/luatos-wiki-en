@@ -88,7 +88,7 @@ Attention:
 
 Attention:
 
-1. SPI0 It is in conflict with UART2, which is the case.
+1. SPI0 It is in conflict with I2C1, which is the case.
 2. SPI5 It is a special SPI for LCD screen brushing, and does not support the general SPI function
 
 ## GPIO Additional Instructions

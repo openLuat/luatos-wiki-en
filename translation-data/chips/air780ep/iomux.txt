@@ -12,6 +12,8 @@ The following mappings are default, configurable via 'mcu.altfun'
 The following mappings are default, configurable via mcu.iomux
 不同模块的外部管脚布局不一样, 但`PAD(paddr)`值是一致的, 要对应 "PIN/GPIO对应表格" 文档, 该文档可以在 [air780ep.cn](https://air780ep.cn) 找到
 The external pin layout of different modules is different, but the' PAD(paddr)'value is the same. to correspond to the "PIN/GPIO correspondence table" document, the document can be found in [air780ep.cn](https://air780ep.cn)
+与I2C1是冲突的, 事实如此
+It is in conflict with I2C1, which is the case.
 与UART2是冲突的, 事实如此
 It is in conflict with UART2, which is the case.
 与USB功能是解耦的

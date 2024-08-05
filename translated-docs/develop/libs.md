@@ -13,6 +13,7 @@
 * Tencent base station positioning [qqlbs@github](https://github.com/wendal/luatos-lib-qqlbs)
 * OneNet Single-frequency RTK docking [onenetcors@github](https://github.com/wendal/luatos-lib-onenetcors)
 * DNS Client [dnsclient@github](https://github.com/wendal/luatos-lib-dnsclient)
+* Access ThingsCloud Platform SDK [luatos-thingscloud-sdk@github](https://github.com/IoT-ThingsCloud/luatos-thingscloud-sdk)
 
 ## Looking forward to your extension library
 
