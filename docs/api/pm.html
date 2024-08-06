@@ -851,23 +851,23 @@
 </tr>
 <tr class="row-odd"><td><p>pm.DAC_EN</p></td>
 <td><p>number</p></td>
-<td><p>Air780E And Air600E DAC_EN (LDO_CTL of the new hardware manual, same PIN, naming change), note that the default configuration of audio will automatically use this pin to control CODEC enable</p></td>
+<td><p>Air780E And Air600E, the Air780EP DAC_EN (LDO_CTL of the new hardware manual, same PIN, name change), note that the default configuration of audio will automatically use this pin to control the enable of CODEC</p></td>
 </tr>
 <tr class="row-even"><td><p>pm.LDO_CTL</p></td>
 <td><p>number</p></td>
-<td><p>Air780E And Air600E LDO_CTL (DAC_EN of the old hardware manual, same PIN, naming change),Air780EP LDO_CTL, note that the default configuration of audio will automatically use this pin to control CODEC enable</p></td>
+<td><p>Air780E And Air600E,Air780EP LDO_CTL (DAC_EN of the old hardware manual, same PIN, naming change),Air780EP LDO_CTL, note that the default configuration of audio will automatically use this pin to control CODEC enable</p></td>
 </tr>
 <tr class="row-odd"><td><p>pm.PWK_MODE</p></td>
 <td><p>number</p></td>
-<td><p>Whether to turn on the powerkey filtering mode of ec618, true on, note that reset becomes direct shutdown in filtering mode</p></td>
+<td><p>Whether to turn on the powerkey filtering mode of the core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.), true on, note that reset becomes direct shutdown in the filtering mode</p></td>
 </tr>
 <tr class="row-even"><td><p>pm.WORK_MODE</p></td>
 <td><p>number</p></td>
-<td><p>ec618 Energy saving mode, 0~3,0 completely off, 1 performance priority, 2 balance, 3 extreme power consumption</p></td>
+<td><p>The energy-saving mode of the core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.), 0~3,0 completely closed, 1 performance priority, 2 balance, 3 extreme power consumption</p></td>
 </tr>
 <tr class="row-odd"><td><p>pm.IOVL</p></td>
 <td><p>number</p></td>
-<td><p>All GPIO high-level voltage controls, currently available only in the ec618 series</p></td>
+<td><p>All GPIO high-level voltage control, currently only the mobile CAT1 platform series (Air780E/Air700E/Air780EP, etc.) is available</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -950,7 +950,7 @@
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Add an underlying timer</span>
 <span class="n">pm</span><span class="p">.</span><span class="n">dtimerStart</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">-- 5 Wake up after minutes</span>
-<span class="c1">-- Air780E/Air780EP Series</span>
+<span class="c1">-- Moving core CAT1 platform series (Air780E/Air700E/Air780EP, etc)</span>
 <span class="c1">-- id = 0 Or id = 1 is, the maximum sleep duration is 2.5 hours</span>
 <span class="c1">-- id &gt;= 2 Yes, the maximum sleep duration is 740 hours</span>
 </pre></div>
@@ -1108,7 +1108,7 @@
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Request to enter sleep mode</span>
 <span class="n">pm</span><span class="p">.</span><span class="n">force</span><span class="p">(</span><span class="n">pm</span><span class="p">.</span><span class="n">HIB</span><span class="p">)</span>
-<span class="c1">-- Corresponds to EC618 series (Air780E/Air700E, etc.), this operation will turn off USB communication</span>
+<span class="c1">-- Move the CAT1 platform series (Air780E/Air700E/Air780EP, etc.), this operation will turn off USB communication</span>
 <span class="c1">-- To turn on the USB after waking up, turn on the USB voltage</span>
 <span class="c1">--pm.power(pm.USB, true)</span>
 </pre></div>
@@ -1142,7 +1142,7 @@
 <span class="kr">if</span> <span class="n">pm</span><span class="p">.</span><span class="n">check</span><span class="p">()</span> <span class="kr">then</span>
     <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"pm"</span><span class="p">,</span> <span class="s2">"it is ok to hib"</span><span class="p">)</span>
 <span class="kr">else</span>
-    <span class="c1">-- Corresponds to EC618 series (Air780E/Air700E, etc.), this operation will turn off USB communication</span>
+    <span class="c1">-- Move the CAT1 platform series (Air780E/Air700E/Air780EP, etc.), this operation will turn off USB communication</span>
     <span class="n">pm</span><span class="p">.</span><span class="n">force</span><span class="p">(</span><span class="n">pm</span><span class="p">.</span><span class="n">HIB</span><span class="p">)</span> <span class="c1">-- Forced Hibernation</span>
     <span class="c1">-- To turn on the USB after waking up, turn on the USB voltage</span>
     <span class="c1">--sys.wait(100)</span>
@@ -1171,8 +1171,7 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Currently supports EC618 series (Air780E/Air600E/Air700E/Air780EG support)</span>
-<span class="c1">-- Currently supports EC718 series (Air780EP/Air780EPU and other derivative models support)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Currently supports the core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.)</span>
 <span class="c1">-- Requires firmware compiled after 2022-12-22</span>
 <span class="n">pm</span><span class="p">.</span><span class="n">shutdown</span><span class="p">()</span>
 </pre></div>
@@ -1240,12 +1239,12 @@
 <span class="c1">-- Air780EG,Power up the built-in GPS chip. Note that the Air780EG GPS and GPS_ANT are controlled together, so.</span>
 <span class="n">pm</span><span class="p">.</span><span class="n">power</span><span class="p">(</span><span class="n">pm</span><span class="p">.</span><span class="n">GPS</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
 
-<span class="c1">-- EC618/EC718 Series open pwrkey boot anti-shake</span>
+<span class="c1">-- Core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.) turn on pwrkey to start anti-shake</span>
 <span class="c1">-- Note: After opening, the reset key will turn off!!! Pwrkey to long press 2 seconds to boot</span>
 <span class="c1">-- pm.power(pm.PWK_MODE, true)</span>
 
-<span class="c1">-- EC618/EC718 Series PSM Low Power Settings</span>
-<span class="c1">-- ec618/ec718 Energy saving mode, 0~3,0 completely off, 1 performance priority, 2 balance, 3 extreme power consumption</span>
+<span class="c1">-- Moving Core CAT1 Platform Series (Air780E/Air700E/Air780EP, etc.) PSM Low Power Settings</span>
+<span class="c1">-- Moving core CAT1 platform series (Air780E/Air700E/Air780EP, etc.) energy saving mode, 0~3,0 completely closed, 1 performance priority, 2 balance, 3 extreme power consumption</span>
 <span class="c1">-- Detailed Access: https://airpsm.cn</span>
 <span class="c1">-- pm.power(pm.WORK_MODE, 1)</span>
 </pre></div>
@@ -1285,8 +1284,7 @@
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- EC618/EC718 Series setting IO level, range 1650~2000,2650~3400, unit millivolt, step 50mv</span>
-<span class="c1">-- Such as Air780E/Air600E/Air700E/Air780EG/Air780EP/Air780EPV</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.) sets IO level in the range of 1650~2000,2650~3400, unit millivolt, step 50mv</span>
 <span class="c1">-- Note that the settings here take precedence over the configuration of the hardware IOSEL pin</span>
 <span class="c1">-- However, the hardware configuration is still used when starting up until the API is called for configuration, so the io level will change.</span>
 <span class="c1">-- pm.ioVol(pm.IOVOL_ALL_GPIO, 3300)    -- All GPIO high level outputs 3.3V</span>

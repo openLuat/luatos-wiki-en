@@ -68,11 +68,11 @@ pm.request(pm.IDLE) -- Request to enter different sleep modes by switching diffe
 |pm.GPS|number|GPS Power|
 |pm.GPS_ANT|number|GPS The antenna power supply, active antenna is required.|
 |pm.CAMERA|number|camera Power supply, CAM_VCC output|
-|pm.DAC_EN|number|Air780E And Air600E DAC_EN (LDO_CTL of the new hardware manual, same PIN, naming change), note that the default configuration of audio will automatically use this pin to control CODEC enable|
-|pm.LDO_CTL|number|Air780E And Air600E LDO_CTL (DAC_EN of the old hardware manual, same PIN, naming change),Air780EP LDO_CTL, note that the default configuration of audio will automatically use this pin to control CODEC enable|
-|pm.PWK_MODE|number|Whether to turn on the powerkey filtering mode of ec618, true on, note that reset becomes direct shutdown in filtering mode|
-|pm.WORK_MODE|number|ec618 Energy saving mode, 0~3,0 completely off, 1 performance priority, 2 balance, 3 extreme power consumption|
-|pm.IOVL|number|All GPIO high-level voltage controls, currently available only in the ec618 series|
+|pm.DAC_EN|number|Air780E And Air600E, the Air780EP DAC_EN (LDO_CTL of the new hardware manual, same PIN, name change), note that the default configuration of audio will automatically use this pin to control the enable of CODEC|
+|pm.LDO_CTL|number|Air780E And Air600E,Air780EP LDO_CTL (DAC_EN of the old hardware manual, same PIN, naming change),Air780EP LDO_CTL, note that the default configuration of audio will automatically use this pin to control CODEC enable|
+|pm.PWK_MODE|number|Whether to turn on the powerkey filtering mode of the core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.), true on, note that reset becomes direct shutdown in the filtering mode|
+|pm.WORK_MODE|number|The energy-saving mode of the core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.), 0~3,0 completely closed, 1 performance priority, 2 balance, 3 extreme power consumption|
+|pm.IOVL|number|All GPIO high-level voltage control, currently only the mobile CAT1 platform series (Air780E/Air700E/Air780EP, etc.) is available|
 
 
 ## pm.request(mode)
@@ -134,7 +134,7 @@ Start the bottom timer, it still takes effect in sleep mode. It is triggered onl
 ```lua
 -- Add an underlying timer
 pm.dtimerStart(0, 300 * 1000) -- 5 Wake up after minutes
--- Air780E/Air780EP Series
+-- Moving core CAT1 platform series (Air780E/Air700E/Air780EP, etc)
 -- id = 0 Or id = 1 is, the maximum sleep duration is 2.5 hours
 -- id >= 2 Yes, the maximum sleep duration is 740 hours
 
@@ -273,7 +273,7 @@ Force the specified sleep mode to ignore the effects of certain peripherals, suc
 ```lua
 -- Request to enter sleep mode
 pm.force(pm.HIB)
--- Corresponds to EC618 series (Air780E/Air700E, etc.), this operation will turn off USB communication
+-- Move the CAT1 platform series (Air780E/Air700E/Air780EP, etc.), this operation will turn off USB communication
 -- To turn on the USB after waking up, turn on the USB voltage
 --pm.power(pm.USB, true)
 
@@ -306,7 +306,7 @@ pm.request(pm.HIB)
 if pm.check() then
     log.info("pm", "it is ok to hib")
 else
-    -- Corresponds to EC618 series (Air780E/Air700E, etc.), this operation will turn off USB communication
+    -- Move the CAT1 platform series (Air780E/Air700E/Air780EP, etc.), this operation will turn off USB communication
     pm.force(pm.HIB) -- Forced Hibernation
     -- To turn on the USB after waking up, turn on the USB voltage
     --sys.wait(100)
@@ -336,8 +336,7 @@ None
 **Examples**
 
 ```lua
--- Currently supports EC618 series (Air780E/Air600E/Air700E/Air780EG support)
--- Currently supports EC718 series (Air780EP/Air780EPU and other derivative models support)
+-- Currently supports the core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.)
 -- Requires firmware compiled after 2022-12-22
 pm.shutdown()
 
@@ -395,12 +394,12 @@ pm.power(pm.USB, false)
 -- Air780EG,Power up the built-in GPS chip. Note that the Air780EG GPS and GPS_ANT are controlled together, so.
 pm.power(pm.GPS, true)
 
--- EC618/EC718 Series open pwrkey boot anti-shake
+-- Core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.) turn on pwrkey to start anti-shake
 -- Note: After opening, the reset key will turn off!!! Pwrkey to long press 2 seconds to boot
 -- pm.power(pm.PWK_MODE, true)
 
--- EC618/EC718 Series PSM Low Power Settings
--- ec618/ec718 Energy saving mode, 0~3,0 completely off, 1 performance priority, 2 balance, 3 extreme power consumption
+-- Moving Core CAT1 Platform Series (Air780E/Air700E/Air780EP, etc.) PSM Low Power Settings
+-- Moving core CAT1 platform series (Air780E/Air700E/Air780EP, etc.) energy saving mode, 0~3,0 completely closed, 1 performance priority, 2 balance, 3 extreme power consumption
 -- Detailed Access: https://airpsm.cn
 -- pm.power(pm.WORK_MODE, 1)
 
@@ -430,8 +429,7 @@ IO High level voltage control
 **Examples**
 
 ```lua
--- EC618/EC718 Series setting IO level, range 1650~2000,2650~3400, unit millivolt, step 50mv
--- Such as Air780E/Air600E/Air700E/Air780EG/Air780EP/Air780EPV
+-- Core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.) sets IO level in the range of 1650~2000,2650~3400, unit millivolt, step 50mv
 -- Note that the settings here take precedence over the configuration of the hardware IOSEL pin
 -- However, the hardware configuration is still used when starting up until the API is called for configuration, so the io level will change.
 -- pm.ioVol(pm.IOVOL_ALL_GPIO, 3300)    -- All GPIO high level outputs 3.3V

@@ -44,6 +44,10 @@ Parameters
 Start the bottom timer, which is still in effect in sleep mode. Trigger only once
 启动底层定时器,在休眠模式下依然生效. 只触发一次，关机状态下无效
 Start the bottom timer, it still takes effect in sleep mode. It is triggered only once, and is invalid in shutdown state.
+和Air600E，Air780EP的DAC_EN(新版硬件手册的LDO_CTL，同一个PIN，命名变更)，注意audio的默认配置会自动使用这个脚来控制CODEC的使能
+And Air600E, the Air780EP DAC_EN (LDO_CTL of the new hardware manual, same PIN, name change), note that the default configuration of audio will automatically use this pin to control the enable of CODEC
+和Air600E，Air780EP的LDO_CTL(老版硬件手册的DAC_EN，同一个PIN，命名变更)，Air780EP的LDO_CTL, 注意audio的默认配置会自动使用这个脚来控制CODEC的使能
+And Air600E,Air780EP LDO_CTL (DAC_EN of the old hardware manual, same PIN, naming change),Air780EP LDO_CTL, note that the default configuration of audio will automatically use this pin to control CODEC enable
 和Air600E的DAC_EN，注意audio的默认配置会自动使用这个脚来控制CODEC的使能
 And Air600E DAC_EN, note that the default configuration of audio will automatically use this pin to control the enable of CODEC
 和Air600E的DAC_EN(新版硬件手册的LDO_CTL，同一个PIN，命名变更)，注意audio的默认配置会自动使用这个脚来控制CODEC的使能
@@ -128,6 +132,8 @@ Currently only EC618 series (Air780E/Air600E/Air700E/Air780EG support
 Currently supports EC618 series (Air780E/Air600E/Air700E/Air780EG support
 当前支持EC718系列(Air780EP/Air780EPU等衍生型号支持
 Currently supports EC718 series (Air780EP/Air780EPU and other derivative models support
+当前支持移芯CAT1平台系列(Air780E/Air700E/Air780EP等等
+Currently supports the core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.
 彻底休眠, CPU停止, RAM掉电, 仅复位/特殊唤醒管脚可唤醒设备
 Complete sleep, CPU stop, RAM power down, only reset/special wake pin can wake up the device
 或者 id = 1 是, 最大休眠时长是2.5小时
@@ -136,6 +142,8 @@ Or id = 1 is, the maximum sleep duration is 2.5 hours
 Or id = 3 is, the maximum sleep duration is 3 months
 所有GPIO高电平电压控制,当前仅ec618系列可用
 All GPIO high-level voltage controls, currently available only in the ec618 series
+所有GPIO高电平电压控制,当前仅移芯CAT1平台系列(Air780E/Air700E/Air780EP等等)可用
+All GPIO high-level voltage control, currently only the mobile CAT1 platform series (Air780E/Air700E/Air780EP, etc.) is available
 所有GPIO高电平输出
 All GPIO high level outputs
 掉电, 保留RAM也掉电
@@ -148,6 +156,8 @@ No return value
 Yes, the maximum sleep duration is 740 hours
 是否开启ec618的powerkey滤波模式，true开，注意滤波模式下reset变成直接关机
 Whether to turn on the powerkey filtering mode of ec618, true on, note that reset becomes direct shutdown in filtering mode
+是否开启移芯CAT1平台系列(Air780E/Air700E/Air780EP等等)的powerkey滤波模式，true开，注意滤波模式下reset变成直接关机
+Whether to turn on the powerkey filtering mode of the core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.), true on, note that reset becomes direct shutdown in the filtering mode
 是哪种方式开机呢
 Which way is the boot
 普通GPIO掉电,外设驱动掉电
@@ -204,6 +214,20 @@ The antenna power supply, active antenna is required.
 Energy saving mode, 0~3,0 completely off, 1 performance priority, 2 balance, 3 extreme power consumption
 示例
 Example
+移芯CAT1平台系列(Air780E/Air700E/Air780EP等等
+Moving core CAT1 platform series (Air780E/Air700E/Air780EP, etc
+移芯CAT1平台系列(Air780E/Air700E/Air780EP等等), 该操作会关闭USB通信
+Move the CAT1 platform series (Air780E/Air700E/Air780EP, etc.), this operation will turn off USB communication
+移芯CAT1平台系列(Air780E/Air700E/Air780EP等等)PSM+低功耗设置
+Moving Core CAT1 Platform Series (Air780E/Air700E/Air780EP, etc.) PSM Low Power Settings
+移芯CAT1平台系列(Air780E/Air700E/Air780EP等等)开启pwrkey开机防抖
+Core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.) turn on pwrkey to start anti-shake
+移芯CAT1平台系列(Air780E/Air700E/Air780EP等等)的节能模式，0~3，0完全关闭，1性能优先，2平衡，3极致功耗
+The energy-saving mode of the core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.), 0~3,0 completely closed, 1 performance priority, 2 balance, 3 extreme power consumption
+移芯CAT1平台系列(Air780E/Air700E/Air780EP等等)节能模式，0~3，0完全关闭，1性能优先，2平衡，3极致功耗
+Moving core CAT1 platform series (Air780E/Air700E/Air780EP, etc.) energy saving mode, 0~3,0 completely closed, 1 performance priority, 2 balance, 3 extreme power consumption
+移芯CAT1平台系列(Air780E/Air700E/Air780EP等等)设置IO电平, 范围 1650 ~ 2000，2650~3400 , 单位毫伏, 步进
+Core-shifting CAT1 platform series (Air780E/Air700E/Air780EP, etc.) sets IO level in the range of 1650~2000,2650~3400, unit millivolt, step
 系列
 Series
 系列PSM+低功耗设置
