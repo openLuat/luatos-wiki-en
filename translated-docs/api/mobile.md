@@ -283,7 +283,7 @@ Set the RRC automatic release time interval. When the RRC is enabled, frequent d
 |Incoming Value Type | Explanation|
 |-|-|
 |int|RRC The automatic release time is equivalent to the AT RTIME of Air724, in seconds. If you write 0 or not, it is disabled. It should not exceed 20 seconds. It is meaningless.|
-|boolean|When the network encounters a serious failure, it tries to recover automatically, which conflicts with the flight mode/SIM card switching. true is turned on, false is turned off, and when it is left blank, it will be turned on automatically if the time is set. The original factory does not need it after optimizing the protocol stack. This parameter is obsolete|
+|boolean|When the network encounters a serious failure, it tries to recover automatically, which conflicts with the flight mode/SIM card switching. true is turned on, false is turned off, and when it is left blank, it will be turned on automatically if the time is set. This parameter has been abandoned on September 14, 2023|
 
 **Return Value**
 

@@ -266,6 +266,8 @@ Network status unknown
 When the network encounters a serious failure, it tries to recover automatically, which conflicts with flight mode/SIM card switching. true is on, false is off, the starting state is false, and no change is made if it is left blank.
 网络遇到严重故障时尝试自动恢复，和飞行模式/SIM卡切换冲突，true开启，false关闭，留空时，如果设置了时间则自动开启。原厂优化过协议栈后不需要了。本参数废弃
 When the network encounters a serious failure, it tries to recover automatically, which conflicts with the flight mode/SIM card switching. true is turned on, false is turned off, and when it is left blank, it will be turned on automatically if the time is set. The original factory does not need it after optimizing the protocol stack. This parameter is obsolete
+网络遇到严重故障时尝试自动恢复，和飞行模式/SIM卡切换冲突，true开启，false关闭，留空时，如果设置了时间则自动开启。本参数于2023年9月14日已废弃
+When the network encounters a serious failure, it tries to recover automatically, which conflicts with the flight mode/SIM card switching. true is turned on, false is turned off, and when it is left blank, it will be turned on automatically if the time is set. This parameter has been abandoned on September 14, 2023
 网络静态模式优化,需要飞行模式设置
 Network static mode optimization, flight mode setting required
 自动识别SIM0, SIM1, 且SIM0优先
