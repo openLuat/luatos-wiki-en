@@ -50,6 +50,8 @@ Click to visit [Heshou Cloud Disk
 Direct Drive](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html) Suitable for Simplified ESP32C3 Development Board without Serial Chip
 看看电池能用多久](/_static/tools/psmplus/index.html) 合宙PSM+超低功耗
 See how long the battery can last](/_static/tools/psmplus/index.html) combined with PSM ultra-low power consumption
+看看电池能用多久](https://wiki.luatos.org/_static/tools/psmplus/index.html) 合宙PSM+超低功耗
+See how long the battery can last](https://wiki.luatos.org/_static/tools/psmplus/index.html) combined with PSM ultra-low power consumption
 移芯系列模组的跨平台刷机工具
 Cross-platform brush tool for core-shifting series modules
 管理系统

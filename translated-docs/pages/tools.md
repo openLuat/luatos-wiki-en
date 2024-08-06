@@ -21,7 +21,7 @@ Click to visit [Heshou Cloud Disk](https://pan.air32.cn/s/DJTr)
 
 ### Generic
 
-* [See how long the battery can last](/_static/tools/psmplus/index.html) combined with PSM ultra-low power consumption
+* [See how long the battery can last](https://wiki.luatos.org/_static/tools/psmplus/index.html) combined with PSM ultra-low power consumption
 * [Base Station Query Web Tool](http://bs.openluat.com)
 * [Coordinate System Conversion Tool](http://old.openluat.com/GPS-Offset.html) The coordinates output by GNSS module are WGS84 and need to be transferred to the domestic coordinate system
 * [Network Test Tool](https://netlab.luatos.com) Supports Acquisition of TCP/UDP/TCP-TLS and Other External Network Ports
