@@ -88,7 +88,9 @@ Get adxl34x interrupt source
 
 **Parameters**
 
-None
+|Incoming Value Type | Explanation|
+|-|-|
+|number|The i2c bus id|
 
 **Return Value**
 
@@ -97,7 +99,7 @@ None
 **Examples**
 
 ```lua
-adxl34x.get_int_source()
+adxl34x.get_int_source(i2cid)
 
 ```
 
