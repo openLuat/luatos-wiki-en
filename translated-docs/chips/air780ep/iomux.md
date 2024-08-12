@@ -55,10 +55,10 @@ physics uart has 4(0/1/2/3)
 
 |Function | Software Meaning | Corresponding GPIO | Corresponding PAD | Remarks|
 |---------|---------|---------|---------|----|
-|I2C0_SCL | I2C0 Clock | GPIO18 | 13 | GPIO function see later description|
-|I2C0_SDA | I2C0 Data | GPIO19 | 14 | GPIO function see later description|
-|I2C1_SCL | I2C1 Clock | GPIO9 | 24 | conflicts with SPI0|
-|I2C1_SDA | I2C1 Data | GPIO8 | 23 | Conflicts with SPI0|
+|I2C0_SCL | I2C0 Clock | GPIO15 | 30 | Conflicts with SPI1|
+|I2C0_SDA | I2C0 Data | GPIO14 | 29 | Conflicts with SPI1|
+|I2C1_SCL | I2C1 Clock | GPIO18 | 13 | GPIO function see later description|
+|I2C1_SDA | I2C1 Data | GPIO19 | 14 | GPIO function see later description|
 
 Attention:
 
@@ -94,7 +94,6 @@ Attention:
 ## GPIO Additional Instructions
 
 1. AONGPIO It is a GPIO that can still maintain a high level during sleep, but the driving ability is very weak.
-2. When ordinary GPIO is configured in input/interrupt mode, the up-down pull cannot be set. If the default up-down pull cannot meet the requirements, it can be set to'0' to cancel the default up-down pull, and then add the pull-down externally
 
 ## Virtual GPIO
 

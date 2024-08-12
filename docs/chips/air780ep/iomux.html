@@ -899,27 +899,27 @@
 <tbody>
 <tr class="row-even"><td><p>I2C0_SCL</p></td>
 <td><p>I2C0 Clock</p></td>
+<td><p>GPIO15</p></td>
+<td><p>30</p></td>
+<td><p>Conflicts with SPI1</p></td>
+</tr>
+<tr class="row-odd"><td><p>I2C0_SDA</p></td>
+<td><p>I2C0 Data</p></td>
+<td><p>GPIO14</p></td>
+<td><p>29</p></td>
+<td><p>Conflicts with SPI1</p></td>
+</tr>
+<tr class="row-even"><td><p>I2C1_SCL</p></td>
+<td><p>I2C1 Clock</p></td>
 <td><p>GPIO18</p></td>
 <td><p>13</p></td>
 <td><p>GPIO function see later description</p></td>
 </tr>
-<tr class="row-odd"><td><p>I2C0_SDA</p></td>
-<td><p>I2C0 Data</p></td>
+<tr class="row-odd"><td><p>I2C1_SDA</p></td>
+<td><p>I2C1 Data</p></td>
 <td><p>GPIO19</p></td>
 <td><p>14</p></td>
 <td><p>GPIO function see later description</p></td>
-</tr>
-<tr class="row-even"><td><p>I2C1_SCL</p></td>
-<td><p>I2C1 Clock</p></td>
-<td><p>GPIO9</p></td>
-<td><p>24</p></td>
-<td><p>conflicts with SPI0</p></td>
-</tr>
-<tr class="row-odd"><td><p>I2C1_SDA</p></td>
-<td><p>I2C1 Data</p></td>
-<td><p>GPIO8</p></td>
-<td><p>23</p></td>
-<td><p>Conflicts with SPI0</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -1035,7 +1035,6 @@
 <h2>GPIO Additional Instructions<a class="headerlink" href="#gpio-additional-instructions" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>AONGPIO It is a GPIO that can still maintain a high level during sleep, but the driving ability is very weak.</p></li>
-<li><p>When ordinary GPIO is configured in input/interrupt mode, the up-down pull cannot be set. If the default up-down pull cannot meet the requirements, it can be set to’0’ to cancel the default up-down pull, and then add the pull-down externally</p></li>
 </ol>
 </section>
 <section id="virtual-gpio">
