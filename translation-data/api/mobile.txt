@@ -10,6 +10,8 @@ Downstream traffic
 Downstream traffic value
 不推荐使用本API判断联网状态, 建议使用socket.localIP()来判断
 It is not recommend to use this API to judge the networking status. It is recommended to use socket.localIP() to judge
+与基站无数据交互3秒后提前释放
+No data interaction with the base station 3 seconds after the early release
 专网卡设置的demo，name，user，password联系卡商获取
 The demo,name,user, set by the special network card, password contact the card dealer to obtain
 串口号
@@ -62,6 +64,8 @@ Parameters
 Reference mobile.getCellInfo function
 发起基站信息查询,含临近小区
 Initiate base station information query, including adjacent cells
+启用数据传输优化，与基站无数据交互3秒后，提前释放
+Enable data transmission optimization, no data interaction with the base station after 3 seconds, early release
 周期性获取小区信息的时间间隔，单位毫秒。获取小区信息会增加部分功耗。写0或者不写则是关闭功能
 The time interval for periodically obtaining cell information, in milliseconds. Acquiring cell information increases some of the power consumption. To write 0 or not to write is to turn off the function
 固件使用
@@ -166,6 +170,8 @@ No return value
 Whether to use SIM0 first, only SIM card number write 2 adaptive is useful!!!. True gives priority to SIM0,false is determined by the specific platform, supports dual-card dual-standby SIM0 priority, does not support the last detected priority, the default is false, must be configured at boot, otherwise it is invalid
 是否删除APN,true是,其他都否,只有参数3新的APN不是string的时候才有效果
 Whether to delete APN,true yes, others no, only when parameter 3 new APN is not string
+是否启用数据传输优化，true启用，false关闭，留空为false，开启后必须等到TCP数据ACK或者超时失败，或者socket CONNECT完成（无论成功或者失败）才允许RRC提前释放，可能会增加功耗。本参数于2024年8月12日启用
+Whether to enable data transmission optimization, true to enable, false to close, and leave blank to false. After opening, RRC must wait until TCP data ACK or timeout fails, or socket CONNECT is completed (whether successful or failed) before allowing RRC to be released in advance, which may increase power consumption. This parameter will be activated on August 12, 2024
 是否成功
 Success or not
 是否设置为飞行模式,true为设置, false为退出,可选

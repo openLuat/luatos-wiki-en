@@ -284,6 +284,7 @@ Set the RRC automatic release time interval. When the RRC is enabled, frequent d
 |-|-|
 |int|RRC The automatic release time is equivalent to the AT RTIME of Air724, in seconds. If you write 0 or not, it is disabled. It should not exceed 20 seconds. It is meaningless.|
 |boolean|When the network encounters a serious failure, it tries to recover automatically, which conflicts with the flight mode/SIM card switching. true is turned on, false is turned off, and when it is left blank, it will be turned on automatically if the time is set. This parameter has been abandoned on September 14, 2023|
+|boolean|Whether to enable data transmission optimization, true to enable, false to close, and leave blank to false. After opening, RRC must wait until TCP data ACK or timeout fails, or socket CONNECT is completed (whether successful or failed) before allowing RRC to be released in advance, which may increase power consumption. This parameter will be activated on August 12, 2024|
 
 **Return Value**
 
@@ -293,7 +294,11 @@ Set the RRC automatic release time interval. When the RRC is enabled, frequent d
 
 **Examples**
 
-None
+```lua
+mobile.rtime(3)    --No data interaction with the base station 3 seconds after the early release RRC
+mobile.rtime(3,nil,true) --Enable data transmission optimization, no data interaction with the base station after 3 seconds, early release RRC
+
+```
 
 ---
 
