@@ -974,3 +974,56 @@ mobile.nstInput(nil)
 
 ---
 
+## mobile.vsimInit()
+
+
+
+Initialize the built-in default virtual card function, enabled on August 13, 2024, requires firmware support
+
+**Parameters**
+
+None
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|nil|No return value|
+
+**Examples**
+
+```lua
+mobile.vsimInit()
+
+```
+
+---
+
+## mobile.vsimOnOff(enable)
+
+
+
+Switching between the built-in virtual card and the external physical card will be enabled on August 13, 2024. The virtual card needs firmware support. Otherwise, there is no network after switching, and the protocol stack needs to be switched in flight mode or restarted after switching.
+
+**Parameters**
+
+|Incoming Value Type | Explanation|
+|-|-|
+|bool|On, true on, false off|
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|nil|No return value|
+
+**Examples**
+
+```lua
+mobile.vsimOnOff(true) --Using the built-in virtual card
+mobile.vsimOnOff(false) --Using an external physical card
+
+```
+
+---
+

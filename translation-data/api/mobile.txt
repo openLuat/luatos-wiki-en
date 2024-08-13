@@ -28,6 +28,10 @@ Only record the traffic after startup, reset/restart will return to zero
 Incoming Value Type | Explanation
 伪基站禁止接入的时间，取值为0时取消，0xffff永久
 The time when the pseudo base station is prohibited from accessing, which is canceled when the value is 0, and 0xffff is permanent.
+使用内置虚拟卡
+Using the built-in virtual card
+使用外置实体卡
+Using an external physical card
 使能PIN码验证
 enable PIN verification
 例子
@@ -44,6 +48,10 @@ Close Test Mode
 Close Statistics
 写入次数的配置和读取
 Configure and read the number of writes
+切换内置虚拟卡和外置实体卡，2024年8月13日启用，虚拟卡需要固件支持，否则切换后无网络，需要在飞行模式下切换，或者切换后重启协议栈
+Switching between the built-in virtual card and the external physical card will be enabled on August 13, 2024. The virtual card needs firmware support. Otherwise, there is no network after switching, and the protocol stack needs to be switched in flight mode or restarted after switching.
+初始化内置默认虚拟卡功能，2024年8月13日启用，需要固件支持
+Initialize the built-in default virtual card function, enabled on August 13, 2024, requires firmware support
 删除已保存的协议栈参数，重启后会使用默认配置
 Delete the saved protocol stack parameters and use the default configuration after restart.
 包含基站数据的数组
@@ -100,6 +108,8 @@ Constant
 constant | type | explanation
 开关 true开启 false 关闭
 Switch true on false off
+开启,true开启, false关闭
+On, true on, false off
 开启,true开启, false关闭, nil不设置
 On, true on, false off, nil not set
 开启测试模式，false关闭

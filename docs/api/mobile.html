@@ -2010,6 +2010,66 @@
 <span class="n">mobile</span><span class="p">.</span><span class="n">nstInput</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils"/>
+<section id="mobile-vsiminit">
+<h2>mobile.vsimInit()<a class="headerlink" href="#mobile-vsiminit" title="Permalink to this headline">#</a></h2>
+<p>Initialize the built-in default virtual card function, enabled on August 13, 2024, requires firmware support</p>
+<p><strong>Parameters</strong></p>
+<p>None</p>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mobile</span><span class="p">.</span><span class="n">vsimInit</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="mobile-vsimonoff-enable">
+<h2>mobile.vsimOnOff(enable)<a class="headerlink" href="#mobile-vsimonoff-enable" title="Permalink to this headline">#</a></h2>
+<p>Switching between the built-in virtual card and the external physical card will be enabled on August 13, 2024. The virtual card needs firmware support. Otherwise, there is no network after switching, and the protocol stack needs to be switched in flight mode or restarted after switching.</p>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Incoming Value Type</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>On, true on, false off</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Return Value</strong></p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>return value type</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>No return value</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">mobile</span><span class="p">.</span><span class="n">vsimOnOff</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="c1">--Using the built-in virtual card</span>
+<span class="n">mobile</span><span class="p">.</span><span class="n">vsimOnOff</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span> <span class="c1">--Using an external physical card</span>
+</pre></div>
+</div>
 <hr class="docutils"/>
 </section>
 </section>
@@ -2104,6 +2164,8 @@
 <li><a class="reference internal" href="#mobile-setband-band-num">mobile.setBand(band, num)</a></li>
 <li><a class="reference internal" href="#mobile-nstonoff-onoff-uart-id">mobile.nstOnOff(onoff, uart_id)</a></li>
 <li><a class="reference internal" href="#mobile-nstinput-data">mobile.nstInput(data)</a></li>
+<li><a class="reference internal" href="#mobile-vsiminit">mobile.vsimInit()</a></li>
+<li><a class="reference internal" href="#mobile-vsimonoff-enable">mobile.vsimOnOff(enable)</a></li>
 </ul>
 </li>
 </ul>
