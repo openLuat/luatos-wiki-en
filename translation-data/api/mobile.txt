@@ -328,6 +328,8 @@ Obtain mechanism information
 Get Network Status
 蜂窝网络
 Cellular Network
+蜂窝网络模块的usb以太网卡控制，bit0开关1,开0关，bit1模式1NAT,0独立IP，bit2协议1ECM,0RNDIS，飞行模式里设置
+Usb Ethernet card control of cellular network module, bit0 switch 1, on 0 off, bit1 mode 1NAT,0 independent IP,bit2 protocol 1ECM,0RNDIS, set in flight mode
 解锁PIN码
 Unlock PIN
 订阅
