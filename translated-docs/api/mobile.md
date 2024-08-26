@@ -273,7 +273,7 @@ local succ = mobile.simPin(0, mobile.PIN_VERIFY, "1234")    -- Enter pin code ve
 
 ---
 
-## mobile.rtime(time, auto_reset_stack)
+## mobile.rtime(time, auto_reset_stack, data_first)
 
 
 
