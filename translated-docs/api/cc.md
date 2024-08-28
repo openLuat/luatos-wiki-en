@@ -39,7 +39,7 @@ None
 
 ---
 
-## cc.dial(sim_id,number)
+## cc.dial(sim_id, number)
 
 
 
@@ -50,7 +50,7 @@ Make a call
 |Incoming Value Type | Explanation|
 |-|-|
 |number|sim_id|
-|number|Phone Number|
+|string|Phone Number|
 
 **Return Value**
 
