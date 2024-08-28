@@ -238,6 +238,8 @@ Encryption and decryption add website compatibility mode
 The card may be in arrears as a reminder.
 卡擦写次数统计不对
 The number of times the card is erased is not counted correctly.
+卸载功能
+Uninstall function
 去掉mqtt接收单包4096限制
 remove the 4096 limit of mqtt receiving a single packet
 反复创建style会死机
@@ -254,6 +256,10 @@ Join the original patch to repair SWD CP IO will crash when encountering abnorma
 Inform the original patch to fix a crash caused by searching for base stations.
 启动后台线程应判断是否成功,创建失败要走失败流程
 Starting the background thread should judge whether it is successful or not, and the failure process should be followed if the creation fails.
+启用后，内存占用过大，导致其他业务逻辑申请不到可用内存
+After enabled, the memory usage is too large, causing other business logic to not apply for available memory.
+响应头分包，导致解析失败
+Response header is subcontracted, resulting in parsing failure
 因空间不足，后续需要tts_onchip的版本可自行云编译或本地编译，本版本不再更新
 Due to insufficient space, subsequent versions to be tts_onchip can be compiled on the cloud or locally. This version will not be updated.
 固件I2C默认使用poll模式
@@ -286,8 +292,12 @@ Alternate Address
 crash after failure
 完善ymodem接收文件的结尾处理
 Improve the end processing of ymodem received files
+定位成功后，执行libgnss.clear，关闭再打开gnss芯片，如果一上电就定位成功，无GNSS_STATE消息
+After the positioning is successful, execute libgnss.clear, close and then open the gnss chip. if the positioning is successful as soon as the power is turned on, there is no GNSS_STATE message.
 就是固件文件, 其余两个是底层源码,无需下载
 Is the firmware file, the other two are the underlying source code, no need to download
+已经释放过的socket ctrl，不再允许其他操作，防止异常死机
+The released socket ctrl does not allow other operations to prevent abnormal crashes.
 库tls证书相关的属性没有强制初始化为0,有可能出现非法值
 attributes related to the library tls certificate are not forcibly initialized to 0, and illegal values may appear.
 库发送包报错的时候应该关闭
@@ -486,6 +496,8 @@ Added u8g2.SetPowerSave function
 New Features
 新增多款传感器/外设驱动, ina226/ak8963/mpu9250/st7565等
 Add a variety of sensors/peripheral drivers, ina226/ak8963/mpu9250/st7565, etc.
+方式发送异常
+Method sending exception
 无法使用ALT4的GPIO18和
 Unable to use ALT4 GPIO18 and
 无法验证pin码
@@ -516,6 +528,8 @@ This version is fully supported.
 crash
 没有正常工作,原因是判断zbuff长度有错误
 Not working properly, the reason is that there is an error in judging the length of zbuff
+没有清理干净残留数据
+Residual data not cleaned up
 注意：因socket接口返回值与之前不兼容，特此版本号由v1002升至v1103以作提醒
 Note: Since the return value of the socket interface is not compatible with the previous one, the version number is hereby raised from v1002 to v1103 as a reminder.
 测试定位效果_搭配公众号文章.zip** 是用于测Air780EG定位效果的
@@ -542,6 +556,8 @@ add data port to return intranet ip compatibility
 Add Status Acquisition Interface
 添加蚂蚁链的集成
 Add Ant Chain integration
+添加设置接收缓冲区大小的功能
+Add the ability to set the receive buffer size
 添加适配器选项
 Add Adapter Options
 添加速度参数项
@@ -590,6 +606,8 @@ Solution: Set the volume to 100 or above
 Adjust the floating-point number format of json.encode to%.7f, which is more in line with practical use, otherwise it will eat floating-point precision.
 软件DAC音频的音量配置生效
 Volume configuration for software DAC audio takes effect
+软件串口在没有全部发送完前close，出现异常
+The software serial port is close before it is completely sent, and an exception occurs.
 软件串口无法使用timer1和
 The software serial port cannot use timer1 and
 选择关闭内部分压模式时没有完全关闭掉
@@ -612,6 +630,8 @@ Increased retries for slow routers
 DingTalk robot
 防止可能的时间设置错误
 Prevent possible time setting errors
+限制uart.read单词最大读取量，一次性读取太多数据，容易死机
+Limit the maximum reading capacity of uart.read words, read too much data at one time, easy to crash
 预期 `2023.12.31` 前
 Expected before '20232.12.31'
 飞书机器人

@@ -1,8 +1,30 @@
-# Ec618 Series Firmware Release Notes
+# EC618 Series Firmware Release Notes
 
 * [Firmware download address](https://gitee.com/openLuat/LuatOS/releases)
 * [Firmware Download Alternate Address](https://pan.air32.cn/s/DJTr?path=%2F)
 * Fully automatic compilation of the latest firmware through [Cloud Compile](https://wiki.luatos.org/develop/compile/Cloud_compilation.html)
+
+## v1111
+
+Defect repair
+
+* 1：The software serial port is close before it is completely sent, and an exception occurs.
+
+* 2：spi table Method sending exception
+* 3：libgnss.clear Residual data not cleaned up
+* 4：gnss After the positioning is successful, execute libgnss.clear, close and then open the gnss chip. if the positioning is successful as soon as the power is turned on, there is no GNSS_STATE message.
+* 5：mqtt After enabled, the memory usage is too large, causing other business logic to not apply for available memory.
+* 6：http Response header is subcontracted, resulting in parsing failure
+
+New Features
+
+* add：mqtt Add the ability to set the receive buffer size
+* add：fatfs Uninstall function
+
+Update function
+
+* update：Limit the maximum reading capacity of uart.read words, read too much data at one time, easy to crash
+* update：The released socket ctrl does not allow other operations to prevent abnormal crashes.
 
 ## v1110
 
