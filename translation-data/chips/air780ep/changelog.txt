@@ -6,18 +6,28 @@ Callback message error on active shutdown
 mutex protection
 使用时需要进行充分的测试
 Adequate testing is required for use
+修复FTP在PASV模式下接受少量数据可能会提示失败
+Fix FTP accepting a small amount of data in PASV mode may prompt failure
 修复V1000版本发现的
 Fixes found in V1000 version
 兼容性变化
 Compatibility changes
+兼容部分FTP服务器
+Compatible with some FTP servers
 功能
 Function
 功能异常
 Abnormal function
 卡
 Card
+卸载功能
+Uninstall function
 发送时，一次性将数据发出去，避免被打断
 When sending, the data is sent out at one time to avoid being interrupted.
+启用后，内存占用过大，导致其他业务逻辑申请不到可用内存
+After enabled, the memory usage is too large, causing other business logic to not apply for available memory.
+响应头分包，导致解析失败
+Response header is subcontracted, resulting in parsing failure
 因功能变化较多，FLASH空间不足
 Due to more functional changes, FLASH space is insufficient
 固件，无法进入休眠
@@ -38,16 +48,22 @@ Basic Peripherals
 Base station synchronous time switch
 备用地址
 Alternate Address
+定位成功后，执行libgnss.clear，关闭再打开gnss芯片，如果一上电就定位成功，无GNSS_STATE消息
+After the positioning is successful, execute libgnss.clear, close and then open the gnss chip. if the positioning is successful as soon as the power is turned on, there is no GNSS_STATE message.
 就是固件文件, 其余两个是底层源码,无需下载
 Is the firmware file, the other two are the underlying source code, no need to download
 工具库
 Tool Library
+已经释放过的socket ctrl，不再允许其他操作，防止异常死机
+The released socket ctrl does not allow other operations to prevent abnormal crashes.
 库添加录音功能
 Library to add recording function
 异常死机
 abnormal crash
 当遇到无法解析的NMEA语句时，屏蔽打印
 When an unparsed NMEA statement is encountered, the mask prints
+快速释放的优化选项
+Optimization options for quick release
 报文长度超过256时，无法连接服务器
 Unable to connect to server when message length exceeds 256
 拍照的时候无法选择jpeg编码质量
@@ -64,6 +80,8 @@ The supported functions are as follows
 Support to configure the working voltage of codec
 新增功能
 New Function
+新增死机处理模式参数
+Added crash processing mode parameters
 方式发送异常
 Method sending exception
 无法远程升级到
@@ -76,6 +94,8 @@ Clock
 Update function
 查询当前连接状态
 Query the current connection status
+没有清理干净残留数据
+Residual data not cleaned up
 注意事项
 Precautions
 深度休眠定时器回调消息
@@ -84,6 +104,8 @@ Deep Sleep Timer Callback Message
 Deep Sleep temporarily unavailable
 添加DHCP超时消息
 Add DHCP Timeout Message
+添加设置接收缓冲区大小的功能
+Add the ability to set the receive buffer size
 添加设置缓冲区大小的功能
 Add the ability to set the buffer size
 添加防护，防止已释放的资源再次使用
@@ -108,3 +130,5 @@ Reset stack parameters to default
 Increased retries for slow routers
 防止可能的时间设置错误
 Prevent possible time setting errors
+限制uart.read单次最大读取量，一次性读取太多数据，容易死机
+Limit the maximum amount of uart.read read read at a time, read too much data at one time, easy to crash

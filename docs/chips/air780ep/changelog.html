@@ -758,6 +758,31 @@
 <li><p><a class="reference external" href="https://pan.air32.cn/s/DJTr?path=%2F">Firmware Download Alternate Address</a></p></li>
 <li><p>Fully automatic compilation of the latest firmware through <a class="reference external" href="https://wiki.luatos.org/develop/compile/Cloud_compilation.html">Cloud Compile</a></p></li>
 </ul>
+<section id="v1003">
+<h2>V1003<a class="headerlink" href="#v1003" title="Permalink to this headline">#</a></h2>
+<p>Defect repair</p>
+<ul class="simple">
+<li><p>1：spi table Method sending exception</p></li>
+<li><p>2：libgnss.clear Residual data not cleaned up</p></li>
+<li><p>3：gnss After the positioning is successful, execute libgnss.clear, close and then open the gnss chip. if the positioning is successful as soon as the power is turned on, there is no GNSS_STATE message.</p></li>
+<li><p>4：mqtt After enabled, the memory usage is too large, causing other business logic to not apply for available memory.</p></li>
+<li><p>5：http Response header is subcontracted, resulting in parsing failure</p></li>
+<li><p>6：Fix FTP accepting a small amount of data in PASV mode may prompt failure</p></li>
+</ul>
+<p>New Function</p>
+<ul class="simple">
+<li><p>add：mqtt Add the ability to set the receive buffer size</p></li>
+<li><p>add：fatfs Uninstall function</p></li>
+<li><p>add：mcu.hardfault Added crash processing mode parameters</p></li>
+</ul>
+<p>Update function</p>
+<ul class="simple">
+<li><p>update：Limit the maximum amount of uart.read read read at a time, read too much data at one time, easy to crash</p></li>
+<li><p>update：The released socket ctrl does not allow other operations to prevent abnormal crashes.</p></li>
+<li><p>update：Compatible with some FTP servers</p></li>
+<li><p>update：RRC Optimization options for quick release</p></li>
+</ul>
+</section>
 <section id="v1002">
 <h2>V1002<a class="headerlink" href="#v1002" title="Permalink to this headline">#</a></h2>
 <p>Compatibility changes</p>
@@ -929,6 +954,7 @@ Adequate testing is required for use</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Ec718p Series Firmware Release Notes</a><ul>
+<li><a class="reference internal" href="#v1003">V1003</a></li>
 <li><a class="reference internal" href="#v1002">V1002</a></li>
 <li><a class="reference internal" href="#v1001">V1001</a></li>
 <li><a class="reference internal" href="#v0001">V0001</a></li>

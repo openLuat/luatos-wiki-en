@@ -9,22 +9,25 @@
 Defect repair
 
 * 1：The software serial port is close before it is completely sent, and an exception occurs.
-
 * 2：spi table Method sending exception
 * 3：libgnss.clear Residual data not cleaned up
 * 4：gnss After the positioning is successful, execute libgnss.clear, close and then open the gnss chip. if the positioning is successful as soon as the power is turned on, there is no GNSS_STATE message.
 * 5：mqtt After enabled, the memory usage is too large, causing other business logic to not apply for available memory.
 * 6：http Response header is subcontracted, resulting in parsing failure
+* 7：Fix FTP accepting a small amount of data in PASV mode may prompt failure
 
 New Features
 
 * add：mqtt Add the ability to set the receive buffer size
 * add：fatfs Uninstall function
+* add：mcu.hardfault Added crash processing mode parameters
 
 Update function
 
-* update：Limit the maximum reading capacity of uart.read words, read too much data at one time, easy to crash
+* update：Limit the maximum amount of uart.read read read at a time, read too much data at one time, easy to crash
 * update：The released socket ctrl does not allow other operations to prevent abnormal crashes.
+* update：Compatible with some FTP servers
+* update：RRC Optimization options for quick release
 
 ## v1110
 

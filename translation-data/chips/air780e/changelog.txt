@@ -188,6 +188,8 @@ Repair: After the low-power serial port is turned on, there will still be interr
 Fixed: Module type not recognized after deep sleep wake-up
 修复: 虚拟UART的rx回调
 Fix: rx callback for virtual UART
+修复FTP在PASV模式下接受少量数据可能会提示失败
+Fix FTP accepting a small amount of data in PASV mode may prompt failure
 修复iconv库转换长数据时会丢失后部分字符
 Fix partial characters lost when iconv library converts long data
 修复iotcloud库onenet部分情况数据截断问题
@@ -214,6 +216,8 @@ RTC library compatible mon attribute
 Compatible with the string coordinate value returned by base station positioning.
 兼容性变化
 Compatibility changes
+兼容部分FTP服务器
+Compatible with some FTP servers
 内存不足时不再简单的提示，而是把使用情况打印出来
 No longer a simple prompt when there is insufficient memory, but print out the usage
 函数
@@ -346,6 +350,8 @@ Pending
 Heartbeat packet not sent out normally
 心跳定时器计数错误** 导致mqtt心跳可能不会发出
 Heartbeat timer count error **causes mqtt heartbeat may not be emitted
+快速释放的优化选项
+Optimization options for quick release
 手动读文件的open参数不对
 The open parameter of the manual read file is incorrect.
 执行poweroff前自动关掉wdt,否则会20秒后死机重启
@@ -496,6 +502,8 @@ Added u8g2.SetPowerSave function
 New Features
 新增多款传感器/外设驱动, ina226/ak8963/mpu9250/st7565等
 Add a variety of sensors/peripheral drivers, ina226/ak8963/mpu9250/st7565, etc.
+新增死机处理模式参数
+Added crash processing mode parameters
 方式发送异常
 Method sending exception
 无法使用ALT4的GPIO18和
@@ -630,6 +638,8 @@ Increased retries for slow routers
 DingTalk robot
 防止可能的时间设置错误
 Prevent possible time setting errors
+限制uart.read单次最大读取量，一次性读取太多数据，容易死机
+Limit the maximum amount of uart.read read read at a time, read too much data at one time, easy to crash
 限制uart.read单词最大读取量，一次性读取太多数据，容易死机
 Limit the maximum reading capacity of uart.read words, read too much data at one time, easy to crash
 预期 `2023.12.31` 前

@@ -4,6 +4,30 @@
 * [Firmware Download Alternate Address](https://pan.air32.cn/s/DJTr?path=%2F)
 * Fully automatic compilation of the latest firmware through [Cloud Compile](https://wiki.luatos.org/develop/compile/Cloud_compilation.html)
 
+## V1003
+
+Defect repair
+
+* 1：spi table Method sending exception
+* 2：libgnss.clear Residual data not cleaned up
+* 3：gnss After the positioning is successful, execute libgnss.clear, close and then open the gnss chip. if the positioning is successful as soon as the power is turned on, there is no GNSS_STATE message.
+* 4：mqtt After enabled, the memory usage is too large, causing other business logic to not apply for available memory.
+* 5：http Response header is subcontracted, resulting in parsing failure
+* 6：Fix FTP accepting a small amount of data in PASV mode may prompt failure
+
+
+New Function
+
+* add：mqtt Add the ability to set the receive buffer size
+* add：fatfs Uninstall function
+* add：mcu.hardfault Added crash processing mode parameters
+
+Update function
+
+* update：Limit the maximum amount of uart.read read read at a time, read too much data at one time, easy to crash
+* update：The released socket ctrl does not allow other operations to prevent abnormal crashes.
+* update：Compatible with some FTP servers
+* update：RRC Optimization options for quick release
 
 ## V1002
 Compatibility changes
