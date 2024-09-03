@@ -4,6 +4,13 @@
 * [Firmware Download Alternate Address](https://pan.air32.cn/s/DJTr?path=%2F)
 * Fully automatic compilation of the latest firmware through [Cloud Compile](https://wiki.luatos.org/develop/compile/Cloud_compilation.html)
 
+## v1112
+
+Defect repair
+
+* 1：crash after waking up from hib mode
+
+
 ## v1111
 
 Defect repair

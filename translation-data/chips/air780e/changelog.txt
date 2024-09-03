@@ -22,6 +22,8 @@ Cloud compilation supports LVGL-enabled PNG and BMP decoding
 The sarasa English font compiled by the cloud does not take effect.
 互斥锁保护
 mutex protection
+从hib模式唤醒后死机
+crash after waking up from hib mode
 优化: 485等待发送完成
 Optimization: 485 waiting for sending to complete
 优化: adc的id兼容一下老的10/11配置
