@@ -69,15 +69,15 @@ Look at the functions of the chips supported by LuatOS at this stage and choose 
 
 |Model | Classification | Remarks|
 |--------|--------|-------|
-|[Air780E](chips/air780e/index) |4G-Cat.1 Mobile communication module | Also supported Air780EG/Air600E|
 |[Air780EP](chips/air780ep/index) |4G-Cat.1 Mobile Communication Modules | Support Air780EP Series|
-|[Air101](chips/air101/index) |MCU|Small size, only 4*4mm|
-|[Air103](chips/air103/index) |MCU|io More, support.psram|
-|[Air105](chips/air105/index) |MCU|Large memory, camera, camera USB|
-|[Air601](chips/air601/index) |wifi/bt Chip | Support wifi and Bluetooth communication|
-|[ESP32](chips/esp32c3/index) Series | (wifi/bt chip) | ESP32C3/ESP32S3 etc|
+|[Air780E](chips/air780e/index) |4G-Cat.1 Mobile communication module | Also supported Air780EG|
 |[PC](https://gitee.com/openLuat/luatos-soc-pc) |PC version of LuatOS | available as an emulator|
-|[RT-Thread](https://github.com/openLuat/luatos-soc-rtt) |memory needs to meet minimum requirements | merged into rtt main line|
+|[Air101](chips/air101/index) |MCU|EOL|
+|[Air103](chips/air103/index) |MCU|EOL|
+|[Air105](chips/air105/index) |MCU|EOL|
+|[Air601](chips/air601/index) |wifi|EOL|
+|[ESP32](chips/esp32c3/index) Series|wifi|EOL|
+|[RT-Thread](https://github.com/openLuat/luatos-soc-rtt) |Minimum memory requirements| EOL|
 |[Air302](chips/air302/index) |nbiot Module| EOL|
 |[Air640w](chips/air640w/index) |wifi Module|  EOL|
 

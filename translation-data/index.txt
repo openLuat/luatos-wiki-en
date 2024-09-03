@@ -8,6 +8,8 @@ Using Lua 5.3 as the main language, it is optimized for the embedded environment
 Other information
 内存大,有摄像头,有
 Large memory, camera, camera
+内存需满足最低要求
+Minimum memory requirements
 内存需满足最低要求| 已并入rtt主线
 memory needs to meet minimum requirements | merged into rtt main line
 内核开发
@@ -70,6 +72,8 @@ Mobile communication module | Also supported
 Mobile Communication Modules | Support Air780EP Series
 站视频教程
 Station video tutorial
+系列
+Series
 系列| (wifi/bt芯片）|ESP32C3/ESP32S3等
 Series | (wifi/bt chip) | ESP32C3/ESP32S3 etc
 芯片|支持wifi和蓝牙通信
