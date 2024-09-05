@@ -46,6 +46,8 @@ Off Base Station Sync Time
 Close Test Mode
 关闭统计
 Close Statistics
+关闭邻区测量 1关，0开，除了功耗测试外不建议使用
+Turn off the adjacent area measurement 1 off, 0 on, except for power consumption test is not recommended
 写入次数的配置和读取
 Configure and read the number of writes
 切换内置虚拟卡和外置实体卡，2024年8月13日启用，虚拟卡需要固件支持，否则切换后无网络，需要在飞行模式下切换，或者切换后重启协议栈
@@ -330,6 +332,8 @@ Get Network Status
 Cellular Network
 蜂窝网络模块的usb以太网卡控制，bit0开关1,开0关，bit1模式1NAT,0独立IP，bit2协议1ECM,0RNDIS，飞行模式里设置
 Usb Ethernet card control of cellular network module, bit0 switch 1, on 0 off, bit1 mode 1NAT,0 independent IP,bit2 protocol 1ECM,0RNDIS, set in flight mode
+蜂窝网络模块的usb以太网卡控制，bit0开关1,开0关，bit1模式1NAT,0独立IP(在usb以太网卡开启前可以修改，开启过就不行)，bit2协议1ECM,0RNDIS，飞行模式里设置
+usb Ethernet card control of cellular network module, bit0 switch 1, on 0 off, bit1 mode 1NAT,0 independent IP (can be modified before usb Ethernet card is turned on, but not after it is turned on),bit2 protocol 1ECM,0RNDIS, set in flight mode
 蜂窝网络模块的usb以太网卡控制，bit0开关1,开0关，bit1模式1NAT,0独立IP(目前强制为1)，bit2协议1ECM,0RNDIS，飞行模式里设置
 Usb Ethernet card control of cellular network module, bit0 switch 1, on 0 off, bit1 mode 1NAT,0 independent IP (currently mandatory to 1),bit2 protocol 1ECM,0RNDIS, set in flight mode
 解锁PIN码

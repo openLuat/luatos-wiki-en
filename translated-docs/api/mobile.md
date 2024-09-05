@@ -57,7 +57,8 @@ log.info("simid", mobile.simid())
 |mobile.CONF_SIM_WC_MODE|number|SIM Configure and read the number of writes|
 |mobile.CONF_FAKE_CELL_BARTIME|number|The time when the pseudo base station is prohibited from accessing, which is canceled when the value is 0, and 0xffff is permanent.|
 |mobile.CONF_RESET_TO_FACTORY|number|Delete the saved protocol stack parameters and use the default configuration after restart.|
-|mobile.CONF_USB_ETHERNET|number|Usb Ethernet card control of cellular network module, bit0 switch 1, on 0 off, bit1 mode 1NAT,0 independent IP (currently mandatory to 1),bit2 protocol 1ECM,0RNDIS, set in flight mode|
+|mobile.CONF_USB_ETHERNET|number|usb Ethernet card control of cellular network module, bit0 switch 1, on 0 off, bit1 mode 1NAT,0 independent IP (can be modified before usb Ethernet card is turned on, but not after it is turned on),bit2 protocol 1ECM,0RNDIS, set in flight mode|
+|mobile.CONF_DISABLE_NCELL_MEAS|number|Turn off the adjacent area measurement 1 off, 0 on, except for power consumption test is not recommended|
 |mobile.PIN_VERIFY|number|Verify PIN operation|
 |mobile.PIN_CHANGE|number|Change PIN Operation|
 |mobile.PIN_ENABLE|number|enable PIN verification|
