@@ -8,6 +8,8 @@ Upstream traffic value
 Downstream traffic
 下行流量值
 Downstream traffic value
+下行频点
+Downlink frequency point
 不推荐使用本API判断联网状态, 建议使用socket.localIP()来判断
 It is not recommend to use this API to judge the networking status. It is recommended to use socket.localIP() to judge
 与基站无数据交互3秒后提前释放
@@ -158,12 +160,16 @@ Current Network Status
 Current network status, 0: the network is not registered; 1: the network is registered; 2: searching the network; 3: network registration rejected
 当无PIN操作时，返回SIM卡是否准备好，有PIN操作时，返回是否成功
 When there is no PIN operation, return whether the SIM card is ready, and when there is a PIN operation, return whether it is successful
+成功true 失败
+success true failure
 成功返回true，失败放回
 Return true on success, return true on failure
 打开测试模式，并且用虚拟串口发送结果
 Open test mode and send results with virtual serial port
 提醒, 自动识别是会增加时间的
 Reminder, automatic recognition will increase time
+操作码 0删除优先的频点，1设置优先频点，2锁定小区，3解锁小区
+Operation code 0 deletes the priority frequency point, 1 sets the priority frequency point, 2 locks the cell, 3 unlocks the cell
 数据量流量处理
 Data volume traffic processing
 数量
@@ -338,6 +344,8 @@ usb Ethernet card control of cellular network module, bit0 switch 1, on 0 off, b
 Usb Ethernet card control of cellular network module, bit0 switch 1, on 0 off, bit1 mode 1NAT,0 independent IP (currently mandatory to 1),bit2 protocol 1ECM,0RNDIS, set in flight mode
 解锁PIN码
 Unlock PIN
+解锁小区
+Unlock cell
 订阅
 Subscription
 设置RRC自动释放时间间隔，当开启时后，遇到极弱信号+频繁数据操作可能会引起网络严重故障，因此需要额外设置自动重启协议栈
@@ -388,6 +396,10 @@ Restart the LTE protocol stack
 Restart the protocol stack
 针对不同平台有不同的配置，谨慎使用，目前只有EC618/EC718系列
 There are different configurations for different platforms and use them with caution. Currently, only EC618/EC718 series
+锁定/解锁小区，仅用于外场测试，没接触过的，或者生产环境中请勿使用
+Lock/unlock the cell, only for field testing, not touched, or do not use in the production environment
+锁定小区
+Locked cell
 验证PIN码操作
 Verify PIN operation
 默认0，如果要用非默认APN来激活，必须

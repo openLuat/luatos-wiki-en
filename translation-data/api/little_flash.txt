@@ -6,6 +6,8 @@ Examples
 Initialization
 参数
 Parameters
+已适配
+Adapted
 总大小, 默认是整个
 Total size, the default is the entire
 成功返回

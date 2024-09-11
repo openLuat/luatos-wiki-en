@@ -70,5 +70,7 @@ Get the current call quality
 Return Value
 返回值类型|解释
 return value type | explanation
+适配状态未知
+Adaptation status unknown
 通话功能
 Call function

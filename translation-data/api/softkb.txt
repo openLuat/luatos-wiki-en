@@ -28,6 +28,8 @@ Detailed introduction
 Software Keyboard Matrix
 返回值
 Return Value
+适配状态未知
+Adaptation status unknown
 需要配合init的map进行解析
 Need to cooperate with init map for parsing
 预留, 当前填
