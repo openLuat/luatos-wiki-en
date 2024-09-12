@@ -590,15 +590,26 @@ None
 
 |return value type | explanation|
 |-|-|
-|int|Serving cell MCC|
-|int|Serving cell MNC|
-|int|Downlink of the serving cell earfcn|
-|int|Serving cell pci|
+|table|Serving cell information|
 
 **Examples**
 
 ```lua
 -- This API was added on 2024.9.12
+log.info("cell", json.encode(mobile.scell()))
+-- Return value example
+{
+    "mnc": 11,
+    "mcc": 460,
+    "rssi": -78,
+    "pci": 115,
+    "rsrp": -107,
+    "tac": 30005,
+    "eci": 124045360,
+    "rsrq": -9,
+    "snr": 15,
+    "earfcn": 1850
+}
 
 ```
 

@@ -1534,22 +1534,27 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>int</p></td>
-<td><p>Serving cell MCC</p></td>
-</tr>
-<tr class="row-odd"><td><p>int</p></td>
-<td><p>Serving cell MNC</p></td>
-</tr>
-<tr class="row-even"><td><p>int</p></td>
-<td><p>Downlink of the serving cell earfcn</p></td>
-</tr>
-<tr class="row-odd"><td><p>int</p></td>
-<td><p>Serving cell pci</p></td>
+<tr class="row-even"><td><p>table</p></td>
+<td><p>Serving cell information</p></td>
 </tr>
 </tbody>
 </table></div>
 <p><strong>Examples</strong></p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This API was added on 2024.9.12</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"cell"</span><span class="p">,</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">mobile</span><span class="p">.</span><span class="n">scell</span><span class="p">()))</span>
+<span class="c1">-- Return value example</span>
+<span class="p">{</span>
+    <span class="s2">"mnc"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+    <span class="s2">"mcc"</span><span class="p">:</span> <span class="mi">460</span><span class="p">,</span>
+    <span class="s2">"rssi"</span><span class="p">:</span> <span class="o">-</span><span class="mi">78</span><span class="p">,</span>
+    <span class="s2">"pci"</span><span class="p">:</span> <span class="mi">115</span><span class="p">,</span>
+    <span class="s2">"rsrp"</span><span class="p">:</span> <span class="o">-</span><span class="mi">107</span><span class="p">,</span>
+    <span class="s2">"tac"</span><span class="p">:</span> <span class="mi">30005</span><span class="p">,</span>
+    <span class="s2">"eci"</span><span class="p">:</span> <span class="mi">124045360</span><span class="p">,</span>
+    <span class="s2">"rsrq"</span><span class="p">:</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span>
+    <span class="s2">"snr"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="s2">"earfcn"</span><span class="p">:</span> <span class="mi">1850</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>

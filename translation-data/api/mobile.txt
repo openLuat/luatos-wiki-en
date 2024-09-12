@@ -206,6 +206,8 @@ New pin code when changing pin code operation, new PIN when unlocking pin code, 
 Serving cell
 服务小区的下行
 Downlink of the serving cell
+服务小区的信息
+Serving cell information
 未注册
 Not registered
 未知
@@ -384,6 +386,8 @@ Output
 Output the currently used band, and put the band number in buff
 返回值
 Return Value
+返回值示例
+Return value example
 返回值类型|解释
 return value type | explanation
 进出飞行模式
