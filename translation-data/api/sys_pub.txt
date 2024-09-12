@@ -84,6 +84,8 @@ Time has been synchronized
 is the time of the event and can generally be ignored
 是否成功
 Success or not
+服务小区额外信息更新
+Cell Extra Information Update
 此为系统内部使用的消息，请勿在外部使用
 This is a message for internal use of the system, do not use it externally
 此处列举了LuatOS框架中自带的系统消息列表

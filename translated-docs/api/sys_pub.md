@@ -280,6 +280,26 @@ end)
 
 ---
 
+### SCELL_INFO
+
+Cell Extra Information Update
+
+**Additional return parameters**
+
+None
+
+**Examples**
+
+```lua
+-- Subscription
+sys.subscribe("SCELL_INFO", function()
+    log.info("service cell", mobile.scell()))
+end)
+
+```
+
+---
+
 ### IP_READY
 
 Networked

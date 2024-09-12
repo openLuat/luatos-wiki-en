@@ -576,6 +576,34 @@ None
 
 ---
 
+## mobile.scell()
+
+
+
+Get more detailed information about the current serving cell
+
+**Parameters**
+
+None
+
+**Return Value**
+
+|return value type | explanation|
+|-|-|
+|int|Serving cell MCC|
+|int|Serving cell MNC|
+|int|Downlink of the serving cell earfcn|
+|int|Serving cell pci|
+
+**Examples**
+
+```lua
+-- This API was added on 2024.9.12
+
+```
+
+---
+
 ## mobile.flymode(index, enable)
 
 

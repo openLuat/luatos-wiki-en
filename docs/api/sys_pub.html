@@ -962,6 +962,20 @@
 </div>
 </section>
 <hr class="docutils"/>
+<section id="scell-info">
+<h3>SCELL_INFO<a class="headerlink" href="#scell-info" title="Permalink to this headline">#</a></h3>
+<p>Cell Extra Information Update</p>
+<p><strong>Additional return parameters</strong></p>
+<p>None</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Subscription</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"SCELL_INFO"</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"service cell"</span><span class="p">,</span> <span class="n">mobile</span><span class="p">.</span><span class="n">scell</span><span class="p">()))</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils"/>
 <section id="id1">
 <h3>IP_READY<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Networked</p>
@@ -1282,6 +1296,7 @@
 <li><a class="reference internal" href="#mobile">mobile</a><ul>
 <li><a class="reference internal" href="#sim-ind">SIM_IND</a></li>
 <li><a class="reference internal" href="#cell-info-update">CELL_INFO_UPDATE</a></li>
+<li><a class="reference internal" href="#scell-info">SCELL_INFO</a></li>
 <li><a class="reference internal" href="#id1">IP_READY</a></li>
 <li><a class="reference internal" href="#id2">IP_LOSE</a></li>
 <li><a class="reference internal" href="#ntp-update">NTP_UPDATE</a></li>

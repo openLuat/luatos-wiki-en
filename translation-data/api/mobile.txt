@@ -202,12 +202,18 @@ Change the pin code of the operation when pin, or verify the pin code of the ope
 Change PIN Operation
 更换pin码操作时的新的pin码，解锁pin码时的新PIN，4~8字节
 New pin code when changing pin code operation, new PIN when unlocking pin code, 4~8 bytes
+服务小区的
+Serving cell
+服务小区的下行
+Downlink of the serving cell
 未注册
 Not registered
 未知
 Unknown
 本API于 2023.7.9 新增
 This API was added on 2023.7.9
+本API于 2024.9.12 新增
+This API was added on 2024.9.12
 本库有专属demo，[点此链接查看mobile的demo例子
 This library has its own demo,[click this link to view the demo example of mobile
 本页文档由[这个文件](https://gitee.com/openLuat/LuatOS/tree/master/luat/../components/mobile/luat_lib_mobile.c)自动生成。如有错误，请提交issue或帮忙修改后pr，谢谢
@@ -320,6 +326,8 @@ Get the current SIM card slot, or switch card slots
 Gets the currently used/supported
 获取当前开关状态
 Get the current switch state
+获取当前服务小区更详细的信息
+Get more detailed information about the current serving cell
 获取当前服务小区的
 Get the current serving cell
 获取当前服务小区的TAC或者
