@@ -1,0 +1,30 @@
+分区       |大小
+Partition | Size
+区
+Area
+固件内置TTS资源库
+Firmware built-in TTS resource library
+固件分区说明
+Firmware Partition Description
+基础外设
+Basic Peripherals
+工具库
+Tool Library
+底层FOTA区
+Ground floor FOTA area
+支持的功能如下
+Supported functions are as follows
+文件系统区
+File System Area
+时钟
+Clock
+模组 第一版固件
+Module First Edition Firmware
+模组固件发行注记
+Module Firmware Release Notes
+网络功能
+Network function
+脚本OTA区
+Script OTA Area
+脚本区
+Script area
