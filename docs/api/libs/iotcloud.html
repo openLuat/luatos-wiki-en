@@ -760,7 +760,7 @@
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx" ,product_secret = "xxx"})</span>
 
     <span class="c1">-- Key verification</span>
-    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789",key = "xxx=="})</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789",device_secret = "xxx=="})</span>
     <span class="c1">-- Certificate verification</span>
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
 
@@ -770,9 +770,9 @@
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",product_secret = "xxx"})</span>
 
     <span class="c1">-- Key verification (pre-registration) (one machine, one secret)</span>
-    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",device_name = "xxx",key = "xxx"})</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",device_name = "xxx",device_secret = "xxx"})</span>
     <span class="c1">-- Certificate verification (pre-registration)</span>
-    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "xxx"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",device_name = "xxx"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
 
     <span class="c1">-- ONENET Cloud</span>
     <span class="c1">-- dynamic registration</span>
@@ -876,7 +876,7 @@
 <td><p>Cloud Platform iotcloud.TENCENT: Tencent Cloud iotcloud.ALIYUN: Alibaba Cloud iotcloud.ONENET: China Mobile Cloud iotcloud.HUAWEI: Huawei Cloud iotcloud.TUYA: Graffiti Cloud</p></td>
 </tr>
 <tr class="row-odd"><td><p>table</p></td>
-<td><p>iot Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.product_id: product id (ariyun is product key) iot_config.product_secret: product key, if there is this item, it is dynamic registration iot_config.key: device secret key, if there is this item, it is secret key connection userid: user ID,onenet dedicated, dynamic registration userkey: user Accesskey, onet dynamic registration</p></td>
+<td><p>iot Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.product_id: product id (ariyun is product key) iot_config.product_secret: product key, if there is this item, it is dynamically registered iot_config.device_secret: device secret key, if there is this item, it is secret key connection userid: user ID,onenet dedicated Accesskey, dynamic registration userkey</p></td>
 </tr>
 <tr class="row-even"><td><p>table</p></td>
 <td><p>mqtt Configuration, host: optional, default is platform default host ip: optional, default is platform default ip tls: encryption, if there is this item is generally product certification keepalive: heartbeat time, unit s is optional, default 240</p></td>
@@ -902,7 +902,7 @@
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx" ,product_secret = "xxx"})</span>
 
     <span class="c1">-- Key verification</span>
-    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789",key = "xxx=="})</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789",device_secret = "xxx=="})</span>
     <span class="c1">-- Certificate verification</span>
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
 
@@ -914,7 +914,7 @@
     <span class="c1">-- Key verification (pre-registration) (one machine, one secret)</span>
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",device_name = "xxx",key = "xxx"})</span>
     <span class="c1">-- Certificate verification (pre-registration)</span>
-    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "xxx"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
+    <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",device_name = "xxx"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
 
     <span class="c1">-- ONENET Cloud</span>
     <span class="c1">-- dynamic registration</span>
