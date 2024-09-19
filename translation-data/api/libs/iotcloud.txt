@@ -48,6 +48,8 @@ dynamic registration
 Dynamic registration (no pre-registration
 动态注册(免预注册)(一型一密
 Dynamic registration (no pre-registration) (one type one secret.
+动态注册(预注册)(一型一密
+Dynamic registration (pre-registration) (one type one secret.
 华为云
 HUAWEI CLOUD
 参数
