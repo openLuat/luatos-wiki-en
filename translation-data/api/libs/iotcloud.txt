@@ -32,6 +32,8 @@ Cloud Platform Subscription
 Cloud Platform Connectivity
 云平台配置, device_name:可选，默认为imei否则为unique_id iot_config.product_id:产品id(阿里云则为产品key) iot_config.product_secret:产品密钥,有此项则为动态注册 iot_config.device_secret:设备秘钥,有此项则为秘钥连接  userid:用户ID,onenet专用,动态注册使用  userkey:用户Accesskey,onenet专用,动态注册使用
 Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.product_id: product id (ariyun is product key) iot_config.product_secret: product key, if there is this item, it is dynamically registered iot_config.device_secret: device secret key, if there is this item, it is secret key connection userid: user ID,onenet dedicated Accesskey, dynamic registration userkey
+云平台配置, device_name:可选，默认为imei否则为unique_id iot_config.product_id:产品id(阿里云则为产品key) iot_config.product_secret:产品密钥,有此项则为动态注册 iot_config.device_secret:设备秘钥,有此项则为秘钥连接 instance_id:公共实例id,新版阿里云公共实例专用 userid:用户ID,onenet专用,动态注册使用  userkey:用户Accesskey,onenet专用,动态注册使用
+Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.product_id: product id (alibaba cloud is product key) iot_config.product_secret: product key, if there is this item, it is dynamically registered iot_config.device_secret: device secret key, if there is this item, it is secret key connection instance_id: public instance id, new version alibaba public user id userkey private registration dynamic user id: onuser id enuserid:
 云平台配置, device_name:可选，默认为imei否则为unique_id iot_config.product_id:产品id(阿里云则为产品key) iot_config.product_secret:产品密钥,有此项则为动态注册 iot_config.key:设备秘钥,有此项则为秘钥连接  userid:用户ID,onenet专用,动态注册使用  userkey:用户Accesskey,onenet专用,动态注册使用
 Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.product_id: product id (ariyun is product key) iot_config.product_secret: product key, if there is this item, it is dynamic registration iot_config.key: device secret key, if there is this item, it is secret key connection userid: user ID,onenet dedicated, dynamic registration userkey: user Accesskey, onet dynamic registration
 云平台配置, device_name:可选，默认为imei否则为unique_id iot_config.produt_id:产品id(阿里云则为产品key) iot_config.product_secret:产品密钥,有此项则为动态注册 iot_config.key:设备秘钥,有此项则为秘钥连接  userid:用户ID,onenet专用,动态注册使用  userkey:用户Accesskey,onenet专用,动态注册使用
@@ -48,6 +50,8 @@ dynamic registration
 Dynamic registration (no pre-registration
 动态注册(免预注册)(一型一密
 Dynamic registration (no pre-registration) (one type one secret.
+动态注册(免预注册)(一型一密)(仅企业版支持
+Dynamic registration (no pre-registration) (one type, one secret) (only supported by enterprise version
 动态注册(预注册)(一型一密
 Dynamic registration (pre-registration) (one type one secret.
 华为云
@@ -68,8 +72,12 @@ Constant
 constant | type | explanation
 接收到消息
 Message received
+新版公共实例
+New Public Instance
 无
 None
+旧版公共实例
+Legacy Public Instance
 是否存档, 0/1,默认
 Archive, 0/1, default
 服务器连接断开
