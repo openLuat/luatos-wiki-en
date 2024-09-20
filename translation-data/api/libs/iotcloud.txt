@@ -38,6 +38,8 @@ Cloud platform configuration, device_name: optional, default is imei, otherwise 
 Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.product_id: product id (ariyun is product key) iot_config.product_secret: product key, if there is this item, it is dynamic registration iot_config.key: device secret key, if there is this item, it is secret key connection userid: user ID,onenet dedicated, dynamic registration userkey: user Accesskey, onet dynamic registration
 云平台配置, device_name:可选，默认为imei否则为unique_id iot_config.produt_id:产品id(阿里云则为产品key) iot_config.product_secret:产品密钥,有此项则为动态注册 iot_config.key:设备秘钥,有此项则为秘钥连接  userid:用户ID,onenet专用,动态注册使用  userkey:用户Accesskey,onenet专用,动态注册使用
 Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.produt_id: product id (ariyun is product key) iot_config.product_secret: product key, if there is this item, it is dynamic registration iot_config.key: device secret key, if there is this item, it is secret key connection userid: user ID,onenet dedicated, dynamic registration userkey: user Accesskey dynamic registration, onet
+企业版公共实例
+Enterprise Edition Public Instance
 传入值类型|解释
 Incoming Value Type | Explanation
 例子
