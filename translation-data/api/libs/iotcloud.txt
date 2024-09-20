@@ -1,7 +1,13 @@
 一型一密
 One type, one density
+一型一密(免预注册-仅企业版支持
+One type, one secret (no pre-registration-only supported by enterprise version
+一型一密(预注册
+One type, one secret (pre-registration
 一机一密
 One machine, one secret
+一机一密 (预注册
+One machine, one secret (pre-registration
 中国移动云
 China Mobile Cloud
 为string时生效 0/1/2 默认
@@ -116,6 +122,8 @@ Connect to the server
 Adaptation status unknown
 配置, host:可选,默认为平台默认host ip:可选,默认为平台默认ip tls:加密,若有此项一般为产品认证 keepalive:心跳时间,单位s 可选,默认
 Configuration, host: optional, default is platform default host ip: optional, default is platform default ip tls: encryption, if there is this item is generally product certification keepalive: heartbeat time, unit s is optional, default
+配置, host:可选,默认为平台默认host ip:可选,默认为平台默认ip tls:加密,若有此项一般为产品认证 keepalive:心跳时间,单位s 可选,默认240 autoreconn:自动重连,number:重连时间，单位ms /bool 是否重连,默认3000ms 可选，默认不自动重连
+Configuration, host: optional, default is platform default host ip: optional, default is platform default ip tls: encryption, if there is this item is generally product certification keepalive: heartbeat time, unit s optional, default 240 autoreconn: automatic reconnection, number: reconnection time, unit ms /bool reconnection, default 3000ms optional, default not automatic reconnection
 阿里云
 Alibaba Cloud
 阿里云动态注册

@@ -89,7 +89,7 @@ Create a cloud platform object
 |-|-|
 |string|Cloud Platform iotcloud.TENCENT: Tencent Cloud iotcloud.ALIYUN: Alibaba Cloud iotcloud.ONENET: China Mobile Cloud iotcloud.HUAWEI: Huawei Cloud iotcloud.TUYA: Graffiti Cloud|
 |table|iot Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.product_id: product id (alibaba cloud is product key) iot_config.product_secret: product key, if there is this item, it is dynamically registered iot_config.device_secret: device secret key, if there is this item, it is secret key connection instance_id: public instance id, new version alibaba public user id userkey private registration dynamic user id: onuser id enuserid:|
-|table|mqtt Configuration, host: optional, default is platform default host ip: optional, default is platform default ip tls: encryption, if there is this item is generally product certification keepalive: heartbeat time, unit s is optional, default 240|
+|table|mqtt Configuration, host: optional, default is platform default host ip: optional, default is platform default ip tls: encryption, if there is this item is generally product certification keepalive: heartbeat time, unit s optional, default 240 autoreconn: automatic reconnection, number: reconnection time, unit ms /bool reconnection, default 3000ms optional, default not automatic reconnection|
 
 **Return Value**
 
@@ -110,12 +110,12 @@ Create a cloud platform object
     -- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})
 
     -- Alibaba Cloud  
-    -- Dynamic registration (no pre-registration) (one type, one secret) (only supported by enterprise version)
+    -- One type, one secret (no pre-registration-only supported by enterprise version)
     -- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{instance_id = "xxx",produt_id = "xxx",product_secret = "xxx"}) -- Enterprise Edition Public Instance
-    -- Dynamic registration (pre-registration) (one type one secret.)
+    -- One type, one secret (pre-registration)
     -- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",device_name = "xxx",product_secret = "xxx"})                     -- Legacy Public Instance
     -- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{instance_id = "xxx",produt_id = "xxx",device_name = "xxx",product_secret = "xxx"}) -- New Public Instance
-    -- Key verification (pre-registration) (one machine, one secret)
+    -- One machine, one secret (pre-registration)
     -- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",device_name = "xxx",key = "xxx"})                    -- Legacy Public Instance
     -- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{instance_id = "xxx",produt_id = "xxx",device_name = "xxx",key = "xxx"})-- New Public Instance
 
