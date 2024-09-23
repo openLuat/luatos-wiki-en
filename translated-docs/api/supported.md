@@ -33,7 +33,7 @@
 |[i2c](i2c.md)|`I2C Operation`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[i2s](i2s.md)|`Digital Audio`|Y|Y|X|X|X|X|X|X|
 |[iconv](iconv.md)|`iconv Operation`|Y|Y|Y|Y|Y|Y|Y|Y|
-|[io](io.md)|`io action (extended)`|Y|X|X|X|X|X|X|X|
+|[io](io.md)|`io action (extended)`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[ioqueue](ioqueue.md)|`io Sequence operation`|X|Y|X|X|X|X|X|X|
 |[iotauth](iotauth.md)|`IoT Authentication library, used to generate parameters for various cloud platforms`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[ir](ir.md)|`infrared remote control`|Y|Y|X|X|X|X|X|X|
@@ -44,7 +44,7 @@
 |[libcoap](libcoap.md)|`coap Data processing`|X|X|X|X|X|X|X|X|
 |[libgnss](libgnss.md)|`NMEA Data processing`|Y|Y|Y|Y|X|X|X|Y|
 |[little_flash](little_flash.md)|`LITTLE FLASH Software package`|X|Y|X|X|X|X|X|Y|
-|[log](log.md)|`Logstore`|Y|X|X|X|X|X|X|X|
+|[log](log.md)|`Logstore`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[lora](lora.md)|`lora Drive module`|Y|Y|X|X|X|X|X|X|
 |[lora2](lora2.md)|`lora2 Driver module (supports multi-hanging)`|Y|Y|X|X|X|X|X|X|
 |[lvgl](lvgl.md)|`LVGL Image Library`|Y|Y|X|X|X|X|X|X|
@@ -54,7 +54,7 @@
 |[mlx90640](mlx90640.md)|`infrared temperature measurement(MLX90640)`|Y|Y|X|X|X|X|X|X|
 |[mobile](mobile.md)|`Cellular Network`|Y|Y|X|X|X|X|X|X|
 |[mqtt](mqtt.md)|`mqtt Client`|Y|Y|X|X|X|X|X|X|
-|[os](os.md)|`os Operation`|Y|X|X|X|X|X|X|X|
+|[os](os.md)|`os Operation`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[otp](otp.md)|`OTP Operation Library`|Y|Y|Y|Y|X|X|X|Y|
 |[pack](pack.md)|`Packing and unpacking format string`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[pin](pin.md)|`Pin Naming Map`|X|X|X|X|X|X|X|X|
@@ -64,7 +64,7 @@
 |[repl](repl.md)|`"Read-evaluate-output "loop`|Y|Y|X|X|X|X|X|X|
 |[rsa](rsa.md)|`RSA encryption and decryption`|Y|Y|X|X|X|X|X|X|
 |[rtc](rtc.md)|`Real Time Clock`|Y|Y|Y|Y|X|X|X|Y|
-|[rtos](rtos.md)|`RTOS underlying operation library`|Y|X|X|X|X|X|X|X|
+|[rtos](rtos.md)|`RTOS underlying operation library`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[sdio](sdio.md)|`sdio`|X|X|X|X|X|X|X|X|
 |[sensor](sensor.md)|`Sensor Operation Library`|Y|Y|Y|Y|X|X|X|Y|
 |[sfd](sfd.md)|`SPI FLASH Operation Library`|Y|Y|X|X|X|X|X|X|
@@ -74,9 +74,9 @@
 |[softkb](softkb.md)|`Software Keyboard Matrix`|X|X|X|X|X|X|X|X|
 |[spi](spi.md)|`spi Operation Library`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[statem](statem.md)|`SM State Machine`|Y|Y|X|X|X|X|X|X|
-|[string](string.md)|`String Manipulation Functions`|Y|X|X|X|X|X|X|X|
-|[sys](sys.md)|`sys Library`|Y|X|X|X|X|X|X|X|
-|[sysplus](sysplus.md)|`sys A strong complement to the library`|Y|X|X|X|X|X|X|X|
+|[string](string.md)|`String Manipulation Functions`|Y|Y|Y|Y|Y|Y|Y|Y|
+|[sys](sys.md)|`sys Library`|Y|Y|Y|Y|Y|Y|Y|Y|
+|[sysplus](sysplus.md)|`sys A strong complement to the library`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[timer](timer.md)|`Operating the bottom timer`|X|X|X|X|X|X|X|X|
 |[touchkey](touchkey.md)|`Touch keys`|X|X|X|X|X|X|X|X|
 |[u8g2](u8g2.md)|`u8g2 graphics processing library`|Y|Y|X|X|X|X|X|Y|
