@@ -1,6 +1,6 @@
 # iconv - iconv Operation
 
-{bdg-success}`Adapted` {bdg-primary}`Air780E` {bdg-primary}`Air780EP` {bdg-primary}`Air780EPS`
+{bdg-success}`Adapted` {bdg-primary}`Air780E` {bdg-primary}`Air780EP` {bdg-primary}`Air780EPS` {bdg-primary}`Air780EQ` {bdg-primary}`Air700EAQ` {bdg-primary}`Air700EMQ` {bdg-primary}`Air700ECQ` {bdg-primary}`Air201`
 
 ```{tip}
 This library has its own demo,[click this link to view the demo example of iconv](https://gitee.com/openLuat/LuatOS/tree/master/demo/iconv)

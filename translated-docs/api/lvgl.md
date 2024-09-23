@@ -1,6 +1,6 @@
 # lvgl - LVGL Image Library
 
-{bdg-success}`Adapted` {bdg-primary}`Air780E` {bdg-primary}`Air780EP` {bdg-primary}`Air780EPS`
+{bdg-success}`Adapted` {bdg-primary}`Air780E` {bdg-primary}`Air780EP`
 
 ```{tip}
 This library has its own demo,[click this link to view the demo example of lvgl](https://gitee.com/openLuat/LuatOS/tree/master/demo/lvgl)
