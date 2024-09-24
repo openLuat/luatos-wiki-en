@@ -21,9 +21,9 @@
 |[fonts](fonts.md)|`Font Library`|Y|Y|X|X|X|X|X|Y|
 |[fota](fota.md)|`Underlying Firmware Upgrade`|Y|Y|X|X|X|X|X|X|
 |[fs](fs.md)|`Additional File System Operations`|Y|Y|Y|Y|X|X|X|Y|
-|[fskv](fskv.md)|`kv Database, power failure does not lose data`|Y|Y|Y|Y|X|X|X|Y|
+|[fskv](fskv.md)|`kv Database, power failure does not lose data`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[ftp](ftp.md)|`ftp Client`|Y|Y|Y|Y|Y|Y|Y|Y|
-|[gmssl](gmssl.md)|`national secret algorithm(SM2/SM3/SM4)`|Y|Y|X|X|X|X|X|X|
+|[gmssl](gmssl.md)|`national secret algorithm(SM2/SM3/SM4)`|Y|Y|Y|X|X|X|X|X|
 |[gpio](gpio.md)|`GPIO Operation`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[gtfont](gtfont.md)|`Qualcomm Font Chip`|Y|Y|X|X|X|X|X|X|
 |[hmeta](hmeta.md)|`Hardware metadata`|Y|Y|Y|Y|Y|Y|Y|Y|
@@ -42,7 +42,7 @@
 |[lcd](lcd.md)|`lcd Drive module`|Y|Y|X|X|X|X|X|Y|
 |[lcdseg](lcdseg.md)|`Segment lcd`|X|X|X|X|X|X|X|X|
 |[libcoap](libcoap.md)|`coap Data processing`|X|X|X|X|X|X|X|X|
-|[libgnss](libgnss.md)|`NMEA Data processing`|Y|Y|Y|X|X|X|X|Y|
+|[libgnss](libgnss.md)|`NMEA Data processing`|Y|Y|X|X|X|X|X|Y|
 |[little_flash](little_flash.md)|`LITTLE FLASH Software package`|X|Y|X|X|X|X|X|Y|
 |[log](log.md)|`Logstore`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[lora](lora.md)|`lora Drive module`|Y|Y|X|X|X|X|X|X|
@@ -59,11 +59,11 @@
 |[pack](pack.md)|`Packing and unpacking format string`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[pin](pin.md)|`Pin Naming Map`|X|X|X|X|X|X|X|X|
 |[pm](pm.md)|`Power Management`|Y|Y|Y|Y|Y|Y|Y|Y|
-|[protobuf](protobuf.md)|`ProtoBuffs Codec`|Y|Y|X|X|X|X|X|X|
+|[protobuf](protobuf.md)|`ProtoBuffs Codec`|Y|Y|Y|X|X|X|X|X|
 |[pwm](pwm.md)|`PWM Module`|Y|Y|Y|X|Y|Y|Y|Y|
 |[repl](repl.md)|`"Read-evaluate-output "loop`|Y|Y|X|X|X|X|X|X|
-|[rsa](rsa.md)|`RSA encryption and decryption`|Y|Y|X|X|X|X|X|X|
-|[rtc](rtc.md)|`Real Time Clock`|Y|Y|Y|Y|X|X|X|Y|
+|[rsa](rsa.md)|`RSA encryption and decryption`|Y|Y|Y|X|X|X|X|X|
+|[rtc](rtc.md)|`Real Time Clock`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[rtos](rtos.md)|`RTOS underlying operation library`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[sdio](sdio.md)|`sdio`|X|X|X|X|X|X|X|X|
 |[sensor](sensor.md)|`Sensor Operation Library`|Y|Y|Y|X|X|X|X|Y|
@@ -86,6 +86,6 @@
 |[wdt](wdt.md)|`watchdog Operation Library`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[websocket](websocket.md)|`websocket Client`|Y|Y|Y|Y|Y|Y|Y|Y|
 |[wlan](wlan.md)|`wifi Operation`|Y|Y|Y|Y|Y|Y|Y|Y|
-|[xxtea](xxtea.md)|`xxtea encryption and decryption `|Y|Y|X|X|X|X|X|X|
+|[xxtea](xxtea.md)|`xxtea encryption and decryption `|Y|Y|Y|X|X|X|X|X|
 |[ymodem](ymodem.md)|`ymodem Agreement`|Y|Y|X|X|X|X|X|X|
 |[zbuff](zbuff.md)|`c Memory Data Manipulation Library`|Y|Y|Y|Y|Y|Y|Y|Y|
