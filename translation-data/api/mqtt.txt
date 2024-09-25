@@ -98,6 +98,8 @@ The received data is delivered by the server, data is the topic value (string), 
 After receiving the server response PUBREC, the uplink PUBCOMP is immediately pushed into the TCP send queue and regarded as successful.
 收到服务器回应PUBACK,视为成功
 Receive server response PUBACK, considered successful
+收到服务器心跳应答,没有附加数据
+Received server heartbeat reply, no additional data
 断开
 Disconnect
 断开服务器连接(不会释放资源

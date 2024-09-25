@@ -279,6 +279,7 @@ event The possible values are
              -- dup Value range 0,1
   sent   -- After the sending is completed, qos0 will notify immediately, qos1/qos2 will call back in the server response, and data is a message.id
   disconnect -- The server is disconnected, network problems or the server kicks the client, such as duplicate clientId, timeout not reporting business data
+  pong   -- Received server heartbeat reply, no additional data
 ]]
 
 ```
