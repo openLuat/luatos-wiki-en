@@ -8,6 +8,8 @@ One type, one secret (pre-registration
 One machine, one secret
 一机一密 (预注册
 One machine, one secret (pre-registration
+一机一密(预注册
+One machine, one secret (pre-registration
 中国移动云
 China Mobile Cloud
 为string时生效 0/1/2 默认
@@ -78,6 +80,8 @@ Key verification (pre-registration) (one machine, one secret
 Constant
 常量|类型|解释
 constant | type | explanation
+手动注册(预注册
+Manual registration (pre-registration
 接收到消息
 Message received
 新版公共实例

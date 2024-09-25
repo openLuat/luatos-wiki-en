@@ -764,12 +764,12 @@
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.TENCENT,{produt_id = "xxx",device_name = "123456789"},{tls={client_cert=io.readFile("/luadb/client_cert.crt")}})</span>
 
     <span class="c1">-- Alibaba Cloud  </span>
-    <span class="c1">-- Dynamic registration (no pre-registration) (one type, one secret) (only supported by enterprise version)</span>
+    <span class="c1">-- One type, one secret (no pre-registration-only supported by enterprise version)</span>
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{instance_id = "xxx",produt_id = "xxx",product_secret = "xxx"}) -- Enterprise Edition Public Instance</span>
-    <span class="c1">-- Dynamic registration (pre-registration) (one type one secret.)</span>
+    <span class="c1">-- One type, one secret (pre-registration)</span>
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",device_name = "xxx",product_secret = "xxx"})                     -- Legacy Public Instance</span>
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{instance_id = "xxx",produt_id = "xxx",device_name = "xxx",product_secret = "xxx"}) -- New Public Instance</span>
-    <span class="c1">-- Key verification (pre-registration) (one machine, one secret)</span>
+    <span class="c1">-- One machine, one secret (pre-registration)</span>
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{produt_id = "xxx",device_name = "xxx",key = "xxx"})                    -- Legacy Public Instance</span>
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.ALIYUN,{instance_id = "xxx",produt_id = "xxx",device_name = "xxx",key = "xxx"})-- New Public Instance</span>
 
@@ -786,7 +786,7 @@
     <span class="c1">-- Dynamic registration (no pre-registration)</span>
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.HUAWEI,{produt_id = "xxx",project_id = "xxx",endpoint = "xxx",</span>
     <span class="c1">--                         iam_username="xxx",iam_password="xxx",iam_domain="xxx"})</span>
-    <span class="c1">-- Key verification (pre-registration)</span>
+    <span class="c1">-- Manual registration (pre-registration)</span>
     <span class="c1">-- iotcloudc = iotcloud.new(iotcloud.HUAWEI,{produt_id = "xxx",endpoint = "xxx",device_name = "xxx",device_secret = "xxx"})</span>
 
     <span class="c1">-- -- graffiti cloud </span>
