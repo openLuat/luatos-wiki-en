@@ -14,7 +14,7 @@ This library has its own demo,[click this link to view the demo example of mqtt]
 
 ```lua
 -- Please see the specific usage demo
--- mqtt 3.1.1 is supported by this library. other versions such as 3.1 or 5 are not supported.
+-- this library only supports mqtt 3.1.1, other versions such as 3.1 or 5 are not supported!!!
 -- Only pure MQTT/MQTTS communication is supported. mqtt over websocket
 
 -- several major premises:

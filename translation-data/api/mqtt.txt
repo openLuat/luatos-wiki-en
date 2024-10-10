@@ -138,6 +138,8 @@ The server is disconnected, network problems or the server kicks the client, suc
 the server authentication is completed, the mqtt connection has been established, and data can be subscribed and published without additional data.
 本函数仅代表发起成功, 后续仍需根据ready函数判断mqtt是否连接正常
 this function only indicates that the mqtt is successfully initiated. you need to determine whether the mqtt connection is normal according to the ready function.
+本库只支持 mqtt 3.1.1, 其他版本例如3.1 或 5 均不支持
+this library only supports mqtt 3.1.1, other versions such as 3.1 or 5 are not supported
 本库支持的 mqtt 3.1.1, 其他版本例如3.1 或 5 是不支持的
 mqtt 3.1.1 is supported by this library. other versions such as 3.1 or 5 are not supported.
 本库是基于TCP链接的, 支持加密TCP和非加密
