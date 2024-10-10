@@ -56,6 +56,8 @@ Configure and read the number of writes
 Switching between the built-in virtual card and the external physical card will be enabled on August 13, 2024. The virtual card needs firmware support. Otherwise, there is no network after switching, and the protocol stack needs to be switched in flight mode or restarted after switching.
 初始化内置默认虚拟卡功能，2024年8月13日启用，需要固件支持
 Initialize the built-in default virtual card function, enabled on August 13, 2024, requires firmware support
+初始化内置默认虚拟卡功能(不可用
+Initialize the built-in default virtual card feature (not available
 删除已保存的协议栈参数，重启后会使用默认配置
 Delete the saved protocol stack parameters and use the default configuration after restart.
 包含基站数据的数组

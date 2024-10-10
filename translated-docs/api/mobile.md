@@ -1050,7 +1050,7 @@ mobile.nstInput(nil)
 
 
 
-Initialize the built-in default virtual card function, enabled on August 13, 2024, requires firmware support
+Initialize the built-in default virtual card feature (not available)
 
 **Parameters**
 
