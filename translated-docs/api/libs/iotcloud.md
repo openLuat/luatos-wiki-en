@@ -88,7 +88,7 @@ Create a cloud platform object
 
 |Incoming Value Type | Explanation|
 |-|-|
-|string|Cloud Platform iotcloud.TENCENT: Tencent Cloud iotcloud.ALIYUN: Alibaba Cloud iotcloud.ONENET: China Mobile Cloud iotcloud.HUAWEI: Huawei Cloud iotcloud.TUYA: Graffiti Cloud|
+|string|Cloud platform iotcloud.TENCENT: Tencent cloud iotcloud.ALIYUN: Alibaba cloud iotcloud.ONENET: China mobile cloud iotcloud.HUAWEI: Huawei cloud iotcloud.TUYA: graffiti cloud iotcloud.BAIDU: Baidu cloud iotcloud.TLINK: Tlink cloud|
 |table|iot Cloud platform configuration, device_name: optional, default is imei, otherwise it is unique_id iot_config.product_id: product id (alibaba cloud is product key) iot_config.product_secret: product key, if there is this item, it is dynamically registered iot_config.device_secret: device secret key, if there is this item, it is secret key connection instance_id: public instance id, new version alibaba public user id userkey private registration dynamic user id: onuser id enuserid:|
 |table|mqtt Configuration, host: optional, default is platform default host ip: optional, default is platform default ip tls: encryption, if there is this item is generally product certification keepalive: heartbeat time, unit s optional, default 240 autoreconn: automatic reconnection, number: reconnection time, unit ms /bool reconnection, default 3000ms optional, default not automatic reconnection|
 

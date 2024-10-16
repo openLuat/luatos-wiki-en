@@ -20,6 +20,8 @@ Theme
 Cloud
 云平台 iotcloud.TENCENT:腾讯云 iotcloud.ALIYUN:阿里云 iotcloud.ONENET:中国移动云 iotcloud.HUAWEI:华为云 iotcloud.TUYA:涂鸦云
 Cloud Platform iotcloud.TENCENT: Tencent Cloud iotcloud.ALIYUN: Alibaba Cloud iotcloud.ONENET: China Mobile Cloud iotcloud.HUAWEI: Huawei Cloud iotcloud.TUYA: Graffiti Cloud
+云平台 iotcloud.TENCENT:腾讯云 iotcloud.ALIYUN:阿里云 iotcloud.ONENET:中国移动云 iotcloud.HUAWEI:华为云 iotcloud.TUYA:涂鸦云 iotcloud.BAIDU: 百度云 iotcloud.TLINK: Tlink云
+Cloud platform iotcloud.TENCENT: Tencent cloud iotcloud.ALIYUN: Alibaba cloud iotcloud.ONENET: China mobile cloud iotcloud.HUAWEI: Huawei cloud iotcloud.TUYA: graffiti cloud iotcloud.BAIDU: Baidu cloud iotcloud.TLINK: Tlink cloud
 云平台关闭
 Cloud platform shutdown
 云平台发布
