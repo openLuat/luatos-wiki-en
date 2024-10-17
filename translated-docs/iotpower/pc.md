@@ -4,8 +4,6 @@
 
 - Microsoft Store Download: [Microsoft Store Page](https://www.microsoft.com/store/apps/9N8S8M8226SH)
 - Independent exe version:[IoT Power.exe](https://arduino.luatos.com/iotpower/latest.html)(note Microsoft/360 kill soft false alarm, tinder no problem）
-- **Full platform command line data logger UI：[IoTPower CLI Tool](https://gitee.com/openLuat/iot-power/releases/tag/1.0.0)
-- dll/so Dynamic Runtime Library：[Gitee iot-power dll/so](https://gitee.com/openLuat/iot-power/releases/tag/0.1.0)
 
 <h1 id="win7-notice" style="display: none;">Win7 Users see this line below! Expand！！</h1>
 
